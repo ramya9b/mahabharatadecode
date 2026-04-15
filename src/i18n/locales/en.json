@@ -1,0 +1,251 @@
+{
+  "lang": {
+    "en": "English",
+    "te": "తెలుగు",
+    "kn": "ಕನ್ನಡ",
+    "hi": "हिन्दी",
+    "select": "Language"
+  },
+
+  "nav": {
+    "wisdom": "Life Wisdom",
+    "characters": "Characters",
+    "blog": "Blog",
+    "about": "About",
+    "quiz": "Take Quiz",
+    "start_reading": "Start Reading",
+    "home": "Home",
+    "open_menu": "Open navigation menu",
+    "close_menu": "Close navigation menu",
+    "skip_to_main": "Skip to main content"
+  },
+
+  "hero": {
+    "eyebrow": "Ancient Wisdom · Modern Life",
+    "headline_gold": "Decode Life",
+    "headline_white": "Through Mahabharata",
+    "subtitle": "Journey through the greatest epic ever told. Discover timeless wisdom that transforms how you live, lead, and love.",
+    "cta_primary": "Start Reading",
+    "cta_secondary": "Explore Characters",
+    "scroll": "Scroll"
+  },
+
+  "common": {
+    "read_more": "Read More",
+    "read_full": "Read Full Story",
+    "load_more": "Load More Stories",
+    "go_back": "Go Back",
+    "search": "Search",
+    "clear": "Clear",
+    "close": "Close",
+    "submit": "Submit",
+    "subscribe": "Subscribe Free",
+    "min_read": "min read",
+    "featured": "Featured",
+    "back_to_top": "Back to top",
+    "loading": "Loading…",
+    "error_title": "Something went wrong",
+    "error_desc": "Even the Mahabharata has unexpected turns. Try refreshing — it usually resolves on its own.",
+    "try_again": "Try Again",
+    "go_home": "Go Home",
+    "share": "Share",
+    "copied": "Copied!",
+    "copy_link": "Copy link",
+    "copy_failed": "Failed to copy",
+    "no_results": "No results found",
+    "no_results_desc": "Try different keywords or browse all stories below.",
+    "clear_filters": "Clear Filters",
+    "by_character": "Deep dive into",
+    "view_all": "View All",
+    "scroll_to_explore": "Scroll to explore"
+  },
+
+  "blog": {
+    "page_title": "Stories & Insights",
+    "page_desc": "Deep-dive articles decoding the Mahabharata's greatest stories, characters, and lessons.",
+    "title": "Mahabharata Insights",
+    "subtitle": "Stories, Characters & Life Lessons from the greatest epic ever told",
+    "eyebrow": "Ancient Wisdom · Modern Clarity",
+    "featured_label": "Featured Story",
+    "search_placeholder": "Search stories, characters…",
+    "all_stories": "All Stories",
+    "articles_found": "{{count}} article",
+    "articles_found_plural": "{{count}} articles",
+    "matching": "matching \"{{query}}\"",
+    "newsletter_title": "Get Daily Wisdom",
+    "newsletter_subtitle": "One timeless insight from the Mahabharata, delivered every morning.",
+    "email_placeholder": "Enter your email",
+    "no_spam": "No spam. Unsubscribe anytime.",
+    "readers_count": "12,000+ readers",
+    "stats": {
+      "articles": "Deep Articles",
+      "characters": "Epic Characters",
+      "parvas": "Parvas Decoded",
+      "wisdom": "Wisdom Unveiled"
+    },
+    "categories": {
+      "all": "All",
+      "characters": "Characters",
+      "life_lessons": "Life Lessons",
+      "slokas": "Slokas",
+      "philosophy": "Philosophy"
+    }
+  },
+
+  "wisdom": {
+    "page_title": "Life Wisdom — Real Problems, Mahabharata Mirrors",
+    "page_desc": "Find your situation and see how a Mahabharata character faced the same challenge.",
+    "eyebrow": "Ancient Mirrors for Modern Life",
+    "headline_gold": "Your life.",
+    "headline_white": "Their story.",
+    "subtitle": "Every difficult thing you are going through right now has already been lived — with more weight and higher stakes — by someone in the Mahabharata.",
+    "subtitle_2": "Find your situation. Read their story. Take what is useful.",
+    "read_story": "Read the story",
+    "cta_title": "The full story is in the articles",
+    "cta_desc": "Each scenario above is a door. The full character articles go deeper — the complete story, every turning point, and what it means for the way you live now.",
+    "read_articles": "Read the Full Stories",
+    "find_character": "Find Your Character",
+    "go_deeper": "Go Deeper",
+    "domains": {
+      "family": "Family & Relationships",
+      "family_desc": "The people you didn't choose, and the ones you did",
+      "workplace": "Workplace & Career",
+      "workplace_desc": "What happens when ambition meets the reality of systems",
+      "duty": "Duty & Responsibility",
+      "duty_desc": "When you carry more than you were ever asked to carry",
+      "identity": "Identity & Daily Life",
+      "identity_desc": "The quiet wars you fight when no one is watching"
+    }
+  },
+
+  "quiz": {
+    "page_title": "Which Mahabharata Character Are You?",
+    "eyebrow": "Discover Your Epic Self",
+    "headline_gold": "Which Mahabharata",
+    "headline_white": "Character Are You?",
+    "questions_count": "8 questions. No right answers. Only honest ones.",
+    "honest_note": "Answer truthfully — not how you want to be seen, but how you actually are.",
+    "begin": "Begin the Journey",
+    "time_note": "Takes about 3 minutes",
+    "question_label": "Question",
+    "of": "of",
+    "back": "Back",
+    "calculating_title": "Reading your dharma",
+    "calculating_sub": "The Mahabharata sees you clearly…",
+    "your_result": "Your result",
+    "you_are": "You are",
+    "score_breakdown": "Your score breakdown",
+    "share_result": "Share Result",
+    "retake": "Retake",
+    "read_story": "Read {{name}}'s Story",
+    "also_explore": "Also explore",
+    "torn_between": "You are torn between {{char1}} and {{char2}}. Your final answer tipped the balance.",
+    "keyboard_hint": "Press A–E to answer",
+    "archetype": "Archetype"
+  },
+
+  "characters": {
+    "page_title": "Legendary Characters",
+    "eyebrow": "The Epic's Greatest Souls",
+    "headline": "Legendary Characters",
+    "subtitle": "Five warriors. Five destinies. Five mirrors held up to the human soul.",
+    "hover_hint": "Move your cursor over each card — they respond in 3D",
+    "explore_label": "Explore",
+    "comparison_title": "Five Warriors, One Truth",
+    "comparison_sub": "Every character in the Mahabharata is a different answer to the same question: what does it mean to live with integrity?",
+    "side_by_side": "Side by Side",
+    "also_explore": "Also explore",
+    "keep_exploring": "Keep Exploring",
+    "full_story_title": "Every Character Has a Full Story",
+    "full_story_desc": "Each profile above is just the beginning. Read the full deep-dive articles — with life lessons, modern parallels, and sacred verses.",
+    "read_all": "Read All Stories",
+    "characters_only": "Characters Only →",
+    "daily_wisdom_title": "Get Daily Character Wisdom",
+    "daily_wisdom_desc": "One insight from a Mahabharata character every morning. Free.",
+    "archetype": "Archetype",
+    "alliance": "Alliance",
+    "weapon": "Weapon",
+    "parva": "Parva",
+    "profile": "Character Profile",
+    "read_story": "Read Full Story",
+    "stat_warrior": "Warrior Skill",
+    "stat_wisdom": "Wisdom",
+    "stat_loyalty": "Loyalty",
+    "stat_sacrifice": "Sacrifice",
+    "stat_dharma": "Dharma"
+  },
+
+  "about": {
+    "page_title": "About — MahabharataDecoded",
+    "eyebrow": "Our Mission",
+    "headline_gold": "Ancient Wisdom.",
+    "headline_white": "Modern Life.",
+    "why_exist": "Why We Exist",
+    "origin_label": "The Origin Story",
+    "origin_title": "It Started With One Question",
+    "approach_label": "Our Approach",
+    "approach_title": "Three Principles. No Compromises.",
+    "process_label": "How We Work",
+    "process_title": "How Every Article Gets Made",
+    "values_label": "What We Stand For",
+    "values_title": "Six Non-Negotiables",
+    "creator_label": "The Person Behind This",
+    "start_label": "Start Here",
+    "start_title": "Ready to Decode the Epic?",
+    "start_desc": "Start with the articles. Explore the characters. And subscribe for one piece of ancient wisdom delivered every morning.",
+    "founded": "Founded 2026"
+  },
+
+  "notfound": {
+    "title": "Lost in the Epic",
+    "desc": "Even the greatest warriors lose their way in the forest of life. This page has wandered beyond the known universe. Let us guide you back to the path of wisdom.",
+    "return_home": "Return Home",
+    "browse_stories": "Browse Stories",
+    "quick_nav": "Or go directly to",
+    "suggestions": "Start reading instead",
+    "nav_home": "Homepage",
+    "nav_home_desc": "Return to the beginning",
+    "nav_blog": "All Stories",
+    "nav_blog_desc": "Browse every article",
+    "nav_characters": "Characters",
+    "nav_characters_desc": "Meet the epic's heroes",
+    "nav_quiz": "Take the Quiz",
+    "nav_quiz_desc": "Discover your character"
+  },
+
+  "footer": {
+    "tagline": "Bridging ancient Indian wisdom with modern life through immersive storytelling and deep philosophical exploration.",
+    "email_placeholder": "Your email",
+    "subscribe": "Subscribe",
+    "explore_label": "Explore",
+    "connect_label": "Connect",
+    "links": {
+      "featured": "Featured Stories",
+      "characters": "Characters",
+      "lessons": "Life Lessons",
+      "wisdom": "Daily Wisdom",
+      "about": "About",
+      "youtube": "YouTube",
+      "instagram": "Instagram",
+      "twitter": "Twitter",
+      "discord": "Discord"
+    },
+    "copyright": "© 2026 MahabharataDecoded. All rights reserved.",
+    "built_with": "Built with devotion ✦"
+  },
+
+  "cookie": {
+    "message": "We use cookies to enhance your reading experience and remember your language preference.",
+    "accept": "Accept",
+    "decline": "Decline"
+  },
+
+  "share": {
+    "label": "Share",
+    "twitter": "Share on Twitter/X",
+    "whatsapp": "Share on WhatsApp",
+    "linkedin": "Share on LinkedIn",
+    "copy": "Copy link",
+    "native": "Share this article"
+  }
+}
