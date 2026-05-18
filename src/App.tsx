@@ -4,6 +4,8 @@ import { BrowserRouter, Route, Routes } from "react-router-dom";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import BackToTop from "@/components/BackToTop";
 import CookieConsent from "@/components/CookieConsent";
+import FloatingStoryButton from "@/components/FloatingStoryButton";
+import FirstVisitCard from "@/components/FirstVisitCard";
 
 /* ── Lazy-loaded page routes (code-split per route) ── */
 const Index       = lazy(() => import("./pages/Index.tsx"));
@@ -90,6 +92,8 @@ const App = () => (
         </div>
         <BackToTop />
         <CookieConsent />
+        <FloatingStoryButton />
+        <FirstVisitCard />
       </ErrorBoundary>
     </BrowserRouter>
   </QueryClientProvider>
