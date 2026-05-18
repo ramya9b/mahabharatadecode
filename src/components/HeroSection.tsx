@@ -92,8 +92,14 @@ const HeroSection = () => {
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row gap-4 justify-center animate-fade-up-delay-2">
           <Link
-            to="/blog"
+            to="/storyteller"
             className="px-8 py-3.5 rounded-full bg-primary text-primary-foreground font-medium text-base tracking-wide hover:bg-gold-light transition-all duration-300 animate-pulse-glow btn-i18n i18n-safe"
+          >
+            ✨ Try Story Teller
+          </Link>
+          <Link
+            to="/blog"
+            className="px-8 py-3.5 rounded-full glass-card text-foreground font-medium text-base tracking-wide hover:border-primary/50 hover:text-primary transition-all duration-300 btn-i18n i18n-safe"
           >
             {t("hero.cta_primary")}
           </Link>
