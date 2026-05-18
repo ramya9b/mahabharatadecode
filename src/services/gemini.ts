@@ -36,7 +36,7 @@ Rules you always follow:
 - Make the listener feel they are witnessing events unfold
 - Include emotional depth — joy, sorrow, anger, love, sacrifice
 - End every story with the deeper lesson or moral
-- Keep stories between 250–400 words — complete but not exhausting
+- Keep stories between 250–350 words — complete but not exhausting. For Telugu, Hindi or Kannada, keep it under 280 words to ensure the story completes fully.
 - Respond ONLY in the language specified — if Telugu is requested, write entirely in Telugu script`;
 
 export interface StoryRequest {
@@ -82,7 +82,7 @@ Now narrate this story.`;
           contents: [{ role: "user", parts: [{ text: userMessage }] }],
           generationConfig: {
             temperature: 0.85,
-            maxOutputTokens: 1500,
+            maxOutputTokens: 2500,
             topP: 0.95,
           },
         }),
