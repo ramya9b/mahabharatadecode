@@ -140,6 +140,39 @@ const StoryTeller = () => {
   const sentencesRef = useRef<string[]>([]);
   const sentIdxRef   = useRef(0);
 
+  /* Pick best Indian voice for the selected language */
+  const getIndianVoice = useCallback((lang: string): SpeechSynthesisVoice | null => {
+    const voices = window.speechSynthesis.getVoices();
+
+    /* Priority order: exact Indian locale → any Indian → any matching language */
+    const localMap: Record<string, string[]> = {
+      en: ["en-IN", "en-GB"],   // prefer India, then GB over US
+      te: ["te-IN", "te"],
+      hi: ["hi-IN", "hi"],
+      kn: ["kn-IN", "kn"],
+    };
+
+    const preferred = localMap[lang] ?? [`${lang}-IN`, lang];
+
+    /* 1. Try exact locale match */
+    for (const locale of preferred) {
+      const match = voices.find(v =>
+        v.lang.toLowerCase() === locale.toLowerCase()
+      );
+      if (match) return match;
+    }
+
+    /* 2. Try voices with "India" or "-IN" in name/lang */
+    const indiaMatch = voices.find(v =>
+      v.lang.toLowerCase().startsWith(lang) &&
+      (v.lang.includes("IN") || v.name.toLowerCase().includes("india"))
+    );
+    if (indiaMatch) return indiaMatch;
+
+    /* 3. Any voice starting with the language code */
+    return voices.find(v => v.lang.toLowerCase().startsWith(lang)) ?? null;
+  }, []);
+
   const speakNext = useCallback(() => {
     const sentences = sentencesRef.current;
     const idx       = sentIdxRef.current;
@@ -148,15 +181,21 @@ const StoryTeller = () => {
     const utt   = new SpeechSynthesisUtterance(sentences[idx]);
     utt.rate    = 0.88;
     utt.pitch   = 1.05;
-    utt.lang    = language === "te" ? "te-IN"
-                : language === "hi" ? "hi-IN"
-                : language === "kn" ? "kn-IN"
-                : "en-IN";
+
+    /* Always use Indian voice */
+    const voice = getIndianVoice(language);
+    if (voice) utt.voice = voice;
+    utt.lang = voice?.lang ?? (
+      language === "te" ? "te-IN" :
+      language === "hi" ? "hi-IN" :
+      language === "kn" ? "kn-IN" : "en-IN"
+    );
+
     utt.onend   = () => { sentIdxRef.current += 1; speakNext(); };
     utt.onerror = () => { sentIdxRef.current += 1; speakNext(); };
     utterRef.current = utt;
     window.speechSynthesis.speak(utt);
-  }, [language]);
+  }, [language, getIndianVoice]);
 
   const toggleSpeech = useCallback(() => {
     if (!("speechSynthesis" in window)) return;
@@ -170,16 +209,16 @@ const StoryTeller = () => {
 
     /* Strip markdown formatting before speaking */
     const cleanText = story
-      .replace(/\*\*(.*?)\*\*/g, "$1")   // **bold** → bold
-      .replace(/\*(.*?)\*/g, "$1")        // *italic* → italic
-      .replace(/#{1,6}\s/g, "")           // ## Heading → Heading
-      .replace(/_{1,2}(.*?)_{1,2}/g, "$1")// __text__ → text
-      .replace(/`(.*?)`/g, "$1")          // `code` → code
-      .replace(/\[(.*?)\]\(.*?\)/g, "$1") // [link](url) → link
-      .replace(/^\s*[-•]\s/gm, "")        // bullet points
+      .replace(/\*\*(.*?)\*\*/g, "$1")
+      .replace(/\*(.*?)\*/g, "$1")
+      .replace(/#{1,6}\s/g, "")
+      .replace(/_{1,2}(.*?)_{1,2}/g, "$1")
+      .replace(/`(.*?)`/g, "$1")
+      .replace(/\[(.*?)\]\(.*?\)/g, "$1")
+      .replace(/^\s*[-•]\s/gm, "")
       .trim();
 
-    /* Split story into sentences */
+    /* Split into sentences */
     const sentences = cleanText
       .split(/(?<=[.!?।])\s+/)
       .map(s => s.trim())
@@ -188,8 +227,17 @@ const StoryTeller = () => {
     sentencesRef.current = sentences;
     sentIdxRef.current   = 0;
     setSpeaking(true);
-    window.speechSynthesis.cancel(); // clear queue first
-    speakNext();
+    window.speechSynthesis.cancel();
+
+    /* Voices load async in Chrome — wait if not ready */
+    if (window.speechSynthesis.getVoices().length === 0) {
+      window.speechSynthesis.onvoiceschanged = () => {
+        window.speechSynthesis.onvoiceschanged = null;
+        speakNext();
+      };
+    } else {
+      speakNext();
+    }
   }, [speaking, story, speakNext]);
 
   /* ── Reset ── */
