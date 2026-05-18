@@ -125,7 +125,14 @@ const StoryTeller = () => {
     if (result.error) {
       setError(result.error);
     } else {
-      setStory(result.story);
+      /* Clean markdown from story before displaying */
+      const cleaned = result.story
+        .replace(/\*\*(.*?)\*\*/g, "$1")
+        .replace(/\*(.*?)\*/g, "$1")
+        .replace(/#{1,6}\s/g, "")
+        .replace(/_{1,2}(.*?)_{1,2}/g, "$1")
+        .trim();
+      setStory(cleaned);
     }
   }, [selected, activePromptIdx, customPrompt, tone, language]);
 
@@ -161,8 +168,19 @@ const StoryTeller = () => {
       return;
     }
 
+    /* Strip markdown formatting before speaking */
+    const cleanText = story
+      .replace(/\*\*(.*?)\*\*/g, "$1")   // **bold** → bold
+      .replace(/\*(.*?)\*/g, "$1")        // *italic* → italic
+      .replace(/#{1,6}\s/g, "")           // ## Heading → Heading
+      .replace(/_{1,2}(.*?)_{1,2}/g, "$1")// __text__ → text
+      .replace(/`(.*?)`/g, "$1")          // `code` → code
+      .replace(/\[(.*?)\]\(.*?\)/g, "$1") // [link](url) → link
+      .replace(/^\s*[-•]\s/gm, "")        // bullet points
+      .trim();
+
     /* Split story into sentences */
-    const sentences = story
+    const sentences = cleanText
       .split(/(?<=[.!?।])\s+/)
       .map(s => s.trim())
       .filter(Boolean);
