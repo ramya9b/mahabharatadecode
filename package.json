@@ -1,5 +1,5 @@
 {
-  "name": "vite_react_shadcn_ts",
+  "name": "mahabharatadecoded",
   "private": true,
   "version": "0.0.0",
   "type": "module",
@@ -11,8 +11,10 @@
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
-    "deploy": "npm run build && vercel --prod",
-    "build:analyze": "vite build --mode development"
+    "deploy": "npm run build && wrangler pages deploy dist --project-name=mahabharatadecoded",
+    "build:analyze": "vite build --mode development",
+    "deploy:preview": "npm run build && wrangler pages deploy dist --project-name=mahabharatadecoded --branch=preview",
+    "cf:dev": "wrangler pages dev dist --port 8788"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
