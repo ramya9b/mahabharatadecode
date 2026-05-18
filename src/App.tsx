@@ -13,6 +13,7 @@ const Characters  = lazy(() => import("./pages/Characters.tsx"));
 const About       = lazy(() => import("./pages/About.tsx"));
 const Quiz        = lazy(() => import("./pages/Quiz.tsx"));
 const Wisdom      = lazy(() => import("./pages/Wisdom.tsx"));
+const StoryTeller = lazy(() => import("./pages/StoryTeller.tsx"));
 const NotFound    = lazy(() => import("./pages/NotFound.tsx"));
 
 /* ── Route-level loading fallback ── */
@@ -82,6 +83,7 @@ const App = () => (
               <Route path="/about"       element={<About />} />
               <Route path="/quiz"        element={<Quiz />} />
               <Route path="/wisdom"      element={<Wisdom />} />
+              <Route path="/storyteller" element={<StoryTeller />} />
               <Route path="*"            element={<NotFound />} />
             </Routes>
           </Suspense>

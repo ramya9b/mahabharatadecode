@@ -14,7 +14,8 @@
     "deploy": "npm run build && wrangler pages deploy dist --project-name=mahabharatadecoded",
     "build:analyze": "vite build --mode development",
     "deploy:preview": "npm run build && wrangler pages deploy dist --project-name=mahabharatadecoded --branch=preview",
-    "cf:dev": "wrangler pages dev dist --port 8788"
+    "cf:dev": "wrangler pages dev dist --port 8788",
+    "cf:install": "npm install"
   },
   "dependencies": {
     "@hookform/resolvers": "^3.10.0",
@@ -94,6 +95,7 @@
     "vitest": "^3.2.4"
   },
   "engines": {
-    "node": ">=18.0.0"
+    "node": ">=18.0.0",
+    "npm": ">=9.0.0"
   }
 }

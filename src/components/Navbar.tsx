@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 const NAV_LINKS = [
+  { to: "/storyteller", key: "nav.storyteller" },
   { to: "/wisdom",     key: "nav.wisdom"     },
   { to: "/characters", key: "nav.characters" },
   { to: "/blog",       key: "nav.blog"       },
@@ -19,7 +20,7 @@ const Navbar = () => {
   const menuRef                     = useRef<HTMLDivElement>(null);
   const burgerRef                   = useRef<HTMLButtonElement>(null);
 
-  const isSolid = ["/blog","/characters","/about","/quiz","/wisdom"].some(p => pathname.startsWith(p));
+  const isSolid = ["/blog","/characters","/about","/quiz","/wisdom","/storyteller"].some(p => pathname.startsWith(p));
   const isQuiz  = pathname.startsWith("/quiz");
 
   useEffect(() => {

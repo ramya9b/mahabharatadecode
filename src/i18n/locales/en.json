@@ -6,7 +6,6 @@
     "hi": "हिन्दी",
     "select": "Language"
   },
-
   "nav": {
     "wisdom": "Life Wisdom",
     "characters": "Characters",
@@ -17,9 +16,9 @@
     "home": "Home",
     "open_menu": "Open navigation menu",
     "close_menu": "Close navigation menu",
-    "skip_to_main": "Skip to main content"
+    "skip_to_main": "Skip to main content",
+    "storyteller": "Story Teller"
   },
-
   "hero": {
     "eyebrow": "Ancient Wisdom · Modern Life",
     "headline_gold": "Decode Life",
@@ -29,7 +28,6 @@
     "cta_secondary": "Explore Characters",
     "scroll": "Scroll"
   },
-
   "common": {
     "read_more": "Read More",
     "read_full": "Read Full Story",
@@ -59,7 +57,6 @@
     "view_all": "View All",
     "scroll_to_explore": "Scroll to explore"
   },
-
   "blog": {
     "page_title": "Stories & Insights",
     "page_desc": "Deep-dive articles decoding the Mahabharata's greatest stories, characters, and lessons.",
@@ -91,7 +88,6 @@
       "philosophy": "Philosophy"
     }
   },
-
   "wisdom": {
     "page_title": "Life Wisdom — Real Problems, Mahabharata Mirrors",
     "page_desc": "Find your situation and see how a Mahabharata character faced the same challenge.",
@@ -117,7 +113,6 @@
       "identity_desc": "The quiet wars you fight when no one is watching"
     }
   },
-
   "quiz": {
     "page_title": "Which Mahabharata Character Are You?",
     "eyebrow": "Discover Your Epic Self",
@@ -143,7 +138,6 @@
     "keyboard_hint": "Press A–E to answer",
     "archetype": "Archetype"
   },
-
   "characters": {
     "page_title": "Legendary Characters",
     "eyebrow": "The Epic's Greatest Souls",
@@ -174,7 +168,6 @@
     "stat_sacrifice": "Sacrifice",
     "stat_dharma": "Dharma"
   },
-
   "about": {
     "page_title": "About — MahabharataDecoded",
     "eyebrow": "Our Mission",
@@ -195,7 +188,6 @@
     "start_desc": "Start with the articles. Explore the characters. And subscribe for one piece of ancient wisdom delivered every morning.",
     "founded": "Founded 2026"
   },
-
   "notfound": {
     "title": "Lost in the Epic",
     "desc": "Even the greatest warriors lose their way in the forest of life. This page has wandered beyond the known universe. Let us guide you back to the path of wisdom.",
@@ -212,7 +204,6 @@
     "nav_quiz": "Take the Quiz",
     "nav_quiz_desc": "Discover your character"
   },
-
   "footer": {
     "tagline": "Bridging ancient Indian wisdom with modern life through immersive storytelling and deep philosophical exploration.",
     "email_placeholder": "Your email",
@@ -233,13 +224,11 @@
     "copyright": "© 2026 MahabharataDecoded. All rights reserved.",
     "built_with": "Built with devotion ✦"
   },
-
   "cookie": {
     "message": "We use cookies to enhance your reading experience and remember your language preference.",
     "accept": "Accept",
     "decline": "Decline"
   },
-
   "share": {
     "label": "Share",
     "twitter": "Share on Twitter/X",

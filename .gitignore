@@ -27,3 +27,7 @@ dist-ssr
 .env
 .env.local
 .env.production
+
+# Bun lockfiles — use npm instead on Cloudflare Pages
+bun.lockb
+bun.lock
