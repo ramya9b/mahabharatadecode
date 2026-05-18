@@ -1,6 +1,6 @@
 /* ─────────────────────────────────────────────
    FirstVisitCard — shown once to new visitors
-   Stored in localStorage — never shown again after dismiss
+   Stored in sessionStorage — never shown again after dismiss
 ───────────────────────────────────────────── */
 import { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
@@ -19,7 +19,7 @@ const FirstVisitCard = () => {
   const navigate = useNavigate();
 
   useEffect(() => {
-    const seen = localStorage.getItem(STORAGE_KEY);
+    const seen = sessionStorage.getItem(STORAGE_KEY);
     if (!seen) {
       /* Show after 1.5s so page loads first */
       const t = setTimeout(() => setShow(true), 1500);
@@ -29,7 +29,7 @@ const FirstVisitCard = () => {
 
   const dismiss = () => {
     setLeaving(true);
-    localStorage.setItem(STORAGE_KEY, "1");
+    sessionStorage.setItem(STORAGE_KEY, "1");
     setTimeout(() => setShow(false), 350);
   };
 
