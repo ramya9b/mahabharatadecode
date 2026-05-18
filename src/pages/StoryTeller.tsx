@@ -82,7 +82,10 @@ const StoryTeller = () => {
   const storyRef  = useRef<HTMLDivElement>(null);
   const utterRef  = useRef<SpeechSynthesisUtterance | null>(null);
 
-  const { displayed, done } = useTypewriter(story, 14);
+  const [skip, setSkip] = useState(false);
+
+  const { displayed, done } = useTypewriter(skip ? "" : story, 6);
+  const shownText = skip ? story : displayed;
 
   /* ── Scroll to story when it starts ── */
   useEffect(() => {
@@ -105,6 +108,9 @@ const StoryTeller = () => {
     setStory("");
     setStep("story");
     setSpeaking(false);
+    setSkip(false);
+    sentIdxRef.current = 0;
+    sentencesRef.current = [];
     window.speechSynthesis?.cancel();
 
     const result = await generateStory({
@@ -123,23 +129,50 @@ const StoryTeller = () => {
     }
   }, [selected, activePromptIdx, customPrompt, tone, language]);
 
-  /* ── Voice narration ── */
+  /* ── Voice narration — sentence-by-sentence to fix Chrome TTS bug ── */
+  const sentencesRef = useRef<string[]>([]);
+  const sentIdxRef   = useRef(0);
+
+  const speakNext = useCallback(() => {
+    const sentences = sentencesRef.current;
+    const idx       = sentIdxRef.current;
+    if (idx >= sentences.length) { setSpeaking(false); return; }
+
+    const utt   = new SpeechSynthesisUtterance(sentences[idx]);
+    utt.rate    = 0.88;
+    utt.pitch   = 1.05;
+    utt.lang    = language === "te" ? "te-IN"
+                : language === "hi" ? "hi-IN"
+                : language === "kn" ? "kn-IN"
+                : "en-IN";
+    utt.onend   = () => { sentIdxRef.current += 1; speakNext(); };
+    utt.onerror = () => { sentIdxRef.current += 1; speakNext(); };
+    utterRef.current = utt;
+    window.speechSynthesis.speak(utt);
+  }, [language]);
+
   const toggleSpeech = useCallback(() => {
     if (!("speechSynthesis" in window)) return;
+
     if (speaking) {
       window.speechSynthesis.cancel();
       setSpeaking(false);
+      sentIdxRef.current = 0;
       return;
     }
-    const utt = new SpeechSynthesisUtterance(story);
-    utt.rate = 0.88;
-    utt.pitch = 1.05;
-    utt.onend = () => setSpeaking(false);
-    utt.onerror = () => setSpeaking(false);
-    utterRef.current = utt;
-    window.speechSynthesis.speak(utt);
+
+    /* Split story into sentences */
+    const sentences = story
+      .split(/(?<=[.!?।])\s+/)
+      .map(s => s.trim())
+      .filter(Boolean);
+
+    sentencesRef.current = sentences;
+    sentIdxRef.current   = 0;
     setSpeaking(true);
-  }, [speaking, story]);
+    window.speechSynthesis.cancel(); // clear queue first
+    speakNext();
+  }, [speaking, story, speakNext]);
 
   /* ── Reset ── */
   const handleReset = useCallback(() => {
@@ -489,9 +522,24 @@ const StoryTeller = () => {
                       lineHeight: 1.9, color: inkDark, whiteSpace: "pre-wrap",
                     }}
                   >
-                    {displayed}
-                    {!done && <span style={{ animation: "blink 0.7s step-end infinite", color: gold }}>|</span>}
+                    {shownText}
+                    {!done && !skip && <span style={{ animation: "blink 0.7s step-end infinite", color: gold }}>|</span>}
                   </div>
+                )}
+
+                {/* Skip animation button */}
+                {!done && !skip && story && (
+                  <button
+                    onClick={() => setSkip(true)}
+                    style={{
+                      marginTop: "16px", padding: "6px 16px", borderRadius: "99px",
+                      background: "transparent", border: `1px solid ${borderClr}`,
+                      cursor: "pointer", fontFamily: serif, fontSize: "11px",
+                      color: inkMuted, letterSpacing: "0.08em",
+                    }}
+                  >
+                    Skip animation ⏭
+                  </button>
                 )}
 
                 <style>{`@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }`}</style>
