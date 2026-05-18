@@ -5,6 +5,7 @@ import CharactersGrid from "@/components/CharactersGrid";
 import LifeLessons from "@/components/LifeLessons";
 import VideoSection from "@/components/VideoSection";
 import DailyWisdom from "@/components/DailyWisdom";
+import StoryTellerBanner from "@/components/StoryTellerBanner";
 import Footer from "@/components/Footer";
 
 const Index = () => {
@@ -13,6 +14,7 @@ const Index = () => {
       <Navbar />
       <HeroSection />
       <FeaturedStories />
+      <StoryTellerBanner />
       <CharactersGrid />
       <LifeLessons />
       <VideoSection />
