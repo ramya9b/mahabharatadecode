@@ -82,7 +82,7 @@ Now narrate this story.`;
           contents: [{ role: "user", parts: [{ text: userMessage }] }],
           generationConfig: {
             temperature: 0.85,
-            maxOutputTokens: 600,
+            maxOutputTokens: 2000,
             topP: 0.95,
           },
         }),
