@@ -37,6 +37,8 @@ Rules you MUST follow:
 - Use clear modern language a 16-year-old instantly understands
 - NO filler lines — every line earns its place
 - Stay faithful to Mahabharata canon — never invent events
+- CRITICAL: Keep total response under 120 words in English, under 100 words in Telugu/Hindi/Kannada
+- CRITICAL: ALWAYS complete the last sentence fully — never stop mid-sentence
 - Respond ONLY in the language specified — Telugu story in Telugu script, Hindi in Hindi script`;
 
 export interface StoryRequest {
@@ -82,9 +84,10 @@ Now narrate this story.`;
           contents: [{ role: "user", parts: [{ text: userMessage }] }],
           generationConfig: {
             temperature: 0.85,
-            maxOutputTokens: 2000,
+            maxOutputTokens: 8000,
             topP: 0.95,
           },
+          thinkingConfig: { thinkingBudget: 0 },
         }),
       }
     );
@@ -95,9 +98,24 @@ Now narrate this story.`;
     }
 
     const data = await response.json();
-    const story = data?.candidates?.[0]?.content?.parts?.[0]?.text ?? "";
+    const candidate = data?.candidates?.[0];
+    const story = candidate?.content?.parts?.[0]?.text ?? "";
+    const finishReason = candidate?.finishReason ?? "";
 
     if (!story) throw new Error("Empty response from Gemini");
+
+    // Detect truncation — if stopped due to MAX_TOKENS, append ellipsis
+    if (finishReason === "MAX_TOKENS") {
+      // Find last complete sentence
+      const lastPunct = Math.max(
+        story.lastIndexOf("।"), story.lastIndexOf("."),
+        story.lastIndexOf("!"), story.lastIndexOf("?")
+      );
+      const cleanStory = lastPunct > story.length * 0.5
+        ? story.slice(0, lastPunct + 1)
+        : story;
+      return { story: cleanStory };
+    }
 
     return { story };
   } catch (err: unknown) {
@@ -120,12 +138,14 @@ When given a character and their story, explain:
 3. The ONE powerful lesson from this character's life that anyone can apply TODAY
 
 Rules:
-- Write in clear, warm, modern English — like a wise friend talking to you
-- 5 to 7 lines maximum — powerful and concise
+- Write in clear, warm, modern language — like a wise friend talking to you
+- MAXIMUM 5 lines — powerful and concise, no padding
 - Make it deeply relatable — the reader must feel "this is about ME"
 - End with one actionable truth the person can carry with them today
 - NO mythology jargon — connect it directly to modern life
-- Respond in the language specified`;
+- CRITICAL: Keep total response under 100 words in Telugu/Hindi/Kannada, under 120 words in English
+- CRITICAL: ALWAYS complete your last sentence — never stop mid-word or mid-sentence
+- Respond ONLY in the language specified`;
 
 export interface LifeLessonRequest {
   characterName: string;
@@ -154,7 +174,8 @@ Respond entirely in ${langName}.`;
         body: JSON.stringify({
           system_instruction: { parts: [{ text: LIFE_LESSON_PROMPT }] },
           contents: [{ role: "user", parts: [{ text: userMessage }] }],
-          generationConfig: { temperature: 0.8, maxOutputTokens: 2000, topP: 0.95 },
+          generationConfig: { temperature: 0.8, maxOutputTokens: 8000, topP: 0.95 },
+          thinkingConfig: { thinkingBudget: 0 },
         }),
       }
     );
@@ -185,9 +206,11 @@ Rules:
 - Speak directly to the person — warm, honest, like a trusted mentor
 - Never be preachy or lecture-like
 - Be specific — address THEIR exact situation, not generic advice
-- 6 to 8 lines — enough to feel complete but not overwhelming
+- MAXIMUM 6 lines — enough to feel complete but not overwhelming
 - Make them feel understood, not judged
-- Respond in the language specified`;
+- CRITICAL: Keep total response under 150 words in Telugu/Hindi/Kannada
+- CRITICAL: ALWAYS complete your last sentence — never stop mid-word or mid-sentence
+- Respond ONLY in the language specified`;
 
 export interface MySituationRequest {
   characterName: string;
@@ -219,7 +242,8 @@ Respond entirely in ${langName}.`;
         body: JSON.stringify({
           system_instruction: { parts: [{ text: MY_SITUATION_PROMPT }] },
           contents: [{ role: "user", parts: [{ text: userMessage }] }],
-          generationConfig: { temperature: 0.82, maxOutputTokens: 2000, topP: 0.95 },
+          generationConfig: { temperature: 0.82, maxOutputTokens: 8000, topP: 0.95 },
+          thinkingConfig: { thinkingBudget: 0 },
         }),
       }
     );
