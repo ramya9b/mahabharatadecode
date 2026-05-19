@@ -105,3 +105,129 @@ Now narrate this story.`;
     return { story: "", error: message };
   }
 }
+
+/* ─────────────────────────────────────────────
+   Life Lesson — Generic (Approach A)
+   How this character's struggle applies to any
+   person's life today
+───────────────────────────────────────────── */
+
+const LIFE_LESSON_PROMPT = `You are a life coach and Mahabharata scholar who helps people find meaning in ancient stories for their modern lives.
+
+When given a character and their story, explain:
+1. What universal human struggle this character represents
+2. What kind of person today would face the same struggle
+3. The ONE powerful lesson from this character's life that anyone can apply TODAY
+
+Rules:
+- Write in clear, warm, modern English — like a wise friend talking to you
+- 5 to 7 lines maximum — powerful and concise
+- Make it deeply relatable — the reader must feel "this is about ME"
+- End with one actionable truth the person can carry with them today
+- NO mythology jargon — connect it directly to modern life
+- Respond in the language specified`;
+
+export interface LifeLessonRequest {
+  characterName: string;
+  storyContext: string;
+  language: Language;
+}
+
+export async function generateLifeLesson(req: LifeLessonRequest): Promise<StoryResponse> {
+  const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+  if (!apiKey) return { story: "", error: "API key not configured." };
+
+  const langName = LANGUAGE_NAMES[req.language];
+
+  const userMessage = `Character: ${req.characterName}
+Story context: ${req.storyContext}
+
+Based on this story, what universal life lesson does ${req.characterName}'s struggle teach anyone facing a similar situation in modern life today?
+Respond entirely in ${langName}.`;
+
+  try {
+    const response = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          system_instruction: { parts: [{ text: LIFE_LESSON_PROMPT }] },
+          contents: [{ role: "user", parts: [{ text: userMessage }] }],
+          generationConfig: { temperature: 0.8, maxOutputTokens: 1200, topP: 0.95 },
+        }),
+      }
+    );
+    const data = await response.json();
+    const story = data?.candidates?.[0]?.content?.parts?.[0]?.text ?? "";
+    if (!story) throw new Error("Empty response");
+    return { story };
+  } catch (err: unknown) {
+    return { story: "", error: err instanceof Error ? err.message : "Unknown error" };
+  }
+}
+
+/* ─────────────────────────────────────────────
+   My Situation — Personalised (Approach B)
+   User describes their struggle → AI connects
+   it to the character's story + gives guidance
+───────────────────────────────────────────── */
+
+const MY_SITUATION_PROMPT = `You are a compassionate life coach and Mahabharata scholar who helps people navigate their personal struggles using the wisdom of the epic.
+
+When a person shares their current life situation, you:
+1. Show them how their struggle mirrors a character's journey in the Mahabharata
+2. Tell them what that character did — and what it cost them when they ignored their dharma
+3. Give them 2 to 3 clear, practical steps they can take RIGHT NOW
+4. End with a powerful truth from the character's life that directly applies to their situation
+
+Rules:
+- Speak directly to the person — warm, honest, like a trusted mentor
+- Never be preachy or lecture-like
+- Be specific — address THEIR exact situation, not generic advice
+- 6 to 8 lines — enough to feel complete but not overwhelming
+- Make them feel understood, not judged
+- Respond in the language specified`;
+
+export interface MySituationRequest {
+  characterName: string;
+  storyContext: string;
+  userSituation: string;
+  language: Language;
+}
+
+export async function generateMySituation(req: MySituationRequest): Promise<StoryResponse> {
+  const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+  if (!apiKey) return { story: "", error: "API key not configured." };
+
+  const langName = LANGUAGE_NAMES[req.language];
+
+  const userMessage = `Character: ${req.characterName}
+Character's story: ${req.storyContext}
+
+The person's current situation: "${req.userSituation}"
+
+How does ${req.characterName}'s story directly mirror this person's struggle? What can they learn and what specific steps can they take?
+Respond entirely in ${langName}.`;
+
+  try {
+    const response = await fetch(
+      `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${apiKey}`,
+      {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          system_instruction: { parts: [{ text: MY_SITUATION_PROMPT }] },
+          contents: [{ role: "user", parts: [{ text: userMessage }] }],
+          generationConfig: { temperature: 0.82, maxOutputTokens: 1500, topP: 0.95 },
+        }),
+      }
+    );
+    const data = await response.json();
+    const story = data?.candidates?.[0]?.content?.parts?.[0]?.text ?? "";
+    if (!story) throw new Error("Empty response");
+    return { story };
+  } catch (err: unknown) {
+    return { story: "", error: err instanceof Error ? err.message : "Unknown error" };
+  }
+}
