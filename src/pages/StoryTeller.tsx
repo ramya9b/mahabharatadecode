@@ -17,7 +17,7 @@ import {
   GROUP_LABELS,
   GROUP_COLORS,
 } from "@/data/storyCharacters";
-import { generateStory, type Tone, type Language } from "@/services/gemini";
+import { generateStory, generateLifeLesson, generateMySituation, type Tone, type Language } from "@/services/gemini";
 
 /* ── Types ── */
 type Step = "select" | "prompt" | "story";
@@ -84,6 +84,15 @@ const StoryTeller = () => {
 
   const [skip, setSkip]     = useState(false);
 
+  // ── Tab state ──
+  type StoryTab = "story" | "lesson" | "situation";
+  const [activeTab, setActiveTab]         = useState<StoryTab>("story");
+  const [lessonText, setLessonText]       = useState("");
+  const [lessonLoading, setLessonLoading] = useState(false);
+  const [situationText, setSituationText] = useState("");
+  const [situationInput, setSituationInput] = useState("");
+  const [situationLoading, setSituationLoading] = useState(false);
+
   const { displayed, done } = useTypewriter(story, 6);
   const shownText           = skip ? story : displayed;
   const storyComplete       = skip || done;   // single source of truth
@@ -110,6 +119,10 @@ const StoryTeller = () => {
     setStep("story");
     setSpeaking(false);
     setSkip(false);
+    setActiveTab("story");
+    setLessonText("");
+    setSituationText("");
+    setSituationInput("");
     sentIdxRef.current   = 0;
     sentencesRef.current = [];
     stoppedRef.current   = false;
@@ -562,19 +575,279 @@ const StoryTeller = () => {
               </div>
             )}
 
-            {/* Story card */}
+            {/* Story card with 3 tabs */}
             {(loading || story) && (
-              <div
-                style={{
-                  background: `linear-gradient(160deg, hsl(38 50% 96%) 0%, hsl(28 45% 93%) 100%)`,
-                  border: `1.5px solid ${selected?.accentHex ?? gold}50`,
-                  borderRadius: "20px",
-                  padding: "36px",
-                  minHeight: "260px",
-                  boxShadow: `0 8px 40px rgba(0,0,0,0.08)`,
-                  position: "relative",
-                }}
-              >
+              <div style={{
+                background: `linear-gradient(160deg, hsl(38 50% 96%) 0%, hsl(28 45% 93%) 100%)`,
+                border: `1.5px solid ${selected?.accentHex ?? "#A07820"}50`,
+                borderRadius: "20px",
+                overflow: "hidden",
+                boxShadow: "0 8px 40px rgba(0,0,0,0.08)",
+              }}>
+
+                {/* ── Tab bar ── */}
+                {storyComplete && (
+                  <div style={{
+                    display: "flex", borderBottom: `1px solid rgba(160,120,32,0.15)`,
+                    background: "rgba(160,120,32,0.04)",
+                  }}>
+                    {([
+                      { key: "story",     label: "📖 The Story",    desc: "What happened" },
+                      { key: "lesson",    label: "💡 Life Lesson",   desc: "What it means for you" },
+                      { key: "situation", label: "🙋 My Situation",  desc: "Your personal guidance" },
+                    ] as { key: StoryTab; label: string; desc: string }[]).map(tab => (
+                      <button
+                        key={tab.key}
+                        onClick={async () => {
+                          setActiveTab(tab.key);
+
+                          /* Auto-load Life Lesson on first click */
+                          if (tab.key === "lesson" && !lessonText && !lessonLoading) {
+                            setLessonLoading(true);
+                            const res = await generateLifeLesson({
+                              characterName: selected?.name ?? "",
+                              storyContext: story,
+                              language,
+                            });
+                            setLessonLoading(false);
+                            setLessonText(res.error ? `⚠️ ${res.error}` :
+                              res.story.replace(/\*\*(.*?)\*\*/g,"$1").replace(/\*(.*?)\*/g,"$1").trim());
+                          }
+                        }}
+                        style={{
+                          flex: 1, padding: "14px 8px", border: "none", cursor: "pointer",
+                          background: activeTab === tab.key ? "white" : "transparent",
+                          borderBottom: activeTab === tab.key ? `3px solid ${selected?.accentHex ?? "#A07820"}` : "3px solid transparent",
+                          transition: "all 0.2s",
+                        }}
+                      >
+                        <div style={{ fontFamily: serif, fontSize: "12px", fontWeight: 600,
+                          color: activeTab === tab.key ? (selected?.accentHex ?? "#A07820") : inkMuted }}>
+                          {tab.label}
+                        </div>
+                        <div style={{ fontFamily: body, fontSize: "10px", color: inkMuted, marginTop: "2px" }}>
+                          {tab.desc}
+                        </div>
+                      </button>
+                    ))}
+                  </div>
+                )}
+
+                {/* ── Tab content ── */}
+                <div style={{ padding: "32px 36px", minHeight: "260px" }}>
+
+                  {/* Decorative top line */}
+                  <div style={{
+                    height: "3px",
+                    background: `linear-gradient(90deg, transparent, ${selected?.accentHex ?? "#A07820"}, transparent)`,
+                    marginBottom: "28px", borderRadius: "2px", opacity: 0.7,
+                  }} />
+
+                  {/* Character badge */}
+                  {selected && (
+                    <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "24px" }}>
+                      <span style={{ fontSize: "24px" }}>{selected.icon}</span>
+                      <div>
+                        <span style={{ fontFamily: serif, fontSize: "10px", letterSpacing: "0.2em", textTransform: "uppercase", color: selected.accentHex }}>
+                          {selected.name}
+                        </span>
+                        <span style={{ fontFamily: serif, fontSize: "10px", color: inkMuted, marginLeft: "8px" }}>
+                          · {TONES.find(t => t.value === tone)?.icon} {TONES.find(t => t.value === tone)?.label} · {LANGUAGES.find(l => l.value === language)?.label}
+                        </span>
+                      </div>
+                    </div>
+                  )}
+
+                  {/* ── TAB 1: Story ── */}
+                  {(activeTab === "story" || !storyComplete) && (
+                    <>
+                      {loading && !shownText ? (
+                        <div style={{ display: "flex", alignItems: "center", gap: "12px", color: inkMuted, minHeight: "80px" }}>
+                          <span style={{ display: "inline-block", animation: "spin 1.2s linear infinite", fontSize: "20px" }}>⟳</span>
+                          <span style={{ fontFamily: body, fontSize: "14px", fontStyle: "italic" }}>Veda Vyasa is composing your story…</span>
+                        </div>
+                      ) : (
+                        <div style={{
+                          fontFamily: body, fontSize: "clamp(1rem, 2vw, 1.15rem)",
+                          lineHeight: 2, color: inkDark, whiteSpace: "pre-wrap",
+                          userSelect: "none", WebkitUserSelect: "none", minHeight: "120px",
+                        }}>
+                          {shownText}
+                          {!storyComplete && (
+                            <span style={{ animation: "blink 0.7s step-end infinite", color: gold }}>|</span>
+                          )}
+                        </div>
+                      )}
+
+                      {/* Skip button */}
+                      {!storyComplete && story && (
+                        <button onClick={() => setSkip(true)} style={{
+                          marginTop: "16px", padding: "6px 16px", borderRadius: "99px",
+                          background: "transparent", border: `1px solid ${borderClr}`,
+                          cursor: "pointer", fontFamily: serif, fontSize: "11px",
+                          color: inkMuted, letterSpacing: "0.08em",
+                        }}>
+                          Skip animation ⏭
+                        </button>
+                      )}
+
+                      {/* Tell me more */}
+                      {storyComplete && story && (
+                        <button
+                          onClick={async () => {
+                            setSkip(false); setStory(""); setLoading(true);
+                            setActiveTab("story"); setLessonText(""); setSituationText("");
+                            stoppedRef.current = true; window.speechSynthesis?.cancel(); setSpeaking(false);
+                            const res = await generateStory({
+                              characterName: selected?.name ?? "",
+                              prompt: "Continue the story — tell me more details, what happened next, go deeper into emotions.",
+                              tone, language,
+                            });
+                            setLoading(false);
+                            if (!res.error) {
+                              setStory(res.story.replace(/\*\*(.*?)\*\*/g,"$1").replace(/\*(.*?)\*/g,"$1").trim());
+                              stoppedRef.current = false;
+                            }
+                          }}
+                          style={{
+                            marginTop: "20px", padding: "10px 28px", borderRadius: "99px",
+                            background: "transparent", border: `1.5px solid ${selected?.accentHex ?? gold}`,
+                            cursor: "pointer", fontFamily: serif, fontSize: "13px",
+                            color: selected?.accentHex ?? gold, letterSpacing: "0.08em",
+                            display: "block", transition: "all 0.2s",
+                          }}
+                          onMouseEnter={e => e.currentTarget.style.background = (selected?.accentHex ?? gold) + "15"}
+                          onMouseLeave={e => e.currentTarget.style.background = "transparent"}
+                        >
+                          Tell me more →
+                        </button>
+                      )}
+                    </>
+                  )}
+
+                  {/* ── TAB 2: Life Lesson ── */}
+                  {activeTab === "lesson" && storyComplete && (
+                    <div>
+                      <p style={{ fontFamily: serif, fontSize: "10px", letterSpacing: "0.2em",
+                        textTransform: "uppercase", color: selected?.accentHex ?? gold, marginBottom: "20px" }}>
+                        💡 What {selected?.name}'s story means for your life today
+                      </p>
+
+                      {lessonLoading ? (
+                        <div style={{ display: "flex", alignItems: "center", gap: "12px", color: inkMuted }}>
+                          <span style={{ display: "inline-block", animation: "spin 1.2s linear infinite", fontSize: "20px" }}>⟳</span>
+                          <span style={{ fontFamily: body, fontSize: "14px", fontStyle: "italic" }}>Finding the lesson for your life…</span>
+                        </div>
+                      ) : (
+                        <div style={{
+                          fontFamily: body, fontSize: "clamp(1rem, 2vw, 1.1rem)",
+                          lineHeight: 2, color: inkDark, whiteSpace: "pre-wrap",
+                          userSelect: "none",
+                        }}>
+                          {lessonText}
+                        </div>
+                      )}
+                    </div>
+                  )}
+
+                  {/* ── TAB 3: My Situation ── */}
+                  {activeTab === "situation" && storyComplete && (
+                    <div>
+                      <p style={{ fontFamily: serif, fontSize: "10px", letterSpacing: "0.2em",
+                        textTransform: "uppercase", color: selected?.accentHex ?? gold, marginBottom: "16px" }}>
+                        🙋 Tell me your situation — get personal guidance
+                      </p>
+
+                      {!situationText && (
+                        <>
+                          <p style={{ fontFamily: body, fontSize: "13px", color: inkMuted,
+                            marginBottom: "16px", lineHeight: 1.6 }}>
+                            Describe what you're going through right now — {selected?.name}'s wisdom will be applied directly to your situation.
+                          </p>
+                          <textarea
+                            value={situationInput}
+                            onChange={e => setSituationInput(e.target.value)}
+                            placeholder={`e.g. "I work hard but never get recognised..." or "I'm being judged unfairly..."`}
+                            rows={4}
+                            style={{
+                              width: "100%", padding: "14px 16px", borderRadius: "12px",
+                              fontFamily: body, fontSize: "14px", color: inkDark,
+                              background: "rgba(160,120,32,0.04)",
+                              border: `1.5px solid ${situationInput ? (selected?.accentHex ?? gold) : "rgba(160,120,32,0.2)"}`,
+                              outline: "none", resize: "vertical", boxSizing: "border-box",
+                              transition: "border 0.2s",
+                            }}
+                          />
+                          <button
+                            onClick={async () => {
+                              if (!situationInput.trim()) return;
+                              setSituationLoading(true);
+                              const res = await generateMySituation({
+                                characterName: selected?.name ?? "",
+                                storyContext: story,
+                                userSituation: situationInput.trim(),
+                                language,
+                              });
+                              setSituationLoading(false);
+                              setSituationText(res.error ? `⚠️ ${res.error}` :
+                                res.story.replace(/\*\*(.*?)\*\*/g,"$1").replace(/\*(.*?)\*/g,"$1").trim());
+                            }}
+                            disabled={situationLoading || !situationInput.trim()}
+                            style={{
+                              marginTop: "14px", padding: "12px 32px", borderRadius: "99px",
+                              background: situationInput.trim() ? (selected?.accentHex ?? gold) : "rgba(160,120,32,0.2)",
+                              color: situationInput.trim() ? "#FFF8E8" : inkMuted,
+                              border: "none", cursor: situationInput.trim() ? "pointer" : "not-allowed",
+                              fontFamily: serif, fontSize: "13px", letterSpacing: "0.1em",
+                              display: "flex", alignItems: "center", gap: "8px",
+                            }}
+                          >
+                            {situationLoading
+                              ? <><span style={{ display:"inline-block", animation:"spin 1.2s linear infinite" }}>⟳</span> Getting your guidance…</>
+                              : "✨ Get my guidance"}
+                          </button>
+                        </>
+                      )}
+
+                      {situationText && (
+                        <>
+                          <div style={{
+                            fontFamily: body, fontSize: "clamp(1rem, 2vw, 1.1rem)",
+                            lineHeight: 2, color: inkDark, whiteSpace: "pre-wrap",
+                            userSelect: "none",
+                          }}>
+                            {situationText}
+                          </div>
+                          <button
+                            onClick={() => { setSituationText(""); setSituationInput(""); }}
+                            style={{
+                              marginTop: "20px", padding: "8px 20px", borderRadius: "99px",
+                              background: "transparent", border: `1px solid ${borderClr}`,
+                              cursor: "pointer", fontFamily: serif, fontSize: "11px",
+                              color: inkMuted,
+                            }}
+                          >
+                            Try a different situation
+                          </button>
+                        </>
+                      )}
+                    </div>
+                  )}
+
+                  <style>{`
+                    @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+                    @keyframes spin  { to { transform: rotate(360deg); } }
+                  `}</style>
+
+                  {/* Decorative bottom line */}
+                  <div style={{
+                    height: "3px",
+                    background: `linear-gradient(90deg, transparent, ${selected?.accentHex ?? "#A07820"}, transparent)`,
+                    marginTop: "28px", borderRadius: "2px", opacity: 0.7,
+                  }} />
+                </div>
+              </div>
+            )}
                 {/* Decorative top line */}
                 <div style={{
                   height: "3px",
