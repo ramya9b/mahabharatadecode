@@ -105,6 +105,9 @@ const StoryTeller = () => {
   }, [step]);
 
   /* ── Generate story ── */
+  /* ── Abort controller ref to cancel in-flight requests ── */
+  const abortRef = useRef<AbortController | null>(null);
+
   const handleGenerate = useCallback(async () => {
     if (!selected) return;
     const promptText =
@@ -113,6 +116,11 @@ const StoryTeller = () => {
         : customPrompt.trim();
     if (!promptText) return;
 
+    /* Cancel any in-flight request */
+    if (abortRef.current) { abortRef.current.abort(); }
+    abortRef.current = new AbortController();
+
+    /* Reset ALL state cleanly */
     setLoading(true);
     setError("");
     setStory("");
@@ -123,31 +131,41 @@ const StoryTeller = () => {
     setLessonText("");
     setSituationText("");
     setSituationInput("");
+    setLessonLoading(false);
+    setSituationLoading(false);
     sentIdxRef.current   = 0;
     sentencesRef.current = [];
-    stoppedRef.current   = false;
+    stoppedRef.current   = true;
     window.speechSynthesis?.cancel();
+    stoppedRef.current   = false;
 
-    const result = await generateStory({
-      characterName: selected.name,
-      prompt: promptText,
-      tone,
-      language,
-    });
+    try {
+      const result = await generateStory({
+        characterName: selected.name,
+        prompt: promptText,
+        tone,
+        language,
+      });
 
-    setLoading(false);
+      /* Ignore result if a new request was already fired */
+      if (abortRef.current?.signal.aborted) return;
 
-    if (result.error) {
-      setError(result.error);
-    } else {
-      /* Clean markdown from story before displaying */
-      const cleaned = result.story
-        .replace(/\*\*(.*?)\*\*/g, "$1")
-        .replace(/\*(.*?)\*/g, "$1")
-        .replace(/#{1,6}\s/g, "")
-        .replace(/_{1,2}(.*?)_{1,2}/g, "$1")
-        .trim();
-      setStory(cleaned);
+      setLoading(false);
+
+      if (result.error) {
+        setError(result.error);
+      } else {
+        const cleaned = result.story
+          .replace(/\*\*(.*?)\*\*/g, "$1")
+          .replace(/\*(.*?)\*/g, "$1")
+          .replace(/#{1,6}\s/g, "")
+          .replace(/_{1,2}(.*?)_{1,2}/g, "$1")
+          .trim();
+        setStory(cleaned);
+      }
+    } catch {
+      setLoading(false);
+      setError("Something went wrong. Please try again.");
     }
   }, [selected, activePromptIdx, customPrompt, tone, language]);
 
@@ -606,14 +624,28 @@ const StoryTeller = () => {
                           /* Auto-load Life Lesson on first click */
                           if (tab.key === "lesson" && !lessonText && !lessonLoading && story) {
                             setLessonLoading(true);
-                            const res = await generateLifeLesson({
-                              characterName: selected?.name ?? "",
-                              storyContext: story,
-                              language,
-                            });
-                            setLessonLoading(false);
-                            setLessonText(res.error ? `⚠️ ${res.error}` :
-                              res.story.replace(/\*\*(.*?)\*\*/g,"$1").replace(/\*(.*?)\*/g,"$1").trim());
+                            setLessonText("");
+                            try {
+                              const res = await generateLifeLesson({
+                                characterName: selected?.name ?? "",
+                                storyContext: story,
+                                language,
+                              });
+                              setLessonLoading(false);
+                              if (res.error) {
+                                setLessonText(`⚠️ ${res.error}`);
+                              } else {
+                                setLessonText(
+                                  res.story
+                                    .replace(/\*\*(.*?)\*\*/g,"$1")
+                                    .replace(/\*(.*?)\*/g,"$1")
+                                    .trim()
+                                );
+                              }
+                            } catch {
+                              setLessonLoading(false);
+                              setLessonText("⚠️ Something went wrong. Please try again.");
+                            }
                           }
                         }}
                         style={{
@@ -785,16 +817,30 @@ const StoryTeller = () => {
                           <button
                             onClick={async () => {
                               if (!situationInput.trim()) return;
+                              setSituationText("");
                               setSituationLoading(true);
-                              const res = await generateMySituation({
-                                characterName: selected?.name ?? "",
-                                storyContext: story,
-                                userSituation: situationInput.trim(),
-                                language,
-                              });
-                              setSituationLoading(false);
-                              setSituationText(res.error ? `⚠️ ${res.error}` :
-                                res.story.replace(/\*\*(.*?)\*\*/g,"$1").replace(/\*(.*?)\*/g,"$1").trim());
+                              try {
+                                const res = await generateMySituation({
+                                  characterName: selected?.name ?? "",
+                                  storyContext: story,
+                                  userSituation: situationInput.trim(),
+                                  language,
+                                });
+                                setSituationLoading(false);
+                                if (res.error) {
+                                  setSituationText(`⚠️ ${res.error}`);
+                                } else {
+                                  setSituationText(
+                                    res.story
+                                      .replace(/\*\*(.*?)\*\*/g,"$1")
+                                      .replace(/\*(.*?)\*/g,"$1")
+                                      .trim()
+                                  );
+                                }
+                              } catch {
+                                setSituationLoading(false);
+                                setSituationText("⚠️ Something went wrong. Please try again.");
+                              }
                             }}
                             disabled={situationLoading || !situationInput.trim()}
                             style={{
