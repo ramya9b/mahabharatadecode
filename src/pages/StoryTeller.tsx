@@ -82,10 +82,11 @@ const StoryTeller = () => {
   const storyRef  = useRef<HTMLDivElement>(null);
   const utterRef  = useRef<SpeechSynthesisUtterance | null>(null);
 
-  const [skip, setSkip] = useState(false);
+  const [skip, setSkip]     = useState(false);
 
-  const { displayed, done } = useTypewriter(skip ? "" : story, 6);
-  const shownText = skip ? story : displayed;
+  const { displayed, done } = useTypewriter(story, 6);
+  const shownText           = skip ? story : displayed;
+  const storyComplete       = skip || done;   // single source of truth
 
   /* ── Scroll to story when it starts ── */
   useEffect(() => {
@@ -566,14 +567,22 @@ const StoryTeller = () => {
               <div
                 style={{
                   background: `linear-gradient(160deg, hsl(38 50% 96%) 0%, hsl(28 45% 93%) 100%)`,
-                  border: `1px solid ${selected?.accentHex ?? borderClr}40`,
-                  borderRadius: "20px", padding: "40px 36px",
-                  boxShadow: `0 8px 40px ${selected?.accentHex ?? gold}18`,
-                  position: "relative", overflow: "hidden",
+                  border: `1.5px solid ${selected?.accentHex ?? gold}50`,
+                  borderRadius: "20px",
+                  padding: "36px",
+                  minHeight: "260px",
+                  boxShadow: `0 8px 40px rgba(0,0,0,0.08)`,
+                  position: "relative",
                 }}
               >
                 {/* Decorative top line */}
-                <div style={{ height: "3px", background: `linear-gradient(90deg, transparent, ${selected?.accentHex ?? gold}, transparent)`, marginBottom: "32px", borderRadius: "2px" }} />
+                <div style={{
+                  height: "3px",
+                  background: `linear-gradient(90deg, transparent, ${selected?.accentHex ?? "#A07820"}, transparent)`,
+                  marginBottom: "28px",
+                  borderRadius: "2px",
+                  opacity: 0.7,
+                }} />
 
                 {/* Character badge */}
                 {selected && (
@@ -591,25 +600,33 @@ const StoryTeller = () => {
                 )}
 
                 {/* Story text */}
-                {loading && !displayed ? (
-                  <div style={{ display: "flex", alignItems: "center", gap: "12px", color: inkMuted }}>
+                {loading && !shownText ? (
+                  <div style={{ display: "flex", alignItems: "center", gap: "12px", color: inkMuted, minHeight: "80px" }}>
                     <span style={{ display: "inline-block", animation: "spin 1.2s linear infinite", fontSize: "20px" }}>⟳</span>
                     <span style={{ fontFamily: body, fontSize: "14px", fontStyle: "italic" }}>Veda Vyasa is composing your story…</span>
                   </div>
                 ) : (
                   <div
                     style={{
-                      fontFamily: body, fontSize: "clamp(1rem, 2vw, 1.1rem)",
-                      lineHeight: 1.9, color: inkDark, whiteSpace: "pre-wrap",
+                      fontFamily: body,
+                      fontSize: "clamp(1rem, 2vw, 1.15rem)",
+                      lineHeight: 2,
+                      color: inkDark,
+                      whiteSpace: "pre-wrap",
+                      userSelect: "none",        /* ← Fix Issue 3: no blue selection highlight */
+                      WebkitUserSelect: "none",
+                      minHeight: "120px",         /* ← Fix Issue 4: card never collapses */
                     }}
                   >
                     {shownText}
-                    {!done && !skip && <span style={{ animation: "blink 0.7s step-end infinite", color: gold }}>|</span>}
+                    {!storyComplete && (
+                      <span style={{ animation: "blink 0.7s step-end infinite", color: gold, userSelect: "none" }}>|</span>
+                    )}
                   </div>
                 )}
 
                 {/* Skip animation button */}
-                {!done && !skip && story && (
+                {!storyComplete && story && (
                   <button
                     onClick={() => setSkip(true)}
                     style={{
@@ -623,10 +640,13 @@ const StoryTeller = () => {
                   </button>
                 )}
 
-                <style>{`@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }`}</style>
+                <style>{`
+                  @keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }
+                  @keyframes spin  { to { transform: rotate(360deg); } }
+                `}</style>
 
-                {/* Tell me more button */}
-                {story && (done || skip) && (
+                {/* Tell me more — only after FULL story displayed */}
+                {storyComplete && story && (
                   <button
                     onClick={async () => {
                       const morePrompt = `Continue the story — tell me more details, what happened next, and go deeper into the emotions and events.`;
@@ -682,7 +702,7 @@ const StoryTeller = () => {
             )}
 
             {/* Actions row */}
-            {story && done && (
+            {story && storyComplete && (
               <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", alignItems: "center", marginTop: "24px" }}>
                 {/* Voice narration */}
                 {"speechSynthesis" in window && (
