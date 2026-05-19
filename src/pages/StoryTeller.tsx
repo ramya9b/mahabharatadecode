@@ -109,8 +109,9 @@ const StoryTeller = () => {
     setStep("story");
     setSpeaking(false);
     setSkip(false);
-    sentIdxRef.current = 0;
+    sentIdxRef.current   = 0;
     sentencesRef.current = [];
+    stoppedRef.current   = false;
     window.speechSynthesis?.cancel();
 
     const result = await generateStory({
@@ -139,6 +140,7 @@ const StoryTeller = () => {
   /* ── Voice narration — sentence-by-sentence to fix Chrome TTS bug ── */
   const sentencesRef = useRef<string[]>([]);
   const sentIdxRef   = useRef(0);
+  const stoppedRef   = useRef(false);   // ← prevents onend loop after cancel
 
   /* Pick best Indian voice for the selected language */
   const getIndianVoice = useCallback((lang: string): SpeechSynthesisVoice | null => {
@@ -174,6 +176,7 @@ const StoryTeller = () => {
   }, []);
 
   const speakNext = useCallback(() => {
+    if (stoppedRef.current) return;   // ← stop here if cancelled
     const sentences = sentencesRef.current;
     const idx       = sentIdxRef.current;
     if (idx >= sentences.length) { setSpeaking(false); return; }
@@ -191,8 +194,16 @@ const StoryTeller = () => {
       language === "kn" ? "kn-IN" : "en-IN"
     );
 
-    utt.onend   = () => { sentIdxRef.current += 1; speakNext(); };
-    utt.onerror = () => { sentIdxRef.current += 1; speakNext(); };
+    utt.onend   = () => {
+      if (stoppedRef.current) return;  // ← stop here too
+      sentIdxRef.current += 1;
+      speakNext();
+    };
+    utt.onerror = () => {
+      if (stoppedRef.current) return;  // ← and here
+      sentIdxRef.current += 1;
+      speakNext();
+    };
     utterRef.current = utt;
     window.speechSynthesis.speak(utt);
   }, [language, getIndianVoice]);
@@ -201,11 +212,15 @@ const StoryTeller = () => {
     if (!("speechSynthesis" in window)) return;
 
     if (speaking) {
+      stoppedRef.current = true;        // ← set BEFORE cancel
       window.speechSynthesis.cancel();
       setSpeaking(false);
       sentIdxRef.current = 0;
       return;
     }
+
+    /* Reset stopped flag for new narration */
+    stoppedRef.current   = false;
 
     /* Strip markdown formatting before speaking */
     const cleanText = story
@@ -610,8 +625,59 @@ const StoryTeller = () => {
 
                 <style>{`@keyframes blink { 0%,100%{opacity:1} 50%{opacity:0} }`}</style>
 
-                {/* Decorative bottom line */}
-                <div style={{ height: "3px", background: `linear-gradient(90deg, transparent, ${selected?.accentHex ?? gold}, transparent)`, marginTop: "32px", borderRadius: "2px" }} />
+                {/* Tell me more button */}
+                {story && (done || skip) && (
+                  <button
+                    onClick={async () => {
+                      const morePrompt = `Continue the story — tell me more details, what happened next, and go deeper into the emotions and events.`;
+                      setSkip(false);
+                      setStory("");
+                      setLoading(true);
+                      stoppedRef.current = true;
+                      window.speechSynthesis?.cancel();
+                      setSpeaking(false);
+                      const { generateStory } = await import("@/services/gemini");
+                      const result = await generateStory({
+                        characterName: selected?.name ?? "",
+                        prompt: morePrompt,
+                        tone,
+                        language,
+                      });
+                      setLoading(false);
+                      if (!result.error) {
+                        const cleaned = result.story
+                          .replace(/\*\*(.*?)\*\*/g, "$1")
+                          .replace(/\*(.*?)\*/g, "$1")
+                          .replace(/#{1,6}\s/g, "")
+                          .trim();
+                        setStory(cleaned);
+                        stoppedRef.current = false;
+                      }
+                    }}
+                    style={{
+                      marginTop: "16px",
+                      padding: "10px 28px",
+                      borderRadius: "99px",
+                      background: "transparent",
+                      border: `1.5px solid ${selected?.accentHex ?? gold}`,
+                      cursor: "pointer",
+                      fontFamily: serif,
+                      fontSize: "13px",
+                      color: selected?.accentHex ?? gold,
+                      letterSpacing: "0.08em",
+                      transition: "all 0.2s",
+                      display: "block",
+                    }}
+                    onMouseEnter={e => {
+                      e.currentTarget.style.background = (selected?.accentHex ?? gold) + "15";
+                    }}
+                    onMouseLeave={e => {
+                      e.currentTarget.style.background = "transparent";
+                    }}
+                  >
+                    Tell me more →
+                  </button>
+                )}
               </div>
             )}
 
