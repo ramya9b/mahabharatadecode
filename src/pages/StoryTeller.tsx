@@ -599,10 +599,12 @@ const StoryTeller = () => {
                       <button
                         key={tab.key}
                         onClick={async () => {
+                          /* Guard — Life Lesson and My Situation need story first */
+                          if (!story && tab.key !== "story") return;
                           setActiveTab(tab.key);
 
                           /* Auto-load Life Lesson on first click */
-                          if (tab.key === "lesson" && !lessonText && !lessonLoading) {
+                          if (tab.key === "lesson" && !lessonText && !lessonLoading && story) {
                             setLessonLoading(true);
                             const res = await generateLifeLesson({
                               characterName: selected?.name ?? "",
@@ -615,7 +617,9 @@ const StoryTeller = () => {
                           }
                         }}
                         style={{
-                          flex: 1, padding: "14px 8px", border: "none", cursor: "pointer",
+                          flex: 1, padding: "14px 8px", border: "none",
+                          cursor: (!story && tab.key !== "story") ? "not-allowed" : "pointer",
+                          opacity: (!story && tab.key !== "story") ? 0.4 : 1,
                           background: activeTab === tab.key ? "white" : "transparent",
                           borderBottom: activeTab === tab.key ? `3px solid ${selected?.accentHex ?? "#A07820"}` : "3px solid transparent",
                           transition: "all 0.2s",
