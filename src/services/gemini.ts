@@ -154,7 +154,7 @@ Respond entirely in ${langName}.`;
         body: JSON.stringify({
           system_instruction: { parts: [{ text: LIFE_LESSON_PROMPT }] },
           contents: [{ role: "user", parts: [{ text: userMessage }] }],
-          generationConfig: { temperature: 0.8, maxOutputTokens: 1200, topP: 0.95 },
+          generationConfig: { temperature: 0.8, maxOutputTokens: 2000, topP: 0.95 },
         }),
       }
     );
@@ -219,7 +219,7 @@ Respond entirely in ${langName}.`;
         body: JSON.stringify({
           system_instruction: { parts: [{ text: MY_SITUATION_PROMPT }] },
           contents: [{ role: "user", parts: [{ text: userMessage }] }],
-          generationConfig: { temperature: 0.82, maxOutputTokens: 1500, topP: 0.95 },
+          generationConfig: { temperature: 0.82, maxOutputTokens: 2000, topP: 0.95 },
         }),
       }
     );
