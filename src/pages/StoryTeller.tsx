@@ -17,7 +17,7 @@ import {
   GROUP_LABELS,
   GROUP_COLORS,
 } from "@/data/storyCharacters";
-import { generateStory, generateLifeLesson, generateMySituation, type Tone, type Language } from "@/services/gemini";
+import { generateStory, generateLifeLesson, generateMySituation, type Tone, type Language } from "@/services/ai";
 
 /* ── Types ── */
 type Step = "select" | "prompt" | "story";
@@ -588,7 +588,7 @@ const StoryTeller = () => {
                   ⚠️ {error}
                 </p>
                 <p style={{ fontFamily: body, fontSize: "12px", color: inkMuted, marginTop: "8px" }}>
-                  Make sure VITE_GEMINI_API_KEY is set in your .env file. Get a free key at ai.google.dev
+                  Make sure VITE_GROQ_API_KEY is set in your .env file. Get a free key at console.groq.com
                 </p>
               </div>
             )}
@@ -963,14 +963,14 @@ const StoryTeller = () => {
         )}
 
         {/* ── API Key notice (dev only) ── */}
-        {!import.meta.env.VITE_GEMINI_API_KEY && step !== "story" && (
+        {!import.meta.env.VITE_GROQ_API_KEY && !import.meta.env.VITE_GEMINI_API_KEY && step !== "story" && (
           <div style={{
             marginTop: "48px", padding: "20px 24px", borderRadius: "12px",
             background: "rgba(212,175,55,0.08)", border: "1px solid rgba(212,175,55,0.25)",
           }}>
             <p style={{ fontFamily: serif, fontSize: "13px", color: goldDark, margin: 0 }}>
-              🔑 Add <code style={{ background: "rgba(212,175,55,0.15)", padding: "2px 6px", borderRadius: "4px" }}>VITE_GEMINI_API_KEY=your_key</code> to your <code>.env</code> file to activate story generation.
-              Get a free key at <a href="https://ai.google.dev" target="_blank" rel="noreferrer" style={{ color: gold }}>ai.google.dev</a>
+              🔑 Add <code style={{ background: "rgba(212,175,55,0.15)", padding: "2px 6px", borderRadius: "4px" }}>VITE_GROQ_API_KEY=your_key</code> to your <code>.env</code> file to activate story generation.
+              Get a free key at <a href="https://console.groq.com" target="_blank" rel="noreferrer" style={{ color: gold }}>console.groq.com</a>
             </p>
           </div>
         )}
