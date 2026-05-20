@@ -71,7 +71,7 @@ const StoryTeller = () => {
   const [showIntro, setShowIntro]           = useState(true);  // cinematic opening
   const [activeGroup, setActiveGroup]       = useState<CharacterGroup>("pandavas");
   const [selected, setSelected]             = useState<StoryCharacter | null>(null);
-  const [currentTheme, setCurrentTheme]     = useState<MoodTheme>("default");
+  const [bgMode, setBgMode]           = useState<"watermark"|"gradient">("watermark");
   const [customPrompt, setCustomPrompt]     = useState("");
   const [activePromptIdx, setActivePromptIdx] = useState<number | null>(null);
   const [tone, setTone]                     = useState<Tone>("epic");
@@ -419,9 +419,72 @@ const StoryTeller = () => {
       background: isDark ? theme.bgGradient : parchment,
       color: inkDark,
       transition: "background 0.8s ease, color 0.5s ease",
+      position: "relative",
     }}>
-      {/* CSS mood particle animation */}
-      {isDark && (
+
+      {/* ── SCENE BACKGROUND — Divine group only (A/B test) ── */}
+      {currentTheme === "divine" && (
+        <>
+          {/* Toggle button */}
+          <div style={{
+            position: "fixed", top: "72px", right: "16px", zIndex: 999,
+            display: "flex", gap: "6px",
+            background: "rgba(2,8,24,0.85)", padding: "6px", borderRadius: "99px",
+            border: "1px solid rgba(100,180,255,0.25)",
+          }}>
+            <button onClick={() => setBgMode("watermark")} style={{
+              padding: "5px 14px", borderRadius: "99px", border: "none", cursor: "pointer",
+              fontFamily: serif, fontSize: "11px", letterSpacing: "0.08em",
+              background: bgMode === "watermark" ? "#2471A3" : "transparent",
+              color: bgMode === "watermark" ? "white" : "rgba(100,180,255,0.6)",
+              transition: "all 0.2s",
+            }}>Watermark</button>
+            <button onClick={() => setBgMode("gradient")} style={{
+              padding: "5px 14px", borderRadius: "99px", border: "none", cursor: "pointer",
+              fontFamily: serif, fontSize: "11px", letterSpacing: "0.08em",
+              background: bgMode === "gradient" ? "#2471A3" : "transparent",
+              color: bgMode === "gradient" ? "white" : "rgba(100,180,255,0.6)",
+              transition: "all 0.2s",
+            }}>Left Gradient</button>
+          </div>
+
+          {/* Option A — Watermark (image faint behind dark base) */}
+          {bgMode === "watermark" && (
+            <div style={{ position: "fixed", inset: 0, zIndex: 0, pointerEvents: "none" }}>
+              {/* Dark base */}
+              <div style={{ position: "absolute", inset: 0, background: "linear-gradient(160deg, #020818 0%, #061840 50%, #0d3080 100%)" }} />
+              {/* AI image as watermark */}
+              <div style={{
+                position: "absolute", inset: 0,
+                backgroundImage: "url('/scenes/divine.webp')",
+                backgroundSize: "cover", backgroundPosition: "center",
+                opacity: 0.18,
+                filter: "saturate(0.6)",
+              }} />
+            </div>
+          )}
+
+          {/* Option B — Left-heavy gradient (image visible on right) */}
+          {bgMode === "gradient" && (
+            <div style={{ position: "fixed", inset: 0, zIndex: 0, pointerEvents: "none" }}>
+              {/* AI image full behind */}
+              <div style={{
+                position: "absolute", inset: 0,
+                backgroundImage: "url('/scenes/divine.webp')",
+                backgroundSize: "cover", backgroundPosition: "center right",
+              }} />
+              {/* Left-heavy dark gradient overlay */}
+              <div style={{
+                position: "absolute", inset: 0,
+                background: "linear-gradient(to right, rgba(2,8,24,0.95) 0%, rgba(2,8,24,0.80) 40%, rgba(2,8,24,0.45) 65%, rgba(2,8,24,0.15) 100%)",
+              }} />
+            </div>
+          )}
+        </>
+      )}
+
+      {/* Regular mood background for non-divine themes */}
+      {currentTheme !== "divine" && isDark && (
         <MoodBackground theme={currentTheme} opacity={0.12} />
       )}
       <div style={{ position: "relative", zIndex: 1 }}>
