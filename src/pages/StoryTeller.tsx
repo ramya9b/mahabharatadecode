@@ -568,14 +568,14 @@ const StoryTeller = () => {
                     }}
                     style={{
                       padding: "16px", borderRadius: "12px", textAlign: "left", cursor: "pointer",
-                      background: isSelected ? char.accentHex + "18" : cardBg,
-                      border: `1.5px solid ${isSelected ? char.accentHex : borderClr}`,
+                      background: isSelected ? GROUP_COLORS[char.group] + "18" : cardBg,
+                      border: `1.5px solid ${isSelected ? GROUP_COLORS[char.group] : borderClr}`,
                       transition: "all 0.2s",
-                      boxShadow: isSelected ? `0 4px 16px ${char.accentHex}30` : "none",
+                      boxShadow: isSelected ? `0 4px 16px ${GROUP_COLORS[char.group]}30` : "none",
                     }}
                   >
                     <div style={{ fontSize: "28px", marginBottom: "8px" }}>{char.icon}</div>
-                    <div style={{ fontFamily: serif, fontSize: "14px", fontWeight: 600, color: isSelected ? char.accentHex : inkDark, marginBottom: "4px" }}>
+                    <div style={{ fontFamily: serif, fontSize: "14px", fontWeight: 600, color: isSelected ? GROUP_COLORS[char.group] : inkDark, marginBottom: "4px" }}>
                       {char.name}
                     </div>
                     <div style={{ fontFamily: serif, fontSize: "10px", color: inkMuted, letterSpacing: "0.06em", marginBottom: "6px" }}>
@@ -602,7 +602,7 @@ const StoryTeller = () => {
             <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "8px" }}>
               <span style={{ fontSize: "32px" }}>{selected.icon}</span>
               <div>
-                <h2 style={{ fontFamily: serif, fontSize: "1.5rem", color: selected.accentHex, margin: 0 }}>
+                <h2 style={{ fontFamily: serif, fontSize: "1.5rem", color: GROUP_COLORS[selected.group], margin: 0 }}>
                   {selected.name}
                 </h2>
                 <p style={{ fontFamily: serif, fontSize: "11px", letterSpacing: "0.1em", color: inkMuted, margin: 0 }}>
@@ -627,11 +627,11 @@ const StoryTeller = () => {
                   onClick={() => { setActivePromptIdx(i); setCustomPrompt(""); }}
                   style={{
                     padding: "12px 16px", borderRadius: "10px", textAlign: "left", cursor: "pointer",
-                    background: activePromptIdx === i ? selected.accentHex + "15" : "rgba(160,120,32,0.04)",
-                    border: `1.5px solid ${activePromptIdx === i ? selected.accentHex : "rgba(160,120,32,0.2)"}`,
+                    background: activePromptIdx === i ? GROUP_COLORS[selected.group] + "15" : "rgba(160,120,32,0.04)",
+                    border: `1.5px solid ${activePromptIdx === i ? GROUP_COLORS[selected.group] : "rgba(160,120,32,0.2)"}`,
                     transition: "all 0.2s",
                     fontFamily: body, fontSize: "14px",
-                    color: activePromptIdx === i ? selected.accentHex : inkDark,
+                    color: activePromptIdx === i ? GROUP_COLORS[selected.group] : inkDark,
                   }}
                 >
                   <span style={{ fontFamily: serif, fontSize: "11px", letterSpacing: "0.08em", color: inkMuted, display: "block", marginBottom: "2px" }}>
@@ -667,7 +667,7 @@ const StoryTeller = () => {
               disabled={loading || (activePromptIdx === null && !customPrompt.trim())}
               style={{
                 marginTop: "16px", padding: "14px 40px", borderRadius: "99px",
-                background: (activePromptIdx !== null || customPrompt.trim()) && !loading ? selected.accentHex : "rgba(160,120,32,0.2)",
+                background: (activePromptIdx !== null || customPrompt.trim()) && !loading ? GROUP_COLORS[selected.group] : "rgba(160,120,32,0.2)",
                 color: (activePromptIdx !== null || customPrompt.trim()) && !loading ? "#FFF8E8" : inkMuted,
                 border: "none", cursor: (activePromptIdx !== null || customPrompt.trim()) && !loading ? "pointer" : "not-allowed",
                 fontFamily: serif, fontSize: "14px", letterSpacing: "0.12em",
@@ -710,7 +710,7 @@ const StoryTeller = () => {
             {(loading || story) && (
               <div style={{
                 background: `linear-gradient(160deg, hsl(38 50% 96%) 0%, hsl(28 45% 93%) 100%)`,
-                border: `1.5px solid ${selected?.accentHex ?? "#A07820"}50`,
+                border: `1.5px solid ${(selected ? GROUP_COLORS[selected.group] : "#A07820")}50`,
                 borderRadius: "20px",
                 overflow: "hidden",
                 boxShadow: "0 8px 40px rgba(0,0,0,0.08)",
@@ -766,12 +766,12 @@ const StoryTeller = () => {
                           cursor: (!story && tab.key !== "story") ? "not-allowed" : "pointer",
                           opacity: (!story && tab.key !== "story") ? 0.4 : 1,
                           background: activeTab === tab.key ? "white" : "transparent",
-                          borderBottom: activeTab === tab.key ? `3px solid ${selected?.accentHex ?? "#A07820"}` : "3px solid transparent",
+                          borderBottom: activeTab === tab.key ? `3px solid ${(selected ? GROUP_COLORS[selected.group] : "#A07820")}` : "3px solid transparent",
                           transition: "all 0.2s",
                         }}
                       >
                         <div style={{ fontFamily: serif, fontSize: "12px", fontWeight: 600,
-                          color: activeTab === tab.key ? (selected?.accentHex ?? "#A07820") : inkMuted }}>
+                          color: activeTab === tab.key ? ((selected ? GROUP_COLORS[selected.group] : "#A07820")) : inkMuted }}>
                           {tab.label}
                         </div>
                         <div style={{ fontFamily: body, fontSize: "10px", color: inkMuted, marginTop: "2px" }}>
@@ -788,7 +788,7 @@ const StoryTeller = () => {
                   {/* Decorative top line */}
                   <div style={{
                     height: "3px",
-                    background: `linear-gradient(90deg, transparent, ${selected?.accentHex ?? "#A07820"}, transparent)`,
+                    background: `linear-gradient(90deg, transparent, ${(selected ? GROUP_COLORS[selected.group] : "#A07820")}, transparent)`,
                     marginBottom: "28px", borderRadius: "2px", opacity: 0.7,
                   }} />
 
@@ -797,7 +797,7 @@ const StoryTeller = () => {
                     <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "24px" }}>
                       <span style={{ fontSize: "24px" }}>{selected.icon}</span>
                       <div>
-                        <span style={{ fontFamily: serif, fontSize: "10px", letterSpacing: "0.2em", textTransform: "uppercase", color: selected.accentHex }}>
+                        <span style={{ fontFamily: serif, fontSize: "10px", letterSpacing: "0.2em", textTransform: "uppercase", color: GROUP_COLORS[selected.group] }}>
                           {selected.name}
                         </span>
                         <span style={{ fontFamily: serif, fontSize: "10px", color: inkMuted, marginLeft: "8px" }}>
@@ -860,12 +860,12 @@ const StoryTeller = () => {
                           }}
                           style={{
                             marginTop: "20px", padding: "10px 28px", borderRadius: "99px",
-                            background: "transparent", border: `1.5px solid ${selected?.accentHex ?? gold}`,
+                            background: "transparent", border: `1.5px solid ${(selected ? GROUP_COLORS[selected.group] : gold)}`,
                             cursor: "pointer", fontFamily: serif, fontSize: "13px",
-                            color: selected?.accentHex ?? gold, letterSpacing: "0.08em",
+                            color: (selected ? GROUP_COLORS[selected.group] : gold), letterSpacing: "0.08em",
                             display: "block", transition: "all 0.2s",
                           }}
-                          onMouseEnter={e => e.currentTarget.style.background = (selected?.accentHex ?? gold) + "15"}
+                          onMouseEnter={e => e.currentTarget.style.background = ((selected ? GROUP_COLORS[selected.group] : gold)) + "15"}
                           onMouseLeave={e => e.currentTarget.style.background = "transparent"}
                         >
                           Tell me more →
@@ -878,7 +878,7 @@ const StoryTeller = () => {
                   {activeTab === "lesson" && storyComplete && (
                     <div>
                       <p style={{ fontFamily: serif, fontSize: "10px", letterSpacing: "0.2em",
-                        textTransform: "uppercase", color: selected?.accentHex ?? gold, marginBottom: "20px" }}>
+                        textTransform: "uppercase", color: (selected ? GROUP_COLORS[selected.group] : gold), marginBottom: "20px" }}>
                         💡 What {selected?.name}'s story means for your life today
                       </p>
 
@@ -903,7 +903,7 @@ const StoryTeller = () => {
                   {activeTab === "situation" && storyComplete && (
                     <div>
                       <p style={{ fontFamily: serif, fontSize: "10px", letterSpacing: "0.2em",
-                        textTransform: "uppercase", color: selected?.accentHex ?? gold, marginBottom: "16px" }}>
+                        textTransform: "uppercase", color: (selected ? GROUP_COLORS[selected.group] : gold), marginBottom: "16px" }}>
                         🙋 Tell me your situation — get personal guidance
                       </p>
 
@@ -922,7 +922,7 @@ const StoryTeller = () => {
                               width: "100%", padding: "14px 16px", borderRadius: "12px",
                               fontFamily: body, fontSize: "14px", color: inkDark,
                               background: "rgba(160,120,32,0.04)",
-                              border: `1.5px solid ${situationInput ? (selected?.accentHex ?? gold) : "rgba(160,120,32,0.2)"}`,
+                              border: `1.5px solid ${situationInput ? ((selected ? GROUP_COLORS[selected.group] : gold)) : "rgba(160,120,32,0.2)"}`,
                               outline: "none", resize: "vertical", boxSizing: "border-box",
                               transition: "border 0.2s",
                             }}
@@ -958,7 +958,7 @@ const StoryTeller = () => {
                             disabled={situationLoading || !situationInput.trim()}
                             style={{
                               marginTop: "14px", padding: "12px 32px", borderRadius: "99px",
-                              background: situationInput.trim() ? (selected?.accentHex ?? gold) : "rgba(160,120,32,0.2)",
+                              background: situationInput.trim() ? ((selected ? GROUP_COLORS[selected.group] : gold)) : "rgba(160,120,32,0.2)",
                               color: situationInput.trim() ? "#FFF8E8" : inkMuted,
                               border: "none", cursor: situationInput.trim() ? "pointer" : "not-allowed",
                               fontFamily: serif, fontSize: "13px", letterSpacing: "0.1em",
@@ -1005,7 +1005,7 @@ const StoryTeller = () => {
                   {/* Decorative bottom line */}
                   <div style={{
                     height: "3px",
-                    background: `linear-gradient(90deg, transparent, ${selected?.accentHex ?? "#A07820"}, transparent)`,
+                    background: `linear-gradient(90deg, transparent, ${(selected ? GROUP_COLORS[selected.group] : "#A07820")}, transparent)`,
                     marginTop: "28px", borderRadius: "2px", opacity: 0.7,
                   }} />
                 </div>
