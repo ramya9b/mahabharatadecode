@@ -21,6 +21,7 @@ import {
 } from "@/data/storyCharacters";
 import { MOOD_THEMES, GROUP_THEME_MAP, type MoodTheme } from "@/data/moodThemes";
 import { generateStory, generateLifeLesson, generateMySituation, type Tone, type Language } from "@/services/ai";
+import { synthesizeSpeech } from "@/services/tts";
 
 /* ── Types ── */
 type Step = "select" | "prompt" | "story";
@@ -87,6 +88,7 @@ const StoryTeller = () => {
 
   const storyRef  = useRef<HTMLDivElement>(null);
   const utterRef  = useRef<SpeechSynthesisUtterance | null>(null);
+  const audioRef  = useRef<HTMLAudioElement | null>(null);
 
   const [skip, setSkip]     = useState(false);
 
@@ -272,63 +274,64 @@ const StoryTeller = () => {
     window.speechSynthesis.speak(utt);
   }, [language, getIndianVoice]);
 
-  const toggleSpeech = useCallback(() => {
-    if (!("speechSynthesis" in window)) return;
-
+  const toggleSpeech = useCallback(async () => {
+    /* ── STOP ── */
     if (speaking) {
       stoppedRef.current = true;
-      window.speechSynthesis.cancel();
+      if (audioRef.current) {
+        audioRef.current.pause();
+        audioRef.current.currentTime = 0;
+        audioRef.current = null;
+      }
+      window.speechSynthesis?.cancel();
       setSpeaking(false);
       sentIdxRef.current = 0;
       return;
     }
 
-    /* ── Pick content based on active tab ── */
+    /* ── Pick content from active tab ── */
     let textToRead = "";
-    if (activeTab === "story") {
-      textToRead = story;
-    } else if (activeTab === "lesson") {
-      textToRead = lessonText;
-    } else if (activeTab === "situation") {
-      textToRead = situationText;
-    }
-
+    if (activeTab === "story")     textToRead = story;
+    if (activeTab === "lesson")    textToRead = lessonText;
+    if (activeTab === "situation") textToRead = situationText;
     if (!textToRead.trim()) return;
 
-    /* Strip markdown */
+    /* Clean markdown */
     const cleanText = textToRead
-      .replace(/\*\*(.*?)\*\*/g, "$1")
-      .replace(/\*(.*?)\*/g, "$1")
-      .replace(/#{1,6}\s/g, "")
-      .replace(/_{1,2}(.*?)_{1,2}/g, "$1")
-      .replace(/`(.*?)`/g, "$1")
-      .replace(/\[(.*?)\]\(.*?\)/g, "$1")
-      .replace(/^\s*[-•]\s/gm, "")
-      .trim();
+      .replace(/\*\*(.*?)\*\*/g, "$1").replace(/\*(.*?)\*/g, "$1")
+      .replace(/#{1,6}\s/g, "").replace(/_{1,2}(.*?)_{1,2}/g, "$1")
+      .replace(/`(.*?)`/g, "$1").replace(/\[(.*?)\]\(.*?\)/g, "$1")
+      .replace(/^\s*[-•]\s/gm, "").trim();
 
-    /* Split into sentences */
-    const sentences = cleanText
-      .split(/(?<=[.!?।])\s+/)
-      .map(s => s.trim())
-      .filter(Boolean);
+    setSpeaking(true);
+    stoppedRef.current = false;
 
+    /* ── Google Cloud TTS (works on ALL devices, ALL languages) ── */
+    const googleKey = import.meta.env.VITE_GOOGLE_TTS_KEY;
+    if (googleKey) {
+      const { audioUrl, error } = await synthesizeSpeech(cleanText, language);
+      if (audioUrl && !stoppedRef.current) {
+        const audio = new Audio(audioUrl);
+        audioRef.current = audio;
+        audio.onended = () => { setSpeaking(false); audioRef.current = null; };
+        audio.onerror = () => { setSpeaking(false); audioRef.current = null; };
+        audio.play();
+        return;
+      }
+      if (error) console.warn("Google TTS failed, using browser TTS:", error);
+    }
+
+    /* ── Fallback: Browser TTS ── */
+    const sentences = cleanText.split(/(?<=[.!?।])\s+/).map(s => s.trim()).filter(Boolean);
     sentencesRef.current = sentences;
     sentIdxRef.current   = 0;
-    stoppedRef.current   = false;
-    setSpeaking(true);
-    window.speechSynthesis.cancel();
-
-    /* Android Chrome loads voices async — retry until available */
-    const trySpeak = (attempts = 0) => {
-      const voices = window.speechSynthesis.getVoices();
-      if (voices.length > 0 || attempts > 10) {
-        speakNext();
-      } else {
-        setTimeout(() => trySpeak(attempts + 1), 200);
-      }
+    window.speechSynthesis?.cancel();
+    const trySpeak = (n = 0) => {
+      if (window.speechSynthesis.getVoices().length > 0 || n > 10) speakNext();
+      else setTimeout(() => trySpeak(n + 1), 200);
     };
     trySpeak();
-  }, [speaking, activeTab, story, lessonText, situationText, speakNext]);
+  }, [speaking, activeTab, story, lessonText, situationText, language, speakNext]);
 
   /* ── Reset ── */
   const handleReset = useCallback(() => {
@@ -633,19 +636,16 @@ const StoryTeller = () => {
                     key={char.id}
                     onClick={() => {
                       setCurrentTheme(GROUP_THEME_MAP[activeGroup]);
-                      /* Yudhishthira → new modal flow */
-                      if (char.id === "yudhishthira") {
-                        setSelected(char);
-                        setModalChar(char);
-                        return;
-                      }
-                      /* All others → existing flow */
+                      /* ALL characters → modal flow */
                       setSelected(char);
-                      setActivePromptIdx(null);
-                      setCustomPrompt("");
-                      setStep("prompt");
+                      setModalChar(char);
+                      /* Reset previous story state */
                       setStory("");
                       setError("");
+                      setLessonText("");
+                      setSituationText("");
+                      setSituationInput("");
+                      setActiveTab("story");
                     }}
                     style={{
                       padding: "16px", borderRadius: "12px", textAlign: "left", cursor: "pointer",
