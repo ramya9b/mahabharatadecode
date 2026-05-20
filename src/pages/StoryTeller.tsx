@@ -314,8 +314,8 @@ const StoryTeller = () => {
   const parchment = isDark ? "transparent"        : "hsl(38 52% 91%)";
   const inkDark   = isDark ? theme.textPrimary    : "hsl(28 62% 12%)";
   const inkMuted  = isDark ? theme.textMuted      : "hsl(28 30% 42%)";
-  const cardBg    = isDark ? theme.cardBg         : "hsl(38 45% 94%)";
-  const borderClr = isDark ? theme.borderColor    : "hsl(35 28% 74%)";
+  const cardBg    = isDark ? "rgba(8,5,18,0.88)"   : "hsl(38 45% 94%)";
+  const borderClr = isDark ? `${theme.accentColor}35` : "hsl(35 28% 74%)";
 
   const serif  = "'Cinzel', 'Cinzel Decorative', 'Playfair Display', serif";
   const body   = "'Lora', 'Noto Serif Telugu', 'Noto Serif Devanagari', 'Noto Serif Kannada', serif";
@@ -643,8 +643,12 @@ const StoryTeller = () => {
         {(step === "prompt" || step === "story") && selected && (
           <section
             style={{
-              background: cardBg, border: `1px solid ${borderClr}`, borderRadius: "16px",
-              padding: "32px", marginBottom: "32px",
+              background: isDark ? "rgba(5,3,15,0.92)" : cardBg,
+              border: `1px solid ${borderClr}`,
+              borderRadius: "16px",
+              padding: "32px",
+              marginBottom: "32px",
+              backdropFilter: isDark ? "blur(8px)" : "none",
             }}
           >
             <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "8px" }}>
@@ -1196,16 +1200,17 @@ const StoryTeller = () => {
         <CharacterModal
           char={modalChar}
           onClose={() => setModalChar(null)}
-          onStart={(promptText, promptLabel) => {
+          onStart={(promptText, _promptLabel) => {
             setModalChar(null);
-            setCustomPrompt(promptText);
             setActivePromptIdx(null);
+            setCustomPrompt(promptText);
             setStep("story");
             setStory("");
             setError("");
             setActiveTab("story");
             setLessonText("");
             setSituationText("");
+            setSituationInput("");
             /* Trigger generation with the selected prompt */
             setTimeout(async () => {
               if (!selected) return;
