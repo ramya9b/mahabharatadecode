@@ -154,53 +154,54 @@ const CharacterModal = ({ char, sceneImage, onStart, onClose }: Props) => {
         }}>
 
           {/* ══ MOBILE: Character banner at top ══ */}
-          {isMobile && charImg && (
+          {isMobile && (
             <div style={{
-              height: "200px",
+              height: "220px",
               position: "relative",
               overflow: "hidden",
               flexShrink: 0,
               background: "#080614",
             }}>
-              {/* Scene bg */}
+              {/* Scene fills ENTIRE banner */}
               {sceneImage && (
                 <div style={{
-                  position: "absolute", inset: 0,
+                  position: "absolute", inset: 0, zIndex: 0,
                   backgroundImage: `url('${sceneImage}')`,
                   backgroundSize: "cover", backgroundPosition: "center top",
-                  filter: "brightness(0.4) saturate(0.8)",
+                  filter: "brightness(0.45) saturate(0.8)",
                 }} />
               )}
-              {/* Bottom fade */}
+              {/* Full overlay gradient — top dark, bottom very dark */}
               <div style={{
-                position: "absolute", bottom: 0, left: 0, right: 0, height: "80px",
-                background: "linear-gradient(to top, rgba(10,8,25,1) 0%, transparent 100%)",
-                zIndex: 2,
+                position: "absolute", inset: 0, zIndex: 1, pointerEvents: "none",
+                background: "linear-gradient(to bottom, rgba(8,6,20,0.25) 0%, rgba(8,6,20,0.88) 80%, rgba(8,6,20,1) 100%)",
               }} />
               {/* Gold glow */}
               <div style={{
-                position: "absolute", bottom: "10px", left: "50%",
+                position: "absolute", bottom: "14px", left: "50%",
                 transform: "translateX(-50%)",
-                width: "200px", height: "20px", borderRadius: "50%",
-                background: `${accent}50`, filter: "blur(12px)", zIndex: 2,
+                width: "220px", height: "20px", borderRadius: "50%",
+                background: `${accent}55`, filter: "blur(12px)", zIndex: 2,
                 animation: "pulse-glow 3s ease-in-out infinite",
               }} />
-              {/* Character image */}
-              <img src={charImg} alt={char.name} style={{
-                position: "absolute", bottom: 0,
-                left: "50%", transform: "translateX(-50%)",
-                height: "190px", width: "auto",
-                objectFit: "contain", objectPosition: "bottom center",
-                filter: `drop-shadow(0 0 20px ${accent}60)`,
-                animation: "char-float 4s ease-in-out infinite",
-                zIndex: 3,
-              }} />
-              {/* Close button — top right */}
+              {/* Character — centred on top of full-width scene */}
+              {charImg && (
+                <img src={charImg} alt={char.name} style={{
+                  position: "absolute", bottom: 0,
+                  left: "50%", transform: "translateX(-50%)",
+                  height: "215px", width: "auto", maxWidth: "none",
+                  objectFit: "contain", objectPosition: "bottom center",
+                  filter: `drop-shadow(0 0 22px ${accent}65) drop-shadow(0 6px 18px rgba(0,0,0,0.8))`,
+                  animation: "char-float 4s ease-in-out infinite",
+                  zIndex: 3,
+                }} />
+              )}
+              {/* Close button */}
               <button onClick={onClose} style={{
                 position: "absolute", top: "12px", right: "12px", zIndex: 10,
-                width: "32px", height: "32px", borderRadius: "50%",
-                background: "rgba(0,0,0,0.6)", border: "1px solid rgba(255,255,255,0.2)",
-                cursor: "pointer", color: "rgba(255,255,255,0.8)",
+                width: "34px", height: "34px", borderRadius: "50%",
+                background: "rgba(0,0,0,0.65)", border: "1px solid rgba(255,255,255,0.25)",
+                cursor: "pointer", color: "rgba(255,255,255,0.85)",
                 fontSize: "16px", display: "flex", alignItems: "center", justifyContent: "center",
               }}>✕</button>
             </div>
