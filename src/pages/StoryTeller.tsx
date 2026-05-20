@@ -72,7 +72,7 @@ const StoryTeller = () => {
   const [activeGroup, setActiveGroup]       = useState<CharacterGroup>("pandavas");
   const [selected, setSelected]             = useState<StoryCharacter | null>(null);
   const [currentTheme, setCurrentTheme]     = useState<MoodTheme>("default");
-  const [bgMode, setBgMode]                 = useState<"watermark"|"gradient">("watermark");
+  const [bgMode, setBgMode]                 = useState<"watermark"|"gradient">("gradient");
   const [customPrompt, setCustomPrompt]     = useState("");
   const [activePromptIdx, setActivePromptIdx] = useState<number | null>(null);
   const [tone, setTone]                     = useState<Tone>("epic");
@@ -316,8 +316,9 @@ const StoryTeller = () => {
   const cardBg    = isDark ? theme.cardBg         : "hsl(38 45% 94%)";
   const borderClr = isDark ? theme.borderColor    : "hsl(35 28% 74%)";
 
-  const serif = "'Cinzel', 'Playfair Display', serif";
-  const body  = "'Lora', 'Noto Serif Telugu', serif";
+  const serif  = "'Cinzel', 'Cinzel Decorative', 'Playfair Display', serif";
+  const body   = "'Lora', 'Noto Serif Telugu', 'Noto Serif Devanagari', 'Noto Serif Kannada', serif";
+  const deco   = "'Cinzel Decorative', 'Cinzel', serif";
 
   /* ── Cinematic Opening Screen ── */
   if (showIntro) {
@@ -361,9 +362,12 @@ const StoryTeller = () => {
 
         {/* Title */}
         <h1 className="intro-title" style={{
-          fontFamily: serif, fontSize: "clamp(2.5rem, 8vw, 5rem)",
-          fontWeight: 700, color: "#F5E6C8", lineHeight: 1.1,
-          marginBottom: "20px", textShadow: "0 0 60px rgba(212,175,55,0.3)",
+          fontFamily: deco,
+          fontSize: "clamp(2.2rem, 7vw, 4.5rem)",
+          fontWeight: 700, color: "#F5E6C8", lineHeight: 1.15,
+          marginBottom: "20px",
+          textShadow: "0 0 60px rgba(212,175,55,0.4), 0 2px 4px rgba(0,0,0,0.5)",
+          letterSpacing: "0.04em",
         }}>
           The Story Teller
         </h1>
@@ -639,7 +643,15 @@ const StoryTeller = () => {
                     }}
                   >
                     <div style={{ fontSize: "28px", marginBottom: "8px" }}>{char.icon}</div>
-                    <div style={{ fontFamily: serif, fontSize: "14px", fontWeight: 600, color: isSelected ? GROUP_COLORS[char.group] : inkDark, marginBottom: "4px" }}>
+                    <div style={{
+                      fontFamily: serif,
+                      fontSize: "13px",
+                      fontWeight: 700,
+                      letterSpacing: "0.06em",
+                      color: isSelected ? GROUP_COLORS[char.group] : inkDark,
+                      marginBottom: "4px",
+                      textTransform: "uppercase",
+                    }}>
                       {char.name}
                     </div>
                     <div style={{ fontFamily: serif, fontSize: "10px", color: inkMuted, letterSpacing: "0.06em", marginBottom: "6px" }}>
