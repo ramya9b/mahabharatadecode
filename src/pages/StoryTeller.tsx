@@ -647,11 +647,13 @@ const StoryTeller = () => {
         {(step === "prompt" || step === "story") && selected && (
           <section
             style={{
-              background: isDark ? "#0D0A1A" : cardBg,
+              background: isDark ? "rgba(13,10,26,0.82)" : cardBg,
               border: `1px solid ${borderClr}`,
               borderRadius: "16px",
               padding: "32px",
               marginBottom: "32px",
+              backdropFilter: isDark ? "blur(12px)" : "none",
+              WebkitBackdropFilter: isDark ? "blur(12px)" : "none",
             }}
           >
             <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "8px" }}>
@@ -775,12 +777,14 @@ const StoryTeller = () => {
             {(loading || story) && (
               <div style={{
                 background: isDark
-                  ? "#0D0A1A"
+                  ? "rgba(13,10,26,0.82)"
                   : `linear-gradient(160deg, hsl(38 50% 96%) 0%, hsl(28 45% 93%) 100%)`,
                 border: `1.5px solid ${(selected ? GROUP_COLORS[selected.group] : "#A07820")}50`,
                 borderRadius: "20px",
                 overflow: "hidden",
-                boxShadow: isDark ? `0 8px 40px rgba(0,0,0,0.4)` : "0 8px 40px rgba(0,0,0,0.08)",
+                boxShadow: isDark ? `0 8px 40px rgba(0,0,0,0.6)` : "0 8px 40px rgba(0,0,0,0.08)",
+                backdropFilter: isDark ? "blur(12px)" : "none",
+                WebkitBackdropFilter: isDark ? "blur(12px)" : "none",
               }}>
 
                 {/* ── Tab bar ── */}
@@ -834,7 +838,7 @@ const StoryTeller = () => {
                           cursor: (!story && tab.key !== "story") ? "not-allowed" : "pointer",
                           opacity: (!story && tab.key !== "story") ? 0.4 : 1,
                           background: activeTab === tab.key
-                            ? (isDark ? "#1A1530" : "white")
+                            ? (isDark ? "rgba(26,21,48,0.9)" : "white")
                             : "transparent",
                           borderBottom: activeTab === tab.key ? `3px solid ${(selected ? GROUP_COLORS[selected.group] : "#A07820")}` : "3px solid transparent",
                           transition: "all 0.2s",
