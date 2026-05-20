@@ -8,6 +8,7 @@ import { GROUP_COLORS } from "@/data/storyCharacters";
 
 interface Props {
   char: StoryCharacter;
+  sceneImage?: string;
   onStart: (promptText: string, promptLabel: string) => void;
   onClose: () => void;
 }
@@ -50,7 +51,7 @@ const CHARACTER_IMAGES: Record<string, string> = {
   shalya:        "/characters/shalya.webp",
 };
 
-const CharacterModal = ({ char, onStart, onClose }: Props) => {
+const CharacterModal = ({ char, sceneImage, onStart, onClose }: Props) => {
   const [selectedIdx, setSelectedIdx]   = useState<number | null>(null);
   const [customPrompt, setCustomPrompt] = useState("");
   const accent  = GROUP_COLORS[char.group];
@@ -240,39 +241,57 @@ const CharacterModal = ({ char, onStart, onClose }: Props) => {
             </div>
           </div>
 
-          {/* ── RIGHT — Character standing image ── */}
+          {/* ── RIGHT — Character image over scene background ── */}
           {charImg && (
             <div style={{
               width: "220px",
               flexShrink: 0,
               position: "relative",
               overflow: "hidden",
-              borderLeft: `1px solid ${accent}15`,
-              background: `linear-gradient(160deg, #0d0a1a 0%, #1a1025 100%)`,
+              borderLeft: `1px solid ${accent}20`,
             }}>
-              {/* Left fade */}
+              {/* Scene background image */}
+              {sceneImage && (
+                <div style={{
+                  position: "absolute", inset: 0, zIndex: 0,
+                  backgroundImage: `url('${sceneImage}')`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center right",
+                  filter: "brightness(0.5) saturate(0.8)",
+                }} />
+              )}
+
+              {/* Dark base if no scene */}
+              {!sceneImage && (
+                <div style={{
+                  position: "absolute", inset: 0, zIndex: 0,
+                  background: `linear-gradient(160deg, #0d0a1a 0%, #1a1025 100%)`,
+                }} />
+              )}
+
+              {/* Left fade — blends with modal */}
               <div style={{
                 position: "absolute", inset: 0, zIndex: 2, pointerEvents: "none",
-                background: "linear-gradient(to right, #0d0a1a 0%, rgba(13,10,26,0.2) 25%, transparent 50%)",
+                background: "linear-gradient(to right, #0d0a1a 0%, rgba(13,10,26,0.6) 30%, transparent 60%)",
               }} />
 
               {/* Bottom fade */}
               <div style={{
                 position: "absolute", bottom: 0, left: 0, right: 0,
-                height: "50px", zIndex: 2, pointerEvents: "none",
-                background: `linear-gradient(to top, #0d0a1a 0%, transparent 100%)`,
+                height: "60px", zIndex: 2, pointerEvents: "none",
+                background: "linear-gradient(to top, #0d0a1a 0%, transparent 100%)",
               }} />
 
-              {/* Gold glow */}
+              {/* Gold glow at base of character */}
               <div style={{
                 position: "absolute", bottom: "12px", left: "50%",
                 transform: "translateX(-50%)",
                 width: "160px", height: "20px", borderRadius: "50%",
-                background: `${accent}40`, filter: "blur(10px)",
-                animation: "glow-pulse 3s ease-in-out infinite", zIndex: 1,
+                background: `${accent}50`, filter: "blur(10px)",
+                animation: "glow-pulse 3s ease-in-out infinite", zIndex: 3,
               }} />
 
-              {/* Character image — full height, show from top */}
+              {/* Character image on top */}
               <img
                 src={charImg}
                 alt={char.name}
@@ -281,11 +300,10 @@ const CharacterModal = ({ char, onStart, onClose }: Props) => {
                   height: "100%",
                   objectFit: "cover",
                   objectPosition: "top center",
-                  filter: `drop-shadow(0 4px 20px ${accent}50)`,
+                  filter: `drop-shadow(0 4px 24px ${accent}60)`,
                   animation: "char-float 4s ease-in-out infinite",
                   position: "relative",
-                  zIndex: 3,
-                  mixBlendMode: "normal",
+                  zIndex: 4,
                 }}
               />
             </div>
