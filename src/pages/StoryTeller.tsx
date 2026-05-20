@@ -8,7 +8,7 @@ import { useTranslation } from "react-i18next";
 import { Mic, MicOff, RefreshCw, ChevronDown } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import LottieBackground from "@/components/LottieBackground";
+import MoodBackground from "@/components/MoodBackground";
 import CharacterPortrait from "@/components/CharacterPortrait";
 import {
   storyCharacters,
@@ -327,8 +327,8 @@ const StoryTeller = () => {
         background: "linear-gradient(160deg, hsl(28 62% 6%) 0%, hsl(35 50% 12%) 50%, hsl(20 45% 8%) 100%)",
         padding: "40px 24px", position: "relative", overflow: "hidden",
       }}>
-        {/* Lottie fire background */}
-        <LottieBackground url={MOOD_THEMES.war.lottieUrl} opacity={0.15} />
+        {/* CSS particle background for intro */}
+        <MoodBackground theme="war" opacity={0.15} />
 
         {/* Animated glow */}
         <div style={{
@@ -420,11 +420,9 @@ const StoryTeller = () => {
       color: inkDark,
       transition: "background 0.8s ease, color 0.5s ease",
     }}>
-      {/* Lottie mood animation — full page background */}
-      {isDark && theme.lottieUrl && (
-        <div style={{ position: "fixed", inset: 0, zIndex: 0, pointerEvents: "none" }}>
-          <LottieBackground url={theme.lottieUrl} opacity={0.08} />
-        </div>
+      {/* CSS mood particle animation */}
+      {isDark && (
+        <MoodBackground theme={currentTheme} opacity={0.12} />
       )}
       <div style={{ position: "relative", zIndex: 1 }}>
       <Navbar />
