@@ -72,7 +72,6 @@ const StoryTeller = () => {
   const [activeGroup, setActiveGroup]       = useState<CharacterGroup>("pandavas");
   const [selected, setSelected]             = useState<StoryCharacter | null>(null);
   const [currentTheme, setCurrentTheme]     = useState<MoodTheme>("default");
-  const [bgMode, setBgMode]                 = useState<"watermark"|"gradient">("gradient");
   const [customPrompt, setCustomPrompt]     = useState("");
   const [activePromptIdx, setActivePromptIdx] = useState<number | null>(null);
   const [tone, setTone]                     = useState<Tone>("epic");
@@ -427,71 +426,35 @@ const StoryTeller = () => {
       position: "relative",
     }}>
 
-      {/* ── SCENE BACKGROUND — Divine group only (A/B test) ── */}
-      {currentTheme === "divine" && (
-        <>
-          {/* Toggle button */}
-          <div style={{
-            position: "fixed", top: "72px", right: "16px", zIndex: 999,
-            display: "flex", gap: "6px",
-            background: "rgba(2,8,24,0.85)", padding: "6px", borderRadius: "99px",
-            border: "1px solid rgba(100,180,255,0.25)",
-          }}>
-            <button onClick={() => setBgMode("watermark")} style={{
-              padding: "5px 14px", borderRadius: "99px", border: "none", cursor: "pointer",
-              fontFamily: serif, fontSize: "11px", letterSpacing: "0.08em",
-              background: bgMode === "watermark" ? "#2471A3" : "transparent",
-              color: bgMode === "watermark" ? "white" : "rgba(100,180,255,0.6)",
-              transition: "all 0.2s",
-            }}>Watermark</button>
-            <button onClick={() => setBgMode("gradient")} style={{
-              padding: "5px 14px", borderRadius: "99px", border: "none", cursor: "pointer",
-              fontFamily: serif, fontSize: "11px", letterSpacing: "0.08em",
-              background: bgMode === "gradient" ? "#2471A3" : "transparent",
-              color: bgMode === "gradient" ? "white" : "rgba(100,180,255,0.6)",
-              transition: "all 0.2s",
-            }}>Left Gradient</button>
+      {/* ── SCENE BACKGROUND — Left-gradient for all groups ── */}
+      {isDark && (() => {
+        const sceneMap: Record<string, string> = {
+          divine:  "/scenes/divine.webp",
+          war:     "/scenes/kauravas.webp",
+          tragic:  "/scenes/women.webp",
+          forest:  "/scenes/kings.webp",
+          gita:    "/scenes/pandavas.webp",
+        };
+        // Warriors use kauravas battle scene
+        const sceneKey = currentTheme === "war" && activeGroup === "warriors"
+          ? "/scenes/warriors.webp"
+          : sceneMap[currentTheme];
+        if (!sceneKey) return <MoodBackground theme={currentTheme} opacity={0.12} />;
+        return (
+          <div style={{ position: "fixed", inset: 0, zIndex: 0, pointerEvents: "none" }}>
+            <div style={{
+              position: "absolute", inset: 0,
+              backgroundImage: `url('${sceneKey}')`,
+              backgroundSize: "cover",
+              backgroundPosition: "center right",
+            }} />
+            <div style={{
+              position: "absolute", inset: 0,
+              background: "linear-gradient(to right, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.82) 38%, rgba(0,0,0,0.50) 60%, rgba(0,0,0,0.12) 100%)",
+            }} />
           </div>
-
-          {/* Option A — Watermark (image faint behind dark base) */}
-          {bgMode === "watermark" && (
-            <div style={{ position: "fixed", inset: 0, zIndex: 0, pointerEvents: "none" }}>
-              {/* Dark base */}
-              <div style={{ position: "absolute", inset: 0, background: "linear-gradient(160deg, #020818 0%, #061840 50%, #0d3080 100%)" }} />
-              {/* AI image as watermark */}
-              <div style={{
-                position: "absolute", inset: 0,
-                backgroundImage: "url('/scenes/divine.webp')",
-                backgroundSize: "cover", backgroundPosition: "center",
-                opacity: 0.18,
-                filter: "saturate(0.6)",
-              }} />
-            </div>
-          )}
-
-          {/* Option B — Left-heavy gradient (image visible on right) */}
-          {bgMode === "gradient" && (
-            <div style={{ position: "fixed", inset: 0, zIndex: 0, pointerEvents: "none" }}>
-              {/* AI image full behind */}
-              <div style={{
-                position: "absolute", inset: 0,
-                backgroundImage: "url('/scenes/divine.webp')",
-                backgroundSize: "cover", backgroundPosition: "center right",
-              }} />
-              {/* Left-heavy dark gradient overlay */}
-              <div style={{
-                position: "absolute", inset: 0,
-                background: "linear-gradient(to right, rgba(2,8,24,0.95) 0%, rgba(2,8,24,0.80) 40%, rgba(2,8,24,0.45) 65%, rgba(2,8,24,0.15) 100%)",
-              }} />
-            </div>
-          )}
-        </>
-      )}
-
-      {/* Regular mood background for non-divine themes */}
-      {currentTheme !== "divine" && isDark && (
-        <MoodBackground theme={currentTheme} opacity={0.12} />
-      )}
+        );
+      })()}
       <div style={{ position: "relative", zIndex: 1 }}>
       <Navbar />
 
@@ -703,14 +666,24 @@ const StoryTeller = () => {
                   onClick={() => { setActivePromptIdx(i); setCustomPrompt(""); }}
                   style={{
                     padding: "12px 16px", borderRadius: "10px", textAlign: "left", cursor: "pointer",
-                    background: activePromptIdx === i ? GROUP_COLORS[selected.group] + "15" : "rgba(160,120,32,0.04)",
-                    border: `1.5px solid ${activePromptIdx === i ? GROUP_COLORS[selected.group] : "rgba(160,120,32,0.2)"}`,
+                    background: activePromptIdx === i
+                      ? GROUP_COLORS[selected.group] + "25"
+                      : isDark ? "rgba(255,255,255,0.06)" : "rgba(160,120,32,0.04)",
+                    border: `1.5px solid ${activePromptIdx === i
+                      ? GROUP_COLORS[selected.group]
+                      : isDark ? "rgba(255,255,255,0.12)" : "rgba(160,120,32,0.2)"}`,
                     transition: "all 0.2s",
                     fontFamily: body, fontSize: "14px",
-                    color: activePromptIdx === i ? GROUP_COLORS[selected.group] : inkDark,
+                    color: activePromptIdx === i
+                      ? GROUP_COLORS[selected.group]
+                      : isDark ? "rgba(255,255,255,0.85)" : inkDark,
                   }}
                 >
-                  <span style={{ fontFamily: serif, fontSize: "11px", letterSpacing: "0.08em", color: inkMuted, display: "block", marginBottom: "2px" }}>
+                  <span style={{
+                    fontFamily: serif, fontSize: "11px", letterSpacing: "0.1em",
+                    color: isDark ? "rgba(255,255,255,0.45)" : inkMuted,
+                    display: "block", marginBottom: "2px", textTransform: "uppercase"
+                  }}>
                     {p.label}
                   </span>
                   {p.request.slice(0, 80)}…
@@ -1206,7 +1179,8 @@ const StoryTeller = () => {
       </main>
 
       </div>{/* end relative zIndex wrapper */}
-      <Footer />
+      {/* Hide footer on dark scene pages — it clashes with the background image */}
+      {!isDark && <Footer />}
     </div>
   );
 };
