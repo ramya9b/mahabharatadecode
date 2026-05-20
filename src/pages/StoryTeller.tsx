@@ -10,6 +10,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import MoodBackground from "@/components/MoodBackground";
 import CharacterPortrait from "@/components/CharacterPortrait";
+import CharacterModal from "@/components/CharacterModal";
 import {
   storyCharacters,
   getCharactersByGroup,
@@ -72,6 +73,7 @@ const StoryTeller = () => {
   const [activeGroup, setActiveGroup]       = useState<CharacterGroup>("pandavas");
   const [selected, setSelected]             = useState<StoryCharacter | null>(null);
   const [currentTheme, setCurrentTheme]     = useState<MoodTheme>("default");
+  const [modalChar, setModalChar]           = useState<StoryCharacter | null>(null);
   const [customPrompt, setCustomPrompt]     = useState("");
   const [activePromptIdx, setActivePromptIdx] = useState<number | null>(null);
   const [tone, setTone]                     = useState<Tone>("epic");
@@ -589,13 +591,20 @@ const StoryTeller = () => {
                   <button
                     key={char.id}
                     onClick={() => {
+                      setCurrentTheme(GROUP_THEME_MAP[activeGroup]);
+                      /* Yudhishthira → new modal flow */
+                      if (char.id === "yudhishthira") {
+                        setSelected(char);
+                        setModalChar(char);
+                        return;
+                      }
+                      /* All others → existing flow */
                       setSelected(char);
                       setActivePromptIdx(null);
                       setCustomPrompt("");
                       setStep("prompt");
                       setStory("");
                       setError("");
-                      setCurrentTheme(GROUP_THEME_MAP[activeGroup]);
                     }}
                     style={{
                       padding: "16px", borderRadius: "12px", textAlign: "left", cursor: "pointer",
@@ -1181,6 +1190,64 @@ const StoryTeller = () => {
       </div>{/* end relative zIndex wrapper */}
       {/* Hide footer on dark scene pages — it clashes with the background image */}
       {!isDark && <Footer />}
+
+      {/* ── Character Modal (Yudhishthira pilot) ── */}
+      {modalChar && (
+        <CharacterModal
+          char={modalChar}
+          onClose={() => setModalChar(null)}
+          onStart={(promptText, promptLabel) => {
+            setModalChar(null);
+            setCustomPrompt(promptText);
+            setActivePromptIdx(null);
+            setStep("story");
+            setStory("");
+            setError("");
+            setActiveTab("story");
+            setLessonText("");
+            setSituationText("");
+            /* Trigger generation with the selected prompt */
+            setTimeout(async () => {
+              if (!selected) return;
+              abortRef.current?.abort();
+              abortRef.current = new AbortController();
+              setLoading(true);
+              stoppedRef.current = true;
+              window.speechSynthesis?.cancel();
+              setSpeaking(false);
+              setSkip(false);
+              stoppedRef.current = false;
+              sentIdxRef.current = 0;
+              sentencesRef.current = [];
+              setLessonLoading(false);
+              setSituationLoading(false);
+              try {
+                const result = await generateStory({
+                  characterName: selected.name,
+                  prompt: promptText,
+                  tone,
+                  language,
+                });
+                if (abortRef.current?.signal.aborted) return;
+                setLoading(false);
+                if (result.error) {
+                  setError(result.error);
+                } else {
+                  const cleaned = result.story
+                    .replace(/\*\*(.*?)\*\*/g,"$1")
+                    .replace(/\*(.*?)\*/g,"$1")
+                    .replace(/#{1,6}\s/g,"")
+                    .trim();
+                  setStory(cleaned);
+                }
+              } catch {
+                setLoading(false);
+                setError("Something went wrong. Please try again.");
+              }
+            }, 100);
+          }}
+        />
+      )}
     </div>
   );
 };
