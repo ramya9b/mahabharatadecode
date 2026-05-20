@@ -12,31 +12,42 @@ interface Props {
   onClose: () => void;
 }
 
-/* Characters with available portrait images */
+/* All 25 character portrait images */
 const CHARACTER_IMAGES: Record<string, string> = {
   /* Pandavas */
-  yudhishthira: "/characters/yudhishthira.webp",
-  bhima:        "/characters/bhima.webp",
-  arjuna:       "/characters/arjuna.webp",
-  nakula:       "/characters/nakula.webp",
-  sahadeva:     "/characters/sahadeva.webp",
+  yudhishthira:  "/characters/yudhishthira.webp",
+  bhima:         "/characters/bhima.webp",
+  arjuna:        "/characters/arjuna.webp",
+  nakula:        "/characters/nakula.webp",
+  sahadeva:      "/characters/sahadeva.webp",
   /* Kauravas */
-  duryodhana:   "/characters/duryodhana.webp",
-  dushasana:    "/characters/dushasana.webp",
-  karna:        "/characters/karna.webp",
-  shakuni:      "/characters/shakuni.webp",
-  /* Divine & Sages */
-  krishna:      "/characters/krishna.webp",
-  drona:        "/characters/drona.webp",
-  ashwatthama:  "/characters/ashwatthama.webp",
+  duryodhana:    "/characters/duryodhana.webp",
+  dushasana:     "/characters/dushasana.webp",
+  karna:         "/characters/karna.webp",
+  shakuni:       "/characters/shakuni.webp",
   /* Women */
-  draupadi:     "/characters/draupadi.webp",
-  gandhari:     "/characters/gandhari.webp",
-  subhadra:     "/characters/subhadra.webp",
-  hidimbi:      "/characters/hidimbi.webp",
+  draupadi:      "/characters/draupadi.webp",
+  gandhari:      "/characters/gandhari.webp",
+  subhadra:      "/characters/subhadra.webp",
+  hidimbi:       "/characters/hidimbi.webp",
+  kunti:         "/characters/kunti.webp",
   /* Warriors */
-  bhishma:      "/characters/bhishma.webp",
-  abhimanyu:    "/characters/abhimanyu.webp",
+  bhishma:       "/characters/bhishma.webp",
+  abhimanyu:     "/characters/abhimanyu.webp",
+  /* Divine & Sages */
+  krishna:       "/characters/krishna.webp",
+  hanuman:       "/characters/hanuman.webp",
+  vyasa:         "/characters/vyasa.webp",
+  vidura:        "/characters/vidura.webp",
+  parashurama:   "/characters/parashurama.webp",
+  drona:         "/characters/drona.webp",
+  ashwatthama:   "/characters/ashwatthama.webp",
+  /* Kings & Fathers */
+  dhritarashtra: "/characters/dhritarashtra.webp",
+  pandu:         "/characters/pandu.webp",
+  drupada:       "/characters/drupada.webp",
+  virata:        "/characters/virata.webp",
+  shalya:        "/characters/shalya.webp",
 };
 
 const CharacterModal = ({ char, onStart, onClose }: Props) => {
