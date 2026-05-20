@@ -1,0 +1,70 @@
+{
+  "name": "Mahabharata Story Teller",
+  "short_name": "MBD Stories",
+  "description": "AI-powered Mahabharata storytelling in English, Telugu, Hindi and Kannada",
+  "start_url": "/storyteller",
+  "display": "standalone",
+  "background_color": "#F5EDDA",
+  "theme_color": "#A07820",
+  "orientation": "portrait",
+  "scope": "/",
+  "lang": "en",
+  "categories": ["education", "entertainment", "lifestyle"],
+  "icons": [
+    {
+      "src": "/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "/screenshots/storyteller.png",
+      "sizes": "1080x1920",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "Story Teller — Choose your character"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Story Teller",
+      "short_name": "Stories",
+      "description": "Generate a Mahabharata story",
+      "url": "/storyteller",
+      "icons": [{ "src": "/icons/icon-96x96.png", "sizes": "96x96" }]
+    },
+    {
+      "name": "Characters",
+      "short_name": "Characters",
+      "description": "Explore all 25 characters",
+      "url": "/characters",
+      "icons": [{ "src": "/icons/icon-96x96.png", "sizes": "96x96" }]
+    }
+  ]
+}
