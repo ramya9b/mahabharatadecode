@@ -101,7 +101,7 @@ export const storyCharacters: StoryCharacter[] = [
     group: "pandavas",
     hook: "The most handsome of the five — whose humility was his greatest weapon",
     accentHex: "#52BE80",
-    icon: "⚔️",
+    icon: "🛡️",
     prompts: [
       { label: "Nakula's Humility", request: "Tell me about Nakula's quality of humility despite being considered the most handsome man in the world", mood: "philosophical" },
       { label: "Disguise in Virata", request: "Tell me how Nakula disguised himself during the year of hiding in King Virata's kingdom", mood: "epic" },
@@ -206,7 +206,7 @@ export const storyCharacters: StoryCharacter[] = [
     group: "women",
     hook: "She blindfolded herself for her husband — and cursed Krishna for her sons",
     accentHex: "#A569BD",
-    icon: "🙈",
+    icon: "🌑",
     prompts: [
       { label: "The Blindfold", request: "Tell me why Gandhari chose to blindfold herself upon marriage and what this sacrifice meant", mood: "devotional" },
       { label: "Her Curse on Krishna", request: "Tell me about Gandhari's devastating curse on Krishna after the war — and how it came true", mood: "tragic" },
@@ -221,7 +221,7 @@ export const storyCharacters: StoryCharacter[] = [
     group: "women",
     hook: "Her love for Arjuna crossed every boundary of caste and custom",
     accentHex: "#BB8FCE",
-    icon: "💛",
+    icon: "🌼",
     prompts: [
       { label: "Elopement with Arjuna", request: "Tell me how Arjuna eloped with Subhadra on Krishna's advice — the great love story of the epic", mood: "epic" },
       { label: "Mother of Abhimanyu", request: "Tell me how Subhadra raised Abhimanyu and the legend of him learning war tactics in the womb", mood: "devotional" },
@@ -389,7 +389,7 @@ export const storyCharacters: StoryCharacter[] = [
     group: "kings",
     hook: "His love for his son blinded him more than his eyes ever did",
     accentHex: "#784212",
-    icon: "😔",
+    icon: "👁️",
     prompts: [
       { label: "His Fatal Love", request: "Tell me how Dhritarashtra's blind love for Duryodhana made him complicit in every injustice", mood: "tragic" },
       { label: "After the War", request: "Tell me how Dhritarashtra and Gandhari spent their final years after losing everything in the war", mood: "tragic" },
@@ -403,7 +403,7 @@ export const storyCharacters: StoryCharacter[] = [
     group: "kings",
     hook: "He spent decades plotting revenge against his childhood friend turned enemy",
     accentHex: "#935116",
-    icon: "🏹",
+    icon: "🔥",
     prompts: [
       { label: "Drona's Humiliation", request: "Tell me about Drona humiliating Drupada — the incident that set the entire war in motion", mood: "tragic" },
       { label: "Creating Draupadi", request: "Tell me how Drupada performed the great fire sacrifice specifically to create warriors who could kill Drona", mood: "epic" },
