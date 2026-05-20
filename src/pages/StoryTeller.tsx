@@ -5,10 +5,11 @@
 
 import { useState, useRef, useEffect, useCallback } from "react";
 import { useTranslation } from "react-i18next";
-import { Mic, MicOff, Share2, RefreshCw, ChevronDown } from "lucide-react";
+import { Mic, MicOff, RefreshCw, ChevronDown } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import ShareButtons from "@/components/ShareButtons";
+import LottieBackground from "@/components/LottieBackground";
+import CharacterPortrait from "@/components/CharacterPortrait";
 import {
   storyCharacters,
   getCharactersByGroup,
@@ -17,6 +18,7 @@ import {
   GROUP_LABELS,
   GROUP_COLORS,
 } from "@/data/storyCharacters";
+import { MOOD_THEMES, GROUP_THEME_MAP, type MoodTheme } from "@/data/moodThemes";
 import { generateStory, generateLifeLesson, generateMySituation, type Tone, type Language } from "@/services/ai";
 
 /* ── Types ── */
@@ -66,8 +68,10 @@ const StoryTeller = () => {
 
   /* State */
   const [step, setStep]                     = useState<Step>("select");
+  const [showIntro, setShowIntro]           = useState(true);  // cinematic opening
   const [activeGroup, setActiveGroup]       = useState<CharacterGroup>("pandavas");
   const [selected, setSelected]             = useState<StoryCharacter | null>(null);
+  const [currentTheme, setCurrentTheme]     = useState<MoodTheme>("default");
   const [customPrompt, setCustomPrompt]     = useState("");
   const [activePromptIdx, setActivePromptIdx] = useState<number | null>(null);
   const [tone, setTone]                     = useState<Tone>("epic");
@@ -299,20 +303,130 @@ const StoryTeller = () => {
     window.speechSynthesis?.cancel();
   }, []);
 
-  /* ── Styles (using existing site tokens) ── */
-  const gold       = "var(--gold-light, #A07820)";
-  const goldDark   = "var(--gold-dark, #6B4E10)";
-  const parchment  = "hsl(38 52% 91%)";
-  const inkDark    = "hsl(28 62% 12%)";
-  const inkMuted   = "hsl(28 30% 42%)";
-  const cardBg     = "hsl(38 45% 94%)";
-  const borderClr  = "hsl(35 28% 74%)";
+
+  /* ── Theme-aware styles ── */
+  const theme     = MOOD_THEMES[currentTheme];
+  const isDark    = currentTheme !== "default";
+  const gold      = isDark ? theme.highlightColor : "#A07820";
+  const goldDark  = isDark ? theme.accentColor    : "#6B4E10";
+  const parchment = isDark ? "transparent"        : "hsl(38 52% 91%)";
+  const inkDark   = isDark ? theme.textPrimary    : "hsl(28 62% 12%)";
+  const inkMuted  = isDark ? theme.textMuted      : "hsl(28 30% 42%)";
+  const cardBg    = isDark ? theme.cardBg         : "hsl(38 45% 94%)";
+  const borderClr = isDark ? theme.borderColor    : "hsl(35 28% 74%)";
 
   const serif = "'Cinzel', 'Playfair Display', serif";
   const body  = "'Lora', 'Noto Serif Telugu', serif";
 
+  /* ── Cinematic Opening Screen ── */
+  if (showIntro) {
+    return (
+      <div style={{
+        minHeight: "100vh", display: "flex", flexDirection: "column",
+        alignItems: "center", justifyContent: "center", textAlign: "center",
+        background: "linear-gradient(160deg, hsl(28 62% 6%) 0%, hsl(35 50% 12%) 50%, hsl(20 45% 8%) 100%)",
+        padding: "40px 24px", position: "relative", overflow: "hidden",
+      }}>
+        {/* Lottie fire background */}
+        <LottieBackground url={MOOD_THEMES.war.lottieUrl} opacity={0.15} />
+
+        {/* Animated glow */}
+        <div style={{
+          position: "absolute", inset: 0, pointerEvents: "none",
+          background: "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(212,175,55,0.12) 0%, transparent 70%)",
+          animation: "pulse-glow 3s ease-in-out infinite",
+        }} />
+
+        <style>{`
+          @keyframes pulse-glow { 0%,100%{opacity:0.6} 50%{opacity:1} }
+          @keyframes fade-in-up { from{opacity:0;transform:translateY(24px)} to{opacity:1;transform:translateY(0)} }
+          @keyframes shimmer { 0%,100%{opacity:0.5} 50%{opacity:1} }
+          .intro-badge { animation: fade-in-up 0.8s ease forwards; }
+          .intro-title { animation: fade-in-up 0.8s ease 0.2s forwards; opacity:0; }
+          .intro-sub   { animation: fade-in-up 0.8s ease 0.5s forwards; opacity:0; }
+          .intro-langs { animation: fade-in-up 0.8s ease 0.8s forwards; opacity:0; }
+          .intro-btn   { animation: fade-in-up 0.8s ease 1s forwards; opacity:0; }
+        `}</style>
+
+        {/* Badge */}
+        <div className="intro-badge" style={{
+          display: "inline-block", padding: "4px 16px", borderRadius: "99px",
+          border: "1px solid rgba(212,175,55,0.4)", fontFamily: serif,
+          fontSize: "11px", letterSpacing: "0.3em", color: "rgba(212,175,55,0.8)",
+          textTransform: "uppercase", marginBottom: "20px",
+        }}>
+          MahabharataDecoded presents
+        </div>
+
+        {/* Title */}
+        <h1 className="intro-title" style={{
+          fontFamily: serif, fontSize: "clamp(2.5rem, 8vw, 5rem)",
+          fontWeight: 700, color: "#F5E6C8", lineHeight: 1.1,
+          marginBottom: "20px", textShadow: "0 0 60px rgba(212,175,55,0.3)",
+        }}>
+          The Story Teller
+        </h1>
+
+        {/* Divider */}
+        <div style={{ width: "80px", height: "2px", background: "linear-gradient(90deg, transparent, #D4AF37, transparent)", margin: "0 auto 20px" }} />
+
+        {/* Subtitle */}
+        <p className="intro-sub" style={{
+          fontFamily: body, fontSize: "clamp(1rem, 2.5vw, 1.25rem)",
+          color: "rgba(245,230,200,0.65)", maxWidth: "520px",
+          margin: "0 auto 28px", lineHeight: 1.7,
+        }}>
+          Choose a character. Choose your story.<br />
+          Hear the Mahabharata come alive.
+        </p>
+
+        {/* Language pills */}
+        <div className="intro-langs" style={{ display: "flex", gap: "8px", justifyContent: "center", flexWrap: "wrap", marginBottom: "40px" }}>
+          {["English", "తెలుగు", "हिंदी", "ಕನ್ನಡ"].map(l => (
+            <span key={l} style={{
+              padding: "4px 14px", borderRadius: "99px",
+              background: "rgba(212,175,55,0.1)", border: "1px solid rgba(212,175,55,0.25)",
+              fontFamily: body, fontSize: "13px", color: "rgba(245,230,200,0.7)",
+            }}>{l}</span>
+          ))}
+        </div>
+
+        {/* Enter button */}
+        <button
+          className="intro-btn"
+          onClick={() => setShowIntro(false)}
+          style={{
+            padding: "16px 48px", borderRadius: "99px",
+            background: "linear-gradient(135deg, #A07820 0%, #D4AF37 50%, #A07820 100%)",
+            border: "none", cursor: "pointer", fontFamily: serif,
+            fontSize: "15px", letterSpacing: "0.15em", color: "#2A1506",
+            fontWeight: 600, boxShadow: "0 8px 32px rgba(212,175,55,0.35)",
+            transition: "all 0.3s", backgroundSize: "200%",
+            animation: "intro-btn 0.8s ease 1s forwards, shimmer 3s ease-in-out 2s infinite",
+          }}
+          onMouseEnter={e => { e.currentTarget.style.boxShadow = "0 12px 40px rgba(212,175,55,0.55)"; e.currentTarget.style.transform = "translateY(-2px)"; }}
+          onMouseLeave={e => { e.currentTarget.style.boxShadow = "0 8px 32px rgba(212,175,55,0.35)"; e.currentTarget.style.transform = "translateY(0)"; }}
+        >
+          ✨ Enter the Epic
+        </button>
+      </div>
+    );
+  }
+
   return (
-    <div style={{ minHeight: "100vh", background: parchment, color: inkDark }}>
+    <div style={{
+      minHeight: "100vh",
+      background: isDark ? theme.bgGradient : parchment,
+      color: inkDark,
+      transition: "background 0.8s ease, color 0.5s ease",
+    }}>
+      {/* Lottie mood animation — full page background */}
+      {isDark && theme.lottieUrl && (
+        <div style={{ position: "fixed", inset: 0, zIndex: 0, pointerEvents: "none" }}>
+          <LottieBackground url={theme.lottieUrl} opacity={0.08} />
+        </div>
+      )}
+      <div style={{ position: "relative", zIndex: 1 }}>
       <Navbar />
 
       {/* ── HERO ── */}
@@ -452,6 +566,7 @@ const StoryTeller = () => {
                       setStep("prompt");
                       setStory("");
                       setError("");
+                      setCurrentTheme(GROUP_THEME_MAP[activeGroup]);
                     }}
                     style={{
                       padding: "16px", borderRadius: "12px", textAlign: "left", cursor: "pointer",
@@ -462,9 +577,12 @@ const StoryTeller = () => {
                     }}
                   >
                     <div style={{ fontSize: "28px", marginBottom: "8px" }}>{char.icon}</div>
-                    <div style={{ fontFamily: serif, fontSize: "14px", fontWeight: 600, color: isSelected ? char.accentHex : inkDark, marginBottom: "4px" }}>
+                  <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "8px" }}>
+                    <CharacterPortrait characterId={char.id} accentHex={char.accentHex} size={44} />
+                    <div style={{ fontFamily: serif, fontSize: "14px", fontWeight: 600, color: isSelected ? char.accentHex : inkDark }}>
                       {char.name}
                     </div>
+                  </div>
                     <div style={{ fontFamily: serif, fontSize: "10px", color: inkMuted, letterSpacing: "0.06em", marginBottom: "6px" }}>
                       {char.title}
                     </div>
@@ -949,13 +1067,53 @@ const StoryTeller = () => {
                   New character
                 </button>
 
-                {/* Share */}
-                <div style={{ marginLeft: "auto" }}>
-                  <ShareButtons
-                    url={window.location.href}
-                    title={`The Story of ${selected?.name} — MahabharataDecoded`}
-                    description={story.slice(0, 120) + "…"}
-                  />
+                {/* Share — prominent WhatsApp button */}
+                <div style={{ marginLeft: "auto", display: "flex", gap: "8px", alignItems: "center" }}>
+
+                  {/* WhatsApp — green, clearly labelled */}
+                  <button
+                    onClick={() => {
+                      const storyExcerpt = story.slice(0, 150) + "…";
+                      const text = `✨ "${storyExcerpt}"\n\nRead the full story of ${selected?.name} on MahabharataDecoded:\n${window.location.origin}/storyteller`;
+                      window.open(
+                        `https://wa.me/?text=${encodeURIComponent(text)}`,
+                        "_blank", "noopener,noreferrer"
+                      );
+                    }}
+                    style={{
+                      display: "flex", alignItems: "center", gap: "8px",
+                      padding: "10px 20px", borderRadius: "99px",
+                      background: "#25D366", border: "none",
+                      cursor: "pointer", fontFamily: serif, fontSize: "12px",
+                      color: "#FFFFFF", letterSpacing: "0.08em",
+                      transition: "all 0.2s",
+                      fontWeight: 600,
+                    }}
+                    onMouseEnter={e => e.currentTarget.style.background = "#1DA851"}
+                    onMouseLeave={e => e.currentTarget.style.background = "#25D366"}
+                  >
+                    <svg width="16" height="16" viewBox="0 0 24 24" fill="white">
+                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+                    </svg>
+                    Share on WhatsApp
+                  </button>
+
+                  {/* Copy link */}
+                  <button
+                    onClick={() => {
+                      navigator.clipboard.writeText(window.location.origin + "/storyteller");
+                    }}
+                    style={{
+                      display: "flex", alignItems: "center", gap: "6px",
+                      padding: "10px 16px", borderRadius: "99px",
+                      background: cardBg, border: `1.5px solid ${borderClr}`,
+                      cursor: "pointer", fontFamily: serif, fontSize: "12px",
+                      color: inkMuted, transition: "all 0.2s",
+                    }}
+                    title="Copy link"
+                  >
+                    🔗 Copy link
+                  </button>
                 </div>
               </div>
             )}
@@ -976,6 +1134,7 @@ const StoryTeller = () => {
         )}
       </main>
 
+      </div>{/* end relative zIndex wrapper */}
       <Footer />
     </div>
   );
