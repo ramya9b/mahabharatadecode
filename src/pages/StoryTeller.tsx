@@ -774,18 +774,21 @@ const StoryTeller = () => {
             {/* Story card with 3 tabs */}
             {(loading || story) && (
               <div style={{
-                background: `linear-gradient(160deg, hsl(38 50% 96%) 0%, hsl(28 45% 93%) 100%)`,
+                background: isDark
+                  ? "#0D0A1A"
+                  : `linear-gradient(160deg, hsl(38 50% 96%) 0%, hsl(28 45% 93%) 100%)`,
                 border: `1.5px solid ${(selected ? GROUP_COLORS[selected.group] : "#A07820")}50`,
                 borderRadius: "20px",
                 overflow: "hidden",
-                boxShadow: "0 8px 40px rgba(0,0,0,0.08)",
+                boxShadow: isDark ? `0 8px 40px rgba(0,0,0,0.4)` : "0 8px 40px rgba(0,0,0,0.08)",
               }}>
 
                 {/* ── Tab bar ── */}
                 {storyComplete && (
                   <div style={{
-                    display: "flex", borderBottom: `1px solid rgba(160,120,32,0.15)`,
-                    background: "rgba(160,120,32,0.04)",
+                    display: "flex",
+                    borderBottom: `1px solid ${isDark ? "rgba(255,255,255,0.08)" : "rgba(160,120,32,0.15)"}`,
+                    background: isDark ? "rgba(255,255,255,0.04)" : "rgba(160,120,32,0.04)",
                   }}>
                     {([
                       { key: "story",     label: "📖 The Story",    desc: "What happened" },
@@ -830,7 +833,9 @@ const StoryTeller = () => {
                           flex: 1, padding: "14px 8px", border: "none",
                           cursor: (!story && tab.key !== "story") ? "not-allowed" : "pointer",
                           opacity: (!story && tab.key !== "story") ? 0.4 : 1,
-                          background: activeTab === tab.key ? "white" : "transparent",
+                          background: activeTab === tab.key
+                            ? (isDark ? "#1A1530" : "white")
+                            : "transparent",
                           borderBottom: activeTab === tab.key ? `3px solid ${(selected ? GROUP_COLORS[selected.group] : "#A07820")}` : "3px solid transparent",
                           transition: "all 0.2s",
                         }}
