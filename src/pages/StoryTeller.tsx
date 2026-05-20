@@ -306,20 +306,20 @@ const StoryTeller = () => {
   }, []);
 
 
-  /* ── Theme-aware styles ── */
+  /* ── Theme-aware styles — solid colors, no alpha issues on mobile ── */
   const theme     = MOOD_THEMES[currentTheme];
   const isDark    = currentTheme !== "default";
   const gold      = isDark ? theme.highlightColor : "#A07820";
   const goldDark  = isDark ? theme.accentColor    : "#6B4E10";
   const parchment = isDark ? "transparent"        : "hsl(38 52% 91%)";
 
-  /* Text — high contrast on both light & dark */
-  const inkDark   = isDark ? "#F0EAF8"            : "#1C0E00";
-  const inkMuted  = isDark ? "rgba(220,200,255,0.55)" : "#6B4E10";
+  /* High contrast text — works on any background */
+  const inkDark   = isDark ? "#F0EAFF"            : "#1C0E00";
+  const inkMuted  = isDark ? "#9B8AB8"            : "#6B4E10";
 
-  /* Card backgrounds — fully opaque on dark to block scene image */
-  const cardBg    = isDark ? "rgba(8,5,18,0.92)"  : "hsl(38 45% 96%)";
-  const borderClr = isDark ? `${theme.accentColor}40` : "hsl(35 28% 74%)";
+  /* Solid card backgrounds — no transparency issues on mobile */
+  const cardBg    = isDark ? "#0D0A1A"            : "hsl(38 45% 96%)";
+  const borderClr = isDark ? `${theme.accentColor}50` : "hsl(35 28% 74%)";
 
   const serif  = "'Cinzel', 'Cinzel Decorative', 'Playfair Display', serif";
   const body   = "'Lora', 'Noto Serif Telugu', 'Noto Serif Devanagari', 'Noto Serif Kannada', serif";
@@ -647,12 +647,11 @@ const StoryTeller = () => {
         {(step === "prompt" || step === "story") && selected && (
           <section
             style={{
-              background: isDark ? "rgba(5,3,15,0.92)" : cardBg,
+              background: isDark ? "#0D0A1A" : cardBg,
               border: `1px solid ${borderClr}`,
               borderRadius: "16px",
               padding: "32px",
               marginBottom: "32px",
-              backdropFilter: isDark ? "blur(8px)" : "none",
             }}
           >
             <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "8px" }}>
