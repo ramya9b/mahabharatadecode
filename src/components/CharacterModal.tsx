@@ -327,8 +327,9 @@ const CharacterModal = ({ char, sceneImage, onStart, onClose }: Props) => {
           <div style={{
             flex: "0 0 40%",
             position: "relative",
-            overflow: "visible",
+            overflow: "hidden",
             minHeight: "600px",
+            background: "#080614",  /* solid dark — never grey checker */
           }}>
             {/* Scene background */}
             {sceneImage && (
@@ -397,7 +398,7 @@ const CharacterModal = ({ char, sceneImage, onStart, onClose }: Props) => {
               zIndex: 2,
             }} />
 
-            {/* Character image — pops out */}
+            {/* Character image — handles both portrait and landscape */}
             {charImg && (
               <img
                 src={charImg}
@@ -407,8 +408,8 @@ const CharacterModal = ({ char, sceneImage, onStart, onClose }: Props) => {
                   bottom: 0,
                   left: "50%",
                   transform: "translateX(-50%)",
-                  height: "115%",
-                  maxWidth: "none",
+                  width: "100%",
+                  height: "100%",
                   objectFit: "contain",
                   objectPosition: "bottom center",
                   filter: `drop-shadow(0 0 30px ${accent}60) drop-shadow(0 20px 40px rgba(0,0,0,0.6))`,

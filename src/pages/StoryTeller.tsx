@@ -1270,11 +1270,11 @@ const StoryTeller = () => {
           char={modalChar}
           sceneImage={(() => {
             const sceneMap: Record<string, string> = {
-              divine: "/scenes/divine.webp",
-              war:    "/scenes/kauravas.webp",
-              tragic: "/scenes/women.webp",
-              forest: "/scenes/kings.webp",
-              gita:   "/scenes/pandavas.webp",
+              gita:    "/scenes/pandavas.webp",
+              war:     activeGroup === "warriors" ? "/scenes/warriors.webp" : "/scenes/kauravas.webp",
+              tragic:  "/scenes/women.webp",
+              forest:  "/scenes/kings.webp",
+              divine:  "/scenes/divine.webp",
             };
             return sceneMap[currentTheme] ?? "/scenes/pandavas.webp";
           })()}
