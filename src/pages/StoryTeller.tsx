@@ -250,18 +250,27 @@ const StoryTeller = () => {
     if (!("speechSynthesis" in window)) return;
 
     if (speaking) {
-      stoppedRef.current = true;        // ← set BEFORE cancel
+      stoppedRef.current = true;
       window.speechSynthesis.cancel();
       setSpeaking(false);
       sentIdxRef.current = 0;
       return;
     }
 
-    /* Reset stopped flag for new narration */
-    stoppedRef.current   = false;
+    /* ── Pick content based on active tab ── */
+    let textToRead = "";
+    if (activeTab === "story") {
+      textToRead = story;
+    } else if (activeTab === "lesson") {
+      textToRead = lessonText;
+    } else if (activeTab === "situation") {
+      textToRead = situationText;
+    }
 
-    /* Strip markdown formatting before speaking */
-    const cleanText = story
+    if (!textToRead.trim()) return;
+
+    /* Strip markdown */
+    const cleanText = textToRead
       .replace(/\*\*(.*?)\*\*/g, "$1")
       .replace(/\*(.*?)\*/g, "$1")
       .replace(/#{1,6}\s/g, "")
@@ -279,10 +288,10 @@ const StoryTeller = () => {
 
     sentencesRef.current = sentences;
     sentIdxRef.current   = 0;
+    stoppedRef.current   = false;
     setSpeaking(true);
     window.speechSynthesis.cancel();
 
-    /* Voices load async in Chrome — wait if not ready */
     if (window.speechSynthesis.getVoices().length === 0) {
       window.speechSynthesis.onvoiceschanged = () => {
         window.speechSynthesis.onvoiceschanged = null;
@@ -291,7 +300,7 @@ const StoryTeller = () => {
     } else {
       speakNext();
     }
-  }, [speaking, story, speakNext]);
+  }, [speaking, activeTab, story, lessonText, situationText, speakNext]);
 
   /* ── Reset ── */
   const handleReset = useCallback(() => {
@@ -802,6 +811,15 @@ const StoryTeller = () => {
                       <button
                         key={tab.key}
                         onClick={async () => {
+                          if (tab.key !== activeTab) {
+                            /* Stop any playing narration when switching tabs */
+                            if (speaking) {
+                              stoppedRef.current = true;
+                              window.speechSynthesis?.cancel();
+                              setSpeaking(false);
+                              sentIdxRef.current = 0;
+                            }
+                          }
                           /* Guard — Life Lesson and My Situation need story first */
                           if (!story && tab.key !== "story") return;
                           setActiveTab(tab.key);
@@ -1110,7 +1128,11 @@ const StoryTeller = () => {
                     }}
                   >
                     {speaking ? <MicOff size={14} /> : <Mic size={14} />}
-                    {speaking ? "Stop narration" : "Listen to story"}
+                    {speaking ? "Stop narration" : (
+                      activeTab === "lesson" ? "Listen to lesson" :
+                      activeTab === "situation" ? "Listen to guidance" :
+                      "Listen to story"
+                    )}
                   </button>
                 )}
 
