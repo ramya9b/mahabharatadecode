@@ -180,67 +180,93 @@ const StoryTeller = () => {
   const sentIdxRef   = useRef(0);
   const stoppedRef   = useRef(false);   // ← prevents onend loop after cancel
 
-  /* Pick best Indian voice for the selected language */
+  /* ── Voice selection — Indian accent priority ── */
   const getIndianVoice = useCallback((lang: string): SpeechSynthesisVoice | null => {
     const voices = window.speechSynthesis.getVoices();
+    if (!voices.length) return null;
 
-    /* Priority order: exact Indian locale → any Indian → any matching language */
-    const localMap: Record<string, string[]> = {
-      en: ["en-IN", "en-GB"],   // prefer India, then GB over US
-      te: ["te-IN", "te"],
-      hi: ["hi-IN", "hi"],
-      kn: ["kn-IN", "kn"],
-    };
-
-    const preferred = localMap[lang] ?? [`${lang}-IN`, lang];
-
-    /* 1. Try exact locale match */
-    for (const locale of preferred) {
-      const match = voices.find(v =>
-        v.lang.toLowerCase() === locale.toLowerCase()
-      );
-      if (match) return match;
+    /* Log all voices in dev for debugging */
+    if (import.meta.env.DEV) {
+      console.log("Available voices:", voices.map(v => `${v.name} [${v.lang}]`));
     }
 
-    /* 2. Try voices with "India" or "-IN" in name/lang */
-    const indiaMatch = voices.find(v =>
-      v.lang.toLowerCase().startsWith(lang) &&
-      (v.lang.includes("IN") || v.name.toLowerCase().includes("india"))
-    );
-    if (indiaMatch) return indiaMatch;
+    /* ── Telugu ── */
+    if (lang === "te") {
+      return (
+        voices.find(v => v.lang === "te-IN") ||
+        voices.find(v => v.lang.startsWith("te")) ||
+        /* Fallback: Google Hindi Indian — closest prosody to Telugu */
+        voices.find(v => v.lang === "hi-IN" && v.name.toLowerCase().includes("google")) ||
+        voices.find(v => v.lang === "hi-IN") ||
+        voices.find(v => v.lang === "en-IN") ||
+        null
+      );
+    }
 
-    /* 3. Any voice starting with the language code */
-    return voices.find(v => v.lang.toLowerCase().startsWith(lang)) ?? null;
+    /* ── Hindi ── */
+    if (lang === "hi") {
+      return (
+        voices.find(v => v.lang === "hi-IN" && v.name.toLowerCase().includes("google")) ||
+        voices.find(v => v.lang === "hi-IN") ||
+        voices.find(v => v.lang.startsWith("hi")) ||
+        voices.find(v => v.lang === "en-IN") ||
+        null
+      );
+    }
+
+    /* ── Kannada ── */
+    if (lang === "kn") {
+      return (
+        voices.find(v => v.lang === "kn-IN") ||
+        voices.find(v => v.lang.startsWith("kn")) ||
+        voices.find(v => v.lang === "hi-IN") ||
+        voices.find(v => v.lang === "en-IN") ||
+        null
+      );
+    }
+
+    /* ── English — prefer Indian, then British, avoid US ── */
+    return (
+      voices.find(v => v.lang === "en-IN" && v.name.toLowerCase().includes("google")) ||
+      voices.find(v => v.lang === "en-IN") ||
+      voices.find(v => v.name.toLowerCase().includes("raveena")) ||  // Google Indian female
+      voices.find(v => v.name.toLowerCase().includes("veena")) ||    // Apple Indian
+      voices.find(v => v.lang === "en-GB" && v.name.toLowerCase().includes("google")) ||
+      voices.find(v => v.lang === "en-GB") ||
+      voices.find(v => v.lang.startsWith("en")) ||
+      null
+    );
   }, []);
 
   const speakNext = useCallback(() => {
-    if (stoppedRef.current) return;   // ← stop here if cancelled
+    if (stoppedRef.current) return;
     const sentences = sentencesRef.current;
     const idx       = sentIdxRef.current;
     if (idx >= sentences.length) { setSpeaking(false); return; }
 
-    const utt   = new SpeechSynthesisUtterance(sentences[idx]);
-    utt.rate    = 0.88;
-    utt.pitch   = 1.05;
+    const utt  = new SpeechSynthesisUtterance(sentences[idx]);
+    utt.rate   = language === "te" || language === "kn" ? 0.82 : 0.88;
+    utt.pitch  = 1.0;
+    utt.volume = 1.0;
 
-    /* Always use Indian voice */
+    /* Set voice and language */
     const voice = getIndianVoice(language);
-    if (voice) utt.voice = voice;
-    utt.lang = voice?.lang ?? (
-      language === "te" ? "te-IN" :
-      language === "hi" ? "hi-IN" :
-      language === "kn" ? "kn-IN" : "en-IN"
-    );
+    if (voice) {
+      utt.voice = voice;
+      utt.lang  = voice.lang;
+    } else {
+      /* No voice found — set lang hint so browser picks best available */
+      utt.lang = (
+        language === "te" ? "te-IN" :
+        language === "hi" ? "hi-IN" :
+        language === "kn" ? "kn-IN" : "en-IN"
+      );
+    }
 
-    utt.onend   = () => {
-      if (stoppedRef.current) return;  // ← stop here too
-      sentIdxRef.current += 1;
-      speakNext();
-    };
-    utt.onerror = () => {
-      if (stoppedRef.current) return;  // ← and here
-      sentIdxRef.current += 1;
-      speakNext();
+    utt.onend   = () => { if (!stoppedRef.current) { sentIdxRef.current += 1; speakNext(); } };
+    utt.onerror = (e) => {
+      console.warn("TTS error:", e.error);
+      if (!stoppedRef.current) { sentIdxRef.current += 1; speakNext(); }
     };
     utterRef.current = utt;
     window.speechSynthesis.speak(utt);
@@ -292,14 +318,16 @@ const StoryTeller = () => {
     setSpeaking(true);
     window.speechSynthesis.cancel();
 
-    if (window.speechSynthesis.getVoices().length === 0) {
-      window.speechSynthesis.onvoiceschanged = () => {
-        window.speechSynthesis.onvoiceschanged = null;
+    /* Android Chrome loads voices async — retry until available */
+    const trySpeak = (attempts = 0) => {
+      const voices = window.speechSynthesis.getVoices();
+      if (voices.length > 0 || attempts > 10) {
         speakNext();
-      };
-    } else {
-      speakNext();
-    }
+      } else {
+        setTimeout(() => trySpeak(attempts + 1), 200);
+      }
+    };
+    trySpeak();
   }, [speaking, activeTab, story, lessonText, situationText, speakNext]);
 
   /* ── Reset ── */
