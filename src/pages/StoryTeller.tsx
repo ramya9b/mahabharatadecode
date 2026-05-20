@@ -71,7 +71,8 @@ const StoryTeller = () => {
   const [showIntro, setShowIntro]           = useState(true);  // cinematic opening
   const [activeGroup, setActiveGroup]       = useState<CharacterGroup>("pandavas");
   const [selected, setSelected]             = useState<StoryCharacter | null>(null);
-  const [bgMode, setBgMode]           = useState<"watermark"|"gradient">("watermark");
+  const [currentTheme, setCurrentTheme]     = useState<MoodTheme>("default");
+  const [bgMode, setBgMode]                 = useState<"watermark"|"gradient">("watermark");
   const [customPrompt, setCustomPrompt]     = useState("");
   const [activePromptIdx, setActivePromptIdx] = useState<number | null>(null);
   const [tone, setTone]                     = useState<Tone>("epic");
