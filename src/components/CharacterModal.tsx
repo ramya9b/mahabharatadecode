@@ -243,49 +243,53 @@ const CharacterModal = ({ char, onStart, onClose }: Props) => {
           {/* ── RIGHT — Character standing image ── */}
           {charImg && (
             <div style={{
-              width:"200px", flexShrink:0,
-              position:"relative", overflow:"hidden",
-              background:`linear-gradient(to right, transparent, ${accent}08)`,
-              borderLeft:`1px solid ${accent}15`,
+              width: "220px",
+              flexShrink: 0,
+              position: "relative",
+              overflow: "hidden",
+              borderLeft: `1px solid ${accent}15`,
+              background: `linear-gradient(to bottom, ${accent}08, transparent)`,
+              display: "flex",
+              alignItems: "flex-end",
+              justifyContent: "center",
             }}>
-              {/* Gradient fade on left edge so it blends */}
+              {/* Left fade — blends into modal */}
               <div style={{
-                position:"absolute", inset:0,
-                background:"linear-gradient(to right, #0d0a1a 0%, transparent 25%)",
-                zIndex:2, pointerEvents:"none",
+                position: "absolute", inset: 0, zIndex: 2, pointerEvents: "none",
+                background: "linear-gradient(to right, #0d0a1a 0%, rgba(13,10,26,0.3) 30%, transparent 60%)",
               }} />
 
-              {/* Ground glow */}
+              {/* Bottom fade */}
               <div style={{
-                position:"absolute", bottom:"10px", left:"50%",
-                transform:"translateX(-50%)",
-                width:"160px", height:"30px", borderRadius:"50%",
-                background:`${accent}30`,
-                filter:"blur(12px)",
-                animation:"glow-pulse 3s ease-in-out infinite",
-                zIndex:1,
+                position: "absolute", bottom: 0, left: 0, right: 0,
+                height: "60px", zIndex: 2, pointerEvents: "none",
+                background: "linear-gradient(to top, #0d0a1a 0%, transparent 100%)",
               }} />
 
-              {/* Character image */}
+              {/* Gold glow at bottom */}
               <div style={{
-                position:"absolute", inset:0,
-                display:"flex", alignItems:"flex-end", justifyContent:"center",
-                padding:"0 8px 4px",
-                zIndex:3,
-              }}>
-                <img
-                  src={charImg}
-                  alt={char.name}
-                  style={{
-                    maxHeight:"100%",
-                    maxWidth:"190px",
-                    objectFit:"contain",
-                    objectPosition:"bottom center",
-                    filter:`drop-shadow(0 0 20px ${accent}50) drop-shadow(0 8px 24px rgba(0,0,0,0.5))`,
-                    animation:"char-float 4s ease-in-out infinite",
-                  }}
-                />
-              </div>
+                position: "absolute", bottom: "8px", left: "50%",
+                transform: "translateX(-50%)",
+                width: "180px", height: "24px", borderRadius: "50%",
+                background: `${accent}35`, filter: "blur(10px)",
+                animation: "glow-pulse 3s ease-in-out infinite", zIndex: 1,
+              }} />
+
+              {/* Character image — fills panel */}
+              <img
+                src={charImg}
+                alt={char.name}
+                style={{
+                  width: "100%",
+                  height: "100%",
+                  objectFit: "cover",
+                  objectPosition: "center top",
+                  filter: `drop-shadow(0 4px 16px ${accent}40)`,
+                  animation: "char-float 4s ease-in-out infinite",
+                  position: "relative",
+                  zIndex: 3,
+                }}
+              />
             </div>
           )}
 
