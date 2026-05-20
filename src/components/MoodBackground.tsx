@@ -1,4 +1,4 @@
-/* MoodBackground — CSS particles, no external Lottie */
+/* MoodBackground — CSS particles, no external deps */
 import { useEffect, useRef } from "react";
 import type { MoodTheme } from "@/data/moodThemes";
 
@@ -16,6 +16,7 @@ const PARTICLES: Record<string, P[]> = {
 
 const MoodBackground = ({ theme, opacity = 0.18 }: Props) => {
   const ref = useRef<HTMLDivElement>(null);
+
   useEffect(() => {
     if (!ref.current) return;
     ref.current.innerHTML = "";
@@ -23,18 +24,48 @@ const MoodBackground = ({ theme, opacity = 0.18 }: Props) => {
       for (let i = 0; i < count; i++) {
         const el = document.createElement("div");
         el.textContent = char;
-        el.style.cssText = `position:absolute;left:${Math.random()*100}%;bottom:-40px;font-size:${size};opacity:0;transform:scale(${0.6+Math.random()*0.8});animation:mf ${duration} ease-in ${Math.random()*5}s infinite;pointer-events:none;user-select:none;`;
+        el.style.cssText = [
+          `position:absolute`,
+          `left:${Math.random()*100}%`,
+          `bottom:-40px`,
+          `font-size:${size}`,
+          `opacity:0`,
+          `animation:mf ${duration} ease-in ${(Math.random()*5).toFixed(1)}s infinite`,
+          `pointer-events:none`,
+          `user-select:none`,
+          `will-change:transform,opacity`,
+        ].join(";");
         ref.current!.appendChild(el);
       }
     });
   }, [theme]);
 
-  if (theme === "default") return null;
+  if (theme === "default" || !(PARTICLES[theme]?.length)) return null;
+
   return (
     <>
-      <style>{`@keyframes mf{0%{opacity:0;transform:translateY(0) rotate(0deg)}10%{opacity:.6}90%{opacity:.3}100%{opacity:0;transform:translateY(-100vh) rotate(180deg)}}`}</style>
-      <div ref={ref} aria-hidden="true" style={{position:"fixed",inset:0,opacity,pointerEvents:"none",overflow:"hidden",zIndex:0}} />
+      <style>{`
+        @keyframes mf {
+          0%   { opacity:0;   transform:translateY(0px) rotate(0deg);     }
+          15%  { opacity:0.9;                                              }
+          85%  { opacity:0.5;                                              }
+          100% { opacity:0;   transform:translateY(-95vh) rotate(180deg); }
+        }
+      `}</style>
+      <div
+        ref={ref}
+        aria-hidden="true"
+        style={{
+          position:      "fixed",
+          inset:         0,
+          opacity,
+          pointerEvents: "none",
+          overflow:      "hidden",
+          zIndex:        9,       /* above content (zIndex:1) but below modals */
+        }}
+      />
     </>
   );
 };
+
 export default MoodBackground;
