@@ -575,12 +575,9 @@ const StoryTeller = () => {
                     }}
                   >
                     <div style={{ fontSize: "28px", marginBottom: "8px" }}>{char.icon}</div>
-                  <div style={{ display: "flex", alignItems: "center", gap: "10px", marginBottom: "8px" }}>
-                    <CharacterPortrait characterId={char.id} accentHex={char.accentHex} size={44} />
-                    <div style={{ fontFamily: serif, fontSize: "14px", fontWeight: 600, color: isSelected ? char.accentHex : inkDark }}>
+                    <div style={{ fontFamily: serif, fontSize: "14px", fontWeight: 600, color: isSelected ? char.accentHex : inkDark, marginBottom: "4px" }}>
                       {char.name}
                     </div>
-                  </div>
                     <div style={{ fontFamily: serif, fontSize: "10px", color: inkMuted, letterSpacing: "0.06em", marginBottom: "6px" }}>
                       {char.title}
                     </div>
