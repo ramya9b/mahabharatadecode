@@ -403,7 +403,7 @@ export const storyCharacters: StoryCharacter[] = [
     group: "kings",
     hook: "He spent decades plotting revenge against his childhood friend turned enemy",
     accentHex: "#935116",
-    icon: "🔥",
+    icon: "⚡",
     prompts: [
       { label: "Drona's Humiliation", request: "Tell me about Drona humiliating Drupada — the incident that set the entire war in motion", mood: "tragic" },
       { label: "Creating Draupadi", request: "Tell me how Drupada performed the great fire sacrifice specifically to create warriors who could kill Drona", mood: "epic" },
