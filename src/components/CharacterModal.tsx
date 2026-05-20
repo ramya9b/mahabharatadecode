@@ -14,11 +14,29 @@ interface Props {
 
 /* Characters with available portrait images */
 const CHARACTER_IMAGES: Record<string, string> = {
+  /* Pandavas */
   yudhishthira: "/characters/yudhishthira.webp",
   bhima:        "/characters/bhima.webp",
   arjuna:       "/characters/arjuna.webp",
   nakula:       "/characters/nakula.webp",
   sahadeva:     "/characters/sahadeva.webp",
+  /* Kauravas */
+  duryodhana:   "/characters/duryodhana.webp",
+  dushasana:    "/characters/dushasana.webp",
+  karna:        "/characters/karna.webp",
+  shakuni:      "/characters/shakuni.webp",
+  /* Divine & Sages */
+  krishna:      "/characters/krishna.webp",
+  drona:        "/characters/drona.webp",
+  ashwatthama:  "/characters/ashwatthama.webp",
+  /* Women */
+  draupadi:     "/characters/draupadi.webp",
+  gandhari:     "/characters/gandhari.webp",
+  subhadra:     "/characters/subhadra.webp",
+  hidimbi:      "/characters/hidimbi.webp",
+  /* Warriors */
+  bhishma:      "/characters/bhishma.webp",
+  abhimanyu:    "/characters/abhimanyu.webp",
 };
 
 const CharacterModal = ({ char, onStart, onClose }: Props) => {
