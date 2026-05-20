@@ -248,34 +248,31 @@ const CharacterModal = ({ char, onStart, onClose }: Props) => {
               position: "relative",
               overflow: "hidden",
               borderLeft: `1px solid ${accent}15`,
-              background: `linear-gradient(to bottom, ${accent}08, transparent)`,
-              display: "flex",
-              alignItems: "flex-end",
-              justifyContent: "center",
+              background: `linear-gradient(160deg, #0d0a1a 0%, #1a1025 100%)`,
             }}>
-              {/* Left fade — blends into modal */}
+              {/* Left fade */}
               <div style={{
                 position: "absolute", inset: 0, zIndex: 2, pointerEvents: "none",
-                background: "linear-gradient(to right, #0d0a1a 0%, rgba(13,10,26,0.3) 30%, transparent 60%)",
+                background: "linear-gradient(to right, #0d0a1a 0%, rgba(13,10,26,0.2) 25%, transparent 50%)",
               }} />
 
               {/* Bottom fade */}
               <div style={{
                 position: "absolute", bottom: 0, left: 0, right: 0,
-                height: "60px", zIndex: 2, pointerEvents: "none",
-                background: "linear-gradient(to top, #0d0a1a 0%, transparent 100%)",
+                height: "50px", zIndex: 2, pointerEvents: "none",
+                background: `linear-gradient(to top, #0d0a1a 0%, transparent 100%)`,
               }} />
 
-              {/* Gold glow at bottom */}
+              {/* Gold glow */}
               <div style={{
-                position: "absolute", bottom: "8px", left: "50%",
+                position: "absolute", bottom: "12px", left: "50%",
                 transform: "translateX(-50%)",
-                width: "180px", height: "24px", borderRadius: "50%",
-                background: `${accent}35`, filter: "blur(10px)",
+                width: "160px", height: "20px", borderRadius: "50%",
+                background: `${accent}40`, filter: "blur(10px)",
                 animation: "glow-pulse 3s ease-in-out infinite", zIndex: 1,
               }} />
 
-              {/* Character image — fills panel */}
+              {/* Character image — full height, show from top */}
               <img
                 src={charImg}
                 alt={char.name}
@@ -283,11 +280,12 @@ const CharacterModal = ({ char, onStart, onClose }: Props) => {
                   width: "100%",
                   height: "100%",
                   objectFit: "cover",
-                  objectPosition: "center top",
-                  filter: `drop-shadow(0 4px 16px ${accent}40)`,
+                  objectPosition: "top center",
+                  filter: `drop-shadow(0 4px 20px ${accent}50)`,
                   animation: "char-float 4s ease-in-out infinite",
                   position: "relative",
                   zIndex: 3,
+                  mixBlendMode: "normal",
                 }}
               />
             </div>
