@@ -282,7 +282,7 @@ export const storyCharacters: StoryCharacter[] = [
     group: "warriors",
     hook: "He taught both armies — then had to choose a side",
     accentHex: "#F0A500",
-    icon: "📿",
+    icon: "🎯",
     prompts: [
       { label: "Eklavya's Thumb", request: "Tell me about Drona and Eklavya — the most controversial episode involving a guru and his student", mood: "tragic" },
       { label: "His Love for Arjuna", request: "Tell me why Drona favoured Arjuna above all students — and how this shaped history", mood: "devotional" },
