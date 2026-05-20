@@ -893,8 +893,11 @@ const StoryTeller = () => {
                         <div style={{
                           fontFamily: body,
                           fontSize: "clamp(1rem, 2vw, 1.15rem)",
-                          lineHeight: 2,
+                          lineHeight: 1.9,
                           color: isDark ? "#EDE6FF" : "#1C0E00",
+                          textAlign: "justify",
+                          hyphens: "auto",
+                          WebkitHyphens: "auto",
                           whiteSpace: "pre-wrap",
                           userSelect: "none", WebkitUserSelect: "none",
                           minHeight: "120px",
@@ -968,7 +971,7 @@ const StoryTeller = () => {
                       ) : (
                         <div style={{
                           fontFamily: body, fontSize: "clamp(1rem, 2vw, 1.1rem)",
-                          lineHeight: 2, color: inkDark, whiteSpace: "pre-wrap",
+                          lineHeight: 1.9, color: inkDark, textAlign: "justify", hyphens: "auto", WebkitHyphens: "auto", whiteSpace: "pre-wrap",
                           userSelect: "none",
                         }}>
                           {lessonText}
@@ -1054,7 +1057,7 @@ const StoryTeller = () => {
                         <>
                           <div style={{
                             fontFamily: body, fontSize: "clamp(1rem, 2vw, 1.1rem)",
-                            lineHeight: 2, color: inkDark, whiteSpace: "pre-wrap",
+                            lineHeight: 1.9, color: inkDark, textAlign: "justify", hyphens: "auto", WebkitHyphens: "auto", whiteSpace: "pre-wrap",
                             userSelect: "none",
                           }}>
                             {situationText}
