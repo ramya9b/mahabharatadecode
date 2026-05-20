@@ -312,10 +312,14 @@ const StoryTeller = () => {
   const gold      = isDark ? theme.highlightColor : "#A07820";
   const goldDark  = isDark ? theme.accentColor    : "#6B4E10";
   const parchment = isDark ? "transparent"        : "hsl(38 52% 91%)";
-  const inkDark   = isDark ? theme.textPrimary    : "hsl(28 62% 12%)";
-  const inkMuted  = isDark ? theme.textMuted      : "hsl(28 30% 42%)";
-  const cardBg    = isDark ? "rgba(8,5,18,0.88)"   : "hsl(38 45% 94%)";
-  const borderClr = isDark ? `${theme.accentColor}35` : "hsl(35 28% 74%)";
+
+  /* Text — high contrast on both light & dark */
+  const inkDark   = isDark ? "#F0EAF8"            : "#1C0E00";
+  const inkMuted  = isDark ? "rgba(220,200,255,0.55)" : "#6B4E10";
+
+  /* Card backgrounds — fully opaque on dark to block scene image */
+  const cardBg    = isDark ? "rgba(8,5,18,0.92)"  : "hsl(38 45% 96%)";
+  const borderClr = isDark ? `${theme.accentColor}40` : "hsl(35 28% 74%)";
 
   const serif  = "'Cinzel', 'Cinzel Decorative', 'Playfair Display', serif";
   const body   = "'Lora', 'Noto Serif Telugu', 'Noto Serif Devanagari', 'Noto Serif Kannada', serif";
@@ -879,9 +883,13 @@ const StoryTeller = () => {
                         </div>
                       ) : (
                         <div style={{
-                          fontFamily: body, fontSize: "clamp(1rem, 2vw, 1.15rem)",
-                          lineHeight: 2, color: inkDark, whiteSpace: "pre-wrap",
-                          userSelect: "none", WebkitUserSelect: "none", minHeight: "120px",
+                          fontFamily: body,
+                          fontSize: "clamp(1rem, 2vw, 1.15rem)",
+                          lineHeight: 2,
+                          color: isDark ? "#EDE6FF" : "#1C0E00",
+                          whiteSpace: "pre-wrap",
+                          userSelect: "none", WebkitUserSelect: "none",
+                          minHeight: "120px",
                         }}>
                           {shownText}
                           {!storyComplete && (
