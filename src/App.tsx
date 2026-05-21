@@ -6,6 +6,7 @@ import BackToTop from "@/components/BackToTop";
 import CookieConsent from "@/components/CookieConsent";
 import FloatingStoryButton from "@/components/FloatingStoryButton";
 import FirstVisitCard from "@/components/FirstVisitCard";
+import { ThemeProvider } from "@/context/ThemeContext";
 
 /* ── Lazy-loaded page routes (code-split per route) ── */
 const Index       = lazy(() => import("./pages/Index.tsx"));
@@ -28,7 +29,7 @@ const PageLoader = () => (
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
-      background: "hsl(38 52% 91%)",
+      background: "hsl(var(--background))",
     }}
   >
     <div style={{ textAlign: "center" }}>
@@ -72,31 +73,33 @@ const queryClient = new QueryClient({
 });
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <BrowserRouter>
-      <ErrorBoundary>
-        <div id="main-content">
-          <Suspense fallback={<PageLoader />}>
-            <Routes>
-              <Route path="/"            element={<Index />} />
-              <Route path="/blog"        element={<Blog />} />
-              <Route path="/blog/:slug"  element={<ArticlePage />} />
-              <Route path="/characters"  element={<Characters />} />
-              <Route path="/about"       element={<About />} />
-              <Route path="/quiz"        element={<Quiz />} />
-              <Route path="/wisdom"      element={<Wisdom />} />
-              <Route path="/storyteller" element={<StoryTeller />} />
-              <Route path="*"            element={<NotFound />} />
-            </Routes>
-          </Suspense>
-        </div>
-        <BackToTop />
-        <CookieConsent />
-        <FloatingStoryButton />
-        <FirstVisitCard />
-      </ErrorBoundary>
-    </BrowserRouter>
-  </QueryClientProvider>
+  <ThemeProvider>
+    <QueryClientProvider client={queryClient}>
+      <BrowserRouter>
+        <ErrorBoundary>
+          <div id="main-content">
+            <Suspense fallback={<PageLoader />}>
+              <Routes>
+                <Route path="/"            element={<Index />} />
+                <Route path="/blog"        element={<Blog />} />
+                <Route path="/blog/:slug"  element={<ArticlePage />} />
+                <Route path="/characters"  element={<Characters />} />
+                <Route path="/about"       element={<About />} />
+                <Route path="/quiz"        element={<Quiz />} />
+                <Route path="/wisdom"      element={<Wisdom />} />
+                <Route path="/storyteller" element={<StoryTeller />} />
+                <Route path="*"            element={<NotFound />} />
+              </Routes>
+            </Suspense>
+          </div>
+          <BackToTop />
+          <CookieConsent />
+          <FloatingStoryButton />
+          <FirstVisitCard />
+        </ErrorBoundary>
+      </BrowserRouter>
+    </QueryClientProvider>
+  </ThemeProvider>
 );
 
 export default App;
