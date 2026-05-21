@@ -1,6 +1,6 @@
-import { lazy, Suspense } from "react";
+import { lazy, Suspense, useEffect, useRef } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Route, Routes } from "react-router-dom";
+import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import BackToTop from "@/components/BackToTop";
 import CookieConsent from "@/components/CookieConsent";
@@ -8,7 +8,6 @@ import FloatingStoryButton from "@/components/FloatingStoryButton";
 import FirstVisitCard from "@/components/FirstVisitCard";
 import { ThemeProvider } from "@/context/ThemeContext";
 
-/* ── Lazy-loaded page routes (code-split per route) ── */
 const Index       = lazy(() => import("./pages/Index.tsx"));
 const Blog        = lazy(() => import("./pages/Blog.tsx"));
 const ArticlePage = lazy(() => import("./pages/ArticlePage.tsx"));
@@ -19,7 +18,75 @@ const Wisdom      = lazy(() => import("./pages/Wisdom.tsx"));
 const StoryTeller = lazy(() => import("./pages/StoryTeller.tsx"));
 const NotFound    = lazy(() => import("./pages/NotFound.tsx"));
 
-/* ── Route-level loading fallback ── */
+/* ── Page transition wrapper — fades + slides each route in ── */
+const PageTransition = ({ children }: { children: React.ReactNode }) => {
+  const location = useLocation();
+  const ref      = useRef<HTMLDivElement>(null);
+
+  useEffect(() => {
+    if (!ref.current) return;
+    // Restart animation on route change
+    ref.current.style.animation = "none";
+    void ref.current.offsetHeight; // reflow
+    ref.current.style.animation = "";
+    // Scroll to top instantly on every navigation
+    window.scrollTo({ top: 0, behavior: "instant" });
+  }, [location.pathname]);
+
+  return (
+    <div ref={ref} className="page-transition" key={location.pathname}>
+      {children}
+    </div>
+  );
+};
+
+/* ── Ripple effect — attaches to any .btn-ripple element globally ── */
+const RippleProvider = () => {
+  useEffect(() => {
+    const handler = (e: MouseEvent) => {
+      const target = (e.target as HTMLElement).closest(".btn-ripple") as HTMLElement | null;
+      if (!target) return;
+
+      const rect   = target.getBoundingClientRect();
+      const size   = Math.max(rect.width, rect.height) * 2;
+      const x      = e.clientX - rect.left - size / 2;
+      const y      = e.clientY - rect.top  - size / 2;
+
+      const ripple = document.createElement("span");
+      ripple.className = "ripple-circle";
+      ripple.style.cssText = `width:${size}px;height:${size}px;left:${x}px;top:${y}px;`;
+      target.appendChild(ripple);
+      ripple.addEventListener("animationend", () => ripple.remove(), { once: true });
+    };
+
+    // Touch support
+    const touchHandler = (e: TouchEvent) => {
+      const target = (e.target as HTMLElement).closest(".btn-ripple") as HTMLElement | null;
+      if (!target || !e.touches[0]) return;
+      const touch  = e.touches[0];
+      const rect   = target.getBoundingClientRect();
+      const size   = Math.max(rect.width, rect.height) * 2;
+      const x      = touch.clientX - rect.left - size / 2;
+      const y      = touch.clientY - rect.top  - size / 2;
+
+      const ripple = document.createElement("span");
+      ripple.className = "ripple-circle";
+      ripple.style.cssText = `width:${size}px;height:${size}px;left:${x}px;top:${y}px;`;
+      target.appendChild(ripple);
+      ripple.addEventListener("animationend", () => ripple.remove(), { once: true });
+    };
+
+    document.addEventListener("mousedown", handler);
+    document.addEventListener("touchstart", touchHandler, { passive: true });
+    return () => {
+      document.removeEventListener("mousedown", handler);
+      document.removeEventListener("touchstart", touchHandler);
+    };
+  }, []);
+
+  return null;
+};
+
 const PageLoader = () => (
   <div
     role="status"
@@ -34,26 +101,21 @@ const PageLoader = () => (
   >
     <div style={{ textAlign: "center" }}>
       <svg
-        width="48"
-        height="48"
-        viewBox="0 0 48 48"
+        width="48" height="48" viewBox="0 0 48 48"
         style={{ animation: "spin 1.5s linear infinite", display: "block", margin: "0 auto 16px" }}
         aria-hidden="true"
       >
-        <circle
-          cx="24" cy="24" r="20"
-          stroke="rgba(139,105,20,0.35)"
-          strokeWidth="2"
-          fill="none"
-          strokeDasharray="62 30"
-          strokeLinecap="round"
+        <circle cx="24" cy="24" r="20"
+          stroke="rgba(212,175,55,0.4)"
+          strokeWidth="2.5" fill="none"
+          strokeDasharray="62 30" strokeLinecap="round"
         />
       </svg>
       <span style={{
-        fontFamily: "'Playfair Display', 'Cinzel', serif",
-        fontSize: "11px",
-        letterSpacing: "0.3em",
-        color: "rgba(107,84,48,0.6)",
+        fontFamily: "'Cinzel', serif",
+        fontSize: "10px",
+        letterSpacing: "0.35em",
+        color: "rgba(212,175,55,0.6)",
         textTransform: "uppercase",
       }}>
         Loading…
@@ -64,12 +126,7 @@ const PageLoader = () => (
 );
 
 const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      staleTime: 5 * 60 * 1000,
-      retry: 1,
-    },
-  },
+  defaultOptions: { queries: { staleTime: 5 * 60 * 1000, retry: 1 } },
 });
 
 const App = () => (
@@ -77,19 +134,23 @@ const App = () => (
     <QueryClientProvider client={queryClient}>
       <BrowserRouter>
         <ErrorBoundary>
+          {/* Global ripple listener — zero re-renders */}
+          <RippleProvider />
           <div id="main-content">
             <Suspense fallback={<PageLoader />}>
-              <Routes>
-                <Route path="/"            element={<Index />} />
-                <Route path="/blog"        element={<Blog />} />
-                <Route path="/blog/:slug"  element={<ArticlePage />} />
-                <Route path="/characters"  element={<Characters />} />
-                <Route path="/about"       element={<About />} />
-                <Route path="/quiz"        element={<Quiz />} />
-                <Route path="/wisdom"      element={<Wisdom />} />
-                <Route path="/storyteller" element={<StoryTeller />} />
-                <Route path="*"            element={<NotFound />} />
-              </Routes>
+              <PageTransition>
+                <Routes>
+                  <Route path="/"            element={<Index />} />
+                  <Route path="/blog"        element={<Blog />} />
+                  <Route path="/blog/:slug"  element={<ArticlePage />} />
+                  <Route path="/characters"  element={<Characters />} />
+                  <Route path="/about"       element={<About />} />
+                  <Route path="/quiz"        element={<Quiz />} />
+                  <Route path="/wisdom"      element={<Wisdom />} />
+                  <Route path="/storyteller" element={<StoryTeller />} />
+                  <Route path="*"            element={<NotFound />} />
+                </Routes>
+              </PageTransition>
             </Suspense>
           </div>
           <BackToTop />
