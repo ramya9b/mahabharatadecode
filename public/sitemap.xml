@@ -1,88 +1,105 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
         xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- ═══ CORE PAGES ═══ -->
   <url>
-    <loc>https://mahabharatadecoded.com</loc>
-    <lastmod>2026-04-15</lastmod>
+    <loc>https://mahabharatadecoded.com/</loc>
+    <lastmod>2026-05-21</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://mahabharatadecoded.com/blog</loc>
-    <lastmod>2026-04-15</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>daily</changefreq>
+    <priority>0.95</priority>
   </url>
   <url>
     <loc>https://mahabharatadecoded.com/characters</loc>
-    <lastmod>2026-04-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.92</priority>
+  </url>
+  <url>
+    <loc>https://mahabharatadecoded.com/storyteller</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.90</priority>
   </url>
   <url>
     <loc>https://mahabharatadecoded.com/wisdom</loc>
-    <lastmod>2026-04-15</lastmod>
-    <changefreq>monthly</changefreq>
-    <priority>0.9</priority>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.88</priority>
   </url>
   <url>
     <loc>https://mahabharatadecoded.com/quiz</loc>
-    <lastmod>2026-04-15</lastmod>
+    <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://mahabharatadecoded.com/about</loc>
-    <lastmod>2026-04-15</lastmod>
+    <lastmod>2026-05-21</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.7</priority>
+    <priority>0.70</priority>
+  </url>
+
+  <!-- ═══ ARTICLES ═══ -->
+  <url>
+    <loc>https://mahabharatadecoded.com/blog/karna-tragic-hero-world-literature</loc>
+    <lastmod>2026-05-21</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.95</priority>
   </url>
   <url>
     <loc>https://mahabharatadecoded.com/blog/karna-loyalty-vs-self-respect</loc>
-    <lastmod>2026-04-15</lastmod>
+    <lastmod>2026-04-10</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.90</priority>
   </url>
   <url>
     <loc>https://mahabharatadecoded.com/blog/krishna-leadership-secrets</loc>
-    <lastmod>2026-04-15</lastmod>
+    <lastmod>2026-04-08</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.90</priority>
   </url>
   <url>
     <loc>https://mahabharatadecoded.com/blog/arjuna-confusion-moment-of-doubt</loc>
-    <lastmod>2026-04-15</lastmod>
+    <lastmod>2026-04-05</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.88</priority>
   </url>
   <url>
     <loc>https://mahabharatadecoded.com/blog/draupadi-fire-and-dignity</loc>
-    <lastmod>2026-04-15</lastmod>
+    <lastmod>2026-04-03</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.88</priority>
   </url>
   <url>
     <loc>https://mahabharatadecoded.com/blog/bhishma-terrible-oath</loc>
-    <lastmod>2026-04-15</lastmod>
+    <lastmod>2026-04-01</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.88</priority>
   </url>
   <url>
     <loc>https://mahabharatadecoded.com/blog/dharma-beyond-rules</loc>
-    <lastmod>2026-04-15</lastmod>
+    <lastmod>2026-03-28</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://mahabharatadecoded.com/blog/gita-verse-two-forty-seven</loc>
-    <lastmod>2026-04-15</lastmod>
+    <lastmod>2026-03-25</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
   <url>
     <loc>https://mahabharatadecoded.com/blog/silence-of-vidura</loc>
-    <lastmod>2026-04-15</lastmod>
+    <lastmod>2026-03-20</lastmod>
     <changefreq>monthly</changefreq>
-    <priority>0.8</priority>
+    <priority>0.85</priority>
   </url>
+
 </urlset>
