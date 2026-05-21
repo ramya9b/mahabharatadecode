@@ -193,6 +193,7 @@ const CharacterModal = ({ char, sceneImage, onStart, onClose }: Props) => {
                   objectFit: "contain", objectPosition: "bottom center",
                   filter: `drop-shadow(0 0 22px ${accent}65) drop-shadow(0 6px 18px rgba(0,0,0,0.8))`,
                   animation: "char-float 4s ease-in-out infinite",
+                  mixBlendMode: "multiply" as const,
                   zIndex: 3,
                 }} />
               )}
@@ -426,6 +427,7 @@ const CharacterModal = ({ char, sceneImage, onStart, onClose }: Props) => {
                   objectPosition: "bottom center",
                   filter: `drop-shadow(0 0 28px ${accent}55) drop-shadow(0 16px 36px rgba(0,0,0,0.5))`,
                   animation: "char-float 4s ease-in-out infinite",
+                  mixBlendMode: "multiply" as const,
                   zIndex: 3,
                 }} />
               )}
