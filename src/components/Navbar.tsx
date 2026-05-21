@@ -3,13 +3,14 @@ import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import ThemeToggle from "@/components/ThemeToggle";
 
 const NAV_LINKS = [
   { to: "/storyteller", key: "nav.storyteller" },
-  { to: "/wisdom",     key: "nav.wisdom"     },
-  { to: "/characters", key: "nav.characters" },
-  { to: "/blog",       key: "nav.blog"       },
-  { to: "/about",      key: "nav.about"      },
+  { to: "/wisdom",      key: "nav.wisdom"      },
+  { to: "/characters",  key: "nav.characters"  },
+  { to: "/blog",        key: "nav.blog"        },
+  { to: "/about",       key: "nav.about"       },
 ];
 
 const Navbar = () => {
@@ -120,6 +121,9 @@ const Navbar = () => {
             {/* Language switcher */}
             <LanguageSwitcher />
 
+            {/* Theme toggle */}
+            <ThemeToggle />
+
             <Link
               to="/blog"
               className="px-4 py-2 rounded-full bg-primary text-primary-foreground text-[12px] font-medium hover:bg-gold-light transition-colors duration-300 tracking-wide animate-pulse-glow whitespace-nowrap btn-i18n"
@@ -128,8 +132,9 @@ const Navbar = () => {
             </Link>
           </div>
 
-          {/* Mobile: language + burger */}
+          {/* Mobile: theme toggle + language + burger */}
           <div className="lg:hidden flex items-center gap-2">
+            <ThemeToggle />
             <LanguageSwitcher />
             <button
               ref={burgerRef}
