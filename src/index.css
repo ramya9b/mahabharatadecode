@@ -52,6 +52,49 @@
     --gold-light: #A07820;
     --gold-dark:  #6B4E10;
   }
+
+  /* ── Dark Theme — Midnight Kurukshetra ── */
+  .dark {
+    --background: 240 35% 4%;       /* #080614 deep midnight */
+    --foreground: 38 48% 88%;       /* #F0E3C5 warm gold-white */
+
+    --card: 240 32% 7%;             /* #0E0A1C slightly lighter */
+    --card-foreground: 38 48% 88%;
+
+    --popover: 240 32% 7%;
+    --popover-foreground: 38 48% 88%;
+
+    --primary: 43 62% 52%;          /* #D4AF37 bright gold */
+    --primary-foreground: 240 35% 4%;
+
+    --secondary: 240 22% 12%;
+    --secondary-foreground: 38 48% 88%;
+
+    --muted: 240 22% 14%;
+    --muted-foreground: 38 20% 62%; /* #9E8E6A soft warm grey */
+
+    --accent: 240 22% 12%;
+    --accent-foreground: 38 48% 88%;
+
+    --destructive: 0 62% 45%;
+    --destructive-foreground: 38 55% 95%;
+
+    --border: 43 22% 18%;           /* subtle gold border */
+    --input: 43 22% 18%;
+    --ring: 43 62% 52%;
+
+    --sidebar-background: 240 35% 4%;
+    --sidebar-foreground: 38 48% 88%;
+    --sidebar-primary: 43 62% 52%;
+    --sidebar-primary-foreground: 240 35% 4%;
+    --sidebar-accent: 240 22% 12%;
+    --sidebar-accent-foreground: 38 48% 88%;
+    --sidebar-border: 43 22% 18%;
+    --sidebar-ring: 43 62% 52%;
+
+    --gold-light: #D4AF37;
+    --gold-dark:  #A07820;
+  }
 }
 
 @layer base {
@@ -277,6 +320,58 @@
     -webkit-text-fill-color: transparent;
     background-clip: text;
     animation: shimmer 3s linear infinite;
+  }
+
+
+  /* ── Dark mode component overrides ── */
+  .dark .glass-card {
+    background: rgba(14, 10, 28, 0.88);
+    border: 1px solid rgba(212, 175, 55, 0.15);
+  }
+
+  .dark .filter-pill-inactive {
+    background: rgba(14, 10, 28, 0.8);
+    border: 1px solid rgba(212, 175, 55, 0.12);
+    color: hsl(var(--muted-foreground));
+  }
+  .dark .filter-pill-inactive:hover {
+    border-color: rgba(212, 175, 55, 0.35);
+    color: hsl(var(--primary));
+  }
+
+  .dark .blog-hero-gradient {
+    background: radial-gradient(ellipse 80% 60% at 50% 0%, rgba(212,175,55,0.06) 0%, transparent 70%),
+                radial-gradient(ellipse 60% 40% at 80% 50%, rgba(212,130,20,0.04) 0%, transparent 60%),
+                hsl(var(--background));
+  }
+
+  /* Dark scrollbar */
+  .dark ::-webkit-scrollbar-track { background: hsl(var(--background)); }
+  .dark ::-webkit-scrollbar-thumb { background: rgba(212,175,55,0.25); }
+  .dark ::-webkit-scrollbar-thumb:hover { background: rgba(212,175,55,0.5); }
+
+  /* Dark gold text gradient */
+  .dark .gold-text {
+    background: linear-gradient(135deg, #C8921A 0%, #D4AF37 40%, #B8820A 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+
+  /* Dark shimmer gold */
+  .dark .shimmer-gold {
+    background: linear-gradient(
+      90deg,
+      #A07820 0%,
+      #D4AF37 25%,
+      #F0D060 50%,
+      #D4AF37 75%,
+      #A07820 100%
+    );
+    background-size: 200% auto;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
   }
 
   .sticky-filter-bar {
