@@ -337,7 +337,7 @@ const CharacterModal = ({ char, sceneImage, onStart, onClose }: Props) => {
                     position:"absolute", inset:0,
                     backgroundImage:`url('${sceneImage}')`,
                     backgroundSize:"cover", backgroundPosition:"center right",
-                    filter:"brightness(0.35) saturate(0.7)",
+                    filter:"brightness(0.25) saturate(0.5)",
                   }} />
                 )}
               </div>
@@ -403,6 +403,7 @@ const CharacterModal = ({ char, sceneImage, onStart, onClose }: Props) => {
                     transform:"translateX(-45%) scale(1.0)",
                     filter:`drop-shadow(0 0 32px ${accent}65) drop-shadow(0 20px 45px rgba(0,0,0,0.65))`,
                     animation:"float-char 5s ease-in-out infinite",
+                    mixBlendMode: "screen" as const,
                     zIndex:5,   /* ABOVE all overlays */
                   }}
                 />
