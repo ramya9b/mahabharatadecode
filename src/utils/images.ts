@@ -1,4 +1,4 @@
-/* ── WebP versions (primary — smaller, faster) ── */
+/* ── WebP versions (primary) ── */
 import karnaWebp    from "@/assets/karna.webp";
 import krishnaWebp  from "@/assets/krishna.webp";
 import arjunaWebp   from "@/assets/arjuna.webp";
@@ -6,7 +6,7 @@ import draupadiWebp from "@/assets/draupadi.webp";
 import bhishmaWebp  from "@/assets/bhishma.webp";
 import heroBgWebp   from "@/assets/hero-bg.webp";
 
-/* ── JPEG fallbacks (for browsers that don't support WebP) ── */
+/* ── JPEG fallbacks ── */
 import karnaJpg    from "@/assets/karna.jpg";
 import krishnaJpg  from "@/assets/krishna.jpg";
 import arjunaJpg   from "@/assets/arjuna.jpg";
@@ -16,7 +16,6 @@ import heroBgJpg   from "@/assets/hero-bg.jpg";
 
 export type ImageKey = "karna" | "krishna" | "arjuna" | "draupadi" | "bhishma" | "hero";
 
-/** Primary WebP image map — 15-25% smaller than JPEG */
 const webpMap: Record<ImageKey, string> = {
   karna:    karnaWebp,
   krishna:  krishnaWebp,
@@ -26,7 +25,6 @@ const webpMap: Record<ImageKey, string> = {
   hero:     heroBgWebp,
 };
 
-/** JPEG fallback map — for older browsers */
 const jpgMap: Record<ImageKey, string> = {
   karna:    karnaJpg,
   krishna:  krishnaJpg,
@@ -36,14 +34,41 @@ const jpgMap: Record<ImageKey, string> = {
   hero:     heroBgJpg,
 };
 
-/**
- * Returns the WebP URL for the given image key.
- * All modern browsers (Chrome 23+, Firefox 65+, Safari 14+, Edge 18+) support WebP.
- */
+/** Primary WebP URL */
 export const resolveImage = (key: ImageKey): string => webpMap[key];
 
-/** Returns both WebP and JPEG URLs for use in <picture> srcSet */
+/** WebP + JPEG pair for <picture> */
 export const resolveImageSrcSet = (key: ImageKey): { webp: string; jpg: string } => ({
   webp: webpMap[key],
   jpg:  jpgMap[key],
+});
+
+/**
+ * Responsive sizes string for <img sizes="...">
+ * Tells the browser which breakpoint renders this image at what width
+ */
+export const resolveImageSizes = (layout: "card" | "hero" | "full" = "card"): string => {
+  switch (layout) {
+    case "hero":
+      return "100vw";
+    case "full":
+      return "(max-width: 768px) 100vw, (max-width: 1280px) 75vw, 60vw";
+    case "card":
+    default:
+      return "(max-width: 640px) 50vw, (max-width: 1024px) 33vw, 20vw";
+  }
+};
+
+/**
+ * Character image URL from public/characters/ with srcSet for responsive loading.
+ * Mobile gets served smaller images automatically.
+ */
+export const resolveCharacterImage = (id: string): {
+  src: string;
+  srcSet: string;
+  sizes: string;
+} => ({
+  src:    `/characters/${id}.webp`,
+  srcSet: `/characters/${id}.webp`,
+  sizes:  "(max-width: 640px) 80vw, (max-width: 1024px) 40vw, 30vw",
 });
