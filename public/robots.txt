@@ -1,16 +1,13 @@
-User-agent: Googlebot
-Allow: /
-
-User-agent: Bingbot
-Allow: /
-
-User-agent: Twitterbot
-Allow: /
-
-User-agent: facebookexternalhit
-Allow: /
-
 User-agent: *
 Allow: /
 
+# Block internal build paths
+Disallow: /src/
+Disallow: /.git/
+Disallow: /node_modules/
+
+# Crawl rate hint (optional — respected by Googlebot)
+Crawl-delay: 1
+
+# Sitemaps
 Sitemap: https://mahabharatadecoded.com/sitemap.xml
