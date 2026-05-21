@@ -1,3 +1,12 @@
+/* ── GA4 global type shim ── */
+declare global {
+  interface Window {
+    gtag: (...args: unknown[]) => void;
+    GA4_ID: string;
+    dataLayer: unknown[];
+  }
+}
+
 import { lazy, Suspense, useEffect, useRef } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
@@ -31,6 +40,17 @@ const PageTransition = ({ children }: { children: React.ReactNode }) => {
     ref.current.style.animation = "";
     // Scroll to top instantly on every navigation
     window.scrollTo({ top: 0, behavior: "instant" });
+
+    // ── GA4 SPA page view — fires on every route change ──
+    try {
+      if (typeof window.gtag === "function" && window.GA4_ID) {
+        window.gtag("event", "page_view", {
+          page_path:     location.pathname + location.search,
+          page_title:    document.title,
+          page_location: window.location.href,
+        });
+      }
+    } catch (_) { /* GA not loaded yet */ }
   }, [location.pathname]);
 
   return (
