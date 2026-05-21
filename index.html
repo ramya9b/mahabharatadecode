@@ -72,6 +72,19 @@
       }
       .skip-nav:focus { top: 0; outline: 3px solid #7A4E08; outline-offset: 2px; }
     </style>
+
+    <!-- Google Analytics 4 — MahabharataDecoded -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-453G97F065"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){ dataLayer.push(arguments); }
+      gtag('js', new Date());
+      gtag('config', 'G-453G97F065', {
+        send_page_view: false,   /* SPA: we fire manually on each route change */
+        cookie_flags: 'SameSite=None;Secure',
+      });
+      window.GA4_ID = 'G-453G97F065';
+    </script>
   </head>
   <body>
     <a href="#main-content" class="skip-nav">Skip to main content</a>
