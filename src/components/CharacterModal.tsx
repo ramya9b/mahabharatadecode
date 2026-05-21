@@ -45,16 +45,31 @@ const CharacterModal = ({ char, sceneImage, onStart, onClose }: Props) => {
   const [customPrompt, setCustomPrompt]  = useState("");
   const [isMobile, setIsMobile]          = useState(window.innerWidth < 640);
   const accent  = GROUP_COLORS[char.group];
-  const serif   = "'Cinzel','Playfair Display',serif";
-  const body    = "'Lora',Georgia,serif";
+  const serif   = "'Cinzel',serif";
+  const body    = "'Cormorant Garamond',Georgia,serif";
   const charImg = CHARACTER_IMAGES[char.id] ?? null;
 
   useEffect(() => {
+    // Swipe down to close on mobile
+    let startY = 0;
+    const onTouchStart = (e: TouchEvent) => { startY = e.touches[0].clientY; };
+    const onTouchEnd   = (e: TouchEvent) => {
+      if (e.changedTouches[0].clientY - startY > 80) onClose();
+    };
+    if (isMobile) {
+      document.addEventListener("touchstart", onTouchStart, { passive: true });
+      document.addEventListener("touchend",   onTouchEnd,   { passive: true });
+    }
     const key = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
     const resize = () => setIsMobile(window.innerWidth < 640);
     document.addEventListener("keydown", key);
     window.addEventListener("resize", resize);
-    return () => { document.removeEventListener("keydown", key); window.removeEventListener("resize", resize); };
+    return () => {
+      document.removeEventListener("keydown", key);
+      window.removeEventListener("resize", resize);
+      document.removeEventListener("touchstart", onTouchStart);
+      document.removeEventListener("touchend", onTouchEnd);
+    };
   }, [onClose]);
 
   const hasPrompt = selectedIdx !== null;
@@ -116,14 +131,16 @@ const CharacterModal = ({ char, sceneImage, onStart, onClose }: Props) => {
         background:"rgba(0,0,0,0.88)",
         backdropFilter:"blur(12px)", WebkitBackdropFilter:"blur(12px)",
         display:"flex", alignItems:"center", justifyContent:"center",
-        padding: isMobile ? "8px" : "16px", overflowY:"auto",
+        padding: isMobile ? "0" : "16px",
+        overflowY: isMobile ? "hidden" : "auto",
+        alignItems: isMobile ? "flex-end" : "center",
       }}>
 
         {/* ── MODAL SHELL ── */}
         <div onClick={e => e.stopPropagation()} style={{
           width: isMobile ? "100%" : "min(980px, 95vw)",
-          maxHeight: isMobile ? "96vh" : "90vh",
-          borderRadius: isMobile ? "20px" : "24px",
+          maxHeight: isMobile ? "92dvh" : "90vh",
+          borderRadius: isMobile ? "24px 24px 0 0" : "24px",
           background:"rgba(8,6,20,0.95)",
           backdropFilter:"blur(20px)", WebkitBackdropFilter:"blur(20px)",
           border:`1px solid ${accent}45`,
@@ -137,6 +154,13 @@ const CharacterModal = ({ char, sceneImage, onStart, onClose }: Props) => {
         }}>
 
           {/* ── MOBILE: banner on top ── */}
+          {/* Mobile drag handle — signals swipe-to-dismiss */}
+          {isMobile && (
+            <div style={{ display:"flex", justifyContent:"center", padding:"10px 0 4px", flexShrink:0 }}>
+              <div style={{ width:"40px", height:"4px", borderRadius:"2px", background:"rgba(255,255,255,0.2)" }} />
+            </div>
+          )}
+
           {isMobile && (
             <div style={{
               height:"220px", position:"relative",
@@ -191,6 +215,7 @@ const CharacterModal = ({ char, sceneImage, onStart, onClose }: Props) => {
             overflowY:"auto", minWidth:0,
             position:"relative", zIndex:2,
             borderRadius: isMobile ? "0" : "24px 0 0 24px",
+            paddingBottom: isMobile ? "max(16px, env(safe-area-inset-bottom))" : undefined,
           }}>
             {/* Header */}
             <div style={{
