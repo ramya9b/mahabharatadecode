@@ -30,8 +30,8 @@ const CharacterProfile = ({ character, index }: CharacterProfileProps) => {
       style={{
         padding: "96px 0",
         background: index % 2 === 0
-          ? "linear-gradient(180deg, var(--background), hsl(38 45% 87%))"
-          : "linear-gradient(180deg, hsl(38 45% 87%), var(--background))",
+          ? "linear-gradient(180deg, hsl(var(--background)), hsl(var(--card)))"
+          : "linear-gradient(180deg, hsl(var(--card)), hsl(var(--background)))",
       }}
     >
       {/* Ambient glow behind this character */}
@@ -52,10 +52,10 @@ const CharacterProfile = ({ character, index }: CharacterProfileProps) => {
           {/* ── Image side ── */}
           <div
             ref={imgRef}
-            className={`reveal-element ${isEven ? "" : "lg:col-start-2"}`}
+            className={`char-reveal ${isEven ? "" : "lg:col-start-2"}`}
           >
             <div
-              className="relative rounded-3xl overflow-hidden group"
+              className="relative rounded-3xl overflow-hidden group cinematic-frame char-glow"
               style={{
                 aspectRatio: "4/5",
                 boxShadow: `0 40px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(${character.accentRgb},0.15)`,
@@ -125,7 +125,7 @@ const CharacterProfile = ({ character, index }: CharacterProfileProps) => {
           {/* ── Content side ── */}
           <div
             ref={contentRef}
-            className={`reveal-element ${isEven ? "" : "lg:col-start-1 lg:row-start-1"}`}
+            className={`stagger-children ${isEven ? "" : "lg:col-start-1 lg:row-start-1"}`}
             style={{ transitionDelay: "100ms" }}
           >
             {/* Index number */}
@@ -164,10 +164,12 @@ const CharacterProfile = ({ character, index }: CharacterProfileProps) => {
 
             {/* Title */}
             <p
-              className="font-heading italic mb-6"
+              className="mb-6"
               style={{
-                fontSize: "clamp(16px, 2vw, 20px)",
-                color: "rgba(42,31,14,0.65)",
+                fontFamily: "'Cormorant Garamond', Georgia, serif",
+                fontSize: "clamp(18px, 2.1vw, 22px)",
+                fontStyle: "italic",
+                color: "rgba(42,31,14,0.62)",
               }}
             >
               {character.title}
@@ -198,8 +200,8 @@ const CharacterProfile = ({ character, index }: CharacterProfileProps) => {
                   className="leading-relaxed"
                   style={{
                     fontSize: "clamp(17px, 1.9vw, 19px)",
-                    fontFamily: "'Lora', Georgia, serif",
-                    color: "rgba(42,31,14,0.75)",
+                    fontFamily: "'Cormorant Garamond', Georgia, serif",
+                    color: "rgba(42,31,14,0.78)",
                   }}
                 >
                   {para}
@@ -244,8 +246,8 @@ const CharacterProfile = ({ character, index }: CharacterProfileProps) => {
               <p
                 className="italic leading-relaxed mb-2"
                 style={{
-                  fontFamily: "'Playfair Display', 'Cinzel', serif",
-                  fontSize: "clamp(14px, 1.6vw, 16px)",
+                  fontFamily: "'Cormorant Garamond', Georgia, serif",
+                  fontSize: "clamp(17px, 1.8vw, 20px)",
                   color: "rgba(42,31,14,0.88)",
                   fontStyle: "italic",
                 }}
