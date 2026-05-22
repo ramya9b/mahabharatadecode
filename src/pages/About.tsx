@@ -98,7 +98,7 @@ const AboutHero = () => {
 const MissionSection = () => {
   const ref = useScrollReveal<HTMLDivElement>();
   return (
-    <section className="py-24 md:py-32" style={{ background: "hsl(38 55% 91%)" }}>
+    <section className="py-12 md:py-16" style={{ background: "hsl(38 55% 91%)" }}>
       <div className="max-w-4xl mx-auto px-6 md:px-12">
         <div ref={ref} className="reveal-element">
           {/* Label */}
@@ -205,7 +205,7 @@ const StatCard = ({ value, suffix = "", label, desc }: { value: number; suffix?:
 const StatsSection = () => {
   const ref = useScrollReveal<HTMLDivElement>();
   return (
-    <section className="py-20 md:py-24" style={{ background: "linear-gradient(180deg, hsl(38 55% 91%), hsl(38 45% 87%))", borderTop: "1px solid rgba(212,175,55,0.08)", borderBottom: "1px solid rgba(212,175,55,0.08)" }}>
+    <section className="py-10 md:py-14" style={{ background: "linear-gradient(180deg, hsl(38 55% 91%), hsl(38 45% 87%))", borderTop: "1px solid rgba(212,175,55,0.08)", borderBottom: "1px solid rgba(212,175,55,0.08)" }}>
       <div className="max-w-6xl mx-auto px-6 md:px-12">
         <div ref={ref} className="reveal-element grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-8">
           <StatCard value={8}    suffix="+"  label="Deep Articles"      desc="Each 6–10 min read" />
@@ -226,7 +226,7 @@ const OriginSection = () => {
   const textRef = useScrollReveal<HTMLDivElement>();
 
   return (
-    <section className="py-24 md:py-32" style={{ background: "hsl(38 35% 88%)" }}>
+    <section className="py-12 md:py-16" style={{ background: "hsl(38 35% 88%)" }}>
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
@@ -331,7 +331,7 @@ const PillarsSection = () => {
   const cardsRef = useStaggeredReveal(3);
 
   return (
-    <section className="py-24 md:py-28" style={{ background: "linear-gradient(180deg, hsl(38 45% 87%), hsl(38 55% 91%))" }}>
+    <section className="py-12 md:py-16" style={{ background: "linear-gradient(180deg, hsl(38 45% 87%), hsl(38 55% 91%))" }}>
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
         <div ref={headerRef} className="reveal-element text-center mb-16">
           <span className="section-label">Our Approach</span>
@@ -399,7 +399,7 @@ const ProcessSection = () => {
   const stepsRef = useStaggeredReveal(5);
 
   return (
-    <section className="py-24 md:py-28" style={{ background: "hsl(38 55% 91%)" }}>
+    <section className="py-12 md:py-16" style={{ background: "hsl(38 55% 91%)", paddingTop: "64px", paddingBottom: "64px" }}>
       <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20">
         <div ref={headerRef} className="reveal-element mb-16">
           <div className="flex items-center gap-4 mb-5">
@@ -463,7 +463,7 @@ const ProcessSection = () => {
 const PhilosophySection = () => {
   const ref = useScrollReveal<HTMLDivElement>();
   return (
-    <section className="py-24 md:py-32 relative overflow-hidden"
+    <section className="py-12 md:py-16 relative overflow-hidden"
       style={{ background: "linear-gradient(180deg, hsl(38 55% 91%), hsl(38 45% 87%))" }}>
       {/* Large decorative quote mark */}
       <div className="absolute top-8 left-1/2 -translate-x-1/2 font-heading select-none pointer-events-none"
@@ -530,7 +530,7 @@ const ValuesSection = () => {
   const gridRef = useStaggeredReveal(6);
 
   return (
-    <section className="py-24 md:py-28" style={{ background: "hsl(38 35% 88%)" }}>
+    <section className="py-12 md:py-16" style={{ background: "hsl(38 35% 88%)" }}>
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
         <div ref={headerRef} className="reveal-element text-center mb-16">
           <span className="section-label">What We Stand For</span>
@@ -568,7 +568,7 @@ const CreatorSection = () => {
   const ref = useScrollReveal<HTMLDivElement>();
 
   return (
-    <section className="py-24 md:py-28" style={{ background: "hsl(38 55% 91%)" }}>
+    <section className="py-12 md:py-16" style={{ background: "hsl(38 55% 91%)", paddingTop: "64px", paddingBottom: "64px" }}>
       <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20">
         <div ref={ref} className="reveal-element">
           <div className="flex items-center gap-4 mb-12">
@@ -650,7 +650,7 @@ const CreatorSection = () => {
 const AboutCTA = () => {
   const ref = useScrollReveal<HTMLDivElement>();
   return (
-    <section className="py-24 md:py-28 relative overflow-hidden text-center"
+    <section className="py-12 md:py-16 relative overflow-hidden text-center"
       style={{ background: "linear-gradient(180deg, hsl(38 45% 87%), hsl(38 55% 91%))" }}>
       <div className="absolute inset-0 pointer-events-none"
         style={{ background: "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(212,175,55,0.06), transparent 65%)" }} />
