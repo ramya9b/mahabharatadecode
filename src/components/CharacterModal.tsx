@@ -201,8 +201,8 @@ const CharacterModal = ({ char, sceneImage, onStart, onClose }: Props) => {
                 <img src={charImg} alt={char.name} style={{
                   position:"absolute", bottom:0, left:"50%",
                   transform:"translateX(-50%)",
-                  height:"215px", width:"auto", maxWidth:"none",
-                  objectFit:"contain", objectPosition:"bottom center",
+                  height:"215px", width:"100%", maxWidth:"100%",
+                  objectFit:"cover", objectPosition:"top center",
                   filter:`drop-shadow(0 0 24px ${accent}70) drop-shadow(0 8px 20px rgba(0,0,0,0.7))`,
                   animation:"float-char 4s ease-in-out infinite",
                   zIndex:3,
@@ -356,7 +356,7 @@ const CharacterModal = ({ char, sceneImage, onStart, onClose }: Props) => {
             <div style={{
               flex:"0 0 42%",
               position:"relative",
-              overflow:"visible",   /* CHARACTER OVERFLOWS for cinematic pop-out */
+              overflow:"hidden",    /* Image contained within modal box */
               minHeight:"560px",
               isolation:"isolate",
             }}>
@@ -427,12 +427,13 @@ const CharacterModal = ({ char, sceneImage, onStart, onClose }: Props) => {
                     position:"absolute",
                     bottom:0,
                     left:"50%",
-                    /* Pop out above modal top — cinematic overflow */
-                    height:"115%",
-                    maxHeight:"820px",
-                    width:"auto",
-                    maxWidth:"none",
-                    objectFit:"contain",
+                    /* Contained within the right panel box */
+                    height:"100%",
+                    maxHeight:"100%",
+                    width:"100%",
+                    maxWidth:"100%",
+                    objectFit:"cover",
+                    objectPosition:"top center",
                     objectPosition:"bottom center",
                     /* Shift right slightly for balance */
                     transform:"translateX(-45%) scale(1.0)",
