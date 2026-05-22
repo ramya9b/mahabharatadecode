@@ -30,8 +30,8 @@ const CharacterProfile = ({ character, index }: CharacterProfileProps) => {
       style={{
         padding: "96px 0",
         background: index % 2 === 0
-          ? "linear-gradient(180deg, hsl(var(--background)), hsl(var(--card)))"
-          : "linear-gradient(180deg, hsl(var(--card)), hsl(var(--background)))",
+          ? "linear-gradient(180deg, #0C0900, #160B00)"
+          : "linear-gradient(180deg, #160B00, #0C0900)",
       }}
     >
       {/* Ambient glow behind this character */}
@@ -111,9 +111,9 @@ const CharacterProfile = ({ character, index }: CharacterProfileProps) => {
                 <span
                   className="font-heading text-[10px] tracking-[0.2em] uppercase px-3 py-1.5 rounded-full backdrop-blur-sm"
                   style={{
-                    background: "rgba(139,105,20,0.08)",
-                    border: "1px solid rgba(139,105,20,0.12)",
-                    color: "rgba(42,31,14,0.72)",
+                    background: "rgba(251,191,36,0.08)",
+                    border: "1px solid rgba(251,191,36,0.18)",
+                    color: "rgba(253,230,138,0.75)",
                   }}
                 >
                   {character.alliance}
@@ -169,7 +169,7 @@ const CharacterProfile = ({ character, index }: CharacterProfileProps) => {
                 fontFamily: "'Cormorant Garamond', Georgia, serif",
                 fontSize: "clamp(18px, 2.1vw, 22px)",
                 fontStyle: "italic",
-                color: "rgba(42,31,14,0.62)",
+                color: "rgba(253,230,138,0.65)",
               }}
             >
               {character.title}
@@ -201,7 +201,7 @@ const CharacterProfile = ({ character, index }: CharacterProfileProps) => {
                   style={{
                     fontSize: "clamp(17px, 1.9vw, 19px)",
                     fontFamily: "'Cormorant Garamond', Georgia, serif",
-                    color: "rgba(42,31,14,0.78)",
+                    color: "rgba(253,230,138,0.82)",
                   }}
                 >
                   {para}
@@ -248,7 +248,7 @@ const CharacterProfile = ({ character, index }: CharacterProfileProps) => {
                 style={{
                   fontFamily: "'Cormorant Garamond', Georgia, serif",
                   fontSize: "clamp(17px, 1.8vw, 20px)",
-                  color: "rgba(42,31,14,0.88)",
+                  color: "rgba(253,230,138,0.92)",
                   fontStyle: "italic",
                 }}
               >
@@ -310,7 +310,7 @@ const CharacterProfile = ({ character, index }: CharacterProfileProps) => {
                   style={{
                     fontSize: "14px",
                     fontFamily: "'Cormorant Garamond', Georgia, serif",
-                    color: "rgba(42,31,14,0.85)",
+                    color: "rgba(253,230,138,0.90)",
                   }}
                 >
                   {character.lesson}
@@ -327,7 +327,7 @@ const CharacterProfile = ({ character, index }: CharacterProfileProps) => {
                 className="px-7 py-3.5 rounded-full font-heading text-[12px] tracking-[0.1em] uppercase transition-all duration-300"
                 style={{
                   background: `linear-gradient(135deg, rgba(${character.accentRgb},0.9), rgba(${character.accentRgb},0.7))`,
-                  color: "#0B0F1A",
+                  color: "#0C0900",
                   fontWeight: 700,
                   boxShadow: `0 0 24px rgba(${character.accentRgb},0.35)`,
                 }}
