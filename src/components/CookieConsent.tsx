@@ -40,7 +40,7 @@ const CookieConsent = () => {
     >
       <div
         className="glass-card rounded-2xl px-5 py-4 flex items-start gap-4"
-        style={{ background: "rgba(240,232,210,0.97)", border: "1px solid rgba(139,105,20,0.25)", boxShadow: "0 8px 32px rgba(42,31,14,0.15)" }}
+        style={{ background: "rgba(240,232,210,0.97)", border: "1px solid rgba(251,191,36,0.25)", boxShadow: "0 8px 32px rgba(42,31,14,0.15)" }}
       >
         <p className="flex-1 text-sm text-muted-foreground leading-relaxed i18n-safe" style={{ fontSize: "15px" }}>
           {t("cookie.message")}
