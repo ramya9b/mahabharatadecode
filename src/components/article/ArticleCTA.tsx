@@ -86,7 +86,7 @@ const ArticleCTA = () => {
                       className="flex-1 flex items-center gap-2.5 rounded-full px-4 py-3"
                       style={{
                         background: "rgba(139,105,20,0.06)",
-                        border: "1px solid rgba(139,105,20,0.12)",
+                        border: "1px solid rgba(251,191,36,0.14)",
                       }}
                     >
                       <Mail size={13} className="text-muted-foreground flex-shrink-0" />
@@ -198,7 +198,7 @@ const ArticleCTA = () => {
                     className="px-7 py-3.5 rounded-full text-foreground text-sm font-medium tracking-wide transition-all duration-300 group-hover:border-primary/50 group-hover:text-primary"
                     style={{
                       background: "rgba(139,105,20,0.06)",
-                      border: "1px solid rgba(139,105,20,0.12)",
+                      border: "1px solid rgba(251,191,36,0.14)",
                       fontFamily: "'Cinzel', serif",
                     }}
                   >
