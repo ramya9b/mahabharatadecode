@@ -98,55 +98,121 @@ const ArticleCard = ({ article, variant = "default" }: ArticleCardProps) => {
     );
   }
 
-  // Default card
+  // Default card — fully explicit inline styles, no Tailwind colour dependency
   return (
     <Link
       to={`/blog/${article.slug}`}
-      className="group glass-card overflow-hidden rounded-2xl hover-lift flex flex-col"
+      className="group hover-lift flex flex-col"
+      style={{
+        background:    "rgb(20, 10, 0)",
+        border:        "1px solid rgba(251,191,36,0.20)",
+        borderRadius:  "16px",
+        overflow:      "hidden",
+        textDecoration:"none",
+        transition:    "border-color 0.3s ease, transform 0.3s ease",
+      }}
+      onMouseEnter={e => {
+        (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(251,191,36,0.50)";
+      }}
+      onMouseLeave={e => {
+        (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(251,191,36,0.20)";
+      }}
     >
       {/* Image */}
-      <div className="relative h-52 overflow-hidden article-card-image-wrapper">
+      <div style={{ position:"relative", height:"210px", overflow:"hidden" }}>
         <img
-            loading="lazy"
-            decoding="async"
+          loading="lazy"
+          decoding="async"
           src={image}
           alt={article.title}
-          className="article-card-image w-full h-full object-cover"
+          style={{ width:"100%", height:"100%", objectFit:"cover",
+                   transition:"transform 0.6s ease" }}
+          className="group-hover:scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-card via-transparent to-transparent" />
-
+        {/* Gradient overlay — fades image into card bg */}
+        <div style={{
+          position:"absolute", inset:0,
+          background:"linear-gradient(to top, rgb(20,10,0) 0%, rgba(20,10,0,0.4) 50%, transparent 100%)",
+        }} />
         {/* Category tag */}
-        <span className="absolute top-4 left-4 px-3 py-1.5 rounded-full bg-background/60 backdrop-blur-sm text-primary text-[11px] tracking-wider border border-primary/20">
+        <span style={{
+          position:"absolute", top:"14px", left:"14px",
+          padding:"4px 12px", borderRadius:"99px",
+          background:"rgba(12,9,0,0.75)",
+          border:"1px solid rgba(251,191,36,0.30)",
+          color:"#FBBF24",
+          fontFamily:"'Cinzel',serif",
+          fontSize:"10px", letterSpacing:"0.16em",
+          backdropFilter:"blur(8px)",
+        }}>
           {article.category}
         </span>
       </div>
 
-      {/* Content */}
-      <div className="p-6 flex flex-col flex-1">
-        <div className="flex items-center gap-2 mb-3">
-          <span className="flex items-center gap-1.5 text-muted-foreground text-[11px]">
+      {/* Text content */}
+      <div style={{ padding:"20px 22px 18px", display:"flex", flexDirection:"column", flex:1 }}>
+        {/* Meta row */}
+        <div style={{ display:"flex", alignItems:"center", gap:"8px", marginBottom:"10px" }}>
+          <span style={{ display:"flex", alignItems:"center", gap:"5px",
+                         color:"rgba(253,230,138,0.50)", fontSize:"11px",
+                         fontFamily:"'Cinzel',serif", letterSpacing:"0.06em" }}>
             <Clock size={11} />
             {article.readTime} min read
           </span>
-          <span className="text-border">·</span>
-          <span className="text-muted-foreground text-[11px]">{article.publishDate}</span>
+          <span style={{ color:"rgba(253,230,138,0.25)", fontSize:"12px" }}>·</span>
+          <span style={{ color:"rgba(253,230,138,0.45)", fontSize:"11px",
+                         fontFamily:"'Cinzel',serif", letterSpacing:"0.04em" }}>
+            {article.publishDate}
+          </span>
         </div>
 
-        <h3 className="font-heading text-lg text-foreground mb-2.5 leading-snug group-hover:text-primary transition-colors duration-300">
+        {/* Title */}
+        <h3 style={{
+          fontFamily:"'Cinzel',serif",
+          fontSize:"15px", fontWeight:600,
+          color:"#FDE68A",
+          marginBottom:"10px", lineHeight:1.35,
+          transition:"color 0.2s",
+        }}
+        className="group-hover:text-amber-300"
+        >
           {article.title}
         </h3>
 
-        <p className="text-muted-foreground text-sm leading-relaxed line-clamp-3 flex-1">
+        {/* Description */}
+        <p style={{
+          fontFamily:"'Cormorant Garamond',Georgia,serif",
+          fontSize:"15px", lineHeight:1.75,
+          color:"rgba(253,230,138,0.62)",
+          flex:1,
+          display:"-webkit-box",
+          WebkitLineClamp:3,
+          WebkitBoxOrient:"vertical" as const,
+          overflow:"hidden",
+        }}>
           {article.summary || article.description}
         </p>
 
-        <div className="mt-5 pt-4 border-t border-border/30 flex items-center justify-between">
-          <span className="text-primary text-[12px] tracking-wide font-medium group-hover:tracking-wider transition-all duration-300">
+        {/* Footer */}
+        <div style={{
+          marginTop:"16px", paddingTop:"14px",
+          borderTop:"1px solid rgba(251,191,36,0.12)",
+          display:"flex", alignItems:"center", justifyContent:"space-between",
+        }}>
+          <span style={{
+            color:"#FBBF24", fontSize:"12px",
+            fontFamily:"'Cinzel',serif", letterSpacing:"0.10em",
+            fontWeight:500, transition:"letter-spacing 0.3s",
+          }}>
             Read More →
           </span>
-          <div className="flex items-center gap-1.5 text-muted-foreground/60">
+          <div style={{ display:"flex", alignItems:"center", gap:"5px",
+                        color:"rgba(253,230,138,0.35)" }}>
             <Tag size={11} />
-            <span className="text-[10px] tracking-wide">{article.category}</span>
+            <span style={{ fontSize:"10px", letterSpacing:"0.08em",
+                           fontFamily:"'Cinzel',serif" }}>
+              {article.category}
+            </span>
           </div>
         </div>
       </div>
