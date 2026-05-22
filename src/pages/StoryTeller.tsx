@@ -382,14 +382,14 @@ const StoryTeller = () => {
       <div style={{
         minHeight: "100vh", display: "flex", flexDirection: "column",
         alignItems: "center", justifyContent: "center", textAlign: "center",
-        background: "linear-gradient(145deg, #0C0900 0%, #100A00 25%, #080A18 55%, #060410 80%, #0C0900 100%)",
+        background: isDark ? "linear-gradient(145deg, #0C0900 0%, #100A00 25%, #080A18 55%, #060410 80%, #0C0900 100%)" : "hsl(38 52% 91%)",
         padding: "40px 24px", position: "relative", overflow: "hidden",
       }}>
-        {/* CSS particle background for intro */}
-        <MoodBackground theme="war" opacity={0.15} />
+        {/* CSS particle background for intro — dark mode only */}
+        {isDark && <MoodBackground theme="war" opacity={0.15} />}
 
-        {/* Animated glow */}
-        <div style={{
+        {/* Animated glow — dark mode only */}
+        {isDark && <div style={{
           position: "absolute", inset: 0, pointerEvents: "none",
           background: "radial-gradient(ellipse 60% 60% at 80% 35%, rgba(251,191,36,0.16) 0%, transparent 50%)",
         }} />
@@ -1285,7 +1285,7 @@ const StoryTeller = () => {
 
       </div>{/* end relative zIndex wrapper */}
       {/* Hide footer on dark scene pages — it clashes with the background image */}
-      {!isDark && <Footer />}
+      <Footer />
 
       {/* ── Character Modal (Yudhishthira pilot) ── */}
       {modalChar && (
