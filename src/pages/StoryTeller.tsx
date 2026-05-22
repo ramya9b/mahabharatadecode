@@ -539,7 +539,7 @@ const StoryTeller = () => {
           background: "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(212,175,55,0.12) 0%, transparent 70%)",
         }} />
 
-        <p style={{ fontFamily: serif, fontSize: "11px", letterSpacing: "0.35em", color: isDark ? "rgba(212,175,55,0.65)", textTransform: "uppercase", marginBottom: "16px" }}>
+        <p style={{ fontFamily: serif, fontSize: "11px", letterSpacing: "0.35em", color: isGlobalDark ? "rgba(212,175,55,0.65)", textTransform: "uppercase", marginBottom: "16px" }}>
           MahabharataDecoded presents
         </p>
         <h1 style={{ fontFamily: serif, fontSize: "clamp(2rem, 6vw, 3.5rem)", fontWeight: 700, color: "hsl(var(--foreground))", lineHeight: 1.1, marginBottom: "20px" }}>
