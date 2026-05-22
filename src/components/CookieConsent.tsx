@@ -39,8 +39,8 @@ const CookieConsent = () => {
       style={{ bottom: "24px", left: "50%", transform: "translateX(-50%)", width: "min(520px, calc(100vw - 32px))" }}
     >
       <div
-        className="glass-card rounded-2xl px-5 py-4 flex items-start gap-4"
-        style={{ background: "rgba(22,11,0,0.96)", border: "1px solid rgba(251,191,36,0.30)", boxShadow: "0 8px 32px rgba(0,0,0,0.60)" }}
+        className="rounded-2xl px-5 py-4 flex items-start gap-4"
+        style={{ background: "rgb(20,10,0)", border: "1px solid rgba(251,191,36,0.35)", boxShadow: "0 12px 40px rgba(0,0,0,0.80), 0 0 0 1px rgba(251,191,36,0.10)" }}
       >
         <p className="flex-1 text-sm leading-relaxed i18n-safe" style={{ fontSize: "15px", color: "rgba(253,230,138,0.80)", fontFamily: "'Cormorant Garamond', serif" }}>
           {t("cookie.message")}
