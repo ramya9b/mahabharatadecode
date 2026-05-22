@@ -43,8 +43,14 @@
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
-    <!-- TOP 1% FONTS: Cinzel (brand/headings) + Cormorant Garamond (body/literary) -->
-    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;900&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Noto+Serif+Devanagari:wght@400;600;700&family=Tiro+Devanagari+Hindi:ital@0;1&family=Noto+Serif+Telugu:wght@400;600;700&family=Noto+Serif+Kannada:wght@400;600;700&display=swap" rel="stylesheet" />
+    <!-- FONTS: Critical weights only on first paint, extended weights deferred -->
+    <!-- Critical: Cinzel 400+600 + Cormorant 400+500 italic -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" media="print" onload="this.media='all'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;600&family=Cormorant+Garamond:ital,wght@0,400;0,500;1,400&display=swap" /></noscript>
+    <!-- Extended weights loaded after page is interactive -->
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;900&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Noto+Serif+Devanagari:wght@400;600;700&family=Tiro+Devanagari+Hindi:ital@0;1&family=Noto+Serif+Telugu:wght@400;600;700&family=Noto+Serif+Kannada:wght@400;600;700&display=swap" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;900&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Noto+Serif+Devanagari:wght@400;600;700&family=Tiro+Devanagari+Hindi:ital@0;1&family=Noto+Serif+Telugu:wght@400;600;700&family=Noto+Serif+Kannada:wght@400;600;700&display=swap" media="print" onload="this.media='all'" />
 
     <!-- Anti-FOUC: apply saved theme before React loads -->
     <script>
