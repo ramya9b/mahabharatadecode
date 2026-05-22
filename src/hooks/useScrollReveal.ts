@@ -9,7 +9,7 @@ interface UseScrollRevealOptions {
 export function useScrollReveal<T extends HTMLElement = HTMLDivElement>(
   options: UseScrollRevealOptions = {}
 ) {
-  const { threshold = 0.12, rootMargin = "0px 0px -60px 0px", once = true } = options;
+  const { threshold = 0.05, rootMargin = "0px 0px 0px 0px", once = true } = options;
   const ref = useRef<T>(null);
 
   useEffect(() => {
@@ -39,7 +39,7 @@ export function useStaggeredReveal(
   count: number,
   options: UseScrollRevealOptions = {}
 ) {
-  const { threshold = 0.08, rootMargin = "0px 0px -40px 0px", once = true } = options;
+  const { threshold = 0.04, rootMargin = "0px 0px 0px 0px", once = true } = options;
   const containerRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
