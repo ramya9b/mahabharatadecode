@@ -351,8 +351,6 @@ const StoryTeller = () => {
   const { theme: globalTheme } = useTheme();
   const isGlobalDark = globalTheme === "dark";
   const theme     = MOOD_THEMES[currentTheme];
-  /* isDark follows ONLY the global theme toggle — consistent with all pages */
-  const isDark    = isGlobalDark;
   /* Colours — adapt to global theme + mood theme */
   const gold      = currentTheme !== "default" ? theme.highlightColor : "hsl(var(--primary))";
   const goldDark  = currentTheme !== "default" ? theme.accentColor : "hsl(var(--primary))";
