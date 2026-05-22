@@ -357,9 +357,12 @@ const CharacterModal = ({ char, sceneImage, onStart, onClose }: Props) => {
             <div style={{
               flex:"0 0 42%",
               position:"relative",
-              overflow:"hidden",    /* Image contained within modal box */
+              overflow:"hidden",
               minHeight:"560px",
               isolation:"isolate",
+              display:"flex",
+              alignItems:"center",
+              justifyContent:"center",
             }}>
               {/* Scene image — dimmed */}
               <div style={{
@@ -419,31 +422,37 @@ const CharacterModal = ({ char, sceneImage, onStart, onClose }: Props) => {
                 </div>
               ))}
 
-              {/* ── CHARACTER IMAGE — FULLY VISIBLE, POPS OUT ── */}
+              {/* ── CHARACTER IMAGE ──────────────────────────
+                 Flexbox centres the image — no absolute positioning
+                 needed. Float animation only moves Y, never
+                 interferes with the flex centering.
+                 max-height/max-width guarantee full image shows.
+              ── */}
               {charImg && (
-                <img
-                  src={charImg}
-                  alt={char.name}
-                  style={{
-                    /* ── Bulletproof image containment ──
-                       max-height + max-width with auto sizing
-                       guarantees the full image always shows,
-                       never overflows any side, always centred  */
-                    position:"absolute",
-                    top:"50%",
-                    left:"50%",
-                    transform:"translate(-50%, -50%)",
-                    maxHeight:"92%",
-                    maxWidth:"90%",
-                    height:"auto",
-                    width:"auto",
-                    display:"block",
-                    filter:`drop-shadow(0 0 32px ${accent}65) drop-shadow(0 20px 45px rgba(0,0,0,0.65))`,
-                    animation:"float-char 5s ease-in-out infinite",
-                    mixBlendMode:"screen",  /* pure black bg = transparent, character floats */
-                    zIndex:5,
-                  }}
-                />
+                <div style={{
+                  position:"relative",
+                  zIndex:5,
+                  display:"flex",
+                  alignItems:"center",
+                  justifyContent:"center",
+                  maxHeight:"92%",
+                  maxWidth:"92%",
+                  animation:"float 6s ease-in-out infinite",
+                }}>
+                  <img
+                    src={charImg}
+                    alt={char.name}
+                    style={{
+                      display:"block",
+                      maxHeight:"100%",
+                      maxWidth:"100%",
+                      height:"auto",
+                      width:"auto",
+                      mixBlendMode:"screen",
+                      filter:`drop-shadow(0 0 32px ${accent}65) drop-shadow(0 20px 45px rgba(0,0,0,0.65))`,
+                    }}
+                  />
+                </div>
               )}
             </div>
           )}
