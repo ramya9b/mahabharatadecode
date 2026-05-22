@@ -103,7 +103,7 @@ const CharactersHero = ({ characters }: CharactersHeroProps) => {
           style={{
             fontSize: "clamp(16px, 2vw, 19px)",
             color: "rgba(42,31,14,0.65)",
-            fontFamily: "'Lora', Georgia, serif",
+            fontFamily: "'Cormorant Garamond', Georgia, serif",
             fontStyle: "italic",
             maxWidth: "540px",
           }}
