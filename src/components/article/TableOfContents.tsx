@@ -132,7 +132,7 @@ const TableOfContents = ({
           <List size={14} style={{ color: "rgba(212,175,55,0.7)" }} aria-hidden="true" />
           <span
             style={{
-              fontFamily: "'Playfair Display', 'Cinzel', serif",
+              fontFamily: "'Cinzel', serif",
               fontSize: "11px",
               letterSpacing: "0.2em",
               textTransform: "uppercase",
@@ -192,7 +192,7 @@ const TableOfContents = ({
                   <span
                     style={{
                       fontSize: item.level === 3 ? "12px" : "13px",
-                      fontFamily: "'Lora', Georgia, serif",
+                      fontFamily: "'Cormorant Garamond', Georgia, serif",
                       lineHeight: 1.4,
                       fontWeight: isActive ? 500 : 400,
                     }}
