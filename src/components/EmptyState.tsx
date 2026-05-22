@@ -84,7 +84,7 @@ const EmptyState = ({
       {/* Title */}
       <h3
         style={{
-          fontFamily: "'Playfair Display', 'Cinzel', serif",
+          fontFamily: "'Cinzel', serif",
           fontSize: "20px",
           fontWeight: 600,
           color: "rgba(42,31,14,0.88)",
@@ -99,7 +99,7 @@ const EmptyState = ({
         style={{
           fontSize: "17px",
           color: "rgba(42,31,14,0.5)",
-          fontFamily: "'Lora', Georgia, serif",
+          fontFamily: "'Cormorant Garamond', Georgia, serif",
           lineHeight: 1.85,
           maxWidth: "380px",
           marginBottom: cta ? "28px" : 0,
@@ -118,7 +118,7 @@ const EmptyState = ({
               borderRadius: "99px",
               background: "linear-gradient(135deg, #E8C547, #D4AF37)",
               color: "#08061A",
-              fontFamily: "'Playfair Display', 'Cinzel', serif",
+              fontFamily: "'Cinzel', serif",
               fontSize: "12px",
               fontWeight: 700,
               letterSpacing: "0.1em",
@@ -137,7 +137,7 @@ const EmptyState = ({
               borderRadius: "99px",
               background: "linear-gradient(135deg, #E8C547, #D4AF37)",
               color: "#08061A",
-              fontFamily: "'Playfair Display', 'Cinzel', serif",
+              fontFamily: "'Cinzel', serif",
               fontSize: "12px",
               fontWeight: 700,
               letterSpacing: "0.1em",
