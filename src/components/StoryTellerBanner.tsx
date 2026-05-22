@@ -68,18 +68,28 @@ const StoryTellerBanner = () => {
             display: "inline-block",
             padding: "14px 40px",
             borderRadius: "99px",
-            background: "hsl(var(--primary))",
-            color: "hsl(var(--primary-foreground))",
+            background: "linear-gradient(135deg, #FBBF24 0%, #34D399 50%, #38BDF8 100%)",
+            backgroundSize: "200% auto",
+            animation: "shimmer 4s linear infinite",
+            color: "#08040F",
             fontFamily: "'Cinzel', serif",
             fontSize: "14px",
+            fontWeight: 700,
             letterSpacing: "0.1em",
             textDecoration: "none",
-            transition: "all 0.3s",
+            boxShadow: "0 4px 24px rgba(52,211,153,0.40)",
+            transition: "all 0.35s ease",
           }}
-          onMouseEnter={e => (e.currentTarget.style.opacity = "0.85")}
-          onMouseLeave={e => (e.currentTarget.style.opacity = "1")}
+          onMouseEnter={e => {
+            (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-3px) scale(1.02)";
+            (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 12px 36px rgba(52,211,153,0.60)";
+          }}
+          onMouseLeave={e => {
+            (e.currentTarget as HTMLAnchorElement).style.transform = "none";
+            (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 4px 24px rgba(52,211,153,0.40)";
+          }}
         >
-          Start Listening →
+          ✨ Start Listening →
         </Link>
       </div>
 
