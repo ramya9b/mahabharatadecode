@@ -553,7 +553,7 @@ const StoryTeller = () => {
         <h1 style={{ fontFamily: serif, fontSize: "clamp(2rem, 6vw, 3.5rem)", fontWeight: 700, color: isDark ? "#F5E6C8" : "#2A1506", lineHeight: 1.1, marginBottom: "20px" }}>
           The Story Teller
         </h1>
-        <p style={{ fontFamily: body, fontSize: "clamp(1rem, 2.5vw, 1.2rem)", color: "rgba(245,230,200,0.65)", maxWidth: "560px", margin: "0 auto 40px", lineHeight: 1.7 }}>
+        <p style={{ fontFamily: body, fontSize: "clamp(1rem, 2.5vw, 1.2rem)", color: isDark ? "rgba(245,230,200,0.65)" : "rgba(42,31,14,0.70)", maxWidth: "560px", margin: "0 auto 40px", lineHeight: 1.7 }}>
           Choose a character. Choose your story. Hear the Mahabharata come alive — narrated by Veda Vyasa himself.
         </p>
 
