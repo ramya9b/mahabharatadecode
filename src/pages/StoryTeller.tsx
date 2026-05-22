@@ -363,14 +363,12 @@ const StoryTeller = () => {
   const parchment = isDark ? "transparent" : "hsl(38 52% 91%)";
 
   /* Text colours */
-  const inkDark   = isDark ? "#FDE68A"              : "#1C0E00";
-  const inkMuted  = isDark ? "rgba(253,230,138,0.55)" : "#6B4E10";
+  const inkDark   = "hsl(var(--foreground))";
+  const inkMuted  = "hsl(var(--muted-foreground))";
 
   /* Card backgrounds */
-  const cardBg    = isDark ? "rgba(22,11,0,0.75)"   : "hsl(38 45% 96%)";
-  const borderClr = isDark
-    ? (currentTheme !== "default" ? `${theme.accentColor}50` : "rgba(251,191,36,0.22)")
-    : "hsl(35 28% 74%)";
+  const cardBg    = "hsl(var(--card))";
+  const borderClr = currentTheme !== "default" ? `${theme.accentColor}50` : "hsl(var(--border))";
 
   const serif  = "'Cinzel', 'Cinzel Decorative', 'Cormorant Garamond', Georgia, serif";
   const body   = "'Cormorant Garamond', 'Noto Serif Telugu', 'Noto Serif Devanagari', 'Noto Serif Kannada', Georgia, serif";
@@ -385,14 +383,14 @@ const StoryTeller = () => {
         <div style={{
           minHeight: "100vh", display: "flex", flexDirection: "column",
           alignItems: "center", justifyContent: "center", textAlign: "center",
-          background: isDark ? "linear-gradient(145deg, #0C0900 0%, #100A00 25%, #080A18 55%, #060410 80%, #0C0900 100%)" : "hsl(38 52% 91%)",
+          background: "hsl(var(--background))",
           padding: "80px 24px 40px", position: "relative", overflow: "hidden",
         }}>
         {/* CSS particle background for intro — dark mode only */}
-        {isDark && <MoodBackground theme="war" opacity={0.15} />}
+        {isGlobalDark && <MoodBackground theme="war" opacity={0.15} />}
 
         {/* Animated glow — dark mode only */}
-        {isDark && <div style={{
+        {isGlobalDark && <div style={{
           position: "absolute", inset: 0, pointerEvents: "none",
           background: "radial-gradient(ellipse 60% 60% at 80% 35%, rgba(251,191,36,0.16) 0%, transparent 50%)",
         }} />
@@ -428,8 +426,8 @@ const StoryTeller = () => {
         {/* Badge */}
         <div className="intro-badge" style={{
           display: "inline-block", padding: "4px 16px", borderRadius: "99px",
-          border: isDark ? "1px solid rgba(212,175,55,0.4)" : "1px solid rgba(146,64,14,0.4)", fontFamily: serif,
-          fontSize: "11px", letterSpacing: "0.3em", color: isDark ? "rgba(212,175,55,0.8)" : "#92400E",
+          border: "1px solid hsl(var(--border))", fontFamily: serif,
+          fontSize: "11px", letterSpacing: "0.3em", color: "hsl(var(--primary))",
           textTransform: "uppercase", marginBottom: "20px",
         }}>
           MahabharataDecoded presents
@@ -439,7 +437,7 @@ const StoryTeller = () => {
         <h1 className="intro-title" style={{
           fontFamily: deco,
           fontSize: "clamp(2.2rem, 7vw, 4.5rem)",
-          fontWeight: 700, color: isDark ? "#F5E6C8" : "#2A1506", lineHeight: 1.15,
+          fontWeight: 700, color: "hsl(var(--foreground))", lineHeight: 1.15,
           marginBottom: "20px",
           textShadow: isDark ? "0 0 60px rgba(212,175,55,0.4), 0 2px 4px rgba(0,0,0,0.5)" : "none",
           letterSpacing: "0.04em",
@@ -453,7 +451,7 @@ const StoryTeller = () => {
         {/* Subtitle */}
         <p className="intro-sub" style={{
           fontFamily: body, fontSize: "clamp(1.1rem, 2.5vw, 1.35rem)",
-          color: isDark ? "rgba(245,230,200,0.88)" : "rgba(42,31,14,0.75)", maxWidth: "520px",
+          color: "hsl(var(--muted-foreground))", maxWidth: "520px",
           margin: "0 auto 28px", lineHeight: 1.75,
         }}>
           Choose a character. Choose your story.<br />
@@ -465,8 +463,8 @@ const StoryTeller = () => {
           {["English", "తెలుగు", "हिंदी", "ಕನ್ನಡ"].map(l => (
             <span key={l} style={{
               padding: "4px 14px", borderRadius: "99px",
-              background: isDark ? "rgba(212,175,55,0.1)" : "rgba(146,64,14,0.06)", border: isDark ? "1px solid rgba(212,175,55,0.25)" : "1px solid rgba(146,64,14,0.25)",
-              fontFamily: body, fontSize: "13px", color: isDark ? "rgba(245,230,200,0.7)" : "rgba(42,31,14,0.72)",
+              background: "hsl(var(--accent))", border: "1px solid hsl(var(--border))",
+              fontFamily: body, fontSize: "13px", color: "hsl(var(--foreground))",
             }}>{l}</span>
           ))}
         </div>
@@ -497,7 +495,7 @@ const StoryTeller = () => {
   return (
     <div style={{
       minHeight: "100vh",
-      background: isDark ? "linear-gradient(145deg, #0C0900 0%, #100A00 25%, #080A18 55%, #060410 80%, #0C0900 100%)" : "hsl(38 52% 91%)",
+      background: "hsl(var(--background))",
       color: inkDark,
       transition: "background 0.8s ease, color 0.5s ease",
       position: "relative",
@@ -505,7 +503,7 @@ const StoryTeller = () => {
 
       {/* ── SCENE BACKGROUND — Left-gradient for all groups ── */}
       {/* Golden Rainbow background glows — dark mode only */}
-      {isDark && (
+      {isGlobalDark && (
         <div style={{ position: "fixed", inset: 0, zIndex: 0, pointerEvents: "none" }}>
           {/* Golden Rainbow base */}
           <div style={{ position:"absolute", inset:0, background:"linear-gradient(145deg,#0C0900 0%,#100A00 25%,#080A18 55%,#060410 80%,#0C0900 100%)" }} />
@@ -550,10 +548,10 @@ const StoryTeller = () => {
         <p style={{ fontFamily: serif, fontSize: "11px", letterSpacing: "0.35em", color: isDark ? "rgba(212,175,55,0.65)", textTransform: "uppercase", marginBottom: "16px" }}>
           MahabharataDecoded presents
         </p>
-        <h1 style={{ fontFamily: serif, fontSize: "clamp(2rem, 6vw, 3.5rem)", fontWeight: 700, color: isDark ? "#F5E6C8" : "#2A1506", lineHeight: 1.1, marginBottom: "20px" }}>
+        <h1 style={{ fontFamily: serif, fontSize: "clamp(2rem, 6vw, 3.5rem)", fontWeight: 700, color: "hsl(var(--foreground))", lineHeight: 1.1, marginBottom: "20px" }}>
           The Story Teller
         </h1>
-        <p style={{ fontFamily: body, fontSize: "clamp(1rem, 2.5vw, 1.2rem)", color: isDark ? "rgba(245,230,200,0.65)" : "rgba(42,31,14,0.70)", maxWidth: "560px", margin: "0 auto 40px", lineHeight: 1.7 }}>
+        <p style={{ fontFamily: body, fontSize: "clamp(1rem, 2.5vw, 1.2rem)", color: "hsl(var(--muted-foreground))", maxWidth: "560px", margin: "0 auto 40px", lineHeight: 1.7 }}>
           Choose a character. Choose your story. Hear the Mahabharata come alive — narrated by Veda Vyasa himself.
         </p>
 
@@ -569,7 +567,7 @@ const StoryTeller = () => {
                   padding: "6px 16px", borderRadius: "99px", border: "none", cursor: "pointer",
                   fontFamily: serif, fontSize: "13px",
                   background: language === l.value ? gold : "transparent",
-                  color: language === l.value ? "#2A1506" : (isDark ? "rgba(245,230,200,0.65)" : "rgba(42,31,14,0.65)"),
+                  color: language === l.value ? "hsl(var(--primary-foreground))" : "hsl(var(--muted-foreground))",
                   transition: "all 0.2s",
                 }}
               >
@@ -589,7 +587,7 @@ const StoryTeller = () => {
                   padding: "6px 14px", borderRadius: "99px", border: "none", cursor: "pointer",
                   fontFamily: serif, fontSize: "13px",
                   background: tone === t.value ? gold : "transparent",
-                  color: tone === t.value ? "#2A1506" : (isDark ? "rgba(245,230,200,0.65)" : "rgba(42,31,14,0.65)"),
+                  color: tone === t.value ? "hsl(var(--primary-foreground))" : "hsl(var(--muted-foreground))",
                   transition: "all 0.2s",
                 }}
               >
@@ -711,13 +709,13 @@ const StoryTeller = () => {
         {(step === "prompt" || step === "story") && selected && (
           <section
             style={{
-              background: isDark ? "rgba(13,10,26,0.82)" : cardBg,
+              background: "hsl(var(--card))",
               border: `1px solid ${borderClr}`,
               borderRadius: "16px",
               padding: "32px",
               marginBottom: "32px",
-              backdropFilter: isDark ? "blur(12px)" : "none",
-              WebkitBackdropFilter: isDark ? "blur(12px)" : "none",
+              backdropFilter: "blur(12px)",
+              WebkitBackdropFilter: "blur(12px)",
             }}
           >
             <div style={{ display: "flex", alignItems: "center", gap: "12px", marginBottom: "8px" }}>
@@ -847,8 +845,8 @@ const StoryTeller = () => {
                 borderRadius: "20px",
                 overflow: "hidden",
                 boxShadow: isDark ? `0 8px 40px rgba(0,0,0,0.6)` : "0 8px 40px rgba(0,0,0,0.08)",
-                backdropFilter: isDark ? "blur(12px)" : "none",
-                WebkitBackdropFilter: isDark ? "blur(12px)" : "none",
+                backdropFilter: "blur(12px)",
+                WebkitBackdropFilter: "blur(12px)",
               }}>
 
                 {/* ── Tab bar ── */}
@@ -911,7 +909,7 @@ const StoryTeller = () => {
                           cursor: (!story && tab.key !== "story") ? "not-allowed" : "pointer",
                           opacity: (!story && tab.key !== "story") ? 0.4 : 1,
                           background: activeTab === tab.key
-                            ? (isDark ? "rgba(26,21,48,0.9)" : "white")
+                            ? "hsl(var(--card))"
                             : "transparent",
                           borderBottom: activeTab === tab.key ? `3px solid ${(selected ? GROUP_COLORS[selected.group] : "#A07820")}` : "3px solid transparent",
                           transition: "all 0.2s",
@@ -967,7 +965,7 @@ const StoryTeller = () => {
                           fontFamily: body,
                           fontSize: "clamp(1rem, 2vw, 1.15rem)",
                           lineHeight: 1.9,
-                          color: isDark ? "#EDE6FF" : "#1C0E00",
+                          color: "hsl(var(--foreground))",
                           textAlign: "justify",
                           hyphens: "auto",
                           WebkitHyphens: "auto",
