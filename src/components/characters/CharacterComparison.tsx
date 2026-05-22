@@ -43,7 +43,7 @@ const CharacterComparison = ({ characters }: CharacterComparisonProps) => {
             style={{
               fontSize: "17px",
               color: "rgba(42,31,14,0.6)",
-              fontFamily: "'Lora', Georgia, serif",
+              fontFamily: "'Cormorant Garamond', Georgia, serif",
               maxWidth: "480px",
             }}
           >
@@ -171,7 +171,7 @@ const CharacterComparison = ({ characters }: CharacterComparisonProps) => {
                 className="text-xs mt-1 italic"
                 style={{
                   color: "rgba(42,31,14,0.45)",
-                  fontFamily: "'Lora', Georgia, serif",
+                  fontFamily: "'Cormorant Garamond', Georgia, serif",
                 }}
               >
                 {char.title}
