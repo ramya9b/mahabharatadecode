@@ -139,14 +139,14 @@ const WelcomeScreen = ({ onStart }: { onStart: () => void }) => (
       {/* Description */}
       <p className="leading-relaxed mx-auto mb-4 animate-fade-up-delay-2"
         style={{
-          fontSize: "clamp(17px, 2vw, 20px)", color: "rgba(42,31,14,0.65)",
+          fontSize: "clamp(17px, 2vw, 20px)", color: "rgba(253,230,138,0.68)",
           fontFamily: "'Cormorant Garamond', Georgia, serif", fontStyle: "italic", maxWidth: "500px",
         }}>
         8 questions. No right answers. Only honest ones.
       </p>
       <p className="leading-relaxed mx-auto mb-12"
         style={{
-          fontSize: "17px", color: "rgba(42,31,14,0.45)",
+          fontSize: "17px", color: "rgba(253,230,138,0.50)",
           fontFamily: "'Cormorant Garamond', Georgia, serif", maxWidth: "420px",
         }}>
         Answer truthfully — not how you want to be seen, but how you actually are.
@@ -279,13 +279,13 @@ const QuestionScreen = ({
                   <div className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300"
                     style={{
                       background: isSelected ? "rgba(212,175,55,0.2)" : "rgba(139,105,20,0.07)",
-                      border: isSelected ? "1px solid rgba(212,175,55,0.4)" : "1px solid rgba(139,105,20,0.12)",
+                      border: isSelected ? "1px solid rgba(212,175,55,0.4)" : "1px solid rgba(251,191,36,0.14)",
                     }}>
                     {isSelected ? (
                       <Check size={14} className="text-primary" />
                     ) : (
                       <span className="font-heading text-[11px] tracking-wide"
-                        style={{ color: "rgba(42,31,14,0.45)" }}>
+                        style={{ color: "rgba(253,230,138,0.50)" }}>
                         {LETTERS[ai]}
                       </span>
                     )}
@@ -296,7 +296,7 @@ const QuestionScreen = ({
                     style={{
                       fontSize: "clamp(14px, 1.7vw, 16px)",
                       fontFamily: "'Cormorant Garamond', Georgia, serif",
-                      color: isSelected ? "rgba(237,232,216,0.92)" : "rgba(42,31,14,0.72)",
+                      color: isSelected ? "rgba(237,232,216,0.92)" : "rgba(253,230,138,0.75)",
                     }}>
                     {answer.text}
                   </p>
@@ -437,7 +437,7 @@ const ResultScreen = ({
             <div>
               <p className="font-heading text-[10px] tracking-[0.35em] uppercase text-primary/50 mb-2">Your result</p>
               <h3 className="font-heading font-bold leading-tight mb-1"
-                style={{ fontSize: "clamp(20px, 2.5vw, 28px)", color: "rgba(42,31,14,0.92)" }}>
+                style={{ fontSize: "clamp(20px, 2.5vw, 28px)", color: "rgba(253,230,138,0.92)" }}>
                 You are{" "}
                 <span style={{
                   background: `linear-gradient(135deg, rgba(${meta.accentRgb},1) 0%, rgba(${meta.accentRgb},0.7) 100%)`,
