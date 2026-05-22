@@ -71,7 +71,7 @@ const CharacterProfile = ({ character, index }: CharacterProfileProps) => {
                 onError={(e) => {
                   const el = e.currentTarget;
                   el.style.opacity = "0";
-                  el.style.backgroundColor = "rgba(139,105,20,0.08)";
+                  el.style.backgroundColor = "rgba(251,191,36,0.08)";
                 }}
               />
 
