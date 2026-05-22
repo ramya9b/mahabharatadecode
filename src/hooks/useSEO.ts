@@ -76,14 +76,20 @@ export function useSEO({
 
     // ── Standard meta ──
     setTag("meta", "name", "description", description);
+    setTag("meta", "name", "robots", "index, follow, max-snippet:-1, max-image-preview:large, max-video-preview:-1");
     setTag("meta", "name", "keywords", keywords);
     if (author) setTag("meta", "name", "author", author);
+
+    // ── Canonical URL ──
+    setLink("canonical", fullUrl);
 
     // ── Open Graph ──
     setTag("meta", "property", "og:title", fullTitle);
     setTag("meta", "property", "og:description", description);
     setTag("meta", "property", "og:image", ogImage);
     setTag("meta", "property", "og:url", fullUrl);
+    if (publishedAt) setTag("meta", "property", "article:published_time", publishedAt);
+    setTag("meta", "property", "og:site_name", SITE_NAME);
     setTag("meta", "property", "og:type", type);
     setTag("meta", "property", "og:site_name", SITE_NAME);
     if (publishedAt)
