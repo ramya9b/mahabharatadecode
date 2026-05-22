@@ -240,7 +240,7 @@ const LifeLessonsList = ({ lessons }: { lessons: string[] }) => {
                 className="text-muted-foreground leading-relaxed"
                 style={{
                   fontSize: "17px",
-                  fontFamily: "'Lora', Georgia, serif",
+                  fontFamily: "'Cormorant Garamond', Georgia, serif",
                 }}
               >
                 {lesson}
@@ -267,7 +267,7 @@ const AuthorNote = ({ note }: { note: string }) => {
     >
       <span
         className="block text-primary/45 text-[10px] tracking-[0.32em] uppercase mb-2"
-        style={{ fontFamily: "'Playfair Display', 'Cinzel', serif" }}
+        style={{ fontFamily: "'Cinzel', serif" }}
       >
         Editorial Note
       </span>
@@ -275,7 +275,7 @@ const AuthorNote = ({ note }: { note: string }) => {
         className="text-muted-foreground leading-relaxed italic"
         style={{
           fontSize: "14px",
-          fontFamily: "'Lora', Georgia, serif",
+          fontFamily: "'Cormorant Garamond', Georgia, serif",
         }}
       >
         {note}
