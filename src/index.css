@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;0,800;0,900;1,400;1,700&family=Lora:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600&family=Cinzel:wght@400;500;600;700;900&display=swap');
+/* ── Fonts loaded in index.html: Cinzel + Cormorant Garamond ── */
 /* Indian language fonts — loaded on demand via font-display:swap */
 @import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;600;700&family=Tiro+Devanagari+Hindi:ital@0;1&family=Noto+Serif+Telugu:wght@400;600;700&family=Noto+Serif+Kannada:wght@400;600;700&display=swap');
 
@@ -67,7 +67,7 @@
     @apply bg-background text-foreground font-sans;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 18px;
+    font-size: 19px; /* Cormorant Garamond optimal reading size */
     line-height: 1.85;
   }
 
@@ -82,7 +82,7 @@
 
   .font-hi, .font-hi body, .font-hi p, .font-hi span,
   .font-hi a, .font-hi button, .font-hi input, .font-hi textarea {
-    font-family: 'Tiro Devanagari Hindi', 'Noto Serif Devanagari', 'Lora', serif !important;
+    font-family: 'Tiro Devanagari Hindi', 'Noto Serif Devanagari', 'Cormorant Garamond', Georgia, serif !important;
     font-size-adjust: 0.55;
     line-height: 1.9;
   }
@@ -511,7 +511,7 @@
   @apply glass-card px-6 py-5 rounded-xl text-muted-foreground text-sm leading-relaxed;
   border-color: rgba(212,175,55,0.12);
   font-style: italic;
-  font-family: 'Lora', Georgia, serif;
+  font-family: 'Cormorant Garamond', Georgia, serif;
 }
 
 /* ══════════════════════════════════════════════════════
