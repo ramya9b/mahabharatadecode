@@ -83,7 +83,7 @@ class ErrorBoundary extends Component<Props, State> {
               fontFamily: "'Cinzel', serif",
               fontSize: "clamp(22px, 4vw, 32px)",
               fontWeight: 700,
-              color: "rgba(42,31,14,0.92)",
+              color: "rgba(253,230,138,0.92)",
               marginBottom: "12px",
             }}
           >
@@ -94,7 +94,7 @@ class ErrorBoundary extends Component<Props, State> {
           <p
             style={{
               fontSize: "17px",
-              color: "rgba(42,31,14,0.55)",
+              color: "rgba(253,230,138,0.60)",
               fontFamily: "'Cormorant Garamond', Georgia, serif",
               maxWidth: "420px",
               lineHeight: 1.85,
@@ -133,7 +133,7 @@ class ErrorBoundary extends Component<Props, State> {
               <pre
                 style={{
                   fontSize: "11px",
-                  color: "rgba(42,31,14,0.55)",
+                  color: "rgba(253,230,138,0.60)",
                   fontFamily: "monospace",
                   whiteSpace: "pre-wrap",
                   wordBreak: "break-word",
@@ -180,7 +180,7 @@ class ErrorBoundary extends Component<Props, State> {
                 borderRadius: "99px",
                 background: "rgba(139,105,20,0.06)",
                 border: "1px solid rgba(212,175,55,0.2)",
-                color: "rgba(42,31,14,0.72)",
+                color: "rgba(253,230,138,0.75)",
                 fontFamily: "'Cinzel', serif",
                 fontSize: "12px",
                 letterSpacing: "0.1em",
