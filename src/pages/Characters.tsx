@@ -59,7 +59,7 @@ const CharactersCTA = () => (
       className="absolute inset-0 pointer-events-none"
       style={{
         background:
-          "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(139,0,0,0.08) 0%, rgba(212,175,55,0.05) 40%, transparent 70%)",
+          "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(12,9,0,0.6) 0%, rgba(251,191,36,0.08) 40%, transparent 70%)",
       }}
     />
 
@@ -76,7 +76,7 @@ const CharactersCTA = () => (
         className="leading-relaxed mb-10 mx-auto"
         style={{
           fontSize: "17px",
-          color: "rgba(42,31,14,0.6)",
+          color: "rgba(253,230,138,0.65)",
           fontFamily: "'Cormorant Garamond', Georgia, serif",
           maxWidth: "520px",
         }}
@@ -104,13 +104,13 @@ const CharactersCTA = () => (
       {/* Mini newsletter */}
       <div
         className="glass-card rounded-2xl px-8 py-8 max-w-md mx-auto relative overflow-hidden"
-        style={{ borderColor: "rgba(212,175,55,0.15)" }}
+        style={{ borderColor: "rgba(251,191,36,0.22)" }}
       >
         <div
           className="absolute top-0 left-0 right-0 h-px"
           style={{
             background:
-              "linear-gradient(to right, transparent, rgba(212,175,55,0.4), transparent)",
+              "linear-gradient(to right, transparent, rgba(251,191,36,0.5), transparent)",
           }}
         />
         <span className="text-primary text-lg block mb-3">✦</span>
@@ -124,7 +124,7 @@ const CharactersCTA = () => (
           className="mb-5"
           style={{
             fontSize: "14px",
-            color: "rgba(42,31,14,0.55)",
+            color: "rgba(253,230,138,0.60)",
             fontFamily: "'Cormorant Garamond', Georgia, serif",
           }}
         >
