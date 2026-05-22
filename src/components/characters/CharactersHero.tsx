@@ -102,7 +102,7 @@ const CharactersHero = ({ characters }: CharactersHeroProps) => {
           className="animate-fade-up-delay-2 leading-relaxed mx-auto mb-12"
           style={{
             fontSize: "clamp(16px, 2vw, 19px)",
-            color: "rgba(42,31,14,0.65)",
+            color: "rgba(253,230,138,0.68)",
             fontFamily: "'Cormorant Garamond', Georgia, serif",
             fontStyle: "italic",
             maxWidth: "540px",
