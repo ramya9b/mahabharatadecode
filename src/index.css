@@ -8,49 +8,65 @@
 
 @layer base {
   :root {
-    /* ── Ancient Parchment Theme ── */
-    --background: 38 52% 91%;       /* #F5EDDA warm cream */
-    --foreground: 28 62% 12%;       /* #2A1506 dark brown */
+    /* ══ GOLDEN RAINBOW THEME ══
+       Base: deep warm black  #0C0900
+       Primary: gold          #FBBF24
+       Accent-green: teal     #34D399  (characters/stories)
+       Accent-blue: cyan      #38BDF8  (articles/blog)
+       Accent-purple: violet  #A78BFA  (wisdom/quiz)
+       Accent-pink: rose      #F472B6  (highlights)
+       Rainbow bar: gold → lime → teal → cyan → violet → pink
+    */
+    --background: 30 100% 3%;      /* #0C0900 deep warm black */
+    --foreground: 45 96% 90%;      /* #FDE68A warm golden white */
 
-    --card: 38 45% 94%;             /* #F0E9D6 lighter parchment */
-    --card-foreground: 28 62% 12%;
+    --card: 30 80% 5%;             /* #160B00 card bg */
+    --card-foreground: 45 96% 90%;
 
-    --popover: 38 50% 93%;
-    --popover-foreground: 28 62% 12%;
+    --popover: 30 80% 5%;
+    --popover-foreground: 45 96% 90%;
 
-    --primary: 35 72% 32%;          /* #8B6208 rich dark gold */
-    --primary-foreground: 38 55% 95%;
+    --primary: 43 96% 56%;         /* #FBBF24 gold */
+    --primary-foreground: 30 100% 4%;
 
-    --secondary: 38 30% 85%;        /* #E0D2B4 */
-    --secondary-foreground: 28 55% 15%;
+    --secondary: 30 50% 10%;       /* slightly lighter warm black */
+    --secondary-foreground: 45 96% 88%;
 
-    --muted: 38 28% 83%;
-    --muted-foreground: 28 30% 42%; /* #7A5A32 warm brown-grey */
+    --muted: 30 40% 12%;
+    --muted-foreground: 45 40% 65%; /* muted warm gold */
 
-    --accent: 38 30% 85%;
-    --accent-foreground: 28 55% 15%;
+    --accent: 30 50% 10%;
+    --accent-foreground: 45 96% 88%;
 
-    --destructive: 0 62% 45%;
-    --destructive-foreground: 38 55% 95%;
+    --destructive: 0 62% 48%;
+    --destructive-foreground: 45 90% 95%;
 
-    --border: 35 28% 74%;           /* #C9B48A warm border */
-    --input: 35 28% 74%;
-    --ring: 35 72% 32%;
+    --border: 43 40% 20%;          /* warm gold border */
+    --input:  43 40% 20%;
+    --ring:   43 96% 56%;
 
     --radius: 0.75rem;
 
-    --sidebar-background: 38 52% 91%;
-    --sidebar-foreground: 28 62% 12%;
-    --sidebar-primary: 35 72% 32%;
-    --sidebar-primary-foreground: 38 55% 95%;
-    --sidebar-accent: 38 30% 85%;
-    --sidebar-accent-foreground: 28 55% 15%;
-    --sidebar-border: 35 28% 74%;
-    --sidebar-ring: 35 72% 32%;
+    --sidebar-background: 30 100% 3%;
+    --sidebar-foreground: 45 96% 90%;
+    --sidebar-primary: 43 96% 56%;
+    --sidebar-primary-foreground: 30 100% 4%;
+    --sidebar-accent: 30 50% 10%;
+    --sidebar-accent-foreground: 45 96% 88%;
+    --sidebar-border: 43 40% 20%;
+    --sidebar-ring: 43 96% 56%;
 
-    /* Custom tokens used in inline styles */
-    --gold-light: #A07820;
-    --gold-dark:  #6B4E10;
+    /* ── Golden Rainbow custom tokens ── */
+    --gold-light:    #FBBF24;
+    --gold-dark:     #D97706;
+    --rainbow-green: #34D399;
+    --rainbow-blue:  #38BDF8;
+    --rainbow-purple:#A78BFA;
+    --rainbow-pink:  #F472B6;
+    --rainbow-lime:  #A3E635;
+    --rainbow-bar: linear-gradient(90deg,
+      #FBBF24 0%, #A3E635 20%, #34D399 40%,
+      #38BDF8 60%, #A78BFA 80%, #F472B6 100%);
   }
 }
 
@@ -156,7 +172,7 @@
 @layer components {
   .glass-card {
     background: rgba(245, 237, 218, 0.72);
-    border: 1px solid rgba(139, 105, 20, 0.22);
+    border: 1px solid rgba(251, 191, 36, 0.18);
     backdrop-filter: blur(12px);
     -webkit-backdrop-filter: blur(12px);
     border-radius: 1rem;
