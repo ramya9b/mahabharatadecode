@@ -100,11 +100,11 @@ const Navbar = () => {
                 to={to}
                 aria-current={isActive(to) ? "page" : undefined}
                 className={`text-[13px] tracking-wide transition-colors duration-300 relative i18n-safe whitespace-nowrap ${
-                  isActive(to) ? "text-primary" : "text-muted-foreground hover:text-primary"
+                  isActive(to) ? "" : "text-muted-foreground hover:text-primary"
                 }`}
               >
                 {t(key)}
-                {isActive(to) && <span className="absolute -bottom-1 left-0 right-0 h-px bg-primary rounded-full" aria-hidden="true"/>}
+                {isActive(to) && <span className="absolute -bottom-1 left-0 right-0 h-0.5 rounded-full" style={{ background: "linear-gradient(90deg, #FBBF24, #34D399, #38BDF8, #A78BFA)" }} aria-hidden="true"/>}
               </Link>
             ))}
 
@@ -126,7 +126,31 @@ const Navbar = () => {
 
             <Link
               to="/blog"
-              className="px-4 py-2 rounded-full bg-primary text-primary-foreground text-[12px] font-medium hover:bg-gold-light transition-colors duration-300 tracking-wide animate-pulse-glow whitespace-nowrap btn-i18n"
+              className="btn-i18n whitespace-nowrap"
+              style={{
+                padding: "9px 20px",
+                borderRadius: "9999px",
+                background: "linear-gradient(135deg, #FBBF24 0%, #34D399 45%, #38BDF8 100%)",
+                backgroundSize: "200% auto",
+                animation: "shimmer 4s linear infinite",
+                color: "#08040F",
+                fontFamily: "'Cinzel', serif",
+                fontSize: "12px",
+                fontWeight: 700,
+                letterSpacing: "0.10em",
+                textDecoration: "none",
+                boxShadow: "0 4px 20px rgba(52,211,153,0.35)",
+                transition: "all 0.3s ease",
+                display: "inline-block",
+              }}
+              onMouseEnter={e => {
+                (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-2px)";
+                (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 8px 28px rgba(52,211,153,0.55)";
+              }}
+              onMouseLeave={e => {
+                (e.currentTarget as HTMLAnchorElement).style.transform = "none";
+                (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 4px 20px rgba(52,211,153,0.35)";
+              }}
             >
               {t("nav.start_reading")}
             </Link>
