@@ -17,7 +17,7 @@ const sectionMeta: Record<
   background: {
     numeral: "II",
     color: "text-muted-foreground/60",
-    border: "rgba(139,105,20,0.22)",
+    border: "rgba(251,191,36,0.22)",
   },
   turningPoint: {
     numeral: "III",
