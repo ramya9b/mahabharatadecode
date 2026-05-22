@@ -36,8 +36,8 @@ const BackToTop = () => {
       tabIndex={visible ? 0 : -1}
       className="fixed z-50"
       style={{
-        bottom: "24px",
-        right: "24px",
+        bottom: "86px",   /* sits above FloatingStoryButton (28px + 44px pill + 14px gap) */
+        right: "26px",
         width: "44px",
         height: "44px",
         borderRadius: "50%",
