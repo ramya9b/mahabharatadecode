@@ -3,8 +3,8 @@ import { Link } from "react-router-dom";
 /* ── Use WebP public assets with JPEG srcSet fallback for performance ── */
 const characters = [
   { name: "Krishna",  title: "The Divine Strategist", id: "krishna"  },
-  { name: "Karna",    title: "The Tragic Hero",        id: "karna"    },
   { name: "Arjuna",   title: "The Supreme Archer",     id: "arjuna"   },
+  { name: "Karna",    title: "The Tragic Hero",        id: "karna"    },
   { name: "Draupadi", title: "The Fire-Born Queen",    id: "draupadi" },
   { name: "Bhishma",  title: "The Grand Patriarch",    id: "bhishma"  },
 ];
