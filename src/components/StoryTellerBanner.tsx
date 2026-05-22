@@ -40,7 +40,7 @@ const StoryTellerBanner = () => {
         </span>
         <h2
           style={{
-            fontFamily: "'Cinzel', 'Playfair Display', serif",
+            fontFamily: "'Cinzel', 'Cormorant Garamond', Georgia, serif",
             fontSize: "clamp(1.8rem, 4vw, 2.8rem)",
             fontWeight: 700,
             color: "hsl(var(--foreground))",
@@ -52,7 +52,7 @@ const StoryTellerBanner = () => {
         </h2>
         <p
           style={{
-            fontFamily: "'Lora', serif",
+            fontFamily: "'Cormorant Garamond', Georgia, serif",
             fontSize: "clamp(1rem, 2vw, 1.15rem)",
             color: "hsl(var(--muted-foreground))",
             maxWidth: "520px",
@@ -129,7 +129,7 @@ const StoryTellerBanner = () => {
             </div>
             <div
               style={{
-                fontFamily: "'Lora', serif",
+                fontFamily: "'Cormorant Garamond', Georgia, serif",
                 fontSize: "12px",
                 color: "hsl(var(--muted-foreground))",
                 lineHeight: 1.5,
