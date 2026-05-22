@@ -140,14 +140,14 @@ const WelcomeScreen = ({ onStart }: { onStart: () => void }) => (
       <p className="leading-relaxed mx-auto mb-4 animate-fade-up-delay-2"
         style={{
           fontSize: "clamp(17px, 2vw, 20px)", color: "rgba(42,31,14,0.65)",
-          fontFamily: "'Lora', Georgia, serif", fontStyle: "italic", maxWidth: "500px",
+          fontFamily: "'Cormorant Garamond', Georgia, serif", fontStyle: "italic", maxWidth: "500px",
         }}>
         8 questions. No right answers. Only honest ones.
       </p>
       <p className="leading-relaxed mx-auto mb-12"
         style={{
           fontSize: "17px", color: "rgba(42,31,14,0.45)",
-          fontFamily: "'Lora', Georgia, serif", maxWidth: "420px",
+          fontFamily: "'Cormorant Garamond', Georgia, serif", maxWidth: "420px",
         }}>
         Answer truthfully — not how you want to be seen, but how you actually are.
         The Mahabharata has a mirror for every kind of person.
@@ -172,7 +172,7 @@ const WelcomeScreen = ({ onStart }: { onStart: () => void }) => (
       {/* Start CTA */}
       <button onClick={onStart}
         className="px-10 py-4 rounded-full bg-primary text-primary-foreground font-heading font-bold text-sm tracking-wide hover:bg-gold-light transition-all duration-300 animate-pulse-glow hover:scale-105"
-        style={{ fontFamily: "'Playfair Display', 'Cinzel', serif" }}>
+        style={{ fontFamily: "'Cinzel', serif" }}>
         Begin the Journey →
       </button>
 
@@ -240,7 +240,7 @@ const QuestionScreen = ({
             {q.question}
           </h2>
           {q.subtitle && (
-            <p className="text-muted-foreground" style={{ fontSize: "17px", fontFamily: "'Lora', Georgia, serif", fontStyle: "italic" }}>
+            <p className="text-muted-foreground" style={{ fontSize: "17px", fontFamily: "'Cormorant Garamond', Georgia, serif", fontStyle: "italic" }}>
               {q.subtitle}
             </p>
           )}
@@ -295,7 +295,7 @@ const QuestionScreen = ({
                   <p className="flex-1 leading-relaxed transition-colors duration-200"
                     style={{
                       fontSize: "clamp(14px, 1.7vw, 16px)",
-                      fontFamily: "'Lora', Georgia, serif",
+                      fontFamily: "'Cormorant Garamond', Georgia, serif",
                       color: isSelected ? "rgba(237,232,216,0.92)" : "rgba(42,31,14,0.72)",
                     }}>
                     {answer.text}
@@ -345,7 +345,7 @@ const CalculatingScreen = () => (
       <p className="font-heading text-primary/80 tracking-[0.3em] uppercase text-sm mb-3">
         Reading your dharma
       </p>
-      <p className="text-muted-foreground text-sm" style={{ fontFamily: "'Lora', Georgia, serif", fontStyle: "italic" }}>
+      <p className="text-muted-foreground text-sm" style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontStyle: "italic" }}>
         The Mahabharata sees you clearly…
       </p>
     </div>
@@ -380,7 +380,7 @@ const ResultScreen = ({
           <div className="glass-card rounded-xl px-5 py-4 mb-8 flex items-center gap-3 max-w-lg mx-auto"
             style={{ borderColor: `rgba(${meta.accentRgb},0.25)` }}>
             <span className="text-primary text-lg flex-shrink-0">⚖️</span>
-            <p className="text-muted-foreground text-sm" style={{ fontFamily: "'Lora', Georgia, serif" }}>
+            <p className="text-muted-foreground text-sm" style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}>
               You are torn between{" "}
               <span style={{ color: meta.accentHex }}>{meta.name}</span> and{" "}
               <span style={{ color: tiedMeta.accentHex }}>{tiedMeta.name}</span>.
@@ -467,7 +467,7 @@ const ResultScreen = ({
               <div className="absolute top-0 left-0 right-0 h-px"
                 style={{ background: `linear-gradient(to right, transparent, rgba(${meta.accentRgb},0.4), transparent)` }} />
               <p className="leading-relaxed" style={{
-                fontSize: "17px", fontFamily: "'Lora', Georgia, serif",
+                fontSize: "17px", fontFamily: "'Cormorant Garamond', Georgia, serif",
                 color: "rgba(42,31,14,0.8)", fontStyle: "italic",
               }}>
                 {meta.resultInsight}
