@@ -1,3 +1,4 @@
+import React, { useEffect, useState, useCallback, useMemo } from "react";
 import { useParams, Navigate } from "react-router-dom";
 import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
@@ -19,6 +20,7 @@ import RelatedPosts from "@/components/article/RelatedPosts";
 import { getArticleBySlug, getRelatedArticles } from "@/data/articles";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { BookOpen } from "lucide-react";
+import ArticleTranslator, { extractPlainText, type LangCode } from "@/components/ArticleTranslator";
 
 const ArticlePage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -31,8 +33,29 @@ const ArticlePage = () => {
   const article = getArticleBySlug(slug);
   if (!article) return <Navigate to="/blog" replace />;
 
-  const related = getRelatedArticles(article);
+  const related    = getRelatedArticles(article);
   const articleUrl = `https://mahabharatadecoded.com/blog/${article.slug}`;
+
+  /* ── Translation state ── */
+  const [currentLang, setCurrentLang] = React.useState<LangCode>("en");
+  const [translatedContent, setTranslatedContent] = React.useState<string | null>(null);
+
+  const plainText = React.useMemo(
+    () => extractPlainText(article.title, article.content ?? [], article.lifeLessons),
+    [article]
+  );
+
+  const handleTranslated = React.useCallback((lang: LangCode, text: string) => {
+    setTranslatedContent(text);
+    setCurrentLang(lang);
+  }, []);
+
+  const handleLangChange = React.useCallback((lang: LangCode) => {
+    if (lang === "en") {
+      setTranslatedContent(null);
+    }
+    setCurrentLang(lang);
+  }, []);
 
   useSEO({
     title: article.metaTitle || article.title,
@@ -58,19 +81,53 @@ const ArticlePage = () => {
       {/* ── 1. Cinematic Hero ── */}
       <ArticleHero article={article} />
 
+      {/* ── Language selector — sticky below hero ── */}
+      <div
+        style={{
+          display: "flex",
+          justifyContent: "flex-end",
+          padding: "12px 24px 0",
+          maxWidth: "680px",
+          margin: "0 auto",
+        }}
+      >
+        <ArticleTranslator
+          slug={article.slug}
+          title={article.title}
+          content={plainText}
+          currentLang={currentLang}
+          onTranslated={handleTranslated}
+          onLangChange={handleLangChange}
+        />
+      </div>
+
       {/* ── 2. Named Story Sections (Introduction / Background / Turning Point) ── */}
       {article.storyBlocks?.length > 0 && (
         <StorySection storyBlocks={article.storyBlocks} />
       )}
 
-      {/* ── 3. Additional prose (quotes, headings, lesson callouts) ── */}
+      {/* ── 3. Additional prose — shows translation if selected ── */}
       {article.content?.length > 0 && (
         <section className="pb-8">
           <div className="max-w-[680px] mx-auto px-6 md:px-8">
-            <ContentRenderer
-              blocks={article.content}
-              pullQuote={article.pullQuote}
-            />
+            {translatedContent && currentLang !== "en" ? (
+              <div
+                style={{
+                  fontFamily: "'Cormorant Garamond', Georgia, serif",
+                  fontSize: "19px",
+                  lineHeight: "1.85",
+                  color: "hsl(var(--foreground))",
+                  whiteSpace: "pre-wrap",
+                }}
+              >
+                {translatedContent}
+              </div>
+            ) : (
+              <ContentRenderer
+                blocks={article.content}
+                pullQuote={article.pullQuote}
+              />
+            )}
           </div>
         </section>
       )}
