@@ -2464,6 +2464,637 @@ export const articles: Article[] = [
     },
   },
 
+
+  /* ══════════════ ARTICLE 4 — DRAUPADI ══════════════ */
+  {
+    slug: "draupadi-humiliation-dice-game",
+    title: "Draupadi Was Stripped in Front of a Thousand Men. What She Did Next Changed Everything.",
+    subtitle: "The Mahabharata's most devastating scene is not about war. It is about one woman asking one question nobody could answer.",
+    description:
+      "The dice game lasted one afternoon. Its consequences lasted eighteen years and killed four million people. At the centre of it was a woman who asked a legal question no one in the room had the courage to answer.",
+    summary:
+      "Draupadi's humiliation in the Kaurava court is the most pivotal scene in the Mahabharata. Not because of what was done to her. Because of what she said — and what happened when nobody answered.",
+    category: "Characters",
+    character: "Draupadi",
+    readTime: 9,
+    publishDate: "May 22, 2026",
+    featured: false,
+    imageKey: "draupadi",
+    image: "",
+    metaTitle: "Draupadi's Humiliation in the Dice Game | MahabharataDecoded",
+    metaDescription:
+      "Draupadi asked one question in the Kaurava court that nobody answered. That silence started the Mahabharata war. Here is what actually happened — and what it means.",
+    pullQuote:
+      "She did not weep. She did not beg. She asked a legal question. And the silence that followed was more devastating than anything that came before it.",
+    authorNote:
+      "The dice game is covered in Sabha Parva, chapters 43–78. Draupadi's questions to the court appear in chapters 60–68. Her curse on the Kuru women appears in Stri Parva. The detail of her unbound hair remaining unbound until Dushasana's death is mentioned across multiple Parvas.",
+    reelHook: {
+      hook: "Draupadi asked one question in court. Nobody answered. That silence is what started the Mahabharata war.",
+      supporting:
+        "Not the dice game. Not Duryodhana's pride. The silence of a thousand men who knew what was right and said nothing.",
+    },
+    relatedSlugs: [
+      "who-caused-mahabharata-war",
+      "karna-tragic-hero-world-literature",
+      "bhagavad-gita-lessons-workplace-stress",
+    ],
+    storyBlocks: [
+      {
+        section: "introduction",
+        label: "The Afternoon That Changed Everything",
+        paragraphs: [
+          "Yudhishthira lost his kingdom at dice. Then his brothers. Then himself. Then his wife.",
+          "He staked Draupadi — a queen, a person — as a gambling chip. And he lost her.",
+          "What happened next is the most important scene in the entire Mahabharata. Not because of the violence. Because of what Draupadi said when they dragged her into that court.",
+        ],
+      },
+      {
+        section: "background",
+        label: "Before She Was Brought In",
+        paragraphs: [
+          "Draupadi was in her chambers when Dushasana came for her. She was menstruating — wearing a single cloth, her hair unbound. She told him this. He did not care.",
+          "He dragged her into the Sabha by her hair.",
+          "A thousand men were in that hall. Elders. Warriors. Kings. Scholars of dharma. Every one of them watched.",
+          "Duryodhana told Dushasana to disrobe her. And Dushasana began pulling at her sari.",
+        ],
+      },
+      {
+        section: "turningPoint",
+        label: "The Question",
+        paragraphs: [
+          "Draupadi did not scream. She did not beg for mercy.",
+          "She asked a question.",
+          "She said: Yudhishthira had already lost himself before he staked me. A man who is no longer his own master — does he have the right to stake his wife? Was I legally his to wager at all?",
+          "It was a precise, devastating legal question. And not one person in that court of a thousand men had an answer.",
+        ],
+      },
+    ],
+    content: [
+      {
+        type: "paragraph",
+        text: "Let me be specific about what happened in that court.",
+      },
+      {
+        type: "paragraph",
+        text: "Draupadi asked her question. The silence that followed lasted long enough for Bhishma — the greatest legal mind in the kingdom — to say: your question is so complex that even I cannot answer it.",
+      },
+      {
+        type: "paragraph",
+        text: "Bhishma. Who had fought gods. Who had taken oaths that moved rivers. Who had spent eighty years thinking about dharma.",
+      },
+      {
+        type: "paragraph",
+        text: "He said: I cannot answer.",
+      },
+      {
+        type: "paragraph",
+        text: "That is the moment the war became inevitable.",
+      },
+      {
+        type: "heading",
+        text: "What the Question Actually Was",
+      },
+      {
+        type: "paragraph",
+        text: "It sounds legalistic. It is actually about something much larger.",
+      },
+      {
+        type: "paragraph",
+        text: "Draupadi's question was this: can a person who has surrendered his freedom — who has staked and lost himself — still make binding decisions about someone else? If Yudhishthira was already enslaved when he staked me, was that stake valid?",
+      },
+      {
+        type: "paragraph",
+        text: "The court could not answer it because both possible answers were catastrophic.",
+      },
+      {
+        type: "paragraph",
+        text: "If the stake was valid — then dharma permitted a free man to treat his wife as property, stake her life and dignity at a game rigged against him, and lose her to men who would humiliate her in public. That is what dharma permitted.",
+      },
+      {
+        type: "paragraph",
+        text: "If the stake was not valid — then everything that had just happened was illegal. Draupadi was not a slave. The Pandavas were not obligated to go into exile. The entire game was void.",
+      },
+      {
+        type: "paragraph",
+        text: "Duryodhana wanted the first answer. The Pandavas needed the second. And every elder in that room — including Bhishma, including Drona, including Vidura — knew that the right answer was probably the second one and said nothing.",
+      },
+      {
+        type: "heading",
+        text: "What She Did With Her Hair",
+      },
+      {
+        type: "paragraph",
+        text: "After the court finally stopped Dushasana — saved not by the elders but by Dhritarashtra, who panicked when he heard of omens — Draupadi did something specific.",
+      },
+      {
+        type: "paragraph",
+        text: "She left her hair unbound.",
+      },
+      {
+        type: "paragraph",
+        text: "In that culture, a woman's unbound hair was a mark of mourning, of disorder, of something deeply wrong. Draupadi declared she would not bind her hair again until she had washed it in Dushasana's blood.",
+      },
+      {
+        type: "paragraph",
+        text: "She kept that oath for thirteen years.",
+      },
+      {
+        type: "paragraph",
+        text: "Thirteen years of exile, of forest, of disguise, of waiting. Her unbound hair was a walking accusation — a reminder to every Pandava, every day, of what had been done and what had not yet been answered for.",
+      },
+      {
+        type: "paragraph",
+        text: "When Bhima finally killed Dushasana at Kurukshetra, he brought Draupadi the blood. She bound her hair.",
+      },
+      {
+        type: "paragraph",
+        text: "The Mahabharata records this moment with the same weight it gives the deaths of kings.",
+      },
+      {
+        type: "heading",
+        text: "What She Never Did",
+      },
+      {
+        type: "paragraph",
+        text: "The thing about Draupadi that gets lost in the drama is what she did not do.",
+      },
+      {
+        type: "paragraph",
+        text: "She did not collapse. She did not become passive. She did not wait for someone else to decide her worth.",
+      },
+      {
+        type: "paragraph",
+        text: "When the Pandavas were resigned to exile — when they were preparing to accept the outcome of the dice game meekly — it was Draupadi who raged. Who pointed out what had been done. Who reminded her husbands that a warrior's first duty was to protect the people who depended on him.",
+      },
+      {
+        type: "paragraph",
+        text: "When Yudhishthira, during the years of forest exile, fell into philosophical resignation — it was Draupadi who told him that passive acceptance of injustice was not dharma. It was cowardice dressed in philosophical language.",
+      },
+      {
+        type: "quote",
+        text: "Fortune favours the brave. The timid are always left behind. A man who folds his hands and waits for fate to rescue him will wait forever.",
+      },
+      {
+        type: "paragraph",
+        text: "She said this to the most dharmic king who ever lived.",
+      },
+      {
+        type: "paragraph",
+        text: "He needed to hear it.",
+      },
+      {
+        type: "heading",
+        text: "What Krishna Said",
+      },
+      {
+        type: "paragraph",
+        text: "There is one more thing about that scene in the court.",
+      },
+      {
+        type: "paragraph",
+        text: "When Dushasana was pulling at her sari and Draupadi had exhausted every human option — when her husbands sat silent, when the elders looked away, when the court offered nothing — she called for Krishna.",
+      },
+      {
+        type: "paragraph",
+        text: "And the text says: her sari became endless. Every yard Dushasana pulled, more fabric appeared. He eventually collapsed from exhaustion, surrounded by a mountain of cloth, unable to complete what he had started.",
+      },
+      {
+        type: "paragraph",
+        text: "You can read this as miracle. You can read it as metaphor — that dignity, once truly called upon, is inexhaustible. That there is something in a human being that cannot be stripped away however hard someone pulls.",
+      },
+      {
+        type: "paragraph",
+        text: "Either reading works. The point is the same.",
+      },
+      {
+        type: "paragraph",
+        text: "Draupadi was not saved by her husbands. She was not saved by the elders. She was not saved by the law — the law had just failed her spectacularly.",
+      },
+      {
+        type: "paragraph",
+        text: "She was saved by what she called from inside herself.",
+      },
+      {
+        type: "heading",
+        text: "The Ending They Don't Usually Tell",
+      },
+      {
+        type: "paragraph",
+        text: "After the war, after all five of her sons were killed in their sleep by Ashwatthama, after everything she had endured and waited for — Draupadi was asked what she wanted as recompense.",
+      },
+      {
+        type: "paragraph",
+        text: "She asked for Ashwatthama to be brought before her.",
+      },
+      {
+        type: "paragraph",
+        text: "Arjuna brought him. Ashwatthama was prepared to be executed. Draupadi looked at him — this man who had just murdered her children — and said: let him live. He is a brahmin's son. His mother would grieve.",
+      },
+      {
+        type: "paragraph",
+        text: "She had waited thirteen years to wash her hair in a man's blood. She spent the rest of her life refusing to let grief make her cruel.",
+      },
+      {
+        type: "paragraph",
+        text: "That is the part of Draupadi nobody talks about.",
+      },
+      {
+        type: "paragraph",
+        text: "The question she asked in the court is famous. The answer she gave after the war is what makes her extraordinary.",
+      },
+    ],
+    keyLessons: [
+      {
+        icon: "⚖️",
+        title: "Ask the question nobody else will ask",
+        description:
+          "In a room of a thousand people who knew what was right, Draupadi was the only one who said it out loud. The question itself was her power — not the answer she received.",
+        accent: "crimson",
+      },
+      {
+        icon: "🔥",
+        title: "Grief is not the same as surrender",
+        description:
+          "Draupadi mourned everything she lost. She never stopped fighting for what was right. The two are not the same thing.",
+        accent: "gold",
+      },
+      {
+        icon: "💪",
+        title: "Unbound hair as accountability",
+        description:
+          "Her unbound hair for thirteen years was not self-pity. It was a refusal to let people forget. It made injustice visible every single day.",
+        accent: "teal",
+      },
+      {
+        icon: "🌊",
+        title: "Dignity is inexhaustible if you claim it",
+        description:
+          "The endless sari is a story about what happens when someone stops waiting for someone else to protect their dignity and calls on it from inside.",
+        accent: "gold",
+      },
+      {
+        icon: "🕊️",
+        title: "Mercy is not weakness after everything",
+        description:
+          "Draupadi spared Ashwatthama after he killed her sons. She chose to not let her pain define her final act. That is not weakness. That is a different kind of strength.",
+        accent: "teal",
+      },
+    ],
+    modernConnections: [
+      {
+        context: "In any room where something wrong is happening",
+        insight:
+          "Draupadi's power was not physical. It was the willingness to ask the precise, uncomfortable question that named what was happening. In any room — a boardroom, a court, a family gathering — the person who names the thing clearly has more power than the thousand people looking away.",
+        example:
+          "The question nobody asks in the meeting. The thing everyone knows and nobody says. The moment someone finally says it is the moment the dynamic shifts.",
+      },
+      {
+        context: "For anyone carrying an injustice",
+        insight:
+          "Draupadi did not forgive and forget. She also did not let the injustice consume her entire identity. She held both — the memory of what had been done and the life she still had to live.",
+        example:
+          "The unbound hair for thirteen years was not about hatred. It was about not normalising what had happened. She kept the wound visible until it was addressed. Then she let it go.",
+      },
+      {
+        context: "For the people who stay silent",
+        insight:
+          "The thousand men in that court who said nothing are the most important characters in the scene. Not Dushasana. Not Duryodhana. The ones who knew and stayed quiet.",
+        example:
+          "The Mahabharata holds them all accountable. Not because they pulled the sari — because they watched.",
+      },
+    ],
+    lifeLessons: [
+      "Ask the question out loud. The silence after is more powerful than you think.",
+      "Grief and surrender are not the same thing. You can feel both and choose only one.",
+      "Make injustice visible. Do not let people forget by making yourself small.",
+      "The dignity you carry inside you cannot be stripped away unless you let it be.",
+      "Watching something wrong happen and saying nothing is a choice. Own it.",
+      "Mercy after suffering is not weakness. It is the hardest thing.",
+    ],
+    sloka: {
+      sanskrit:
+        "न स्त्री स्वातन्त्र्यमर्हति।",
+      transliteration:
+        "Na stri swatantryam arhati.",
+      translation:
+        "The law that Draupadi's question broke open: 'A woman deserves no independence.' She asked whether even a man who had lost himself could enforce this law on her. Nobody answered. That unanswered question is still echoing.",
+    },
+  },
+
+
+  /* ══════════════ ARTICLE 5 — BHISHMA'S OATH ══════════════ */
+  {
+    slug: "bhishma-oath-terrible-vow",
+    title: "Bhishma Made One Promise to Make His Father Happy. It Destroyed Everything.",
+    subtitle: "The wisest man in the Mahabharata took an oath at age twenty. He spent the next eighty years watching it destroy everyone he loved.",
+    description:
+      "Bhishma is remembered as the greatest warrior of his age. He is less often remembered as the man whose one promise — made out of love for his father — created the conditions for the worst war in human history.",
+    summary:
+      "Bhishma gave up his throne, his marriage, and his descendants — all in one afternoon — to solve his father's problem. His father died happy. The oath lived for eight decades and consumed everything.",
+    category: "Characters",
+    character: "Bhishma",
+    readTime: 10,
+    publishDate: "May 22, 2026",
+    featured: false,
+    imageKey: "bhishma",
+    image: "",
+    metaTitle: "Bhishma's Oath — The Vow That Destroyed Everything | MahabharataDecoded",
+    metaDescription:
+      "Bhishma gave up his kingdom and his children to make his father happy. That one oath lasted eighty years and caused the Mahabharata war. Here is the full story.",
+    pullQuote:
+      "He was the most honourable man in the room. He was also the most responsible for everything that went wrong.",
+    authorNote:
+      "Bhishma's oath appears in Adi Parva, chapters 94–102. His years on the bed of arrows and the Shanti Parva lectures span chapters 1–320 of Shanti Parva. The Stri Parva records Gandhari's accusation. His original name Devavrata and the name Bhishma (the terrible vow) comes from this episode.",
+    reelHook: {
+      hook: "Bhishma gave up everything — his throne, his wife, his children — to make his father happy. His father died within a year. The oath lasted eighty more years and destroyed four generations.",
+      supporting:
+        "His name literally means 'he of the terrible vow.' He chose that name himself. He thought it was honourable.",
+    },
+    relatedSlugs: [
+      "who-caused-mahabharata-war",
+      "draupadi-humiliation-dice-game",
+      "karna-tragic-hero-world-literature",
+    ],
+    storyBlocks: [
+      {
+        section: "introduction",
+        label: "The Man Who Gave Up Everything",
+        paragraphs: [
+          "His name was Devavrata. He was the crown prince of Hastinapura. He was the son of a goddess — literally, in the mythology — and had been trained by the greatest teachers alive.",
+          "He was twenty years old when he made the oath.",
+          "His father Shantanu had fallen in love with a fisherman's daughter named Satyavati. Her father had one condition for the marriage: Satyavati's children, not Devavrata, would inherit the throne.",
+          "Devavrata agreed immediately. He renounced his claim to the throne on the spot.",
+        ],
+      },
+      {
+        section: "background",
+        label: "Why He Went Further",
+        paragraphs: [
+          "The fisherman was not satisfied. He said: you give up the throne today. But what about your children? Your sons might reclaim it for themselves.",
+          "So Devavrata did something nobody asked him to do.",
+          "He swore celibacy. For life. No wife. No children. No descendants. He gave up not just the throne but the entire lineage — every possible future version of himself that might complicate his father's marriage.",
+          "The gods reportedly gasped. Flowers fell from the sky. And from that day, he was called Bhishma — he of the terrible vow.",
+        ],
+      },
+      {
+        section: "turningPoint",
+        label: "What the Oath Actually Cost",
+        paragraphs: [
+          "Shantanu married Satyavati. He died less than two years later.",
+          "Satyavati's sons — the ones Bhishma had sacrificed everything to protect — both died young without heirs.",
+          "So Bhishma, who had given up his throne and his children to secure this lineage, watched the lineage die anyway.",
+          "And then he spent the next seventy-plus years holding the kingdom together for everyone else's children — children he could never have.",
+        ],
+      },
+    ],
+    content: [
+      {
+        type: "paragraph",
+        text: "Here is what is strange about Bhishma.",
+      },
+      {
+        type: "paragraph",
+        text: "He is universally regarded as one of the most honourable characters in the epic. His word was absolute. His courage was beyond question. His knowledge of dharma was unmatched.",
+      },
+      {
+        type: "paragraph",
+        text: "And yet when you look at the actual consequences of his choices, almost every major catastrophe in the Mahabharata can be traced back to him.",
+      },
+      {
+        type: "paragraph",
+        text: "Not because he was evil. Because he was honourable in the wrong way.",
+      },
+      {
+        type: "heading",
+        text: "What the Oath Prevented Him from Doing",
+      },
+      {
+        type: "paragraph",
+        text: "After Satyavati's sons died without heirs, the kingdom needed a successor. Bhishma could have taken the throne — he was clearly the most capable person available. He refused. His oath.",
+      },
+      {
+        type: "paragraph",
+        text: "So Satyavati called in her illegitimate son Vyasa to father children with her daughters-in-law. This is how Dhritarashtra and Pandu were born — in circumstances that created problems from the start.",
+      },
+      {
+        type: "paragraph",
+        text: "Dhritarashtra was blind. Under the rules of the kingdom this made him ineligible to rule. Pandu ruled instead, but died young under a curse. The throne came back to the blind Dhritarashtra.",
+      },
+      {
+        type: "paragraph",
+        text: "A blind king, deeply in love with his son Duryodhana, unable to be fair.",
+      },
+      {
+        type: "paragraph",
+        text: "Bhishma watched all of this happen from the sidelines. He could have intervened at a dozen points. His oath prevented nothing useful and stopped him from doing everything necessary.",
+      },
+      {
+        type: "heading",
+        text: "The Moment He Should Have Acted",
+      },
+      {
+        type: "paragraph",
+        text: "The dice game.",
+      },
+      {
+        type: "paragraph",
+        text: "Bhishma was in the court when Draupadi was dragged in by her hair. He was there when Dushasana pulled at her sari. He was there when she asked her question — was I legally staked? — and nobody answered.",
+      },
+      {
+        type: "paragraph",
+        text: "Bhishma's answer is recorded in the text and it is extraordinary in its inadequacy.",
+      },
+      {
+        type: "paragraph",
+        text: "He said: dharma is subtle. The question is difficult. I cannot give a clear answer.",
+      },
+      {
+        type: "paragraph",
+        text: "Bhishma. Who had spent eighty years thinking about nothing but dharma. Who had written what would become the longest discourse on ethics in human history — the Shanti Parva, spoken from the bed of arrows. Who knew more about right and wrong than anyone in that room.",
+      },
+      {
+        type: "paragraph",
+        text: "He said: I cannot give a clear answer.",
+      },
+      {
+        type: "paragraph",
+        text: "Why? Because giving a clear answer would require him to contradict Duryodhana. And he ate Duryodhana's salt. He lived in Duryodhana's kingdom. His oath had made him dependent on the throne he gave up — bound to serve whoever held it.",
+      },
+      {
+        type: "paragraph",
+        text: "His honour trapped him.",
+      },
+      {
+        type: "heading",
+        text: "The Bed of Arrows",
+      },
+      {
+        type: "paragraph",
+        text: "Bhishma fell at Kurukshetra on the tenth day of the war. He fell not fighting Arjuna but standing behind Shikhandi — a warrior Bhishma had sworn not to fight because of another oath.",
+      },
+      {
+        type: "paragraph",
+        text: "He had the ability to choose the time of his own death — a boon from his father. So he lay on a bed of arrows for fifty-eight days, waiting for the auspicious moment.",
+      },
+      {
+        type: "paragraph",
+        text: "During those fifty-eight days, he gave lectures.",
+      },
+      {
+        type: "paragraph",
+        text: "He spoke about dharma. About statecraft. About the duties of kings. About how to live a good life. The lectures are recorded in the Shanti Parva and the Anushasana Parva — roughly three thousand verses of wisdom.",
+      },
+      {
+        type: "paragraph",
+        text: "He knew everything. He said it all. From a bed of arrows, surrounded by the consequences of his choices.",
+      },
+      {
+        type: "quote",
+        text: "The man who possesses knowledge and does not act on it when the moment demands it is no different from a fool who does not know.",
+      },
+      {
+        type: "paragraph",
+        text: "He included that in the lectures.",
+      },
+      {
+        type: "paragraph",
+        text: "I am not sure he saw the irony.",
+      },
+      {
+        type: "heading",
+        text: "What Gandhari Said to Him",
+      },
+      {
+        type: "paragraph",
+        text: "After the war, Gandhari — whose hundred sons were all dead — confronted Bhishma.",
+      },
+      {
+        type: "paragraph",
+        text: "She said: you had the power to stop this. You were the most respected man in the kingdom. Duryodhana listened to no one, but he feared your disapproval. If you had stood up — at the dice game, before the war, at any one of the moments where you chose your oath over your judgment — this would not have happened.",
+      },
+      {
+        type: "paragraph",
+        text: "Bhishma did not argue.",
+      },
+      {
+        type: "paragraph",
+        text: "He accepted it.",
+      },
+      {
+        type: "paragraph",
+        text: "That is perhaps the most devastating moment in the entire epic. The wisest man alive, on a bed of arrows, accepting that his wisdom had been entirely useless because he had chosen honour over action at every critical moment.",
+      },
+      {
+        type: "heading",
+        text: "The Actual Lesson",
+      },
+      {
+        type: "paragraph",
+        text: "Bhishma's oath was made out of genuine love for his father. That is not in question.",
+      },
+      {
+        type: "paragraph",
+        text: "But love that causes harm — even love made from the most honourable of intentions — is still causing harm.",
+      },
+      {
+        type: "paragraph",
+        text: "The Mahabharata is very specific about this. Bhishma is not the villain of the story. He is something more uncomfortable — a good man whose goodness operated at the wrong level.",
+      },
+      {
+        type: "paragraph",
+        text: "He kept every promise he made. He never lied. He fought with extraordinary courage. He served faithfully for eighty years.",
+      },
+      {
+        type: "paragraph",
+        text: "And he enabled the worst catastrophe in the history of the kingdom by treating the promises he made at twenty as more sacred than the human beings suffering in front of him.",
+      },
+      {
+        type: "paragraph",
+        text: "The real question the Mahabharata asks about Bhishma is not whether he was honourable.",
+      },
+      {
+        type: "paragraph",
+        text: "It is: honourable to whom? And at what cost to everyone else?",
+      },
+    ],
+    keyLessons: [
+      {
+        icon: "⚔️",
+        title: "An oath is a tool, not a cage",
+        description:
+          "Bhishma treated his vow as absolute, even when it required him to watch injustice happen. An oath made at twenty should not govern every decision you make at eighty — especially when people are suffering because of it.",
+        accent: "crimson",
+      },
+      {
+        icon: "👁️",
+        title: "Knowledge without action is not wisdom",
+        description:
+          "Bhishma knew everything about dharma. He spoke about it for fifty-eight days from a bed of arrows. The Mahabharata makes clear that knowing and doing are not the same thing — and only one of them matters.",
+        accent: "gold",
+      },
+      {
+        icon: "🔗",
+        title: "Loyalty to an institution can become complicity",
+        description:
+          "Bhishma's loyalty was to the throne of Hastinapura — not to justice. When those two came apart, he chose the throne. He called it honour. The text calls it the reason the war happened.",
+        accent: "teal",
+      },
+      {
+        icon: "💡",
+        title: "The people who watch are responsible too",
+        description:
+          "Bhishma did not participate in Draupadi's humiliation. He watched. The Mahabharata gives him equal responsibility for the consequences.",
+        accent: "crimson",
+      },
+      {
+        icon: "🌿",
+        title: "Integrity to people matters more than integrity to principles",
+        description:
+          "Bhishma was faithful to his word. He was not faithful to the people in front of him. The epic suggests this is the wrong order of priority.",
+        accent: "gold",
+      },
+    ],
+    modernConnections: [
+      {
+        context: "In organisations and institutions",
+        insight:
+          "Every organisation has a Bhishma — the senior person who sees what is wrong, has the standing to change it, and says nothing because they are bound by loyalty to the institution. They call it professionalism. The Mahabharata calls it something else.",
+        example:
+          "The long-serving employee who knows the culture is toxic but says nothing because they have thirty years invested. The senior partner who watches the junior get exploited because that is how the system works. The board member who knows the numbers are wrong. Each one is choosing the institution over the people.",
+      },
+      {
+        context: "For people keeping promises that no longer serve anyone",
+        insight:
+          "Bhishma's oath solved a problem that no longer existed within two years of being made. He spent eighty more years honoring it. The question is not whether an oath was made sincerely. It is whether honoring it still serves the original purpose.",
+        example:
+          "The marriage you stay in to honor the commitment rather than examine the relationship. The career path you continue because you told your parents you would. The friendship you maintain because of history rather than present reality. Bhishma is the warning: sincerity of the original promise does not guarantee the wisdom of keeping it.",
+      },
+      {
+        context: "For those who lead",
+        insight:
+          "Bhishma had more credibility than anyone in the kingdom. Duryodhana would have listened to him — and was afraid of his disapproval. He never used it. The Mahabharata's lesson: authority unused is authority wasted. The most powerful thing a credible person can do is speak.",
+        example:
+          "The mentor who sees the student making a mistake and says nothing to avoid conflict. The senior who has the standing to push back in the meeting and stays quiet. The elder whose word carries weight and who chooses not to use it. All of them are Bhishma.",
+      },
+    ],
+    lifeLessons: [
+      "An oath made from love can still cause harm. Examine it.",
+      "Knowing what is right and doing nothing about it is its own kind of failure.",
+      "Loyalty to institutions can become cover for enabling injustice.",
+      "The people who watch are as responsible as the people who act.",
+      "Your credibility is meant to be spent on the moments that matter.",
+      "Wisdom that stays in your head and never reaches your hands is decoration.",
+    ],
+    sloka: {
+      sanskrit:
+        "प्रज्ञावाद्यांश्च भाषसे।\nगतासूनगतासूंश्च नानुशोचन्ति पण्डिताः॥",
+      transliteration:
+        "Prajnavadyamshca bhasase. Gatasunagatasunshca nanushochanti panditah.",
+      translation:
+        "You speak words of wisdom, yet you grieve for those who should not be grieved for. — Bhagavad Gita 2.11. Krishna said this to Arjuna on the battlefield. He could have said it to Bhishma on the bed of arrows. Both men knew what was right. Only one of them acted on it.",
+    },
+  },
+
 ];
 
 /* ─────────────────── Helpers ─────────────────── */
