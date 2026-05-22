@@ -68,7 +68,7 @@ const AboutHero = () => {
           className="animate-fade-up-delay-2 leading-relaxed mx-auto mb-12"
           style={{
             fontSize: "clamp(18px, 2.2vw, 22px)",
-            color: "rgba(253,230,138,0.68)",
+            color: "hsl(var(--foreground) / 0.72)",
             fontFamily: "'Cormorant Garamond', Georgia, serif",
             fontStyle: "italic",
             maxWidth: "600px",
@@ -125,7 +125,7 @@ const MissionSection = () => {
                   fontFamily: "'Cormorant Garamond', Georgia, serif",
                   color: i === 1
                     ? "rgba(212,175,55,0.9)"
-                    : "rgba(253,230,138,0.80)",
+                    : "hsl(var(--foreground) / 0.85)",
                   fontStyle: i === 1 ? "italic" : "normal",
                   fontWeight: i === 1 ? 500 : 400,
                   lineHeight: 1.855,
@@ -274,7 +274,7 @@ const OriginSection = () => {
                   style={{
                     fontSize: "clamp(17px, 1.9vw, 19px)",
                     fontFamily: "'Cormorant Garamond', Georgia, serif",
-                    color: i === 0 ? "rgba(253,230,138,0.92)" : "rgba(42,31,14,0.7)",
+                    color: i === 0 ? "hsl(var(--foreground))" : "rgba(42,31,14,0.7)",
                     fontWeight: i === 0 ? 500 : 400,
                     fontStyle: i === 0 ? "italic" : "normal",
                   }}
@@ -625,7 +625,7 @@ const CreatorSection = () => {
                   style={{
                     fontSize: "clamp(17px, 1.9vw, 19px)",
                     fontFamily: "'Cormorant Garamond', Georgia, serif",
-                    color: i === 0 ? "rgba(42,31,14,0.8)" : "rgba(253,230,138,0.65)",
+                    color: i === 0 ? "rgba(42,31,14,0.8)" : "hsl(var(--foreground) / 0.70)",
                   }}>
                   {para}
                 </p>
