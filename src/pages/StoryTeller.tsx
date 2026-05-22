@@ -362,7 +362,7 @@ const StoryTeller = () => {
   const borderClr = isDark ? `${theme.accentColor}50` : "hsl(35 28% 74%)";
 
   const serif  = "'Cinzel', 'Cinzel Decorative', 'Cormorant Garamond', Georgia, serif";
-  const body   = "'Lora', 'Noto Serif Telugu', 'Noto Serif Devanagari', 'Noto Serif Kannada', serif";
+  const body   = "'Cormorant Garamond', 'Noto Serif Telugu', 'Noto Serif Devanagari', 'Noto Serif Kannada', Georgia, serif";
   const deco   = "'Cinzel Decorative', 'Cinzel', serif";
 
   /* ── Cinematic Opening Screen ── */
@@ -422,9 +422,9 @@ const StoryTeller = () => {
 
         {/* Subtitle */}
         <p className="intro-sub" style={{
-          fontFamily: body, fontSize: "clamp(1rem, 2.5vw, 1.25rem)",
-          color: "rgba(245,230,200,0.65)", maxWidth: "520px",
-          margin: "0 auto 28px", lineHeight: 1.7,
+          fontFamily: body, fontSize: "clamp(1.1rem, 2.5vw, 1.35rem)",
+          color: "rgba(245,230,200,0.88)", maxWidth: "520px",
+          margin: "0 auto 28px", lineHeight: 1.75,
         }}>
           Choose a character. Choose your story.<br />
           Hear the Mahabharata come alive.
