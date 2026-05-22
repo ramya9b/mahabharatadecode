@@ -82,7 +82,7 @@ const FirstVisitCard = () => {
           border: "1px solid rgba(160,120,32,0.3)",
           boxShadow: "0 24px 64px rgba(20,12,4,0.35)",
           padding: "36px 32px 28px",
-          fontFamily: "'Lora', serif",
+          fontFamily: "'Cormorant Garamond', Georgia, serif",
         }}
       >
         {/* Close button */}
