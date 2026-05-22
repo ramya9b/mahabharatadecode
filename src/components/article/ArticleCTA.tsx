@@ -97,7 +97,7 @@ const ArticleCTA = () => {
                         placeholder="Your email address"
                         required
                         className="bg-transparent text-sm text-foreground placeholder:text-muted-foreground outline-none w-full"
-                        style={{ fontFamily: "'Lora', Georgia, serif" }}
+                        style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
                       />
                     </div>
                     <button
@@ -106,7 +106,7 @@ const ArticleCTA = () => {
                       style={{
                         background:
                           "linear-gradient(135deg, #E8C547, #D4AF37, #B8922A)",
-                        fontFamily: "'Playfair Display', 'Cinzel', serif",
+                        fontFamily: "'Cinzel', serif",
                         boxShadow: "0 0 20px rgba(212,175,55,0.3)",
                       }}
                     >
@@ -158,7 +158,7 @@ const ArticleCTA = () => {
                   </div>
                   <span
                     className="text-[11px] tracking-[0.3em] uppercase text-red-400/70"
-                    style={{ fontFamily: "'Playfair Display', 'Cinzel', serif" }}
+                    style={{ fontFamily: "'Cinzel', serif" }}
                   >
                     Continue Reading
                   </span>
@@ -199,7 +199,7 @@ const ArticleCTA = () => {
                     style={{
                       background: "rgba(139,105,20,0.06)",
                       border: "1px solid rgba(139,105,20,0.12)",
-                      fontFamily: "'Playfair Display', 'Cinzel', serif",
+                      fontFamily: "'Cinzel', serif",
                     }}
                   >
                     Read More Stories
