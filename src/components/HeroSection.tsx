@@ -64,7 +64,7 @@ const HeroSection = () => {
       </div>
 
       {/* ── Cinematic overlay stack ── */}
-      <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(6,4,17,0.55) 0%, rgba(6,4,17,0.25) 40%, rgba(6,4,17,0.88) 85%, rgba(6,4,17,1) 100%)" }} />
+      <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(6,4,17,0.72) 0%, rgba(6,4,17,0.65) 40%, rgba(6,4,17,0.92) 85%, rgba(6,4,17,1) 100%)" }} />
       <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 75% 55% at 50% 38%, rgba(251,191,36,0.12) 0%, transparent 65%)" }} />
       {/* Vignette edges */}
       <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 100% 100% at 50% 50%, transparent 55%, rgba(4,2,12,0.65) 100%)" }} />
@@ -141,12 +141,14 @@ const HeroSection = () => {
           style={{ fontSize: "clamp(48px, 8.5vw, 100px)" }}
         >
           <span className="block" style={{
-            background: "linear-gradient(135deg, #FBBF24 0%, #A3E635 20%, #34D399 40%, #38BDF8 60%, #A78BFA 80%, #F472B6 100%)",
+            /* Warm gold shimmer — readable on dark overlay */
+            background: "linear-gradient(135deg, #FDE68A 0%, #FBBF24 35%, #F59E0B 55%, #FDE68A 75%, #FBBF24 100%)",
             backgroundSize: "200% auto",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             backgroundClip: "text",
             animation: "shimmer 4s linear infinite",
+            filter: "drop-shadow(0 2px 20px rgba(251,191,36,0.5))",
           }}>
             {t("hero.headline_gold")}
           </span>
