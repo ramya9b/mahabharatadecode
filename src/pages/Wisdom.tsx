@@ -100,7 +100,7 @@ const WisdomHero = () => {
           className="leading-relaxed mx-auto mb-6 animate-fade-up-delay-2"
           style={{
             fontSize: "clamp(18px, 2vw, 21px)",
-            color: "rgba(42,31,14,0.65)",
+            color: "rgba(253,230,138,0.68)",
             fontFamily: "'Cormorant Garamond', Georgia, serif",
             lineHeight: 1.8,
             maxWidth: "560px",
@@ -114,7 +114,7 @@ const WisdomHero = () => {
           className="leading-relaxed mx-auto mb-14 animate-fade-up-delay-2"
           style={{
             fontSize: "17px",
-            color: "rgba(42,31,14,0.45)",
+            color: "rgba(253,230,138,0.50)",
             fontFamily: "'Cormorant Garamond', Georgia, serif",
             fontStyle: "italic",
             maxWidth: "480px",
@@ -206,7 +206,7 @@ const DomainTabs = ({
                 border: isActive
                   ? "1px solid rgba(212,175,55,0.35)"
                   : "1px solid rgba(139,105,20,0.09)",
-                color: isActive ? "rgba(212,175,55,0.95)" : "rgba(42,31,14,0.55)",
+                color: isActive ? "rgba(212,175,55,0.95)" : "rgba(253,230,138,0.60)",
               }}
             >
               <span style={{ fontSize: "17px" }} aria-hidden="true">
@@ -285,7 +285,7 @@ const ScenarioCard = ({
             className="font-heading font-semibold leading-snug mb-3 group-hover:text-primary transition-colors duration-300"
             style={{
               fontSize: "clamp(15px, 1.8vw, 17px)",
-              color: "rgba(42,31,14,0.92)",
+              color: "rgba(253,230,138,0.92)",
             }}
           >
             {scenario.headline}
@@ -393,7 +393,7 @@ const ScenarioDetail = ({
           className="absolute top-5 right-5 w-9 h-9 rounded-full flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
           style={{
             background: "rgba(139,105,20,0.07)",
-            border: "1px solid rgba(139,105,20,0.12)",
+            border: "1px solid rgba(251,191,36,0.14)",
             color: "rgba(42,31,14,0.5)",
           }}
         >
@@ -445,7 +445,7 @@ const ScenarioDetail = ({
                   key={i}
                   style={{
                     fontSize: "clamp(17px, 1.9vw, 19px)",
-                    color: i === 0 ? "rgba(42,31,14,0.88)" : "rgba(42,31,14,0.7)",
+                    color: i === 0 ? "rgba(253,230,138,0.90)" : "rgba(42,31,14,0.7)",
                     fontFamily: "'Cormorant Garamond', Georgia, serif",
                     lineHeight: 1.8,
                     fontWeight: i === 0 ? 500 : 400,
@@ -470,7 +470,7 @@ const ScenarioDetail = ({
                   key={i}
                   style={{
                     fontSize: "clamp(17px, 1.9vw, 19px)",
-                    color: "rgba(42,31,14,0.75)",
+                    color: "rgba(253,230,138,0.80)",
                     fontFamily: "'Cormorant Garamond', Georgia, serif",
                     lineHeight: 1.8,
                   }}
@@ -489,7 +489,7 @@ const ScenarioDetail = ({
                   key={i}
                   style={{
                     fontSize: "clamp(17px, 1.9vw, 19px)",
-                    color: "rgba(42,31,14,0.75)",
+                    color: "rgba(253,230,138,0.80)",
                     fontFamily: "'Cormorant Garamond', Georgia, serif",
                     lineHeight: 1.8,
                   }}
@@ -519,7 +519,7 @@ const ScenarioDetail = ({
               className="font-heading italic font-semibold leading-relaxed text-center"
               style={{
                 fontSize: "clamp(16px, 2vw, 20px)",
-                color: "rgba(42,31,14,0.92)",
+                color: "rgba(253,230,138,0.92)",
               }}
             >
               "{scenario.theLesson}"
@@ -545,7 +545,7 @@ const ScenarioDetail = ({
                   <p
                     style={{
                       fontSize: "clamp(14px, 1.6vw, 16px)",
-                      color: "rgba(42,31,14,0.78)",
+                      color: "rgba(253,230,138,0.82)",
                       fontFamily: "'Cormorant Garamond', Georgia, serif",
                       lineHeight: 1.855,
                     }}
@@ -570,7 +570,7 @@ const ScenarioDetail = ({
                 <p
                   style={{
                     fontSize: "14px",
-                    color: "rgba(42,31,14,0.55)",
+                    color: "rgba(253,230,138,0.60)",
                     fontFamily: "'Cormorant Garamond', Georgia, serif",
                   }}
                 >
