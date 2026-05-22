@@ -69,7 +69,7 @@ const NotFound = () => {
           </h1>
 
           <p className="text-muted-foreground leading-relaxed max-w-md mx-auto mb-10 text-lg"
-            style={{ fontFamily: "'Lora', Georgia, serif", fontStyle: "italic" }}>
+            style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontStyle: "italic" }}>
             Even the greatest warriors lose their way in the forest of life.
             This page has wandered beyond the known universe.
           </p>
@@ -159,7 +159,7 @@ const NotFound = () => {
                   {article.title}
                 </h3>
                 <p className="text-muted-foreground text-xs leading-relaxed line-clamp-2 mb-3"
-                  style={{ fontFamily: "'Lora', Georgia, serif" }}>
+                  style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}>
                   {article.summary || article.description}
                 </p>
                 <span className="text-primary text-[11px] font-medium tracking-wide group-hover:tracking-wider transition-all duration-300">
