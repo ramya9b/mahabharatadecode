@@ -1,10 +1,21 @@
 /// <reference types="vitest" />
 import { defineConfig } from "vite";
 import react from "@vitejs/plugin-react-swc";
+import { VitePWA } from "vite-plugin-pwa";
 import path from "path";
 
 export default defineConfig({
-  plugins: [react()],
+  plugins: [
+    react(),
+    VitePWA({
+      registerType: "autoUpdate",
+      workbox: { globPatterns: ["**/*.{js,css,html,webp,png,svg}"] },
+    }),
+  ],
+  esbuild: {
+    pure: ["console.log", "console.warn", "console.debug"],
+    legalComments: "none",
+  },
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
@@ -14,12 +25,8 @@ export default defineConfig({
     outDir: "dist",
     sourcemap: false,
     chunkSizeWarningLimit: 600,
-    minify: "terser",
-    terserOptions: {
-      compress: { drop_console: true, drop_debugger: true, passes: 2 },
-      mangle: { safari10: true },
-      format: { comments: false },
-    },
+    minify: "esbuild",
+    // Strip console.logs in production
     rollupOptions: {
       output: {
         manualChunks: {
@@ -41,7 +48,11 @@ export default defineConfig({
   test: {
     globals: true,
     environment: "jsdom",
-    resolve: {
+    esbuild: {
+    pure: ["console.log", "console.warn", "console.debug"],
+    legalComments: "none",
+  },
+  resolve: {
       alias: {
         "@": path.resolve(__dirname, "./src"),
       },
