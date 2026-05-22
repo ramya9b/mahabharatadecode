@@ -309,7 +309,7 @@ const CharacterProfile = ({ character, index }: CharacterProfileProps) => {
                   className="italic leading-relaxed"
                   style={{
                     fontSize: "14px",
-                    fontFamily: "'Lora', Georgia, serif",
+                    fontFamily: "'Cormorant Garamond', Georgia, serif",
                     color: "rgba(42,31,14,0.85)",
                   }}
                 >
