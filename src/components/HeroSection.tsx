@@ -65,7 +65,7 @@ const HeroSection = () => {
 
       {/* ── Cinematic overlay stack ── */}
       <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(6,4,17,0.55) 0%, rgba(6,4,17,0.25) 40%, rgba(6,4,17,0.88) 85%, rgba(6,4,17,1) 100%)" }} />
-      <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 75% 55% at 50% 38%, rgba(212,175,55,0.09) 0%, transparent 65%)" }} />
+      <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 75% 55% at 50% 38%, rgba(251,191,36,0.12) 0%, transparent 65%)" }} />
       {/* Vignette edges */}
       <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 100% 100% at 50% 50%, transparent 55%, rgba(4,2,12,0.65) 100%)" }} />
 
@@ -76,7 +76,7 @@ const HeroSection = () => {
         style={{
           top: "20%", left: "50%", transform: "translateX(-50%)",
           width: "600px", height: "300px",
-          background: "radial-gradient(ellipse, rgba(212,175,55,0.12) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse, rgba(251,191,36,0.15) 0%, transparent 70%)",
           filter: "blur(40px)",
           animation: "glow-pulse 6s ease-in-out infinite",
         }}
@@ -125,9 +125,9 @@ const HeroSection = () => {
           <span
             className="inline-block px-5 py-2 rounded-full border text-[11px] tracking-[0.32em] uppercase backdrop-blur-sm i18n-safe"
             style={{
-              borderColor: "rgba(212,175,55,0.35)",
-              color: "rgba(212,175,55,0.9)",
-              background: "rgba(212,175,55,0.06)",
+              borderColor: "rgba(251,191,36,0.35)",
+              color: "rgba(251,191,36,0.95)",
+              background: "rgba(251,191,36,0.06)",
               fontFamily: "'Cinzel', serif",
             }}
           >
@@ -141,7 +141,7 @@ const HeroSection = () => {
           style={{ fontSize: "clamp(48px, 8.5vw, 100px)" }}
         >
           <span className="block" style={{
-            background: "linear-gradient(135deg, #C8921A 0%, #E8C84A 35%, #D4AF37 55%, #F0D870 75%, #C8921A 100%)",
+            background: "linear-gradient(135deg, #FBBF24 0%, #A3E635 20%, #34D399 40%, #38BDF8 60%, #A78BFA 80%, #F472B6 100%)",
             backgroundSize: "200% auto",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
@@ -190,7 +190,7 @@ const HeroSection = () => {
             style={{
               padding: "14px 32px",
               borderRadius: "9999px",
-              background: "linear-gradient(135deg, #C8920A, #D4AF37, #B8820A)",
+              background: "linear-gradient(135deg, #FBBF24, #34D399, #38BDF8)",
               backgroundSize: "200% auto",
               color: "#08040F",
               fontFamily: "'Cinzel', serif",
@@ -202,7 +202,7 @@ const HeroSection = () => {
               display: "inline-flex",
               alignItems: "center",
               gap: "8px",
-              boxShadow: "0 8px 32px rgba(212,175,55,0.45), 0 0 60px rgba(212,175,55,0.15)",
+              boxShadow: "0 8px 32px rgba(251,191,36,0.4), 0 0 60px rgba(52,211,153,0.15)",
               transition: "all 0.35s ease",
               animation: "shimmer 4s linear infinite",
             }}
