@@ -20,6 +20,7 @@ import {
   GROUP_COLORS,
 } from "@/data/storyCharacters";
 import { MOOD_THEMES, GROUP_THEME_MAP, type MoodTheme } from "@/data/moodThemes";
+import { useTheme } from "@/context/ThemeContext";
 import { generateStory, generateLifeLesson, generateMySituation, type Tone, type Language } from "@/services/ai";
 import { synthesizeSpeech } from "@/services/tts";
 
@@ -347,20 +348,29 @@ const StoryTeller = () => {
 
 
   /* ── Theme-aware styles — solid colors, no alpha issues on mobile ── */
+  const { theme: globalTheme } = useTheme();
+  const isGlobalDark = globalTheme === "dark";
   const theme     = MOOD_THEMES[currentTheme];
-  const isDark    = true; /* StoryTeller always uses dark Golden Rainbow */
-  /* StoryTeller always dark — Golden Rainbow cinematic theme */
-  const gold      = currentTheme !== "default" ? theme.highlightColor : "#FBBF24";
-  const goldDark  = currentTheme !== "default" ? theme.accentColor    : "#D97706";
-  const parchment = "transparent";
+  /* Dark if global theme is dark OR if a mood character is selected */
+  const isDark    = isGlobalDark || currentTheme !== "default";
+  /* Colours — adapt to global theme + mood theme */
+  const gold      = isDark
+    ? (currentTheme !== "default" ? theme.highlightColor : "#FBBF24")
+    : "#D97706";
+  const goldDark  = isDark
+    ? (currentTheme !== "default" ? theme.accentColor : "#D97706")
+    : "#92400E";
+  const parchment = isDark ? "transparent" : "hsl(38 52% 91%)";
 
-  /* Dark text always */
-  const inkDark   = "#FDE68A";
-  const inkMuted  = "rgba(253,230,138,0.55)";
+  /* Text colours */
+  const inkDark   = isDark ? "#FDE68A"              : "#1C0E00";
+  const inkMuted  = isDark ? "rgba(253,230,138,0.55)" : "#6B4E10";
 
-  /* Dark card backgrounds always */
-  const cardBg    = "rgba(22,11,0,0.75)";
-  const borderClr = currentTheme !== "default" ? `${theme.accentColor}50` : "rgba(251,191,36,0.22)";
+  /* Card backgrounds */
+  const cardBg    = isDark ? "rgba(22,11,0,0.75)"   : "hsl(38 45% 96%)";
+  const borderClr = isDark
+    ? (currentTheme !== "default" ? `${theme.accentColor}50` : "rgba(251,191,36,0.22)")
+    : "hsl(35 28% 74%)";
 
   const serif  = "'Cinzel', 'Cinzel Decorative', 'Cormorant Garamond', Georgia, serif";
   const body   = "'Cormorant Garamond', 'Noto Serif Telugu', 'Noto Serif Devanagari', 'Noto Serif Kannada', Georgia, serif";
@@ -483,15 +493,15 @@ const StoryTeller = () => {
   return (
     <div style={{
       minHeight: "100vh",
-      background: "linear-gradient(145deg, #0C0900 0%, #100A00 25%, #080A18 55%, #060410 80%, #0C0900 100%)",
+      background: isDark ? "linear-gradient(145deg, #0C0900 0%, #100A00 25%, #080A18 55%, #060410 80%, #0C0900 100%)" : "hsl(38 52% 91%)",
       color: inkDark,
       transition: "background 0.8s ease, color 0.5s ease",
       position: "relative",
     }}>
 
       {/* ── SCENE BACKGROUND — Left-gradient for all groups ── */}
-      {/* Golden Rainbow always-on background glows */}
-      {(
+      {/* Golden Rainbow background glows — dark mode only */}
+      {isDark && (
         <div style={{ position: "fixed", inset: 0, zIndex: 0, pointerEvents: "none" }}>
           {/* Golden Rainbow base */}
           <div style={{ position:"absolute", inset:0, background:"linear-gradient(145deg,#0C0900 0%,#100A00 25%,#080A18 55%,#060410 80%,#0C0900 100%)" }} />
@@ -515,9 +525,7 @@ const StoryTeller = () => {
         </div>
       )}
       <div style={{ position: "relative", zIndex: 1 }}>
-      <div className="dark">
       <Navbar />
-      </div>
 
       {/* ── HERO ── */}
       <section
