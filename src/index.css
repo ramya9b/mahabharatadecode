@@ -64,16 +64,31 @@
   }
 
   body {
-    @apply bg-background text-foreground font-sans;
+    @apply bg-background text-foreground;
+    /* ── Cormorant Garamond: explicit declaration ensures font loads ── */
+    font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    font-size: 19px; /* Cormorant Garamond optimal reading size */
+    font-size: 19px;
     line-height: 1.85;
   }
 
   h1, h2, h3, h4, h5, h6 {
-    @apply font-heading;
+    /* ── Cinzel: explicit declaration ensures font loads ── */
+    font-family: 'Cinzel', Georgia, serif;
     line-height: 1.15;
+  }
+
+  /* Force Cinzel on all label/nav/button elements */
+  button, .font-heading, [class*="font-brand"],
+  .section-label, .nav-link, .filter-pill-inactive {
+    font-family: 'Cinzel', Georgia, serif;
+  }
+
+  /* Force Cormorant on all body/article content */
+  p, span, li, td, blockquote, article,
+  .font-body, .literary-body, .epic-quote {
+    font-family: 'Cormorant Garamond', Georgia, serif;
   }
 
   /* ── Language-specific font stacks ── */
