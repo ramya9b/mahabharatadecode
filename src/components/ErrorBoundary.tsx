@@ -80,7 +80,7 @@ class ErrorBoundary extends Component<Props, State> {
           {/* Heading */}
           <h1
             style={{
-              fontFamily: "'Playfair Display', 'Cinzel', serif",
+              fontFamily: "'Cinzel', serif",
               fontSize: "clamp(22px, 4vw, 32px)",
               fontWeight: 700,
               color: "rgba(42,31,14,0.92)",
@@ -95,7 +95,7 @@ class ErrorBoundary extends Component<Props, State> {
             style={{
               fontSize: "17px",
               color: "rgba(42,31,14,0.55)",
-              fontFamily: "'Lora', Georgia, serif",
+              fontFamily: "'Cormorant Garamond', Georgia, serif",
               maxWidth: "420px",
               lineHeight: 1.85,
               marginBottom: "32px",
@@ -159,7 +159,7 @@ class ErrorBoundary extends Component<Props, State> {
                 background: "linear-gradient(135deg, #E8C547, #D4AF37)",
                 border: "none",
                 color: "#08061A",
-                fontFamily: "'Playfair Display', 'Cinzel', serif",
+                fontFamily: "'Cinzel', serif",
                 fontSize: "12px",
                 fontWeight: 700,
                 letterSpacing: "0.1em",
@@ -181,7 +181,7 @@ class ErrorBoundary extends Component<Props, State> {
                 background: "rgba(139,105,20,0.06)",
                 border: "1px solid rgba(212,175,55,0.2)",
                 color: "rgba(42,31,14,0.72)",
-                fontFamily: "'Playfair Display', 'Cinzel', serif",
+                fontFamily: "'Cinzel', serif",
                 fontSize: "12px",
                 letterSpacing: "0.1em",
                 textDecoration: "none",
