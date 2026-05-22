@@ -80,18 +80,72 @@ const LifeLessons = () => {
           {lessons.map((lesson, i) => (
             <div
               key={i}
-              className="flex-shrink-0 w-72 lg:w-80 glass-card p-7 snap-start hover-lift group"
+              className="flex-shrink-0 snap-start premium-card"
+              style={{
+                width: "300px",
+                background: "rgba(22,11,0,0.85)",
+                border: "1px solid rgba(251,191,36,0.22)",
+                borderRadius: "16px",
+                padding: "28px",
+                backdropFilter: "blur(12px)",
+                WebkitBackdropFilter: "blur(12px)",
+                transition: "border-color 0.3s, transform 0.3s",
+              }}
+              onMouseEnter={e => {
+                (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(251,191,36,0.55)";
+                (e.currentTarget as HTMLDivElement).style.transform = "translateY(-6px)";
+              }}
+              onMouseLeave={e => {
+                (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(251,191,36,0.22)";
+                (e.currentTarget as HTMLDivElement).style.transform = "none";
+              }}
             >
-              <div className="w-9 h-9 rounded-full bg-primary/10 border border-primary/15 flex items-center justify-center mb-6">
-                <span className="text-primary font-heading text-xs">{String(i + 1).padStart(2, "0")}</span>
+              {/* Number badge */}
+              <div style={{
+                width: "36px", height: "36px", borderRadius: "50%",
+                background: "rgba(251,191,36,0.12)",
+                border: "1px solid rgba(251,191,36,0.30)",
+                display: "flex", alignItems: "center", justifyContent: "center",
+                marginBottom: "20px",
+              }}>
+                <span style={{
+                  fontFamily: "'Cinzel',serif", fontSize: "11px",
+                  color: "#FBBF24", fontWeight: 600,
+                }}>
+                  {String(i + 1).padStart(2, "0")}
+                </span>
               </div>
-              <h3 className="font-heading text-lg text-foreground mb-3 group-hover:text-primary transition-colors">
+              {/* Title */}
+              <h3 style={{
+                fontFamily: "'Cinzel',serif",
+                fontSize: "17px",
+                fontWeight: 600,
+                color: "#FDE68A",
+                marginBottom: "12px",
+                lineHeight: 1.3,
+              }}>
                 {lesson.title}
               </h3>
-              <p className="text-muted-foreground text-sm leading-relaxed mb-6">
+              {/* Insight */}
+              <p style={{
+                fontFamily: "'Cormorant Garamond',Georgia,serif",
+                fontSize: "16px",
+                lineHeight: 1.8,
+                color: "rgba(253,230,138,0.75)",
+                marginBottom: "20px",
+              }}>
                 {lesson.insight}
               </p>
-              <span className="text-primary/50 text-[11px] tracking-wider">{lesson.chapter}</span>
+              {/* Chapter reference */}
+              <span style={{
+                fontFamily: "'Cinzel',serif",
+                fontSize: "10px",
+                letterSpacing: "0.18em",
+                color: "rgba(251,191,36,0.55)",
+                textTransform: "uppercase",
+              }}>
+                {lesson.chapter}
+              </span>
             </div>
           ))}
         </div>
