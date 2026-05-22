@@ -7,6 +7,7 @@ import VideoSection from "@/components/VideoSection";
 import DailyWisdom from "@/components/DailyWisdom";
 import StoryTellerBanner from "@/components/StoryTellerBanner";
 import Footer from "@/components/Footer";
+import NewsletterSignup from "@/components/NewsletterSignup";
 
 const Index = () => {
   return (
@@ -19,6 +20,8 @@ const Index = () => {
       <LifeLessons />
       <VideoSection />
       <DailyWisdom />
+      {/* ── Newsletter banner — homepage ── */}
+      <NewsletterSignup variant="banner" source="homepage" />
       <Footer />
     </div>
   );
