@@ -378,7 +378,7 @@ const StoryTeller = () => {
           minHeight: "100vh", display: "flex", flexDirection: "column",
           alignItems: "center", justifyContent: "center", textAlign: "center",
           background: "hsl(var(--background))",
-          padding: "80px 24px 40px", position: "relative", overflow: "hidden",
+          padding: "clamp(88px, 16vw, 100px) 16px 40px", position: "relative", overflow: "hidden",
         }}>
         {/* CSS particle background for intro — dark mode only */}
         {isGlobalDark && <MoodBackground theme="war" opacity={0.15} />}
@@ -531,7 +531,7 @@ const StoryTeller = () => {
       <section
         style={{
           textAlign: "center",
-          padding: "120px 24px 64px",
+          padding: "clamp(96px, 18vw, 120px) 16px 48px",
           background: "transparent",
           position: "relative",
           overflow: "hidden",
@@ -556,7 +556,7 @@ const StoryTeller = () => {
         {/* Language + Tone selectors in hero */}
         <div style={{ display: "flex", flexWrap: "wrap", gap: "12px", justifyContent: "center", marginBottom: "8px" }}>
           {/* Language */}
-          <div style={{ display: "flex", gap: "6px", background: "rgba(255,255,255,0.07)", borderRadius: "99px", padding: "4px" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "6px", background: "rgba(255,255,255,0.07)", borderRadius: "20px", padding: "4px" }}>
             {LANGUAGES.map(l => (
               <button
                 key={l.value}
@@ -575,15 +575,15 @@ const StoryTeller = () => {
           </div>
 
           {/* Tone */}
-          <div style={{ display: "flex", gap: "6px", background: "rgba(255,255,255,0.07)", borderRadius: "99px", padding: "4px" }}>
+          <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "6px", background: "rgba(255,255,255,0.07)", borderRadius: "20px", padding: "4px" }}>
             {TONES.map(t => (
               <button
                 key={t.value}
                 onClick={() => setTone(t.value)}
                 title={t.label}
                 style={{
-                  padding: "6px 14px", borderRadius: "99px", border: "none", cursor: "pointer",
-                  fontFamily: serif, fontSize: "13px",
+                  padding: "6px 12px", borderRadius: "99px", border: "none", cursor: "pointer",
+                  fontFamily: serif, fontSize: "12px", whiteSpace: "nowrap",
                   background: tone === t.value ? gold : "transparent",
                   color: tone === t.value ? "hsl(var(--primary-foreground))" : "hsl(var(--muted-foreground))",
                   transition: "all 0.2s",
@@ -625,7 +625,7 @@ const StoryTeller = () => {
         ))}
       </div>
 
-      <main style={{ maxWidth: "960px", margin: "0 auto", padding: "40px 24px 80px" }}>
+      <main style={{ maxWidth: "960px", margin: "0 auto", padding: "32px 16px 80px" }}>
 
         {/* ══════════════ STEP 1 — CHARACTER SELECT ══════════════ */}
         {(step === "select" || step === "prompt" || step === "story") && (
@@ -651,7 +651,7 @@ const StoryTeller = () => {
             </div>
 
             {/* Character grid */}
-            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(180px, 1fr))", gap: "12px", marginBottom: "40px" }}>
+            <div style={{ display: "grid", gridTemplateColumns: "repeat(auto-fill, minmax(140px, 1fr))", gap: "10px", marginBottom: "40px" }}>
               {getCharactersByGroup(activeGroup).map(char => {
                 const isSelected = selected?.id === char.id;
                 return (
