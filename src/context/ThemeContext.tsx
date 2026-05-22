@@ -16,7 +16,8 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
   const [theme, setTheme] = useState<Theme>(() => {
     const stored = localStorage.getItem("mbd-theme") as Theme | null;
     if (stored) return stored;
-    return window.matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light";
+    /* Default to dark — site is optimised for dark mode */
+    return "dark";
   });
 
   useEffect(() => {
@@ -29,7 +30,7 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     localStorage.setItem("mbd-theme", theme);
     document
       .querySelector('meta[name="theme-color"]')
-      ?.setAttribute("content", theme === "dark" ? "#080614" : "#A07820");
+      ?.setAttribute("content", theme === "dark" ? "#0C0900" : "#D97706");
   }, [theme]);
 
   const toggleTheme = () =>
