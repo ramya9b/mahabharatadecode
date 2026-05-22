@@ -371,7 +371,7 @@ const StoryTeller = () => {
       <div style={{
         minHeight: "100vh", display: "flex", flexDirection: "column",
         alignItems: "center", justifyContent: "center", textAlign: "center",
-        background: "linear-gradient(160deg, hsl(28 62% 6%) 0%, hsl(35 50% 12%) 50%, hsl(20 45% 8%) 100%)",
+        background: "linear-gradient(145deg, #0C0900 0%, #100A00 25%, #080A18 55%, #060410 80%, #0C0900 100%)",
         padding: "40px 24px", position: "relative", overflow: "hidden",
       }}>
         {/* CSS particle background for intro */}
@@ -380,7 +380,19 @@ const StoryTeller = () => {
         {/* Animated glow */}
         <div style={{
           position: "absolute", inset: 0, pointerEvents: "none",
-          background: "radial-gradient(ellipse 60% 50% at 50% 50%, rgba(212,175,55,0.12) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse 60% 60% at 80% 35%, rgba(251,191,36,0.16) 0%, transparent 50%)",
+        }} />
+        <div style={{
+          position: "absolute", inset: 0, pointerEvents: "none",
+          background: "radial-gradient(ellipse 50% 55% at 20% 65%, rgba(52,211,153,0.12) 0%, transparent 50%)",
+        }} />
+        <div style={{
+          position: "absolute", inset: 0, pointerEvents: "none",
+          background: "radial-gradient(ellipse 40% 45% at 55% 15%, rgba(167,139,250,0.10) 0%, transparent 45%)",
+        }} />
+        <div style={{
+          position: "absolute", inset: 0, pointerEvents: "none",
+          background: "radial-gradient(ellipse 35% 40% at 60% 80%, rgba(56,189,248,0.09) 0%, transparent 42%)",
           animation: "pulse-glow 3s ease-in-out infinite",
         }} />
 
@@ -393,7 +405,11 @@ const StoryTeller = () => {
           .intro-sub   { animation: fade-in-up 0.8s ease 0.5s forwards; opacity:0; }
           .intro-langs { animation: fade-in-up 0.8s ease 0.8s forwards; opacity:0; }
           .intro-btn   { animation: fade-in-up 0.8s ease 1s forwards; opacity:0; }
+          @keyframes float-p { 0%{opacity:0;transform:translateY(0)} 10%{opacity:1} 90%{opacity:.4} 100%{opacity:0;transform:translateY(-200px) translateX(var(--dx))} }
+          .gr-particle { position:absolute; border-radius:50%; animation:float-p var(--d) var(--dl) infinite; }
         `}</style>
+        {/* Rainbow top bar */}
+        <div style={{ position:"absolute", top:0, left:0, right:0, height:"2px", background:"linear-gradient(90deg,#FBBF24,#A3E635,#34D399,#38BDF8,#A78BFA,#F472B6)", zIndex:10 }} />
 
         {/* Badge */}
         <div className="intro-badge" style={{
@@ -473,34 +489,29 @@ const StoryTeller = () => {
     }}>
 
       {/* ── SCENE BACKGROUND — Left-gradient for all groups ── */}
-      {isDark && (() => {
-        const sceneMap: Record<string, string> = {
-          divine:  "/scenes/divine.webp",
-          war:     "/scenes/kauravas.webp",
-          tragic:  "/scenes/women.webp",
-          forest:  "/scenes/kings.webp",
-          gita:    "/scenes/pandavas.webp",
-        };
-        // Warriors use kauravas battle scene
-        const sceneKey = currentTheme === "war" && activeGroup === "warriors"
-          ? "/scenes/warriors.webp"
-          : sceneMap[currentTheme];
-        if (!sceneKey) return <MoodBackground theme={currentTheme} opacity={0.12} />;
-        return (
-          <div style={{ position: "fixed", inset: 0, zIndex: 0, pointerEvents: "none" }}>
-            <div style={{
-              position: "absolute", inset: 0,
-              backgroundImage: `url('${sceneKey}')`,
-              backgroundSize: "cover",
-              backgroundPosition: "center right",
-            }} />
-            <div style={{
-              position: "absolute", inset: 0,
-              background: "linear-gradient(to right, rgba(0,0,0,0.96) 0%, rgba(0,0,0,0.82) 38%, rgba(0,0,0,0.50) 60%, rgba(0,0,0,0.12) 100%)",
-            }} />
-          </div>
-        );
-      })()}
+      {isDark && (
+        <div style={{ position: "fixed", inset: 0, zIndex: 0, pointerEvents: "none" }}>
+          {/* Golden Rainbow base */}
+          <div style={{ position:"absolute", inset:0, background:"linear-gradient(145deg,#0C0900 0%,#100A00 25%,#080A18 55%,#060410 80%,#0C0900 100%)" }} />
+          {/* Gold glow — top-right */}
+          <div style={{ position:"absolute", inset:0, background:"radial-gradient(ellipse 55% 60% at 80% 30%, rgba(251,191,36,0.14) 0%, transparent 50%)" }} />
+          {/* Theme accent glow — mid-left — changes per mood */}
+          <div style={{ position:"absolute", inset:0, background:
+            currentTheme === "war"    ? "radial-gradient(ellipse 45% 55% at 18% 65%, rgba(220,38,38,0.14) 0%, transparent 50%)" :
+            currentTheme === "divine" ? "radial-gradient(ellipse 45% 55% at 18% 65%, rgba(124,58,237,0.14) 0%, transparent 50%)" :
+            currentTheme === "forest" ? "radial-gradient(ellipse 45% 55% at 18% 65%, rgba(5,150,105,0.14) 0%, transparent 50%)" :
+            currentTheme === "tragic" ? "radial-gradient(ellipse 45% 55% at 18% 65%, rgba(180,83,9,0.16) 0%, transparent 50%)" :
+            currentTheme === "gita"   ? "radial-gradient(ellipse 45% 55% at 18% 65%, rgba(52,211,153,0.13) 0%, transparent 50%)" :
+            "radial-gradient(ellipse 45% 55% at 18% 65%, rgba(52,211,153,0.12) 0%, transparent 50%)"
+          }} />
+          {/* Purple mid-glow */}
+          <div style={{ position:"absolute", inset:0, background:"radial-gradient(ellipse 40% 45% at 50% 50%, rgba(167,139,250,0.07) 0%, transparent 45%)" }} />
+          {/* Blue bottom-glow */}
+          <div style={{ position:"absolute", inset:0, background:"radial-gradient(ellipse 35% 40% at 65% 80%, rgba(56,189,248,0.09) 0%, transparent 40%)" }} />
+          {/* Rainbow top bar */}
+          <div style={{ position:"absolute", top:0, left:0, right:0, height:"2px", background:"linear-gradient(90deg,#FBBF24,#A3E635,#34D399,#38BDF8,#A78BFA,#F472B6)" }} />
+        </div>
+      )}
       <div style={{ position: "relative", zIndex: 1 }}>
       <Navbar />
 
@@ -509,7 +520,7 @@ const StoryTeller = () => {
         style={{
           textAlign: "center",
           padding: "120px 24px 64px",
-          background: `linear-gradient(180deg, hsl(28 62% 8%) 0%, hsl(35 55% 18%) 100%)`,
+          background: "transparent",
           position: "relative",
           overflow: "hidden",
         }}
