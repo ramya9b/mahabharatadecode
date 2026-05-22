@@ -131,7 +131,7 @@ const LanguageSwitcher = ({ variant = "compact" }: LanguageSwitcherProps) => {
           className="text-[13px] font-medium"
           style={{
             fontFamily:
-              currentCode === "en" ? "'Playfair Display', serif"
+              currentCode === "en" ? "'Cormorant Garamond', Georgia, serif"
               : currentCode === "hi" ? "'Tiro Devanagari Hindi', 'Noto Serif Devanagari', serif"
               : currentCode === "te" ? "'Noto Serif Telugu', serif"
               : "'Noto Serif Kannada', serif",
@@ -217,7 +217,7 @@ const LanguageSwitcher = ({ variant = "compact" }: LanguageSwitcherProps) => {
                     color: isActive ? "hsl(var(--primary))" : "hsl(var(--foreground))",
                     fontWeight: isActive ? 600 : 400,
                     fontFamily:
-                      lang.code === "en" ? "'Lora', Georgia, serif"
+                      lang.code === "en" ? "'Cormorant Garamond', Georgia, serif"
                       : lang.code === "hi" ? "'Tiro Devanagari Hindi', 'Noto Serif Devanagari', serif"
                       : lang.code === "te" ? "'Noto Serif Telugu', serif"
                       : "'Noto Serif Kannada', serif",
