@@ -8,9 +8,23 @@ interface ArticleHeroProps {
   article: Article;
 }
 
+
+const CHAR_ACCENT_MAP: Record<string, string> = {
+  karna:    "#C0392B",  /* Crimson — tragic */
+  krishna:  "#2471A3",  /* Sapphire — divine */
+  arjuna:   "#1E8449",  /* Emerald — warrior */
+  draupadi: "#8E44AD",  /* Violet — fire */
+  bhishma:  "#707B7C",  /* Silver — elder */
+  drona:    "#784212",  /* Brown — guru */
+  yudhishthira: "#1E8449",
+  default:  "#D4AF37",  /* Gold fallback */
+};
+
 const ArticleHero = ({ article }: ArticleHeroProps) => {
   const imgRef = useRef<HTMLDivElement>(null);
-  const image = resolveImage(article.imageKey);
+  const image  = resolveImage(article.imageKey);
+  const charId = article.character?.toLowerCase() ?? "";
+  const accent = CHAR_ACCENT_MAP[charId] ?? CHAR_ACCENT_MAP.default;
 
   /* Parallax on scroll */
   useEffect(() => {
@@ -57,7 +71,7 @@ const ArticleHero = ({ article }: ArticleHeroProps) => {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 60% 50% at 50% 100%, rgba(212,175,55,0.06) 0%, transparent 70%)",
+            `radial-gradient(ellipse 60% 50% at 50% 100%, ${accent}22 0%, transparent 70%)`,
         }}
       />
 
