@@ -43,27 +43,29 @@ const NewsletterSignup = ({
       }
     } catch (_) { /* GA not loaded */ }
 
-    /* ── Brevo contact add via their public form endpoint ─────────────────
-       No backend needed — Brevo's embedded form uses a public POST endpoint.
-       Replace YOUR_BREVO_FORM_ID with the ID from your Brevo embedded form.
+    /* ── Brevo via secure Cloudflare Pages Function (/subscribe) ─────────
+       API key stored server-side in Cloudflare env vars — never exposed.
        ──────────────────────────────────────────────────────────────────── */
     try {
-      const formData = new FormData();
-      formData.append("EMAIL", email.trim());
-      formData.append("OPT_IN", "1");
-      formData.append("email_address_check", "");   /* honeypot */
-      formData.append("locale", "en");
-      formData.append("htmlemail", "1");
+      const res = await fetch("/subscribe", {
+        method:  "POST",
+        headers: { "Content-Type": "application/json" },
+        body:    JSON.stringify({ email: email.trim(), source }),
+      });
 
-      /* Fallback: store in localStorage until Brevo form ID is configured */
-      const stored = JSON.parse(localStorage.getItem("mbd_subscribers") || "[]");
-      stored.push({ email: email.trim(), ts: Date.now(), source });
-      localStorage.setItem("mbd_subscribers", JSON.stringify(stored));
+      const data = await res.json().catch(() => ({ success: false }));
 
-      /* Success — show confirmation */
-      setStatus("success");
-      setEmail("");
-    } catch {
+      if (data.success) {
+        setStatus("success");
+        setEmail("");
+        /* Also cache locally so we know this browser already subscribed */
+        try {
+          localStorage.setItem("mbd_subscribed", "1");
+        } catch (_) {}
+      } else {
+        throw new Error(data.error || "Server error");
+      }
+    } catch (err) {
       setStatus("error");
       setError("Something went wrong. Please try again.");
       setTimeout(() => setStatus("idle"), 3000);
