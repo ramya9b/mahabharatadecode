@@ -1364,7 +1364,7 @@ export const articles: Article[] = [
 
   /* ══════════════ KARNA — TRAGIC HERO (HUMAN REWRITE) ══════════════ */
   {
-    slug: "karna-tragic-hero-world-literature",
+    slug: "karna-tragic-hero-world-literature-analysis",
     title: "Why Karna Is the Most Tragic Hero in All of World Literature",
     subtitle: "He knew the truth about who he was. He buried it. And smiled while doing it.",
     description:
