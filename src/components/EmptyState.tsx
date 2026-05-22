@@ -87,7 +87,7 @@ const EmptyState = ({
           fontFamily: "'Cinzel', serif",
           fontSize: "20px",
           fontWeight: 600,
-          color: "rgba(42,31,14,0.88)",
+          color: "rgba(253,230,138,0.90)",
           marginBottom: "8px",
         }}
       >
