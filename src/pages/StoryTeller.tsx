@@ -379,16 +379,15 @@ const StoryTeller = () => {
   /* ── Cinematic Opening Screen ── */
   if (showIntro) {
     return (
-      <div style={{
-        minHeight: "100vh", display: "flex", flexDirection: "column",
-        alignItems: "center", justifyContent: "center", textAlign: "center",
-        background: isDark ? "linear-gradient(145deg, #0C0900 0%, #100A00 25%, #080A18 55%, #060410 80%, #0C0900 100%)" : "hsl(38 52% 91%)",
-        padding: "40px 24px", position: "relative", overflow: "hidden",
-      }}>
-        {/* Navbar always visible on intro — user can navigate home */}
-        <div style={{ position: "absolute", top: 0, left: 0, right: 0, zIndex: 50 }}>
-          <Navbar />
-        </div>
+      <>
+        {/* Navbar rendered OUTSIDE overflow:hidden container — always visible */}
+        <Navbar />
+        <div style={{
+          minHeight: "100vh", display: "flex", flexDirection: "column",
+          alignItems: "center", justifyContent: "center", textAlign: "center",
+          background: isDark ? "linear-gradient(145deg, #0C0900 0%, #100A00 25%, #080A18 55%, #060410 80%, #0C0900 100%)" : "hsl(38 52% 91%)",
+          padding: "80px 24px 40px", position: "relative", overflow: "hidden",
+        }}>
         {/* CSS particle background for intro — dark mode only */}
         {isDark && <MoodBackground theme="war" opacity={0.15} />}
 
@@ -491,6 +490,7 @@ const StoryTeller = () => {
           ✨ Enter the Epic
         </button>
       </div>
+      </>
     );
   }
 
