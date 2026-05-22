@@ -385,6 +385,10 @@ const StoryTeller = () => {
         background: isDark ? "linear-gradient(145deg, #0C0900 0%, #100A00 25%, #080A18 55%, #060410 80%, #0C0900 100%)" : "hsl(38 52% 91%)",
         padding: "40px 24px", position: "relative", overflow: "hidden",
       }}>
+        {/* Navbar always visible on intro — user can navigate home */}
+        <div style={{ position: "absolute", top: 0, left: 0, right: 0, zIndex: 50 }}>
+          <Navbar />
+        </div>
         {/* CSS particle background for intro — dark mode only */}
         {isDark && <MoodBackground theme="war" opacity={0.15} />}
 
@@ -425,8 +429,8 @@ const StoryTeller = () => {
         {/* Badge */}
         <div className="intro-badge" style={{
           display: "inline-block", padding: "4px 16px", borderRadius: "99px",
-          border: "1px solid rgba(212,175,55,0.4)", fontFamily: serif,
-          fontSize: "11px", letterSpacing: "0.3em", color: "rgba(212,175,55,0.8)",
+          border: isDark ? "1px solid rgba(212,175,55,0.4)" : "1px solid rgba(146,64,14,0.4)", fontFamily: serif,
+          fontSize: "11px", letterSpacing: "0.3em", color: isDark ? "rgba(212,175,55,0.8)" : "#92400E",
           textTransform: "uppercase", marginBottom: "20px",
         }}>
           MahabharataDecoded presents
@@ -436,9 +440,9 @@ const StoryTeller = () => {
         <h1 className="intro-title" style={{
           fontFamily: deco,
           fontSize: "clamp(2.2rem, 7vw, 4.5rem)",
-          fontWeight: 700, color: "#F5E6C8", lineHeight: 1.15,
+          fontWeight: 700, color: isDark ? "#F5E6C8" : "#2A1506", lineHeight: 1.15,
           marginBottom: "20px",
-          textShadow: "0 0 60px rgba(212,175,55,0.4), 0 2px 4px rgba(0,0,0,0.5)",
+          textShadow: isDark ? "0 0 60px rgba(212,175,55,0.4), 0 2px 4px rgba(0,0,0,0.5)" : "none",
           letterSpacing: "0.04em",
         }}>
           The Story Teller
@@ -450,7 +454,7 @@ const StoryTeller = () => {
         {/* Subtitle */}
         <p className="intro-sub" style={{
           fontFamily: body, fontSize: "clamp(1.1rem, 2.5vw, 1.35rem)",
-          color: "rgba(245,230,200,0.88)", maxWidth: "520px",
+          color: isDark ? "rgba(245,230,200,0.88)" : "rgba(42,31,14,0.75)", maxWidth: "520px",
           margin: "0 auto 28px", lineHeight: 1.75,
         }}>
           Choose a character. Choose your story.<br />
@@ -462,8 +466,8 @@ const StoryTeller = () => {
           {["English", "తెలుగు", "हिंदी", "ಕನ್ನಡ"].map(l => (
             <span key={l} style={{
               padding: "4px 14px", borderRadius: "99px",
-              background: "rgba(212,175,55,0.1)", border: "1px solid rgba(212,175,55,0.25)",
-              fontFamily: body, fontSize: "13px", color: "rgba(245,230,200,0.7)",
+              background: isDark ? "rgba(212,175,55,0.1)" : "rgba(146,64,14,0.06)", border: isDark ? "1px solid rgba(212,175,55,0.25)" : "1px solid rgba(146,64,14,0.25)",
+              fontFamily: body, fontSize: "13px", color: isDark ? "rgba(245,230,200,0.7)" : "rgba(42,31,14,0.72)",
             }}>{l}</span>
           ))}
         </div>
