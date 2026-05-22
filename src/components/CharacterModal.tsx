@@ -440,6 +440,7 @@ const CharacterModal = ({ char, sceneImage, onStart, onClose }: Props) => {
                     display:"block",
                     filter:`drop-shadow(0 0 32px ${accent}65) drop-shadow(0 20px 45px rgba(0,0,0,0.65))`,
                     animation:"float-char 5s ease-in-out infinite",
+                    mixBlendMode:"screen",  /* pure black bg = transparent, character floats */
                     zIndex:5,
                   }}
                 />
