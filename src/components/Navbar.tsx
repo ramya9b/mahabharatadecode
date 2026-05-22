@@ -82,12 +82,37 @@ const Navbar = () => {
       >
         <div className="max-w-7xl mx-auto px-4 md:px-6 flex items-center justify-between gap-3">
 
-          {/* Logo */}
-          <Link to="/" className="flex items-center gap-2 flex-shrink-0" aria-label="MahabharataDecoded — home">
-            <div style={{ width:"28px", height:"28px", borderRadius:"50%", background:"linear-gradient(135deg,#FBBF24,#34D399,#38BDF8)", display:"flex", alignItems:"center", justifyContent:"center" }} aria-hidden="true">
-              <span className="text-xs font-bold text-primary-foreground" style={{ fontFamily: "'Cinzel', serif" }}>M</span>
+          {/* Logo — always visible, links to homepage from every page */}
+          <Link
+            to="/"
+            aria-label="MahabharataDecoded — go to homepage"
+            style={{ display:"flex", alignItems:"center", gap:"10px", textDecoration:"none", flexShrink:0, cursor:"pointer" }}
+          >
+            {/* Rainbow M circle */}
+            <div style={{
+              width:"32px", height:"32px", borderRadius:"50%",
+              background:"linear-gradient(135deg,#FBBF24 0%,#34D399 50%,#38BDF8 100%)",
+              display:"flex", alignItems:"center", justifyContent:"center",
+              flexShrink:0, boxShadow:"0 2px 12px rgba(52,211,153,0.35)",
+            }}>
+              <span style={{
+                fontFamily:"'Cinzel',serif", fontSize:"12px",
+                fontWeight:700, color:"#08040F",
+              }}>M</span>
             </div>
-            <span className="text-sm tracking-[0.18em] gold-text hidden sm:block i18n-safe" style={{ fontFamily: "'Cinzel', serif" }}>
+            {/* Brand name — visible on all screens */}
+            <span style={{
+              fontFamily:"'Cinzel',serif",
+              fontSize:"12px",
+              fontWeight:600,
+              letterSpacing:"0.16em",
+              background:"linear-gradient(90deg,#FBBF24,#34D399)",
+              WebkitBackgroundClip:"text",
+              WebkitTextFillColor:"transparent",
+              backgroundClip:"text",
+              whiteSpace:"nowrap",
+              textTransform:"uppercase",
+            }}>
               MahabharataDecoded
             </span>
           </Link>
