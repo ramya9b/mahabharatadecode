@@ -1748,6 +1748,722 @@ export const articles: Article[] = [
     },
   },
 
+
+  /* ══════════════ ARTICLE 2 — GITA WORKPLACE STRESS ══════════════ */
+  {
+    slug: "bhagavad-gita-lessons-workplace-stress",
+    title: "7 Bhagavad Gita Lessons That Will Change How You Handle Stress at Work",
+    subtitle: "Arjuna had a full breakdown on the most important day of his life. Here is what Krishna told him — and why it still works.",
+    description:
+      "Most productivity advice tells you to do more, plan better, and push harder. The Bhagavad Gita says something completely different. It says the problem is not your workload. It is your relationship with the outcome.",
+    summary:
+      "Arjuna froze on the battlefield. Most people know that part. What they forget is that his problem was not fear — it was attachment. And the eighteen chapters Krishna spent answering him are still the most practical stress manual ever written.",
+    category: "Life Lessons",
+    character: "Krishna",
+    readTime: 8,
+    publishDate: "May 22, 2026",
+    featured: false,
+    imageKey: "krishna",
+    image: "",
+    metaTitle: "7 Bhagavad Gita Lessons for Workplace Stress | MahabharataDecoded",
+    metaDescription:
+      "The Bhagavad Gita was spoken on a battlefield to a man having a breakdown. Here are 7 lessons from it that actually change how you handle stress at work.",
+    pullQuote:
+      "You have the right to your work. You do not have the right to the results of your work.",
+    authorNote:
+      "All seven lessons draw directly from Vyasa's Bhagavad Gita. Chapter and verse references: Lesson 1 from Chapter 2:47, Lesson 2 from Chapter 3:35, Lesson 3 from Chapter 2:14, Lesson 4 from Chapter 6:5, Lesson 5 from Chapter 3:16, Lesson 6 from Chapter 2:19, Lesson 7 from Chapter 18:66.",
+    reelHook: {
+      hook: "The Bhagavad Gita was not spoken in a temple. It was spoken on a battlefield, to a man who had completely fallen apart. Sound familiar?",
+      supporting:
+        "Krishna did not tell Arjuna to calm down. He told him to act — and then explained why the result was not his business.",
+    },
+    relatedSlugs: [
+      "karna-tragic-hero-world-literature",
+      "arjuna-confusion-moment-of-doubt",
+      "dharma-beyond-rules",
+    ],
+    storyBlocks: [
+      {
+        section: "introduction",
+        label: "The Original Burnout Story",
+        paragraphs: [
+          "Arjuna was the best warrior in the world. He had trained his whole life for this one moment. The armies were lined up. The conch shells had blown. And then he looked across the battlefield, saw his family on the other side, and just — stopped.",
+          "He dropped his bow. He sat down in the middle of the chariot. He told Krishna he could not do it.",
+          "This is the moment the Bhagavad Gita begins. Not in a meditation room. Not at the end of a peaceful retreat. In the middle of a crisis, with a deadline that could not be moved.",
+        ],
+      },
+      {
+        section: "background",
+        label: "Why This Applies to You",
+        paragraphs: [
+          "Most of us are not facing a literal battlefield. But most of us know exactly what it feels like to freeze before something important. A presentation. A difficult conversation. A decision that affects people you care about. A job you know you should leave but can't.",
+          "The breakdown is the same. The scale is different.",
+          "And what Krishna told Arjuna in the next eighteen chapters is not mystical or distant. It is specific, practical, and uncomfortably accurate.",
+        ],
+      },
+      {
+        section: "turningPoint",
+        label: "What Krishna Did Not Say",
+        paragraphs: [
+          "He did not say: just relax. He did not say: think positive. He did not say: it will all work out.",
+          "He said: the problem is not the situation. The problem is what you think you are owed from the situation.",
+          "That one shift — from outcome-focused to action-focused — is the entire Gita in one sentence.",
+        ],
+      },
+    ],
+    content: [
+      {
+        type: "paragraph",
+        text: "Let me start with something that most Gita explainers skip.",
+      },
+      {
+        type: "paragraph",
+        text: "This text was not written for saints. It was not written for people who had already figured out how to be calm. It was spoken to a man who was shaking, whose hands had gone cold, whose bow had literally fallen from his grip.",
+      },
+      {
+        type: "paragraph",
+        text: "It was written for people in the middle of it.",
+      },
+      {
+        type: "paragraph",
+        text: "If you have ever sat in a bathroom at work for five minutes just to breathe, or stared at your laptop at 11pm wondering why you feel so empty despite doing everything right — this is for you.",
+      },
+      {
+        type: "heading",
+        text: "Lesson 1 — Your Job Is the Work, Not the Result",
+      },
+      {
+        type: "paragraph",
+        text: "Chapter 2, verse 47. This is probably the most quoted line in the entire Gita.",
+      },
+      {
+        type: "quote",
+        text: "You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions.",
+      },
+      {
+        type: "paragraph",
+        text: "People misread this as: don't care about outcomes, just do your job robotically.",
+      },
+      {
+        type: "paragraph",
+        text: "That is not what it means.",
+      },
+      {
+        type: "paragraph",
+        text: "What it means is this: the outcome of your work involves a hundred variables you cannot control. The economy. Your manager's mood. Office politics. Luck. Timing. Trying to control all of those things is what causes the specific kind of anxiety that feels like a tight band around your chest at 3am.",
+      },
+      {
+        type: "paragraph",
+        text: "What you can control is the quality of the work itself. The effort. The honesty. The care you put in. That part is yours.",
+      },
+      {
+        type: "paragraph",
+        text: "This is not passive. It is actually the harder thing — to do excellent work and then let go of the result. Most of us are doing mediocre work while desperately gripping the result.",
+      },
+      {
+        type: "heading",
+        text: "Lesson 2 — Your Dharma Is Not Your Colleague's Dharma",
+      },
+      {
+        type: "paragraph",
+        text: "Chapter 3, verse 35 says something that sounds almost rude at first: it is better to do your own duty imperfectly than to do someone else's duty perfectly.",
+      },
+      {
+        type: "paragraph",
+        text: "In practical terms: stop looking at what your colleague is doing and calculating whether you should do that instead.",
+      },
+      {
+        type: "paragraph",
+        text: "This is a specific kind of workplace stress that nobody names. You were hired to do X. But Y seems more glamorous, more visible, more likely to get you promoted. So you half-do X while angling toward Y and end up doing neither well — and feeling vaguely fraudulent the whole time.",
+      },
+      {
+        type: "paragraph",
+        text: "The Gita is saying: find the work that is actually yours and do it fully. There is a reason the person next to you makes their job look easy — because it fits them. The version of their job that is yours will fit you the same way.",
+      },
+      {
+        type: "paragraph",
+        text: "This does not mean never change direction. It means make the change deliberately, not by drifting sideways while pretending you're still doing your actual job.",
+      },
+      {
+        type: "heading",
+        text: "Lesson 3 — Equanimity Is a Skill, Not a Personality Type",
+      },
+      {
+        type: "paragraph",
+        text: "Chapter 2, verse 14. This is the one about heat and cold, pleasure and pain, and treating them the same.",
+      },
+      {
+        type: "paragraph",
+        text: "People hear this and think: I am just not built like that. Some people are calm by nature. I am not.",
+      },
+      {
+        type: "paragraph",
+        text: "But Krishna is not describing a personality trait. He is describing a practice.",
+      },
+      {
+        type: "paragraph",
+        text: "The specific workplace application: you get great feedback on a project. You feel amazing. Then the next week something small goes wrong and you feel terrible. Your mood is completely weather-dependent on external events.",
+      },
+      {
+        type: "paragraph",
+        text: "The Gita is not telling you to feel nothing. It is telling you to notice the pattern — praise arrives, anxiety drops; criticism arrives, anxiety spikes — and slowly, deliberately, loosen your emotional grip on both.",
+      },
+      {
+        type: "paragraph",
+        text: "This takes years. It is worth starting today.",
+      },
+      {
+        type: "heading",
+        text: "Lesson 4 — You Are Your Own Worst Enemy. Also Your Best Friend.",
+      },
+      {
+        type: "paragraph",
+        text: "Chapter 6, verse 5 is the one I come back to more than any other.",
+      },
+      {
+        type: "quote",
+        text: "Elevate yourself through the power of your mind, and do not degrade yourself, for the mind can be the friend and also the enemy of the self.",
+      },
+      {
+        type: "paragraph",
+        text: "This is blunt in a way that most self-help avoids.",
+      },
+      {
+        type: "paragraph",
+        text: "The voice that says you are a fraud, that your success was luck, that sooner or later everyone will figure out you don't belong here — that is not reality. That is your mind choosing to be your enemy.",
+      },
+      {
+        type: "paragraph",
+        text: "The same mind, used differently, is the one that figures out the solution at 7am, that sees the angle no one else saw, that keeps going when the project looks impossible.",
+      },
+      {
+        type: "paragraph",
+        text: "The Gita is not saying: think positive. It is saying: you have a choice about which version of your mind you feed. You are making that choice constantly, even when you think you aren't.",
+      },
+      {
+        type: "heading",
+        text: "Lesson 5 — Rest Is Not the Opposite of Work",
+      },
+      {
+        type: "paragraph",
+        text: "Chapter 3, verse 16 talks about the wheel of creation — how action sustains the world, how the cosmos moves through participation.",
+      },
+      {
+        type: "paragraph",
+        text: "It sounds cosmic. The application is simple: you are not separate from the system you work in. When you run yourself into the ground, the system suffers. When you take care of your energy, the work improves.",
+      },
+      {
+        type: "paragraph",
+        text: "The modern workplace has fully accepted the idea that exhaustion is a virtue. If you are not tired, you are not trying hard enough. The Gita disagrees.",
+      },
+      {
+        type: "paragraph",
+        text: "Krishna spends an entire chapter on this — the chapter on the self, on sleep, on moderation in food and effort. He calls it yoga. We would call it sustainable performance.",
+      },
+      {
+        type: "paragraph",
+        text: "The person who sleeps eight hours and leaves work at a reasonable time is not less committed. They are, in the Gita's language, actually practising karma yoga. The person burning out at midnight for the third week running is not.",
+      },
+      {
+        type: "heading",
+        text: "Lesson 6 — Nothing That Is Real Can Be Destroyed",
+      },
+      {
+        type: "paragraph",
+        text: "Chapter 2, verse 19. This is the one about the soul being eternal — it cannot be cut by weapons or burned by fire.",
+      },
+      {
+        type: "paragraph",
+        text: "I know. It sounds abstract.",
+      },
+      {
+        type: "paragraph",
+        text: "But here is the workplace translation: the thing you are most afraid of losing — the job title, the reputation, the approval, the status — is not actually you. You existed before it. You will exist after it.",
+      },
+      {
+        type: "paragraph",
+        text: "Most workplace anxiety comes from conflating your identity with your position. When the position is threatened, it feels like you are being threatened. The Gita is drawing a very deliberate line between the two.",
+      },
+      {
+        type: "paragraph",
+        text: "This is not detachment from your work. It is detachment from the idea that the work defines your worth.",
+      },
+      {
+        type: "paragraph",
+        text: "The people who handle career setbacks best — redundancies, failed projects, being passed over — are the people who knew this difference before it was tested.",
+      },
+      {
+        type: "heading",
+        text: "Lesson 7 — Surrender Is Not Weakness",
+      },
+      {
+        type: "paragraph",
+        text: "The last verse of the last chapter. Chapter 18, verse 66. This is the one Krishna saves for the end, after explaining everything else.",
+      },
+      {
+        type: "quote",
+        text: "Abandon all varieties of dharma and simply surrender unto me. I shall deliver you from all sinful reactions. Do not fear.",
+      },
+      {
+        type: "paragraph",
+        text: "The word surrender makes people uncomfortable. It sounds passive. Like giving up.",
+      },
+      {
+        type: "paragraph",
+        text: "What it actually describes is the moment you stop trying to control every variable and trust the process you have built — your preparation, your values, your track record.",
+      },
+      {
+        type: "paragraph",
+        text: "In a work context: you have prepared as well as you can. You have done the work honestly. There comes a point where you have to let the presentation land however it lands, let the decision go to whoever makes it, let the project succeed or fail on its own terms.",
+      },
+      {
+        type: "paragraph",
+        text: "Holding on past that point does not improve outcomes. It just adds suffering.",
+      },
+      {
+        type: "paragraph",
+        text: "That release — not of effort, but of the grip on the result — is what the Gita calls surrender. It is probably the hardest thing in this entire list.",
+      },
+      {
+        type: "heading",
+        text: "The Uncomfortable Truth at the End",
+      },
+      {
+        type: "paragraph",
+        text: "None of these lessons remove difficulty from your work life. The Gita does not promise that.",
+      },
+      {
+        type: "paragraph",
+        text: "Arjuna still fought the war. It still lasted eighteen days. People he loved still died.",
+      },
+      {
+        type: "paragraph",
+        text: "What changed was his relationship to all of it. He fought with full commitment and without the particular kind of suffering that comes from needing it to go a specific way.",
+      },
+      {
+        type: "paragraph",
+        text: "That is the only kind of peace the Gita offers. Not a life without hard things. A different relationship with the hard things.",
+      },
+      {
+        type: "paragraph",
+        text: "It turns out that is enough to change everything.",
+      },
+    ],
+    keyLessons: [
+      {
+        icon: "🎯",
+        title: "Control the Effort, Release the Outcome",
+        description:
+          "You can control how well you prepare, how honestly you work, how much care you bring. You cannot control whether it lands the way you hoped. Gripping the outcome is where the anxiety lives.",
+        accent: "gold",
+      },
+      {
+        icon: "🔄",
+        title: "Your Dharma Fits You for a Reason",
+        description:
+          "The work that is actually yours will feel different from the work you are performing to look good. Finding that difference and leaning into it is not a luxury — it is the whole point.",
+        accent: "teal",
+      },
+      {
+        icon: "⚖️",
+        title: "Your Mind Is the Variable",
+        description:
+          "The same situation feels different depending on which version of your mind you bring to it. You are making that choice constantly. The Gita just makes you aware of it.",
+        accent: "crimson",
+      },
+      {
+        icon: "🌿",
+        title: "Rest Is Part of the Work",
+        description:
+          "Sustainable performance is not a compromise. It is the practice. The person who rests well works better — and the Gita said this three thousand years before any wellness app did.",
+        accent: "gold",
+      },
+      {
+        icon: "✨",
+        title: "You Are Not Your Job Title",
+        description:
+          "The position is not you. The approval is not you. The result is not you. Knowing this before it is tested is what determines how you handle it when it is.",
+        accent: "teal",
+      },
+    ],
+    modernConnections: [
+      {
+        context: "For People Who Can't Switch Off",
+        insight:
+          "If you check email at 11pm and feel guilty when you don't — Lesson 1 is for you. You have already done the work. The result is not improved by your anxiety about it. Let it land.",
+        example:
+          "The presentation is submitted. The proposal is sent. The interview is over. The work is done. Everything after that is weather. You cannot change weather by checking it more often.",
+      },
+      {
+        context: "For People Comparing Themselves at Work",
+        insight:
+          "If you spend more energy watching your colleague's trajectory than your own work — Lesson 2 is for you. Their path fits them. Copying it is like wearing someone else's prescription glasses and wondering why everything looks wrong.",
+        example:
+          "The colleague who got promoted faster, the peer who has a more impressive title — none of that tells you anything about your own path. The Gita is not asking you to be at peace with it. It is asking you to redirect your attention to what is actually yours.",
+      },
+      {
+        context: "For People Who Fear Career Loss",
+        insight:
+          "If the thought of losing your job feels like losing yourself — Lesson 6 is the one to sit with. The title was never you. Your capability, your character, your relationships, your way of thinking — those survived every role change you have ever had. They will survive the next one too.",
+        example:
+          "People who recover from redundancy fastest are not the ones who didn't care. They are the ones who knew the difference between losing a job and losing themselves. That knowledge does not come after the loss. It has to come before.",
+      },
+    ],
+    lifeLessons: [
+      "Do the work fully. Release the result completely.",
+      "Your dharma fits you — stop measuring it against someone else's.",
+      "Equanimity is a practice, not a personality type. Start practising.",
+      "Your mind is either your best friend or your worst enemy — you decide which, every day.",
+      "Rest is not earned after the work. It is part of the work.",
+      "Your job title is not your identity. Know this before you need to.",
+      "Surrender is not giving up. It is letting go of what was never yours to control.",
+    ],
+    sloka: {
+      sanskrit:
+        "कर्मण्येवाधिकारस्ते मा फलेषु कदाचन।\nमा कर्मफलहेतुर्भूर्मा ते सङ्गोऽस्त्वकर्मणि॥",
+      transliteration:
+        "Karmanyevadhikaraste ma phaleshu kadachana. Ma karmaphalaheturbhurma te sango'stvakarmani.",
+      translation:
+        "You have a right to perform your prescribed duties, but you are not entitled to the fruits of your actions. Never consider yourself the cause of the results, and never be attached to not doing your duty. — Bhagavad Gita 2:47",
+    },
+  },
+
+
+  /* ══════════════ ARTICLE 3 — WHO CAUSED THE WAR ══════════════ */
+  {
+    slug: "who-caused-mahabharata-war",
+    title: "Who Was Really Responsible for the Mahabharata War? The Answer Will Surprise You",
+    subtitle: "The obvious answer is Duryodhana. The honest answer is much harder to live with.",
+    description:
+      "Most people blame Duryodhana for the Mahabharata war. He is easy to blame — greedy, proud, relentless. But the more carefully you read the epic, the more you realise the war had roots that went back decades. And almost everyone had a hand in planting them.",
+    summary:
+      "The Mahabharata war killed eighteen akshauhinis of soldiers. That is roughly four million people. For a conflict that large, one villain is not enough. Here is how it actually started — and the uncomfortable lesson it leaves behind.",
+    category: "Characters",
+    character: "Krishna",
+    readTime: 10,
+    publishDate: "May 22, 2026",
+    featured: false,
+    imageKey: "krishna",
+    image: "",
+    metaTitle: "Who Was Really Responsible for the Mahabharata War? | MahabharataDecoded",
+    metaDescription:
+      "Everyone says Duryodhana caused the Mahabharata war. But Dhritarashtra, Bhishma, Shakuni, and even Krishna all had a role. Here is what the epic actually shows.",
+    pullQuote:
+      "When everyone is responsible, the temptation is to say no one is. The Mahabharata refuses that escape.",
+    authorNote:
+      "This analysis draws from the Adi Parva, Sabha Parva, Udyoga Parva, and Stri Parva. The dice game is covered in Sabha Parva chapters 43–78. Krishna's peace mission is in Udyoga Parva chapters 83–150. Gandhari's curse on Krishna appears in Stri Parva.",
+    reelHook: {
+      hook: "Eighteen million soldiers died in the Mahabharata war. Duryodhana gets the blame. But every major character had a moment where they could have stopped it — and didn't.",
+      supporting:
+        "The war was not one man's crime. It was everyone's slow accumulation of small wrong choices.",
+    },
+    relatedSlugs: [
+      "karna-tragic-hero-world-literature",
+      "bhishma-terrible-oath",
+      "dharma-beyond-rules",
+    ],
+    storyBlocks: [
+      {
+        section: "introduction",
+        label: "The Easy Answer",
+        paragraphs: [
+          "Ask anyone who caused the Mahabharata war and they will say Duryodhana. He refused to give the Pandavas their kingdom. He insulted Draupadi. He rejected every peace offer. He chose war over compromise at every single turn.",
+          "All of that is true.",
+          "But if you read the Mahabharata as a document about how catastrophes actually happen — not as a morality play with a clear villain — a much more uncomfortable picture emerges. One where almost every major character shares some portion of the blame.",
+        ],
+      },
+      {
+        section: "background",
+        label: "How Long This Had Been Building",
+        paragraphs: [
+          "The war did not begin with Duryodhana. It began with a much older failure — Dhritarashtra's appointment as king.",
+          "Dhritarashtra was born blind. Under the rules of the kingdom, this made him ineligible to rule. Pandu, his younger brother, became king instead. When Pandu died young, the throne came back to Dhritarashtra.",
+          "He was not a bad man. But he was a man who had spent his whole life being reminded of what he could not have. And when the throne finally came to him, he could not bring himself to do the one thing that would have prevented everything — be fair to his brother's children.",
+        ],
+      },
+      {
+        section: "turningPoint",
+        label: "The Moment It Could Have Been Stopped",
+        paragraphs: [
+          "Krishna's peace mission. Udyoga Parva. This is the last real chance.",
+          "Krishna goes to Hastinapura as the Pandavas' ambassador. He asks for five villages. Five. Not the kingdom — just five villages, one for each Pandava, enough to live with dignity.",
+          "Duryodhana says: I will not give them land the size of a needle's point.",
+          "That is the moment. After that, everything is mathematics.",
+        ],
+      },
+    ],
+    content: [
+      {
+        type: "paragraph",
+        text: "Let me give you the honest answer upfront: everyone caused the Mahabharata war.",
+      },
+      {
+        type: "paragraph",
+        text: "Not equally. Not in the same way. But everyone who had the power to stop it at some point, and didn't — they are all part of the answer.",
+      },
+      {
+        type: "paragraph",
+        text: "Here is how the responsibility actually breaks down.",
+      },
+      {
+        type: "heading",
+        text: "Dhritarashtra — The Father Who Could Not Be Fair",
+      },
+      {
+        type: "paragraph",
+        text: "This is where it actually starts.",
+      },
+      {
+        type: "paragraph",
+        text: "Dhritarashtra knew, from the moment the Pandavas came of age, that Yudhishthira was the rightful heir. The whole court knew it. The advisors knew it. He knew it.",
+      },
+      {
+        type: "paragraph",
+        text: "He could not do it.",
+      },
+      {
+        type: "paragraph",
+        text: "He loved Duryodhana with the specific, blinding love of a man who had been denied things his whole life and finally had something completely his own. And so at every juncture — the attempt to burn the Pandavas alive at Varanavata, the dice game, the exile, the refusal to return the kingdom — Dhritarashtra chose his son.",
+      },
+      {
+        type: "paragraph",
+        text: "Not because he was evil. Because he was weak in the specific way that powerful people are weak: he could see clearly what was right and still could not do it.",
+      },
+      {
+        type: "paragraph",
+        text: "The Mahabharata is quite deliberate about this. Gandhari, his wife, tells him directly after the war: everything that happened was your doing. You had the power to stop it at any point. You chose not to.",
+      },
+      {
+        type: "paragraph",
+        text: "She is right.",
+      },
+      {
+        type: "heading",
+        text: "Bhishma — The Man Whose Principles Protected No One",
+      },
+      {
+        type: "paragraph",
+        text: "Bhishma is the most painful case in the whole epic.",
+      },
+      {
+        type: "paragraph",
+        text: "He was the most respected man in the kingdom. His word carried more weight than any king's. He had a terrible oath — never to take the throne, never to interfere in succession — which he had taken to make his father happy decades ago.",
+      },
+      {
+        type: "paragraph",
+        text: "And he hid behind it.",
+      },
+      {
+        type: "paragraph",
+        text: "When Draupadi was being disrobed in the open court, Bhishma sat and watched. When she asked him directly — was the dice game valid? was I legitimately staked? — he gave a philosophical non-answer about dharma being complex.",
+      },
+      {
+        type: "paragraph",
+        text: "She was standing in front of him with her sari being pulled away. He talked about the complexity of dharma.",
+      },
+      {
+        type: "paragraph",
+        text: "His oath was real. His principles were genuine. But principles that do not translate into action in the worst moment are not principles — they are excuses.",
+      },
+      {
+        type: "paragraph",
+        text: "Bhishma died on the battlefield, lying on a bed of arrows, and spent fifty-eight days giving lectures on dharma. The Mahabharata gives him this long death because his failure was exactly that — a man of enormous knowledge and almost no courage at the moments that counted.",
+      },
+      {
+        type: "heading",
+        text: "Shakuni — Grief That Became a Thirty-Year Plan",
+      },
+      {
+        type: "paragraph",
+        text: "This one is less well known. And it changes the dice game entirely.",
+      },
+      {
+        type: "paragraph",
+        text: "Shakuni was Gandhari's brother. When Gandhari was married off to Dhritarashtra — a blind king, not exactly the match the Gandhara royal family had in mind — the Kuru family imprisoned and starved Shakuni's family in retaliation for their objections.",
+      },
+      {
+        type: "paragraph",
+        text: "All of them died except Shakuni.",
+      },
+      {
+        type: "paragraph",
+        text: "He was kept alive specifically to serve as Gandhari's companion. And he spent the next thirty years inside the palace, teaching Duryodhana, engineering the dice game, pushing for maximum conflict at every turn — because he wanted the Kuru dynasty destroyed.",
+      },
+      {
+        type: "paragraph",
+        text: "The dice game was not a game. It was a trap, designed by a man who had been planning this since his family was killed.",
+      },
+      {
+        type: "paragraph",
+        text: "Duryodhana thought Shakuni was his ally. He was his weapon.",
+      },
+      {
+        type: "heading",
+        text: "Duryodhana — The Villain Who Had a Point",
+      },
+      {
+        type: "paragraph",
+        text: "Let me say something that is going to be uncomfortable.",
+      },
+      {
+        type: "paragraph",
+        text: "Duryodhana's grievance was not entirely without basis.",
+      },
+      {
+        type: "paragraph",
+        text: "He grew up watching the Pandavas get more praise, more love, more public admiration — despite the fact that they were his cousins, not his brothers, and despite the fact that he was the crown prince. Every tournament, every public event, every court gathering — the Pandavas were the heroes. He was the rival.",
+      },
+      {
+        type: "paragraph",
+        text: "That does not excuse what he did. The dice game, the exile, the refusal of five villages — those are real crimes. But the bitterness had a source. It did not emerge from nowhere.",
+      },
+      {
+        type: "paragraph",
+        text: "The Mahabharata is not sympathetic to Duryodhana. But it is honest about him. He was not a cartoon. He was a man whose resentment was cultivated carefully over decades by the adults around him and then given a very specific target.",
+      },
+      {
+        type: "heading",
+        text: "Krishna — The Hardest One to Talk About",
+      },
+      {
+        type: "paragraph",
+        text: "This is the part people do not like.",
+      },
+      {
+        type: "paragraph",
+        text: "Krishna is God in the Mahabharata. He is also the most strategically sophisticated character in it. And there are moments in the text where you have to ask: did he want peace, or did he want the war?",
+      },
+      {
+        type: "paragraph",
+        text: "His peace mission to Hastinapura is genuine — the text is clear about that. He tries.",
+      },
+      {
+        type: "paragraph",
+        text: "But he also knew Duryodhana would refuse. He knew it before he went. And during the war he breaks the rules of warfare multiple times — he tells Arjuna to shoot Karna when he is unarmed, he engineers Drona's death through deception — to ensure the Pandavas win.",
+      },
+      {
+        type: "paragraph",
+        text: "After the war, Gandhari curses Krishna. She says: you had the power to stop this. You chose not to. My whole family is dead because of your choice.",
+      },
+      {
+        type: "paragraph",
+        text: "Krishna accepts the curse. He does not argue.",
+      },
+      {
+        type: "paragraph",
+        text: "The Mahabharata does not resolve this. It does not tell you Krishna was wrong. But it gives Gandhari's grief full weight, and it shows a God who accepted responsibility for his choices.",
+      },
+      {
+        type: "heading",
+        text: "What This Actually Means",
+      },
+      {
+        type: "paragraph",
+        text: "The honest reading of the Mahabharata is this: the war was the result of a long chain of small failures — a father who could not be fair, an elder who could not act on his principles, a grieving man whose revenge took thirty years, a nephew whose resentment was never addressed, and a divine strategist who made a calculation that the world needed this war.",
+      },
+      {
+        type: "paragraph",
+        text: "No single person could have caused it. No single person could have stopped it.",
+      },
+      {
+        type: "paragraph",
+        text: "But each person, at their particular moment, had a choice. And the epic documents each of those choices with the same unflinching care it gives to the battles.",
+      },
+      {
+        type: "paragraph",
+        text: "This is why the Mahabharata is not a story about good versus evil. It is a story about how good people, making ordinary human choices — to protect their children, to keep their promises, to nurse their grief — can collectively produce catastrophe.",
+      },
+      {
+        type: "paragraph",
+        text: "That lesson is not ancient. It is happening somewhere right now.",
+      },
+      {
+        type: "paragraph",
+        text: "And the question it leaves behind is not: who was the villain?",
+      },
+      {
+        type: "paragraph",
+        text: "It is: at your particular moment, what will you choose?",
+      },
+    ],
+    keyLessons: [
+      {
+        icon: "👁️",
+        title: "Wilful Blindness Is a Choice",
+        description:
+          "Dhritarashtra was not blind to his son's faults. He chose not to act on what he saw. That is not weakness — it is a decision. The Mahabharata holds him responsible for every consequence of that decision.",
+        accent: "crimson",
+      },
+      {
+        icon: "⚔️",
+        title: "Principles Without Courage Are Just Words",
+        description:
+          "Bhishma knew everything about dharma. He could not act on it when it mattered most. Knowledge of the right thing and the will to do it are not the same thing.",
+        accent: "gold",
+      },
+      {
+        icon: "🎲",
+        title: "Unaddressed Grief Becomes Something Dangerous",
+        description:
+          "Shakuni's grief was real. His family died because of the Kuru dynasty. But grief that is never processed and never addressed does not go away — it finds a direction. His direction destroyed two kingdoms.",
+        accent: "crimson",
+      },
+      {
+        icon: "🔗",
+        title: "Catastrophes Are Built Slowly, in Chains",
+        description:
+          "The war did not begin the day Duryodhana refused the five villages. It began decades earlier, with a father who was not fair. Each failure created the conditions for the next one.",
+        accent: "teal",
+      },
+      {
+        icon: "🌐",
+        title: "Everyone Had a Moment. Everyone.",
+        description:
+          "The epic's real lesson is not about villains. It is about the specific moment each person had to change the trajectory — and what they did with it. You will have that moment too.",
+        accent: "gold",
+      },
+    ],
+    modernConnections: [
+      {
+        context: "In Organisations",
+        insight:
+          "Every organisational disaster has a Dhritarashtra — a senior person who saw what was happening and chose their relationship over the right call. The culture does not break all at once. It breaks one small accommodation at a time.",
+        example:
+          "The manager who knows the project is failing but keeps reporting green because the VP does not want bad news. The director who knows someone is being mistreated but does not want the conflict. The board that sees the numbers and asks no questions. Each one is a small Dhritarashtra.",
+      },
+      {
+        context: "In Families",
+        insight:
+          "Shakuni's story is the family story no one talks about. The person who carries a wound from one generation and channels it into the next one. They may not even be aware they are doing it.",
+        example:
+          "The parent who pushes their child toward a rival's family because of a thirty-year-old slight. The sibling whose resentment was never named and slowly poisons every family gathering. The grief that never found words and found behavior instead.",
+      },
+      {
+        context: "In Public Life",
+        insight:
+          "Bhishma is every expert, every institution, every respected authority that saw what was happening and gave a philosophical answer when a clear one was needed. Complexity is real. But complexity used as cover for inaction is its own kind of failure.",
+        example:
+          "The committee that writes a thorough report and recommends further study. The elder statesperson who gives a nuanced statement when a clear one was available. The expert who explains why it is complicated when the right answer was actually simple.",
+      },
+    ],
+    lifeLessons: [
+      "Seeing clearly and acting clearly are two different things — both are required.",
+      "Unprocessed grief finds a direction. Make sure you know where yours is pointing.",
+      "Small accommodations compound. The war started long before the war started.",
+      "Principles you cannot act on in the hardest moments are not yet fully yours.",
+      "Every catastrophe had a moment where one honest conversation could have changed it.",
+      "You will have your moment. The question is what you will do with it.",
+    ],
+    sloka: {
+      sanskrit:
+        "यदा यदा हि धर्मस्य ग्लानिर्भवति भारत।\nअभ्युत्थानमधर्मस्य तदात्मानं सृजाम्यहम्॥",
+      transliteration:
+        "Yada yada hi dharmasya glanir bhavati bharata. Abhyutthanam adharmasya tadatmanam srijamyaham.",
+      translation:
+        "Whenever there is a decline in righteousness and a rise of evil, I manifest myself. — Bhagavad Gita 4:7. The war was not the failure of one man. It was what happens when enough people decline righteousness at once.",
+    },
+  },
+
 ];
 
 /* ─────────────────── Helpers ─────────────────── */
