@@ -46,7 +46,7 @@ const WisdomHero = () => {
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 select-none pointer-events-none"
         style={{
-          fontFamily: "'Playfair Display', 'Cinzel', serif",
+          fontFamily: "'Cinzel', serif",
           fontSize: "clamp(200px, 35vw, 380px)",
           color: "rgba(212,175,55,0.04)",
           lineHeight: 1,
@@ -101,7 +101,7 @@ const WisdomHero = () => {
           style={{
             fontSize: "clamp(18px, 2vw, 21px)",
             color: "rgba(42,31,14,0.65)",
-            fontFamily: "'Lora', Georgia, serif",
+            fontFamily: "'Cormorant Garamond', Georgia, serif",
             lineHeight: 1.8,
             maxWidth: "560px",
           }}
@@ -115,7 +115,7 @@ const WisdomHero = () => {
           style={{
             fontSize: "17px",
             color: "rgba(42,31,14,0.45)",
-            fontFamily: "'Lora', Georgia, serif",
+            fontFamily: "'Cormorant Garamond', Georgia, serif",
             fontStyle: "italic",
             maxWidth: "480px",
           }}
@@ -297,7 +297,7 @@ const ScenarioCard = ({
             style={{
               fontSize: "14px",
               color: "rgba(42,31,14,0.5)",
-              fontFamily: "'Lora', Georgia, serif",
+              fontFamily: "'Cormorant Garamond', Georgia, serif",
               fontStyle: "italic",
               lineHeight: 1.85,
             }}
@@ -429,7 +429,7 @@ const ScenarioDetail = ({
               style={{
                 fontSize: "17px",
                 color: "rgba(42,31,14,0.5)",
-                fontFamily: "'Lora', Georgia, serif",
+                fontFamily: "'Cormorant Garamond', Georgia, serif",
                 fontStyle: "italic",
               }}
             >
@@ -446,7 +446,7 @@ const ScenarioDetail = ({
                   style={{
                     fontSize: "clamp(17px, 1.9vw, 19px)",
                     color: i === 0 ? "rgba(42,31,14,0.88)" : "rgba(42,31,14,0.7)",
-                    fontFamily: "'Lora', Georgia, serif",
+                    fontFamily: "'Cormorant Garamond', Georgia, serif",
                     lineHeight: 1.8,
                     fontWeight: i === 0 ? 500 : 400,
                     fontStyle: i === 0 ? "italic" : "normal",
@@ -471,7 +471,7 @@ const ScenarioDetail = ({
                   style={{
                     fontSize: "clamp(17px, 1.9vw, 19px)",
                     color: "rgba(42,31,14,0.75)",
-                    fontFamily: "'Lora', Georgia, serif",
+                    fontFamily: "'Cormorant Garamond', Georgia, serif",
                     lineHeight: 1.8,
                   }}
                 >
@@ -490,7 +490,7 @@ const ScenarioDetail = ({
                   style={{
                     fontSize: "clamp(17px, 1.9vw, 19px)",
                     color: "rgba(42,31,14,0.75)",
-                    fontFamily: "'Lora', Georgia, serif",
+                    fontFamily: "'Cormorant Garamond', Georgia, serif",
                     lineHeight: 1.8,
                   }}
                 >
@@ -546,7 +546,7 @@ const ScenarioDetail = ({
                     style={{
                       fontSize: "clamp(14px, 1.6vw, 16px)",
                       color: "rgba(42,31,14,0.78)",
-                      fontFamily: "'Lora', Georgia, serif",
+                      fontFamily: "'Cormorant Garamond', Georgia, serif",
                       lineHeight: 1.855,
                     }}
                   >
@@ -571,7 +571,7 @@ const ScenarioDetail = ({
                   style={{
                     fontSize: "14px",
                     color: "rgba(42,31,14,0.55)",
-                    fontFamily: "'Lora', Georgia, serif",
+                    fontFamily: "'Cormorant Garamond', Georgia, serif",
                   }}
                 >
                   Read the full {scenario.characterName} article — the complete story,
@@ -668,7 +668,7 @@ const DomainPanel = ({
               className="text-muted-foreground mt-0.5"
               style={{
                 fontSize: "17px",
-                fontFamily: "'Lora', Georgia, serif",
+                fontFamily: "'Cormorant Garamond', Georgia, serif",
                 fontStyle: "italic",
               }}
             >
@@ -726,7 +726,7 @@ const BottomCTA = () => {
           className="text-muted-foreground leading-relaxed mb-10 mx-auto"
           style={{
             fontSize: "17px",
-            fontFamily: "'Lora', Georgia, serif",
+            fontFamily: "'Cormorant Garamond', Georgia, serif",
             maxWidth: "480px",
             lineHeight: 1.8,
           }}
