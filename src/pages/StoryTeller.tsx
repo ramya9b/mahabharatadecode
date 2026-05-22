@@ -384,23 +384,27 @@ const StoryTeller = () => {
         {isGlobalDark && <MoodBackground theme="war" opacity={0.15} />}
 
         {/* Animated glow — dark mode only */}
-        {isGlobalDark && <div style={{
-          position: "absolute", inset: 0, pointerEvents: "none",
-          background: "radial-gradient(ellipse 60% 60% at 80% 35%, rgba(251,191,36,0.16) 0%, transparent 50%)",
-        }} />
-        <div style={{
-          position: "absolute", inset: 0, pointerEvents: "none",
-          background: "radial-gradient(ellipse 50% 55% at 20% 65%, rgba(52,211,153,0.12) 0%, transparent 50%)",
-        }} />
-        <div style={{
-          position: "absolute", inset: 0, pointerEvents: "none",
-          background: "radial-gradient(ellipse 40% 45% at 55% 15%, rgba(167,139,250,0.10) 0%, transparent 45%)",
-        }} />
-        <div style={{
-          position: "absolute", inset: 0, pointerEvents: "none",
-          background: "radial-gradient(ellipse 35% 40% at 60% 80%, rgba(56,189,248,0.09) 0%, transparent 42%)",
-          animation: "pulse-glow 3s ease-in-out infinite",
-        }} />
+        {isGlobalDark && (
+          <>
+            <div style={{
+              position: "absolute", inset: 0, pointerEvents: "none",
+              background: "radial-gradient(ellipse 60% 60% at 80% 35%, rgba(251,191,36,0.16) 0%, transparent 50%)",
+            }} />
+            <div style={{
+              position: "absolute", inset: 0, pointerEvents: "none",
+              background: "radial-gradient(ellipse 50% 55% at 20% 65%, rgba(52,211,153,0.12) 0%, transparent 50%)",
+            }} />
+            <div style={{
+              position: "absolute", inset: 0, pointerEvents: "none",
+              background: "radial-gradient(ellipse 40% 45% at 55% 15%, rgba(167,139,250,0.10) 0%, transparent 45%)",
+            }} />
+            <div style={{
+              position: "absolute", inset: 0, pointerEvents: "none",
+              background: "radial-gradient(ellipse 35% 40% at 60% 80%, rgba(56,189,248,0.09) 0%, transparent 42%)",
+              animation: "pulse-glow 3s ease-in-out infinite",
+            }} />
+          </>
+        )}
 
         <style>{`
           @keyframes pulse-glow { 0%,100%{opacity:0.6} 50%{opacity:1} }
