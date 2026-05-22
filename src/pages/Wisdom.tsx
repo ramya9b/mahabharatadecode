@@ -1,4 +1,5 @@
 import { useState, useEffect, useRef, useCallback } from "react";
+import { useTheme } from "@/context/ThemeContext";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { X, ArrowRight, BookOpen, ChevronDown } from "lucide-react";
@@ -19,6 +20,8 @@ import type { Domain, WisdomScenario } from "@/data/wisdom";
 ────────────────────────────────────────────── */
 const WisdomHero = () => {
   const { t } = useTranslation();
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
   const ref = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const fn = () => {
@@ -89,7 +92,7 @@ const WisdomHero = () => {
           <span className="gold-text block">Your life.</span>
           <span
             className="block"
-            style={{ color: "rgba(42,31,14,0.9)", fontSize: "0.68em", marginTop: "6px" }}
+            style={{ color: isDark ? "rgba(253,230,138,0.88)" : "rgba(42,31,14,0.90)", fontSize: "0.68em", marginTop: "6px" }}
           >
             Their story.
           </span>
@@ -100,7 +103,7 @@ const WisdomHero = () => {
           className="leading-relaxed mx-auto mb-6 animate-fade-up-delay-2"
           style={{
             fontSize: "clamp(18px, 2vw, 21px)",
-            color: "rgba(253,230,138,0.68)",
+            color: isDark ? "rgba(253,230,138,0.75)" : "rgba(42,31,14,0.78)",
             fontFamily: "'Cormorant Garamond', Georgia, serif",
             lineHeight: 1.8,
             maxWidth: "560px",
@@ -114,7 +117,7 @@ const WisdomHero = () => {
           className="leading-relaxed mx-auto mb-14 animate-fade-up-delay-2"
           style={{
             fontSize: "17px",
-            color: "rgba(253,230,138,0.50)",
+            color: isDark ? "rgba(253,230,138,0.55)" : "rgba(42,31,14,0.58)",
             fontFamily: "'Cormorant Garamond', Georgia, serif",
             fontStyle: "italic",
             maxWidth: "480px",
@@ -138,7 +141,7 @@ const WisdomHero = () => {
                 </div>
                 <div
                   className="font-heading text-[9px] tracking-[0.22em] uppercase mt-1"
-                  style={{ color: "rgba(42,31,14,0.4)" }}
+                  style={{ color: isDark ? "rgba(253,230,138,0.45)" : "rgba(42,31,14,0.50)" }}
                 >
                   {meta.label.split(" ")[0]}
                 </div>
@@ -201,12 +204,14 @@ const DomainTabs = ({
               className="flex items-center gap-2.5 px-5 py-2.5 rounded-full whitespace-nowrap transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 flex-shrink-0"
               style={{
                 background: isActive
-                  ? "linear-gradient(135deg, rgba(212,175,55,0.18), rgba(212,175,55,0.08))"
-                  : "rgba(139,105,20,0.05)",
+                  ? (isDarkF ? "linear-gradient(135deg, rgba(251,191,36,0.18), rgba(251,191,36,0.08))" : "linear-gradient(135deg, rgba(217,119,6,0.15), rgba(217,119,6,0.06))")
+                  : (isDarkF ? "rgba(22,11,0,0.60)" : "rgba(139,105,20,0.06)"),
                 border: isActive
-                  ? "1px solid rgba(212,175,55,0.35)"
-                  : "1px solid rgba(139,105,20,0.09)",
-                color: isActive ? "rgba(212,175,55,0.95)" : "rgba(253,230,138,0.60)",
+                  ? (isDarkF ? "1px solid rgba(251,191,36,0.40)" : "1px solid rgba(217,119,6,0.45)")
+                  : (isDarkF ? "1px solid rgba(251,191,36,0.18)" : "1px solid rgba(139,105,20,0.18)"),
+                color: isActive
+                  ? (isDarkF ? "#FBBF24" : "#92400E")
+                  : (isDarkF ? "rgba(253,230,138,0.65)" : "rgba(80,50,10,0.70)"),
               }}
             >
               <span style={{ fontSize: "17px" }} aria-hidden="true">
@@ -242,6 +247,8 @@ const ScenarioCard = ({
   onOpen: (s: WisdomScenario) => void;
 }) => {
   const ref = useScrollReveal<HTMLDivElement>();
+  const { theme: ct } = useTheme();
+  const isDarkC = ct === "dark";
 
   return (
     <div
@@ -285,7 +292,7 @@ const ScenarioCard = ({
             className="font-heading font-semibold leading-snug mb-3 group-hover:text-primary transition-colors duration-300"
             style={{
               fontSize: "clamp(15px, 1.8vw, 17px)",
-              color: "rgba(253,230,138,0.92)",
+              color: isDarkC ? "rgba(253,230,138,0.92)" : "rgba(42,31,14,0.88)",
             }}
           >
             {scenario.headline}
@@ -296,7 +303,7 @@ const ScenarioCard = ({
             className="leading-relaxed mb-5"
             style={{
               fontSize: "14px",
-              color: "rgba(42,31,14,0.5)",
+              color: isDarkC ? "rgba(253,230,138,0.55)" : "rgba(42,31,14,0.60)",
               fontFamily: "'Cormorant Garamond', Georgia, serif",
               fontStyle: "italic",
               lineHeight: 1.85,
@@ -372,9 +379,10 @@ const ScenarioDetail = ({
         tabIndex={-1}
         className="relative w-full max-w-3xl max-h-[92vh] md:max-h-[88vh] overflow-y-auto rounded-t-3xl md:rounded-3xl outline-none"
         style={{
-          background: "hsl(38 55% 91%)",
+          background: isDarkM ? "rgb(18,9,0)" : "hsl(38 55% 92%)",
           border: `1px solid rgba(${scenario.accentRgb},0.2)`,
           boxShadow: `0 0 80px rgba(${scenario.accentRgb},0.08)`,
+          color: isDarkM ? "rgba(253,230,138,0.88)" : "rgba(42,31,14,0.88)",
         }}
       >
         {/* Top accent line */}
@@ -394,7 +402,7 @@ const ScenarioDetail = ({
           style={{
             background: "rgba(139,105,20,0.07)",
             border: "1px solid rgba(251,191,36,0.14)",
-            color: "rgba(42,31,14,0.5)",
+            color: isDarkM ? "rgba(253,230,138,0.65)" : "rgba(42,31,14,0.60)",
           }}
         >
           <X size={16} aria-hidden="true" />
@@ -445,7 +453,7 @@ const ScenarioDetail = ({
                   key={i}
                   style={{
                     fontSize: "clamp(17px, 1.9vw, 19px)",
-                    color: i === 0 ? "rgba(253,230,138,0.90)" : "rgba(42,31,14,0.7)",
+                    color: i === 0 ? (isDarkM ? "rgba(253,230,138,0.90)" : "rgba(42,31,14,0.85)") : (isDarkM ? "rgba(42,31,14,0.7)" : "rgba(42,31,14,0.65)"),
                     fontFamily: "'Cormorant Garamond', Georgia, serif",
                     lineHeight: 1.8,
                     fontWeight: i === 0 ? 500 : 400,
@@ -545,7 +553,7 @@ const ScenarioDetail = ({
                   <p
                     style={{
                       fontSize: "clamp(14px, 1.6vw, 16px)",
-                      color: "rgba(253,230,138,0.82)",
+                      color: isDarkM ? "rgba(253,230,138,0.82)" : "rgba(42,31,14,0.75)",
                       fontFamily: "'Cormorant Garamond', Georgia, serif",
                       lineHeight: 1.855,
                     }}
@@ -570,7 +578,7 @@ const ScenarioDetail = ({
                 <p
                   style={{
                     fontSize: "14px",
-                    color: "rgba(253,230,138,0.60)",
+                    color: isDarkM ? "rgba(253,230,138,0.60)" : "rgba(42,31,14,0.58)",
                     fontFamily: "'Cormorant Garamond', Georgia, serif",
                   }}
                 >
@@ -584,7 +592,7 @@ const ScenarioDetail = ({
                 className="flex items-center gap-2 flex-shrink-0 px-6 py-3 rounded-full font-heading text-[12px] font-bold tracking-wide transition-all duration-300 hover:-translate-y-0.5 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
                 style={{
                   background: `linear-gradient(135deg, rgba(${scenario.accentRgb},0.9), rgba(${scenario.accentRgb},0.7))`,
-                  color: "#0B0F1A",
+                  color: "#FFFFFF",
                   boxShadow: `0 0 20px rgba(${scenario.accentRgb},0.25)`,
                 }}
               >
