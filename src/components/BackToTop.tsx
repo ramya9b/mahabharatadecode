@@ -52,7 +52,7 @@ const BackToTop = () => {
         boxShadow: hovered
           ? "0 8px 24px rgba(212,175,55,0.55)"
           : "0 4px 16px rgba(212,175,55,0.35)",
-        color: "#F5EDDA",
+        color: "#0C0900",
         opacity: visible ? 1 : 0,
         pointerEvents: visible ? "auto" : "none",
         transform: visible ? "translateY(0) scale(1)" : "translateY(12px) scale(0.9)",
