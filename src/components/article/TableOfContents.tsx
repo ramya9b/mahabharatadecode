@@ -136,7 +136,7 @@ const TableOfContents = ({
               fontSize: "11px",
               letterSpacing: "0.2em",
               textTransform: "uppercase",
-              color: "rgba(42,31,14,0.72)",
+              color: "rgba(253,230,138,0.75)",
             }}
           >
             Contents
