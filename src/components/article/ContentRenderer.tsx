@@ -6,7 +6,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 const Para = ({ text }: { text: string }) => (
   <p
     className="text-foreground/75 leading-[1.95] mb-7"
-    style={{ fontSize: "clamp(16px, 1.8vw, 19px)", fontFamily: "'Lora', Georgia, serif" }}
+    style={{ fontSize: "clamp(16px, 1.8vw, 19px)", fontFamily: "'Cormorant Garamond', Georgia, serif" }}
   >
     {text}
   </p>
@@ -49,7 +49,7 @@ const Quote = ({ text }: { text: string }) => (
       className="pl-8 text-foreground/85 italic leading-relaxed"
       style={{
         fontSize: "clamp(18px, 2.2vw, 24px)",
-        fontFamily: "'Playfair Display', 'Cinzel', serif",
+        fontFamily: "'Cinzel', serif",
         fontStyle: "italic",
       }}
     >
@@ -87,7 +87,7 @@ const LessonCallout = ({ text }: { text: string }) => (
       </div>
       <p
         className="text-foreground/85 italic leading-relaxed flex-1"
-        style={{ fontSize: "clamp(15px, 1.6vw, 17px)", fontFamily: "'Lora', Georgia, serif" }}
+        style={{ fontSize: "clamp(15px, 1.6vw, 17px)", fontFamily: "'Cormorant Garamond', Georgia, serif" }}
       >
         {text}
       </p>
@@ -122,7 +122,7 @@ export const PullQuote = ({ text }: { text: string }) => {
           <div className="h-px w-10 bg-primary/30" />
           <span
             className="text-primary/60 text-[10px] tracking-[0.35em] uppercase"
-            style={{ fontFamily: "'Playfair Display', 'Cinzel', serif" }}
+            style={{ fontFamily: "'Cinzel', serif" }}
           >
             Key Insight
           </span>
@@ -132,7 +132,7 @@ export const PullQuote = ({ text }: { text: string }) => {
           className="text-foreground/90 italic leading-relaxed"
           style={{
             fontSize: "clamp(20px, 2.8vw, 30px)",
-            fontFamily: "'Playfair Display', 'Cinzel', serif",
+            fontFamily: "'Cinzel', serif",
             fontStyle: "italic",
           }}
         >
