@@ -54,7 +54,7 @@ const SlokaBlock = ({ sloka }: SlokaBlockProps) => {
             <span className="text-primary/40 text-xs">✦</span>
             <span
               className="text-primary/70 tracking-[0.3em] text-[10px] uppercase"
-              style={{ fontFamily: "'Playfair Display', 'Cinzel', serif" }}
+              style={{ fontFamily: "'Cinzel', serif" }}
             >
               Sacred Verse
             </span>
@@ -70,7 +70,7 @@ const SlokaBlock = ({ sloka }: SlokaBlockProps) => {
               key={i}
               className="leading-[1.8]"
               style={{
-                fontFamily: "'Noto Serif Devanagari', 'Noto Sans Devanagari', 'Siddhanta', 'Sanskrit 2003', 'Playfair Display', 'Cinzel', serif",
+                fontFamily: "'Noto Serif Devanagari', 'Noto Sans Devanagari', 'Siddhanta', 'Sanskrit 2003', 'Cinzel', serif",
                 fontSize: "clamp(18px, 2.5vw, 26px)",
                 color: "rgba(139,98,8,0.9)",
                 unicodeBidi: "normal",
@@ -90,7 +90,7 @@ const SlokaBlock = ({ sloka }: SlokaBlockProps) => {
               className="leading-relaxed text-muted-foreground italic"
               style={{
                 fontSize: "clamp(13px, 1.4vw, 15px)",
-                fontFamily: "'Lora', Georgia, serif",
+                fontFamily: "'Cormorant Garamond', Georgia, serif",
                 letterSpacing: "0.04em",
               }}
             >
@@ -111,7 +111,7 @@ const SlokaBlock = ({ sloka }: SlokaBlockProps) => {
           className="text-foreground/80 leading-relaxed max-w-xl mx-auto"
           style={{
             fontSize: "clamp(15px, 1.7vw, 18px)",
-            fontFamily: "'Lora', Georgia, serif",
+            fontFamily: "'Cormorant Garamond', Georgia, serif",
             fontStyle: "italic",
           }}
         >
