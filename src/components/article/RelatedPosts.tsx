@@ -39,7 +39,7 @@ const RelatedCard = ({ article }: { article: Article }) => {
         {/* Category badge */}
         <span
           className={`absolute top-4 left-4 px-3 py-1.5 rounded-full text-[10px] tracking-[0.18em] uppercase font-medium border backdrop-blur-sm ${catCls}`}
-          style={{ fontFamily: "'Playfair Display', 'Cinzel', serif" }}
+          style={{ fontFamily: "'Cinzel', serif" }}
         >
           {article.category}
         </span>
@@ -68,14 +68,14 @@ const RelatedCard = ({ article }: { article: Article }) => {
         {/* Description */}
         <p
           className="text-muted-foreground leading-relaxed line-clamp-2 mb-4"
-          style={{ fontSize: "14px", fontFamily: "'Lora', Georgia, serif" }}
+          style={{ fontSize: "14px", fontFamily: "'Cormorant Garamond', Georgia, serif" }}
         >
           {article.description}
         </p>
 
         {/* Read link */}
         <span className="flex items-center gap-2 text-primary text-xs font-medium tracking-wide group-hover:gap-3 transition-all duration-300">
-          <span style={{ fontFamily: "'Playfair Display', 'Cinzel', serif" }}>Read Story</span>
+          <span style={{ fontFamily: "'Cinzel', serif" }}>Read Story</span>
           <ArrowRight size={13} className="group-hover:translate-x-0.5 transition-transform" />
         </span>
       </div>
@@ -109,7 +109,7 @@ const RelatedPosts = ({ articles, currentSlug }: RelatedPostsProps) => {
           <Link
             to="/blog"
             className="hidden sm:flex items-center gap-2 text-primary text-sm hover:text-gold-light transition-colors duration-200 group"
-            style={{ fontFamily: "'Playfair Display', 'Cinzel', serif" }}
+            style={{ fontFamily: "'Cinzel', serif" }}
           >
             View all stories
             <ArrowRight
@@ -134,7 +134,7 @@ const RelatedPosts = ({ articles, currentSlug }: RelatedPostsProps) => {
           <Link
             to="/blog"
             className="px-8 py-3 rounded-full glass-card text-foreground text-sm font-medium tracking-wide hover:border-primary/50 hover:text-primary transition-all duration-300"
-            style={{ fontFamily: "'Playfair Display', 'Cinzel', serif" }}
+            style={{ fontFamily: "'Cinzel', serif" }}
           >
             View All Stories →
           </Link>
