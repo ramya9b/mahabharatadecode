@@ -834,13 +834,11 @@ const StoryTeller = () => {
             {/* Story card with 3 tabs */}
             {(loading || story) && (
               <div style={{
-                background: isDark
-                  ? "rgba(13,10,26,0.82)"
-                  : `linear-gradient(160deg, hsl(38 50% 96%) 0%, hsl(28 45% 93%) 100%)`,
+                background: "hsl(var(--card))",
                 border: `1.5px solid ${(selected ? GROUP_COLORS[selected.group] : "#A07820")}50`,
                 borderRadius: "20px",
                 overflow: "hidden",
-                boxShadow: isDark ? `0 8px 40px rgba(0,0,0,0.6)` : "0 8px 40px rgba(0,0,0,0.08)",
+                boxShadow: "0 8px 40px rgba(0,0,0,0.4)",
                 backdropFilter: "blur(12px)",
                 WebkitBackdropFilter: "blur(12px)",
               }}>
@@ -849,8 +847,8 @@ const StoryTeller = () => {
                 {storyComplete && (
                   <div style={{
                     display: "flex",
-                    borderBottom: `1px solid ${isDark ? "rgba(255,255,255,0.08)" : "rgba(160,120,32,0.15)"}`,
-                    background: isDark ? "rgba(255,255,255,0.04)" : "rgba(160,120,32,0.04)",
+                    borderBottom: "1px solid hsl(var(--border))",
+                    background: "hsl(var(--accent))",
                   }}>
                     {([
                       { key: "story",     label: "📖 The Story",    desc: "What happened" },
