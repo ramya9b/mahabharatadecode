@@ -269,7 +269,7 @@ const CharacterModal = ({ char, sceneImage, onStart, onClose }: Props) => {
                   </h2>
                   <div style={{
                     fontFamily:serif, fontSize:"10px", letterSpacing:"0.22em",
-                    textTransform:"uppercase", color:accent, marginTop:"4px", opacity:0.9,
+                    textTransform:"uppercase", color:"rgba(255,255,255,0.72)", marginTop:"4px",
                     whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis",
                   }}>
                     {char.title}
