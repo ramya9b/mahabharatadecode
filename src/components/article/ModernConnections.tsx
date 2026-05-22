@@ -57,7 +57,7 @@ const ConnectionCard = ({
         {/* Example */}
         <p
           className="text-muted-foreground leading-relaxed"
-          style={{ fontSize: "17px", fontFamily: "'Lora', Georgia, serif" }}
+          style={{ fontSize: "17px", fontFamily: "'Cormorant Garamond', Georgia, serif" }}
         >
           {conn.example}
         </p>
