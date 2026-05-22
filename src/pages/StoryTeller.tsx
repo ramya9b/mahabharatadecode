@@ -361,7 +361,7 @@ const StoryTeller = () => {
   const cardBg    = isDark ? "#0D0A1A"            : "hsl(38 45% 96%)";
   const borderClr = isDark ? `${theme.accentColor}50` : "hsl(35 28% 74%)";
 
-  const serif  = "'Cinzel', 'Cinzel Decorative', 'Playfair Display', serif";
+  const serif  = "'Cinzel', 'Cinzel Decorative', 'Cormorant Garamond', Georgia, serif";
   const body   = "'Lora', 'Noto Serif Telugu', 'Noto Serif Devanagari', 'Noto Serif Kannada', serif";
   const deco   = "'Cinzel Decorative', 'Cinzel', serif";
 
