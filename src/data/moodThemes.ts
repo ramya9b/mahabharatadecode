@@ -27,7 +27,7 @@ export const MOOD_THEMES: Record<MoodTheme, ThemeConfig> = {
   war: {
     id: "war",
     label: "War",
-    bgGradient: "linear-gradient(160deg, hsl(0 35% 8%) 0%, hsl(10 45% 12%) 50%, hsl(20 30% 10%) 100%)",
+    bgGradient: "linear-gradient(145deg, #0C0900 0%, #100A00 25%, #080A18 55%, #060410 80%, #0C0900 100%)",
     cardBg: "rgba(60,10,10,0.85)",
     textPrimary: "hsl(30 80% 90%)",
     textMuted: "hsl(20 40% 65%)",
@@ -39,7 +39,7 @@ export const MOOD_THEMES: Record<MoodTheme, ThemeConfig> = {
   divine: {
     id: "divine",
     label: "Divine",
-    bgGradient: "linear-gradient(160deg, hsl(220 55% 8%) 0%, hsl(240 45% 12%) 50%, hsl(200 40% 10%) 100%)",
+    bgGradient: "linear-gradient(145deg, #0C0900 0%, #100A00 25%, #080A18 55%, #060410 80%, #0C0900 100%)",
     cardBg: "rgba(10,20,60,0.85)",
     textPrimary: "hsl(45 90% 92%)",
     textMuted: "hsl(200 50% 72%)",
@@ -51,7 +51,7 @@ export const MOOD_THEMES: Record<MoodTheme, ThemeConfig> = {
   forest: {
     id: "forest",
     label: "Forest",
-    bgGradient: "linear-gradient(160deg, hsl(120 30% 6%) 0%, hsl(140 35% 10%) 50%, hsl(100 25% 8%) 100%)",
+    bgGradient: "linear-gradient(145deg, #0C0900 0%, #100A00 25%, #080A18 55%, #060410 80%, #0C0900 100%)",
     cardBg: "rgba(10,35,15,0.85)",
     textPrimary: "hsl(60 60% 88%)",
     textMuted: "hsl(120 30% 65%)",
@@ -63,7 +63,7 @@ export const MOOD_THEMES: Record<MoodTheme, ThemeConfig> = {
   tragic: {
     id: "tragic",
     label: "Tragic",
-    bgGradient: "linear-gradient(160deg, hsl(30 20% 7%) 0%, hsl(25 30% 10%) 50%, hsl(20 20% 8%) 100%)",
+    bgGradient: "linear-gradient(145deg, #0C0900 0%, #100A00 25%, #080A18 55%, #060410 80%, #0C0900 100%)",
     cardBg: "rgba(35,20,10,0.85)",
     textPrimary: "hsl(35 60% 85%)",
     textMuted: "hsl(30 25% 58%)",
@@ -75,7 +75,7 @@ export const MOOD_THEMES: Record<MoodTheme, ThemeConfig> = {
   gita: {
     id: "gita",
     label: "Gita",
-    bgGradient: "linear-gradient(160deg, hsl(35 50% 10%) 0%, hsl(40 55% 14%) 50%, hsl(30 45% 10%) 100%)",
+    bgGradient: "linear-gradient(145deg, #0C0900 0%, #100A00 25%, #080A18 55%, #060410 80%, #0C0900 100%)",
     cardBg: "rgba(50,35,10,0.85)",
     textPrimary: "hsl(45 90% 94%)",
     textMuted: "hsl(40 50% 70%)",
@@ -87,7 +87,7 @@ export const MOOD_THEMES: Record<MoodTheme, ThemeConfig> = {
   default: {
     id: "default",
     label: "Default",
-    bgGradient: "linear-gradient(160deg, hsl(38 52% 91%) 0%, hsl(28 45% 88%) 100%)",
+    bgGradient: "linear-gradient(145deg, #0C0900 0%, #100A00 25%, #080A18 55%, #060410 80%, #0C0900 100%)",
     cardBg: "hsl(38 45% 94%)",
     textPrimary: "hsl(28 62% 12%)",
     textMuted: "hsl(28 30% 42%)",
