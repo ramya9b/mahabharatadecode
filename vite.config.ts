@@ -14,6 +14,12 @@ export default defineConfig({
     outDir: "dist",
     sourcemap: false,
     chunkSizeWarningLimit: 600,
+    minify: "terser",
+    terserOptions: {
+      compress: { drop_console: true, drop_debugger: true, passes: 2 },
+      mangle: { safari10: true },
+      format: { comments: false },
+    },
     rollupOptions: {
       output: {
         manualChunks: {
