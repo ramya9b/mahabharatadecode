@@ -289,7 +289,7 @@ const CharacterModal = ({ char, sceneImage, onStart, onClose }: Props) => {
             <div style={{padding: isMobile?"16px 20px":"20px 32px", flex:1, display:"flex", flexDirection:"column"}}>
               <div style={{
                 fontFamily:serif, fontSize:"10px", letterSpacing:"0.22em",
-                textTransform:"uppercase", color:`${accent}90`, marginBottom:"12px",
+                textTransform:"uppercase", color:`${accent}CC`, marginBottom:"12px",
               }}>
                 Choose a story
               </div>
@@ -319,7 +319,7 @@ const CharacterModal = ({ char, sceneImage, onStart, onClose }: Props) => {
               </div>
               <div style={{
                 fontFamily:serif, fontSize:"10px", letterSpacing:"0.2em",
-                textTransform:"uppercase", color:`${accent}70`, marginBottom:"8px",
+                textTransform:"uppercase", color:`${accent}BB`, marginBottom:"8px",
               }}>
                 Or ask your own
               </div>
@@ -426,18 +426,16 @@ const CharacterModal = ({ char, sceneImage, onStart, onClose }: Props) => {
                   alt={char.name}
                   style={{
                     position:"absolute",
-                    bottom:0,
+                    top:"50%",
                     left:"50%",
-                    transform:"translateX(-50%)",  /* perfectly centred */
-                    height:"100%",                 /* fills panel height */
-                    maxHeight:"100%",              /* never overflows top */
-                    width:"auto",                  /* auto width keeps aspect ratio */
-                    maxWidth:"100%",               /* never overflows sides */
-                    objectFit:"contain",           /* show full character */
-                    objectPosition:"bottom center",
+                    transform:"translate(-50%, -50%)", /* perfectly centred */
+                    height:"92%",      /* 92% leaves breathing room top+bottom */
+                    width:"auto",      /* natural aspect ratio */
+                    maxWidth:"95%",    /* never overflows sides */
+                    objectFit:"contain",
                     filter:`drop-shadow(0 0 32px ${accent}65) drop-shadow(0 20px 45px rgba(0,0,0,0.65))`,
                     animation:"float-char 5s ease-in-out infinite",
-                    mixBlendMode:"normal",          /* solid — no blending */
+                    mixBlendMode:"normal",
                     zIndex:5,
                   }}
                 />
