@@ -77,7 +77,7 @@ const CharactersCTA = () => (
         style={{
           fontSize: "17px",
           color: "rgba(42,31,14,0.6)",
-          fontFamily: "'Lora', Georgia, serif",
+          fontFamily: "'Cormorant Garamond', Georgia, serif",
           maxWidth: "520px",
         }}
       >
@@ -125,7 +125,7 @@ const CharactersCTA = () => (
           style={{
             fontSize: "14px",
             color: "rgba(42,31,14,0.55)",
-            fontFamily: "'Lora', Georgia, serif",
+            fontFamily: "'Cormorant Garamond', Georgia, serif",
           }}
         >
           One insight from a Mahabharata character every morning. Free.
