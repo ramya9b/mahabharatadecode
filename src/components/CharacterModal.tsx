@@ -425,17 +425,21 @@ const CharacterModal = ({ char, sceneImage, onStart, onClose }: Props) => {
                   src={charImg}
                   alt={char.name}
                   style={{
+                    /* ── Bulletproof image containment ──
+                       max-height + max-width with auto sizing
+                       guarantees the full image always shows,
+                       never overflows any side, always centred  */
                     position:"absolute",
                     top:"50%",
                     left:"50%",
-                    transform:"translate(-50%, -50%)", /* perfectly centred */
-                    height:"92%",      /* 92% leaves breathing room top+bottom */
-                    width:"auto",      /* natural aspect ratio */
-                    maxWidth:"95%",    /* never overflows sides */
-                    objectFit:"contain",
+                    transform:"translate(-50%, -50%)",
+                    maxHeight:"92%",
+                    maxWidth:"90%",
+                    height:"auto",
+                    width:"auto",
+                    display:"block",
                     filter:`drop-shadow(0 0 32px ${accent}65) drop-shadow(0 20px 45px rgba(0,0,0,0.65))`,
                     animation:"float-char 5s ease-in-out infinite",
-                    mixBlendMode:"normal",
                     zIndex:5,
                   }}
                 />
