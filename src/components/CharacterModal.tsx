@@ -261,15 +261,15 @@ const CharacterModal = ({ char, sceneImage, onStart, onClose }: Props) => {
                 </div>
                 <div style={{flex:1, minWidth:0}}>
                   <h2 style={{
-                    fontFamily:serif, fontSize: isMobile?"22px":"clamp(22px,2.4vw,27px)",
-                    fontWeight:700, color:"#F5EEFF", letterSpacing:"0.04em",
+                    fontFamily:serif, fontSize: isMobile?"24px":"clamp(24px,2.6vw,30px)",
+                    fontWeight:700, color:"#FFFFFF", letterSpacing:"0.04em",
                     margin:0, lineHeight:1.1,
                   }}>
                     {char.name}
                   </h2>
                   <div style={{
-                    fontFamily:serif, fontSize:"10px", letterSpacing:"0.22em",
-                    textTransform:"uppercase", color:"rgba(255,255,255,0.72)", marginTop:"4px",
+                    fontFamily:serif, fontSize:"11px", letterSpacing:"0.20em",
+                    textTransform:"uppercase", color:"rgba(255,255,255,0.90)", marginTop:"4px",
                     whiteSpace:"nowrap", overflow:"hidden", textOverflow:"ellipsis",
                   }}>
                     {char.title}
@@ -277,8 +277,8 @@ const CharacterModal = ({ char, sceneImage, onStart, onClose }: Props) => {
                 </div>
               </div>
               <p style={{
-                fontFamily:body, fontSize: isMobile?"13px":"14px",
-                fontStyle:"italic", color:"rgba(210,190,255,0.55)",
+                fontFamily:body, fontSize: isMobile?"15px":"16px",
+                fontStyle:"italic", color:"rgba(225,215,255,0.80)",
                 lineHeight:1.5, margin:0,
               }}>
                 "{char.hook}"
@@ -288,8 +288,8 @@ const CharacterModal = ({ char, sceneImage, onStart, onClose }: Props) => {
             {/* Prompts */}
             <div style={{padding: isMobile?"16px 20px":"20px 32px", flex:1, display:"flex", flexDirection:"column"}}>
               <div style={{
-                fontFamily:serif, fontSize:"10px", letterSpacing:"0.22em",
-                textTransform:"uppercase", color:`${accent}CC`, marginBottom:"12px",
+                fontFamily:serif, fontSize:"11px", letterSpacing:"0.20em",
+                textTransform:"uppercase", color:`${accent}EE`, marginBottom:"14px",
               }}>
                 Choose a story
               </div>
@@ -303,14 +303,14 @@ const CharacterModal = ({ char, sceneImage, onStart, onClose }: Props) => {
                       boxShadow: selectedIdx===i ? `0 4px 20px ${accent}22` : "none",
                     }}>
                     <div style={{
-                      fontFamily:serif, fontSize:"10px", letterSpacing:"0.13em",
+                      fontFamily:serif, fontSize:"11px", letterSpacing:"0.12em",
                       textTransform:"uppercase",
-                      color: selectedIdx===i ? accent : "rgba(200,160,255,0.4)",
+                      color: selectedIdx===i ? accent : "rgba(220,200,255,0.70)",
                       marginBottom:"4px",
                     }}>{p.label}</div>
                     <div style={{
-                      fontFamily:body, fontSize:"13px", lineHeight:1.5,
-                      color: selectedIdx===i ? "#EEE0FF" : "rgba(200,185,255,0.65)",
+                      fontFamily:body, fontSize:"15px", lineHeight:1.6,
+                      color: selectedIdx===i ? "#EEE0FF" : "rgba(225,210,255,0.82)",
                     }}>
                       {p.request.slice(0, isMobile?72:90)}…
                     </div>
@@ -318,8 +318,8 @@ const CharacterModal = ({ char, sceneImage, onStart, onClose }: Props) => {
                 ))}
               </div>
               <div style={{
-                fontFamily:serif, fontSize:"10px", letterSpacing:"0.2em",
-                textTransform:"uppercase", color:`${accent}BB`, marginBottom:"8px",
+                fontFamily:serif, fontSize:"11px", letterSpacing:"0.18em",
+                textTransform:"uppercase", color:`${accent}EE`, marginBottom:"10px",
               }}>
                 Or ask your own
               </div>
