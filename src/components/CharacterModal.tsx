@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react";
+import { Volume2, VolumeX } from "lucide-react";
+import { useCharacterAudio } from "@/hooks/useCharacterAudio";
 import type { StoryCharacter } from "@/data/storyCharacters";
-import { GROUP_COLORS } from "@/data/storyCharacters";
 
 interface Props {
   char: StoryCharacter;
@@ -44,7 +45,16 @@ const CharacterModal = ({ char, sceneImage, onStart, onClose }: Props) => {
   const [selectedIdx, setSelectedIdx] = useState<number | null>(null);
   const [customPrompt, setCustomPrompt]  = useState("");
   const [isMobile, setIsMobile]          = useState(window.innerWidth < 640);
-  const accent  = GROUP_COLORS[char.group];
+  const [muted,  setMuted]               = useState(false);
+  const accent  = char.accentHex || "#D4AF37";
+
+  /* ── Audio — auto-plays on open, stops on close ── */
+  const { toggleMute } = useCharacterAudio(char.id, true);
+
+  const handleMuteToggle = () => {
+    const next = toggleMute();
+    setMuted(next);
+  };
   const serif   = "'Cinzel',serif";
   const body    = "'Cormorant Garamond',Georgia,serif";
   const charImg = CHARACTER_IMAGES[char.id] ?? null;
