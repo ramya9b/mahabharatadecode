@@ -547,10 +547,10 @@ const StoryTeller = () => {
           background: "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(212,175,55,0.12) 0%, transparent 70%)",
         }} />
 
-        <p style={{ fontFamily: serif, fontSize: "11px", letterSpacing: "0.35em", color: "rgba(212,175,55,0.65)", textTransform: "uppercase", marginBottom: "16px" }}>
+        <p style={{ fontFamily: serif, fontSize: "11px", letterSpacing: "0.35em", color: isDark ? "rgba(212,175,55,0.65)", textTransform: "uppercase", marginBottom: "16px" }}>
           MahabharataDecoded presents
         </p>
-        <h1 style={{ fontFamily: serif, fontSize: "clamp(2rem, 6vw, 3.5rem)", fontWeight: 700, color: "#F5E6C8", lineHeight: 1.1, marginBottom: "20px" }}>
+        <h1 style={{ fontFamily: serif, fontSize: "clamp(2rem, 6vw, 3.5rem)", fontWeight: 700, color: isDark ? "#F5E6C8" : "#2A1506", lineHeight: 1.1, marginBottom: "20px" }}>
           The Story Teller
         </h1>
         <p style={{ fontFamily: body, fontSize: "clamp(1rem, 2.5vw, 1.2rem)", color: "rgba(245,230,200,0.65)", maxWidth: "560px", margin: "0 auto 40px", lineHeight: 1.7 }}>
@@ -569,7 +569,7 @@ const StoryTeller = () => {
                   padding: "6px 16px", borderRadius: "99px", border: "none", cursor: "pointer",
                   fontFamily: serif, fontSize: "13px",
                   background: language === l.value ? gold : "transparent",
-                  color: language === l.value ? "#2A1506" : "rgba(245,230,200,0.65)",
+                  color: language === l.value ? "#2A1506" : (isDark ? "rgba(245,230,200,0.65)" : "rgba(42,31,14,0.65)"),
                   transition: "all 0.2s",
                 }}
               >
@@ -589,7 +589,7 @@ const StoryTeller = () => {
                   padding: "6px 14px", borderRadius: "99px", border: "none", cursor: "pointer",
                   fontFamily: serif, fontSize: "13px",
                   background: tone === t.value ? gold : "transparent",
-                  color: tone === t.value ? "#2A1506" : "rgba(245,230,200,0.65)",
+                  color: tone === t.value ? "#2A1506" : (isDark ? "rgba(245,230,200,0.65)" : "rgba(42,31,14,0.65)"),
                   transition: "all 0.2s",
                 }}
               >
