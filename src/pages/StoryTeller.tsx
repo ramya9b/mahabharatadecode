@@ -348,18 +348,19 @@ const StoryTeller = () => {
 
   /* ── Theme-aware styles — solid colors, no alpha issues on mobile ── */
   const theme     = MOOD_THEMES[currentTheme];
-  const isDark    = currentTheme !== "default";
-  const gold      = isDark ? theme.highlightColor : "#A07820";
-  const goldDark  = isDark ? theme.accentColor    : "#6B4E10";
-  const parchment = isDark ? "transparent"        : "hsl(38 52% 91%)";
+  const isDark    = true; /* StoryTeller always uses dark Golden Rainbow */
+  /* StoryTeller always dark — Golden Rainbow cinematic theme */
+  const gold      = currentTheme !== "default" ? theme.highlightColor : "#FBBF24";
+  const goldDark  = currentTheme !== "default" ? theme.accentColor    : "#D97706";
+  const parchment = "transparent";
 
-  /* High contrast text — works on any background */
-  const inkDark   = isDark ? "#F0EAFF"            : "#1C0E00";
-  const inkMuted  = isDark ? "#9B8AB8"            : "#6B4E10";
+  /* Dark text always */
+  const inkDark   = "#FDE68A";
+  const inkMuted  = "rgba(253,230,138,0.55)";
 
-  /* Solid card backgrounds — no transparency issues on mobile */
-  const cardBg    = isDark ? "#0D0A1A"            : "hsl(38 45% 96%)";
-  const borderClr = isDark ? `${theme.accentColor}50` : "hsl(35 28% 74%)";
+  /* Dark card backgrounds always */
+  const cardBg    = "rgba(22,11,0,0.75)";
+  const borderClr = currentTheme !== "default" ? `${theme.accentColor}50` : "rgba(251,191,36,0.22)";
 
   const serif  = "'Cinzel', 'Cinzel Decorative', 'Cormorant Garamond', Georgia, serif";
   const body   = "'Cormorant Garamond', 'Noto Serif Telugu', 'Noto Serif Devanagari', 'Noto Serif Kannada', Georgia, serif";
@@ -482,14 +483,15 @@ const StoryTeller = () => {
   return (
     <div style={{
       minHeight: "100vh",
-      background: isDark ? theme.bgGradient : parchment,
+      background: "linear-gradient(145deg, #0C0900 0%, #100A00 25%, #080A18 55%, #060410 80%, #0C0900 100%)",
       color: inkDark,
       transition: "background 0.8s ease, color 0.5s ease",
       position: "relative",
     }}>
 
       {/* ── SCENE BACKGROUND — Left-gradient for all groups ── */}
-      {isDark && (
+      {/* Golden Rainbow always-on background glows */}
+      {(
         <div style={{ position: "fixed", inset: 0, zIndex: 0, pointerEvents: "none" }}>
           {/* Golden Rainbow base */}
           <div style={{ position:"absolute", inset:0, background:"linear-gradient(145deg,#0C0900 0%,#100A00 25%,#080A18 55%,#060410 80%,#0C0900 100%)" }} />
@@ -513,7 +515,9 @@ const StoryTeller = () => {
         </div>
       )}
       <div style={{ position: "relative", zIndex: 1 }}>
+      <div className="dark">
       <Navbar />
+      </div>
 
       {/* ── HERO ── */}
       <section
