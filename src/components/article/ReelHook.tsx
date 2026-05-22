@@ -36,7 +36,7 @@ const ReelHook = ({ hook, supporting }: ReelHookProps) => {
             <div className="h-px w-8 bg-primary/30" />
             <span
               className="text-primary/60 text-[10px] tracking-[0.35em] uppercase"
-              style={{ fontFamily: "'Playfair Display', 'Cinzel', serif" }}
+              style={{ fontFamily: "'Cinzel', serif" }}
             >
               Share This Story
             </span>
@@ -59,7 +59,7 @@ const ReelHook = ({ hook, supporting }: ReelHookProps) => {
             className="text-muted-foreground leading-relaxed max-w-lg mx-auto"
             style={{
               fontSize: "clamp(17px, 1.9vw, 19px)",
-              fontFamily: "'Lora', Georgia, serif",
+              fontFamily: "'Cormorant Garamond', Georgia, serif",
             }}
           >
             {supporting}
