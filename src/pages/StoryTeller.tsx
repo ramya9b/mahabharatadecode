@@ -351,8 +351,8 @@ const StoryTeller = () => {
   const { theme: globalTheme } = useTheme();
   const isGlobalDark = globalTheme === "dark";
   const theme     = MOOD_THEMES[currentTheme];
-  /* Dark if global theme is dark OR if a mood character is selected */
-  const isDark    = isGlobalDark || currentTheme !== "default";
+  /* isDark follows ONLY the global theme toggle — consistent with all pages */
+  const isDark    = isGlobalDark;
   /* Colours — adapt to global theme + mood theme */
   const gold      = isDark
     ? (currentTheme !== "default" ? theme.highlightColor : "#FBBF24")
