@@ -358,27 +358,49 @@ const CharacterModal = ({ char, sceneImage, onStart, onClose }: Props) => {
               flex:"0 0 42%",
               position:"relative",
               overflow:"hidden",
-              minHeight:"560px",
+              minHeight:"480px",
               isolation:"isolate",
               display:"flex",
               alignItems:"center",
               justifyContent:"center",
+              paddingBottom:"20px",
             }}>
-              {/* Scene image — dimmed */}
+              {/* Background — 3 layers:
+                 1. Character image blurred+dimmed (always present)
+                 2. Scene image on top if available
+                 3. Accent colour radial overlay for mood
+              */}
               <div style={{
                 position:"absolute", inset:0, zIndex:0,
                 borderRadius:"0 24px 24px 0",
                 overflow:"hidden",
                 background:"#050510",
               }}>
+                {/* Layer 1 — character own image, blurred → always rich bg */}
+                {charImg && (
+                  <div style={{
+                    position:"absolute", inset:"-10%",
+                    backgroundImage:`url('${charImg}')`,
+                    backgroundSize:"cover",
+                    backgroundPosition:"center top",
+                    filter:"brightness(0.18) blur(18px) saturate(1.2)",
+                    transform:"scale(1.15)",
+                  }} />
+                )}
+                {/* Layer 2 — scene image on top if provided */}
                 {sceneImage && (
                   <div style={{
                     position:"absolute", inset:0,
                     backgroundImage:`url('${sceneImage}')`,
                     backgroundSize:"cover", backgroundPosition:"center right",
-                    filter:"brightness(0.25) saturate(0.5)",
+                    filter:"brightness(0.22) saturate(0.6)",
                   }} />
                 )}
+                {/* Layer 3 — accent colour vignette for mood */}
+                <div style={{
+                  position:"absolute", inset:0,
+                  background:`radial-gradient(ellipse 80% 70% at 60% 40%, ${accent}14 0%, transparent 70%)`,
+                }} />
               </div>
 
               {/* Subtle left fade — blends panels */}
