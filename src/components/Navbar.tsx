@@ -84,7 +84,7 @@ const Navbar = () => {
 
           {/* Logo */}
           <Link to="/" className="flex items-center gap-2 flex-shrink-0" aria-label="MahabharataDecoded — home">
-            <div className="w-7 h-7 rounded-full bg-gradient-to-br from-gold-light to-gold-dark flex items-center justify-center" aria-hidden="true">
+            <div style={{ width:"28px", height:"28px", borderRadius:"50%", background:"linear-gradient(135deg,#FBBF24,#34D399,#38BDF8)", display:"flex", alignItems:"center", justifyContent:"center" }} aria-hidden="true">
               <span className="text-xs font-bold text-primary-foreground" style={{ fontFamily: "'Cinzel', serif" }}>M</span>
             </div>
             <span className="text-sm tracking-[0.18em] gold-text hidden sm:block i18n-safe" style={{ fontFamily: "'Cinzel', serif" }}>
