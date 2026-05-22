@@ -69,7 +69,7 @@ const AboutHero = () => {
           style={{
             fontSize: "clamp(18px, 2.2vw, 22px)",
             color: "rgba(42,31,14,0.65)",
-            fontFamily: "'Lora', Georgia, serif",
+            fontFamily: "'Cormorant Garamond', Georgia, serif",
             fontStyle: "italic",
             maxWidth: "600px",
             lineHeight: 1.8,
@@ -122,7 +122,7 @@ const MissionSection = () => {
                   fontSize: i === 1
                     ? "clamp(26px, 3.5vw, 40px)"
                     : "clamp(18px, 2.2vw, 22px)",
-                  fontFamily: "'Lora', Georgia, serif",
+                  fontFamily: "'Cormorant Garamond', Georgia, serif",
                   color: i === 1
                     ? "rgba(212,175,55,0.9)"
                     : "rgba(42,31,14,0.75)",
@@ -197,7 +197,7 @@ const StatCard = ({ value, suffix = "", label, desc }: { value: number; suffix?:
         <span className="gold-text">{suffix}</span>
       </div>
       <p className="font-heading text-foreground text-sm tracking-[0.12em] uppercase mb-1">{label}</p>
-      <p className="text-muted-foreground text-[13px]" style={{ fontFamily: "'Lora', Georgia, serif" }}>{desc}</p>
+      <p className="text-muted-foreground text-[13px]" style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}>{desc}</p>
     </div>
   );
 };
@@ -242,7 +242,7 @@ const OriginSection = () => {
               <div className="absolute bottom-0 left-0 right-0 p-8">
                 <p className="font-heading text-[10px] tracking-[0.3em] uppercase text-primary/50 mb-2">The character that started everything</p>
                 <p className="font-heading text-xl text-foreground mb-1">Karna</p>
-                <p className="text-muted-foreground text-sm" style={{ fontFamily: "'Lora', Georgia, serif", fontStyle: "italic" }}>
+                <p className="text-muted-foreground text-sm" style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontStyle: "italic" }}>
                   "The greatest warrior no one talks about enough."
                 </p>
               </div>
@@ -273,7 +273,7 @@ const OriginSection = () => {
                   className="leading-relaxed"
                   style={{
                     fontSize: "clamp(17px, 1.9vw, 19px)",
-                    fontFamily: "'Lora', Georgia, serif",
+                    fontFamily: "'Cormorant Garamond', Georgia, serif",
                     color: i === 0 ? "rgba(42,31,14,0.92)" : "rgba(42,31,14,0.7)",
                     fontWeight: i === 0 ? 500 : 400,
                     fontStyle: i === 0 ? "italic" : "normal",
@@ -365,7 +365,7 @@ const PillarsSection = () => {
                 </h3>
 
                 {/* Body */}
-                <p className="text-muted-foreground leading-relaxed mb-5" style={{ fontSize: "17px", fontFamily: "'Lora', Georgia, serif" }}>
+                <p className="text-muted-foreground leading-relaxed mb-5" style={{ fontSize: "17px", fontFamily: "'Cormorant Garamond', Georgia, serif" }}>
                   {body}
                 </p>
 
@@ -410,7 +410,7 @@ const ProcessSection = () => {
             How Every Article<br />
             <span className="gold-text">Gets Made</span>
           </h2>
-          <p className="text-muted-foreground mt-4 leading-relaxed max-w-lg" style={{ fontSize: "17px", fontFamily: "'Lora', Georgia, serif" }}>
+          <p className="text-muted-foreground mt-4 leading-relaxed max-w-lg" style={{ fontSize: "17px", fontFamily: "'Cormorant Garamond', Georgia, serif" }}>
             Each piece goes through five stages before it's published — a process
             designed to produce depth, not volume.
           </p>
@@ -444,7 +444,7 @@ const ProcessSection = () => {
                     <span className="font-heading text-[10px] tracking-[0.3em] text-primary/40">{num}</span>
                     <h3 className="font-heading font-semibold text-foreground text-lg group-hover:text-primary transition-colors duration-300">{title}</h3>
                   </div>
-                  <p className="text-muted-foreground leading-relaxed" style={{ fontSize: "17px", fontFamily: "'Lora', Georgia, serif" }}>
+                  <p className="text-muted-foreground leading-relaxed" style={{ fontSize: "17px", fontFamily: "'Cormorant Garamond', Georgia, serif" }}>
                     {body}
                   </p>
                 </div>
@@ -484,7 +484,7 @@ const PhilosophySection = () => {
         <p className="font-heading mb-4" style={{ fontSize: "clamp(18px, 2.5vw, 26px)", color: "rgba(212,175,55,0.8)", lineHeight: 1.85, letterSpacing: "0.06em" }}>
           यदा यदा हि धर्मस्य ग्लानिर्भवति भारत
         </p>
-        <p className="text-muted-foreground italic mb-10" style={{ fontSize: "14px", fontFamily: "'Lora', Georgia, serif", letterSpacing: "0.04em" }}>
+        <p className="text-muted-foreground italic mb-10" style={{ fontSize: "14px", fontFamily: "'Cormorant Garamond', Georgia, serif", letterSpacing: "0.04em" }}>
           Yada yada hi dharmasya glanir bhavati bharata
         </p>
 
@@ -501,7 +501,7 @@ const PhilosophySection = () => {
         {/* Site's interpretation */}
         <div className="mt-12 max-w-2xl mx-auto">
           <div className="h-px w-16 mx-auto mb-8" style={{ background: "rgba(212,175,55,0.2)" }} />
-          <p className="leading-relaxed" style={{ fontSize: "clamp(17px, 2vw, 20px)", color: "rgba(42,31,14,0.6)", fontFamily: "'Lora', Georgia, serif", fontStyle: "italic" }}>
+          <p className="leading-relaxed" style={{ fontSize: "clamp(17px, 2vw, 20px)", color: "rgba(42,31,14,0.6)", fontFamily: "'Cormorant Garamond', Georgia, serif", fontStyle: "italic" }}>
             This is our operating principle. Every time a person faces a real choice —
             in their career, their relationships, their identity — and feels unequipped to
             make it: that is the moment the Mahabharata was written for.
@@ -550,7 +550,7 @@ const ValuesSection = () => {
                   {title}
                 </h3>
               </div>
-              <p className="text-muted-foreground leading-relaxed pl-7" style={{ fontSize: "14px", fontFamily: "'Lora', Georgia, serif" }}>
+              <p className="text-muted-foreground leading-relaxed pl-7" style={{ fontSize: "14px", fontFamily: "'Cormorant Garamond', Georgia, serif" }}>
                 {body}
               </p>
             </div>
@@ -598,7 +598,7 @@ const CreatorSection = () => {
               {/* Meta */}
               <div className="text-center lg:text-left">
                 <p className="font-heading font-bold text-foreground text-xl mb-1">MahabharataDecoded</p>
-                <p className="text-muted-foreground text-sm" style={{ fontFamily: "'Lora', Georgia, serif", fontStyle: "italic" }}>
+                <p className="text-muted-foreground text-sm" style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontStyle: "italic" }}>
                   Founded 2026
                 </p>
               </div>
@@ -624,7 +624,7 @@ const CreatorSection = () => {
                 <p key={i} className="leading-relaxed"
                   style={{
                     fontSize: "clamp(17px, 1.9vw, 19px)",
-                    fontFamily: "'Lora', Georgia, serif",
+                    fontFamily: "'Cormorant Garamond', Georgia, serif",
                     color: i === 0 ? "rgba(42,31,14,0.8)" : "rgba(42,31,14,0.62)",
                   }}>
                   {para}
@@ -660,7 +660,7 @@ const AboutCTA = () => {
         <h2 className="font-heading font-bold mb-5 leading-tight" style={{ fontSize: "clamp(30px, 4vw, 48px)" }}>
           Ready to Decode<br /><span className="gold-text">the Epic?</span>
         </h2>
-        <p className="text-muted-foreground leading-relaxed mb-10 mx-auto" style={{ fontSize: "17px", fontFamily: "'Lora', Georgia, serif", maxWidth: "420px" }}>
+        <p className="text-muted-foreground leading-relaxed mb-10 mx-auto" style={{ fontSize: "17px", fontFamily: "'Cormorant Garamond', Georgia, serif", maxWidth: "420px" }}>
           Start with the articles. Explore the characters.
           And subscribe for one piece of ancient wisdom delivered every morning.
         </p>
@@ -681,7 +681,7 @@ const AboutCTA = () => {
           <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(to right, transparent, rgba(212,175,55,0.4), transparent)" }} />
           <Users size={20} className="text-primary mx-auto mb-3" />
           <p className="font-heading font-semibold text-foreground mb-1" style={{ fontSize: "17px" }}>Join 12,000+ Readers</p>
-          <p className="text-muted-foreground mb-5 text-sm" style={{ fontFamily: "'Lora', Georgia, serif" }}>
+          <p className="text-muted-foreground mb-5 text-sm" style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}>
             One ancient insight in your inbox. Every morning. Free forever.
           </p>
           <div className="flex gap-2">
