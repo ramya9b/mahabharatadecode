@@ -171,11 +171,16 @@
 
 @layer components {
   .glass-card {
-    background: rgba(245, 237, 218, 0.72);
+    background: rgba(22, 11, 0, 0.82);   /* Golden Rainbow dark card */
     border: 1px solid rgba(251, 191, 36, 0.18);
-    backdrop-filter: blur(12px);
-    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(14px);
+    -webkit-backdrop-filter: blur(14px);
     border-radius: 1rem;
+    transition: border-color 0.3s ease, background 0.3s ease;
+  }
+  .glass-card:hover {
+    background: rgba(28, 14, 0, 0.90);
+    border-color: rgba(251, 191, 36, 0.32);
   }
 
   .hover-lift {
