@@ -201,8 +201,9 @@ const CharacterModal = ({ char, sceneImage, onStart, onClose }: Props) => {
                 <img src={charImg} alt={char.name} style={{
                   position:"absolute", bottom:0, left:"50%",
                   transform:"translateX(-50%)",
-                  height:"215px", width:"100%", maxWidth:"100%",
-                  objectFit:"cover", objectPosition:"top center",
+                  height:"215px", width:"auto", maxWidth:"100%",
+                  objectFit:"contain", objectPosition:"bottom center",
+                  mixBlendMode:"normal",
                   filter:`drop-shadow(0 0 24px ${accent}70) drop-shadow(0 8px 20px rgba(0,0,0,0.7))`,
                   animation:"float-char 4s ease-in-out infinite",
                   zIndex:3,
@@ -427,20 +428,17 @@ const CharacterModal = ({ char, sceneImage, onStart, onClose }: Props) => {
                     position:"absolute",
                     bottom:0,
                     left:"50%",
-                    /* Contained within the right panel box */
-                    height:"100%",
-                    maxHeight:"100%",
-                    width:"100%",
-                    maxWidth:"100%",
-                    objectFit:"cover",
-                    objectPosition:"top center",
+                    transform:"translateX(-50%)",  /* perfectly centred */
+                    height:"100%",                 /* fills panel height */
+                    maxHeight:"100%",              /* never overflows top */
+                    width:"auto",                  /* auto width keeps aspect ratio */
+                    maxWidth:"100%",               /* never overflows sides */
+                    objectFit:"contain",           /* show full character */
                     objectPosition:"bottom center",
-                    /* Shift right slightly for balance */
-                    transform:"translateX(-45%) scale(1.0)",
                     filter:`drop-shadow(0 0 32px ${accent}65) drop-shadow(0 20px 45px rgba(0,0,0,0.65))`,
                     animation:"float-char 5s ease-in-out infinite",
-                    mixBlendMode: "screen" as const,
-                    zIndex:5,   /* ABOVE all overlays */
+                    mixBlendMode:"normal",          /* solid — no blending */
+                    zIndex:5,
                   }}
                 />
               )}
