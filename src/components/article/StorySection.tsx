@@ -74,7 +74,7 @@ const StoryBlock = ({
               fontSize: i === 0 && block.section === "introduction"
                 ? "clamp(17px, 1.9vw, 21px)"
                 : "clamp(16px, 1.8vw, 19px)",
-              fontFamily: "'Lora', Georgia, serif",
+              fontFamily: "'Cormorant Garamond', Georgia, serif",
             }}
           >
             {/* Italic direct speech detection */}
