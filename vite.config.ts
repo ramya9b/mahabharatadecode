@@ -48,11 +48,7 @@ export default defineConfig({
   test: {
     globals: true,
     environment: "jsdom",
-    esbuild: {
-    pure: ["console.log", "console.warn", "console.debug"],
-    legalComments: "none",
-  },
-  resolve: {
+    resolve: {
       alias: {
         "@": path.resolve(__dirname, "./src"),
       },
