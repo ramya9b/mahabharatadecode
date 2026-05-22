@@ -354,13 +354,9 @@ const StoryTeller = () => {
   /* isDark follows ONLY the global theme toggle — consistent with all pages */
   const isDark    = isGlobalDark;
   /* Colours — adapt to global theme + mood theme */
-  const gold      = isDark
-    ? (currentTheme !== "default" ? theme.highlightColor : "#FBBF24")
-    : "#D97706";
-  const goldDark  = isDark
-    ? (currentTheme !== "default" ? theme.accentColor : "#D97706")
-    : "#92400E";
-  const parchment = isDark ? "transparent" : "hsl(38 52% 91%)";
+  const gold      = currentTheme !== "default" ? theme.highlightColor : "hsl(var(--primary))";
+  const goldDark  = currentTheme !== "default" ? theme.accentColor : "hsl(var(--primary))";
+  const parchment = "hsl(var(--background))";
 
   /* Text colours */
   const inkDark   = "hsl(var(--foreground))";
@@ -439,7 +435,7 @@ const StoryTeller = () => {
           fontSize: "clamp(2.2rem, 7vw, 4.5rem)",
           fontWeight: 700, color: "hsl(var(--foreground))", lineHeight: 1.15,
           marginBottom: "20px",
-          textShadow: isDark ? "0 0 60px rgba(212,175,55,0.4), 0 2px 4px rgba(0,0,0,0.5)" : "none",
+          textShadow: "0 0 60px rgba(212,175,55,0.3)",
           letterSpacing: "0.04em",
         }}>
           The Story Teller
@@ -748,20 +744,20 @@ const StoryTeller = () => {
                     padding: "12px 16px", borderRadius: "10px", textAlign: "left", cursor: "pointer",
                     background: activePromptIdx === i
                       ? GROUP_COLORS[selected.group] + "25"
-                      : isDark ? "rgba(255,255,255,0.06)" : "rgba(160,120,32,0.04)",
+                      : "hsl(var(--accent))",
                     border: `1.5px solid ${activePromptIdx === i
                       ? GROUP_COLORS[selected.group]
-                      : isDark ? "rgba(255,255,255,0.12)" : "rgba(160,120,32,0.2)"}`,
+                      : "hsl(var(--border))"}`,
                     transition: "all 0.2s",
                     fontFamily: body, fontSize: "14px",
                     color: activePromptIdx === i
                       ? GROUP_COLORS[selected.group]
-                      : isDark ? "rgba(255,255,255,0.85)" : inkDark,
+                      : "hsl(var(--foreground))",
                   }}
                 >
                   <span style={{
                     fontFamily: serif, fontSize: "11px", letterSpacing: "0.1em",
-                    color: isDark ? "rgba(255,255,255,0.45)" : inkMuted,
+                    color: "hsl(var(--muted-foreground))",
                     display: "block", marginBottom: "2px", textTransform: "uppercase"
                   }}>
                     {p.label}
