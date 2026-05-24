@@ -173,13 +173,15 @@ const WisdomHero = () => {
    DOMAIN TABS
 ────────────────────────────────────────────── */
 const DomainTabs = ({
-
   active,
   onChange,
 }: {
   active: Domain;
   onChange: (d: Domain) => void;
-}) => (
+}) => {
+  const { theme: themeF } = useTheme();
+  const isDarkF = themeF === "dark";
+  return (
   <div
     className="sticky z-30 bg-background/90 backdrop-blur-md border-b border-border/30 py-4"
     style={{ top: "56px" }}
@@ -227,7 +229,8 @@ const DomainTabs = ({
                 {getScenariosByDomain(domain).length}
               </span>
             </button>
-          );
+  );
+};
         })}
       </div>
     </div>
