@@ -229,13 +229,13 @@ const DomainTabs = ({
                 {getScenariosByDomain(domain).length}
               </span>
             </button>
-  );
-};
-        })}
+            );
+          })}
       </div>
     </div>
   </div>
-);
+  );
+};
 
 /* ──────────────────────────────────────────────
    SCENARIO CARD (grid item)
