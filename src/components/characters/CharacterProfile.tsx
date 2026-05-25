@@ -11,8 +11,7 @@ interface CharacterProfileProps {
 }
 
 const CharacterProfile = ({ character, index }: CharacterProfileProps) => {
-  const imgRef = useScrollReveal<HTMLDivElement>();
-  const contentRef = useScrollReveal<HTMLDivElement>();
+  const sectionRef = useScrollReveal<HTMLElement>();
   const image = resolveImage(character.imageKey);
   const isEven = index % 2 === 0;
 
@@ -51,7 +50,7 @@ const CharacterProfile = ({ character, index }: CharacterProfileProps) => {
         >
           {/* ── Image side ── */}
           <div
-            ref={imgRef}
+            ref={sectionRef}
             className={`char-reveal ${isEven ? "" : "lg:col-start-2"}`}
           >
             <div
@@ -124,7 +123,7 @@ const CharacterProfile = ({ character, index }: CharacterProfileProps) => {
 
           {/* ── Content side ── */}
           <div
-            ref={contentRef}
+            
             className={`stagger-children ${isEven ? "" : "lg:col-start-1 lg:row-start-1"}`}
             style={{ transitionDelay: "100ms" }}
           >
