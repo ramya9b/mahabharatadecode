@@ -365,7 +365,15 @@ const StoryTeller = () => {
   const borderClr = currentTheme !== "default" ? `${theme.accentColor}50` : "hsl(var(--border))";
 
   const serif  = "'Cinzel', 'Cinzel Decorative', 'Cormorant Garamond', Georgia, serif";
-  const body   = "'Cormorant Garamond', 'Noto Serif Telugu', 'Noto Serif Devanagari', 'Noto Serif Kannada', Georgia, serif";
+  const body   = language === "en"
+    ? "'Cormorant Garamond', Georgia, serif"
+    : language === "te"
+    ? "'Cormorant Garamond', 'Noto Serif Telugu', Georgia, serif"
+    : language === "hi"
+    ? "'Cormorant Garamond', 'Noto Serif Devanagari', Georgia, serif"
+    : language === "kn"
+    ? "'Cormorant Garamond', 'Noto Serif Kannada', Georgia, serif"
+    : "'Cormorant Garamond', Georgia, serif";
   const deco   = "'Cinzel Decorative', 'Cinzel', serif";
 
   /* ── Cinematic Opening Screen ── */
