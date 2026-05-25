@@ -1,7 +1,7 @@
 import { Link } from "react-router-dom";
-import krishnaImg from "@/assets/krishna.jpg";
-import karnaImg   from "@/assets/karna.jpg";
-import arjunaImg  from "@/assets/arjuna.jpg";
+import krishnaImg from "@/assets/krishna.webp";
+import karnaImg   from "@/assets/karna.webp";
+import arjunaImg  from "@/assets/arjuna.webp";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const stories = [
