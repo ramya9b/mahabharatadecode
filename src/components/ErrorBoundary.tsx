@@ -27,13 +27,9 @@ class ErrorBoundary extends Component<Props, State> {
   componentDidCatch(error: Error, info: ErrorInfo) {
     this.setState({ errorInfo: info });
     this.props.onError?.(error, info);
-    // In production, you would send this to your error monitoring service (e.g. Sentry)
-    if (import.meta.env.DEV) {
-      console.group("🔴 ErrorBoundary caught an error");
-      console.error("Error:", error);
-      console.error("Component stack:", info.componentStack);
-      console.groupEnd();
-    }
+    // Always log to console so runtime errors are diagnosable in production
+    console.error("[MahabharataDecoded] Runtime error:", error);
+    console.error("[MahabharataDecoded] Component stack:", info.componentStack);
   }
 
   handleReset = () => {
@@ -44,100 +40,122 @@ class ErrorBoundary extends Component<Props, State> {
     if (this.state.hasError) {
       if (this.props.fallback) return this.props.fallback;
 
+      const showDetails = import.meta.env.DEV;
+
       return (
         <div
           role="alert"
           aria-live="assertive"
           data-testid="error-boundary-fallback"
           style={{
-            minHeight: "60vh",
+            minHeight: "100vh",
+            width: "100%",
             display: "flex",
             flexDirection: "column",
             alignItems: "center",
             justifyContent: "center",
             padding: "48px 24px",
             textAlign: "center",
-            background: "hsl(38 55% 91%)",
+            background:
+              "linear-gradient(160deg, hsl(var(--background)) 0%, hsl(var(--card)) 100%)",
+            color: "hsl(var(--foreground))",
           }}
         >
+          {/* Decorative rainbow bar */}
+          <div
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              height: "3px",
+              background:
+                "linear-gradient(90deg,#FBBF24,#A3E635,#34D399,#38BDF8,#A78BFA,#F472B6)",
+            }}
+            aria-hidden="true"
+          />
+
           {/* Icon */}
           <div
             style={{
-              width: "64px",
-              height: "64px",
+              width: "72px",
+              height: "72px",
               borderRadius: "50%",
-              background: "rgba(229,57,53,0.12)",
-              border: "1px solid rgba(229,57,53,0.25)",
+              background: "rgba(229,57,53,0.10)",
+              border: "1px solid rgba(229,57,53,0.30)",
               display: "flex",
               alignItems: "center",
               justifyContent: "center",
-              marginBottom: "24px",
+              marginBottom: "28px",
             }}
           >
-            <AlertTriangle size={28} style={{ color: "#E53935" }} aria-hidden="true" />
+            <AlertTriangle size={30} style={{ color: "#E53935" }} aria-hidden="true" />
           </div>
 
-          {/* Heading */}
+          {/* Heading — uses theme foreground for guaranteed contrast */}
           <h1
             style={{
               fontFamily: "'Cinzel', serif",
-              fontSize: "clamp(22px, 4vw, 32px)",
+              fontSize: "clamp(24px, 4vw, 36px)",
               fontWeight: 700,
-              color: "rgba(253,230,138,0.92)",
-              marginBottom: "12px",
+              color: "hsl(var(--foreground))",
+              marginBottom: "14px",
+              letterSpacing: "0.01em",
             }}
           >
             Something went wrong
           </h1>
 
-          {/* Sub-text */}
+          {/* Sub-text — muted foreground, readable in both themes */}
           <p
             style={{
-              fontSize: "17px",
-              color: "rgba(253,230,138,0.60)",
+              fontSize: "18px",
+              color: "hsl(var(--muted-foreground))",
               fontFamily: "'Cormorant Garamond', Georgia, serif",
-              maxWidth: "420px",
-              lineHeight: 1.85,
-              marginBottom: "32px",
+              maxWidth: "440px",
+              lineHeight: 1.8,
+              marginBottom: "36px",
             }}
           >
-            Even the Mahabharata has unexpected turns. This page encountered an error.
-            Try refreshing — it usually resolves on its own.
+            Even the Mahabharata has unexpected turns. This page hit an error —
+            try again, and if it persists, head back home.
           </p>
 
-          {/* Error details (TEMPORARILY shown in production for debugging) */}
-          {this.state.error && (
+          {/* Error details — dev only, high contrast */}
+          {showDetails && this.state.error && (
             <details
               style={{
-                maxWidth: "600px",
+                maxWidth: "640px",
                 width: "100%",
-                marginBottom: "32px",
+                marginBottom: "36px",
                 textAlign: "left",
                 background: "rgba(229,57,53,0.06)",
-                border: "1px solid rgba(229,57,53,0.15)",
+                border: "1px solid rgba(229,57,53,0.18)",
                 borderRadius: "12px",
-                padding: "16px",
+                padding: "18px",
               }}
             >
               <summary
                 style={{
-                  fontSize: "12px",
+                  fontSize: "13px",
                   fontFamily: "monospace",
-                  color: "rgba(229,57,53,0.8)",
+                  color: "#E53935",
                   cursor: "pointer",
-                  marginBottom: "8px",
+                  marginBottom: "10px",
+                  fontWeight: 700,
                 }}
               >
-                Error details (development only)
+                Error details
               </summary>
               <pre
                 style={{
-                  fontSize: "11px",
-                  color: "#8B0000",
+                  fontSize: "12px",
+                  color: "hsl(var(--foreground))",
                   fontFamily: "monospace",
                   whiteSpace: "pre-wrap",
                   wordBreak: "break-word",
                   margin: 0,
+                  lineHeight: 1.6,
                 }}
               >
                 {this.state.error.toString()}
@@ -147,26 +165,34 @@ class ErrorBoundary extends Component<Props, State> {
           )}
 
           {/* Actions */}
-          <div style={{ display: "flex", gap: "12px", flexWrap: "wrap", justifyContent: "center" }}>
+          <div
+            style={{
+              display: "flex",
+              gap: "14px",
+              flexWrap: "wrap",
+              justifyContent: "center",
+            }}
+          >
             <button
               onClick={this.handleReset}
               style={{
                 display: "flex",
                 alignItems: "center",
                 gap: "8px",
-                padding: "10px 24px",
+                padding: "12px 28px",
                 borderRadius: "99px",
-                background: "linear-gradient(135deg, #E8C547, #D4AF37)",
+                background: "linear-gradient(135deg, #FBBF24, #D4AF37)",
                 border: "none",
-                color: "#08061A",
+                color: "#1A0A00",
                 fontFamily: "'Cinzel', serif",
-                fontSize: "12px",
+                fontSize: "13px",
                 fontWeight: 700,
-                letterSpacing: "0.1em",
+                letterSpacing: "0.08em",
                 cursor: "pointer",
+                boxShadow: "0 4px 20px rgba(212,175,55,0.30)",
               }}
             >
-              <RefreshCw size={14} aria-hidden="true" />
+              <RefreshCw size={15} aria-hidden="true" />
               Try Again
             </button>
 
@@ -176,18 +202,19 @@ class ErrorBoundary extends Component<Props, State> {
                 display: "flex",
                 alignItems: "center",
                 gap: "8px",
-                padding: "10px 24px",
+                padding: "12px 28px",
                 borderRadius: "99px",
-                background: "rgba(139,105,20,0.06)",
-                border: "1px solid rgba(212,175,55,0.2)",
-                color: "rgba(253,230,138,0.75)",
+                background: "hsl(var(--muted))",
+                border: "1px solid hsl(var(--border))",
+                color: "hsl(var(--foreground))",
                 fontFamily: "'Cinzel', serif",
-                fontSize: "12px",
-                letterSpacing: "0.1em",
+                fontSize: "13px",
+                fontWeight: 600,
+                letterSpacing: "0.08em",
                 textDecoration: "none",
               }}
             >
-              <Home size={14} aria-hidden="true" />
+              <Home size={15} aria-hidden="true" />
               Go Home
             </Link>
           </div>
