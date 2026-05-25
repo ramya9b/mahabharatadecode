@@ -1,8 +1,10 @@
+import { useState } from "react";
 import { useTheme } from "@/context/ThemeContext";
 
 const VideoSection = () => {
   const { theme } = useTheme();
   const isDark = theme === "dark";
+  const [playing, setPlaying] = useState(false);
 
   const video = {
     id:       "bwswZT0IhjM",
@@ -57,17 +59,46 @@ const VideoSection = () => {
             : "0 8px 48px rgba(0,0,0,0.15)",
           border: isDark ? "1px solid rgba(251,191,36,0.18)" : "1px solid rgba(217,119,6,0.2)",
         }}>
-          <iframe
-            src={video.embed}
-            title={video.title}
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-            allowFullScreen
-            loading="lazy"
-            style={{
-              position:"absolute", top:0, left:0,
-              width:"100%", height:"100%", border:"none",
-            }}
-          />
+          {playing ? (
+            <iframe
+              src={video.embed + "&autoplay=1"}
+              title={video.title}
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+              style={{
+                position:"absolute", top:0, left:0,
+                width:"100%", height:"100%", border:"none",
+              }}
+            />
+          ) : (
+            <button
+              onClick={() => setPlaying(true)}
+              aria-label={`Play video: ${video.title}`}
+              style={{
+                position:"absolute", top:0, left:0,
+                width:"100%", height:"100%", border:"none", padding:0,
+                cursor:"pointer", background:"#000",
+                backgroundImage:`url(https://i.ytimg.com/vi/${video.id}/hqdefault.jpg)`,
+                backgroundSize:"cover", backgroundPosition:"center",
+                display:"flex", alignItems:"center", justifyContent:"center",
+              }}
+            >
+              <span style={{
+                width:"68px", height:"48px", borderRadius:"14px",
+                background:"rgba(212,32,32,0.92)",
+                display:"flex", alignItems:"center", justifyContent:"center",
+                boxShadow:"0 4px 20px rgba(0,0,0,0.5)",
+              }}>
+                <span style={{
+                  width:0, height:0,
+                  borderTop:"11px solid transparent",
+                  borderBottom:"11px solid transparent",
+                  borderLeft:"18px solid #fff",
+                  marginLeft:"4px",
+                }} />
+              </span>
+            </button>
+          )}
         </div>
 
         {/* CTA */}
