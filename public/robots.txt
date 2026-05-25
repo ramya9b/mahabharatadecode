@@ -10,4 +10,4 @@ Disallow: /node_modules/
 Crawl-delay: 1
 
 # Sitemaps
-Sitemap: https://mahabharatadecoded.com/sitemap.xml
+Sitemap: https://ancientmahabharata.pages.dev/sitemap.xml
