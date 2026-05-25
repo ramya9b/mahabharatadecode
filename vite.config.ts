@@ -9,7 +9,26 @@ export default defineConfig({
     react(),
     VitePWA({
       registerType: "autoUpdate",
-      workbox: { globPatterns: ["**/*.{js,css,html,webp,png,svg}"] },
+      workbox: {
+        globPatterns: ["**/*.{js,css,html,webp,png,svg}"],
+        // Take control immediately — no waiting for old SW to release
+        skipWaiting: true,
+        clientsClaim: true,
+        // Never cache the HTML shell — always fetch fresh so new deploys appear instantly
+        navigateFallback: null,
+        cleanupOutdatedCaches: true,
+        runtimeCaching: [
+          {
+            // HTML documents: always go to network first
+            urlPattern: ({ request }) => request.mode === "navigate",
+            handler: "NetworkFirst",
+            options: {
+              cacheName: "html-cache",
+              networkTimeoutSeconds: 3,
+            },
+          },
+        ],
+      },
     }),
   ],
   esbuild: {
