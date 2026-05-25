@@ -1,7 +1,7 @@
 import { useEffect } from "react";
 
 const SITE_NAME = "MahabharataDecoded";
-const BASE_URL = "https://mahabharatadecoded.com";
+const BASE_URL = "https://ancientmahabharata.pages.dev";
 const DEFAULT_DESCRIPTION =
   "Ancient wisdom for modern life. Deep-dive articles decoding the Mahabharata's greatest characters and lessons.";
 const DEFAULT_IMAGE = `${BASE_URL}/og-default.jpg`;
