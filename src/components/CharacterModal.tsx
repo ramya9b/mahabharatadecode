@@ -140,7 +140,7 @@ const CharacterModal = ({ char, sceneImage, onStart, onClose }: Props) => {
         position:"fixed", inset:0, zIndex:100,
         background:"rgba(0,0,0,0.88)",
         backdropFilter:"blur(12px)", WebkitBackdropFilter:"blur(12px)",
-        display:"flex", alignItems:"center", justifyContent:"center",
+        display:"flex", justifyContent:"center",
         padding: isMobile ? "0" : "16px",
         overflowY: isMobile ? "hidden" : "auto",
         alignItems: isMobile ? "flex-end" : "center",
@@ -338,7 +338,7 @@ const CharacterModal = ({ char, sceneImage, onStart, onClose }: Props) => {
                 }}
               />
               <button className="cm-cta" onClick={handleStart} disabled={!isReady} style={{
-                width:"100%", padding:"15px 20px", borderRadius:"12px", border:"none",
+                width:"100%", padding:"15px 20px", borderRadius:"12px",
                 cursor: isReady?"pointer":"not-allowed",
                 fontFamily:serif, fontSize:"14px", fontWeight:700, letterSpacing:"0.08em",
                 background: isReady ? `linear-gradient(135deg, ${accent}DD, ${accent})` : "rgba(255,255,255,0.05)",
