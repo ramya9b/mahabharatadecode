@@ -84,7 +84,17 @@
     </style>
 
     <!-- Google Analytics 4 — MahabharataDecoded -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-453G97F065"></script>
+    <script>
+      /* Defer GA4 until after page is interactive — keeps it off the critical path for LCP */
+      window.addEventListener('load', function () {
+        setTimeout(function () {
+          var s = document.createElement('script');
+          s.async = true;
+          s.src = 'https://www.googletagmanager.com/gtag/js?id=G-453G97F065';
+          document.head.appendChild(s);
+        }, 1200);
+      });
+    </script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){ dataLayer.push(arguments); }
