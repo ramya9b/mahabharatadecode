@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Users } from "lucide-react";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/hero-bg.webp";
 import type { Character } from "@/data/characters";
 import { resolveImage } from "@/utils/images";
 
@@ -34,10 +34,11 @@ const CharactersHero = ({ characters }: CharactersHeroProps) => {
         style={{ inset: "-15% 0", height: "130%" }}
       >
         <img
-            loading="lazy"
-            decoding="async"
+          loading="eager"
+          fetchpriority="high"
+          decoding="async"
           src={heroBg}
-          alt="Kurukshetra"
+          alt="Kurukshetra battlefield at dusk"
           className="w-full h-full object-cover"
         />
       </div>
