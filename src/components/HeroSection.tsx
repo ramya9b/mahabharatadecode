@@ -51,7 +51,7 @@ const HeroSection = () => {
         <picture>
           <source srcSet={heroBgWebp} type="image/webp" />
           <img
-            src={heroBgJpg}
+            src={heroBgWebp}
             alt="Kurukshetra battlefield at dawn"
             loading="eager"
             fetchPriority="high"
