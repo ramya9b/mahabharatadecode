@@ -7,9 +7,9 @@ import {
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import { useScrollReveal, useStaggeredReveal } from "@/hooks/useScrollReveal";
-import heroBg from "@/assets/hero-bg.jpg";
+import heroBg from "@/assets/hero-bg.webp";
 import { useSEO } from "@/hooks/useSEO";
-import karnaImg from "@/assets/karna.jpg";
+import karnaImg from "@/assets/karna.webp";
 
 /* ─────────────────────────────────────────────────────────
    SECTION 1 — HERO
