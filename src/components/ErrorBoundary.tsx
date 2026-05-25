@@ -105,8 +105,8 @@ class ErrorBoundary extends Component<Props, State> {
             Try refreshing — it usually resolves on its own.
           </p>
 
-          {/* Error details (dev only) */}
-          {import.meta.env.DEV && this.state.error && (
+          {/* Error details (TEMPORARILY shown in production for debugging) */}
+          {this.state.error && (
             <details
               style={{
                 maxWidth: "600px",
@@ -133,7 +133,7 @@ class ErrorBoundary extends Component<Props, State> {
               <pre
                 style={{
                   fontSize: "11px",
-                  color: "rgba(253,230,138,0.60)",
+                  color: "#8B0000",
                   fontFamily: "monospace",
                   whiteSpace: "pre-wrap",
                   wordBreak: "break-word",
