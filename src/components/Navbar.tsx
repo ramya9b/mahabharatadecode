@@ -84,10 +84,10 @@ const Navbar = () => {
   const pillBorder = "rgba(212,175,55,0.22)";
   const pillShadow = "0 8px 40px rgba(0,0,0,0.45), 0 0 0 1px rgba(212,175,55,0.12)";
 
-  const linkColor  = "rgba(220,195,140,0.55)";
+  const linkColor  = "rgba(232,210,160,0.78)";
   const linkActive = "#FBBF24";
 
-  const ctaBg      = "linear-gradient(90deg,#FBBF24 0%,#F472B6 50%,#A78BFA 100%)";
+  const ctaBg      = "linear-gradient(90deg,#FBBF24 0%,#F97316 35%,#EC4899 65%,#A78BFA 100%)";
   const ctaColor   = "#06030E";
 
   return (
@@ -280,14 +280,14 @@ const Navbar = () => {
                 letterSpacing: "0.12em",
                 textDecoration: "none",
                 textTransform: "uppercase",
-                boxShadow: "0 4px 20px rgba(251,191,36,0.3)",
+                boxShadow: "0 4px 24px rgba(251,191,36,0.5), 0 0 0 1px rgba(251,191,36,0.15)",
                 whiteSpace: "nowrap",
                 transition: "all 0.3s ease",
                 display: "inline-block",
               }}
               onMouseEnter={e => {
                 (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-2px)";
-                (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 8px 32px rgba(251,191,36,0.45)";
+                (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 8px 36px rgba(251,191,36,0.65), 0 0 0 1px rgba(251,191,36,0.25)";
               }}
               onMouseLeave={e => {
                 (e.currentTarget as HTMLAnchorElement).style.transform = "none";
@@ -419,7 +419,7 @@ const Navbar = () => {
               marginTop: "14px",
               padding: "12px 20px",
               borderRadius: "100px",
-              background: "linear-gradient(90deg,#FBBF24,#F472B6,#A78BFA)",
+              background: "linear-gradient(90deg,#FBBF24 0%,#F97316 35%,#EC4899 65%,#A78BFA 100%)",
               color: "#06030E",
               fontFamily: "'Cinzel',serif",
               fontSize: "11px",
