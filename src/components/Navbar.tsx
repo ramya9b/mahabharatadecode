@@ -147,12 +147,15 @@ const Navbar = () => {
             </div>
             <span style={{
               fontFamily: "'Cinzel',serif",
-              fontSize: "11px",
-              fontWeight: 600,
-              letterSpacing: "0.2em",
+              fontSize: "13px",
+              fontWeight: 700,
+              letterSpacing: "0.16em",
               textTransform: "uppercase",
-              color: isDark ? "#D4AF37" : "#92400E",
+              color: isDark ? "#FDE68A" : "#7A4E08",
               whiteSpace: "nowrap",
+              textShadow: isDark
+                ? "0 1px 8px rgba(251,191,36,0.30)"
+                : "none",
             }}>
               MahabharataDecoded
             </span>
