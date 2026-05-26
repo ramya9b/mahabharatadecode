@@ -151,11 +151,9 @@ const Navbar = () => {
               fontWeight: 700,
               letterSpacing: "0.16em",
               textTransform: "uppercase",
-              color: isDark ? "#FBBF24" : "#5C3A00",
+              color: "#FBBF24",
               whiteSpace: "nowrap",
-              textShadow: isDark
-                ? "0 0 18px rgba(251,191,36,0.70), 0 1px 8px rgba(251,191,36,0.50)"
-                : "0 1px 4px rgba(92,58,0,0.15)",
+              textShadow: "0 0 20px rgba(251,191,36,0.80), 0 2px 10px rgba(251,191,36,0.60)",
             }}>
               MahabharataDecoded
             </span>
@@ -326,7 +324,7 @@ const Navbar = () => {
             <span style={{
               fontFamily: "'Cinzel',serif", fontSize: "10px", fontWeight: 600,
               letterSpacing: "0.18em", textTransform: "uppercase",
-              color: isDark ? "#FBBF24" : "#5C3A00",
+              color: "#FBBF24",
             }}>MahabharataDecoded</span>
           </Link>
 
