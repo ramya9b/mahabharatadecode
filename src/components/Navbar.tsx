@@ -151,12 +151,7 @@ const Navbar = () => {
               fontWeight: 600,
               letterSpacing: "0.2em",
               textTransform: "uppercase",
-              background: isDark
-                ? "linear-gradient(90deg,#FBBF24,#E8D5A3)"
-                : "linear-gradient(90deg,#92400E,#D4AF37)",
-              WebkitBackgroundClip: "text",
-              WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
+              color: isDark ? "#D4AF37" : "#92400E",
               whiteSpace: "nowrap",
             }}>
               MahabharataDecoded
@@ -328,9 +323,7 @@ const Navbar = () => {
             <span style={{
               fontFamily: "'Cinzel',serif", fontSize: "10px", fontWeight: 600,
               letterSpacing: "0.18em", textTransform: "uppercase",
-              background: isDark ? "linear-gradient(90deg,#FBBF24,#E8D5A3)" : "linear-gradient(90deg,#92400E,#D4AF37)",
-              WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
-              backgroundClip: "text",
+              color: isDark ? "#D4AF37" : "#92400E",
             }}>MahabharataDecoded</span>
           </Link>
 
