@@ -191,7 +191,7 @@ const HeroSection = () => {
             style={{
               padding: "14px 32px",
               borderRadius: "9999px",
-              background: "linear-gradient(135deg, #FBBF24, #34D399, #38BDF8)",
+              background: "linear-gradient(135deg, #D4AF37 0%, #FBBF24 50%, #FDE68A 100%)",
               backgroundSize: "200% auto",
               color: "#08040F",
               fontFamily: "'Cinzel', serif",
@@ -218,7 +218,7 @@ const HeroSection = () => {
             style={{
               padding: "14px 28px",
               borderRadius: "9999px",
-              background: "linear-gradient(135deg, #FBBF24 0%, #34D399 50%, #38BDF8 100%)",
+              background: "linear-gradient(135deg, #0E0900 0%, #1A1000 100%)",
               backgroundSize: "200% auto",
               animation: "shimmer 4s linear infinite",
               color: "#08040F",
@@ -228,7 +228,7 @@ const HeroSection = () => {
               letterSpacing: "0.1em",
               textTransform: "uppercase",
               textDecoration: "none",
-              boxShadow: "0 8px 28px rgba(52,211,153,0.40)",
+              boxShadow: "0 8px 28px rgba(212,175,55,0.45)",
               transition: "all 0.35s ease",
             }}
             onMouseEnter={e => {
@@ -237,7 +237,7 @@ const HeroSection = () => {
             }}
             onMouseLeave={e => {
               (e.currentTarget as HTMLAnchorElement).style.transform = "none";
-              (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 8px 28px rgba(52,211,153,0.40)";
+              (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 8px 28px rgba(212,175,55,0.45)";
             }}
           >
             {t("hero.cta_primary")}
@@ -248,7 +248,7 @@ const HeroSection = () => {
             style={{
               padding: "14px 28px",
               borderRadius: "9999px",
-              background: "linear-gradient(135deg, #34D399 0%, #38BDF8 50%, #A78BFA 100%)",
+              background: "transparent",
               backgroundSize: "200% auto",
               animation: "shimmer 4s linear infinite 1s",
               color: "#08040F",
