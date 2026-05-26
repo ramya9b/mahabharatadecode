@@ -11,9 +11,9 @@
     "preview": "vite preview",
     "test": "vitest run",
     "test:watch": "vitest",
-    "deploy": "npm run build && wrangler pages deploy dist --project-name=mahabharatadecoded",
+    "deploy": "npm run build && wrangler pages deploy dist --project-name=ancientmahabharata",
     "build:analyze": "vite build --mode development",
-    "deploy:preview": "npm run build && wrangler pages deploy dist --project-name=mahabharatadecoded --branch=preview",
+    "deploy:preview": "npm run build && wrangler pages deploy dist --project-name=ancientmahabharata --branch=preview",
     "cf:dev": "wrangler pages dev dist --port 8788",
     "cf:install": "npm install"
   },
