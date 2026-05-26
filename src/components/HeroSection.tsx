@@ -1,11 +1,10 @@
-import { useEffect, useRef, useMemo } from "react";
+import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import heroBgWebp from "@/assets/hero-bg.webp";
-import heroBgJpg  from "@/assets/hero-bg.jpg";
 
 /* Gold particles — varied sizes, drift angles, durations */
-const GOLD_PARTICLES = Array.from({ length: 28 }, (_, i) => ({
+const GOLD_PARTICLES = Array.from({ length: 28 }, () => ({
   size:  Math.random() * 4 + 2,
   left:  Math.random() * 100,
   dur:   Math.random() * 14 + 10,

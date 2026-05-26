@@ -5,7 +5,7 @@ import Navbar from "@/components/Navbar";
 import { useSEO } from "@/hooks/useSEO";
 import Footer from "@/components/Footer";
 import { QUIZ_QUESTIONS, TOTAL_QUESTIONS, CHARACTER_META } from "@/data/quiz";
-import { computeQuizResult, scoreBreakdown, isQuizComplete } from "@/utils/quizScoring";
+import { computeQuizResult, scoreBreakdown } from "@/utils/quizScoring";
 import { resolveImage } from "@/utils/images";
 import type { QuizResult } from "@/data/quiz";
 

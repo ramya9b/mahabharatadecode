@@ -7,7 +7,7 @@ interface LanguageSwitcherProps {
   variant?: "compact" | "full";
 }
 
-const LanguageSwitcher = ({ variant = "compact" }: LanguageSwitcherProps) => {
+const LanguageSwitcher = (_: LanguageSwitcherProps = {}) => {
   const { i18n, t } = useTranslation();
   const [open, setOpen] = useState(false);
   const [focusedIndex, setFocusedIndex] = useState(-1);

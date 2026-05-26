@@ -1,3 +1,4 @@
+import { memo } from "react";
 import { Link } from "react-router-dom";
 import { ArrowRight, BookOpen } from "lucide-react";
 import type { Character } from "@/data/characters";
@@ -10,17 +11,17 @@ interface CharacterProfileProps {
   index: number;
 }
 
+const ARCHETYPE_COLORS: Record<string, string> = {
+  Warrior: "rgba(212,175,55,0.15)",
+  Divine:  "rgba(74,144,217,0.15)",
+  Royalty: "rgba(229,57,53,0.15)",
+  Elder:   "rgba(121,134,203,0.15)",
+};
+
 const CharacterProfile = ({ character, index }: CharacterProfileProps) => {
-  const sectionRef = useScrollReveal<HTMLElement>();
+  const sectionRef = useScrollReveal<HTMLDivElement>();
   const image = resolveImage(character.imageKey);
   const isEven = index % 2 === 0;
-
-  const archetypeColors: Record<string, string> = {
-    Warrior: "rgba(212,175,55,0.15)",
-    Divine:  "rgba(74,144,217,0.15)",
-    Royalty: "rgba(229,57,53,0.15)",
-    Elder:   "rgba(121,134,203,0.15)",
-  };
 
   return (
     <section
@@ -65,7 +66,7 @@ const CharacterProfile = ({ character, index }: CharacterProfileProps) => {
             loading="lazy"
             decoding="async"
                 src={image}
-                alt={`${character.name} — ${character.epithet}`}
+                alt={`${character.name} — ${character.title}`}
                 className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-[1.03]"
                 onError={(e) => {
                   const el = e.currentTarget;
@@ -181,7 +182,7 @@ const CharacterProfile = ({ character, index }: CharacterProfileProps) => {
                   key={ep}
                   className="font-heading text-[10px] tracking-[0.15em] uppercase px-3 py-1.5 rounded-full"
                   style={{
-                    background: archetypeColors[character.archetype] || "rgba(139,105,20,0.06)",
+                    background: ARCHETYPE_COLORS[character.archetype] || "rgba(139,105,20,0.06)",
                     border: `1px solid rgba(${character.accentRgb},0.2)`,
                     color: `rgba(${character.accentRgb},0.8)`,
                   }}
@@ -346,4 +347,4 @@ const CharacterProfile = ({ character, index }: CharacterProfileProps) => {
   );
 };
 
-export default CharacterProfile;
+export default memo(CharacterProfile);

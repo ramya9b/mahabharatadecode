@@ -1,5 +1,4 @@
 import { useEffect } from "react";
-import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { Home, BookOpen, Users, HelpCircle, ArrowRight } from "lucide-react";
 import { useSEO } from "@/hooks/useSEO";
@@ -16,7 +15,6 @@ const QUICK_LINKS = [
 ];
 
 const NotFound = () => {
-  const { t } = useTranslation();
   useSEO({
     title: "Page Not Found",
     description: "The page you are looking for does not exist. Explore our Mahabharata stories instead.",

@@ -8,8 +8,7 @@ interface NewsletterSignupProps {
   source?:  string;   /* GA4 event label — which page triggered signup */
 }
 
-/* ── Brevo (ex-Sendinblue) free tier — 300 emails/day, no credit card ── */
-const BREVO_LIST_ID = 2;   /* default list — update after creating your Brevo account */
+/* ── Brevo (ex-Sendinblue) — 300 emails/day free tier; list ID is set server-side ── */
 
 const NewsletterSignup = ({
   variant = "inline",

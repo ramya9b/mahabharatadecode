@@ -48,7 +48,7 @@ const CharactersGrid = () => (
               width={900}
               height={1216}
               className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-110"
-              style={{ imageRendering: "high-quality" } as React.CSSProperties}
+              style={{ imageRendering: "high-quality" as unknown as React.CSSProperties["imageRendering"] }}
             />
 
             {/* Gradient overlays */}

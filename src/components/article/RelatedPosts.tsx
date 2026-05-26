@@ -6,7 +6,6 @@ import { useScrollReveal, useStaggeredReveal } from "@/hooks/useScrollReveal";
 
 interface RelatedPostsProps {
   articles: Article[];
-  currentSlug: string;
 }
 
 const RelatedCard = ({ article }: { article: Article }) => {
@@ -83,7 +82,7 @@ const RelatedCard = ({ article }: { article: Article }) => {
   );
 };
 
-const RelatedPosts = ({ articles, currentSlug }: RelatedPostsProps) => {
+const RelatedPosts = ({ articles }: RelatedPostsProps) => {
   const headerRef = useScrollReveal<HTMLDivElement>();
   const gridRef = useStaggeredReveal(articles.length);
 

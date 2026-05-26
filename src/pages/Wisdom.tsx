@@ -1,6 +1,7 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { useTheme } from "@/context/ThemeContext";
 import { useTranslation } from "react-i18next";
+// useTranslation still used by WisdomHero below
 import { Link } from "react-router-dom";
 import { X, ArrowRight, BookOpen, ChevronDown } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -8,7 +9,6 @@ import Footer from "@/components/Footer";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useSEO } from "@/hooks/useSEO";
 import {
-  scenarios,
   getScenariosByDomain,
   getAllDomains,
   DOMAIN_META,
@@ -344,6 +344,8 @@ const ScenarioDetail = ({
   onClose: () => void;
 }) => {
   const panelRef = useRef<HTMLDivElement>(null);
+  const { theme: themeM } = useTheme();
+  const isDarkM = themeM === "dark";
 
   /* Close on Escape */
   useEffect(() => {
@@ -775,7 +777,6 @@ const BottomCTA = () => {
    MAIN PAGE
 ────────────────────────────────────────────── */
 const Wisdom = () => {
-  const { t } = useTranslation();
   const [activeDomain, setActiveDomain] = useState<Domain>("family");
   const [openScenario, setOpenScenario] = useState<WisdomScenario | null>(null);
   const contentRef = useRef<HTMLDivElement>(null);

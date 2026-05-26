@@ -6,7 +6,7 @@ import Footer from "@/components/Footer";
 import ArticleCard from "@/components/ArticleCard";
 import EmptyState from "@/components/EmptyState";
 import { SkeletonGrid } from "@/components/SkeletonCard";
-import { articles, getFeaturedArticle, getArticlesByCategory } from "@/data/articles";
+import { getFeaturedArticle, getArticlesByCategory } from "@/data/articles";
 import type { Article } from "@/data/articles";
 import { useSEO } from "@/hooks/useSEO";
 import { useDebounce } from "@/hooks/useDebounce";

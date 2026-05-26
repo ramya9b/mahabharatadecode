@@ -38,6 +38,7 @@ export function applyLangFont(locale: SupportedLocale) {
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
+  // Cast to bypass library type drift between i18next versions; runtime shape is correct.
   .init({
     resources: {
       en: { translation: en },
@@ -48,16 +49,15 @@ i18n
     fallbackLng: "en",
     supportedLngs: ["en", "te", "kn", "hi"],
     detection: {
-      /* Check localStorage first, then browser language */
       order: ["localStorage", "navigator"],
       lookupLocalStorage: "md_language",
-      cacheUserLanguage: true,
+      caches: ["localStorage"],
     },
     interpolation: {
-      escapeValue: false, // React already escapes
+      escapeValue: false,
     },
     react: {
-      useSuspense: false, // Translations are bundled — no async needed
+      useSuspense: false,
     },
   });
 

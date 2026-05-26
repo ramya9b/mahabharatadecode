@@ -9,10 +9,8 @@ import { Mic, MicOff, RefreshCw, ChevronDown } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import MoodBackground from "@/components/MoodBackground";
-import CharacterPortrait from "@/components/CharacterPortrait";
 import CharacterModal from "@/components/CharacterModal";
 import {
-  storyCharacters,
   getCharactersByGroup,
   type StoryCharacter,
   type CharacterGroup,
@@ -23,6 +21,8 @@ import { MOOD_THEMES, GROUP_THEME_MAP, type MoodTheme } from "@/data/moodThemes"
 import { useTheme } from "@/context/ThemeContext";
 import { generateStory, generateLifeLesson, generateMySituation, type Tone, type Language } from "@/services/ai";
 import { synthesizeSpeech } from "@/services/tts";
+import PaywallModal from "@/components/PaywallModal";
+import { useSubscription } from "@/hooks/useSubscription";
 
 /* ── Types ── */
 type Step = "select" | "prompt" | "story";
@@ -106,6 +106,10 @@ const StoryTeller = () => {
   const shownText           = skip ? story : displayed;
   const storyComplete       = skip || done;   // single source of truth
 
+  /* ── Subscription gate ── */
+  const { access: hasAccess, refresh: refreshAccess } = useSubscription();
+  const [paywallOpen, setPaywallOpen] = useState(false);
+
   /* ── Scroll to story when it starts ── */
   useEffect(() => {
     if (step === "story" && storyRef.current) {
@@ -124,6 +128,12 @@ const StoryTeller = () => {
         ? selected.prompts[activePromptIdx].request
         : customPrompt.trim();
     if (!promptText) return;
+
+    /* Subscription gate — block AI call if trial expired and not subscribed */
+    if (!hasAccess) {
+      setPaywallOpen(true);
+      return;
+    }
 
     /* Cancel any in-flight request */
     if (abortRef.current) { abortRef.current.abort(); }
@@ -176,7 +186,7 @@ const StoryTeller = () => {
       setLoading(false);
       setError("Something went wrong. Please try again.");
     }
-  }, [selected, activePromptIdx, customPrompt, tone, language]);
+  }, [selected, activePromptIdx, customPrompt, tone, language, hasAccess]);
 
   /* ── Voice narration — sentence-by-sentence to fix Chrome TTS bug ── */
   const sentencesRef = useRef<string[]>([]);
@@ -354,7 +364,6 @@ const StoryTeller = () => {
   /* Colours — adapt to global theme + mood theme */
   const gold      = currentTheme !== "default" ? theme.highlightColor : "hsl(var(--primary))";
   const goldDark  = currentTheme !== "default" ? theme.accentColor : "hsl(var(--primary))";
-  const parchment = "hsl(var(--background))";
 
   /* Text colours */
   const inkDark   = "hsl(var(--foreground))";
@@ -1310,6 +1319,7 @@ const StoryTeller = () => {
           onClose={() => setModalChar(null)}
           onStart={(promptText, _promptLabel) => {
             setModalChar(null);
+            if (!hasAccess) { setPaywallOpen(true); return; }
             setActivePromptIdx(null);
             setCustomPrompt(promptText);
             setStep("story");
@@ -1361,6 +1371,14 @@ const StoryTeller = () => {
           }}
         />
       )}
+
+      {/* Subscription paywall (rendered at root so it overlays everything) */}
+      <PaywallModal
+        open={paywallOpen}
+        onClose={() => setPaywallOpen(false)}
+        onSuccess={() => { setPaywallOpen(false); refreshAccess(); }}
+        reason="Your 14-day trial ended"
+      />
     </div>
   );
 };

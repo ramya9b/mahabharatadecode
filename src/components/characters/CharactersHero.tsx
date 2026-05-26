@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useMemo, useRef } from "react";
 import { Users } from "lucide-react";
 import heroBg from "@/assets/hero-bg.webp";
 import type { Character } from "@/data/characters";
@@ -10,23 +10,57 @@ interface CharactersHeroProps {
 
 const CharactersHero = ({ characters }: CharactersHeroProps) => {
   const bgRef = useRef<HTMLDivElement>(null);
+  const sectionRef = useRef<HTMLElement>(null);
 
+  // rAF-throttled parallax + skip work while hero is offscreen
   useEffect(() => {
+    let ticking = false;
+    let inView = true;
+
+    const io = new IntersectionObserver(
+      ([entry]) => { inView = entry.isIntersecting; },
+      { threshold: 0 }
+    );
+    if (sectionRef.current) io.observe(sectionRef.current);
+
     const handleScroll = () => {
-      if (bgRef.current) {
-        bgRef.current.style.transform = `translateY(${window.scrollY * 0.25}px)`;
-      }
+      if (ticking || !inView) return;
+      ticking = true;
+      requestAnimationFrame(() => {
+        if (bgRef.current) {
+          bgRef.current.style.transform = `translate3d(0, ${window.scrollY * 0.25}px, 0)`;
+        }
+        ticking = false;
+      });
     };
     window.addEventListener("scroll", handleScroll, { passive: true });
-    return () => window.removeEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+      io.disconnect();
+    };
   }, []);
+
+  // Particles: random positions computed once, not on every render
+  const particles = useMemo(
+    () =>
+      Array.from({ length: 14 }).map(() => ({
+        w: Math.random() * 2 + 1,
+        left: Math.random() * 100,
+        duration: Math.random() * 10 + 8,
+        delay: Math.random() * 7,
+      })),
+    []
+  );
 
   const scrollToChar = (id: string) => {
     document.getElementById(`char-${id}`)?.scrollIntoView({ behavior: "smooth", block: "start" });
   };
 
   return (
-    <section className="relative min-h-[80vh] flex flex-col items-center justify-center overflow-hidden">
+    <section
+      ref={sectionRef}
+      className="relative min-h-[80vh] flex flex-col items-center justify-center overflow-hidden"
+    >
       {/* Parallax background */}
       <div
         ref={bgRef}
@@ -35,7 +69,7 @@ const CharactersHero = ({ characters }: CharactersHeroProps) => {
       >
         <img
           loading="eager"
-          fetchpriority="high"
+          fetchPriority="high"
           decoding="async"
           src={heroBg}
           alt="Kurukshetra battlefield at dusk"
@@ -61,17 +95,17 @@ const CharactersHero = ({ characters }: CharactersHeroProps) => {
 
       {/* Particles */}
       <div className="absolute inset-0 overflow-hidden pointer-events-none">
-        {Array.from({ length: 14 }).map((_, i) => (
+        {particles.map((p, i) => (
           <div
             key={i}
             className="particle bg-primary/20"
             style={{
-              width: Math.random() * 2 + 1 + "px",
-              height: Math.random() * 2 + 1 + "px",
-              left: Math.random() * 100 + "%",
+              width: p.w + "px",
+              height: p.w + "px",
+              left: p.left + "%",
               bottom: "-6px",
-              "--duration": Math.random() * 10 + 8 + "s",
-              "--delay": Math.random() * 7 + "s",
+              "--duration": p.duration + "s",
+              "--delay": p.delay + "s",
             } as React.CSSProperties}
           />
         ))}

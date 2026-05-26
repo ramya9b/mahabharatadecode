@@ -186,7 +186,7 @@ const ShareButtons = ({
         <button
           onClick={handleNativeShare}
           aria-label={
-            typeof navigator !== "undefined" && navigator.share
+            typeof navigator !== "undefined" && typeof navigator.share === "function"
               ? "Share this article"
               : "Copy link"
           }

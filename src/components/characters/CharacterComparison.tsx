@@ -7,7 +7,6 @@ interface CharacterComparisonProps {
   characters: Character[];
 }
 
-const COMPARE_STAT = "Warrior Skill";
 const STAT_LABELS = ["Warrior Skill", "Wisdom", "Loyalty", "Sacrifice", "Dharma"];
 
 const CharacterComparison = ({ characters }: CharacterComparisonProps) => {

@@ -1,4 +1,4 @@
-import type { ContentBlock, Article } from "@/data/articles";
+import type { ContentBlock } from "@/data/articles";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 /* ── Individual block types ── */

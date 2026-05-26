@@ -1,11 +1,8 @@
-import React, { useEffect, useState, useCallback, useMemo } from "react";
+import React, { useEffect } from "react";
 import { useParams, Navigate } from "react-router-dom";
-import { useEffect } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
-import ShareButtons, { WhatsAppFloat } from "@/components/ShareButtons";
-import NewsletterSignup from "@/components/NewsletterSignup";
-import TableOfContents from "@/components/article/TableOfContents";
+import ShareButtons from "@/components/ShareButtons";
 import { useSEO, buildArticleSchema } from "@/hooks/useSEO";
 import ArticleHero from "@/components/article/ArticleHero";
 import ReadingProgress from "@/components/article/ReadingProgress";
@@ -21,6 +18,7 @@ import { getArticleBySlug, getRelatedArticles } from "@/data/articles";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { BookOpen } from "lucide-react";
 import ArticleTranslator, { extractPlainText, type LangCode } from "@/components/ArticleTranslator";
+import LockGate from "@/components/LockGate";
 
 const ArticlePage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -63,12 +61,12 @@ const ArticlePage = () => {
     path: `/blog/${article.slug}`,
     type: "article",
     author: "MahabharataDecoded",
-    publishedAt: article.publishedAt || "2026-01-01",
+    publishedAt: article.publishDate || "2026-01-01",
     schema: buildArticleSchema({
       title: article.metaTitle || article.title,
       description: article.metaDescription || article.summary || "",
       slug: article.slug,
-      publishedAt: article.publishedAt,
+      publishedAt: article.publishDate,
     }),
   });
 
@@ -101,73 +99,85 @@ const ArticlePage = () => {
         />
       </div>
 
-      {/* ── 2. Named Story Sections (Introduction / Background / Turning Point) ── */}
-      {article.storyBlocks?.length > 0 && (
-        <StorySection storyBlocks={article.storyBlocks} />
-      )}
+      {/* ── 2-9. Article body — gated behind subscription after 14-day trial ── */}
+      <LockGate
+        reason="Your 14-day trial ended"
+        title="Read the rest of this story"
+        description="Your free 14 days have ended. Upgrade for unlimited articles and Story Teller access."
+        teaser={
+          article.storyBlocks?.length > 0 ? (
+            <StorySection storyBlocks={article.storyBlocks.slice(0, 1)} />
+          ) : null
+        }
+      >
+        {/* Named Story Sections (Introduction / Background / Turning Point) */}
+        {article.storyBlocks?.length > 0 && (
+          <StorySection storyBlocks={article.storyBlocks} />
+        )}
 
-      {/* ── 3. Additional prose — shows translation if selected ── */}
-      {article.content?.length > 0 && (
-        <section className="pb-8">
-          <div className="max-w-[680px] mx-auto px-6 md:px-8">
-            {translatedContent && currentLang !== "en" ? (
-              <div
-                style={{
-                  fontFamily: "'Cormorant Garamond', Georgia, serif",
-                  fontSize: "19px",
-                  lineHeight: "1.85",
-                  color: "hsl(var(--foreground))",
-                  whiteSpace: "pre-wrap",
-                }}
-              >
-                {translatedContent}
-              </div>
-            ) : (
-              <ContentRenderer
-                blocks={article.content}
-                pullQuote={article.pullQuote}
-              />
-            )}
+        {/* Additional prose — shows translation if selected */}
+        {article.content?.length > 0 && (
+          <section className="pb-8">
+            <div className="max-w-[680px] mx-auto px-6 md:px-8">
+              {translatedContent && currentLang !== "en" ? (
+                <div
+                  style={{
+                    fontFamily: "'Cormorant Garamond', Georgia, serif",
+                    fontSize: "19px",
+                    lineHeight: "1.85",
+                    color: "hsl(var(--foreground))",
+                    whiteSpace: "pre-wrap",
+                  }}
+                >
+                  {translatedContent}
+                </div>
+              ) : (
+                <ContentRenderer
+                  blocks={article.content}
+                  pullQuote={article.pullQuote}
+                />
+              )}
+            </div>
+          </section>
+        )}
+
+        {/* Life lessons compact list */}
+        {article.lifeLessons?.length > 0 && (
+          <LifeLessonsList lessons={article.lifeLessons} />
+        )}
+
+        {/* Key Lesson Cards */}
+        {article.keyLessons && article.keyLessons.length > 0 && (
+          <LessonCards lessons={article.keyLessons} />
+        )}
+
+        {/* Modern Relevance */}
+        {article.modernConnections && article.modernConnections.length > 0 && (
+          <ModernConnections connections={article.modernConnections} />
+        )}
+
+        {/* Sacred Sloka */}
+        {article.sloka && (
+          <div className="max-w-3xl mx-auto px-6 md:px-12">
+            <SlokaBlock sloka={article.sloka} />
           </div>
-        </section>
-      )}
+        )}
 
-      {/* ── 4. Life lessons compact list ── */}
-      {article.lifeLessons?.length > 0 && (
-        <LifeLessonsList lessons={article.lifeLessons} />
-      )}
+        {/* Reel Hook (replaces video gap) */}
+        {article.reelHook && (
+          <ReelHook
+            hook={article.reelHook.hook}
+            supporting={article.reelHook.supporting}
+          />
+        )}
 
-      {/* ── 5. Key Lesson Cards ── */}
-      {article.keyLessons && article.keyLessons.length > 0 && (
-        <LessonCards lessons={article.keyLessons} />
-      )}
-
-      {/* ── 6. Modern Relevance ── */}
-      {article.modernConnections && article.modernConnections.length > 0 && (
-        <ModernConnections connections={article.modernConnections} />
-      )}
-
-      {/* ── 7. Sacred Sloka ── */}
-      {article.sloka && (
-        <div className="max-w-3xl mx-auto px-6 md:px-12">
-          <SlokaBlock sloka={article.sloka} />
-        </div>
-      )}
-
-      {/* ── 8. Reel Hook (replaces video gap) ── */}
-      {article.reelHook && (
-        <ReelHook
-          hook={article.reelHook.hook}
-          supporting={article.reelHook.supporting}
-        />
-      )}
-
-      {/* ── 9. Author Note ── */}
-      {article.authorNote && (
-        <div className="max-w-[680px] mx-auto px-6 md:px-8 pb-12">
-          <AuthorNote note={article.authorNote} />
-        </div>
-      )}
+        {/* Author Note */}
+        {article.authorNote && (
+          <div className="max-w-[680px] mx-auto px-6 md:px-8 pb-12">
+            <AuthorNote note={article.authorNote} />
+          </div>
+        )}
+      </LockGate>
 
       {/* ── 10. Share Buttons ── */}
       <section className="pb-8" aria-label="Share this article">
@@ -182,7 +192,7 @@ const ArticlePage = () => {
       <ArticleCTA />
 
       {/* ── 12. Related Posts ── */}
-      <RelatedPosts articles={related} currentSlug={slug} />
+      <RelatedPosts articles={related} />
 
       <Footer />
     </div>

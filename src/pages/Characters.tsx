@@ -8,7 +8,6 @@ import CharacterProfile from "@/components/characters/CharacterProfile";
 import CharacterNav from "@/components/characters/CharacterNav";
 import CharacterComparison from "@/components/characters/CharacterComparison";
 import { characters } from "@/data/characters";
-import { useSEO } from "@/hooks/useSEO";
 
 const Characters = () => {
   useEffect(() => {
