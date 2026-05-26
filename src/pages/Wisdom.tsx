@@ -352,6 +352,16 @@ const ScenarioDetail = ({
   const bodyText       = isDarkM ? "rgba(253,230,138,0.82)" : "rgba(42,31,14,0.82)";
   const bodyTextMuted  = isDarkM ? "rgba(253,230,138,0.62)" : "rgba(42,31,14,0.58)";
 
+  /* Accent-color label tints — low alpha on dark looks subtle, but on cream
+     blends into the bg. Bump to ~0.95 in light mode so the brand colour
+     still pops. */
+  const accentLabelStrong = isDarkM
+    ? `rgba(${scenario.accentRgb},0.70)`
+    : `rgba(${scenario.accentRgb},0.95)`;
+  const accentLabelMuted = isDarkM
+    ? `rgba(${scenario.accentRgb},0.50)`
+    : `rgba(${scenario.accentRgb},0.85)`;
+
   /* Close on Escape */
   useEffect(() => {
     const fn = (e: KeyboardEvent) => {
@@ -429,7 +439,7 @@ const ScenarioDetail = ({
               />
               <span
                 className="font-heading text-[10px] tracking-[0.25em] uppercase"
-                style={{ color: `rgba(${scenario.accentRgb},0.7)` }}
+                style={{ color: accentLabelStrong }}
               >
                 {scenario.characterName} · {DOMAIN_META[scenario.domain].label}
               </span>
@@ -581,7 +591,7 @@ const ScenarioDetail = ({
               <div>
                 <p
                   className="font-heading text-[10px] tracking-[0.22em] uppercase mb-1"
-                  style={{ color: `rgba(${scenario.accentRgb},0.5)` }}
+                  style={{ color: accentLabelMuted }}
                 >
                   Go deeper
                 </p>
@@ -628,28 +638,34 @@ const DetailSection = ({
   children: React.ReactNode;
   accentRgb: string;
   accent?: boolean;
-}) => (
-  <div
-    className="mb-7 rounded-xl overflow-hidden"
-    style={
-      accent
-        ? {
-            background: `rgba(${accentRgb},0.05)`,
-            border: `1px solid rgba(${accentRgb},0.14)`,
-            padding: "18px 20px",
-          }
-        : { padding: "0" }
-    }
-  >
+}) => {
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
+  // Section labels need higher contrast on cream than on dark.
+  const labelColor = isDark ? `rgba(${accentRgb},0.55)` : `rgba(${accentRgb},0.90)`;
+  return (
     <div
-      className="font-heading text-[10px] tracking-[0.28em] uppercase mb-3"
-      style={{ color: `rgba(${accentRgb},0.55)` }}
+      className="mb-7 rounded-xl overflow-hidden"
+      style={
+        accent
+          ? {
+              background: `rgba(${accentRgb},0.05)`,
+              border: `1px solid rgba(${accentRgb},0.14)`,
+              padding: "18px 20px",
+            }
+          : { padding: "0" }
+      }
     >
-      {label}
+      <div
+        className="font-heading text-[10px] tracking-[0.28em] uppercase mb-3"
+        style={{ color: labelColor }}
+      >
+        {label}
+      </div>
+      {children}
     </div>
-    {children}
-  </div>
-);
+  );
+};
 
 /* ──────────────────────────────────────────────
    DOMAIN PANEL
