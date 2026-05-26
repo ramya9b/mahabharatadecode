@@ -173,7 +173,7 @@ const TableOfContents = ({
                     border: "none",
                     cursor: "pointer",
                     transition: "color 0.2s",
-                    color: isActive ? "rgba(212,175,55,0.95)" : "rgba(42,31,14,0.5)",
+                    color: isActive ? "rgba(212,175,55,0.95)" : "rgba(42,31,14,0.7)",
                   }}
                 >
                   {/* Active indicator dot */}

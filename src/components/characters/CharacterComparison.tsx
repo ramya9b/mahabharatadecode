@@ -61,7 +61,7 @@ const CharacterComparison = ({ characters }: CharacterComparisonProps) => {
               <tr>
                 <th
                   className="font-heading text-[10px] tracking-[0.25em] uppercase text-left pb-4 pr-4"
-                  style={{ color: "rgba(42,31,14,0.35)", width: "140px" }}
+                  style={{ color: "rgba(42,31,14,0.55)", width: "140px" }}
                 >
                   Attribute
                 </th>
@@ -105,7 +105,7 @@ const CharacterComparison = ({ characters }: CharacterComparisonProps) => {
                   <td
                     className="font-heading text-[11px] tracking-[0.12em] uppercase py-3 pr-4"
                     style={{
-                      color: "rgba(253,230,138,0.50)",
+                      color: "rgba(42,31,14,0.65)",
                       borderRadius: "8px 0 0 8px",
                     }}
                   >
@@ -169,7 +169,7 @@ const CharacterComparison = ({ characters }: CharacterComparisonProps) => {
               <div
                 className="text-xs mt-1 italic"
                 style={{
-                  color: "rgba(253,230,138,0.50)",
+                  color: "rgba(42,31,14,0.60)",
                   fontFamily: "'Cormorant Garamond', Georgia, serif",
                 }}
               >

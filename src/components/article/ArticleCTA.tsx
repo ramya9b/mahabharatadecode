@@ -76,8 +76,8 @@ const ArticleCTA = () => {
                   className="text-muted-foreground leading-relaxed mb-6"
                   style={{ fontSize: "17px" }}
                 >
-                  One timeless insight from the Mahabharata in your inbox every morning.
-                  Ancient knowledge for the modern mind. Join 12,000+ readers.
+                  One timeless insight from the Mahabharata in your inbox every Friday morning.
+                  Ancient knowledge for the modern mind. Free always. No noise. Just depth.
                 </p>
 
                 {!submitted ? (

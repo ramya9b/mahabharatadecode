@@ -39,7 +39,7 @@ const CharacterStatBars = ({ stats, accentHex, accentRgb }: CharacterStatBarsPro
           <div className="flex items-center justify-between mb-1.5">
             <span
               className="font-heading text-[11px] tracking-[0.18em] uppercase"
-              style={{ color: "rgba(42,31,14,0.6)" }}
+              style={{ color: "rgba(253,230,138,0.72)" }}
             >
               {stat.label}
             </span>

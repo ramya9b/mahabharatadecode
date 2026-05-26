@@ -217,7 +217,7 @@ const ShareButtons = ({
           fontSize:      "10px",
           letterSpacing: "0.25em",
           textTransform: "uppercase",
-          color:         "rgba(42,31,14,0.4)",
+          color:         "rgba(42,31,14,0.6)",
           flexShrink:    0,
         }}
       >

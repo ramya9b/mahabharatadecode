@@ -208,10 +208,10 @@ const StatsSection = () => {
     <section className="py-10 md:py-14" style={{ background: "linear-gradient(180deg, hsl(38 55% 91%), hsl(38 45% 87%))", borderTop: "1px solid rgba(212,175,55,0.08)", borderBottom: "1px solid rgba(212,175,55,0.08)" }}>
       <div className="max-w-6xl mx-auto px-6 md:px-12">
         <div ref={ref} className="reveal-element grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-8">
-          <StatCard value={8}    suffix="+"  label="Deep Articles"      desc="Each 6–10 min read" />
-          <StatCard value={5}    suffix=""   label="Character Profiles"  desc="With full image & stats" />
-          <StatCard value={12}   suffix="K+" label="Readers"            desc="And growing daily" />
-          <StatCard value={18}   suffix=""   label="Parvas Decoded"      desc="The complete epic" />
+          <StatCard value={14}   suffix=""   label="Deep Articles"      desc="Each 6–10 min read" />
+          <StatCard value={25}   suffix=""   label="Story Characters"   desc="AI-narrated, 4 languages" />
+          <StatCard value={22}   suffix=""   label="Life Scenarios"     desc="Real situations, ancient mirrors" />
+          <StatCard value={4}    suffix=""   label="Languages"          desc="English · Telugu · Hindi · Kannada" />
         </div>
       </div>
     </section>
@@ -680,7 +680,7 @@ const AboutCTA = () => {
         <div className="glass-card rounded-2xl px-8 py-8 max-w-md mx-auto relative overflow-hidden" style={{ borderColor: "rgba(212,175,55,0.15)" }}>
           <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(to right, transparent, rgba(212,175,55,0.4), transparent)" }} />
           <Users size={20} className="text-primary mx-auto mb-3" />
-          <p className="font-heading font-semibold text-foreground mb-1" style={{ fontSize: "17px" }}>Join 12,000+ Readers</p>
+          <p className="font-heading font-semibold text-foreground mb-1" style={{ fontSize: "17px" }}>Free Weekly Wisdom</p>
           <p className="text-muted-foreground mb-5 text-sm" style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}>
             One ancient insight in your inbox. Every morning. Free forever.
           </p>

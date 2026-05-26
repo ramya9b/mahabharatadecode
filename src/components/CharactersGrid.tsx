@@ -18,8 +18,8 @@ const CharactersGrid = () => (
   <section id="characters" className="section-padding">
     <div className="max-w-7xl mx-auto">
       <div className="section-header">
-        <span className="section-label">Explore</span>
-        <h2 className="section-title">Legendary Characters</h2>
+        <span className="section-label">Closer Look</span>
+        <h2 className="section-title">Meet the Five</h2>
         <div
           aria-hidden="true"
           style={{
@@ -84,7 +84,30 @@ const CharactersGrid = () => (
       <div className="flex justify-center mt-10">
         <Link
           to="/characters"
-          className="btn-ripple cta-magnetic px-10 py-3.5 rounded-full glass-card text-foreground text-sm font-medium tracking-wide hover:border-primary/50 hover:text-primary transition-colors duration-300"
+          style={{
+            display: "inline-block",
+            padding: "14px 40px",
+            borderRadius: "99px",
+            background: "linear-gradient(135deg, #FBBF24 0%, #34D399 50%, #38BDF8 100%)",
+            backgroundSize: "200% auto",
+            animation: "shimmer 4s linear infinite",
+            color: "#08040F",
+            fontFamily: "'Cinzel', serif",
+            fontSize: "14px",
+            fontWeight: 700,
+            letterSpacing: "0.1em",
+            textDecoration: "none",
+            boxShadow: "0 4px 24px rgba(52,211,153,0.40)",
+            transition: "all 0.35s ease",
+          }}
+          onMouseEnter={(e) => {
+            (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-3px) scale(1.02)";
+            (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 12px 36px rgba(52,211,153,0.60)";
+          }}
+          onMouseLeave={(e) => {
+            (e.currentTarget as HTMLAnchorElement).style.transform = "none";
+            (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 4px 24px rgba(52,211,153,0.40)";
+          }}
         >
           View Full Character Profiles →
         </Link>

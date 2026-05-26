@@ -47,13 +47,12 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
 
     <!-- ══════════════════════════════════════════════════════
-         FONTS — Cinzel + Cormorant Garamond
-         Loaded synchronously so font renders on first paint.
-         No FOUT (Flash of Unstyled Text).
+         FONTS — Cinzel + Cormorant Garamond + Noto language scripts
+         Non-blocking load via rel=preload swap → does not block first paint.
+         <noscript> fallback ensures fonts still load if JS is disabled.
          ══════════════════════════════════════════════════════ -->
-    <!-- Cinzel: brand, headings, labels, nav -->
-    <!-- Cormorant Garamond: body, articles, quotes, descriptions -->
-    <link rel="stylesheet" media="print" onload="this.media='all'" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;900&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Noto+Serif+Devanagari:wght@400;600;700&family=Tiro+Devanagari+Hindi:ital@0;1&family=Noto+Serif+Telugu:wght@400;600;700&family=Noto+Serif+Kannada:wght@400;600;700&display=swap" />
+    <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;900&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Noto+Serif+Devanagari:wght@400;600;700&family=Tiro+Devanagari+Hindi:ital@0;1&family=Noto+Serif+Telugu:wght@400;600;700&family=Noto+Serif+Kannada:wght@400;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
+    <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;900&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Noto+Serif+Devanagari:wght@400;600;700&family=Tiro+Devanagari+Hindi:ital@0;1&family=Noto+Serif+Telugu:wght@400;600;700&family=Noto+Serif+Kannada:wght@400;600;700&display=swap" /></noscript>
 
     <!-- Anti-FOUC: apply saved theme before React loads -->
     <script>
@@ -96,14 +95,19 @@
       });
     </script>
     <script>
+      /* dataLayer/gtag are defined synchronously — they're just an array
+         and a single function declaration (sub-ms cost). React calls
+         window.gtag() inside route-change useEffects which run BEFORE
+         DOMContentLoaded fires, so deferring init breaks the first page
+         view. The expensive GTM script itself is already deferred above. */
       window.dataLayer = window.dataLayer || [];
-      function gtag(){ dataLayer.push(arguments); }
-      gtag('js', new Date());
-      gtag('config', 'G-453G97F065', {
+      window.gtag = function () { window.dataLayer.push(arguments); };
+      window.GA4_ID = 'G-453G97F065';
+      window.gtag('js', new Date());
+      window.gtag('config', 'G-453G97F065', {
         send_page_view: false,   /* SPA: we fire manually on each route change */
         cookie_flags: 'SameSite=None;Secure',
       });
-      window.GA4_ID = 'G-453G97F065';
     </script>
     <!-- Preload critical Cinzel font for faster first paint -->
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />

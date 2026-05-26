@@ -1,5 +1,6 @@
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
+import SocialProofBar from "@/components/SocialProofBar";
 import StoryTellerBanner from "@/components/StoryTellerBanner";
 import StartReadingBanner from "@/components/StartReadingBanner";
 import ExploreCharactersBanner from "@/components/ExploreCharactersBanner";
@@ -15,6 +16,7 @@ const Index = () => {
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Navbar />
       <HeroSection />
+      <SocialProofBar />
 
       {/* ── Story Teller Feature Banner ── */}
       <StoryTellerBanner />

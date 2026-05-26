@@ -112,19 +112,23 @@ const NewsletterSignup = ({
               disabled={status === "loading"}
               aria-label="Subscribe"
               style={{
-                padding:        "7px 14px",
-                borderRadius:   "99px",
-                background:     "hsl(var(--primary))",
-                color:          "hsl(var(--primary-foreground))",
-                border:         "none",
-                cursor:         "pointer",
-                fontSize:       "12px",
-                fontFamily:     "'Cinzel',serif",
-                letterSpacing:  "0.06em",
-                display:        "flex",
-                alignItems:     "center",
-                gap:            "5px",
-                transition:     "all 0.2s",
+                padding: "7px 16px",
+                borderRadius: "99px",
+                background: "linear-gradient(135deg, #FBBF24 0%, #34D399 50%, #38BDF8 100%)",
+                backgroundSize: "200% auto",
+                animation: "shimmer 4s linear infinite",
+                color: "#08040F",
+                border: "none",
+                cursor: "pointer",
+                fontSize: "12px",
+                fontFamily: "'Cinzel', serif",
+                letterSpacing: "0.08em",
+                display: "flex",
+                alignItems: "center",
+                gap: "5px",
+                fontWeight: 700,
+                boxShadow: "0 2px 12px rgba(52,211,153,0.35)",
+                transition: "all 0.2s",
               }}
             >
               {status === "loading" ? <Loader size={13} style={{ animation: "spin 1s linear infinite" }} /> : <>Subscribe <ArrowRight size={12} /></>}
@@ -198,7 +202,25 @@ const NewsletterSignup = ({
                   disabled={status === "loading"}
                   aria-label="Subscribe to newsletter"
                   className="btn-ripple"
-                  style={{ padding:"13px 22px", background:"hsl(var(--primary))", color:"hsl(var(--primary-foreground))", border:"none", cursor:"pointer", fontFamily:"'Cinzel',serif", fontSize:"12px", fontWeight:600, letterSpacing:"0.08em", display:"flex", alignItems:"center", gap:"6px", flexShrink:0, transition:"background 0.2s" }}
+                  style={{
+                    padding: "13px 24px",
+                    background: "linear-gradient(135deg, #FBBF24 0%, #34D399 50%, #38BDF8 100%)",
+                    backgroundSize: "200% auto",
+                    animation: "shimmer 4s linear infinite",
+                    color: "#08040F",
+                    border: "none",
+                    cursor: "pointer",
+                    fontFamily: "'Cinzel', serif",
+                    fontSize: "12px",
+                    fontWeight: 700,
+                    letterSpacing: "0.08em",
+                    display: "flex",
+                    alignItems: "center",
+                    gap: "6px",
+                    flexShrink: 0,
+                    boxShadow: "0 4px 20px rgba(52,211,153,0.40)",
+                    transition: "all 0.35s ease",
+                  }}
                 >
                   {status === "loading"
                     ? <Loader size={14} style={{ animation:"spin 1s linear infinite" }} />
@@ -269,7 +291,26 @@ const NewsletterSignup = ({
               disabled={status === "loading"}
               className="btn-ripple cta-magnetic"
               aria-label="Subscribe to newsletter"
-              style={{ padding:"10px 20px", borderRadius:"99px", background:"hsl(var(--primary))", color:"hsl(var(--primary-foreground))", border:"none", cursor:"pointer", fontFamily:"'Cinzel',serif", fontSize:"12px", fontWeight:600, letterSpacing:"0.08em", display:"flex", alignItems:"center", gap:"6px", transition:"all 0.2s", whiteSpace:"nowrap" }}
+              style={{
+                padding: "10px 22px",
+                borderRadius: "99px",
+                background: "linear-gradient(135deg, #FBBF24 0%, #34D399 50%, #38BDF8 100%)",
+                backgroundSize: "200% auto",
+                animation: "shimmer 4s linear infinite",
+                color: "#08040F",
+                border: "none",
+                cursor: "pointer",
+                fontFamily: "'Cinzel', serif",
+                fontSize: "12px",
+                fontWeight: 700,
+                letterSpacing: "0.08em",
+                display: "flex",
+                alignItems: "center",
+                gap: "6px",
+                whiteSpace: "nowrap",
+                boxShadow: "0 4px 16px rgba(52,211,153,0.35)",
+                transition: "all 0.35s ease",
+              }}
             >
               {status === "loading"
                 ? <Loader size={13} style={{ animation:"spin 1s linear infinite" }} />

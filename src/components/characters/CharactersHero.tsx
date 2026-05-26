@@ -127,7 +127,7 @@ const CharactersHero = ({ characters }: CharactersHeroProps) => {
           <span className="gold-text block">Legendary</span>
           <span
             className="block"
-            style={{ color: "rgba(42,31,14,0.9)", fontSize: "0.68em" }}
+            style={{ color: "rgba(253,230,138,0.78)", fontSize: "0.68em" }}
           >
             Characters
           </span>
@@ -194,7 +194,7 @@ const CharactersHero = ({ characters }: CharactersHeroProps) => {
               {/* Name label */}
               <span
                 className="font-heading text-[10px] tracking-[0.15em] uppercase transition-colors duration-300 group-hover:text-primary"
-                style={{ color: "rgba(42,31,14,0.5)" }}
+                style={{ color: "rgba(253,230,138,0.65)" }}
               >
                 {char.name}
               </span>

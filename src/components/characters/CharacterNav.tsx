@@ -76,7 +76,7 @@ const CharacterNav = ({ characters }: CharacterNavProps) => {
             <span
               className="font-heading text-[10px] tracking-[0.2em] uppercase opacity-0 group-hover:opacity-100 transition-all duration-200 whitespace-nowrap"
               style={{
-                color: isActive ? char.accentHex : "rgba(42,31,14,0.5)",
+                color: isActive ? char.accentHex : "rgba(253,230,138,0.65)",
                 fontSize: "10px",
                 transform: isActive ? "translateX(0)" : "translateX(6px)",
               }}

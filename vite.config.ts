@@ -1,12 +1,31 @@
 /// <reference types="vitest" />
-import { defineConfig } from "vite";
+import { defineConfig, type Plugin } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import { VitePWA } from "vite-plugin-pwa";
 import path from "path";
 
+/* Injects <link rel="preload"> for the hashed hero-bg.webp so the LCP image
+   starts downloading before the JS bundle even parses. Build-time only. */
+function preloadHero(): Plugin {
+  return {
+    name: "preload-hero",
+    apply: "build",
+    transformIndexHtml(html, ctx) {
+      if (!ctx.bundle) return html;
+      const heroKey = Object.keys(ctx.bundle).find((k) =>
+        /assets\/hero-bg-[^/]+\.webp$/.test(k)
+      );
+      if (!heroKey) return html;
+      const tag = `<link rel="preload" as="image" href="/${heroKey}" fetchpriority="high" type="image/webp" />`;
+      return html.replace("</head>", `    ${tag}\n  </head>`);
+    },
+  };
+}
+
 export default defineConfig({
   plugins: [
     react(),
+    preloadHero(),
     VitePWA({
       registerType: "autoUpdate",
       workbox: {

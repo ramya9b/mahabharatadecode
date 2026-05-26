@@ -75,7 +75,7 @@ const CharactersCTA = () => (
         className="leading-relaxed mb-10 mx-auto"
         style={{
           fontSize: "17px",
-          color: "rgba(253,230,138,0.65)",
+          color: "rgba(42,31,14,0.70)",
           fontFamily: "'Cormorant Garamond', Georgia, serif",
           maxWidth: "520px",
         }}
@@ -123,7 +123,7 @@ const CharactersCTA = () => (
           className="mb-5"
           style={{
             fontSize: "14px",
-            color: "rgba(253,230,138,0.60)",
+            color: "rgba(42,31,14,0.65)",
             fontFamily: "'Cormorant Garamond', Georgia, serif",
           }}
         >

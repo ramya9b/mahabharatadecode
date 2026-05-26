@@ -329,7 +329,7 @@ const Blog = () => {
           </div>
 
           <p className="text-muted-foreground/40 text-xs mt-5 tracking-wide">
-            No spam. Unsubscribe anytime. ✦ 12,000+ readers
+            No spam. Unsubscribe anytime. ✦ One story, every Friday
           </p>
         </div>
       </section>
