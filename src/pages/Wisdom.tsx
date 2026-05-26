@@ -347,6 +347,11 @@ const ScenarioDetail = ({
   const { theme: themeM } = useTheme();
   const isDarkM = themeM === "dark";
 
+  /* Theme-aware text colors — gold/cream on dark, dark brown on cream. */
+  const bodyTextStrong = isDarkM ? "rgba(253,230,138,0.92)" : "rgba(42,31,14,0.90)";
+  const bodyText       = isDarkM ? "rgba(253,230,138,0.82)" : "rgba(42,31,14,0.82)";
+  const bodyTextMuted  = isDarkM ? "rgba(253,230,138,0.62)" : "rgba(42,31,14,0.58)";
+
   /* Close on Escape */
   useEffect(() => {
     const fn = (e: KeyboardEvent) => {
@@ -441,7 +446,7 @@ const ScenarioDetail = ({
             <p
               style={{
                 fontSize: "17px",
-                color: "rgba(42,31,14,0.5)",
+                color: bodyTextMuted,
                 fontFamily: "'Cormorant Garamond', Georgia, serif",
                 fontStyle: "italic",
               }}
@@ -458,7 +463,7 @@ const ScenarioDetail = ({
                   key={i}
                   style={{
                     fontSize: "clamp(17px, 1.9vw, 19px)",
-                    color: i === 0 ? (isDarkM ? "rgba(253,230,138,0.90)" : "rgba(42,31,14,0.85)") : (isDarkM ? "rgba(42,31,14,0.7)" : "rgba(42,31,14,0.65)"),
+                    color: i === 0 ? bodyTextStrong : bodyText,
                     fontFamily: "'Cormorant Garamond', Georgia, serif",
                     lineHeight: 1.8,
                     fontWeight: i === 0 ? 500 : 400,
@@ -483,7 +488,7 @@ const ScenarioDetail = ({
                   key={i}
                   style={{
                     fontSize: "clamp(17px, 1.9vw, 19px)",
-                    color: "rgba(253,230,138,0.80)",
+                    color: bodyText,
                     fontFamily: "'Cormorant Garamond', Georgia, serif",
                     lineHeight: 1.8,
                   }}
@@ -502,7 +507,7 @@ const ScenarioDetail = ({
                   key={i}
                   style={{
                     fontSize: "clamp(17px, 1.9vw, 19px)",
-                    color: "rgba(253,230,138,0.80)",
+                    color: bodyText,
                     fontFamily: "'Cormorant Garamond', Georgia, serif",
                     lineHeight: 1.8,
                   }}
@@ -532,7 +537,7 @@ const ScenarioDetail = ({
               className="font-heading italic font-semibold leading-relaxed text-center"
               style={{
                 fontSize: "clamp(16px, 2vw, 20px)",
-                color: "rgba(253,230,138,0.92)",
+                color: bodyTextStrong,
               }}
             >
               "{scenario.theLesson}"
