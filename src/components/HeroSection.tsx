@@ -216,34 +216,26 @@ const HeroSection = () => {
             to="/blog"
             className="btn-i18n i18n-safe"
             style={{
-              padding: "14px 28px",
+              padding: "14px 32px",
               borderRadius: "9999px",
-              background: "rgba(12,8,2,0.85)",
-              backdropFilter: "blur(8px)",
-              WebkitBackdropFilter: "blur(8px)",
-              border: "1.5px solid rgba(212,175,55,0.55)",
-              color: "#FBBF24",
+              background: "linear-gradient(135deg, #D4AF37 0%, #FBBF24 50%, #FDE68A 100%)",
+              backgroundSize: "200% auto",
+              color: "#08040F",
               fontFamily: "'Cinzel', serif",
-              fontSize: "12px",
+              fontSize: "13px",
               fontWeight: 700,
               letterSpacing: "0.1em",
               textTransform: "uppercase",
               textDecoration: "none",
-              boxShadow: "0 4px 20px rgba(212,175,55,0.2), inset 0 1px 0 rgba(212,175,55,0.12)",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+              boxShadow: "0 8px 32px rgba(251,191,36,0.4), 0 0 60px rgba(52,211,153,0.15)",
               transition: "all 0.35s ease",
+              animation: "shimmer 4s linear infinite",
             }}
-            onMouseEnter={e => {
-              const el = e.currentTarget as HTMLAnchorElement;
-              el.style.transform = "translateY(-3px) scale(1.02)";
-              el.style.boxShadow = "0 8px 32px rgba(212,175,55,0.4)";
-              el.style.borderColor = "rgba(212,175,55,0.85)";
-            }}
-            onMouseLeave={e => {
-              const el = e.currentTarget as HTMLAnchorElement;
-              el.style.transform = "none";
-              el.style.boxShadow = "0 4px 20px rgba(212,175,55,0.2), inset 0 1px 0 rgba(212,175,55,0.12)";
-              el.style.borderColor = "rgba(212,175,55,0.55)";
-            }}
+            onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-3px) scale(1.02)"; (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 12px 40px rgba(212,175,55,0.6)"; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.transform = "none"; (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 8px 32px rgba(212,175,55,0.45), 0 0 60px rgba(212,175,55,0.15)"; }}
           >
             {t("hero.cta_primary")}
           </Link>
@@ -251,34 +243,26 @@ const HeroSection = () => {
             to="/characters"
             className="btn-i18n i18n-safe"
             style={{
-              padding: "14px 28px",
+              padding: "14px 32px",
               borderRadius: "9999px",
-              background: "transparent",
-              border: "1.5px solid rgba(212,175,55,0.40)",
-              color: "rgba(232,210,160,0.9)",
+              background: "linear-gradient(135deg, #D4AF37 0%, #FBBF24 50%, #FDE68A 100%)",
+              backgroundSize: "200% auto",
+              color: "#08040F",
               fontFamily: "'Cinzel', serif",
-              fontSize: "12px",
+              fontSize: "13px",
               fontWeight: 700,
               letterSpacing: "0.1em",
               textTransform: "uppercase",
               textDecoration: "none",
-              boxShadow: "none",
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+              boxShadow: "0 8px 32px rgba(251,191,36,0.4), 0 0 60px rgba(52,211,153,0.15)",
               transition: "all 0.35s ease",
+              animation: "shimmer 4s linear infinite",
             }}
-            onMouseEnter={e => {
-              const el = e.currentTarget as HTMLAnchorElement;
-              el.style.transform = "translateY(-3px) scale(1.02)";
-              el.style.borderColor = "rgba(212,175,55,0.75)";
-              el.style.color = "#FBBF24";
-              el.style.boxShadow = "0 4px 20px rgba(212,175,55,0.15)";
-            }}
-            onMouseLeave={e => {
-              const el = e.currentTarget as HTMLAnchorElement;
-              el.style.transform = "none";
-              el.style.borderColor = "rgba(212,175,55,0.40)";
-              el.style.color = "rgba(232,210,160,0.9)";
-              el.style.boxShadow = "none";
-            }}
+            onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-3px) scale(1.02)"; (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 12px 40px rgba(212,175,55,0.6)"; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.transform = "none"; (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 8px 32px rgba(212,175,55,0.45), 0 0 60px rgba(212,175,55,0.15)"; }}
           >
             {t("hero.cta_secondary")}
           </Link>
