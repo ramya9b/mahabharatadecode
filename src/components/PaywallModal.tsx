@@ -2,43 +2,41 @@ import { useCallback, useEffect, useState } from "react";
 import { X, Check, Loader, Sparkles } from "lucide-react";
 import { PLANS, planExpiry, setSubscription, type PlanId } from "@/lib/subscription";
 
-/* Razorpay Checkout types (the script attaches `Razorpay` to window) */
-interface RazorpayResponse {
-  razorpay_payment_id: string;
-  razorpay_order_id: string;
-  razorpay_signature: string;
+/* Cashfree Checkout types — SDK attaches `Cashfree` to window via v3 script. */
+interface CashfreeCheckoutResult {
+  error?: { message: string };
+  redirect?: boolean;
+  paymentDetails?: { paymentMessage: string };
+  order?: { orderId: string };
 }
-interface RazorpayOptions {
-  key: string;
-  amount: number;
-  currency: string;
-  name: string;
-  description: string;
-  order_id: string;
-  handler: (r: RazorpayResponse) => void;
-  modal?: { ondismiss?: () => void };
-  theme?: { color?: string };
+interface CashfreeInstance {
+  checkout: (opts: {
+    paymentSessionId: string;
+    redirectTarget?: "_modal" | "_self" | "_blank";
+  }) => Promise<CashfreeCheckoutResult>;
 }
-interface RazorpayInstance { open: () => void; }
+interface CashfreeLoad {
+  (opts: { mode: "sandbox" | "production" }): Promise<CashfreeInstance>;
+}
 declare global {
-  interface Window { Razorpay?: new (opts: RazorpayOptions) => RazorpayInstance; }
+  interface Window { Cashfree?: CashfreeLoad; }
 }
 
-const RAZORPAY_SRC = "https://checkout.razorpay.com/v1/checkout.js";
+const CASHFREE_SRC = "https://sdk.cashfree.com/js/v3/cashfree.js";
 
-function loadRazorpay(): Promise<boolean> {
+function loadCashfreeSDK(): Promise<boolean> {
   return new Promise((resolve) => {
-    if (window.Razorpay) return resolve(true);
-    const existing = document.querySelector<HTMLScriptElement>(`script[src="${RAZORPAY_SRC}"]`);
+    if (window.Cashfree) return resolve(true);
+    const existing = document.querySelector<HTMLScriptElement>(`script[src="${CASHFREE_SRC}"]`);
     if (existing) {
       existing.addEventListener("load", () => resolve(true), { once: true });
       existing.addEventListener("error", () => resolve(false), { once: true });
       return;
     }
     const s = document.createElement("script");
-    s.src = RAZORPAY_SRC;
+    s.src = CASHFREE_SRC;
     s.async = true;
-    s.onload = () => resolve(true);
+    s.onload  = () => resolve(true);
     s.onerror = () => resolve(false);
     document.body.appendChild(s);
   });
@@ -86,64 +84,66 @@ const PaywallModal = ({ open, onClose, onSuccess, reason }: PaywallModalProps) =
         body: JSON.stringify({ plan: selected }),
       });
       const orderData = await orderRes.json();
-      if (!orderRes.ok || !orderData.orderId) {
+      if (!orderRes.ok || !orderData.paymentSessionId) {
         throw new Error(orderData.error || "Could not create order");
       }
 
-      /* 2. Load Razorpay Checkout */
-      const ok = await loadRazorpay();
-      if (!ok || !window.Razorpay) throw new Error("Could not load Razorpay");
+      /* 2. Load Cashfree SDK */
+      const sdkLoaded = await loadCashfreeSDK();
+      if (!sdkLoaded || !window.Cashfree) throw new Error("Could not load Cashfree");
 
-      /* 3. Open Checkout */
-      const rzp = new window.Razorpay({
-        key:         orderData.keyId,
-        amount:      orderData.amount,
-        currency:    orderData.currency,
-        name:        "MahabharataDecoded",
-        description: `${PLANS[selected].label} pass`,
-        order_id:    orderData.orderId,
-        theme:       { color: "#D4AF37" },
-        modal: {
-          ondismiss: () => setStatus("idle"),
-        },
-        handler: async (resp) => {
-          /* 4. Verify signature server-side */
-          try {
-            const verifyRes = await fetch("/payments/verify", {
-              method: "POST",
-              headers: { "Content-Type": "application/json" },
-              body: JSON.stringify({ ...resp, plan: selected }),
-            });
-            const verifyData = await verifyRes.json();
-            if (!verifyRes.ok || !verifyData.verified) {
-              throw new Error(verifyData.error || "Payment verification failed");
-            }
-            /* 5. Persist locally */
-            setSubscription({
-              plan:      selected,
-              expiresAt: planExpiry(selected),
-              paymentId: resp.razorpay_payment_id,
-              orderId:   resp.razorpay_order_id,
-            });
-            setStatus("success");
-            try {
-              if (typeof window.gtag === "function") {
-                window.gtag("event", "purchase", {
-                  transaction_id: resp.razorpay_payment_id,
-                  value:          PLANS[selected].priceInr,
-                  currency:       "INR",
-                  items:          [{ item_id: selected, item_name: `MBD ${PLANS[selected].label}` }],
-                });
-              }
-            } catch (_) { /* GA optional */ }
-            onSuccess?.();
-          } catch (e) {
-            setStatus("error");
-            setError(e instanceof Error ? e.message : "Verification failed");
-          }
-        },
+      /* 3. Initialise SDK for the right environment */
+      const cashfree = await window.Cashfree({
+        mode: orderData.mode === "live" ? "production" : "sandbox",
       });
-      rzp.open();
+
+      /* 4. Open Checkout (modal). SDK resolves with the result. */
+      const result = await cashfree.checkout({
+        paymentSessionId: orderData.paymentSessionId,
+        redirectTarget:   "_modal",
+      });
+
+      if (result.error) {
+        throw new Error(result.error.message || "Checkout failed");
+      }
+      /* If Cashfree redirected the user instead of completing inline,
+         result.redirect will be true. In that case the verify will
+         happen via return_url; nothing more to do here. */
+      if (result.redirect) {
+        setStatus("idle");
+        return;
+      }
+
+      /* 5. Verify payment server-side using the order id */
+      const verifyRes = await fetch("/payments/verify", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ orderId: orderData.orderId, plan: selected }),
+      });
+      const verifyData = await verifyRes.json();
+      if (!verifyRes.ok || !verifyData.verified) {
+        throw new Error(verifyData.error || "Payment verification failed");
+      }
+
+      /* 6. Persist locally */
+      setSubscription({
+        plan:      selected,
+        expiresAt: planExpiry(selected),
+        paymentId: verifyData.paymentId,
+        orderId:   verifyData.orderId,
+      });
+      setStatus("success");
+      try {
+        if (typeof window.gtag === "function") {
+          window.gtag("event", "purchase", {
+            transaction_id: verifyData.paymentId,
+            value:          PLANS[selected].priceInr,
+            currency:       "INR",
+            items:          [{ item_id: selected, item_name: `MBD ${PLANS[selected].label}` }],
+          });
+        }
+      } catch (_) { /* GA optional */ }
+      onSuccess?.();
     } catch (e) {
       setStatus("error");
       setError(e instanceof Error ? e.message : "Something went wrong");

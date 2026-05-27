@@ -1,9 +1,11 @@
 /* ─────────────────────────────────────────────────────────────
    Cloudflare Pages Function — POST /payments/verify
-   Verifies the HMAC-SHA256 signature Razorpay returns after a
-   successful Checkout. Confirms the payment is genuine before the
-   client unlocks access in localStorage.
+   After Cashfree Checkout closes, the frontend asks us to verify
+   the order status. We query Cashfree's GET /orders/{order_id}
+   server-side (so the browser can't fake a "PAID" claim).
 ───────────────────────────────────────────────────────────── */
+
+const API_VERSION = "2023-08-01";
 
 const corsHeaders = {
   "Access-Control-Allow-Origin":  "*",
@@ -16,27 +18,10 @@ function json(body, status = 200) {
   return new Response(JSON.stringify(body), { status, headers: corsHeaders });
 }
 
-async function hmacSha256Hex(message, secret) {
-  const enc = new TextEncoder();
-  const key = await crypto.subtle.importKey(
-    "raw",
-    enc.encode(secret),
-    { name: "HMAC", hash: "SHA-256" },
-    false,
-    ["sign"]
-  );
-  const sig = await crypto.subtle.sign("HMAC", key, enc.encode(message));
-  return [...new Uint8Array(sig)]
-    .map((b) => b.toString(16).padStart(2, "0"))
-    .join("");
-}
-
-/** Constant-time hex string comparison */
-function timingSafeEqual(a, b) {
-  if (a.length !== b.length) return false;
-  let diff = 0;
-  for (let i = 0; i < a.length; i++) diff |= a.charCodeAt(i) ^ b.charCodeAt(i);
-  return diff === 0;
+function baseUrl(mode) {
+  return mode === "live"
+    ? "https://api.cashfree.com/pg"
+    : "https://sandbox.cashfree.com/pg";
 }
 
 export async function onRequestPost(context) {
@@ -44,34 +29,48 @@ export async function onRequestPost(context) {
   try { body = await context.request.json(); }
   catch { return json({ error: "Invalid JSON" }, 400); }
 
-  const {
-    razorpay_order_id,
-    razorpay_payment_id,
-    razorpay_signature,
-    plan,
-  } = body || {};
+  const { orderId, plan } = body || {};
+  if (!orderId) return json({ error: "Missing orderId" }, 400);
 
-  if (!razorpay_order_id || !razorpay_payment_id || !razorpay_signature) {
-    return json({ error: "Missing payment fields" }, 400);
+  const appId     = context.env.CASHFREE_APP_ID;
+  const secretKey = context.env.CASHFREE_SECRET_KEY;
+  const mode      = (context.env.CASHFREE_MODE || "test").toLowerCase();
+  if (!appId || !secretKey) return json({ error: "Cashfree not configured" }, 500);
+
+  let res;
+  try {
+    res = await fetch(`${baseUrl(mode)}/orders/${encodeURIComponent(orderId)}`, {
+      method: "GET",
+      headers: {
+        "x-api-version":   API_VERSION,
+        "x-client-id":     appId,
+        "x-client-secret": secretKey,
+      },
+    });
+  } catch (_) {
+    return json({ error: "Network error contacting Cashfree" }, 502);
   }
 
-  const keySecret = context.env.RAZORPAY_KEY_SECRET;
-  if (!keySecret) return json({ error: "Razorpay not configured" }, 500);
+  const data = await res.json().catch(() => ({}));
+  if (!res.ok) {
+    return json({ error: data?.message || "Verification request failed" }, res.status || 500);
+  }
 
-  const expected = await hmacSha256Hex(
-    `${razorpay_order_id}|${razorpay_payment_id}`,
-    keySecret
-  );
-
-  if (!timingSafeEqual(expected, razorpay_signature)) {
-    return json({ error: "Invalid signature" }, 400);
+  /* order_status values: ACTIVE | PAID | EXPIRED | TERMINATED | TERMINATION_REQUESTED */
+  if (data.order_status !== "PAID") {
+    return json({
+      verified: false,
+      status:   data.order_status,
+      message:  `Order is ${data.order_status}, not PAID`,
+    }, 400);
   }
 
   return json({
     verified:  true,
     plan,
-    paymentId: razorpay_payment_id,
-    orderId:   razorpay_order_id,
+    orderId:   data.order_id,
+    paymentId: data.cf_order_id ? String(data.cf_order_id) : data.order_id,
+    amount:    data.order_amount,
   });
 }
 
