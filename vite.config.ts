@@ -78,7 +78,6 @@ export default defineConfig({
           ],
           "i18n":   ["i18next", "react-i18next"],
           "query":  ["@tanstack/react-query"],
-          "lottie": ["lottie-web"],
         },
       },
     },

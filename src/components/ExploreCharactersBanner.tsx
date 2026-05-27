@@ -80,7 +80,7 @@ const ExploreCharactersBanner = () => {
             lineHeight: 1.2,
           }}
         >
-          🧿 Explore Characters
+          Explore Characters
         </h2>
         <p
           style={{

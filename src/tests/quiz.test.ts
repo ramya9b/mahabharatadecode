@@ -6,7 +6,7 @@
 
 import { describe, it, expect } from "vitest";
 import {
-  calculateScores, determineResult, computeQuizResult,
+  calculateScores, computeQuizResult,
   isQuizComplete, getAnswerCharacter, scoreBreakdown,
 } from "@/utils/quizScoring";
 import { QUIZ_QUESTIONS, TOTAL_QUESTIONS, CHARACTER_META } from "@/data/quiz";
@@ -175,7 +175,7 @@ describe("TC-005: Partial and edge-case answers", () => {
 describe("TC-006: isQuizComplete", () => {
   it("all 8 answered → true", () => expect(isQuizComplete(allFor("karna"), 8)).toBe(true));
   it("one null → false", () => {
-    const a = allFor("krishna"); a[4] = null;
+    const a: (number | null)[] = allFor("krishna"); a[4] = null;
     expect(isQuizComplete(a, 8)).toBe(false);
   });
   it("empty array → false", () => expect(isQuizComplete([], 8)).toBe(false));
@@ -183,7 +183,7 @@ describe("TC-006: isQuizComplete", () => {
   it("all zeros (valid) → true", () => expect(isQuizComplete(new Array(8).fill(0), 8)).toBe(true));
   it("null at any position makes it incomplete", () => {
     for (let i = 0; i < 8; i++) {
-      const a = allFor("arjuna"); a[i] = null;
+      const a: (number | null)[] = allFor("arjuna"); a[i] = null;
       expect(isQuizComplete(a, 8), `null at ${i}`).toBe(false);
     }
   });

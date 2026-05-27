@@ -48,7 +48,7 @@ const StoryTellerBanner = () => {
             lineHeight: 1.2,
           }}
         >
-          ✨ AI Story Teller
+          AI Story Teller
         </h2>
         <p
           style={{

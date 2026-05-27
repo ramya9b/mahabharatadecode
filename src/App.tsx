@@ -15,6 +15,7 @@ import BackToTop from "@/components/BackToTop";
 import CookieConsent from "@/components/CookieConsent";
 import FloatingStoryButton from "@/components/FloatingStoryButton";
 import FirstVisitCard from "@/components/FirstVisitCard";
+import PWAUpdateNotice from "@/components/PWAUpdateNotice";
 import { ThemeProvider } from "@/context/ThemeContext";
 
 const Index       = lazy(() => import("./pages/Index.tsx"));
@@ -177,6 +178,7 @@ const App = () => (
           <CookieConsent />
           <FloatingStoryButton />
           <FirstVisitCard />
+          <PWAUpdateNotice />
         </ErrorBoundary>
       </BrowserRouter>
     </QueryClientProvider>

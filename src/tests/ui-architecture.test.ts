@@ -22,10 +22,10 @@
 
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import {
-  calculateScores, computeQuizResult, isQuizComplete, getAnswerCharacter, scoreBreakdown,
+  calculateScores, computeQuizResult, isQuizComplete, scoreBreakdown,
 } from "@/utils/quizScoring";
-import { QUIZ_QUESTIONS, TOTAL_QUESTIONS, CHARACTER_META } from "@/data/quiz";
-import { articles, getArticleBySlug, getFeaturedArticle, getArticlesByCategory } from "@/data/articles";
+import { QUIZ_QUESTIONS, CHARACTER_META } from "@/data/quiz";
+import { articles, getArticleBySlug, getFeaturedArticle } from "@/data/articles";
 import { characters, getCharacterById } from "@/data/characters";
 import { buildShareUrl } from "@/components/ShareButtons";
 import { STORAGE_KEY, getStoredConsent } from "@/components/CookieConsent";
@@ -80,8 +80,7 @@ describe("SUITE-A: Route path integrity", () => {
 
   it("character articleSlug values match articles data", () => {
     characters.forEach((char) => {
-      const article = getArticleBySlug(char.articleSlug);
-      // Article may not exist yet for all characters — check type is string
+      getArticleBySlug(char.articleSlug); // touch lookup
       expect(typeof char.articleSlug).toBe("string");
       expect(char.articleSlug.length).toBeGreaterThan(5);
     });
@@ -408,7 +407,9 @@ describe("SUITE-I: ErrorBoundary getDerivedStateFromError", () => {
   });
 
   it("ErrorBoundary reset clears error state", () => {
-    let state = { hasError: true, error: new Error("oops"), errorInfo: null };
+    let state: { hasError: boolean; error: Error | null; errorInfo: null } = {
+      hasError: true, error: new Error("oops"), errorInfo: null,
+    };
     // Simulate handleReset
     state = { hasError: false, error: null, errorInfo: null };
     expect(state.hasError).toBe(false);
@@ -724,7 +725,6 @@ describe("SUITE-N: Accessibility metadata & labels", () => {
 ═══════════════════════════════════════════════════════ */
 import { useDebounce } from "@/hooks/useDebounce";
 import { renderHook, act } from "@testing-library/react";
-import { vi } from "vitest";
 
 describe("SUITE-O: useDebounce hook", () => {
   beforeEach(() => { vi.useFakeTimers(); });

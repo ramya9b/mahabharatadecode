@@ -1,3 +1,6 @@
+import { Link } from "react-router-dom";
+import { ArrowRight } from "lucide-react";
+
 const DailyWisdom = () => {
   return (
     <section id="wisdom" className="section-padding">
@@ -30,6 +33,25 @@ const DailyWisdom = () => {
           <span className="text-primary/50 text-[11px] tracking-[0.25em] uppercase">
             — Bhagavad Gita 2.47
           </span>
+        </div>
+
+        {/* Subtle exit — drives daily-return engagement instead of dead-ending the section */}
+        <div className="mt-8 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
+          <Link
+            to="/blog/gita-verse-two-forty-seven"
+            className="inline-flex items-center gap-2 text-primary text-[12px] tracking-[0.18em] uppercase font-heading hover:opacity-80 transition-opacity"
+          >
+            Read the full commentary
+            <ArrowRight size={13} className="opacity-70" />
+          </Link>
+          <span className="hidden sm:inline text-muted-foreground/40">·</span>
+          <Link
+            to="/wisdom"
+            className="inline-flex items-center gap-2 text-muted-foreground text-[12px] tracking-[0.18em] uppercase font-heading hover:text-primary transition-colors"
+          >
+            Browse all wisdom
+            <ArrowRight size={13} className="opacity-70" />
+          </Link>
         </div>
       </div>
     </section>

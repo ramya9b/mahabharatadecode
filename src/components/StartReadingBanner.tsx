@@ -10,24 +10,32 @@ const STORY_PREVIEWS = [
     name: "Karna's Dilemma",
     slug: "karna-loyalty-vs-self-respect",
     line: "He knew the truth about himself — and chose silence...",
+    readTime: 7,
+    category: "Characters",
   },
   {
     icon: "🪷",
     name: "Krishna's Strategy",
     slug: "krishna-leadership-secrets",
     line: "He never sat on a throne, yet controlled every kingdom...",
+    readTime: 6,
+    category: "Life Lessons",
   },
   {
     icon: "🏹",
     name: "Arjuna's Crisis",
     slug: "arjuna-confusion-moment-of-doubt",
     line: "The greatest archer trembled at the moment of truth...",
+    readTime: 5,
+    category: "Life Lessons",
   },
   {
     icon: "🔥",
     name: "Draupadi's Fire",
     slug: "karna-loyalty-vs-self-respect",
     line: "Her question in the sabha silenced a thousand warriors...",
+    readTime: 7,
+    category: "Characters",
   },
 ];
 
@@ -68,7 +76,7 @@ const StartReadingBanner = () => {
             lineHeight: 1.2,
           }}
         >
-          📖 Start Reading
+          Start Reading
         </h2>
         <p
           style={{
@@ -172,9 +180,22 @@ const StartReadingBanner = () => {
                 color: "hsl(var(--muted-foreground))",
                 lineHeight: 1.5,
                 fontStyle: "italic",
+                marginBottom: "10px",
               }}
             >
               "{p.line}"
+            </div>
+            {/* Read-time + category metadata */}
+            <div
+              style={{
+                fontFamily: "'Cinzel', serif",
+                fontSize: "10px",
+                letterSpacing: "0.15em",
+                textTransform: "uppercase",
+                color: "hsl(var(--muted-foreground) / 0.85)",
+              }}
+            >
+              {p.readTime} min · {p.category}
             </div>
           </Link>
         ))}

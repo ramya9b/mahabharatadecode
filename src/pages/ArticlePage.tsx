@@ -19,6 +19,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { BookOpen } from "lucide-react";
 import ArticleTranslator, { extractPlainText, type LangCode } from "@/components/ArticleTranslator";
 import LockGate from "@/components/LockGate";
+import { recordLastRead } from "@/hooks/useLastRead";
 
 const ArticlePage = () => {
   const { slug } = useParams<{ slug: string }>();
@@ -30,6 +31,9 @@ const ArticlePage = () => {
   if (!slug) return <Navigate to="/blog" replace />;
   const article = getArticleBySlug(slug);
   if (!article) return <Navigate to="/blog" replace />;
+
+  /* Track last-read for the homepage "Continue reading" card */
+  recordLastRead(article.slug, article.title);
 
   const related    = getRelatedArticles(article);
   const articleUrl = `https://mahabharatadecoded.com/blog/${article.slug}`;
