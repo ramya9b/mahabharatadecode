@@ -1,5 +1,6 @@
 import { useEffect, useRef } from "react";
 import type { CharacterStat } from "@/data/characters";
+import { useTheme } from "@/context/ThemeContext";
 
 interface CharacterStatBarsProps {
   stats: CharacterStat[];
@@ -9,6 +10,9 @@ interface CharacterStatBarsProps {
 
 const CharacterStatBars = ({ stats, accentHex, accentRgb }: CharacterStatBarsProps) => {
   const containerRef = useRef<HTMLDivElement>(null);
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
+  const labelColor = isDark ? "rgba(253,230,138,0.72)" : "rgba(42,31,14,0.65)";
 
   useEffect(() => {
     const bars = containerRef.current?.querySelectorAll<HTMLDivElement>(".stat-fill");
@@ -39,7 +43,7 @@ const CharacterStatBars = ({ stats, accentHex, accentRgb }: CharacterStatBarsPro
           <div className="flex items-center justify-between mb-1.5">
             <span
               className="font-heading text-[11px] tracking-[0.18em] uppercase"
-              style={{ color: "rgba(253,230,138,0.72)" }}
+              style={{ color: labelColor }}
             >
               {stat.label}
             </span>

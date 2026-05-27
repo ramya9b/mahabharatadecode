@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import type { Character } from "@/data/characters";
+import { useTheme } from "@/context/ThemeContext";
 
 interface CharacterNavProps {
   characters: Character[];
@@ -8,6 +9,9 @@ interface CharacterNavProps {
 const CharacterNav = ({ characters }: CharacterNavProps) => {
   const [active, setActive] = useState<string>(characters[0]?.id ?? "");
   const [visible, setVisible] = useState(false);
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
+  const inactiveColor = isDark ? "rgba(253,230,138,0.65)" : "rgba(42,31,14,0.65)";
 
   // Visibility toggle — rAF-throttled, single boolean comparison per frame
   useEffect(() => {
@@ -76,7 +80,7 @@ const CharacterNav = ({ characters }: CharacterNavProps) => {
             <span
               className="font-heading text-[10px] tracking-[0.2em] uppercase opacity-0 group-hover:opacity-100 transition-all duration-200 whitespace-nowrap"
               style={{
-                color: isActive ? char.accentHex : "rgba(253,230,138,0.65)",
+                color: isActive ? char.accentHex : inactiveColor,
                 fontSize: "10px",
                 transform: isActive ? "translateX(0)" : "translateX(6px)",
               }}

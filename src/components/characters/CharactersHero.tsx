@@ -3,6 +3,7 @@ import { Users } from "lucide-react";
 import heroBg from "@/assets/hero-bg.webp";
 import type { Character } from "@/data/characters";
 import { resolveImage } from "@/utils/images";
+import { useTheme } from "@/context/ThemeContext";
 
 interface CharactersHeroProps {
   characters: Character[];
@@ -11,6 +12,17 @@ interface CharactersHeroProps {
 const CharactersHero = ({ characters }: CharactersHeroProps) => {
   const bgRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
+
+  /* Theme-aware hero overlay — cinematic dark veil OR warm parchment veil. */
+  const heroOverlay = isDark
+    ? "linear-gradient(to bottom, rgba(8,6,26,0.6) 0%, rgba(8,6,26,0.4) 40%, rgba(8,6,26,0.85) 80%, rgba(8,6,26,1) 100%)"
+    : "linear-gradient(to bottom, rgba(250,243,225,0.15) 0%, rgba(250,243,225,0.45) 40%, rgba(250,243,225,0.85) 80%, hsl(38 55% 92%) 100%)";
+
+  const subtitleColor    = isDark ? "rgba(253,230,138,0.78)" : "rgba(42,31,14,0.85)";
+  const heroParaColor    = isDark ? "rgba(253,230,138,0.68)" : "rgba(42,31,14,0.72)";
+  const portraitLabel    = isDark ? "rgba(253,230,138,0.65)" : "rgba(42,31,14,0.65)";
 
   // rAF-throttled parallax + skip work while hero is offscreen
   useEffect(() => {
@@ -80,10 +92,7 @@ const CharactersHero = ({ characters }: CharactersHeroProps) => {
       {/* Overlays */}
       <div
         className="absolute inset-0"
-        style={{
-          background:
-            "linear-gradient(to bottom, rgba(8,6,26,0.6) 0%, rgba(8,6,26,0.4) 40%, rgba(8,6,26,0.85) 80%, rgba(8,6,26,1) 100%)",
-        }}
+        style={{ background: heroOverlay }}
       />
       <div
         className="absolute inset-0"
@@ -127,7 +136,7 @@ const CharactersHero = ({ characters }: CharactersHeroProps) => {
           <span className="gold-text block">Legendary</span>
           <span
             className="block"
-            style={{ color: "rgba(253,230,138,0.78)", fontSize: "0.68em" }}
+            style={{ color: subtitleColor, fontSize: "0.68em" }}
           >
             Characters
           </span>
@@ -137,7 +146,7 @@ const CharactersHero = ({ characters }: CharactersHeroProps) => {
           className="animate-fade-up-delay-2 leading-relaxed mx-auto mb-12"
           style={{
             fontSize: "clamp(16px, 2vw, 19px)",
-            color: "rgba(253,230,138,0.68)",
+            color: heroParaColor,
             fontFamily: "'Cormorant Garamond', Georgia, serif",
             fontStyle: "italic",
             maxWidth: "540px",
@@ -194,7 +203,7 @@ const CharactersHero = ({ characters }: CharactersHeroProps) => {
               {/* Name label */}
               <span
                 className="font-heading text-[10px] tracking-[0.15em] uppercase transition-colors duration-300 group-hover:text-primary"
-                style={{ color: "rgba(253,230,138,0.65)" }}
+                style={{ color: portraitLabel }}
               >
                 {char.name}
               </span>

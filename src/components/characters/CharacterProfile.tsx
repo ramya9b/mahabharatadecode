@@ -4,6 +4,7 @@ import { ArrowRight, BookOpen } from "lucide-react";
 import type { Character } from "@/data/characters";
 import { resolveImage } from "@/utils/images";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { useTheme } from "@/context/ThemeContext";
 import CharacterStatBars from "./CharacterStatBars";
 
 interface CharacterProfileProps {
@@ -11,17 +12,42 @@ interface CharacterProfileProps {
   index: number;
 }
 
-const ARCHETYPE_COLORS: Record<string, string> = {
+const ARCHETYPE_COLORS_DARK: Record<string, string> = {
   Warrior: "rgba(212,175,55,0.15)",
   Divine:  "rgba(74,144,217,0.15)",
   Royalty: "rgba(229,57,53,0.15)",
   Elder:   "rgba(121,134,203,0.15)",
 };
 
+const ARCHETYPE_COLORS_LIGHT: Record<string, string> = {
+  Warrior: "rgba(212,175,55,0.20)",
+  Divine:  "rgba(74,144,217,0.18)",
+  Royalty: "rgba(229,57,53,0.18)",
+  Elder:   "rgba(121,134,203,0.18)",
+};
+
 const CharacterProfile = ({ character, index }: CharacterProfileProps) => {
   const sectionRef = useScrollReveal<HTMLDivElement>();
   const image = resolveImage(character.imageKey);
   const isEven = index % 2 === 0;
+  const { theme } = useTheme();
+  const isDark = theme === "dark";
+
+  /* Theme-aware palette — cinematic dark or warm parchment cream. */
+  const sectionBg = isDark
+    ? (isEven
+        ? "linear-gradient(180deg, #0C0900, #160B00)"
+        : "linear-gradient(180deg, #160B00, #0C0900)")
+    : (isEven
+        ? "linear-gradient(180deg, hsl(38 55% 92%), hsl(38 50% 89%))"
+        : "linear-gradient(180deg, hsl(38 50% 89%), hsl(38 55% 92%))");
+
+  const titleColor    = isDark ? "rgba(253,230,138,0.65)" : "rgba(42,31,14,0.65)";
+  const bioColor      = isDark ? "rgba(253,230,138,0.82)" : "rgba(42,31,14,0.82)";
+  const quoteColor    = isDark ? "rgba(253,230,138,0.92)" : "rgba(42,31,14,0.90)";
+  const lessonColor   = isDark ? "rgba(253,230,138,0.90)" : "rgba(42,31,14,0.85)";
+  const archetypeMap  = isDark ? ARCHETYPE_COLORS_DARK : ARCHETYPE_COLORS_LIGHT;
+  const fallbackBg    = isDark ? "rgba(139,105,20,0.06)" : "rgba(139,105,20,0.10)";
 
   return (
     <section
@@ -29,9 +55,7 @@ const CharacterProfile = ({ character, index }: CharacterProfileProps) => {
       className="relative overflow-hidden"
       style={{
         padding: "96px 0",
-        background: index % 2 === 0
-          ? "linear-gradient(180deg, #0C0900, #160B00)"
-          : "linear-gradient(180deg, #160B00, #0C0900)",
+        background: sectionBg,
       }}
     >
       {/* Ambient glow behind this character */}
@@ -169,7 +193,7 @@ const CharacterProfile = ({ character, index }: CharacterProfileProps) => {
                 fontFamily: "'Cormorant Garamond', Georgia, serif",
                 fontSize: "clamp(18px, 2.1vw, 22px)",
                 fontStyle: "italic",
-                color: "rgba(253,230,138,0.65)",
+                color: titleColor,
               }}
             >
               {character.title}
@@ -182,7 +206,7 @@ const CharacterProfile = ({ character, index }: CharacterProfileProps) => {
                   key={ep}
                   className="font-heading text-[10px] tracking-[0.15em] uppercase px-3 py-1.5 rounded-full"
                   style={{
-                    background: ARCHETYPE_COLORS[character.archetype] || "rgba(139,105,20,0.06)",
+                    background: archetypeMap[character.archetype] || fallbackBg,
                     border: `1px solid rgba(${character.accentRgb},0.2)`,
                     color: `rgba(${character.accentRgb},0.8)`,
                   }}
@@ -201,7 +225,7 @@ const CharacterProfile = ({ character, index }: CharacterProfileProps) => {
                   style={{
                     fontSize: "clamp(17px, 1.9vw, 19px)",
                     fontFamily: "'Cormorant Garamond', Georgia, serif",
-                    color: "rgba(253,230,138,0.82)",
+                    color: bioColor,
                   }}
                 >
                   {para}
@@ -248,7 +272,7 @@ const CharacterProfile = ({ character, index }: CharacterProfileProps) => {
                 style={{
                   fontFamily: "'Cormorant Garamond', Georgia, serif",
                   fontSize: "clamp(17px, 1.8vw, 20px)",
-                  color: "rgba(253,230,138,0.92)",
+                  color: quoteColor,
                   fontStyle: "italic",
                 }}
               >
@@ -310,7 +334,7 @@ const CharacterProfile = ({ character, index }: CharacterProfileProps) => {
                   style={{
                     fontSize: "14px",
                     fontFamily: "'Cormorant Garamond', Georgia, serif",
-                    color: "rgba(253,230,138,0.90)",
+                    color: lessonColor,
                   }}
                 >
                   {character.lesson}
