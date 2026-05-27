@@ -62,6 +62,15 @@
     --rainbow-bar: linear-gradient(90deg,
       #D97706 0%, #65A30D 20%, #059669 40%,
       #0284C7 60%, #7C3AED 80%, #BE185D 100%);
+
+    /* ── Parchment tones — alternating section backgrounds.
+          Light mode: warm creams. Dark mode: deep warm darks.
+          Used by About / Quiz / Wisdom etc. for theme-aware page rhythm. ── */
+    --parchment-1: 38 55% 91%;       /* main cream */
+    --parchment-2: 38 45% 87%;       /* slightly darker cream */
+    --parchment-3: 38 35% 88%;       /* warm beige */
+    /* Hero overlay over the battlefield image — soft parchment veil in light mode. */
+    --hero-overlay: linear-gradient(to bottom, rgba(250,243,225,0.15) 0%, rgba(250,243,225,0.45) 40%, rgba(250,243,225,0.85) 80%, hsl(38 55% 92%) 100%);
   }
 
   /* ══════════════════════════════════════════════════════
@@ -117,6 +126,13 @@
     --rainbow-bar: linear-gradient(90deg,
       #FBBF24 0%, #A3E635 20%, #34D399 40%,
       #38BDF8 60%, #A78BFA 80%, #F472B6 100%);
+
+    /* Parchment tones — dark mode equivalents (deep warm darks) */
+    --parchment-1: 30 70% 5%;        /* deep warm black, ~#160B00 */
+    --parchment-2: 30 70% 7%;        /* slightly lifted */
+    --parchment-3: 30 50% 4%;        /* deepest */
+    /* Hero overlay over the battlefield image — cinematic dark veil in dark mode. */
+    --hero-overlay: linear-gradient(to bottom, rgba(8,6,26,0.55) 0%, rgba(8,6,26,0.75) 50%, rgba(8,6,26,1) 100%);
   }
 }
 

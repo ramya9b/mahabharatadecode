@@ -17,7 +17,7 @@ const CharacterComparison = ({ characters }: CharacterComparisonProps) => {
       className="relative py-24 overflow-hidden"
       style={{
         background:
-          "linear-gradient(180deg, hsl(38 45% 87%), hsl(38 55% 91%))",
+          "linear-gradient(180deg, hsl(var(--parchment-2)), hsl(var(--parchment-1)))",
       }}
     >
       {/* Subtle background glow */}
@@ -41,7 +41,7 @@ const CharacterComparison = ({ characters }: CharacterComparisonProps) => {
             className="mt-4 leading-relaxed mx-auto"
             style={{
               fontSize: "17px",
-              color: "rgba(42,31,14,0.6)",
+              color: "hsl(var(--foreground) / 0.65)",
               fontFamily: "'Cormorant Garamond', Georgia, serif",
               maxWidth: "480px",
             }}
@@ -61,7 +61,7 @@ const CharacterComparison = ({ characters }: CharacterComparisonProps) => {
               <tr>
                 <th
                   className="font-heading text-[10px] tracking-[0.25em] uppercase text-left pb-4 pr-4"
-                  style={{ color: "rgba(42,31,14,0.55)", width: "140px" }}
+                  style={{ color: "hsl(var(--foreground) / 0.60)", width: "140px" }}
                 >
                   Attribute
                 </th>
@@ -105,7 +105,7 @@ const CharacterComparison = ({ characters }: CharacterComparisonProps) => {
                   <td
                     className="font-heading text-[11px] tracking-[0.12em] uppercase py-3 pr-4"
                     style={{
-                      color: "rgba(42,31,14,0.65)",
+                      color: "hsl(var(--foreground) / 0.65)",
                       borderRadius: "8px 0 0 8px",
                     }}
                   >
@@ -169,7 +169,7 @@ const CharacterComparison = ({ characters }: CharacterComparisonProps) => {
               <div
                 className="text-xs mt-1 italic"
                 style={{
-                  color: "rgba(42,31,14,0.60)",
+                  color: "hsl(var(--foreground) / 0.60)",
                   fontFamily: "'Cormorant Garamond', Georgia, serif",
                 }}
               >

@@ -50,7 +50,7 @@ const CharactersCTA = () => (
     className="relative py-24 overflow-hidden text-center"
     style={{
       background:
-        "linear-gradient(180deg, hsl(38 55% 91%), hsl(38 50% 89%))",
+        "linear-gradient(180deg, hsl(var(--parchment-1)), hsl(var(--parchment-2)))",
     }}
   >
     {/* Ambient glow */}
@@ -75,7 +75,7 @@ const CharactersCTA = () => (
         className="leading-relaxed mb-10 mx-auto"
         style={{
           fontSize: "17px",
-          color: "rgba(42,31,14,0.70)",
+          color: "hsl(var(--foreground) / 0.72)",
           fontFamily: "'Cormorant Garamond', Georgia, serif",
           maxWidth: "520px",
         }}
@@ -123,7 +123,7 @@ const CharactersCTA = () => (
           className="mb-5"
           style={{
             fontSize: "14px",
-            color: "rgba(42,31,14,0.65)",
+            color: "hsl(var(--foreground) / 0.65)",
             fontFamily: "'Cormorant Garamond', Georgia, serif",
           }}
         >

@@ -131,7 +131,7 @@ const WelcomeScreen = ({ onStart }: { onStart: () => void }) => (
       <h1 className="font-heading font-black leading-[0.95] mb-6 animate-fade-up-delay-1"
         style={{ fontSize: "clamp(40px, 7vw, 80px)" }}>
         <span className="gold-text block">Which Mahabharata</span>
-        <span className="block" style={{ color: "rgba(42,31,14,0.9)", fontSize: "0.72em" }}>
+        <span className="block" style={{ color: "hsl(var(--foreground) / 0.90)", fontSize: "0.72em" }}>
           Character Are You?
         </span>
       </h1>
@@ -421,10 +421,11 @@ const ResultScreen = ({
                   style={{ color: `rgba(${meta.accentRgb},0.7)` }}>
                   {meta.archetype}
                 </p>
-                <h2 className="font-heading font-black text-foreground" style={{ fontSize: "clamp(32px, 5vw, 52px)" }}>
+                {/* Text sits on the image's dark gradient overlay — keep light in both themes. */}
+                <h2 className="font-heading font-black" style={{ fontSize: "clamp(32px, 5vw, 52px)", color: "rgba(253,230,138,0.95)" }}>
                   {meta.name}
                 </h2>
-                <p className="font-heading italic" style={{ fontSize: "17px", color: "rgba(42,31,14,0.6)" }}>
+                <p className="font-heading italic" style={{ fontSize: "17px", color: "rgba(253,230,138,0.70)" }}>
                   {meta.title}
                 </p>
               </div>
@@ -468,7 +469,7 @@ const ResultScreen = ({
                 style={{ background: `linear-gradient(to right, transparent, rgba(${meta.accentRgb},0.4), transparent)` }} />
               <p className="leading-relaxed" style={{
                 fontSize: "17px", fontFamily: "'Cormorant Garamond', Georgia, serif",
-                color: "rgba(42,31,14,0.8)", fontStyle: "italic",
+                color: "hsl(var(--foreground) / 0.82)", fontStyle: "italic",
               }}>
                 {meta.resultInsight}
               </p>
@@ -487,7 +488,7 @@ const ResultScreen = ({
                   return (
                     <div key={cid} className="flex items-center gap-3">
                       <span className="font-heading text-[10px] tracking-[0.1em] uppercase w-16 flex-shrink-0 text-right"
-                        style={{ color: isWinner ? cMeta.accentHex : "rgba(42,31,14,0.4)" }}>
+                        style={{ color: isWinner ? cMeta.accentHex : "hsl(var(--foreground) / 0.45)" }}>
                         {cMeta.name}
                       </span>
                       <div className="flex-1 h-1.5 rounded-full overflow-hidden" style={{ background: "rgba(139,105,20,0.09)" }}>
@@ -495,7 +496,7 @@ const ResultScreen = ({
                           style={{ width: pct + "%", background: `linear-gradient(to right, rgba(${cMeta.accentRgb},0.5), ${cMeta.accentHex})` }} />
                       </div>
                       <span className="font-heading text-[10px] w-8 flex-shrink-0 tabular-nums"
-                        style={{ color: isWinner ? cMeta.accentHex : "rgba(42,31,14,0.3)" }}>
+                        style={{ color: isWinner ? cMeta.accentHex : "hsl(var(--foreground) / 0.35)" }}>
                         {pct}%
                       </span>
                     </div>

@@ -136,16 +136,16 @@ const TableOfContents = ({
               fontSize: "11px",
               letterSpacing: "0.2em",
               textTransform: "uppercase",
-              color: "rgba(253,230,138,0.75)",
+              color: "hsl(var(--foreground) / 0.78)",
             }}
           >
             Contents
           </span>
         </div>
         {collapsed ? (
-          <ChevronDown size={14} style={{ color: "rgba(42,31,14,0.4)" }} aria-hidden="true" />
+          <ChevronDown size={14} style={{ color: "hsl(var(--foreground) / 0.55)" }} aria-hidden="true" />
         ) : (
-          <ChevronUp size={14} style={{ color: "rgba(42,31,14,0.4)" }} aria-hidden="true" />
+          <ChevronUp size={14} style={{ color: "hsl(var(--foreground) / 0.55)" }} aria-hidden="true" />
         )}
       </button>
 
@@ -173,7 +173,7 @@ const TableOfContents = ({
                     border: "none",
                     cursor: "pointer",
                     transition: "color 0.2s",
-                    color: isActive ? "rgba(212,175,55,0.95)" : "rgba(42,31,14,0.7)",
+                    color: isActive ? "rgba(212,175,55,0.95)" : "hsl(var(--foreground) / 0.75)",
                   }}
                 >
                   {/* Active indicator dot */}
@@ -185,7 +185,7 @@ const TableOfContents = ({
                       borderRadius: "50%",
                       flexShrink: 0,
                       background: isActive ? "#D4AF37" : "transparent",
-                      border: isActive ? "none" : "1px solid rgba(42,31,14,0.2)",
+                      border: isActive ? "none" : "1px solid hsl(var(--foreground) / 0.25)",
                       transition: "all 0.2s",
                     }}
                   />

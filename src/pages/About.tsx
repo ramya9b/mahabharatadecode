@@ -34,8 +34,8 @@ const AboutHero = () => {
         decoding="async" src={heroBg} alt="Kurukshetra" className="w-full h-full object-cover" />
       </div>
 
-      {/* Overlays */}
-      <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(8,6,26,0.55) 0%, rgba(8,6,26,0.75) 50%, rgba(8,6,26,1) 100%)" }} />
+      {/* Overlays — theme-aware via --hero-overlay (cinematic dark or parchment veil). */}
+      <div className="absolute inset-0" style={{ background: "var(--hero-overlay)" }} />
       <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 70% 50% at 50% 40%, rgba(212,175,55,0.07) 0%, transparent 65%)" }} />
 
       {/* Particles */}
@@ -60,7 +60,7 @@ const AboutHero = () => {
         {/* Manifesto headline */}
         <h1 className="font-heading font-black leading-[0.95] mb-10 animate-fade-up-delay-1" style={{ fontSize: "clamp(52px, 9vw, 108px)" }}>
           <span className="gold-text block">Ancient Wisdom.</span>
-          <span style={{ color: "rgba(42,31,14,0.9)", fontSize: "0.78em", display: "block", marginTop: "8px" }}>Modern Life.</span>
+          <span style={{ color: "hsl(var(--foreground) / 0.85)", fontSize: "0.78em", display: "block", marginTop: "8px" }}>Modern Life.</span>
         </h1>
 
         {/* Manifesto body */}
@@ -98,7 +98,7 @@ const AboutHero = () => {
 const MissionSection = () => {
   const ref = useScrollReveal<HTMLDivElement>();
   return (
-    <section className="py-12 md:py-16" style={{ background: "hsl(38 55% 91%)" }}>
+    <section className="py-12 md:py-16" style={{ background: "hsl(var(--parchment-1))" }}>
       <div className="max-w-4xl mx-auto px-6 md:px-12">
         <div ref={ref} className="reveal-element">
           {/* Label */}
@@ -205,7 +205,7 @@ const StatCard = ({ value, suffix = "", label, desc }: { value: number; suffix?:
 const StatsSection = () => {
   const ref = useScrollReveal<HTMLDivElement>();
   return (
-    <section className="py-10 md:py-14" style={{ background: "linear-gradient(180deg, hsl(38 55% 91%), hsl(38 45% 87%))", borderTop: "1px solid rgba(212,175,55,0.08)", borderBottom: "1px solid rgba(212,175,55,0.08)" }}>
+    <section className="py-10 md:py-14" style={{ background: "linear-gradient(180deg, hsl(var(--parchment-1)), hsl(var(--parchment-2)))", borderTop: "1px solid rgba(212,175,55,0.08)", borderBottom: "1px solid rgba(212,175,55,0.08)" }}>
       <div className="max-w-6xl mx-auto px-6 md:px-12">
         <div ref={ref} className="reveal-element grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-8">
           <StatCard value={14}   suffix=""   label="Deep Articles"      desc="Each 6–10 min read" />
@@ -226,7 +226,7 @@ const OriginSection = () => {
   const textRef = useScrollReveal<HTMLDivElement>();
 
   return (
-    <section className="py-12 md:py-16" style={{ background: "hsl(38 35% 88%)" }}>
+    <section className="py-12 md:py-16" style={{ background: "hsl(var(--parchment-3))" }}>
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
         <div className="grid lg:grid-cols-2 gap-12 lg:gap-20 items-center">
 
@@ -274,7 +274,7 @@ const OriginSection = () => {
                   style={{
                     fontSize: "clamp(17px, 1.9vw, 19px)",
                     fontFamily: "'Cormorant Garamond', Georgia, serif",
-                    color: i === 0 ? "hsl(var(--foreground))" : "rgba(42,31,14,0.7)",
+                    color: i === 0 ? "hsl(var(--foreground))" : "hsl(var(--foreground) / 0.70)",
                     fontWeight: i === 0 ? 500 : 400,
                     fontStyle: i === 0 ? "italic" : "normal",
                   }}
@@ -331,7 +331,7 @@ const PillarsSection = () => {
   const cardsRef = useStaggeredReveal(3);
 
   return (
-    <section className="py-12 md:py-16" style={{ background: "linear-gradient(180deg, hsl(38 45% 87%), hsl(38 55% 91%))" }}>
+    <section className="py-12 md:py-16" style={{ background: "linear-gradient(180deg, hsl(var(--parchment-2)), hsl(var(--parchment-1)))" }}>
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
         <div ref={headerRef} className="reveal-element text-center mb-16">
           <span className="section-label">Our Approach</span>
@@ -399,7 +399,7 @@ const ProcessSection = () => {
   const stepsRef = useStaggeredReveal(5);
 
   return (
-    <section className="py-12 md:py-16" style={{ background: "hsl(38 55% 91%)", paddingTop: "64px", paddingBottom: "64px" }}>
+    <section className="py-12 md:py-16" style={{ background: "hsl(var(--parchment-1))", paddingTop: "64px", paddingBottom: "64px" }}>
       <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20">
         <div ref={headerRef} className="reveal-element mb-16">
           <div className="flex items-center gap-4 mb-5">
@@ -464,7 +464,7 @@ const PhilosophySection = () => {
   const ref = useScrollReveal<HTMLDivElement>();
   return (
     <section className="py-12 md:py-16 relative overflow-hidden"
-      style={{ background: "linear-gradient(180deg, hsl(38 55% 91%), hsl(38 45% 87%))" }}>
+      style={{ background: "linear-gradient(180deg, hsl(var(--parchment-1)), hsl(var(--parchment-2)))" }}>
       {/* Large decorative quote mark */}
       <div className="absolute top-8 left-1/2 -translate-x-1/2 font-heading select-none pointer-events-none"
         style={{ fontSize: "240px", lineHeight: 1, color: "rgba(212,175,55,0.04)" }}>
@@ -490,7 +490,7 @@ const PhilosophySection = () => {
 
         {/* Translation */}
         <p className="font-heading italic font-semibold leading-relaxed mb-4"
-          style={{ fontSize: "clamp(22px, 3vw, 34px)", color: "rgba(42,31,14,0.9)" }}>
+          style={{ fontSize: "clamp(22px, 3vw, 34px)", color: "hsl(var(--foreground) / 0.90)" }}>
           "Whenever there is a decline in righteousness and a rise in unrighteousness —
           at that time, I manifest myself on earth."
         </p>
@@ -501,7 +501,7 @@ const PhilosophySection = () => {
         {/* Site's interpretation */}
         <div className="mt-12 max-w-2xl mx-auto">
           <div className="h-px w-16 mx-auto mb-8" style={{ background: "rgba(212,175,55,0.2)" }} />
-          <p className="leading-relaxed" style={{ fontSize: "clamp(17px, 2vw, 20px)", color: "rgba(42,31,14,0.6)", fontFamily: "'Cormorant Garamond', Georgia, serif", fontStyle: "italic" }}>
+          <p className="leading-relaxed" style={{ fontSize: "clamp(17px, 2vw, 20px)", color: "hsl(var(--foreground) / 0.65)", fontFamily: "'Cormorant Garamond', Georgia, serif", fontStyle: "italic" }}>
             This is our operating principle. Every time a person faces a real choice —
             in their career, their relationships, their identity — and feels unequipped to
             make it: that is the moment the Mahabharata was written for.
@@ -530,7 +530,7 @@ const ValuesSection = () => {
   const gridRef = useStaggeredReveal(6);
 
   return (
-    <section className="py-12 md:py-16" style={{ background: "hsl(38 35% 88%)" }}>
+    <section className="py-12 md:py-16" style={{ background: "hsl(var(--parchment-3))" }}>
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
         <div ref={headerRef} className="reveal-element text-center mb-16">
           <span className="section-label">What We Stand For</span>
@@ -568,7 +568,7 @@ const CreatorSection = () => {
   const ref = useScrollReveal<HTMLDivElement>();
 
   return (
-    <section className="py-12 md:py-16" style={{ background: "hsl(38 55% 91%)", paddingTop: "64px", paddingBottom: "64px" }}>
+    <section className="py-12 md:py-16" style={{ background: "hsl(var(--parchment-1))", paddingTop: "64px", paddingBottom: "64px" }}>
       <div className="max-w-6xl mx-auto px-6 md:px-12 lg:px-20">
         <div ref={ref} className="reveal-element">
           <div className="flex items-center gap-4 mb-12">
@@ -625,7 +625,7 @@ const CreatorSection = () => {
                   style={{
                     fontSize: "clamp(17px, 1.9vw, 19px)",
                     fontFamily: "'Cormorant Garamond', Georgia, serif",
-                    color: i === 0 ? "rgba(42,31,14,0.8)" : "hsl(var(--foreground) / 0.70)",
+                    color: i === 0 ? "hsl(var(--foreground) / 0.85)" : "hsl(var(--foreground) / 0.70)",
                   }}>
                   {para}
                 </p>
@@ -651,7 +651,7 @@ const AboutCTA = () => {
   const ref = useScrollReveal<HTMLDivElement>();
   return (
     <section className="py-12 md:py-16 relative overflow-hidden text-center"
-      style={{ background: "linear-gradient(180deg, hsl(38 45% 87%), hsl(38 55% 91%))" }}>
+      style={{ background: "linear-gradient(180deg, hsl(var(--parchment-2)), hsl(var(--parchment-1)))" }}>
       <div className="absolute inset-0 pointer-events-none"
         style={{ background: "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(212,175,55,0.06), transparent 65%)" }} />
 

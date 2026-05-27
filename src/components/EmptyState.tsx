@@ -87,7 +87,7 @@ const EmptyState = ({
           fontFamily: "'Cinzel', serif",
           fontSize: "20px",
           fontWeight: 600,
-          color: "rgba(253,230,138,0.90)",
+          color: "hsl(var(--foreground) / 0.92)",
           marginBottom: "8px",
         }}
       >
@@ -98,7 +98,7 @@ const EmptyState = ({
       <p
         style={{
           fontSize: "17px",
-          color: "rgba(42,31,14,0.5)",
+          color: "hsl(var(--foreground) / 0.60)",
           fontFamily: "'Cormorant Garamond', Georgia, serif",
           lineHeight: 1.85,
           maxWidth: "380px",
