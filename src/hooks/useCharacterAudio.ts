@@ -1,203 +1,192 @@
 import { useEffect, useRef, useCallback } from "react";
 
-/* ── Mood → musical profile map ────────────────────────────────────
-   Each preset is a chord of oscillators with different
-   frequencies, wave types, and volumes that evoke the
-   character's emotional world.
+/* ── Character → mood audio file ────────────────────────────────────
+   8 distinct mood loops live at /public/audio/<mood>.mp3.
+   Each character belongs to ONE mood. The audio for each mood is a
+   real instrument loop (tanpura, bansuri, war drums, sitar, sanskrit
+   chant, etc.) so opening different characters gives a meaningfully
+   different sonic atmosphere.
+
+   Loops are short (~36-60s) and fade in/out at the edges, so even
+   when the HTMLAudio loop re-starts the seam is smooth.
    ────────────────────────────────────────────────────────────────── */
-interface AudioPreset {
-  notes:  number[];       /* Hz — root + overtones */
-  type:   OscillatorType;
-  tempo:  number;         /* slow pulse rate (ms between beats) */
-  reverb: number;         /* 0–1 reverb wetness */
-  gain:   number;         /* master volume 0–1 */
-}
 
-const PRESETS: Record<string, AudioPreset> = {
-  /* Karna — D minor, tragic, low warm drone */
-  tragic: {
-    notes: [146.83, 220.00, 261.63, 174.61],
-    type:  "sine",
-    tempo: 3200,
-    reverb: 0.72,
-    gain:  0.10,
-  },
-  /* Krishna — G major, bright celestial, divine shimmer */
-  devotional: {
-    notes: [196.00, 246.94, 293.66, 392.00],
-    type:  "sine",
-    tempo: 2400,
-    reverb: 0.65,
-    gain:  0.09,
-  },
-  /* Arjuna — E minor, tense warrior pulse */
-  war: {
-    notes: [164.81, 196.00, 246.94, 329.63],
-    type:  "triangle",
-    tempo: 1800,
-    reverb: 0.50,
-    gain:  0.08,
-  },
-  /* Draupadi / Bhishma / general epic */
-  epic: {
-    notes: [130.81, 196.00, 261.63, 311.13],
-    type:  "sine",
-    tempo: 2800,
-    reverb: 0.70,
-    gain:  0.09,
-  },
-  /* Philosophical / sages */
-  philosophical: {
-    notes: [174.61, 220.00, 261.63, 349.23],
-    type:  "sine",
-    tempo: 4000,
-    reverb: 0.80,
-    gain:  0.08,
-  },
-};
+type Mood =
+  | "tragic"
+  | "devotional"
+  | "war"
+  | "epic"
+  | "philosophical"
+  | "shadow"
+  | "regal"
+  | "mystical";
 
-/* Map character ids → mood preset key */
-const CHAR_MOOD: Record<string, keyof typeof PRESETS> = {
+/* Every character that exists in storyCharacters.ts is mapped here.
+   Adding new characters? Add their id → mood here too. The fallback
+   below is "epic" but it should never actually fire if all chars are
+   mapped. */
+const CHAR_MOOD: Record<string, Mood> = {
+  /* tragic — fated to suffer, noble sorrow */
   karna:         "tragic",
   draupadi:      "tragic",
   abhimanyu:     "tragic",
+  gandhari:      "tragic",
+
+  /* devotional — divine, joyful, blue-sky calm */
   krishna:       "devotional",
   hanuman:       "devotional",
-  vyasa:         "philosophical",
-  vidura:        "philosophical",
+  subhadra:      "devotional",
+
+  /* war — battlefield tension, weapons drawn */
   arjuna:        "war",
   bhima:         "war",
   duryodhana:    "war",
   ashwatthama:   "war",
   dushasana:     "war",
+
+  /* epic — grand, dignified, the patriarch energy */
   bhishma:       "epic",
   drona:         "epic",
-  yudhishthira:  "philosophical",
   kunti:         "epic",
-  gandhari:      "tragic",
-  subhadra:      "devotional",
+
+  /* philosophical — wise narrators, sages, dharma-king */
+  vyasa:         "philosophical",
+  vidura:        "philosophical",
+  yudhishthira:  "philosophical",
+
+  /* shadow — scheming villain */
+  shakuni:       "shadow",
+
+  /* regal — kings, courts, ceremonies */
+  drupada:       "regal",
+  virata:        "regal",
+  shalya:        "regal",
+  pandu:         "regal",
+  dhritarashtra: "regal",
+
+  /* mystical — otherworldly, between worlds */
+  parashurama:   "mystical",
+  hidimbi:       "mystical",
+  nakula:        "mystical",
+  sahadeva:      "mystical",
 };
 
-const MUTE_KEY = "mbd_audio_muted";
+const MOOD_SRC: Record<Mood, string> = {
+  tragic:        "/audio/tragic.mp3",
+  devotional:    "/audio/devotional.mp3",
+  war:           "/audio/war.mp3",
+  epic:          "/audio/epic.mp3",
+  philosophical: "/audio/philosophical.mp3",
+  shadow:        "/audio/shadow.mp3",
+  regal:         "/audio/regal.mp3",
+  mystical:      "/audio/mystical.mp3",
+};
 
-const isMuted  = () => localStorage.getItem(MUTE_KEY) === "1";
-const setMuted = (v: boolean) => localStorage.setItem(MUTE_KEY, v ? "1" : "0");
+const TARGET_VOL = 0.22;          /* soft ambient background */
+const FADE_IN_MS = 1500;
+const FADE_OUT_MS = 900;
+
+const MUTE_KEY = "mbd_audio_muted";
+const isMuted  = () => {
+  try { return localStorage.getItem(MUTE_KEY) === "1"; } catch { return false; }
+};
+const setMuted = (v: boolean) => {
+  try { localStorage.setItem(MUTE_KEY, v ? "1" : "0"); } catch { /* private mode */ }
+};
 
 /* ── Hook ─────────────────────────────────────────────────────────── */
 export const useCharacterAudio = (characterId: string, active: boolean) => {
-  const ctxRef   = useRef<AudioContext | null>(null);
-  const oscsRef  = useRef<OscillatorNode[]>([]);
-  const gainRef  = useRef<GainNode | null>(null);
+  const audioRef = useRef<HTMLAudioElement | null>(null);
+  const fadeRef  = useRef<number | null>(null);
   const muteRef  = useRef(isMuted());
 
-  const stop = useCallback(() => {
-    if (!ctxRef.current || !gainRef.current) return;
-    const g   = gainRef.current;
-    const now = ctxRef.current.currentTime;
-    g.gain.setValueAtTime(g.gain.value, now);
-    g.gain.linearRampToValueAtTime(0, now + 1.8);
-    setTimeout(() => {
-      oscsRef.current.forEach(o => { try { o.stop(); } catch(_) {} });
-      oscsRef.current = [];
-      ctxRef.current?.close();
-      ctxRef.current = null;
-    }, 2000);
+  const clearFade = () => {
+    if (fadeRef.current !== null) {
+      window.clearInterval(fadeRef.current);
+      fadeRef.current = null;
+    }
+  };
+
+  const fadeTo = useCallback((target: number, durationMs: number, onDone?: () => void) => {
+    const audio = audioRef.current;
+    if (!audio) { onDone?.(); return; }
+    clearFade();
+    const start = audio.volume;
+    const steps = Math.max(1, Math.round(durationMs / 50));
+    let i = 0;
+    fadeRef.current = window.setInterval(() => {
+      i++;
+      const t = i / steps;
+      audio.volume = Math.max(0, Math.min(1, start + (target - start) * t));
+      if (i >= steps) {
+        clearFade();
+        onDone?.();
+      }
+    }, 50);
   }, []);
+
+  const stop = useCallback(() => {
+    const audio = audioRef.current;
+    if (!audio) return;
+    fadeTo(0, FADE_OUT_MS, () => {
+      audio.pause();
+      try { audio.src = ""; audio.load(); } catch { /* noop */ }
+      audioRef.current = null;
+    });
+  }, [fadeTo]);
 
   const start = useCallback(() => {
     if (muteRef.current) return;
-    const moodKey = CHAR_MOOD[characterId] ?? "epic";
-    const preset  = PRESETS[moodKey];
+    const mood = CHAR_MOOD[characterId] ?? "epic";
+    const src  = MOOD_SRC[mood];
+    if (!src) return;
 
-    try {
-      const ctx    = new (window.AudioContext || (window as any).webkitAudioContext)();
-      ctxRef.current = ctx;
-
-      /* Reverb via convolver ---------------------------------------- */
-      const convolver = ctx.createConvolver();
-      const bufLen    = ctx.sampleRate * 3;
-      const revBuf    = ctx.createBuffer(2, bufLen, ctx.sampleRate);
-      for (let c = 0; c < 2; c++) {
-        const d = revBuf.getChannelData(c);
-        for (let i = 0; i < bufLen; i++)
-          d[i] = (Math.random() * 2 - 1) * Math.pow(1 - i / bufLen, 3);
-      }
-      convolver.buffer = revBuf;
-
-      /* Master gain — fade in over 2 seconds */
-      const masterGain  = ctx.createGain();
-      gainRef.current   = masterGain;
-      masterGain.gain.setValueAtTime(0, ctx.currentTime);
-      masterGain.gain.linearRampToValueAtTime(preset.gain, ctx.currentTime + 2);
-
-      /* Dry/wet mix */
-      const dryGain = ctx.createGain();
-      const wetGain = ctx.createGain();
-      dryGain.gain.value = 1 - preset.reverb;
-      wetGain.gain.value = preset.reverb;
-      convolver.connect(wetGain);
-      dryGain.connect(masterGain);
-      wetGain.connect(masterGain);
-      masterGain.connect(ctx.destination);
-
-      /* Create one oscillator per note with slight detuning */
-      preset.notes.forEach((freq, i) => {
-        const osc  = ctx.createOscillator();
-        const gn   = ctx.createGain();
-        osc.type   = preset.type;
-        osc.frequency.value = freq;
-        osc.detune.value    = (i % 2 === 0 ? 1 : -1) * (i * 1.5); /* micro-detune */
-        gn.gain.value       = 1 / preset.notes.length;
-        osc.connect(gn);
-        gn.connect(dryGain);
-        gn.connect(convolver);
-        osc.start();
-        oscsRef.current.push(osc);
-
-        /* Slow tremolo pulse */
-        const lfo     = ctx.createOscillator();
-        const lfoGain = ctx.createGain();
-        lfo.frequency.value = 1000 / preset.tempo;
-        lfoGain.gain.value  = 0.015;
-        lfo.connect(lfoGain);
-        lfoGain.connect(gn.gain);
-        lfo.start();
-        oscsRef.current.push(lfo);
-      });
-    } catch (err) {
-      console.warn("Audio not available:", err);
+    /* Reuse existing audio element if we're already on the right mood */
+    if (audioRef.current && audioRef.current.src.endsWith(src)) {
+      fadeTo(TARGET_VOL, FADE_IN_MS);
+      return;
     }
-  }, [characterId]);
 
-  /* Start/stop based on active flag */
+    /* Otherwise tear down and create fresh */
+    if (audioRef.current) {
+      try { audioRef.current.pause(); audioRef.current.src = ""; } catch { /* noop */ }
+      audioRef.current = null;
+    }
+
+    const audio = new Audio(src);
+    audio.loop    = true;
+    audio.volume  = 0;
+    audio.preload = "auto";
+    audioRef.current = audio;
+
+    /* Browser autoplay policies require a user gesture before audio
+       can start. Most CharacterModal opens happen as a result of a
+       click, so play() should succeed. If it doesn't, we catch and
+       stay silent rather than throw. */
+    audio.play()
+      .then(() => fadeTo(TARGET_VOL, FADE_IN_MS))
+      .catch(() => { /* autoplay blocked — silently fail */ });
+  }, [characterId, fadeTo]);
+
   useEffect(() => {
-    if (active) {
-      start();
-    } else {
-      stop();
-    }
+    if (active) start();
+    else        stop();
     return () => { stop(); };
+    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [active, characterId]);
 
-  /* Toggle mute externally */
+  /* Toggle mute externally — used by the mute button in CharacterModal */
   const toggleMute = useCallback(() => {
     const next = !muteRef.current;
     muteRef.current = next;
     setMuted(next);
     if (next) {
-      /* Fade out */
-      if (gainRef.current && ctxRef.current) {
-        const now = ctxRef.current.currentTime;
-        gainRef.current.gain.setValueAtTime(gainRef.current.gain.value, now);
-        gainRef.current.gain.linearRampToValueAtTime(0, now + 0.5);
-      }
-    } else {
-      /* Fade in — need to restart */
       stop();
-      setTimeout(start, 600);
+    } else if (active) {
+      start();
     }
     return next;
-  }, [start, stop]);
+  }, [active, start, stop]);
 
   return { toggleMute, isMuted: () => muteRef.current };
 };
