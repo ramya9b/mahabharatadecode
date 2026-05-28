@@ -33,7 +33,8 @@ export async function onRequestPost(context) {
   if (!orderId) return json({ error: "Missing orderId" }, 400);
 
   const appId     = context.env.CASHFREE_APP_ID;
-  const secretKey = context.env.CASHFREE_SECRET_KEY;
+  /* Accept either canonical CASHFREE_SECRET_KEY or the looser CASHFREE_API_KEY name. */
+  const secretKey = context.env.CASHFREE_SECRET_KEY || context.env.CASHFREE_API_KEY;
   const mode      = (context.env.CASHFREE_MODE || "test").toLowerCase();
   if (!appId || !secretKey) return json({ error: "Cashfree not configured" }, 500);
 

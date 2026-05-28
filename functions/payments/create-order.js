@@ -36,7 +36,10 @@ export async function onRequestPost(context) {
   if (!amount) return json({ error: "Invalid plan" }, 400);
 
   const appId     = context.env.CASHFREE_APP_ID;
-  const secretKey = context.env.CASHFREE_SECRET_KEY;
+  /* Accept either canonical CASHFREE_SECRET_KEY or the looser CASHFREE_API_KEY
+     name since Cashfree's dashboard labels it slightly differently across
+     versions and merchants frequently store it as "API key". */
+  const secretKey = context.env.CASHFREE_SECRET_KEY || context.env.CASHFREE_API_KEY;
   const mode      = (context.env.CASHFREE_MODE || "test").toLowerCase();
   if (!appId || !secretKey) return json({ error: "Cashfree not configured" }, 500);
 
