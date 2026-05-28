@@ -8,7 +8,7 @@ const Footer = () => {
   return (
     <footer className="border-t border-border/40 bg-background">
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-24 py-16 md:py-20">
-        <div className="grid md:grid-cols-4 gap-10 lg:gap-14 mb-14">
+        <div className="grid md:grid-cols-3 gap-10 lg:gap-14 mb-14">
 
           {/* Brand */}
           <div className="md:col-span-2">
@@ -45,15 +45,6 @@ const Footer = () => {
             </ul>
           </div>
 
-          {/* Connect */}
-          <div>
-            <h4 className="font-heading text-[13px] tracking-[0.2em] uppercase text-foreground mb-5">{t("footer.connect_label")}</h4>
-            <ul className="space-y-3.5">
-              {(["youtube","instagram","twitter","discord"] as const).map(k => (
-                <li key={k}><a href="#" className="text-muted-foreground text-[16px] hover:text-primary transition-colors">{t(`footer.links.${k}`)}</a></li>
-              ))}
-            </ul>
-          </div>
         </div>
 
         <div className="pt-8 border-t border-border/20 flex flex-col md:flex-row items-center justify-between gap-4">
