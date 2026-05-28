@@ -81,10 +81,15 @@
     --background: 30 100% 3%;       /* #0C0900 deep warm black */
     --foreground: 45 96% 90%;       /* #FDE68A warm golden white */
 
-    --card: 30 80% 5%;              /* #160B00 card bg */
+    /* Bumped from 5% to 11% lightness so cards/popovers/buttons
+       have proper visible contrast against the near-black --background.
+       Previously the 3% bg vs 5% card values rendered as virtually
+       identical, making cards (StoryTeller character grid, glass-card
+       panels, etc.) invisible in dark mode. */
+    --card: 30 50% 11%;             /* slightly lifted warm dark */
     --card-foreground: 45 96% 90%;
 
-    --popover: 30 80% 5%;
+    --popover: 30 50% 11%;
     --popover-foreground: 45 96% 90%;
 
     --primary: 43 96% 56%;          /* #FBBF24 bright gold */
@@ -249,12 +254,16 @@
     border-color: rgba(217, 119, 6, 0.40);
   }
   .dark .glass-card {
-    background: rgba(22, 11, 0, 0.92);       /* DARK mode — Golden Rainbow dark */
-    border-color: rgba(251, 191, 36, 0.18);
+    /* Bumped from rgba(22,11,0,0.92) which was virtually identical
+       to the page background (~#0C0900). New value sits ~3 lightness
+       steps above the page bg so glass-card panels are visibly distinct
+       in dark mode. */
+    background: rgba(40, 25, 8, 0.88);
+    border-color: rgba(251, 191, 36, 0.22);
   }
   .dark .glass-card:hover {
-    background: rgba(28, 14, 0, 0.96);
-    border-color: rgba(251, 191, 36, 0.38);
+    background: rgba(52, 32, 10, 0.92);
+    border-color: rgba(251, 191, 36, 0.42);
   }
 
   .hover-lift {
