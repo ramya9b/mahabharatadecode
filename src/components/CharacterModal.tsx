@@ -350,7 +350,11 @@ const CharacterModal = ({ char, sceneImage, onStart, onClose }: Props) => {
             <div style={{
               flex:"0 0 42%",
               position:"relative",
-              overflow:"hidden",
+              /* overflow visible so a portrait character can extend past the
+                 panel bottom on tight viewports. The bg layers below have
+                 their own clipping (border-radius + inset:0), so removing
+                 overflow:hidden here doesn't leak the blurred background. */
+              overflow:"visible",
               minHeight:"480px",
               isolation:"isolate",
               display:"flex",
