@@ -1298,9 +1298,13 @@ const StoryTeller = () => {
         )}
       </main>
 
-      </div>{/* end relative zIndex wrapper */}
-      {/* Hide footer on dark scene pages — it clashes with the background image */}
+      {/* Footer must stay INSIDE the relative/zIndex:1 wrapper so it
+          renders above the position:fixed/zIndex:0 mood-gradient overlay
+          that paints in dark mode. Moving it outside (previous setup)
+          let the overlay cover most of the footer text in dark mode,
+          leaving only form inputs visible. */}
       <Footer />
+      </div>{/* end relative zIndex wrapper */}
 
       {/* ── Character Modal (Yudhishthira pilot) ── */}
       {modalChar && (
