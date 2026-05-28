@@ -85,14 +85,25 @@ const FirstVisitCard = () => {
           fontFamily: "'Cormorant Garamond', Georgia, serif",
         }}
       >
-        {/* Close button */}
+        {/* Close button — 44x44 tap target per Apple HIG */}
         <button
           onClick={dismiss}
           style={{
-            position: "absolute", top: "16px", right: "16px",
+            position: "absolute", top: "8px", right: "8px",
+            width: "44px", height: "44px",
+            display: "flex", alignItems: "center", justifyContent: "center",
             background: "none", border: "none", cursor: "pointer",
-            fontSize: "18px", color: "rgba(100,70,20,0.4)",
-            lineHeight: 1, padding: "4px",
+            fontSize: "20px", color: "rgba(100,70,20,0.45)",
+            lineHeight: 1, borderRadius: "50%",
+            transition: "background 0.15s, color 0.15s",
+          }}
+          onMouseEnter={e => {
+            e.currentTarget.style.background = "rgba(160,120,32,0.1)";
+            e.currentTarget.style.color = "rgba(100,70,20,0.8)";
+          }}
+          onMouseLeave={e => {
+            e.currentTarget.style.background = "none";
+            e.currentTarget.style.color = "rgba(100,70,20,0.45)";
           }}
           aria-label="Close"
         >
