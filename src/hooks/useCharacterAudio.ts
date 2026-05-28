@@ -141,8 +141,13 @@ export const useCharacterAudio = (characterId: string, active: boolean) => {
     const src  = MOOD_SRC[mood];
     if (!src) return;
 
-    /* Reuse existing audio element if we're already on the right mood */
+    /* Reuse existing audio element if we're already on the right mood.
+       If autoplay was previously blocked the element will still be paused —
+       retry play() so we don't silently loop a paused track forever. */
     if (audioRef.current && audioRef.current.src.endsWith(src)) {
+      if (audioRef.current.paused) {
+        audioRef.current.play().catch(() => { /* still blocked */ });
+      }
       fadeTo(TARGET_VOL, FADE_IN_MS);
       return;
     }
@@ -156,7 +161,7 @@ export const useCharacterAudio = (characterId: string, active: boolean) => {
     const audio = new Audio(src);
     audio.loop    = true;
     audio.volume  = 0;
-    audio.preload = "auto";
+    audio.preload = "metadata";  /* fetch headers only — play() streams on demand */
     audioRef.current = audio;
 
     /* Browser autoplay policies require a user gesture before audio

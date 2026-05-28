@@ -209,17 +209,12 @@
     "email_placeholder": "Your email",
     "subscribe": "Subscribe",
     "explore_label": "Explore",
-    "connect_label": "Connect",
     "links": {
       "featured": "Featured Stories",
       "characters": "Characters",
       "lessons": "Life Lessons",
       "wisdom": "Daily Wisdom",
-      "about": "About",
-      "youtube": "YouTube",
-      "instagram": "Instagram",
-      "twitter": "Twitter",
-      "discord": "Discord"
+      "about": "About"
     },
     "copyright": "© 2026 MahabharataDecoded. All rights reserved.",
     "built_with": "Built with devotion ✦"

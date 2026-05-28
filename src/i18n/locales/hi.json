@@ -209,17 +209,12 @@
     "email_placeholder": "आपका ईमेल",
     "subscribe": "सदस्यता लें",
     "explore_label": "खोजें",
-    "connect_label": "जुड़ें",
     "links": {
       "featured": "विशेष कहानियाँ",
       "characters": "पात्र",
       "lessons": "जीवन पाठ",
       "wisdom": "दैनिक ज्ञान",
-      "about": "हमारे बारे में",
-      "youtube": "यूट्यूब",
-      "instagram": "इंस्टाग्राम",
-      "twitter": "ट्विटर",
-      "discord": "डिस्कॉर्ड"
+      "about": "हमारे बारे में"
     },
     "copyright": "© 2026 महाभारतडीकोडेड। सर्वाधिकार सुरक्षित।",
     "built_with": "श्रद्धा के साथ निर्मित ✦"
