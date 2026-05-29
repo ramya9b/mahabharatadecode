@@ -218,6 +218,35 @@
     line-height: 1.45;
   }
 
+  /* ── Indic script readability fixes ──────────────────────────────
+     Latin display fonts (Cinzel) use heavy letter-spacing + uppercase
+     for elegance. Both behaviors look broken on Indic scripts:
+       • letter-spacing tears apart vowel-marks / ligatures
+       • uppercase is a no-op but the small-caps sizing carries
+     Neutralize both, and bump minimum size for small label text so
+     combining-marks stay legible.
+     ──────────────────────────────────────────────────────────────── */
+  .font-hi, .font-te, .font-kn {
+    /* Normalize letter-spacing globally for Indic scripts */
+    letter-spacing: normal !important;
+  }
+  /* Small uppercase Latin labels read 10-13px with 0.2-0.25em tracking;
+     those values produce illegibly thin Kannada/Telugu/Devanagari.
+     Bump to 14-15px minimum and remove uppercase styling impact. */
+  .font-hi .section-label, .font-te .section-label, .font-kn .section-label,
+  .font-hi [class*="eyebrow"], .font-te [class*="eyebrow"], .font-kn [class*="eyebrow"] {
+    font-size: clamp(13px, 1.4vw, 15px) !important;
+    text-transform: none;
+    letter-spacing: 0.05em !important;
+  }
+  /* Cinzel-styled small headings (nav, footer hints, badges) */
+  .font-hi nav a, .font-te nav a, .font-kn nav a,
+  .font-hi nav button, .font-te nav button, .font-kn nav button {
+    font-size: 14px !important;
+    letter-spacing: 0.02em !important;
+    text-transform: none;
+  }
+
   /* Prevent text overflow for longer regional translations */
   .i18n-safe {
     overflow-wrap: break-word;
