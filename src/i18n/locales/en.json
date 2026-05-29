@@ -125,7 +125,8 @@
       "life_domains":  "Life domains",
       "read_scenario": "Read: {{headline}}"
     },
-    "english_only_note": "Personal-guidance text is currently available in English only. We're working on translations."
+    "english_only_note": "Personal-guidance text is currently available in English only. We're working on translations.",
+    "partial_coverage_note": "{{translated}} of {{total}} scenarios are available in your language. The remaining ones fall back to English while we continue translating."
   },
   "quiz": {
     "page_title": "Which Mahabharata Character Are You?",

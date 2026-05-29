@@ -12,6 +12,8 @@ import {
   getScenariosByDomain,
   getAllDomains,
   DOMAIN_META_KEYS,
+  localizeScenario,
+  localizedCoverage,
 } from "@/data/wisdom";
 import type { Domain, WisdomScenario } from "@/data/wisdom";
 
@@ -679,13 +681,16 @@ const DomainPanel = ({
 }) => {
   const { t, i18n } = useTranslation();
   const meta = DOMAIN_META_KEYS[domain];
-  const domainScenarios = getScenariosByDomain(domain);
+  /* Scenarios for the active domain, localized to the current language where
+     a translation exists. Untranslated scenarios fall back to English per-id. */
+  const lang = i18n.language?.slice(0, 2) ?? "en";
+  const domainScenarios = getScenariosByDomain(domain).map(s => localizeScenario(s, lang));
   const headerRef = useScrollReveal<HTMLDivElement>();
-  /* Scenario CONTENT (headline / yourSituation / epicMoment / etc.) lives in
-     src/data/wisdom.ts and is currently English-only. The UI chrome around it
-     translates fine, but the prose itself does not. Show an honest one-line
-     note to non-English readers so they aren't surprised. */
-  const isNonEnglish = (i18n.language?.slice(0, 2) ?? "en") !== "en";
+  /* Coverage disclaimer: shown only for non-English locales. Tells the
+     reader how many of the 22 scenarios are available in their language
+     so the English fallbacks aren't a silent surprise. */
+  const isNonEnglish = lang !== "en";
+  const coverage = localizedCoverage(lang);
 
   return (
     <div
@@ -719,7 +724,9 @@ const DomainPanel = ({
         <div className="h-px w-full bg-border/20 mt-4" aria-hidden="true" />
       </div>
 
-      {/* English-only-content disclaimer for non-English locales */}
+      {/* Coverage disclaimer for non-English locales. Two states:
+          - 0 translated: full English-only note
+          - some translated: "N of M in your language, others fall back" */}
       {isNonEnglish && (
         <div
           role="note"
@@ -734,7 +741,11 @@ const DomainPanel = ({
           }}
         >
           <span aria-hidden="true" style={{ fontSize: "16px", lineHeight: 1, flexShrink: 0, marginTop: "1px" }}>ℹ️</span>
-          <span>{t("wisdom.english_only_note")}</span>
+          <span>
+            {coverage.translated === 0
+              ? t("wisdom.english_only_note")
+              : t("wisdom.partial_coverage_note", { translated: coverage.translated, total: coverage.total })}
+          </span>
         </div>
       )}
 

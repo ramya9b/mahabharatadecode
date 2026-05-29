@@ -628,3 +628,42 @@ export const getScenarioById = (id: string) =>
 
 export const getAllDomains = (): Domain[] =>
   ["family", "workplace", "duty", "identity"];
+
+/* ─────────────────────────────────────────────
+   Per-locale content overrides — Phase 1 covers FAMILY only.
+   Each locale JSON maps scenario id → translated string fields.
+   Missing scenarios (not yet translated) fall back to English per-id.
+───────────────────────────────────────────── */
+import teData from "./wisdom-locales/te.json";
+import hiData from "./wisdom-locales/hi.json";
+import knData from "./wisdom-locales/kn.json";
+
+type LocaleOverride = Partial<Pick<WisdomScenario,
+  "characterName" | "headline" | "subline"
+  | "yourSituation" | "epicMoment" | "whatItReveals" | "theLesson" | "actions"
+>>;
+type LocaleFile = Record<string, LocaleOverride>;
+
+const LOCALE_DATA: Record<"te" | "hi" | "kn", LocaleFile> = {
+  te: teData as LocaleFile,
+  hi: hiData as LocaleFile,
+  kn: knData as LocaleFile,
+};
+
+/** Returns the scenario with locale-specific fields applied where available.
+ *  Falls back to the English source per-field if no override exists. */
+export function localizeScenario(s: WisdomScenario, locale: string): WisdomScenario {
+  const code = locale?.slice(0, 2);
+  if (code === "en" || !(code in LOCALE_DATA)) return s;
+  const overrides = LOCALE_DATA[code as "te" | "hi" | "kn"][s.id];
+  return overrides ? { ...s, ...overrides } : s;
+}
+
+/** How many scenarios are translated for `locale` — used by the disclaimer
+ *  banner to tell the user how much of /wisdom is in their language. */
+export function localizedCoverage(locale: string): { translated: number; total: number } {
+  const code = locale?.slice(0, 2);
+  if (code === "en" || !(code in LOCALE_DATA)) return { translated: 0, total: scenarios.length };
+  const data = LOCALE_DATA[code as "te" | "hi" | "kn"];
+  return { translated: Object.keys(data).length, total: scenarios.length };
+}
