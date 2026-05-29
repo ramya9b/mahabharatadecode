@@ -226,24 +226,38 @@
      Neutralize both, and bump minimum size for small label text so
      combining-marks stay legible.
      ──────────────────────────────────────────────────────────────── */
-  .font-hi, .font-te, .font-kn {
-    /* Normalize letter-spacing globally for Indic scripts */
-    letter-spacing: normal !important;
+  /* letter-spacing is NOT inherited — must target descendants directly.
+     Any Tailwind tracking-* utility on an element inside an Indic font
+     context gets normalized to a tiny breathing-room value. This catches
+     tracking-tight, tracking-wider, tracking-widest, and arbitrary
+     values like tracking-[0.32em] / tracking-[0.25em]. */
+  .font-hi [class*="tracking-"],
+  .font-te [class*="tracking-"],
+  .font-kn [class*="tracking-"] {
+    letter-spacing: 0.02em !important;
   }
-  /* Small uppercase Latin labels read 10-13px with 0.2-0.25em tracking;
-     those values produce illegibly thin Kannada/Telugu/Devanagari.
-     Bump to 14-15px minimum and remove uppercase styling impact. */
+  /* Section labels and component-class eyebrows (no Tailwind tracking
+     utility on them) — same normalization plus size bump and drop
+     the cosmetic uppercase (no-op for Indic but cleaner intent). */
   .font-hi .section-label, .font-te .section-label, .font-kn .section-label,
   .font-hi [class*="eyebrow"], .font-te [class*="eyebrow"], .font-kn [class*="eyebrow"] {
     font-size: clamp(13px, 1.4vw, 15px) !important;
-    text-transform: none;
     letter-spacing: 0.05em !important;
+    text-transform: none;
   }
-  /* Cinzel-styled small headings (nav, footer hints, badges) */
+  /* The hero eyebrow specifically (text-[11px] tracking-[0.32em]) — needs
+     a font-size bump that the tracking-* selector above can't carry. */
+  .font-hi .i18n-safe[class*="text-[1"],
+  .font-te .i18n-safe[class*="text-[1"],
+  .font-kn .i18n-safe[class*="text-[1"] {
+    font-size: 14px !important;
+  }
+  /* Nav links — Cinzel-styled at small sizes; tracking is normalized
+     above, but the size bump still needs to be explicit since they
+     don't carry tracking utilities of their own. */
   .font-hi nav a, .font-te nav a, .font-kn nav a,
   .font-hi nav button, .font-te nav button, .font-kn nav button {
     font-size: 14px !important;
-    letter-spacing: 0.02em !important;
     text-transform: none;
   }
 
