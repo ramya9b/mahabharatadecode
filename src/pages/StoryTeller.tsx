@@ -14,7 +14,7 @@ import {
   getCharactersByGroup,
   type StoryCharacter,
   type CharacterGroup,
-  GROUP_LABELS,
+  GROUP_LABEL_KEYS,
   GROUP_COLORS,
 } from "@/data/storyCharacters";
 import { MOOD_THEMES, GROUP_THEME_MAP, type MoodTheme } from "@/data/moodThemes";
@@ -27,14 +27,8 @@ import { useSubscription } from "@/hooks/useSubscription";
 /* ── Types ── */
 type Step = "select" | "prompt" | "story";
 
-/* ── Tone config ── */
-const TONES: { value: Tone; label: string; icon: string }[] = [
-  { value: "epic",          label: "Epic",          icon: "⚡" },
-  { value: "devotional",    label: "Devotional",    icon: "🪷" },
-  { value: "kids",          label: "Kids",          icon: "🌟" },
-  { value: "philosophical", label: "Philosophical", icon: "🔮" },
-];
-
+/* TONES + GROUPS are computed inside the component now so t() can
+   resolve labels at render time (was module-level English-only). */
 const LANGUAGES: { value: Language; label: string }[] = [
   { value: "en", label: "English" },
   { value: "te", label: "తెలుగు" },
@@ -42,7 +36,7 @@ const LANGUAGES: { value: Language; label: string }[] = [
   { value: "kn", label: "ಕನ್ನಡ" },
 ];
 
-const GROUPS = Object.keys(GROUP_LABELS) as CharacterGroup[];
+const GROUPS = Object.keys(GROUP_LABEL_KEYS) as CharacterGroup[];
 
 /* ── Typewriter hook ── */
 function useTypewriter(text: string, speed = 18) {
@@ -67,7 +61,17 @@ function useTypewriter(text: string, speed = 18) {
 
 /* ── Main component ── */
 const StoryTeller = () => {
-  const { i18n } = useTranslation();
+  const { t, i18n } = useTranslation();
+
+  /* Localized TONE config — computed at render time so language switch
+     re-resolves the labels. Loop variables that previously shadowed `t`
+     have been renamed to `tn` further down. */
+  const TONES: { value: Tone; label: string; icon: string }[] = [
+    { value: "epic",          label: t("storyteller.tone_epic"),          icon: "⚡" },
+    { value: "devotional",    label: t("storyteller.tone_devotional"),    icon: "🪷" },
+    { value: "kids",          label: t("storyteller.tone_kids"),          icon: "🌟" },
+    { value: "philosophical", label: t("storyteller.tone_philosophical"), icon: "🔮" },
+  ];
 
   /* State */
   const [step, setStep]                     = useState<Step>("select");
@@ -593,20 +597,20 @@ const StoryTeller = () => {
 
           {/* Tone */}
           <div style={{ display: "flex", flexWrap: "wrap", justifyContent: "center", gap: "6px", background: "rgba(255,255,255,0.07)", borderRadius: "20px", padding: "4px" }}>
-            {TONES.map(t => (
+            {TONES.map(tn => (
               <button
-                key={t.value}
-                onClick={() => setTone(t.value)}
-                title={t.label}
+                key={tn.value}
+                onClick={() => setTone(tn.value)}
+                title={tn.label}
                 style={{
                   padding: "6px 12px", borderRadius: "99px", border: "none", cursor: "pointer",
                   fontFamily: serif, fontSize: "12px", whiteSpace: "nowrap",
-                  background: tone === t.value ? gold : "transparent",
-                  color: tone === t.value ? "hsl(var(--primary-foreground))" : "hsl(var(--muted-foreground))",
+                  background: tone === tn.value ? gold : "transparent",
+                  color: tone === tn.value ? "hsl(var(--primary-foreground))" : "hsl(var(--muted-foreground))",
                   transition: "all 0.2s",
                 }}
               >
-                {t.icon} {t.label}
+                {tn.icon} {tn.label}
               </button>
             ))}
           </div>
@@ -635,7 +639,7 @@ const StoryTeller = () => {
               {i + 1}
             </div>
             <span style={{ fontFamily: serif, fontSize: "11px", letterSpacing: "0.1em", color: step === s ? gold : inkMuted, margin: "0 8px", display: "none" /* hide on small screens */ }}>
-              {s === "select" ? "Character" : s === "prompt" ? "Story" : "Read"}
+              {s === "select" ? t("storyteller.step_character") : s === "prompt" ? t("storyteller.step_story") : t("storyteller.step_read")}
             </span>
             {i < 2 && <div style={{ width: "40px", height: "1px", background: "rgba(160,120,32,0.3)" }} />}
           </div>
@@ -662,7 +666,7 @@ const StoryTeller = () => {
                     transition: "all 0.2s",
                   }}
                 >
-                  {GROUP_LABELS[g]}
+                  {t(GROUP_LABEL_KEYS[g])}
                 </button>
               ))}
             </div>
@@ -870,9 +874,9 @@ const StoryTeller = () => {
                     background: "hsl(var(--accent))",
                   }}>
                     {([
-                      { key: "story",     label: "📖 The Story",    desc: "What happened" },
-                      { key: "lesson",    label: "💡 Life Lesson",   desc: "What it means for you" },
-                      { key: "situation", label: "🙋 My Situation",  desc: "Your personal guidance" },
+                      { key: "story",     label: `📖 ${t("storyteller.tab_story")}`,     desc: t("storyteller.tab_story_desc") },
+                      { key: "lesson",    label: `💡 ${t("storyteller.tab_lesson")}`,    desc: t("storyteller.tab_lesson_desc") },
+                      { key: "situation", label: `🙋 ${t("storyteller.tab_situation")}`, desc: t("storyteller.tab_situation_desc") },
                     ] as { key: StoryTab; label: string; desc: string }[]).map(tab => (
                       <button
                         key={tab.key}
@@ -959,7 +963,7 @@ const StoryTeller = () => {
                           {selected.name}
                         </span>
                         <span style={{ fontFamily: serif, fontSize: "10px", color: inkMuted, marginLeft: "8px" }}>
-                          · {TONES.find(t => t.value === tone)?.icon} {TONES.find(t => t.value === tone)?.label} · {LANGUAGES.find(l => l.value === language)?.label}
+                          · {TONES.find(tn => tn.value === tone)?.icon} {TONES.find(tn => tn.value === tone)?.label} · {LANGUAGES.find(l => l.value === language)?.label}
                         </span>
                       </div>
                     </div>
@@ -1194,10 +1198,10 @@ const StoryTeller = () => {
                     }}
                   >
                     {speaking ? <MicOff size={14} /> : <Mic size={14} />}
-                    {speaking ? "Stop narration" : (
-                      activeTab === "lesson" ? "Listen to lesson" :
-                      activeTab === "situation" ? "Listen to guidance" :
-                      "Listen to story"
+                    {speaking ? t("storyteller.stop_narration") : (
+                      activeTab === "lesson" ? t("storyteller.listen_lesson") :
+                      activeTab === "situation" ? t("storyteller.listen_guidance") :
+                      t("storyteller.listen_story")
                     )}
                   </button>
                 )}

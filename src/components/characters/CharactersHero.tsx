@@ -1,4 +1,5 @@
 import { useEffect, useMemo, useRef } from "react";
+import { useTranslation } from "react-i18next";
 import { Users } from "lucide-react";
 import heroBg from "@/assets/hero-bg.webp";
 import type { Character } from "@/data/characters";
@@ -10,6 +11,7 @@ interface CharactersHeroProps {
 }
 
 const CharactersHero = ({ characters }: CharactersHeroProps) => {
+  const { t } = useTranslation();
   const bgRef = useRef<HTMLDivElement>(null);
   const sectionRef = useRef<HTMLElement>(null);
   const { theme } = useTheme();
@@ -123,23 +125,17 @@ const CharactersHero = ({ characters }: CharactersHeroProps) => {
       {/* Hero content */}
       <div className="relative z-10 text-center px-6 max-w-4xl mx-auto pt-24 pb-16">
         {/* Eyebrow */}
-        <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-primary/20 text-primary text-[11px] tracking-[0.32em] uppercase font-heading mb-8 animate-fade-up backdrop-blur-sm">
+        <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-primary/20 text-primary text-[11px] tracking-[0.32em] uppercase font-heading mb-8 animate-fade-up backdrop-blur-sm i18n-safe">
           <Users size={11} />
-          The Epic's Greatest Souls
+          {t("characters.eyebrow")}
         </div>
 
         {/* Title */}
         <h1
-          className="font-heading font-black leading-[1] mb-6 animate-fade-up-delay-1"
-          style={{ fontSize: "clamp(46px, 8vw, 96px)" }}
+          className="font-heading font-black leading-[1] mb-6 animate-fade-up-delay-1 gold-text"
+          style={{ fontSize: "clamp(46px, 8vw, 96px)", color: subtitleColor }}
         >
-          <span className="gold-text block">Legendary</span>
-          <span
-            className="block"
-            style={{ color: subtitleColor, fontSize: "0.68em" }}
-          >
-            Characters
-          </span>
+          {t("characters.headline")}
         </h1>
 
         <p
@@ -152,8 +148,7 @@ const CharactersHero = ({ characters }: CharactersHeroProps) => {
             maxWidth: "540px",
           }}
         >
-          Five warriors. Five destinies. Five mirrors held up to the human soul.
-          The Mahabharata is not a story about ancient India — it is a story about you.
+          {t("characters.subtitle")}
         </p>
 
         {/* Character portrait strip */}
@@ -220,7 +215,7 @@ const CharactersHero = ({ characters }: CharactersHeroProps) => {
             className="font-heading text-[9px] tracking-[0.3em] uppercase"
             style={{ color: "var(--gold)" }}
           >
-            Scroll to explore
+            {t("common.scroll_to_explore")}
           </span>
           <div
             className="w-px h-8"

@@ -204,6 +204,31 @@
     "nav_quiz": "క్విజ్ తీసుకోండి",
     "nav_quiz_desc": "మీ పాత్రను కనుగొనండి"
   },
+  "storyteller": {
+    "tone_epic": "మహాకావ్యం",
+    "tone_devotional": "భక్తి",
+    "tone_kids": "పిల్లలు",
+    "tone_philosophical": "తాత్విక",
+    "group_pandavas": "పాండవులు",
+    "group_kauravas": "కౌరవులు",
+    "group_women": "స్త్రీలు",
+    "group_warriors": "యోధులు",
+    "group_divine": "దివ్య & మునులు",
+    "group_kings": "రాజులు & పితృలు",
+    "step_character": "పాత్ర",
+    "step_story": "కథ",
+    "step_read": "చదవండి",
+    "tab_story": "కథ",
+    "tab_story_desc": "ఏం జరిగింది",
+    "tab_lesson": "జీవిత పాఠం",
+    "tab_lesson_desc": "మీకు ఏమి అర్థమవుతుంది",
+    "tab_situation": "నా పరిస్థితి",
+    "tab_situation_desc": "మీ వ్యక్తిగత మార్గదర్శకత్వం",
+    "listen_story": "కథ వినండి",
+    "listen_lesson": "పాఠం వినండి",
+    "listen_guidance": "మార్గదర్శకత్వం వినండి",
+    "stop_narration": "వివరణ ఆపండి"
+  },
   "home": {
     "storyteller": {
       "eyebrow": "కొత్త ఫీచర్",

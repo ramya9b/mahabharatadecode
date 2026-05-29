@@ -11,7 +11,7 @@ import { useSEO } from "@/hooks/useSEO";
 import {
   getScenariosByDomain,
   getAllDomains,
-  DOMAIN_META,
+  DOMAIN_META_KEYS,
 } from "@/data/wisdom";
 import type { Domain, WisdomScenario } from "@/data/wisdom";
 
@@ -89,12 +89,12 @@ const WisdomHero = () => {
           className="font-heading font-black leading-[0.95] mb-8 animate-fade-up-delay-1"
           style={{ fontSize: "clamp(42px, 8vw, 92px)" }}
         >
-          <span className="gold-text block">Your life.</span>
+          <span className="gold-text block">{t("wisdom.headline_gold")}</span>
           <span
             className="block"
             style={{ color: isDark ? "rgba(253,230,138,0.88)" : "rgba(42,31,14,0.90)", fontSize: "0.68em", marginTop: "6px" }}
           >
-            Their story.
+            {t("wisdom.headline_white")}
           </span>
         </h1>
 
@@ -109,9 +109,7 @@ const WisdomHero = () => {
             maxWidth: "560px",
           }}
         >
-          Every difficult thing you are going through right now has already been
-          lived — with more weight, higher stakes, and no playbook — by someone
-          in the Mahabharata.
+          {t("wisdom.subtitle")}
         </p>
         <p
           className="leading-relaxed mx-auto mb-14 animate-fade-up-delay-2"
@@ -123,13 +121,13 @@ const WisdomHero = () => {
             maxWidth: "480px",
           }}
         >
-          Find your situation. Read their story. Take what is useful.
+          {t("wisdom.subtitle_2")}
         </p>
 
         {/* Domain count */}
         <div className="flex flex-wrap gap-6 justify-center animate-fade-up-delay-2">
           {getAllDomains().map((domain) => {
-            const meta = DOMAIN_META[domain];
+            const meta = DOMAIN_META_KEYS[domain];
             const count = getScenariosByDomain(domain).length;
             return (
               <div key={domain} className="text-center">
@@ -143,7 +141,7 @@ const WisdomHero = () => {
                   className="font-heading text-[9px] tracking-[0.22em] uppercase mt-1"
                   style={{ color: isDark ? "rgba(253,230,138,0.45)" : "rgba(42,31,14,0.50)" }}
                 >
-                  {meta.label.split(" ")[0]}
+                  {t(meta.labelKey).split(" ")[0]}
                 </div>
               </div>
             );
@@ -179,6 +177,7 @@ const DomainTabs = ({
   active: Domain;
   onChange: (d: Domain) => void;
 }) => {
+  const { t } = useTranslation();
   const { theme: themeF } = useTheme();
   const isDarkF = themeF === "dark";
   return (
@@ -193,7 +192,7 @@ const DomainTabs = ({
         aria-label="Life domains"
       >
         {getAllDomains().map((domain) => {
-          const meta = DOMAIN_META[domain];
+          const meta = DOMAIN_META_KEYS[domain];
           const isActive = active === domain;
           return (
             <button
@@ -220,7 +219,7 @@ const DomainTabs = ({
                 {meta.icon}
               </span>
               <span className="font-heading text-[12px] tracking-[0.08em] uppercase">
-                {meta.label}
+                {t(meta.labelKey)}
               </span>
               <span
                 className="font-heading text-[10px] ml-1"
@@ -343,6 +342,7 @@ const ScenarioDetail = ({
   scenario: WisdomScenario;
   onClose: () => void;
 }) => {
+  const { t } = useTranslation();
   const panelRef = useRef<HTMLDivElement>(null);
   const { theme: themeM } = useTheme();
   const isDarkM = themeM === "dark";
@@ -441,7 +441,7 @@ const ScenarioDetail = ({
                 className="font-heading text-[10px] tracking-[0.25em] uppercase"
                 style={{ color: accentLabelStrong }}
               >
-                {scenario.characterName} · {DOMAIN_META[scenario.domain].label}
+                {scenario.characterName} · {t(DOMAIN_META_KEYS[scenario.domain].labelKey)}
               </span>
             </div>
 
@@ -677,7 +677,8 @@ const DomainPanel = ({
   domain: Domain;
   onOpenScenario: (s: WisdomScenario) => void;
 }) => {
-  const meta = DOMAIN_META[domain];
+  const { t } = useTranslation();
+  const meta = DOMAIN_META_KEYS[domain];
   const domainScenarios = getScenariosByDomain(domain);
   const headerRef = useScrollReveal<HTMLDivElement>();
 
@@ -696,7 +697,7 @@ const DomainPanel = ({
               className="font-heading font-bold text-foreground"
               style={{ fontSize: "clamp(22px, 3vw, 32px)" }}
             >
-              {meta.label}
+              {t(meta.labelKey)}
             </h2>
             <p
               className="text-muted-foreground mt-0.5"
@@ -706,7 +707,7 @@ const DomainPanel = ({
                 fontStyle: "italic",
               }}
             >
-              {meta.description}
+              {t(meta.descKey)}
             </p>
           </div>
         </div>

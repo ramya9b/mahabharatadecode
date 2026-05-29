@@ -18,6 +18,16 @@ export interface WisdomScenario {
   articleSlug?: string;
 }
 
+/* i18n keys for domain labels + descriptions — resolve via t() at the call
+   site. The localized strings live under "wisdom.domains.*" in each locale. */
+export const DOMAIN_META_KEYS: Record<Domain, { labelKey: string; icon: string; descKey: string }> = {
+  family:    { labelKey: "wisdom.domains.family",    icon: "🏠", descKey: "wisdom.domains.family_desc" },
+  workplace: { labelKey: "wisdom.domains.workplace", icon: "💼", descKey: "wisdom.domains.workplace_desc" },
+  duty:      { labelKey: "wisdom.domains.duty",      icon: "⚖️", descKey: "wisdom.domains.duty_desc" },
+  identity:  { labelKey: "wisdom.domains.identity",  icon: "🧭", descKey: "wisdom.domains.identity_desc" },
+};
+
+/* @deprecated — kept as fallback for any caller we haven't migrated yet */
 export const DOMAIN_META: Record<Domain, { label: string; icon: string; description: string }> = {
   family:    { label: "Family & Relationships", icon: "🏠", description: "The people you didn't choose, and the ones you did" },
   workplace: { label: "Workplace & Career",     icon: "💼", description: "What happens when ambition meets the reality of systems" },

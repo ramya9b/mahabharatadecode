@@ -204,6 +204,31 @@
     "nav_quiz": "Take the Quiz",
     "nav_quiz_desc": "Discover your character"
   },
+  "storyteller": {
+    "tone_epic": "Epic",
+    "tone_devotional": "Devotional",
+    "tone_kids": "Kids",
+    "tone_philosophical": "Philosophical",
+    "group_pandavas": "Pandavas",
+    "group_kauravas": "Kauravas",
+    "group_women": "Women",
+    "group_warriors": "Warriors",
+    "group_divine": "Divine & Sages",
+    "group_kings": "Kings & Fathers",
+    "step_character": "Character",
+    "step_story": "Story",
+    "step_read": "Read",
+    "tab_story": "The Story",
+    "tab_story_desc": "What happened",
+    "tab_lesson": "Life Lesson",
+    "tab_lesson_desc": "What it means for you",
+    "tab_situation": "My Situation",
+    "tab_situation_desc": "Your personal guidance",
+    "listen_story": "Listen to story",
+    "listen_lesson": "Listen to lesson",
+    "listen_guidance": "Listen to guidance",
+    "stop_narration": "Stop narration"
+  },
   "home": {
     "storyteller": {
       "eyebrow": "New Feature",

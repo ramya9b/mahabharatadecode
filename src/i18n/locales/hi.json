@@ -204,6 +204,31 @@
     "nav_quiz": "प्रश्नोत्तरी लें",
     "nav_quiz_desc": "अपना पात्र खोजें"
   },
+  "storyteller": {
+    "tone_epic": "महाकाव्य",
+    "tone_devotional": "भक्तिमय",
+    "tone_kids": "बच्चों के लिए",
+    "tone_philosophical": "दार्शनिक",
+    "group_pandavas": "पांडव",
+    "group_kauravas": "कौरव",
+    "group_women": "महिलाएं",
+    "group_warriors": "योद्धा",
+    "group_divine": "दिव्य और ऋषि",
+    "group_kings": "राजा और पितृ",
+    "step_character": "पात्र",
+    "step_story": "कहानी",
+    "step_read": "पढ़ें",
+    "tab_story": "कहानी",
+    "tab_story_desc": "क्या हुआ",
+    "tab_lesson": "जीवन पाठ",
+    "tab_lesson_desc": "आपके लिए इसका अर्थ",
+    "tab_situation": "मेरी स्थिति",
+    "tab_situation_desc": "आपका व्यक्तिगत मार्गदर्शन",
+    "listen_story": "कहानी सुनें",
+    "listen_lesson": "पाठ सुनें",
+    "listen_guidance": "मार्गदर्शन सुनें",
+    "stop_narration": "वर्णन बंद करें"
+  },
   "home": {
     "storyteller": {
       "eyebrow": "नई सुविधा",

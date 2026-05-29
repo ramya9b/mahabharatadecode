@@ -204,6 +204,31 @@
     "nav_quiz": "ರಸಪ್ರಶ್ನೆ ತೆಗೆದುಕೊಳ್ಳಿ",
     "nav_quiz_desc": "ನಿಮ್ಮ ಪಾತ್ರ ಕಂಡುಹಿಡಿಯಿರಿ"
   },
+  "storyteller": {
+    "tone_epic": "ಮಹಾಕಾವ್ಯ",
+    "tone_devotional": "ಭಕ್ತಿ",
+    "tone_kids": "ಮಕ್ಕಳು",
+    "tone_philosophical": "ತಾತ್ವಿಕ",
+    "group_pandavas": "ಪಾಂಡವರು",
+    "group_kauravas": "ಕೌರವರು",
+    "group_women": "ಮಹಿಳೆಯರು",
+    "group_warriors": "ಯೋಧರು",
+    "group_divine": "ದಿವ್ಯ ಮತ್ತು ಋಷಿಗಳು",
+    "group_kings": "ರಾಜರು ಮತ್ತು ಪಿತೃಗಳು",
+    "step_character": "ಪಾತ್ರ",
+    "step_story": "ಕಥೆ",
+    "step_read": "ಓದಿ",
+    "tab_story": "ಕಥೆ",
+    "tab_story_desc": "ಏನಾಯಿತು",
+    "tab_lesson": "ಜೀವನ ಪಾಠ",
+    "tab_lesson_desc": "ನಿಮಗೆ ಅರ್ಥವೇನು",
+    "tab_situation": "ನನ್ನ ಪರಿಸ್ಥಿತಿ",
+    "tab_situation_desc": "ನಿಮ್ಮ ವೈಯಕ್ತಿಕ ಮಾರ್ಗದರ್ಶನ",
+    "listen_story": "ಕಥೆ ಕೇಳಿ",
+    "listen_lesson": "ಪಾಠ ಕೇಳಿ",
+    "listen_guidance": "ಮಾರ್ಗದರ್ಶನ ಕೇಳಿ",
+    "stop_narration": "ನಿರೂಪಣೆ ನಿಲ್ಲಿಸಿ"
+  },
   "home": {
     "storyteller": {
       "eyebrow": "ಹೊಸ ವೈಶಿಷ್ಟ್ಯ",

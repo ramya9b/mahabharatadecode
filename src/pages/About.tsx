@@ -1,4 +1,5 @@
 import { useEffect, useRef, useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import {
   BookOpen, Heart, Lightbulb, Users, Mail,
@@ -15,6 +16,7 @@ import karnaImg from "@/assets/karna.webp";
    SECTION 1 — HERO
 ───────────────────────────────────────────────────────── */
 const AboutHero = () => {
+  const { t } = useTranslation();
   const bgRef = useRef<HTMLDivElement>(null);
   useEffect(() => {
     const fn = () => {
@@ -54,13 +56,13 @@ const AboutHero = () => {
         {/* Eyebrow */}
         <div className="inline-flex items-center gap-2 px-5 py-2 rounded-full border border-primary/20 text-primary text-[11px] tracking-[0.35em] uppercase font-heading mb-10 animate-fade-up backdrop-blur-sm">
           <Star size={10} />
-          Our Mission
+          {t("about.eyebrow")}
         </div>
 
         {/* Manifesto headline */}
         <h1 className="font-heading font-black leading-[0.95] mb-10 animate-fade-up-delay-1" style={{ fontSize: "clamp(52px, 9vw, 108px)" }}>
-          <span className="gold-text block">Ancient Wisdom.</span>
-          <span style={{ color: "hsl(var(--foreground) / 0.85)", fontSize: "0.78em", display: "block", marginTop: "8px" }}>Modern Life.</span>
+          <span className="gold-text block">{t("about.headline_gold")}</span>
+          <span style={{ color: "hsl(var(--foreground) / 0.85)", fontSize: "0.78em", display: "block", marginTop: "8px" }}>{t("about.headline_white")}</span>
         </h1>
 
         {/* Manifesto body */}
@@ -96,6 +98,7 @@ const AboutHero = () => {
    SECTION 2 — MISSION STATEMENT (large editorial type)
 ───────────────────────────────────────────────────────── */
 const MissionSection = () => {
+  const { t } = useTranslation();
   const ref = useScrollReveal<HTMLDivElement>();
   return (
     <section className="py-12 md:py-16" style={{ background: "hsl(var(--parchment-1))" }}>
@@ -104,7 +107,7 @@ const MissionSection = () => {
           {/* Label */}
           <div className="flex items-center gap-4 mb-10">
             <div className="h-px w-10 bg-primary/40" />
-            <span className="section-label !mb-0">Why We Exist</span>
+            <span className="section-label !mb-0">{t("about.why_exist")}</span>
           </div>
 
           {/* Large mission text */}
@@ -222,6 +225,7 @@ const StatsSection = () => {
    SECTION 4 — ORIGIN STORY
 ───────────────────────────────────────────────────────── */
 const OriginSection = () => {
+  const { t } = useTranslation();
   const imgRef = useScrollReveal<HTMLDivElement>();
   const textRef = useScrollReveal<HTMLDivElement>();
 
@@ -253,12 +257,11 @@ const OriginSection = () => {
           <div ref={textRef} className="reveal-element" style={{ transitionDelay: "120ms" }}>
             <div className="flex items-center gap-4 mb-6">
               <div className="h-px w-10 bg-primary/40" />
-              <span className="section-label !mb-0">The Origin Story</span>
+              <span className="section-label !mb-0">{t("about.origin_label")}</span>
             </div>
 
             <h2 className="font-heading font-bold leading-tight mb-8" style={{ fontSize: "clamp(28px, 3.5vw, 42px)" }}>
-              It Started With{" "}
-              <span className="gold-text">One Question</span>
+              {t("about.origin_title")}
             </h2>
 
             <div className="space-y-5">
@@ -287,7 +290,7 @@ const OriginSection = () => {
             {/* Decorative rule */}
             <div className="flex items-center gap-3 mt-8">
               <div className="h-px w-8 bg-primary/20" />
-              <span className="text-primary/35 text-[10px] tracking-[0.35em] uppercase font-heading">Founded 2026</span>
+              <span className="text-primary/35 text-[10px] tracking-[0.35em] uppercase font-heading">{t("about.founded")}</span>
             </div>
           </div>
         </div>
@@ -327,6 +330,7 @@ const pillars = [
 ];
 
 const PillarsSection = () => {
+  const { t } = useTranslation();
   const headerRef = useScrollReveal<HTMLDivElement>();
   const cardsRef = useStaggeredReveal(3);
 
@@ -334,8 +338,8 @@ const PillarsSection = () => {
     <section className="py-12 md:py-16" style={{ background: "linear-gradient(180deg, hsl(var(--parchment-2)), hsl(var(--parchment-1)))" }}>
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
         <div ref={headerRef} className="reveal-element text-center mb-16">
-          <span className="section-label">Our Approach</span>
-          <h2 className="section-title">Three Principles.<br /><span className="gold-text">No Compromises.</span></h2>
+          <span className="section-label">{t("about.approach_label")}</span>
+          <h2 className="section-title">{t("about.approach_title")}</h2>
         </div>
 
         <div ref={cardsRef} className="grid md:grid-cols-3 gap-6">
@@ -395,6 +399,7 @@ const steps = [
 ];
 
 const ProcessSection = () => {
+  const { t } = useTranslation();
   const headerRef = useScrollReveal<HTMLDivElement>();
   const stepsRef = useStaggeredReveal(5);
 
@@ -404,11 +409,10 @@ const ProcessSection = () => {
         <div ref={headerRef} className="reveal-element mb-16">
           <div className="flex items-center gap-4 mb-5">
             <div className="h-px w-10 bg-primary/40" />
-            <span className="section-label !mb-0">How We Work</span>
+            <span className="section-label !mb-0">{t("about.process_label")}</span>
           </div>
           <h2 className="section-title max-w-xl">
-            How Every Article<br />
-            <span className="gold-text">Gets Made</span>
+            {t("about.process_title")}
           </h2>
           <p className="text-muted-foreground mt-4 leading-relaxed max-w-lg" style={{ fontSize: "17px", fontFamily: "'Cormorant Garamond', Georgia, serif" }}>
             Each piece goes through five stages before it's published — a process
@@ -526,6 +530,7 @@ const values = [
 ];
 
 const ValuesSection = () => {
+  const { t } = useTranslation();
   const headerRef = useScrollReveal<HTMLDivElement>();
   const gridRef = useStaggeredReveal(6);
 
@@ -533,8 +538,8 @@ const ValuesSection = () => {
     <section className="py-12 md:py-16" style={{ background: "hsl(var(--parchment-3))" }}>
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20">
         <div ref={headerRef} className="reveal-element text-center mb-16">
-          <span className="section-label">What We Stand For</span>
-          <h2 className="section-title">Six <span className="gold-text">Non-Negotiables</span></h2>
+          <span className="section-label">{t("about.values_label")}</span>
+          <h2 className="section-title">{t("about.values_title")}</h2>
         </div>
 
         <div ref={gridRef} className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
@@ -565,6 +570,7 @@ const ValuesSection = () => {
    SECTION 9 — CREATOR / AUTHOR
 ───────────────────────────────────────────────────────── */
 const CreatorSection = () => {
+  const { t } = useTranslation();
   const ref = useScrollReveal<HTMLDivElement>();
 
   return (
@@ -573,7 +579,7 @@ const CreatorSection = () => {
         <div ref={ref} className="reveal-element">
           <div className="flex items-center gap-4 mb-12">
             <div className="h-px w-10 bg-primary/40" />
-            <span className="section-label !mb-0">The Person Behind This</span>
+            <span className="section-label !mb-0">{t("about.creator_label")}</span>
           </div>
 
           <div className="grid lg:grid-cols-[280px_1fr] gap-10 lg:gap-16 items-start">
@@ -599,7 +605,7 @@ const CreatorSection = () => {
               <div className="text-center lg:text-left">
                 <p className="font-heading font-bold text-foreground text-xl mb-1">MahabharataDecoded</p>
                 <p className="text-muted-foreground text-sm" style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontStyle: "italic" }}>
-                  Founded 2026
+                  {t("about.founded")}
                 </p>
               </div>
 
@@ -648,6 +654,7 @@ const CreatorSection = () => {
    SECTION 10 — CTA
 ───────────────────────────────────────────────────────── */
 const AboutCTA = () => {
+  const { t } = useTranslation();
   const ref = useScrollReveal<HTMLDivElement>();
   return (
     <section className="py-12 md:py-16 relative overflow-hidden text-center"
@@ -656,13 +663,12 @@ const AboutCTA = () => {
         style={{ background: "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(212,175,55,0.06), transparent 65%)" }} />
 
       <div ref={ref} className="reveal-element relative z-10 max-w-2xl mx-auto px-6">
-        <span className="section-label block mb-4">Start Here</span>
+        <span className="section-label block mb-4">{t("about.start_label")}</span>
         <h2 className="font-heading font-bold mb-5 leading-tight" style={{ fontSize: "clamp(30px, 4vw, 48px)" }}>
-          Ready to Decode<br /><span className="gold-text">the Epic?</span>
+          {t("about.start_title")}
         </h2>
         <p className="text-muted-foreground leading-relaxed mb-10 mx-auto" style={{ fontSize: "17px", fontFamily: "'Cormorant Garamond', Georgia, serif", maxWidth: "420px" }}>
-          Start with the articles. Explore the characters.
-          And subscribe for one piece of ancient wisdom delivered every morning.
+          {t("about.start_desc")}
         </p>
 
         {/* Action buttons */}

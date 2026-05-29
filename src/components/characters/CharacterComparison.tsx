@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import type { Character } from "@/data/characters";
 import { resolveImage } from "@/utils/images";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
@@ -7,9 +8,18 @@ interface CharacterComparisonProps {
   characters: Character[];
 }
 
-const STAT_LABELS = ["Warrior Skill", "Wisdom", "Loyalty", "Sacrifice", "Dharma"];
+/* Data keys map 1:1 to character.stats[].label (English) and to
+   characters.stat_* translation keys for the rendered headers. */
+const STAT_KEYS: { id: string; trKey: string }[] = [
+  { id: "Warrior Skill", trKey: "characters.stat_warrior" },
+  { id: "Wisdom",        trKey: "characters.stat_wisdom" },
+  { id: "Loyalty",       trKey: "characters.stat_loyalty" },
+  { id: "Sacrifice",     trKey: "characters.stat_sacrifice" },
+  { id: "Dharma",        trKey: "characters.stat_dharma" },
+];
 
 const CharacterComparison = ({ characters }: CharacterComparisonProps) => {
+  const { t } = useTranslation();
   const ref = useScrollReveal<HTMLDivElement>();
 
   return (
@@ -32,10 +42,9 @@ const CharacterComparison = ({ characters }: CharacterComparisonProps) => {
       <div className="max-w-7xl mx-auto px-6 md:px-12 lg:px-20" ref={ref}>
         {/* Header */}
         <div className="reveal-element text-center mb-16">
-          <span className="section-label">Side by Side</span>
+          <span className="section-label">{t("characters.side_by_side")}</span>
           <h2 className="section-title">
-            Five Warriors,{" "}
-            <span className="gold-text">One Truth</span>
+            {t("characters.comparison_title")}
           </h2>
           <p
             className="mt-4 leading-relaxed mx-auto"
@@ -46,8 +55,7 @@ const CharacterComparison = ({ characters }: CharacterComparisonProps) => {
               maxWidth: "480px",
             }}
           >
-            Every character in the Mahabharata is a different answer to the same question:
-            what does it mean to live with integrity?
+            {t("characters.comparison_sub")}
           </p>
         </div>
 
@@ -97,9 +105,9 @@ const CharacterComparison = ({ characters }: CharacterComparisonProps) => {
               </tr>
             </thead>
             <tbody>
-              {STAT_LABELS.map((stat) => (
+              {STAT_KEYS.map(({ id, trKey }) => (
                 <tr
-                  key={stat}
+                  key={id}
                   className="group"
                 >
                   <td
@@ -109,10 +117,10 @@ const CharacterComparison = ({ characters }: CharacterComparisonProps) => {
                       borderRadius: "8px 0 0 8px",
                     }}
                   >
-                    {stat}
+                    {t(trKey)}
                   </td>
                   {characters.map((char) => {
-                    const s = char.stats.find((st) => st.label === stat);
+                    const s = char.stats.find((st) => st.label === id);
                     const val = s?.value ?? 0;
                     return (
                       <td key={char.id} className="px-3 py-3">

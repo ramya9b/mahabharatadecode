@@ -1,4 +1,5 @@
 import { memo } from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { ArrowRight, BookOpen } from "lucide-react";
 import type { Character } from "@/data/characters";
@@ -27,6 +28,7 @@ const ARCHETYPE_COLORS_LIGHT: Record<string, string> = {
 };
 
 const CharacterProfile = ({ character, index }: CharacterProfileProps) => {
+  const { t } = useTranslation();
   const sectionRef = useScrollReveal<HTMLDivElement>();
   const image = resolveImage(character.imageKey);
   const isEven = index % 2 === 0;
@@ -294,7 +296,7 @@ const CharacterProfile = ({ character, index }: CharacterProfileProps) => {
                   className="font-heading text-[10px] tracking-[0.25em] uppercase"
                   style={{ color: `rgba(${character.accentRgb},0.6)` }}
                 >
-                  Character Profile
+                  {t("characters.profile")}
                 </span>
               </div>
               <CharacterStatBars
@@ -356,7 +358,7 @@ const CharacterProfile = ({ character, index }: CharacterProfileProps) => {
                   boxShadow: `0 0 24px rgba(${character.accentRgb},0.35)`,
                 }}
               >
-                Read Full Story
+                {t("characters.read_story")}
               </span>
               <ArrowRight
                 size={16}

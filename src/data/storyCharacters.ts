@@ -28,6 +28,18 @@ export interface StoryCharacter {
   prompts: StoryPrompt[];
 }
 
+/* i18n keys for group labels — resolve via t() at the call site.
+   The localized strings live under "storyteller.group_*" in each locale. */
+export const GROUP_LABEL_KEYS: Record<CharacterGroup, string> = {
+  pandavas:  "storyteller.group_pandavas",
+  kauravas:  "storyteller.group_kauravas",
+  women:     "storyteller.group_women",
+  warriors:  "storyteller.group_warriors",
+  divine:    "storyteller.group_divine",
+  kings:     "storyteller.group_kings",
+};
+
+/* @deprecated — kept as fallback; new code should use GROUP_LABEL_KEYS + t() */
 export const GROUP_LABELS: Record<CharacterGroup, string> = {
   pandavas: "Pandavas",
   kauravas: "Kauravas",
