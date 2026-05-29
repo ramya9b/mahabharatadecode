@@ -112,7 +112,20 @@
       "duty_desc": "When you carry more than you were ever asked to carry",
       "identity": "Identity & Daily Life",
       "identity_desc": "The quiet wars you fight when no one is watching"
-    }
+    },
+    "detail": {
+      "your_situation":  "Your situation",
+      "what_x_faced":    "What {{name}} faced",
+      "what_it_reveals": "What it reveals",
+      "three_actions":   "Three things you can do",
+      "read_full_story": "Read Full Story",
+      "read_more_blurb": "Read the full {{name}} article — the complete story, life lessons, and modern parallels."
+    },
+    "aria": {
+      "life_domains":  "Life domains",
+      "read_scenario": "Read: {{headline}}"
+    },
+    "english_only_note": "Personal-guidance text is currently available in English only. We're working on translations."
   },
   "quiz": {
     "page_title": "Which Mahabharata Character Are You?",

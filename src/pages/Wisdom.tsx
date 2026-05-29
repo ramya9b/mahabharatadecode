@@ -189,7 +189,7 @@ const DomainTabs = ({
       <div
         className="flex gap-2 overflow-x-auto pb-1 scrollbar-hide"
         role="tablist"
-        aria-label="Life domains"
+        aria-label={t("wisdom.aria.life_domains")}
       >
         {getAllDomains().map((domain) => {
           const meta = DOMAIN_META_KEYS[domain];
@@ -248,6 +248,7 @@ const ScenarioCard = ({
   index: number;
   onOpen: (s: WisdomScenario) => void;
 }) => {
+  const { t } = useTranslation();
   const ref = useScrollReveal<HTMLDivElement>();
   const { theme: ct } = useTheme();
   const isDarkC = ct === "dark";
@@ -262,7 +263,7 @@ const ScenarioCard = ({
         onClick={() => onOpen(scenario)}
         className="w-full text-left glass-card rounded-2xl overflow-hidden hover-lift group transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
         style={{ borderColor: `rgba(${scenario.accentRgb},0.12)` }}
-        aria-label={`Read: ${scenario.headline}`}
+        aria-label={t("wisdom.aria.read_scenario", { headline: scenario.headline })}
       >
         {/* Accent top line */}
         <div
@@ -319,7 +320,7 @@ const ScenarioCard = ({
             className="flex items-center gap-2 font-heading text-[11px] tracking-[0.12em] uppercase transition-all duration-300"
             style={{ color: scenario.accentHex }}
           >
-            <span>Read the story</span>
+            <span>{t("wisdom.read_story")}</span>
             <ArrowRight
               size={12}
               className="group-hover:translate-x-1 transition-transform duration-300"
@@ -417,7 +418,7 @@ const ScenarioDetail = ({
         {/* Close button */}
         <button
           onClick={onClose}
-          aria-label="Close"
+          aria-label={t("common.close")}
           className="absolute top-5 right-5 w-9 h-9 rounded-full flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
           style={{
             background: "rgba(139,105,20,0.07)",
@@ -466,7 +467,7 @@ const ScenarioDetail = ({
           </div>
 
           {/* Your situation */}
-          <DetailSection label="Your situation" accentRgb={scenario.accentRgb}>
+          <DetailSection label={t("wisdom.detail.your_situation")} accentRgb={scenario.accentRgb}>
             <div className="space-y-3">
               {scenario.yourSituation.trim().split("\n\n").map((para, i) => (
                 <p
@@ -488,7 +489,7 @@ const ScenarioDetail = ({
 
           {/* The Mahabharata moment */}
           <DetailSection
-            label={`What ${scenario.characterName} faced`}
+            label={t("wisdom.detail.what_x_faced", { name: scenario.characterName })}
             accentRgb={scenario.accentRgb}
             accent
           >
@@ -510,7 +511,7 @@ const ScenarioDetail = ({
           </DetailSection>
 
           {/* What it reveals */}
-          <DetailSection label="What it reveals" accentRgb={scenario.accentRgb}>
+          <DetailSection label={t("wisdom.detail.what_it_reveals")} accentRgb={scenario.accentRgb}>
             <div className="space-y-3">
               {scenario.whatItReveals.trim().split("\n\n").map((para, i) => (
                 <p
@@ -555,7 +556,7 @@ const ScenarioDetail = ({
           </div>
 
           {/* 3 Actions */}
-          <DetailSection label="Three things you can do" accentRgb={scenario.accentRgb}>
+          <DetailSection label={t("wisdom.detail.three_actions")} accentRgb={scenario.accentRgb}>
             <div className="space-y-5">
               {scenario.actions.map((action, i) => (
                 <div key={i} className="flex gap-4">
@@ -593,7 +594,7 @@ const ScenarioDetail = ({
                   className="font-heading text-[10px] tracking-[0.22em] uppercase mb-1"
                   style={{ color: accentLabelMuted }}
                 >
-                  Go deeper
+                  {t("wisdom.go_deeper")}
                 </p>
                 <p
                   style={{
@@ -602,8 +603,7 @@ const ScenarioDetail = ({
                     fontFamily: "'Cormorant Garamond', Georgia, serif",
                   }}
                 >
-                  Read the full {scenario.characterName} article — the complete story,
-                  life lessons, and modern parallels.
+                  {t("wisdom.detail.read_more_blurb", { name: scenario.characterName })}
                 </p>
               </div>
               <Link
@@ -617,7 +617,7 @@ const ScenarioDetail = ({
                 }}
               >
                 <BookOpen size={13} aria-hidden="true" />
-                Read Full Story
+                {t("wisdom.detail.read_full_story")}
               </Link>
             </div>
           )}
@@ -677,10 +677,15 @@ const DomainPanel = ({
   domain: Domain;
   onOpenScenario: (s: WisdomScenario) => void;
 }) => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
   const meta = DOMAIN_META_KEYS[domain];
   const domainScenarios = getScenariosByDomain(domain);
   const headerRef = useScrollReveal<HTMLDivElement>();
+  /* Scenario CONTENT (headline / yourSituation / epicMoment / etc.) lives in
+     src/data/wisdom.ts and is currently English-only. The UI chrome around it
+     translates fine, but the prose itself does not. Show an honest one-line
+     note to non-English readers so they aren't surprised. */
+  const isNonEnglish = (i18n.language?.slice(0, 2) ?? "en") !== "en";
 
   return (
     <div
@@ -714,6 +719,25 @@ const DomainPanel = ({
         <div className="h-px w-full bg-border/20 mt-4" aria-hidden="true" />
       </div>
 
+      {/* English-only-content disclaimer for non-English locales */}
+      {isNonEnglish && (
+        <div
+          role="note"
+          className="mb-8 px-4 py-3 rounded-lg flex items-start gap-3"
+          style={{
+            background: "rgba(212,175,55,0.06)",
+            border: "1px solid rgba(212,175,55,0.18)",
+            fontFamily: "'Cormorant Garamond', Georgia, serif",
+            fontSize: "14px",
+            color: "hsl(var(--muted-foreground))",
+            lineHeight: 1.55,
+          }}
+        >
+          <span aria-hidden="true" style={{ fontSize: "16px", lineHeight: 1, flexShrink: 0, marginTop: "1px" }}>ℹ️</span>
+          <span>{t("wisdom.english_only_note")}</span>
+        </div>
+      )}
+
       {/* Scenarios grid */}
       <div className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-5">
         {domainScenarios.map((scenario, i) => (
@@ -733,6 +757,7 @@ const DomainPanel = ({
    BOTTOM CTA
 ────────────────────────────────────────────── */
 const BottomCTA = () => {
+  const { t } = useTranslation();
   const ref = useScrollReveal<HTMLDivElement>();
   return (
     <section
@@ -750,12 +775,12 @@ const BottomCTA = () => {
         aria-hidden="true"
       />
       <div ref={ref} className="reveal-element max-w-2xl mx-auto px-6 relative z-10">
-        <span className="section-label block mb-4">Go Deeper</span>
+        <span className="section-label block mb-4">{t("wisdom.go_deeper")}</span>
         <h2
           className="font-heading font-bold text-foreground mb-4 leading-tight"
           style={{ fontSize: "clamp(26px, 3.5vw, 40px)" }}
         >
-          The full story is in the articles
+          {t("wisdom.cta_title")}
         </h2>
         <p
           className="text-muted-foreground leading-relaxed mb-10 mx-auto"
@@ -766,9 +791,7 @@ const BottomCTA = () => {
             lineHeight: 1.8,
           }}
         >
-          Each scenario above is a door. The full character articles go deeper —
-          the complete story, every turning point, and what it means for the way
-          you live now.
+          {t("wisdom.cta_desc")}
         </p>
         <div className="flex flex-col sm:flex-row gap-4 justify-center">
           <Link
@@ -776,7 +799,7 @@ const BottomCTA = () => {
             className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full bg-primary text-primary-foreground font-heading text-sm font-bold tracking-wide hover:bg-gold-light transition-all duration-300 animate-pulse-glow group"
           >
             <BookOpen size={15} aria-hidden="true" />
-            Read the Full Stories
+            {t("wisdom.read_articles")}
             <ArrowRight
               size={14}
               className="group-hover:translate-x-0.5 transition-transform"
@@ -787,7 +810,7 @@ const BottomCTA = () => {
             to="/quiz"
             className="inline-flex items-center justify-center gap-2 px-8 py-3.5 rounded-full glass-card font-heading text-sm tracking-wide hover:border-primary/50 hover:text-primary transition-all duration-300"
           >
-            ✦ Find Your Character
+            ✦ {t("wisdom.find_character")}
           </Link>
         </div>
       </div>
