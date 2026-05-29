@@ -113,6 +113,12 @@
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
   </head>
   <body>
+    <!-- Pre-hydration skip-link: deliberately English-only.
+         The React app (Navbar.tsx) renders a second, translated skip-link
+         once hydrated. Keeping this one ensures keyboard/screen-reader users
+         can skip nav even before JS boots or if the bundle fails to load.
+         If a non-English user reads two skip-links during the first paint,
+         that is an acceptable trade for guaranteed pre-hydration a11y. -->
     <a href="#main-content" class="skip-nav">Skip to main content</a>
     <div id="root"></div>
     <script type="module" src="./src/main.tsx"></script>

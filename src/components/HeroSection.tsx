@@ -210,7 +210,7 @@ const HeroSection = () => {
             onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-3px) scale(1.02)"; (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 12px 40px rgba(212,175,55,0.6)"; }}
             onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.transform = "none"; (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 8px 32px rgba(212,175,55,0.45), 0 0 60px rgba(212,175,55,0.15)"; }}
           >
-            ✨ Try Story Teller
+            ✨ {t("hero.cta_try_story")}
           </Link>
           <Link
             to="/blog"

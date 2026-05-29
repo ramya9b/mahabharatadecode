@@ -4,25 +4,27 @@
    Quick visual proof that the site is real and active.
    Uses CSS variables so it works in both themes.
 ───────────────────────────────────────────── */
+import { useTranslation } from "react-i18next";
 
 interface Stat {
   value: string;
   label: string;
 }
 
-/* All four stats are verifiable from the codebase:
-   - AI Story Teller: real Gemini-powered feature (src/pages/StoryTeller.tsx)
-   - 25 Characters:   src/data/storyCharacters.ts
-   - 4 Languages:     EN / TE / HI / KN (src/i18n/index.ts)
-   - Free Always:     no paywall on free trial; subscription is optional */
-const STATS: Stat[] = [
-  { value: "AI",   label: "Story Teller" },
-  { value: "25",   label: "Characters" },
-  { value: "4",    label: "Languages" },
-  { value: "Free", label: "Always" },
-];
-
 const SocialProofBar = () => {
+  const { t } = useTranslation();
+  /* All four stats are verifiable from the codebase:
+     - AI Story Teller: real Gemini-powered feature (src/pages/StoryTeller.tsx)
+     - 25 Characters:   src/data/storyCharacters.ts
+     - 4 Languages:     EN / TE / HI / KN (src/i18n/index.ts)
+     - Free Always:     no paywall on free trial; subscription is optional
+     Note: "AI" + "25" + "4" stay as-is (initialism + numerals are universal). */
+  const STATS: Stat[] = [
+    { value: "AI",                       label: t("home.social_proof.story_teller") },
+    { value: "25",                       label: t("home.social_proof.characters") },
+    { value: "4",                        label: t("home.social_proof.languages") },
+    { value: t("home.social_proof.free"), label: t("home.social_proof.always") },
+  ];
   return (
     <section
       aria-label="Site at a glance"

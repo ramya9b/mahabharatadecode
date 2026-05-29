@@ -26,6 +26,7 @@
     "subtitle": "AI-narrated Mahabharata in English, Telugu, Hindi & Kannada. The epic — decoded for modern decisions.",
     "cta_primary": "Start Reading",
     "cta_secondary": "Explore Characters",
+    "cta_try_story": "Try Story Teller",
     "scroll": "Scroll"
   },
   "common": {
@@ -230,6 +231,13 @@
     "stop_narration": "Stop narration"
   },
   "home": {
+    "social_proof": {
+      "story_teller": "Story Teller",
+      "characters":   "Characters",
+      "languages":    "Languages",
+      "free":         "Free",
+      "always":       "Always"
+    },
     "storyteller": {
       "eyebrow": "New Feature",
       "title": "AI Story Teller",

@@ -3,9 +3,11 @@
    Hides automatically on /storyteller page
 ───────────────────────────────────────────── */
 import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
 import { Link, useLocation } from "react-router-dom";
 
 const FloatingStoryButton = () => {
+  const { t } = useTranslation();
   const { pathname } = useLocation();
   const [visible, setVisible]   = useState(false);
   const [pulsing, setPulsing]   = useState(true);
@@ -74,10 +76,10 @@ const FloatingStoryButton = () => {
           boxShadow: "0 4px 24px rgba(52,211,153,0.40)",
           userSelect: "none",
         }}
-        aria-label="Try Story Teller"
+        aria-label={t("hero.cta_try_story")}
       >
         <span style={{ fontSize: "16px" }}>✨</span>
-        <span>Story Teller</span>
+        <span>{t("nav.storyteller")}</span>
       </Link>
     </>
   );
