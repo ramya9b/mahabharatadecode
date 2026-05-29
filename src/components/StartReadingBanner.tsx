@@ -3,43 +3,16 @@
    Mirrors StoryTellerBanner design language
 ───────────────────────────────────────────── */
 import { Link } from "react-router-dom";
-
-const STORY_PREVIEWS = [
-  {
-    icon: "⚔️",
-    name: "Karna's Dilemma",
-    slug: "karna-loyalty-vs-self-respect",
-    line: "He knew the truth about himself — and chose silence...",
-    readTime: 7,
-    category: "Characters",
-  },
-  {
-    icon: "🪷",
-    name: "Krishna's Strategy",
-    slug: "krishna-leadership-secrets",
-    line: "He never sat on a throne, yet controlled every kingdom...",
-    readTime: 6,
-    category: "Life Lessons",
-  },
-  {
-    icon: "🏹",
-    name: "Arjuna's Crisis",
-    slug: "arjuna-confusion-moment-of-doubt",
-    line: "The greatest archer trembled at the moment of truth...",
-    readTime: 5,
-    category: "Life Lessons",
-  },
-  {
-    icon: "🔥",
-    name: "Draupadi's Fire",
-    slug: "karna-loyalty-vs-self-respect",
-    line: "Her question in the sabha silenced a thousand warriors...",
-    readTime: 7,
-    category: "Characters",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const StartReadingBanner = () => {
+  const { t } = useTranslation();
+  const STORY_PREVIEWS = [
+    { icon: "⚔️", id: "karna",    slug: "karna-loyalty-vs-self-respect",   nameKey: "home.start_reading.preview_karna_name",    lineKey: "home.start_reading.preview_karna_line",    readTime: 7, catKey: "home.start_reading.cat_characters" },
+    { icon: "🪷", id: "krishna",  slug: "krishna-leadership-secrets",      nameKey: "home.start_reading.preview_krishna_name",  lineKey: "home.start_reading.preview_krishna_line",  readTime: 6, catKey: "home.start_reading.cat_life_lessons" },
+    { icon: "🏹", id: "arjuna",   slug: "arjuna-confusion-moment-of-doubt",nameKey: "home.start_reading.preview_arjuna_name",   lineKey: "home.start_reading.preview_arjuna_line",   readTime: 5, catKey: "home.start_reading.cat_life_lessons" },
+    { icon: "🔥", id: "draupadi", slug: "karna-loyalty-vs-self-respect",   nameKey: "home.start_reading.preview_draupadi_name", lineKey: "home.start_reading.preview_draupadi_line", readTime: 7, catKey: "home.start_reading.cat_characters" },
+  ];
   return (
     <section
       style={{
@@ -64,7 +37,7 @@ const StartReadingBanner = () => {
             marginBottom: "16px",
           }}
         >
-          Epic Stories
+          {t("home.start_reading.eyebrow")}
         </span>
         <h2
           style={{
@@ -76,7 +49,7 @@ const StartReadingBanner = () => {
             lineHeight: 1.2,
           }}
         >
-          Start Reading
+          {t("home.start_reading.title")}
         </h2>
         <p
           style={{
@@ -88,8 +61,7 @@ const StartReadingBanner = () => {
             lineHeight: 1.7,
           }}
         >
-          Dive into the world's greatest epic — retold for modern minds. Each
-          story unlocks a timeless lesson about life, leadership, and love.
+          {t("home.start_reading.subtitle")}
         </p>
         <Link
           to="/blog"
@@ -122,7 +94,7 @@ const StartReadingBanner = () => {
               "0 4px 24px rgba(212,175,55,0.45)";
           }}
         >
-          📖 Browse All Stories →
+          📖 {t("home.start_reading.cta")} →
         </Link>
       </div>
 
@@ -136,7 +108,7 @@ const StartReadingBanner = () => {
       >
         {STORY_PREVIEWS.map((p) => (
           <Link
-            key={p.name}
+            key={p.id}
             to={`/blog/${p.slug}`}
             style={{
               display: "block",
@@ -171,7 +143,7 @@ const StartReadingBanner = () => {
                 marginBottom: "6px",
               }}
             >
-              {p.name}
+              {t(p.nameKey)}
             </div>
             <div
               style={{
@@ -183,7 +155,7 @@ const StartReadingBanner = () => {
                 marginBottom: "10px",
               }}
             >
-              "{p.line}"
+              "{t(p.lineKey)}"
             </div>
             {/* Read-time + category metadata */}
             <div
@@ -195,7 +167,7 @@ const StartReadingBanner = () => {
                 color: "hsl(var(--muted-foreground) / 0.85)",
               }}
             >
-              {p.readTime} min · {p.category}
+              {p.readTime} {t("common.min_read")} · {t(p.catKey)}
             </div>
           </Link>
         ))}
@@ -213,7 +185,7 @@ const StartReadingBanner = () => {
           textTransform: "uppercase",
         }}
       >
-        Deep dives · Life lessons · Modern relevance · Free
+        {t("home.start_reading.footer_hint")}
       </p>
     </section>
   );

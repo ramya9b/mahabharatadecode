@@ -1,25 +1,26 @@
 import { Link } from "react-router-dom";
-
-/* ── Use WebP public assets with JPEG srcSet fallback for performance ── */
-const characters = [
-  { name: "Krishna",  title: "The Divine Strategist", id: "krishna"  },
-  { name: "Arjuna",   title: "The Supreme Archer",     id: "arjuna"   },
-  { name: "Karna",    title: "The Tragic Hero",        id: "karna"    },
-  { name: "Draupadi", title: "The Fire-Born Queen",    id: "draupadi" },
-  { name: "Bhishma",  title: "The Grand Patriarch",    id: "bhishma"  },
-];
+import { useTranslation } from "react-i18next";
 
 /* Responsive srcSet: serve smallest needed per breakpoint
    Vite bundles src/assets — public/ images are served as-is at runtime */
 const getAssetSrcSet = (id: string) =>
   `/characters/${id}.webp 900w, /characters/${id}.webp 450w`;
 
-const CharactersGrid = () => (
+const CHARACTER_IDS = ["krishna", "arjuna", "karna", "draupadi", "bhishma"] as const;
+
+const CharactersGrid = () => {
+  const { t } = useTranslation();
+  const characters = CHARACTER_IDS.map(id => ({
+    id,
+    name:  t(`home.characters.${id}`),
+    title: t(`home.meet_five.${id}_title`),
+  }));
+  return (
   <section id="characters" className="section-padding">
     <div className="max-w-7xl mx-auto">
       <div className="section-header">
-        <span className="section-label">Closer Look</span>
-        <h2 className="section-title">Meet the Five</h2>
+        <span className="section-label">{t("home.meet_five.eyebrow")}</span>
+        <h2 className="section-title">{t("home.meet_five.title")}</h2>
         <div
           aria-hidden="true"
           style={{
@@ -109,11 +110,12 @@ const CharactersGrid = () => (
             (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 4px 24px rgba(52,211,153,0.40)";
           }}
         >
-          View Full Character Profiles →
+          {t("home.meet_five.cta")} →
         </Link>
       </div>
     </div>
   </section>
-);
+  );
+};
 
 export default CharactersGrid;

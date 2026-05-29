@@ -204,6 +204,123 @@
     "nav_quiz": "Take the Quiz",
     "nav_quiz_desc": "Discover your character"
   },
+  "home": {
+    "storyteller": {
+      "eyebrow": "New Feature",
+      "title": "AI Story Teller",
+      "subtitle": "Choose any character. Choose your story. Hear the Mahabharata come alive — narrated dramatically in English, Telugu, Hindi or Kannada.",
+      "cta": "Start Listening",
+      "footer_hint": "25 characters · 4 languages · Voice narration · Free",
+      "preview_karna_line": "Born a king, raised a charioteer's son…",
+      "preview_krishna_line": "He never raised a weapon — yet won the war…",
+      "preview_draupadi_line": "Born from fire. Her humiliation ignited a war…",
+      "preview_bhishma_line": "His oath of celibacy destroyed generations…"
+    },
+    "start_reading": {
+      "eyebrow": "Epic Stories",
+      "title": "Start Reading",
+      "subtitle": "Dive into the world's greatest epic — retold for modern minds. Each story unlocks a timeless lesson about life, leadership, and love.",
+      "cta": "Browse All Stories",
+      "footer_hint": "Deep dives · Life lessons · Modern relevance · Free",
+      "preview_karna_name": "Karna's Dilemma",
+      "preview_karna_line": "He knew the truth about himself — and chose silence…",
+      "preview_krishna_name": "Krishna's Strategy",
+      "preview_krishna_line": "He never sat on a throne, yet controlled every kingdom…",
+      "preview_arjuna_name": "Arjuna's Crisis",
+      "preview_arjuna_line": "The greatest archer trembled at the moment of truth…",
+      "preview_draupadi_name": "Draupadi's Fire",
+      "preview_draupadi_line": "Her question in the sabha silenced a thousand warriors…",
+      "cat_characters": "Characters",
+      "cat_life_lessons": "Life Lessons"
+    },
+    "explore": {
+      "eyebrow": "Legendary Figures",
+      "title": "Explore Characters",
+      "subtitle": "Meet the warriors, sages, and queens whose choices echo across millennia. Every character mirrors a truth about the human condition.",
+      "cta": "View All Characters",
+      "footer_hint": "25+ characters · Strengths · Weaknesses · Life lessons",
+      "karna_line": "Born a king, denied his crown — the most tragic hero.",
+      "krishna_line": "The god who chose friendship over power.",
+      "arjuna_line": "The perfect warrior who questioned everything.",
+      "draupadi_line": "Born from sacred fire — her strength moved empires.",
+      "bhishma_line": "His oath of celibacy shaped the fate of generations.",
+      "yudhishthira_line": "The king of truth who could not tell a lie."
+    },
+    "characters": {
+      "karna": "Karna",
+      "krishna": "Krishna",
+      "arjuna": "Arjuna",
+      "draupadi": "Draupadi",
+      "bhishma": "Bhishma",
+      "yudhishthira": "Yudhishthira"
+    },
+    "meet_five": {
+      "eyebrow": "Closer Look",
+      "title": "Meet the Five",
+      "cta": "View Full Character Profiles",
+      "krishna_title": "The Divine Strategist",
+      "arjuna_title": "The Supreme Archer",
+      "karna_title": "The Tragic Hero",
+      "draupadi_title": "The Fire-Born Queen",
+      "bhishma_title": "The Grand Patriarch"
+    },
+    "life_lessons": {
+      "eyebrow": "Wisdom",
+      "title": "Life Lessons",
+      "scroll_left": "Scroll left",
+      "scroll_right": "Scroll right",
+      "dharma_title": "Dharma Over Desire",
+      "dharma_insight": "Krishna teaches that true fulfillment comes not from chasing desire, but from aligning with your dharma — your sacred duty.",
+      "detachment_title": "The Power of Detachment",
+      "detachment_insight": "Act without attachment to results. Excellence emerges when ego dissolves and purpose takes its place.",
+      "loyalty_title": "Loyalty Has Limits",
+      "loyalty_insight": "Bhishma's unwavering oath teaches us that blind loyalty without wisdom becomes the greatest weakness.",
+      "silence_title": "Silence is Strategy",
+      "silence_insight": "Krishna's silence in the court of Hastinapura shows that sometimes the greatest power lies in restraint.",
+      "truth_title": "Truth Beyond Morality",
+      "truth_insight": "The epic reveals that truth isn't always comfortable — and sometimes dharma demands uncomfortable choices.",
+      "rise_title": "Rise After Every Fall",
+      "rise_insight": "The Pandavas lost everything — kingdom, dignity, freedom. Yet they rose. Resilience is the ultimate dharma."
+    },
+    "quiz_banner": {
+      "eyebrow": "Discover Your Epic Self",
+      "title": "Which Character Are You?",
+      "subtitle": "Eight honest questions. No right answers — just a mirror. Discover which Mahabharata character mirrors your inner archetype.",
+      "cta": "Take the Quiz",
+      "footer_hint": "~3 minutes · 8 questions · Shareable result"
+    },
+    "featured": {
+      "eyebrow": "Featured",
+      "title": "Epic Narratives",
+      "subtitle": "Explore the stories that have shaped civilizations for millennia",
+      "read_story": "Read Story",
+      "tag_characters": "Characters",
+      "tag_life_lessons": "Life Lessons",
+      "karna_title": "Karna: The Man Who Chose Honour Over Everything",
+      "karna_desc": "He was offered the world — and turned it down. The most devastating story about loyalty in the entire epic.",
+      "krishna_title": "Krishna: The Leader Who Never Needed the Throne",
+      "krishna_desc": "He had ten million warriors and chose not to use them. The leadership secrets no business school teaches.",
+      "arjuna_title": "Arjuna's Confusion: Why the Greatest Warrior Broke First",
+      "arjuna_desc": "On the most important day of his life, he put down his bow. And in that breakdown, the Bhagavad Gita was born."
+    },
+    "shloka": {
+      "eyebrow": "Daily Wisdom",
+      "title": "Today's Shloka",
+      "translation": "\"You have the right to perform your duty, but you are not entitled to the fruits of your actions.\"",
+      "attribution": "— Bhagavad Gita 2.47",
+      "read_commentary": "Read the full commentary",
+      "browse_all": "Browse all wisdom"
+    },
+    "newsletter_banner": {
+      "title": "Ancient Wisdom, Every Week",
+      "subtitle": "One Mahabharata story decoded, delivered to your inbox every Friday morning. No noise. Just depth.",
+      "email_placeholder": "your@email.com",
+      "subscribe": "Subscribe",
+      "success": "You're in! First story coming Friday.",
+      "confirm_inbox": "Check your inbox to confirm your subscription.",
+      "no_spam": "Free forever. No spam. Unsubscribe anytime."
+    }
+  },
   "footer": {
     "tagline": "Bridging ancient Indian wisdom with modern life through immersive storytelling and deep philosophical exploration.",
     "email_placeholder": "Your email",

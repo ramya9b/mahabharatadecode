@@ -1,5 +1,6 @@
 import { useState, useId } from "react";
 import { Mail, ArrowRight, Check, Loader } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 type Status = "idle" | "loading" | "success" | "error";
 
@@ -14,6 +15,7 @@ const NewsletterSignup = ({
   variant = "inline",
   source  = "unknown",
 }: NewsletterSignupProps) => {
+  const { t } = useTranslation();
   const [email,  setEmail]  = useState("");
   const [status, setStatus] = useState<Status>("idle");
   const [error,  setError]  = useState("");
@@ -169,18 +171,18 @@ const NewsletterSignup = ({
             id="newsletter-heading"
             style={{ fontFamily:"'Cinzel',serif", fontSize:"clamp(20px,4vw,26px)", fontWeight:600, color:"hsl(var(--foreground))", marginBottom:"10px", letterSpacing:"0.04em" }}
           >
-            Ancient Wisdom, Every Week
+            {t("home.newsletter_banner.title")}
           </h2>
           <p style={{ fontFamily:"'Cormorant Garamond',serif", fontSize:"17px", color:"hsl(var(--muted-foreground))", lineHeight:1.7, marginBottom:"28px" }}>
-            One Mahabharata story decoded, delivered to your inbox every Friday morning. No noise. Just depth.
+            {t("home.newsletter_banner.subtitle")}
           </p>
 
           {status === "success" ? (
             <div style={{ display:"flex", flexDirection:"column", alignItems:"center", gap:"10px" }}>
               <div style={{ display:"flex", alignItems:"center", gap:"8px", color:"#27AE60", fontSize:"16px", fontFamily:"'Cormorant Garamond',serif" }}>
-                <Check size={20} /> You're in! First story coming Friday.
+                <Check size={20} /> {t("home.newsletter_banner.success")}
               </div>
-              <p style={{ fontSize:"13px", color:"hsl(var(--muted-foreground))", fontFamily:"'Cormorant Garamond',serif" }}>Check your inbox to confirm your subscription.</p>
+              <p style={{ fontSize:"13px", color:"hsl(var(--muted-foreground))", fontFamily:"'Cormorant Garamond',serif" }}>{t("home.newsletter_banner.confirm_inbox")}</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} aria-label="Newsletter signup" style={{ display:"flex", flexDirection:"column", alignItems:"center", gap:"12px" }}>
@@ -229,7 +231,7 @@ const NewsletterSignup = ({
               </div>
               {error && <p role="alert" style={{ color:"#E24B4A", fontSize:"13px", fontFamily:"'Cormorant Garamond',serif" }}>{error}</p>}
               <p style={{ fontSize:"12px", color:"hsl(var(--muted-foreground))", fontFamily:"'Cormorant Garamond',serif", opacity:0.7 }}>
-                Free forever. No spam. Unsubscribe anytime.
+                {t("home.newsletter_banner.no_spam")}
               </p>
             </form>
           )}

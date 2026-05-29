@@ -1,13 +1,15 @@
 import { Link } from "react-router-dom";
 import { ArrowRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
 const DailyWisdom = () => {
+  const { t } = useTranslation();
   return (
     <section id="wisdom" className="section-padding">
       <div className="max-w-2xl mx-auto text-center">
         <div className="section-header">
-          <span className="section-label">Daily Wisdom</span>
-          <h2 className="section-title">Today's Shloka</h2>
+          <span className="section-label">{t("home.shloka.eyebrow")}</span>
+          <h2 className="section-title">{t("home.shloka.title")}</h2>
         </div>
 
         <div className="glass-card p-10 md:p-16 animate-pulse-glow relative">
@@ -23,15 +25,11 @@ const DailyWisdom = () => {
           <div className="w-12 h-px bg-primary/30 mx-auto mb-8" />
 
           <p className="text-foreground text-base md:text-lg leading-relaxed mb-4 italic">
-            "You have the right to perform your duty, but you are not entitled to the fruits of your actions."
-          </p>
-
-          <p className="text-muted-foreground text-sm leading-relaxed mb-8">
-            నీ కర్తవ్యం నిర్వహించే హక్కు నీకు ఉంది, కానీ నీ చర్యల ఫలాలపై నీకు హక్కు లేదు.
+            {t("home.shloka.translation")}
           </p>
 
           <span className="text-primary/50 text-[11px] tracking-[0.25em] uppercase">
-            — Bhagavad Gita 2.47
+            {t("home.shloka.attribution")}
           </span>
         </div>
 
@@ -41,7 +39,7 @@ const DailyWisdom = () => {
             to="/blog/gita-verse-two-forty-seven"
             className="inline-flex items-center gap-2 text-primary text-[12px] tracking-[0.18em] uppercase font-heading hover:opacity-80 transition-opacity"
           >
-            Read the full commentary
+            {t("home.shloka.read_commentary")}
             <ArrowRight size={13} className="opacity-70" />
           </Link>
           <span className="hidden sm:inline text-muted-foreground/40">·</span>
@@ -49,7 +47,7 @@ const DailyWisdom = () => {
             to="/wisdom"
             className="inline-flex items-center gap-2 text-muted-foreground text-[12px] tracking-[0.18em] uppercase font-heading hover:text-primary transition-colors"
           >
-            Browse all wisdom
+            {t("home.shloka.browse_all")}
             <ArrowRight size={13} className="opacity-70" />
           </Link>
         </div>

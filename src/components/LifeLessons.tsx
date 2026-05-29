@@ -1,41 +1,24 @@
 import { useRef } from "react";
 import { ChevronLeft, ChevronRight } from "lucide-react";
+import { useTranslation } from "react-i18next";
 
-const lessons = [
-  {
-    title: "Dharma Over Desire",
-    insight: "Krishna teaches that true fulfillment comes not from chasing desire, but from aligning with your dharma — your sacred duty.",
-    chapter: "Bhagavad Gita 2.47",
-  },
-  {
-    title: "The Power of Detachment",
-    insight: "Act without attachment to results. Excellence emerges when ego dissolves and purpose takes its place.",
-    chapter: "Bhagavad Gita 2.48",
-  },
-  {
-    title: "Loyalty Has Limits",
-    insight: "Bhishma's unwavering oath teaches us that blind loyalty without wisdom becomes the greatest weakness.",
-    chapter: "Adi Parva",
-  },
-  {
-    title: "Silence is Strategy",
-    insight: "Krishna's silence in the court of Hastinapura shows that sometimes the greatest power lies in restraint.",
-    chapter: "Udyoga Parva",
-  },
-  {
-    title: "Truth Beyond Morality",
-    insight: "The epic reveals that truth isn't always comfortable — and sometimes dharma demands uncomfortable choices.",
-    chapter: "Shanti Parva",
-  },
-  {
-    title: "Rise After Every Fall",
-    insight: "The Pandavas lost everything — kingdom, dignity, freedom. Yet they rose. Resilience is the ultimate dharma.",
-    chapter: "Vana Parva",
-  },
-];
+const LESSON_KEYS = [
+  { id: "dharma",      chapter: "Bhagavad Gita 2.47" },
+  { id: "detachment",  chapter: "Bhagavad Gita 2.48" },
+  { id: "loyalty",     chapter: "Adi Parva" },
+  { id: "silence",     chapter: "Udyoga Parva" },
+  { id: "truth",       chapter: "Shanti Parva" },
+  { id: "rise",        chapter: "Vana Parva" },
+] as const;
 
 const LifeLessons = () => {
+  const { t } = useTranslation();
   const scrollRef = useRef<HTMLDivElement>(null);
+  const lessons = LESSON_KEYS.map(l => ({
+    title:   t(`home.life_lessons.${l.id}_title`),
+    insight: t(`home.life_lessons.${l.id}_insight`),
+    chapter: l.chapter,
+  }));
 
   const scroll = (dir: "left" | "right") => {
     if (scrollRef.current) {
@@ -51,21 +34,21 @@ const LifeLessons = () => {
       <div className="max-w-7xl mx-auto">
         <div className="flex items-end justify-between mb-16 md:mb-20">
           <div>
-            <span className="section-label">Wisdom</span>
-            <h2 className="section-title !text-left">Life Lessons</h2>
+            <span className="section-label">{t("home.life_lessons.eyebrow")}</span>
+            <h2 className="section-title !text-left">{t("home.life_lessons.title")}</h2>
           </div>
           <div className="hidden md:flex gap-3">
             <button
               onClick={() => scroll("left")}
               className="p-3 rounded-full glass-card hover:border-primary/40 transition-colors"
-              aria-label="Scroll left"
+              aria-label={t("home.life_lessons.scroll_left")}
             >
               <ChevronLeft size={18} className="text-muted-foreground" />
             </button>
             <button
               onClick={() => scroll("right")}
               className="p-3 rounded-full glass-card hover:border-primary/40 transition-colors"
-              aria-label="Scroll right"
+              aria-label={t("home.life_lessons.scroll_right")}
             >
               <ChevronRight size={18} className="text-muted-foreground" />
             </button>

@@ -3,47 +3,18 @@
    Mirrors StoryTellerBanner design language
 ───────────────────────────────────────────── */
 import { Link } from "react-router-dom";
-
-const CHARACTER_PREVIEWS = [
-  {
-    char: "⚔️",
-    name: "Karna",
-    id: "karna",
-    line: "Born a king, denied his crown — the most tragic hero.",
-  },
-  {
-    char: "🪷",
-    name: "Krishna",
-    id: "krishna",
-    line: "The god who chose friendship over power.",
-  },
-  {
-    char: "🏹",
-    name: "Arjuna",
-    id: "arjuna",
-    line: "The perfect warrior who questioned everything.",
-  },
-  {
-    char: "🔥",
-    name: "Draupadi",
-    id: "draupadi",
-    line: "Born from sacred fire — her strength moved empires.",
-  },
-  {
-    char: "🏔️",
-    name: "Bhishma",
-    id: "bhishma",
-    line: "His oath of celibacy shaped the fate of generations.",
-  },
-  {
-    char: "🌊",
-    name: "Yudhishthira",
-    id: "yudhishthira",
-    line: "The king of truth who could not tell a lie.",
-  },
-];
+import { useTranslation } from "react-i18next";
 
 const ExploreCharactersBanner = () => {
+  const { t } = useTranslation();
+  const CHARACTER_PREVIEWS = [
+    { char: "⚔️", id: "karna",        nameKey: "home.characters.karna",        lineKey: "home.explore.karna_line" },
+    { char: "🪷", id: "krishna",      nameKey: "home.characters.krishna",      lineKey: "home.explore.krishna_line" },
+    { char: "🏹", id: "arjuna",       nameKey: "home.characters.arjuna",       lineKey: "home.explore.arjuna_line" },
+    { char: "🔥", id: "draupadi",     nameKey: "home.characters.draupadi",     lineKey: "home.explore.draupadi_line" },
+    { char: "🏔️", id: "bhishma",     nameKey: "home.characters.bhishma",      lineKey: "home.explore.bhishma_line" },
+    { char: "🌊", id: "yudhishthira", nameKey: "home.characters.yudhishthira", lineKey: "home.explore.yudhishthira_line" },
+  ];
   return (
     <section
       style={{
@@ -68,7 +39,7 @@ const ExploreCharactersBanner = () => {
             marginBottom: "16px",
           }}
         >
-          Legendary Figures
+          {t("home.explore.eyebrow")}
         </span>
         <h2
           style={{
@@ -80,7 +51,7 @@ const ExploreCharactersBanner = () => {
             lineHeight: 1.2,
           }}
         >
-          Explore Characters
+          {t("home.explore.title")}
         </h2>
         <p
           style={{
@@ -92,8 +63,7 @@ const ExploreCharactersBanner = () => {
             lineHeight: 1.7,
           }}
         >
-          Meet the warriors, sages, and queens whose choices echo across
-          millennia. Every character mirrors a truth about the human condition.
+          {t("home.explore.subtitle")}
         </p>
         <Link
           to="/characters"
@@ -126,7 +96,7 @@ const ExploreCharactersBanner = () => {
               "0 4px 24px rgba(52,211,153,0.40)";
           }}
         >
-          🧿 View All Characters →
+          🧿 {t("home.explore.cta")} →
         </Link>
       </div>
 
@@ -140,7 +110,7 @@ const ExploreCharactersBanner = () => {
       >
         {CHARACTER_PREVIEWS.map((p) => (
           <Link
-            key={p.name}
+            key={p.id}
             to={`/characters#char-${p.id}`}
             style={{
               display: "block",
@@ -175,7 +145,7 @@ const ExploreCharactersBanner = () => {
                 marginBottom: "6px",
               }}
             >
-              {p.name}
+              {t(p.nameKey)}
             </div>
             <div
               style={{
@@ -186,7 +156,7 @@ const ExploreCharactersBanner = () => {
                 fontStyle: "italic",
               }}
             >
-              "{p.line}"
+              "{t(p.lineKey)}"
             </div>
           </Link>
         ))}
@@ -204,7 +174,7 @@ const ExploreCharactersBanner = () => {
           textTransform: "uppercase",
         }}
       >
-        25+ characters · Strengths · Weaknesses · Life lessons
+        {t("home.explore.footer_hint")}
       </p>
     </section>
   );

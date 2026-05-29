@@ -1,39 +1,26 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import krishnaImg from "@/assets/krishna.webp";
 import karnaImg   from "@/assets/karna.webp";
 import arjunaImg  from "@/assets/arjuna.webp";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
-const stories = [
-  {
-    image: karnaImg,
-    title: "Karna: The Man Who Chose Honour Over Everything",
-    description: "He was offered the world — and turned it down. The most devastating story about loyalty in the entire epic.",
-    tag: "Characters",
-    slug: "karna-loyalty-vs-self-respect",
-    accent: "#D4AF37",
-  },
-  {
-    image: krishnaImg,
-    title: "Krishna: The Leader Who Never Needed the Throne",
-    description: "He had ten million warriors and chose not to use them. The leadership secrets no business school teaches.",
-    tag: "Life Lessons",
-    slug: "krishna-leadership-secrets",
-    accent: "#4A90D9",
-  },
-  {
-    image: arjunaImg,
-    title: "Arjuna's Confusion: Why the Greatest Warrior Broke First",
-    description: "On the most important day of his life, he put down his bow. And in that breakdown, the Bhagavad Gita was born.",
-    tag: "Life Lessons",
-    slug: "arjuna-confusion-moment-of-doubt",
-    accent: "#27AE60",
-  },
-];
+const STORY_META = [
+  { id: "karna",   image: karnaImg,   tagKey: "home.featured.tag_characters",   slug: "karna-loyalty-vs-self-respect",    accent: "#D4AF37" },
+  { id: "krishna", image: krishnaImg, tagKey: "home.featured.tag_life_lessons", slug: "krishna-leadership-secrets",       accent: "#4A90D9" },
+  { id: "arjuna",  image: arjunaImg,  tagKey: "home.featured.tag_life_lessons", slug: "arjuna-confusion-moment-of-doubt", accent: "#27AE60" },
+] as const;
 
 const FeaturedStories = () => {
+  const { t } = useTranslation();
   const headRef = useScrollReveal<HTMLDivElement>();
   const gridRef = useScrollReveal<HTMLDivElement>();
+  const stories = STORY_META.map(s => ({
+    ...s,
+    title:       t(`home.featured.${s.id}_title`),
+    description: t(`home.featured.${s.id}_desc`),
+    tag:         t(s.tagKey),
+  }));
 
   return (
     <section id="stories" className="section-padding">
@@ -41,19 +28,19 @@ const FeaturedStories = () => {
 
         {/* Header */}
         <div ref={headRef} className="reveal-element section-header">
-          <span className="section-label">Featured</span>
-          <h2 className="section-title">Epic Narratives</h2>
+          <span className="section-label">{t("home.featured.eyebrow")}</span>
+          <h2 className="section-title">{t("home.featured.title")}</h2>
           <div className="gold-divider mt-5 mb-5" aria-hidden="true" />
           <p className="section-subtitle" style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: "18px", lineHeight: 1.75 }}>
-            Explore the stories that have shaped civilizations for millennia
+            {t("home.featured.subtitle")}
           </p>
         </div>
 
         {/* Cards grid */}
         <div ref={gridRef} className="grid md:grid-cols-3 gap-6 lg:gap-8 stagger-children">
-          {stories.map((story, i) => (
+          {stories.map((story) => (
             <Link
-              key={i}
+              key={story.id}
               to={`/blog/${story.slug}`}
               className="group glass-card overflow-hidden premium-card cursor-pointer block"
               style={{ borderRadius: "16px" }}
@@ -115,7 +102,7 @@ const FeaturedStories = () => {
                   className="mt-4 flex items-center gap-2 text-primary opacity-0 group-hover:opacity-100 transition-opacity duration-300"
                   aria-hidden="true"
                 >
-                  <span className="font-heading text-[11px] tracking-[0.15em] uppercase">Read Story</span>
+                  <span className="font-heading text-[11px] tracking-[0.15em] uppercase">{t("home.featured.read_story")}</span>
                   <span style={{ fontSize: "12px" }}>→</span>
                 </div>
               </div>

@@ -4,8 +4,10 @@
    Drives engagement to the most viral feature.
 ───────────────────────────────────────────── */
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 
 const QuizBanner = () => {
+  const { t } = useTranslation();
   return (
     <section
       style={{
@@ -67,7 +69,7 @@ const QuizBanner = () => {
             position: "relative",
           }}
         >
-          Discover Your Epic Self
+          {t("home.quiz_banner.eyebrow")}
         </span>
 
         <h2
@@ -81,7 +83,7 @@ const QuizBanner = () => {
             position: "relative",
           }}
         >
-          Which Character Are You?
+          {t("home.quiz_banner.title")}
         </h2>
 
         <p
@@ -95,8 +97,7 @@ const QuizBanner = () => {
             position: "relative",
           }}
         >
-          Eight honest questions. No right answers — just a mirror.
-          Discover which Mahabharata character mirrors your inner archetype.
+          {t("home.quiz_banner.subtitle")}
         </p>
 
         <Link
@@ -132,7 +133,7 @@ const QuizBanner = () => {
               "0 4px 24px rgba(212,175,55,0.45)";
           }}
         >
-          Take the Quiz →
+          {t("home.quiz_banner.cta")} →
         </Link>
 
         <p
@@ -146,7 +147,7 @@ const QuizBanner = () => {
             position: "relative",
           }}
         >
-          ~3 minutes · 8 questions · Shareable result
+          {t("home.quiz_banner.footer_hint")}
         </p>
       </div>
     </section>

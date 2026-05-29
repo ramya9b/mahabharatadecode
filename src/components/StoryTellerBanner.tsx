@@ -3,15 +3,16 @@
    Placed between FeaturedStories & CharactersGrid
 ───────────────────────────────────────────── */
 import { Link } from "react-router-dom";
-
-const PREVIEWS = [
-  { char: "⚔️", name: "Karna",      line: "Born a king, raised a charioteer's son..." },
-  { char: "🪷", name: "Krishna",    line: "He never raised a weapon — yet won the war..." },
-  { char: "🔥", name: "Draupadi",   line: "Born from fire. Her humiliation ignited a war..." },
-  { char: "🏔️", name: "Bhishma",   line: "His oath of celibacy destroyed generations..." },
-];
+import { useTranslation } from "react-i18next";
 
 const StoryTellerBanner = () => {
+  const { t } = useTranslation();
+  const PREVIEWS = [
+    { char: "⚔️", id: "karna",    nameKey: "home.characters.karna",    lineKey: "home.storyteller.preview_karna_line" },
+    { char: "🪷", id: "krishna",  nameKey: "home.characters.krishna",  lineKey: "home.storyteller.preview_krishna_line" },
+    { char: "🔥", id: "draupadi", nameKey: "home.characters.draupadi", lineKey: "home.storyteller.preview_draupadi_line" },
+    { char: "🏔️", id: "bhishma", nameKey: "home.characters.bhishma",  lineKey: "home.storyteller.preview_bhishma_line" },
+  ];
   return (
     <section
       style={{
@@ -36,7 +37,7 @@ const StoryTellerBanner = () => {
             marginBottom: "16px",
           }}
         >
-          New Feature
+          {t("home.storyteller.eyebrow")}
         </span>
         <h2
           style={{
@@ -48,7 +49,7 @@ const StoryTellerBanner = () => {
             lineHeight: 1.2,
           }}
         >
-          AI Story Teller
+          {t("home.storyteller.title")}
         </h2>
         <p
           style={{
@@ -60,7 +61,7 @@ const StoryTellerBanner = () => {
             lineHeight: 1.7,
           }}
         >
-          Choose any character. Choose your story. Hear the Mahabharata come alive — narrated dramatically in English, Telugu, Hindi or Kannada.
+          {t("home.storyteller.subtitle")}
         </p>
         <Link
           to="/storyteller"
@@ -89,7 +90,7 @@ const StoryTellerBanner = () => {
             (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 4px 24px rgba(52,211,153,0.40)";
           }}
         >
-          ✨ Start Listening →
+          ✨ {t("home.storyteller.cta")} →
         </Link>
       </div>
 
@@ -103,7 +104,7 @@ const StoryTellerBanner = () => {
       >
         {PREVIEWS.map((p) => (
           <Link
-            key={p.name}
+            key={p.id}
             to={`/storyteller`}
             style={{
               display: "block",
@@ -135,7 +136,7 @@ const StoryTellerBanner = () => {
                 marginBottom: "6px",
               }}
             >
-              {p.name}
+              {t(p.nameKey)}
             </div>
             <div
               style={{
@@ -146,7 +147,7 @@ const StoryTellerBanner = () => {
                 fontStyle: "italic",
               }}
             >
-              "{p.line}"
+              "{t(p.lineKey)}"
             </div>
           </Link>
         ))}
@@ -164,7 +165,7 @@ const StoryTellerBanner = () => {
           textTransform: "uppercase",
         }}
       >
-        25 characters · 4 languages · Voice narration · Free
+        {t("home.storyteller.footer_hint")}
       </p>
     </section>
   );
