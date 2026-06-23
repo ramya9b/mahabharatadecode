@@ -110,7 +110,7 @@ const Navbar = () => {
           transition: "all 0.4s cubic-bezier(0.4,0,0.2,1)",
         }}
       >
-        {/* ── Desktop ── */}
+        {/* ── Desktop (≥1024px) ── */}
         <div
           className="hidden lg:flex"
           style={{

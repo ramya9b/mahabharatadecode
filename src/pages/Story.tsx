@@ -99,15 +99,23 @@ const StoryHero = () => {
           story, in order, in plain language.
         </p>
 
-        {/* Stats strip — 2×2 grid on mobile, 4-col on wider */}
-        <div className="grid grid-cols-2 sm:grid-cols-4 gap-6 mt-10 max-w-sm sm:max-w-none mx-auto">
+        {/* Stats strip — 2×2 on mobile, 4-col on wider */}
+        <div style={{
+          display: "grid",
+          gridTemplateColumns: "1fr 1fr",
+          gap: "24px 32px",
+          marginTop: "40px",
+          maxWidth: "320px",
+          marginLeft: "auto",
+          marginRight: "auto",
+        }}>
           {[
             { value: "18",    label: "Parvas"   },
             { value: "100K+", label: "Verses"   },
             { value: "1.8M",  label: "Words"    },
             { value: "~60",   label: "Min read" },
           ].map((s) => (
-            <div key={s.label} className="text-center">
+            <div key={s.label} style={{ textAlign: "center" }}>
               <div
                 className="font-heading font-black text-2xl mb-0.5"
                 style={{ color: "hsl(var(--primary))" }}
@@ -444,28 +452,25 @@ const Story = () => {
         }}
       >
         <p
-          className="font-heading text-[10px] tracking-[0.20em] uppercase whitespace-nowrap"
+          className="font-heading text-[10px] tracking-[0.20em] uppercase"
           style={{ color: "hsl(var(--muted-foreground))" }}
         >
-          <span className="hidden sm:inline">{openIds.size} of {parvas.length} open</span>
-          <span className="sm:hidden">{openIds.size}/{parvas.length}</span>
+          {openIds.size}/{parvas.length} open
         </p>
-        <div className="flex gap-3 sm:gap-4">
+        <div style={{ display: "flex", gap: "16px" }}>
           <button
             onClick={expandAll}
-            className="font-heading text-[10px] sm:text-[11px] tracking-[0.12em] uppercase transition-opacity hover:opacity-70 whitespace-nowrap"
+            className="font-heading text-[10px] tracking-[0.12em] uppercase transition-opacity hover:opacity-70"
             style={{ color: "hsl(var(--primary))" }}
           >
-            <span className="hidden sm:inline">Expand all</span>
-            <span className="sm:hidden">Expand</span>
+            Expand all
           </button>
           <button
             onClick={collapseAll}
-            className="font-heading text-[10px] sm:text-[11px] tracking-[0.12em] uppercase transition-opacity hover:opacity-70 whitespace-nowrap"
+            className="font-heading text-[10px] tracking-[0.12em] uppercase transition-opacity hover:opacity-70"
             style={{ color: "hsl(var(--muted-foreground))" }}
           >
-            <span className="hidden sm:inline">Collapse all</span>
-            <span className="sm:hidden">Collapse</span>
+            Collapse all
           </button>
         </div>
       </div>
