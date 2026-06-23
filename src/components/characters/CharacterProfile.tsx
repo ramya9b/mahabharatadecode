@@ -1,12 +1,15 @@
 import { memo } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { ArrowRight, BookOpen } from "lucide-react";
+import { ArrowRight, BookOpen, Sparkles } from "lucide-react";
 import type { Character } from "@/data/characters";
 import { resolveImage } from "@/utils/images";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 import { useTheme } from "@/context/ThemeContext";
 import CharacterStatBars from "./CharacterStatBars";
+
+/* Characters whose result can come from the quiz */
+const QUIZ_CHARACTER_IDS = new Set(["karna", "krishna", "arjuna", "draupadi", "bhishma"]);
 
 interface CharacterProfileProps {
   character: Character;
@@ -343,6 +346,56 @@ const CharacterProfile = ({ character, index }: CharacterProfileProps) => {
                 </p>
               </div>
             </div>
+
+            {/* ── Personality Insight ── */}
+            {character.personalityInsight && (
+              <div
+                className="rounded-xl p-5 mb-8 relative overflow-hidden"
+                style={{
+                  background: `linear-gradient(135deg, rgba(${character.accentRgb},0.06), rgba(${character.accentRgb},0.02))`,
+                  border: `1px solid rgba(${character.accentRgb},0.18)`,
+                }}
+              >
+                <div
+                  className="absolute top-0 left-0 right-0 h-px"
+                  style={{
+                    background: `linear-gradient(to right, transparent, rgba(${character.accentRgb},0.5), transparent)`,
+                  }}
+                />
+                <div className="flex items-center gap-2 mb-3">
+                  <Sparkles size={12} style={{ color: character.accentHex }} />
+                  <span
+                    className="font-heading text-[10px] tracking-[0.28em] uppercase"
+                    style={{ color: `rgba(${character.accentRgb},0.65)` }}
+                  >
+                    {QUIZ_CHARACTER_IDS.has(character.id)
+                      ? "If you resonate with this character"
+                      : "What this character reveals about you"}
+                  </span>
+                </div>
+                <p
+                  className="leading-relaxed mb-4"
+                  style={{
+                    fontSize: "clamp(15px, 1.7vw, 17px)",
+                    fontFamily: "'Cormorant Garamond', Georgia, serif",
+                    fontStyle: "italic",
+                    color: isDark ? "rgba(253,230,138,0.82)" : "rgba(42,31,14,0.82)",
+                  }}
+                >
+                  {character.personalityInsight}
+                </p>
+                {QUIZ_CHARACTER_IDS.has(character.id) && (
+                  <Link
+                    to="/quiz"
+                    className="inline-flex items-center gap-2 font-heading text-[11px] tracking-[0.15em] uppercase transition-opacity hover:opacity-80"
+                    style={{ color: character.accentHex }}
+                  >
+                    <Sparkles size={11} />
+                    Take the quiz to confirm your match
+                  </Link>
+                )}
+              </div>
+            )}
 
             {/* CTA */}
             <Link

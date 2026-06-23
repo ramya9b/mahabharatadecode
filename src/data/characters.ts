@@ -27,6 +27,8 @@ export interface Character {
   parva: string; // which book/parva their story peaks in
   weapon?: string;
   alliance: "Pandava" | "Kaurava" | "Divine" | "Both";
+  /** Shown on the character profile page — what resonating with this character says about you */
+  personalityInsight?: string;
 }
 
 export const characters: Character[] = [
@@ -58,6 +60,7 @@ export const characters: Character[] = [
     parva: "Karna Parva",
     weapon: "Vasavi Shakti",
     alliance: "Kaurava",
+    personalityInsight: "You are someone who keeps their word even when the world gives you every reason not to. Your loyalty runs deeper than strategy — which makes you the most trusted person in any room, and occasionally the most betrayed. You don't give your commitment lightly. But once given, it is unconditional. You understand, at a cellular level, what it means to be seen by the right person at the right moment — and you never forget it. The cost of this is that you sometimes stay in situations past the point where staying serves you, because leaving feels like a betrayal of who you are.",
     stats: [
       { label: "Warrior Skill", value: 98 },
       { label: "Wisdom", value: 72 },
@@ -94,6 +97,7 @@ export const characters: Character[] = [
     parva: "Bhagavad Gita / Udyoga Parva",
     weapon: "Sudarshana Chakra",
     alliance: "Divine",
+    personalityInsight: "You see the larger picture when everyone else is reacting to the immediate moment. People around you often don't realise how much you're doing — because the best of your work is invisible. You guide rather than command, illuminate rather than instruct. Your power lies not in what you do but in the conditions you create for the right things to happen. The risk in this mode is that you can become so focused on the outcome that people experience you as strategic rather than present. The Gita is also a reminder addressed to you: that you are allowed to be fully here, not just usefully here.",
     stats: [
       { label: "Warrior Skill", value: 100 },
       { label: "Wisdom", value: 100 },
@@ -130,6 +134,7 @@ export const characters: Character[] = [
     parva: "Bhishma Parva / Drona Parva",
     weapon: "Gandiva (divine bow)",
     alliance: "Pandava",
+    personalityInsight: "You feel things deeply before you act — and sometimes the depth of feeling slows the action in ways that frustrate you and the people who depend on you. Your doubt is not weakness. It is the sign of someone for whom the stakes are real. You have a gift for mastery, and a recurring fear that mastery won't be enough. The moment Arjuna drops his bow is the moment that makes him worth following — because it is the moment he stops performing courage and starts actually finding it. That is what you do, too. Slowly, then completely.",
     stats: [
       { label: "Warrior Skill", value: 97 },
       { label: "Wisdom", value: 85 },
@@ -165,6 +170,7 @@ export const characters: Character[] = [
     accentRgb: "229,57,53",
     parva: "Sabha Parva / Vana Parva",
     alliance: "Pandava",
+    personalityInsight: "You speak the truth others won't say, even when — especially when — the room would prefer you stayed quiet. Your dignity is not something you perform. It is something you live. You ask the questions no one else dares to ask, because you understand that silence is also a choice — and usually the wrong one. The cost of this is real: you are often the person who holds the emotional weight of the situations you walk into. You carry more than you were asked to. What Draupadi shows is that this is not a flaw to fix. It is the thing that makes you the most important person in any room.",
     stats: [
       { label: "Warrior Skill", value: 40 },
       { label: "Wisdom", value: 90 },
@@ -201,6 +207,7 @@ export const characters: Character[] = [
     parva: "Bhishma Parva / Shanti Parva",
     weapon: "Divine bow + arrows",
     alliance: "Kaurava",
+    personalityInsight: "Your commitments are sacred to you — sometimes to a fault. You are the person people rely on because you have never broken your word, and because of that reliability you have become load-bearing in ways you did not fully choose. The qualities that make you extraordinary are the same ones that occasionally make you complicit in outcomes you never intended. The hardest question the Mahabharata asks of you is not whether you are loyal — it is whether the thing you are loyal to still deserves it. You know the answer. The question is whether you will act on it.",
     stats: [
       { label: "Warrior Skill", value: 100 },
       { label: "Wisdom", value: 95 },
@@ -238,6 +245,7 @@ export const characters: Character[] = [
     parva: "Sabha Parva / Shanti Parva",
     weapon: "Spear",
     alliance: "Pandava",
+    personalityInsight: "You hold yourself to a standard that most people would find exhausting — and you hold others to it too, which is both your greatest strength and the source of most of your friction. You have a deep, genuine commitment to doing what is right. You also have a pattern that runs underneath the righteousness, something that pulls you toward a particular kind of risk or avoidance when the pressure gets high enough. Yudhishthira's teaching is not that dharmic people are invincible. It is that even the most committed person carries a compulsion they have not fully examined — and that the compulsion, left unexamined, has a radius that falls on everyone around them.",
     stats: [
       { label: "Warrior Skill", value: 72 },
       { label: "Wisdom", value: 90 },
@@ -275,6 +283,7 @@ export const characters: Character[] = [
     parva: "Sabha Parva / Shalya Parva",
     weapon: "Mace (Gada)",
     alliance: "Kaurava",
+    personalityInsight: "You have been genuinely wronged — and the anger that came from it was legitimate. The question Duryodhana asks you is what you have done with that anger since. You are loyal, probably to a fault. You do not forgive easily, because forgetting feels like agreeing that what happened was acceptable. Your courage is real. What you are working on — what Duryodhana never managed to work on — is the gap between your legitimate wound and the decisions you are making from inside it. Examined anger is a very different thing from fed anger. You already know which one you are running on right now.",
     stats: [
       { label: "Warrior Skill", value: 94 },
       { label: "Wisdom", value: 45 },
@@ -312,6 +321,7 @@ export const characters: Character[] = [
     parva: "Drona Parva",
     weapon: "Bow and chariot wheel",
     alliance: "Pandava",
+    personalityInsight: "You have exceptional ability and you know it — not from arrogance, but from having tested yourself and found the results consistent. What you are still learning is the difference between what you can begin and what you can complete alone. You have a tendency to enter situations with full commitment before checking whether the support structure around you is as committed as you are. Abhimanyu's lesson is not about courage — you have that. It is about the honest assessment of dependencies: who needs to show up for this to work, and what is your plan if they don't? That question, asked before entry rather than after, is the thing that changes everything.",
     stats: [
       { label: "Warrior Skill", value: 96 },
       { label: "Wisdom", value: 62 },
@@ -349,6 +359,7 @@ export const characters: Character[] = [
     parva: "Stri Parva",
     weapon: "None — her power was austerity",
     alliance: "Kaurava",
+    personalityInsight: "You are deeply loyal and you express that loyalty through restraint — through what you choose not to say, not to demand, not to notice. This makes you someone people feel safe with. It also means that your genuine perceptions, the ones that could change things, often stay inside you rather than reaching the people who need them. Gandhari had more power than anyone in Hastinapura. She chose, for seventy years, not to fully use it — and called that devotion. The question she asks you is gentler than it sounds: is the thing you are holding back actually protecting the relationship, or is it protecting you from the discomfort of being fully seen and fully heard?",
     stats: [
       { label: "Warrior Skill", value: 10 },
       { label: "Wisdom", value: 88 },
