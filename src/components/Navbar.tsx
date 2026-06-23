@@ -155,7 +155,9 @@ const Navbar = () => {
               color: "#FBBF24",
               whiteSpace: "nowrap",
               textShadow: "0 0 20px rgba(251,191,36,0.80), 0 2px 10px rgba(251,191,36,0.60)",
-            }}>
+            }}
+              className="hidden xs:inline sm:inline"
+            >
               MahabharataDecoded
             </span>
           </Link>
