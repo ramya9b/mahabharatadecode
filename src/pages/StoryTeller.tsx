@@ -111,7 +111,15 @@ const StoryTeller = () => {
   const storyComplete       = skip || done;   // single source of truth
 
   /* ── Subscription gate ── */
-  const { access: hasAccess, refresh: refreshAccess } = useSubscription();
+  const {
+    access: hasAccess,
+    canGenerate,
+    storiesLeft,
+    storiesUsed,
+    dailyLimit,
+    subscription,
+    refresh: refreshAccess,
+  } = useSubscription();
   const [paywallOpen, setPaywallOpen] = useState(false);
 
   /* ── Scroll to story when it starts ── */
@@ -135,6 +143,12 @@ const StoryTeller = () => {
 
     /* Subscription gate — block AI call if trial expired and not subscribed */
     if (!hasAccess) {
+      setPaywallOpen(true);
+      return;
+    }
+
+    /* Daily limit gate — free/trial users: 3 stories per day */
+    if (!canGenerate) {
       setPaywallOpen(true);
       return;
     }
@@ -185,12 +199,18 @@ const StoryTeller = () => {
           .replace(/_{1,2}(.*?)_{1,2}/g, "$1")
           .trim();
         setStory(cleaned);
+        /* Record daily usage for free/trial users */
+        if (!subscription) {
+          const { recordStoryGenerated } = await import("@/lib/subscription");
+          recordStoryGenerated();
+          refreshAccess();
+        }
       }
     } catch {
       setLoading(false);
       setError("Something went wrong. Please try again.");
     }
-  }, [selected, activePromptIdx, customPrompt, tone, language, hasAccess]);
+  }, [selected, activePromptIdx, customPrompt, tone, language, hasAccess, canGenerate, subscription, refreshAccess]);
 
   /* ── Voice narration — sentence-by-sentence to fix Chrome TTS bug ── */
   const sentencesRef = useRef<string[]>([]);
@@ -812,12 +832,12 @@ const StoryTeller = () => {
             {/* Generate button */}
             <button
               onClick={handleGenerate}
-              disabled={loading || (activePromptIdx === null && !customPrompt.trim())}
+              disabled={loading || (activePromptIdx === null && !customPrompt.trim()) || !canGenerate}
               style={{
                 marginTop: "16px", padding: "14px 40px", borderRadius: "99px",
-                background: (activePromptIdx !== null || customPrompt.trim()) && !loading ? GROUP_COLORS[selected.group] : "rgba(160,120,32,0.2)",
-                color: (activePromptIdx !== null || customPrompt.trim()) && !loading ? "#FFF8E8" : inkMuted,
-                border: "none", cursor: (activePromptIdx !== null || customPrompt.trim()) && !loading ? "pointer" : "not-allowed",
+                background: (activePromptIdx !== null || customPrompt.trim()) && !loading && canGenerate ? GROUP_COLORS[selected.group] : "rgba(160,120,32,0.2)",
+                color: (activePromptIdx !== null || customPrompt.trim()) && !loading && canGenerate ? "#FFF8E8" : inkMuted,
+                border: "none", cursor: (activePromptIdx !== null || customPrompt.trim()) && !loading && canGenerate ? "pointer" : "not-allowed",
                 fontFamily: serif, fontSize: "14px", letterSpacing: "0.12em",
                 transition: "all 0.3s",
                 display: "flex", alignItems: "center", gap: "8px",
@@ -828,11 +848,28 @@ const StoryTeller = () => {
                   <span style={{ display: "inline-block", animation: "spin 1.2s linear infinite" }}>⟳</span>
                   Veda Vyasa is narrating…
                 </>
+              ) : !canGenerate ? (
+                "✦ Daily limit reached — upgrade for unlimited"
               ) : (
                 "✨ Tell this story"
               )}
             </button>
             <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
+
+            {/* Daily usage counter — free/trial users only */}
+            {!subscription && hasAccess && (
+              <p style={{
+                marginTop: "10px", fontFamily: "'Cinzel', serif",
+                fontSize: "11px", letterSpacing: "0.12em",
+                color: storiesLeft === 0 ? "rgba(192,57,43,0.8)" : "rgba(160,120,32,0.65)",
+                textAlign: "center",
+              }}>
+                {storiesLeft === 0
+                  ? `✦ ${storiesUsed}/${dailyLimit} stories used today — resets at midnight`
+                  : `✦ ${storiesLeft} of ${dailyLimit} free stories remaining today`
+                }
+              </p>
+            )}
           </section>
         )}
 

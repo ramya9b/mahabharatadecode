@@ -59,9 +59,14 @@ const ArticlePage = () => {
     setCurrentLang(lang);
   }, []);
 
+  const ogImage = article.imageKey === "hero"
+    ? `https://mahabharatadecoded.com/og-default.jpg`
+    : `https://mahabharatadecoded.com/characters/${article.imageKey}.webp`;
+
   useSEO({
     title: article.metaTitle || article.title,
     description: article.metaDescription || article.summary || article.description || "",
+    image: ogImage,
     path: `/blog/${article.slug}`,
     type: "article",
     author: "MahabharataDecoded",

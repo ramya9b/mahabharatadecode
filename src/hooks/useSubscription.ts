@@ -4,6 +4,10 @@ import {
   hasAccess,
   isInTrial,
   trialDaysLeft,
+  canGenerateStory,
+  dailyStoriesLeft,
+  dailyStoriesUsed,
+  FREE_DAILY_LIMIT,
   type Subscription,
 } from "@/lib/subscription";
 
@@ -12,14 +16,22 @@ interface SubscriptionState {
   inTrial: boolean;
   trialDays: number;
   subscription: Subscription | null;
+  canGenerate: boolean;
+  storiesLeft: number;
+  storiesUsed: number;
+  dailyLimit: number;
 }
 
 function read(): SubscriptionState {
   return {
-    access: hasAccess(),
-    inTrial: isInTrial(),
-    trialDays: trialDaysLeft(),
+    access:       hasAccess(),
+    inTrial:      isInTrial(),
+    trialDays:    trialDaysLeft(),
     subscription: getSubscription(),
+    canGenerate:  canGenerateStory(),
+    storiesLeft:  dailyStoriesLeft(),
+    storiesUsed:  dailyStoriesUsed(),
+    dailyLimit:   FREE_DAILY_LIMIT,
   };
 }
 
@@ -31,7 +43,12 @@ export function useSubscription() {
 
   useEffect(() => {
     const onStorage = (e: StorageEvent) => {
-      if (e.key === "mbd_subscription" || e.key === "mbd_trial_start" || e.key === null) {
+      if (
+        e.key === "mbd_subscription" ||
+        e.key === "mbd_trial_start"  ||
+        e.key === "mbd_daily_stories" ||
+        e.key === null
+      ) {
         refresh();
       }
     };
