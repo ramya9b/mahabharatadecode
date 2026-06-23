@@ -133,62 +133,58 @@ const StoryBanner = () => {
             style={{
               display: "block",
               padding: "20px",
-              borderRadius: "14px",
+              borderRadius: "16px",
               background: isDark
-                ? `rgba(${p.accentRgb},0.06)`
-                : `rgba(${p.accentRgb},0.07)`,
+                ? `linear-gradient(145deg, rgba(${p.accentRgb},0.08) 0%, rgba(${p.accentRgb},0.02) 100%)`
+                : `linear-gradient(145deg, rgba(${p.accentRgb},0.09) 0%, rgba(${p.accentRgb},0.02) 100%)`,
               border: `1px solid rgba(${p.accentRgb},0.18)`,
               textDecoration: "none",
-              transition: "all 0.2s",
+              transition: "all 0.3s ease",
+              position: "relative",
+              overflow: "hidden",
             }}
             onMouseEnter={(e) => {
-              e.currentTarget.style.borderColor = `rgba(${p.accentRgb},0.40)`;
-              e.currentTarget.style.transform = "translateY(-2px)";
-              e.currentTarget.style.boxShadow = `0 8px 24px rgba(${p.accentRgb},0.14)`;
+              const el = e.currentTarget as HTMLAnchorElement;
+              el.style.borderColor = `rgba(${p.accentRgb},0.45)`;
+              el.style.transform = "translateY(-3px)";
+              el.style.boxShadow = `0 12px 32px rgba(${p.accentRgb},0.15), inset 0 1px 0 rgba(${p.accentRgb},0.14)`;
             }}
             onMouseLeave={(e) => {
-              e.currentTarget.style.borderColor = `rgba(${p.accentRgb},0.18)`;
-              e.currentTarget.style.transform = "translateY(0)";
-              e.currentTarget.style.boxShadow = "none";
+              const el = e.currentTarget as HTMLAnchorElement;
+              el.style.borderColor = `rgba(${p.accentRgb},0.18)`;
+              el.style.transform = "translateY(0)";
+              el.style.boxShadow = "none";
             }}
           >
+            {/* Top accent line */}
+            <div style={{
+              position: "absolute", top: 0, left: 0, right: 0, height: "2px",
+              background: `linear-gradient(90deg, transparent, rgba(${p.accentRgb},0.7), transparent)`,
+            }} />
+
             {/* Parva number */}
-            <div
-              style={{
-                fontFamily: "'Cinzel', serif",
-                fontSize: "11px",
-                letterSpacing: "0.2em",
-                color: p.accentHex,
-                marginBottom: "8px",
-                opacity: 0.75,
-              }}
-            >
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: "11px",
+              letterSpacing: "0.2em", color: p.accentHex,
+              marginBottom: "8px", opacity: 0.7,
+            }}>
               PARVA {p.number}
             </div>
 
             {/* Parva name */}
-            <div
-              style={{
-                fontFamily: "'Cinzel', serif",
-                fontSize: "14px",
-                fontWeight: 700,
-                color: "hsl(var(--foreground))",
-                marginBottom: "8px",
-              }}
-            >
+            <div style={{
+              fontFamily: "'Cinzel', serif", fontSize: "14px", fontWeight: 700,
+              color: "hsl(var(--foreground))", marginBottom: "8px",
+            }}>
               {p.name}
             </div>
 
             {/* Subtitle */}
-            <div
-              style={{
-                fontFamily: "'Cormorant Garamond', Georgia, serif",
-                fontSize: "13px",
-                color: "hsl(var(--muted-foreground))",
-                lineHeight: 1.5,
-                fontStyle: "italic",
-              }}
-            >
+            <div style={{
+              fontFamily: "'Cormorant Garamond', Georgia, serif",
+              fontSize: "13px", color: "hsl(var(--muted-foreground))",
+              lineHeight: 1.55, fontStyle: "italic",
+            }}>
               {p.subtitle}
             </div>
           </Link>

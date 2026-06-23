@@ -290,31 +290,34 @@
     backdrop-filter: blur(14px);
     -webkit-backdrop-filter: blur(14px);
     border-radius: 1rem;
-    transition: border-color 0.3s ease, background 0.3s ease;
+    transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.35s ease;
   }
   .glass-card:hover {
-    background: rgba(250, 244, 232, 0.96);
-    border-color: rgba(217, 119, 6, 0.40);
+    background: rgba(250, 244, 232, 0.97);
+    border-color: rgba(212, 175, 55, 0.48);
+    box-shadow: 0 6px 28px rgba(212,175,55,0.10), inset 0 1px 0 rgba(212,175,55,0.14);
   }
   .dark .glass-card {
-    /* Bumped from rgba(22,11,0,0.92) which was virtually identical
-       to the page background (~#0C0900). New value sits ~3 lightness
-       steps above the page bg so glass-card panels are visibly distinct
-       in dark mode. */
     background: rgba(40, 25, 8, 0.88);
-    border-color: rgba(251, 191, 36, 0.22);
+    border-color: rgba(251, 191, 36, 0.18);
+    transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.35s ease;
   }
   .dark .glass-card:hover {
-    background: rgba(52, 32, 10, 0.92);
-    border-color: rgba(251, 191, 36, 0.42);
+    background: rgba(52, 32, 10, 0.94);
+    border-color: rgba(251, 191, 36, 0.44);
+    box-shadow: 0 8px 32px rgba(212,175,55,0.13), inset 0 1px 0 rgba(212,175,55,0.10);
   }
 
   .hover-lift {
     @apply transition-all duration-500;
+    position: relative;
   }
   .hover-lift:hover {
-    transform: translateY(-6px);
-    box-shadow: 0 20px 50px rgba(139,105,20,0.18), 0 0 0 1px rgba(139,105,20,0.15);
+    transform: translateY(-5px);
+    box-shadow:
+      0 24px 48px rgba(139,105,20,0.20),
+      0 0 0 1px rgba(212,175,55,0.22),
+      0 0 32px rgba(212,175,55,0.08);
   }
 
   .gold-text {
@@ -336,6 +339,8 @@
 
   .section-padding {
     @apply py-16 md:py-24 px-6 md:px-12 lg:px-24;
+    content-visibility: auto;
+    contain-intrinsic-size: 0 400px;
   }
 
   .section-header {
@@ -357,6 +362,7 @@
   .particle {
     @apply absolute rounded-full;
     animation: particle-rise var(--duration, 12s) linear var(--delay, 0s) infinite;
+    will-change: transform, opacity;
   }
 
   .animate-fade-up {
@@ -406,10 +412,26 @@
   }
 
   .article-card-image {
-    @apply w-full h-full object-cover transition-transform duration-700;
+    @apply w-full h-full object-cover;
+    transition: transform 0.7s cubic-bezier(0.25,0.46,0.45,0.94);
   }
   .article-card-image-wrapper:hover .article-card-image {
-    transform: scale(1.07);
+    transform: scale(1.06);
+  }
+
+  /* Reusable top gradient accent line for premium cards */
+  .card-accent-line::before {
+    content: "";
+    position: absolute;
+    top: 0; left: 0; right: 0;
+    height: 2px;
+    background: linear-gradient(90deg, transparent, rgba(212,175,55,0.75), transparent);
+    opacity: 0;
+    transition: opacity 0.4s ease;
+    border-radius: 18px 18px 0 0;
+  }
+  .card-accent-line:hover::before {
+    opacity: 1;
   }
 
   .prose-mahabharata {
@@ -622,8 +644,8 @@
 }
 
 @keyframes pulse-glow {
-  0%, 100% { box-shadow: 0 0 15px rgba(139, 105, 20, 0.3); }
-  50%       { box-shadow: 0 0 35px rgba(139, 105, 20, 0.6); }
+  0%, 100% { filter: brightness(1); }
+  50%       { filter: brightness(1.06) drop-shadow(0 0 12px rgba(212,175,55,0.35)); }
 }
 
 @keyframes shimmer {

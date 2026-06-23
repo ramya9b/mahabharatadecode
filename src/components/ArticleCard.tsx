@@ -98,26 +98,40 @@ const ArticleCard = ({ article, variant = "default" }: ArticleCardProps) => {
     );
   }
 
-  // Default card — fully explicit inline styles, no Tailwind colour dependency
+  // Default card — gradient border + refined hover
   return (
     <Link
       to={`/blog/${article.slug}`}
       className="group hover-lift flex flex-col"
       style={{
-        background:    "rgb(20, 10, 0)",
-        border:        "1px solid rgba(251,191,36,0.20)",
-        borderRadius:  "16px",
-        overflow:      "hidden",
-        textDecoration:"none",
-        transition:    "border-color 0.3s ease, transform 0.3s ease",
+        background:     "linear-gradient(160deg, rgba(28,14,2,1) 0%, rgba(18,9,0,1) 100%)",
+        border:         "1px solid rgba(212,175,55,0.18)",
+        borderRadius:   "18px",
+        overflow:       "hidden",
+        textDecoration: "none",
+        transition:     "border-color 0.35s ease, transform 0.4s ease, box-shadow 0.35s ease",
+        position:       "relative",
       }}
       onMouseEnter={e => {
-        (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(251,191,36,0.50)";
+        const el = e.currentTarget as HTMLAnchorElement;
+        el.style.borderColor = "rgba(212,175,55,0.50)";
+        el.style.boxShadow   = "0 20px 50px rgba(212,175,55,0.14), inset 0 1px 0 rgba(212,175,55,0.12)";
       }}
       onMouseLeave={e => {
-        (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(251,191,36,0.20)";
+        const el = e.currentTarget as HTMLAnchorElement;
+        el.style.borderColor = "rgba(212,175,55,0.18)";
+        el.style.boxShadow   = "none";
       }}
     >
+      {/* Gradient accent line — top of card */}
+      <div
+        className="absolute top-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"
+        style={{
+          background: "linear-gradient(90deg, transparent, rgba(212,175,55,0.8), transparent)",
+        }}
+        aria-hidden="true"
+      />
+
       {/* Image */}
       <div style={{ position:"relative", height:"210px", overflow:"hidden" }}>
         <img
@@ -126,20 +140,20 @@ const ArticleCard = ({ article, variant = "default" }: ArticleCardProps) => {
           src={image}
           alt={article.title}
           style={{ width:"100%", height:"100%", objectFit:"cover",
-                   transition:"transform 0.6s ease" }}
+                   transition:"transform 0.7s ease" }}
           className="group-hover:scale-105"
         />
-        {/* Gradient overlay — fades image into card bg */}
+        {/* Gradient overlay */}
         <div style={{
           position:"absolute", inset:0,
-          background:"linear-gradient(to top, rgb(20,10,0) 0%, rgba(20,10,0,0.4) 50%, transparent 100%)",
+          background:"linear-gradient(to top, rgba(18,9,0,1) 0%, rgba(18,9,0,0.35) 55%, transparent 100%)",
         }} />
         {/* Category tag */}
         <span style={{
           position:"absolute", top:"14px", left:"14px",
           padding:"4px 12px", borderRadius:"99px",
-          background:"rgba(12,9,0,0.75)",
-          border:"1px solid rgba(251,191,36,0.30)",
+          background:"rgba(10,5,0,0.80)",
+          border:"1px solid rgba(212,175,55,0.28)",
           color:"#FBBF24",
           fontFamily:"'Cinzel',serif",
           fontSize:"10px", letterSpacing:"0.16em",
