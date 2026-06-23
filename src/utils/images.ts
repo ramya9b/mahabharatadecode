@@ -14,9 +14,11 @@ import draupadiJpg from "@/assets/draupadi.jpg";
 import bhishmaJpg  from "@/assets/bhishma.jpg";
 import heroBgJpg   from "@/assets/hero-bg.jpg";
 
-export type ImageKey = "karna" | "krishna" | "arjuna" | "draupadi" | "bhishma" | "hero";
+export type ImageKey =
+  | "karna" | "krishna" | "arjuna" | "draupadi" | "bhishma" | "hero"
+  | "yudhishthira" | "duryodhana" | "abhimanyu" | "gandhari";
 
-const webpMap: Record<ImageKey, string> = {
+const webpMap: Partial<Record<ImageKey, string>> = {
   karna:    karnaWebp,
   krishna:  krishnaWebp,
   arjuna:   arjunaWebp,
@@ -25,7 +27,7 @@ const webpMap: Record<ImageKey, string> = {
   hero:     heroBgWebp,
 };
 
-const jpgMap: Record<ImageKey, string> = {
+const jpgMap: Partial<Record<ImageKey, string>> = {
   karna:    karnaJpg,
   krishna:  krishnaJpg,
   arjuna:   arjunaJpg,
@@ -34,13 +36,14 @@ const jpgMap: Record<ImageKey, string> = {
   hero:     heroBgJpg,
 };
 
-/** Primary WebP URL */
-export const resolveImage = (key: ImageKey): string => webpMap[key];
+/** Primary WebP URL — bundled for original 5, public/characters/ for new keys */
+export const resolveImage = (key: ImageKey): string =>
+  webpMap[key] ?? `/characters/${key}.webp`;
 
 /** WebP + JPEG pair for <picture> */
 export const resolveImageSrcSet = (key: ImageKey): { webp: string; jpg: string } => ({
-  webp: webpMap[key],
-  jpg:  jpgMap[key],
+  webp: webpMap[key] ?? `/characters/${key}.webp`,
+  jpg:  jpgMap[key]  ?? `/characters/${key}.webp`,
 });
 
 /**

@@ -99,7 +99,7 @@ export const CHARACTER_META: Record<
 
 /* ─────────────────────────────────────────────────────────
    QUESTIONS
-   8 questions × 5 answers each = 40 total answers
+   15 questions × 5 answers each = 75 total answers
    Each answer maps to exactly ONE character
    Every character appears exactly once per question
 ───────────────────────────────────────────────────────── */
@@ -195,6 +195,87 @@ export const QUIZ_QUESTIONS: QuizQuestion[] = [
       { id: "8e", text: "Kept their word across a lifetime of tests.", character: "bhishma" },
     ],
   },
+  {
+    id: 9,
+    question: "Someone gives you a gift when you needed it most. Years later, they ask for something you know is wrong. You...",
+    subtitle: "This is not hypothetical. You've been here.",
+    answers: [
+      { id: "9a", text: "Help them. The debt is real regardless of what they're asking.", character: "karna" },
+      { id: "9b", text: "Find a way to serve the spirit of what they need without endorsing what's wrong.", character: "krishna" },
+      { id: "9c", text: "Feel paralysed. The gratitude and the wrongness are both real and you can't resolve them.", character: "arjuna" },
+      { id: "9d", text: "Refuse clearly. Gratitude doesn't require you to compromise what you know is right.", character: "draupadi" },
+      { id: "9e", text: "Help them, because honouring commitments matters more than judging their choices.", character: "bhishma" },
+    ],
+  },
+  {
+    id: 10,
+    question: "You've been working toward something for years. Someone else gets there first — and they're less qualified. You...",
+    answers: [
+      { id: "10a", text: "Keep going. What's owed to you will find its way to you, or it won't — but you don't stop.", character: "karna" },
+      { id: "10b", text: "Reframe. This is information about the game, not a verdict on your worth.", character: "krishna" },
+      { id: "10c", text: "Spiral briefly, then refocus — after you've given yourself time to actually feel it.", character: "arjuna" },
+      { id: "10d", text: "Speak up. The injustice deserves to be named, even if it costs you.", character: "draupadi" },
+      { id: "10e", text: "Accept it. The process gave them the role. Working inside that reality is what the role requires.", character: "bhishma" },
+    ],
+  },
+  {
+    id: 11,
+    question: "When you love someone, your version of love looks most like...",
+    subtitle: "Not the version you aspire to. The version that actually shows up.",
+    answers: [
+      { id: "11a", text: "Showing up, no matter what. Consistently, quietly, without keeping score.", character: "karna" },
+      { id: "11b", text: "Creating the conditions for them to be their best self — even when they don't see what that is yet.", character: "krishna" },
+      { id: "11c", text: "Being present and skilled in the moments that matter, even when I struggle to say the words.", character: "arjuna" },
+      { id: "11d", text: "Speaking the truth they need to hear, because that is more loving than comfort.", character: "draupadi" },
+      { id: "11e", text: "Reliability. Being the person they can always count on, whatever the cost to me.", character: "bhishma" },
+    ],
+  },
+  {
+    id: 12,
+    question: "You are in a room where something wrong is happening. You have the power to stop it. You...",
+    answers: [
+      { id: "12a", text: "Want to, but the loyalty I owe the people in the room holds me in place.", character: "karna" },
+      { id: "12b", text: "Calculate what intervention actually changes things versus what just makes me feel better.", character: "krishna" },
+      { id: "12c", text: "Feel the wrongness acutely but freeze — and hate myself for it later.", character: "arjuna" },
+      { id: "12d", text: "Act. This is exactly what power is for.", character: "draupadi" },
+      { id: "12e", text: "Say something measured and then defer to the process. Not my role to override the room.", character: "bhishma" },
+    ],
+  },
+  {
+    id: 13,
+    question: "What does failure feel like for you?",
+    subtitle: "The private experience, not the public one.",
+    answers: [
+      { id: "13a", text: "Like the world confirming what it always thought of me. So I don't let it show.", character: "karna" },
+      { id: "13b", text: "Like useful data. Something to work with, not something to be worked over by.", character: "krishna" },
+      { id: "13c", text: "Like a verdict. I know it's not, but it takes time to separate those things.", character: "arjuna" },
+      { id: "13d", text: "Like fuel. Failure makes me more determined, not less.", character: "draupadi" },
+      { id: "13e", text: "Like a deviation from standard. I analyse it, correct course, and continue.", character: "bhishma" },
+    ],
+  },
+  {
+    id: 14,
+    question: "You've held onto something — a grudge, a grief, a goal — longer than most people would. Why?",
+    answers: [
+      { id: "14a", text: "Because letting go felt like admitting what they did to me was acceptable.", character: "karna" },
+      { id: "14b", text: "Because I was waiting for the right moment. Timing is the whole game.", character: "krishna" },
+      { id: "14c", text: "I'm not sure. I think I'm still figuring out what I'm actually holding and why.", character: "arjuna" },
+      { id: "14d", text: "Because it wasn't resolved. I don't release things that aren't finished.", character: "draupadi" },
+      { id: "14e", text: "Because it was a commitment. You honour commitments. That is what they are for.", character: "bhishma" },
+    ],
+  },
+  {
+    id: 15,
+    question: "The version of yourself you are most at peace with is...",
+    subtitle: "Not who you want to be. Who you are when you stop pretending.",
+    answers: [
+      { id: "15a", text: "The one who kept their word even when it cost everything.", character: "karna" },
+      { id: "15b", text: "The one who saw clearly and acted from that clarity, without needing the credit.", character: "krishna" },
+      { id: "15c", text: "The one who found the courage they thought they didn't have — even if it came late.", character: "arjuna" },
+      { id: "15d", text: "The one who said what needed to be said and refused to be diminished.", character: "draupadi" },
+      { id: "15e", text: "The one who held the line, across decades, without complaint.", character: "bhishma" },
+    ],
+  },
 ];
 
-export const TOTAL_QUESTIONS = QUIZ_QUESTIONS.length; // 8
+export const TOTAL_QUESTIONS = QUIZ_QUESTIONS.length; // 15

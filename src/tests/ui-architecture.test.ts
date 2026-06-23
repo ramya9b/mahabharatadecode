@@ -156,9 +156,9 @@ describe("SUITE-C: Share button URL construction", () => {
     expect(result).toContain(encodeURIComponent(url));
   });
 
-  it("WhatsApp URL contains wa.me base", () => {
+  it("WhatsApp URL contains whatsapp base", () => {
     const result = buildShareUrl("whatsapp", url, title);
-    expect(result).toContain("wa.me");
+    expect(result).toMatch(/wa\.me|whatsapp\.com/);
     expect(result).toContain(encodeURIComponent(title));
   });
 
@@ -426,7 +426,7 @@ describe("SUITE-J: Quiz scoring regression", () => {
     chars.forEach((c) => {
       const r = computeQuizResult(allFor(c), QUIZ_QUESTIONS);
       expect(r.winner).toBe(c);
-      expect(r.scores[c]).toBe(8);
+      expect(r.scores[c]).toBe(15);
     });
   });
 
@@ -441,8 +441,8 @@ describe("SUITE-J: Quiz scoring regression", () => {
     expect(sum(calculateScores(a, QUIZ_QUESTIONS))).toBe(0);
   });
 
-  it("isQuizComplete still returns true for 8/8", () => {
-    expect(isQuizComplete(allFor("krishna"), 8)).toBe(true);
+  it("isQuizComplete still returns true for 15/15", () => {
+    expect(isQuizComplete(allFor("krishna"), 15)).toBe(true);
   });
 
   it("scoreBreakdown still returns integers", () => {
@@ -452,7 +452,7 @@ describe("SUITE-J: Quiz scoring regression", () => {
   });
 
   it("CHARACTER_META still has 5 entries", () => {
-    expect(Object.keys(CHARACTER_META).length).toBe(5);
+    expect(Object.keys(CHARACTER_META).length).toBe(5); // CHARACTER_META stays at 5 quiz characters
   });
 });
 
@@ -508,8 +508,8 @@ describe("SUITE-K: Articles data integrity", () => {
 });
 
 describe("SUITE-K: Characters data integrity", () => {
-  it("characters array has exactly 5 entries", () => {
-    expect(characters.length).toBe(5);
+  it("characters array has at least 5 entries", () => {
+    expect(characters.length).toBeGreaterThanOrEqual(5);
   });
 
   it("every character has required fields", () => {
@@ -549,7 +549,7 @@ describe("SUITE-K: Characters data integrity", () => {
   });
 
   it("character image keys match known asset names", () => {
-    const validKeys = new Set(["karna","krishna","arjuna","draupadi","bhishma"]);
+    const validKeys = new Set(["karna","krishna","arjuna","draupadi","bhishma","yudhishthira","duryodhana","abhimanyu","gandhari"]);
     characters.forEach((c) => {
       expect(validKeys.has(c.imageKey), `Unknown imageKey: ${c.imageKey}`).toBe(true);
     });

@@ -27,9 +27,9 @@ const sum = (s: Record<CharacterId, number>) =>
 
 /* ── TC-001: Data integrity ── */
 describe("TC-001: Data integrity", () => {
-  it("has exactly 8 questions and TOTAL_QUESTIONS=8", () => {
-    expect(QUIZ_QUESTIONS.length).toBe(8);
-    expect(TOTAL_QUESTIONS).toBe(8);
+  it("has exactly 15 questions and TOTAL_QUESTIONS=15", () => {
+    expect(QUIZ_QUESTIONS.length).toBe(15);
+    expect(TOTAL_QUESTIONS).toBe(15);
   });
   it("every question has exactly 5 answers", () => {
     QUIZ_QUESTIONS.forEach((q, i) => expect(q.answers.length, `Q${i+1}`).toBe(5));
@@ -42,11 +42,11 @@ describe("TC-001: Data integrity", () => {
       CHARS.forEach((c) => expect(set.has(c), `Q${i+1} missing ${c}`).toBe(true));
     });
   });
-  it("all 40 answer IDs are globally unique", () => {
+  it("all 75 answer IDs are globally unique", () => {
     const ids = QUIZ_QUESTIONS.flatMap((q) => q.answers.map((a) => a.id));
-    expect(new Set(ids).size).toBe(40);
+    expect(new Set(ids).size).toBe(75);
   });
-  it("question IDs are sequential 1-8", () => {
+  it("question IDs are sequential 1-15", () => {
     QUIZ_QUESTIONS.forEach((q, i) => expect(q.id).toBe(i + 1));
   });
   it("no empty question or answer text", () => {
@@ -63,7 +63,7 @@ describe("TC-002: Happy path — clear winner", () => {
     it(`all ${c} answers → winner=${c}, score=8, isTie=false`, () => {
       const r = computeQuizResult(allFor(c), QUIZ_QUESTIONS);
       expect(r.winner).toBe(c);
-      expect(r.scores[c]).toBe(8);
+      expect(r.scores[c]).toBe(15);
       expect(r.isTie).toBe(false);
       expect(r.percentage).toBe(100);
     });
@@ -87,7 +87,7 @@ describe("TC-003: Score calculation accuracy", () => {
                idx(4,"bhishma"),idx(5,"karna"),idx(6,"draupadi"),idx(7,"krishna")];
     expect(sum(calculateScores(a, QUIZ_QUESTIONS))).toBe(8);
   });
-  it("3/8 karna → 38%", () => {
+  it("3/8 karna answers → 38%", () => {
     const a = [idx(0,"karna"),idx(1,"karna"),idx(2,"karna"),idx(3,"krishna"),
                idx(4,"arjuna"),idx(5,"draupadi"),idx(6,"bhishma"),idx(7,"draupadi")];
     const r = computeQuizResult(a, QUIZ_QUESTIONS);
@@ -167,16 +167,16 @@ describe("TC-005: Partial and edge-case answers", () => {
   });
   it("extra entries beyond TOTAL_QUESTIONS are ignored", () => {
     const a = [...allFor("karna"), 0, 1, 2];
-    expect(sum(calculateScores(a, QUIZ_QUESTIONS))).toBe(8);
+    expect(sum(calculateScores(a, QUIZ_QUESTIONS))).toBe(15);
   });
 });
 
 /* ── TC-006: isQuizComplete ── */
 describe("TC-006: isQuizComplete", () => {
-  it("all 8 answered → true", () => expect(isQuizComplete(allFor("karna"), 8)).toBe(true));
+  it("all 15 answered → true", () => expect(isQuizComplete(allFor("karna"), 15)).toBe(true));
   it("one null → false", () => {
     const a: (number | null)[] = allFor("krishna"); a[4] = null;
-    expect(isQuizComplete(a, 8)).toBe(false);
+    expect(isQuizComplete(a, 15)).toBe(false);
   });
   it("empty array → false", () => expect(isQuizComplete([], 8)).toBe(false));
   it("wrong length → false", () => expect(isQuizComplete([0,1,2,3,4], 8)).toBe(false));
@@ -220,7 +220,7 @@ describe("TC-008: scoreBreakdown percentages", () => {
   });
   it("sum approximately 100 (rounding ±2)", () => {
     const s = calculateScores(allFor("karna"), QUIZ_QUESTIONS);
-    const total = Object.values(scoreBreakdown(s, 8)).reduce((a,b)=>a+b, 0);
+    const total = Object.values(scoreBreakdown(s, TOTAL_QUESTIONS)).reduce((a,b)=>a+b, 0);
     expect(total).toBeGreaterThanOrEqual(98);
     expect(total).toBeLessThanOrEqual(102);
   });
@@ -236,20 +236,20 @@ describe("TC-009: Answer change (back navigation)", () => {
     const a = allFor("karna");
     a[0] = idx(0, "krishna");
     const s = calculateScores(a, QUIZ_QUESTIONS);
-    expect(s.karna).toBe(7);
+    expect(s.karna).toBe(14);
     expect(s.krishna).toBe(1);
   });
   it("changing all to draupadi: draupadi=8, karna=0", () => {
     const a = allFor("karna");
     QUIZ_QUESTIONS.forEach((_, i) => { a[i] = idx(i, "draupadi"); });
     const s = calculateScores(a, QUIZ_QUESTIONS);
-    expect(s.draupadi).toBe(8);
+    expect(s.draupadi).toBe(15);
     expect(s.karna).toBe(0);
   });
-  it("total remains 8 after multiple changes", () => {
+  it("total remains 15 after multiple changes", () => {
     const a = allFor("karna");
     a[0] = idx(0,"krishna"); a[3] = idx(3,"arjuna"); a[6] = idx(6,"bhishma");
-    expect(sum(calculateScores(a, QUIZ_QUESTIONS))).toBe(8);
+    expect(sum(calculateScores(a, QUIZ_QUESTIONS))).toBe(15);
   });
 });
 
@@ -272,10 +272,10 @@ describe("TC-010: All 5 characters can be the winner", () => {
 describe("TC-011: Retake / state reset", () => {
   it("fresh null array → 0 scores, incomplete", () => {
     const completed = allFor("krishna");
-    expect(calculateScores(completed, QUIZ_QUESTIONS).krishna).toBe(8);
-    const fresh: (number|null)[] = new Array(8).fill(null);
+    expect(calculateScores(completed, QUIZ_QUESTIONS).krishna).toBe(15);
+    const fresh: (number|null)[] = new Array(15).fill(null);
     expect(sum(calculateScores(fresh, QUIZ_QUESTIONS))).toBe(0);
-    expect(isQuizComplete(fresh, 8)).toBe(false);
+    expect(isQuizComplete(fresh, 15)).toBe(false);
   });
   it("second quiz result is independent of first", () => {
     const r1 = computeQuizResult(allFor("karna"), QUIZ_QUESTIONS);

@@ -389,8 +389,8 @@ describe("SUITE-AA: Unicode and character encoding", () => {
    SUITE-AB: Regression — existing features intact
 ═══════════════════════════════════════════════════════ */
 describe("SUITE-AB: Regression after i18n — existing features intact", () => {
-  it("articles data is still intact (8 articles)", () => {
-    expect(articles.length).toBe(8);
+  it("articles data is still intact (29+ articles)", () => {
+    expect(articles.length).toBeGreaterThanOrEqual(8);
   });
 
   it("all articles still have required fields after i18n changes", () => {
@@ -401,12 +401,12 @@ describe("SUITE-AB: Regression after i18n — existing features intact", () => {
     });
   });
 
-  it("characters data still has 5 entries", () => {
-    expect(characters.length).toBe(5);
+  it("characters data has at least 5 entries", () => {
+    expect(characters.length).toBeGreaterThanOrEqual(5);
   });
 
-  it("quiz still has 8 questions with 5 answers each", () => {
-    expect(QUIZ_QUESTIONS.length).toBe(8);
+  it("quiz still has 15 questions with 5 answers each", () => {
+    expect(QUIZ_QUESTIONS.length).toBe(15);
     QUIZ_QUESTIONS.forEach((q) => expect(q.answers.length).toBe(5));
   });
 

@@ -13,7 +13,7 @@ export interface Character {
   name: string;
   title: string;
   archetype: "Warrior" | "Divine" | "Royalty" | "Elder";
-  imageKey: "karna" | "krishna" | "arjuna" | "draupadi" | "bhishma";
+  imageKey: "karna" | "krishna" | "arjuna" | "draupadi" | "bhishma" | "yudhishthira" | "duryodhana" | "abhimanyu" | "gandhari";
   epithets: string[];
   traits: CharacterTrait[];
   bio: string[];
@@ -207,6 +207,154 @@ export const characters: Character[] = [
       { label: "Loyalty", value: 100 },
       { label: "Sacrifice", value: 98 },
       { label: "Dharma", value: 60 },
+    ],
+  },
+
+  {
+    id: "yudhishthira",
+    name: "Yudhishthira",
+    title: "The Dharma King",
+    archetype: "Royalty",
+    imageKey: "yudhishthira",
+    epithets: ["Dharmaraja", "Ajatashatru", "Bharata", "Pandava"],
+    traits: [
+      { label: "Truth", icon: "⚖️" },
+      { label: "Compassion", icon: "🕊️" },
+      { label: "Patience", icon: "🌿" },
+      { label: "Restraint", icon: "🧘" },
+    ],
+    bio: [
+      "Yudhishthira was the eldest Pandava, son of Dharma himself, and the most truthful man in the epic — so truthful that his chariot never fully touched the ground. He ruled with compassion, spoke without deception, and bore the weight of his family's suffering with a patience that bordered on the inhuman.",
+      "Yet this same man sat at a dice table and could not stop. He wagered his kingdom, his brothers, himself, and Draupadi — knowing the game was fixed. The Mahabharata holds both truths simultaneously: he was the most righteous man alive, and the most catastrophically compulsive. Neither truth cancels the other.",
+    ],
+    quote:
+      "I do not grieve for the kingdom, or for my brothers, or for myself. I grieve for Draupadi — who has suffered through no fault of her own.",
+    quoteSource: "Vana Parva",
+    lesson:
+      "Righteousness is not the absence of flaws — it is the commitment to keep trying despite them. Yudhishthira shows that a person can be genuinely good and genuinely broken in the same breath.",
+    articleSlug: "yudhishthira-gambling-addiction",
+    accentHex: "#4CAF50",
+    accentRgb: "76,175,80",
+    parva: "Sabha Parva / Shanti Parva",
+    weapon: "Spear",
+    alliance: "Pandava",
+    stats: [
+      { label: "Warrior Skill", value: 72 },
+      { label: "Wisdom", value: 90 },
+      { label: "Loyalty", value: 85 },
+      { label: "Sacrifice", value: 88 },
+      { label: "Dharma", value: 98 },
+    ],
+  },
+
+  {
+    id: "duryodhana",
+    name: "Duryodhana",
+    title: "The Wounded King",
+    archetype: "Warrior",
+    imageKey: "duryodhana",
+    epithets: ["Suyodhana", "Kurupati", "Kaurava"],
+    traits: [
+      { label: "Courage", icon: "⚔️" },
+      { label: "Pride", icon: "👑" },
+      { label: "Loyalty", icon: "🤝" },
+      { label: "Ambition", icon: "🔥" },
+    ],
+    bio: [
+      "Duryodhana is remembered as the Mahabharata's villain — but the text is more honest than that. His claim to the throne was not baseless. His resentment had real origins. His friendship with Karna was genuine. His courage in battle was unquestionable, and his death — alone on a lake, fighting without flinching — was given more dignity by the text than most heroes receive.",
+      "What destroyed him was not his anger but what he did with it. He had Vidura's wisdom available at every turn. He chose Shakuni. For thirty years he fed a wound that could have been examined instead — and by Kurukshetra, the wound and the man had become inseparable.",
+    ],
+    quote:
+      "I have lived as a king should live and will die as a warrior should die. I have no grief in this.",
+    quoteSource: "Shalya Parva",
+    lesson:
+      "A real wound does not automatically justify the response you give it. Courage and correct judgment are not the same quality — and confusing them is its own kind of catastrophe.",
+    articleSlug: "duryodhana-why-he-was-not-wrong",
+    accentHex: "#E53935",
+    accentRgb: "229,57,53",
+    parva: "Sabha Parva / Shalya Parva",
+    weapon: "Mace (Gada)",
+    alliance: "Kaurava",
+    stats: [
+      { label: "Warrior Skill", value: 94 },
+      { label: "Wisdom", value: 45 },
+      { label: "Loyalty", value: 88 },
+      { label: "Sacrifice", value: 70 },
+      { label: "Dharma", value: 30 },
+    ],
+  },
+
+  {
+    id: "abhimanyu",
+    name: "Abhimanyu",
+    title: "The Unfinished Hero",
+    archetype: "Warrior",
+    imageKey: "abhimanyu",
+    epithets: ["Saubhadra", "Arjuni", "Phalguniputra"],
+    traits: [
+      { label: "Courage", icon: "🔥" },
+      { label: "Skill", icon: "🏹" },
+      { label: "Honour", icon: "⚔️" },
+      { label: "Youth", icon: "🌱" },
+    ],
+    bio: [
+      "Abhimanyu learned the secret of the Chakravyuha — the Mahabharata's most deadly military formation — while still in his mother's womb. He learned how to enter it. She fell asleep before Arjuna finished. He never learned how to exit.",
+      "At sixteen, he was sent into that formation alone. The plan depended on others following. Jayadratha blocked them. Abhimanyu fought alone for hours — wounding Drona, Karna, and Duryodhana — until six Kaurava commanders attacked him simultaneously, violating every rule of honourable combat. He fought them with a chariot wheel at the end. He did not surrender.",
+    ],
+    quote:
+      "I will go where no other will go today. I know how to enter. I trust that you will follow.",
+    quoteSource: "Drona Parva",
+    lesson:
+      "Knowing how to begin something is not the same as being prepared to complete it. The gap between capability and preparation is where the most avoidable losses happen — and they fall on the person who went in trusting others to cover the part they did not know.",
+    articleSlug: "abhimanyu-born-knowing-too-much",
+    accentHex: "#FF9800",
+    accentRgb: "255,152,0",
+    parva: "Drona Parva",
+    weapon: "Bow and chariot wheel",
+    alliance: "Pandava",
+    stats: [
+      { label: "Warrior Skill", value: 96 },
+      { label: "Wisdom", value: 62 },
+      { label: "Loyalty", value: 90 },
+      { label: "Sacrifice", value: 100 },
+      { label: "Dharma", value: 85 },
+    ],
+  },
+
+  {
+    id: "gandhari",
+    name: "Gandhari",
+    title: "The Blindfolded Queen",
+    archetype: "Royalty",
+    imageKey: "gandhari",
+    epithets: ["Gandharini", "Dhritarashtra-patni", "Saubali"],
+    traits: [
+      { label: "Devotion", icon: "🙏" },
+      { label: "Restraint", icon: "🌿" },
+      { label: "Grief", icon: "💔" },
+      { label: "Power", icon: "✨" },
+    ],
+    bio: [
+      "On the morning of her wedding, Gandhari bound cloth over her eyes. She would share her husband's blindness. She would not use sight he did not have. For seventy years she kept the blindfold on — and for seventy years, everything that happened at Kurukshetra happened while she stood beside Dhritarashtra and said nothing that actually changed anything.",
+      "The Mahabharata does not criticise her love. It asks harder questions: whether solidarity that disables your greatest capacity is love or self-protection. She had more influence over Dhritarashtra than anyone. She had the perception to see what he could not. She chose not to use either. Then, after the war, she unleashed seventy years of accumulated power in a single curse on Krishna — devastating, misdirected, and too late.",
+    ],
+    quote:
+      "I have kept my eyes closed for seventy years. Now that I open them, I wish I could close them again.",
+    quoteSource: "Stri Parva",
+    lesson:
+      "Solidarity that disables your greatest capacity may be protecting you as much as it is protecting them. What you choose not to see does not disappear — it accumulates, with interest, until it can no longer be held.",
+    articleSlug: "gandhari-blindfold-choice",
+    accentHex: "#9C27B0",
+    accentRgb: "156,39,176",
+    parva: "Stri Parva",
+    weapon: "None — her power was austerity",
+    alliance: "Kaurava",
+    stats: [
+      { label: "Warrior Skill", value: 10 },
+      { label: "Wisdom", value: 88 },
+      { label: "Loyalty", value: 95 },
+      { label: "Sacrifice", value: 97 },
+      { label: "Dharma", value: 72 },
     ],
   },
 ];
