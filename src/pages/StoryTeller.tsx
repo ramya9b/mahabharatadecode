@@ -120,7 +120,8 @@ const StoryTeller = () => {
     subscription,
     refresh: refreshAccess,
   } = useSubscription();
-  const [paywallOpen, setPaywallOpen] = useState(false);
+  const [paywallOpen,   setPaywallOpen]   = useState(false);
+  const [paywallReason, setPaywallReason] = useState<string>("Unlock Full Access");
 
   /* ── Scroll to story when it starts ── */
   useEffect(() => {
@@ -143,12 +144,14 @@ const StoryTeller = () => {
 
     /* Subscription gate — block AI call if trial expired and not subscribed */
     if (!hasAccess) {
+      setPaywallReason("Your 14-day free trial has ended");
       setPaywallOpen(true);
       return;
     }
 
     /* Daily limit gate — free/trial users: 3 stories per day */
     if (!canGenerate) {
+      setPaywallReason("You've used all 3 free stories for today — resets at midnight");
       setPaywallOpen(true);
       return;
     }
@@ -1364,7 +1367,16 @@ const StoryTeller = () => {
           onClose={() => setModalChar(null)}
           onStart={(promptText, _promptLabel) => {
             setModalChar(null);
-            if (!hasAccess) { setPaywallOpen(true); return; }
+            if (!hasAccess) {
+              setPaywallReason("Your 14-day free trial has ended");
+              setPaywallOpen(true);
+              return;
+            }
+            if (!canGenerate) {
+              setPaywallReason("You've used all 3 free stories for today — resets at midnight");
+              setPaywallOpen(true);
+              return;
+            }
             setActivePromptIdx(null);
             setCustomPrompt(promptText);
             setStep("story");
@@ -1422,7 +1434,7 @@ const StoryTeller = () => {
         open={paywallOpen}
         onClose={() => setPaywallOpen(false)}
         onSuccess={() => { setPaywallOpen(false); refreshAccess(); }}
-        reason="Your 14-day trial ended"
+        reason={paywallReason}
       />
     </div>
   );

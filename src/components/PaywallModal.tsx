@@ -195,7 +195,7 @@ const PaywallModal = ({ open, onClose, onSuccess, reason }: PaywallModalProps) =
             className="font-heading font-bold mb-3"
             style={{ fontSize: "clamp(22px, 3vw, 28px)" }}
           >
-            Keep reading the epic.
+            {reason?.includes("today") ? "Come back tomorrow — or go unlimited." : "Keep reading the epic."}
           </h2>
           <p
             className="mb-6"
@@ -206,7 +206,10 @@ const PaywallModal = ({ open, onClose, onSuccess, reason }: PaywallModalProps) =
               lineHeight: 1.6,
             }}
           >
-            Full articles and unlimited Story Teller — pick a pass to continue.
+            {reason?.includes("today")
+              ? "Free stories reset at midnight. Upgrade for unlimited stories, full articles, and everything else."
+              : "Full articles and unlimited Story Teller — pick a pass to continue."
+            }
           </p>
 
           {/* Plan cards */}
@@ -339,7 +342,7 @@ const PaywallModal = ({ open, onClose, onSuccess, reason }: PaywallModalProps) =
               fontFamily: "'Cormorant Garamond',serif",
             }}
           >
-            Secure payment via Razorpay · UPI · Cards · Net Banking
+            Secure payment via Cashfree · UPI · Cards · Net Banking
           </p>
         </div>
       </div>
