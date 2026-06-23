@@ -339,8 +339,12 @@
 
   .section-padding {
     @apply py-16 md:py-24 px-6 md:px-12 lg:px-24;
-    content-visibility: auto;
-    contain-intrinsic-size: 0 400px;
+  }
+  @media (min-width: 768px) {
+    .section-padding {
+      content-visibility: auto;
+      contain-intrinsic-size: 0 400px;
+    }
   }
 
   .section-header {

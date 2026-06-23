@@ -181,7 +181,7 @@ const CharacterProfile = ({ character, index }: CharacterProfileProps) => {
             <h2
               className="font-heading font-black leading-[0.95] mb-3"
               style={{
-                fontSize: "clamp(52px, 7vw, 88px)",
+                fontSize: "clamp(36px, 7vw, 88px)",
                 background: `linear-gradient(135deg, rgba(${character.accentRgb},1) 0%, rgba(${character.accentRgb},0.6) 100%)`,
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",

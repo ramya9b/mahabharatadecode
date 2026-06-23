@@ -434,7 +434,7 @@ const Story = () => {
 
       {/* Controls */}
       <div
-        className="sticky top-16 z-30 flex items-center justify-between px-6 py-3"
+        className="sticky top-16 z-30 flex items-center justify-between px-4 md:px-6 py-3"
         style={{
           background: isDark
             ? "rgba(12,9,0,0.90)"

@@ -64,7 +64,7 @@ const CharacterNav = ({ characters }: CharacterNavProps) => {
 
   return (
     <div
-      className="fixed right-6 top-1/2 -translate-y-1/2 z-50 transition-all duration-500 flex flex-col items-end gap-2"
+      className="hidden md:flex fixed right-6 top-1/2 -translate-y-1/2 z-50 transition-all duration-500 flex-col items-end gap-2"
       style={{ opacity: visible ? 1 : 0, pointerEvents: visible ? "auto" : "none" }}
     >
       {characters.map((char) => {

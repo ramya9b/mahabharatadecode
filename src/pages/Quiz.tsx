@@ -391,7 +391,7 @@ const ResultScreen = ({
         )}
 
         {/* Main result card */}
-        <div className="grid lg:grid-cols-[420px_1fr] gap-8 items-start">
+        <div className="grid md:grid-cols-[360px_1fr] lg:grid-cols-[420px_1fr] gap-6 md:gap-8 items-start">
           {/* Character image */}
           <div className="animate-fade-up">
             <div className="relative rounded-3xl overflow-hidden"

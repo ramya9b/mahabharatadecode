@@ -382,14 +382,14 @@ const Navbar = () => {
               onClick={closeMobile}
               style={{
                 display: "block",
-                padding: "12px 8px",
+                padding: "14px 10px",
                 fontFamily: "'Cinzel',serif",
-                fontSize: "11px",
+                fontSize: "12px",
                 letterSpacing: "0.14em",
                 textTransform: "uppercase",
                 textDecoration: "none",
                 borderBottom: "1px solid rgba(212,175,55,0.1)",
-                color: isActive(to) ? "#FBBF24" : "rgba(220,195,140,0.55)",
+                color: isActive(to) ? "#FBBF24" : "rgba(220,195,140,0.60)",
                 transition: "color 0.2s",
               }}
             >

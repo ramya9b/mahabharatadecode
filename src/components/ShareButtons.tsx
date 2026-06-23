@@ -69,8 +69,8 @@ export const WhatsAppFloat = ({
       onMouseLeave={() => setHovered(false)}
       style={{
         position:       "fixed",
-        bottom:         "88px",           /* above BackToTop button */
-        right:          "20px",
+        bottom:         "80px",
+        right:          "16px",
         zIndex:         49,
         display:        "flex",
         alignItems:     "center",
