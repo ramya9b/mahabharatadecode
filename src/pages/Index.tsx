@@ -5,6 +5,7 @@ import SocialProofBar from "@/components/SocialProofBar";
 import StoryTellerBanner from "@/components/StoryTellerBanner";
 import StartReadingBanner from "@/components/StartReadingBanner";
 import ExploreCharactersBanner from "@/components/ExploreCharactersBanner";
+import StoryBanner from "@/components/StoryBanner";
 import CharactersGrid from "@/components/CharactersGrid";
 import LifeLessons from "@/components/LifeLessons";
 import QuizBanner from "@/components/QuizBanner";
@@ -34,6 +35,10 @@ const Index = () => {
       <CharactersGrid />
 
       <LifeLessons />
+
+      {/* ── Story Banner — /story entry point ── */}
+      <StoryBanner />
+
       <QuizBanner />
       <VideoSection />
       <DailyWisdom />
