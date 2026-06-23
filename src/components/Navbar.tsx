@@ -102,12 +102,13 @@ const Navbar = () => {
           position: "fixed",
           top: 0, left: 0, right: 0,
           zIndex: 50,
-          padding: scrolled ? "10px 24px" : "14px 24px",
+          padding: scrolled ? "10px 20px" : "14px 20px",
           background: scrolled ? wrapBgScrolled : wrapBg,
           backdropFilter: scrolled ? "blur(16px)" : "none",
           WebkitBackdropFilter: scrolled ? "blur(16px)" : "none",
           borderBottom: scrolled ? `1px solid rgba(212,175,55,0.1)` : "none",
           transition: "all 0.4s cubic-bezier(0.4,0,0.2,1)",
+          overflow: "hidden",
         }}
       >
         {/* ── Desktop (≥1024px) ── */}
@@ -303,35 +304,37 @@ const Navbar = () => {
         {/* ── Mobile ── */}
         <div
           className="lg:hidden flex items-center justify-between"
-          style={{ maxWidth: "100%" }}
+          style={{ maxWidth: "100%", overflow: "hidden" }}
         >
-          {/* Mobile logo */}
+          {/* Mobile logo — M circle only, no text (text overflows on 360-390px phones) */}
           <Link
             to="/"
             aria-label="MahabharataDecoded homepage"
-            style={{ display: "flex", alignItems: "center", gap: "9px", textDecoration: "none" }}
+            style={{ display: "flex", alignItems: "center", gap: "8px", textDecoration: "none", flexShrink: 0 }}
           >
             <div style={{
-              width: "30px", height: "30px", borderRadius: "50%",
+              width: "32px", height: "32px", borderRadius: "50%",
               background: "#0E0900",
               boxShadow: "0 0 0 2px #FBBF24, 0 0 0 3.5px rgba(167,139,250,0.3)",
               display: "flex", alignItems: "center", justifyContent: "center",
+              flexShrink: 0,
             }}>
               <span style={{
-                fontFamily: "'Cinzel',serif", fontSize: "12px", fontWeight: 700,
+                fontFamily: "'Cinzel',serif", fontSize: "13px", fontWeight: 700,
                 background: "linear-gradient(135deg,#FBBF24,#A78BFA)",
                 WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
               }}>M</span>
             </div>
             <span style={{
-              fontFamily: "'Cinzel',serif", fontSize: "10px", fontWeight: 600,
-              letterSpacing: "0.18em", textTransform: "uppercase",
-              color: "#FBBF24",
+              fontFamily: "'Cinzel',serif", fontSize: "11px", fontWeight: 600,
+              letterSpacing: "0.12em", textTransform: "uppercase",
+              color: "#FBBF24", whiteSpace: "nowrap",
+              maxWidth: "160px", overflow: "hidden", textOverflow: "ellipsis",
             }}>MahabharataDecoded</span>
           </Link>
 
-          <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
+          <div style={{ display: "flex", alignItems: "center", gap: "6px", flexShrink: 0 }}>
             <ThemeToggle />
             <LanguageSwitcher />
             <button
@@ -341,11 +344,11 @@ const Navbar = () => {
               aria-controls="mobile-menu"
               aria-label={mobileOpen ? t("nav.close_menu") : t("nav.open_menu")}
               style={{
-                width: "36px", height: "36px", borderRadius: "10px",
+                width: "34px", height: "34px", borderRadius: "10px",
                 background: "rgba(212,175,55,0.1)",
                 border: "1px solid rgba(212,175,55,0.2)",
                 display: "flex", alignItems: "center", justifyContent: "center",
-                color: "#FBBF24", cursor: "pointer",
+                color: "#FBBF24", cursor: "pointer", flexShrink: 0,
               }}
             >
               {mobileOpen ? <X size={18} aria-hidden="true"/> : <Menu size={18} aria-hidden="true"/>}
