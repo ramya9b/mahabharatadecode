@@ -17,7 +17,8 @@
     "open_menu": "Open navigation menu",
     "close_menu": "Close navigation menu",
     "skip_to_main": "Skip to main content",
-    "storyteller": "Story Teller"
+    "storyteller": "Story Teller",
+    "story": "The Story"
   },
   "hero": {
     "eyebrow": "Ancient Wisdom · Modern Life",
@@ -114,15 +115,15 @@
       "identity_desc": "The quiet wars you fight when no one is watching"
     },
     "detail": {
-      "your_situation":  "Your situation",
-      "what_x_faced":    "What {{name}} faced",
+      "your_situation": "Your situation",
+      "what_x_faced": "What {{name}} faced",
       "what_it_reveals": "What it reveals",
-      "three_actions":   "Three things you can do",
+      "three_actions": "Three things you can do",
       "read_full_story": "Read Full Story",
       "read_more_blurb": "Read the full {{name}} article — the complete story, life lessons, and modern parallels."
     },
     "aria": {
-      "life_domains":  "Life domains",
+      "life_domains": "Life domains",
       "read_scenario": "Read: {{headline}}"
     },
     "english_only_note": "Personal-guidance text is currently available in English only. We're working on translations.",
@@ -247,10 +248,10 @@
   "home": {
     "social_proof": {
       "story_teller": "Story Teller",
-      "characters":   "Characters",
-      "languages":    "Languages",
-      "free":         "Free",
-      "always":       "Always"
+      "characters": "Characters",
+      "languages": "Languages",
+      "free": "Free",
+      "always": "Always"
     },
     "storyteller": {
       "eyebrow": "New Feature",

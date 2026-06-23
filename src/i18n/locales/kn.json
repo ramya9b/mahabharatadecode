@@ -17,7 +17,8 @@
     "open_menu": "ನ್ಯಾವಿಗೇಷನ್ ಮೆನು ತೆರೆಯಿರಿ",
     "close_menu": "ನ್ಯಾವಿಗೇಷನ್ ಮೆನು ಮುಚ್ಚಿ",
     "skip_to_main": "ಮುಖ್ಯ ವಿಷಯಕ್ಕೆ ಹೋಗಿ",
-    "storyteller": "ಕಥೆ ಹೇಳುವವರು"
+    "storyteller": "ಕಥೆ ಹೇಳುವವರು",
+    "story": "ಕಥೆ"
   },
   "hero": {
     "eyebrow": "ಪ್ರಾಚೀನ ಜ್ಞಾನ · ಆಧುನಿಕ ಜೀವನ",
@@ -114,15 +115,15 @@
       "identity_desc": "ಯಾರೂ ನೋಡದಿರುವಾಗ ನೀವು ಮಾಡುವ ಶಾಂತ ಯುದ್ಧಗಳು"
     },
     "detail": {
-      "your_situation":  "ನಿಮ್ಮ ಪರಿಸ್ಥಿತಿ",
-      "what_x_faced":    "{{name}} ಎದುರಿಸಿದ್ದು",
+      "your_situation": "ನಿಮ್ಮ ಪರಿಸ್ಥಿತಿ",
+      "what_x_faced": "{{name}} ಎದುರಿಸಿದ್ದು",
       "what_it_reveals": "ಇದು ಬಹಿರಂಗಪಡಿಸುವುದು",
-      "three_actions":   "ನೀವು ಮಾಡಬಹುದಾದ ಮೂರು ಕೆಲಸಗಳು",
+      "three_actions": "ನೀವು ಮಾಡಬಹುದಾದ ಮೂರು ಕೆಲಸಗಳು",
       "read_full_story": "ಪೂರ್ಣ ಕಥೆ ಓದಿ",
       "read_more_blurb": "{{name}} ರ ಪೂರ್ಣ ಲೇಖನ ಓದಿ — ಸಂಪೂರ್ಣ ಕಥೆ, ಜೀವನ ಪಾಠಗಳು ಮತ್ತು ಆಧುನಿಕ ಸಮಾನಾಂತರಗಳು."
     },
     "aria": {
-      "life_domains":  "ಜೀವನ ಕ್ಷೇತ್ರಗಳು",
+      "life_domains": "ಜೀವನ ಕ್ಷೇತ್ರಗಳು",
       "read_scenario": "ಓದಿ: {{headline}}"
     },
     "english_only_note": "ವೈಯಕ್ತಿಕ ಮಾರ್ಗದರ್ಶನ ವಿಷಯವು ಪ್ರಸ್ತುತ ಇಂಗ್ಲಿಷ್‌ನಲ್ಲಿ ಮಾತ್ರ ಲಭ್ಯವಿದೆ. ನಾವು ಅನುವಾದಗಳ ಮೇಲೆ ಕೆಲಸ ಮಾಡುತ್ತಿದ್ದೇವೆ.",
@@ -247,10 +248,10 @@
   "home": {
     "social_proof": {
       "story_teller": "ಕಥೆಗಾರ",
-      "characters":   "ಪಾತ್ರಗಳು",
-      "languages":    "ಭಾಷೆಗಳು",
-      "free":         "ಉಚಿತ",
-      "always":       "ಯಾವಾಗಲೂ"
+      "characters": "ಪಾತ್ರಗಳು",
+      "languages": "ಭಾಷೆಗಳು",
+      "free": "ಉಚಿತ",
+      "always": "ಯಾವಾಗಲೂ"
     },
     "storyteller": {
       "eyebrow": "ಹೊಸ ವೈಶಿಷ್ಟ್ಯ",

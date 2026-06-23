@@ -7,6 +7,7 @@ import ThemeToggle from "@/components/ThemeToggle";
 import { useTheme } from "@/context/ThemeContext";
 
 const NAV_LINKS = [
+  { to: "/story",       key: "nav.story"       },
   { to: "/storyteller", key: "nav.storyteller" },
   { to: "/wisdom",      key: "nav.wisdom"      },
   { to: "/characters",  key: "nav.characters"  },

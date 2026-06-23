@@ -17,7 +17,8 @@
     "open_menu": "నావిగేషన్ మెనూ తెరవండి",
     "close_menu": "నావిగేషన్ మెనూ మూయండి",
     "skip_to_main": "ప్రధాన విషయానికి వెళ్ళండి",
-    "storyteller": "కథా చెప్పేవాడు"
+    "storyteller": "కథా చెప్పేవాడు",
+    "story": "కథ"
   },
   "hero": {
     "eyebrow": "పురాతన జ్ఞానం · ఆధునిక జీవితం",
@@ -114,15 +115,15 @@
       "identity_desc": "ఎవరూ చూడనప్పుడు మీరు చేసే నిశ్శబ్ద యుద్ధాలు"
     },
     "detail": {
-      "your_situation":  "మీ పరిస్థితి",
-      "what_x_faced":    "{{name}} ఎదుర్కొన్నది",
+      "your_situation": "మీ పరిస్థితి",
+      "what_x_faced": "{{name}} ఎదుర్కొన్నది",
       "what_it_reveals": "ఈ కథ మనకు చెప్పేది",
-      "three_actions":   "మీరు చేయగల మూడు పనులు",
+      "three_actions": "మీరు చేయగల మూడు పనులు",
       "read_full_story": "పూర్తి కథ చదవండి",
       "read_more_blurb": "{{name}} గురించి పూర్తి వ్యాసం చదవండి — మొత్తం కథ, జీవిత పాఠాలు, ఈ రోజుకి పోలికలు."
     },
     "aria": {
-      "life_domains":  "జీవిత రంగాలు",
+      "life_domains": "జీవిత రంగాలు",
       "read_scenario": "చదవండి: {{headline}}"
     },
     "english_only_note": "వ్యక్తిగత మార్గదర్శక వచనం ప్రస్తుతం ఇంగ్లీష్‌లో మాత్రమే అందుబాటులో ఉంది. మేము అనువాదాలపై పని చేస్తున్నాము.",
@@ -247,10 +248,10 @@
   "home": {
     "social_proof": {
       "story_teller": "కథకుడు",
-      "characters":   "పాత్రలు",
-      "languages":    "భాషలు",
-      "free":         "ఉచితం",
-      "always":       "ఎల్లప్పుడూ"
+      "characters": "పాత్రలు",
+      "languages": "భాషలు",
+      "free": "ఉచితం",
+      "always": "ఎల్లప్పుడూ"
     },
     "storyteller": {
       "eyebrow": "కొత్త ఫీచర్",

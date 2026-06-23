@@ -17,7 +17,8 @@
     "open_menu": "नेविगेशन मेनू खोलें",
     "close_menu": "नेविगेशन मेनू बंद करें",
     "skip_to_main": "मुख्य सामग्री पर जाएं",
-    "storyteller": "कथावाचक"
+    "storyteller": "कथावाचक",
+    "story": "कथा"
   },
   "hero": {
     "eyebrow": "प्राचीन ज्ञान · आधुनिक जीवन",
@@ -114,15 +115,15 @@
       "identity_desc": "वे शांत युद्ध जो आप तब लड़ते हैं जब कोई नहीं देख रहा"
     },
     "detail": {
-      "your_situation":  "आपकी स्थिति",
-      "what_x_faced":    "{{name}} ने जिसका सामना किया",
+      "your_situation": "आपकी स्थिति",
+      "what_x_faced": "{{name}} ने जिसका सामना किया",
       "what_it_reveals": "यह क्या प्रकट करता है",
-      "three_actions":   "तीन काम जो आप कर सकते हैं",
+      "three_actions": "तीन काम जो आप कर सकते हैं",
       "read_full_story": "पूरी कहानी पढ़ें",
       "read_more_blurb": "{{name}} का पूरा लेख पढ़ें — संपूर्ण कथा, जीवन पाठ और आधुनिक समानताएं।"
     },
     "aria": {
-      "life_domains":  "जीवन के क्षेत्र",
+      "life_domains": "जीवन के क्षेत्र",
       "read_scenario": "पढ़ें: {{headline}}"
     },
     "english_only_note": "व्यक्तिगत मार्गदर्शन सामग्री वर्तमान में केवल अंग्रेज़ी में उपलब्ध है। हम अनुवाद पर काम कर रहे हैं।",
@@ -247,10 +248,10 @@
   "home": {
     "social_proof": {
       "story_teller": "कथावाचक",
-      "characters":   "पात्र",
-      "languages":    "भाषाएँ",
-      "free":         "निःशुल्क",
-      "always":       "हमेशा"
+      "characters": "पात्र",
+      "languages": "भाषाएँ",
+      "free": "निःशुल्क",
+      "always": "हमेशा"
     },
     "storyteller": {
       "eyebrow": "नई सुविधा",
