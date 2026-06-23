@@ -6,8 +6,9 @@ import { useSEO } from "@/hooks/useSEO";
 import Footer from "@/components/Footer";
 import { QUIZ_QUESTIONS, TOTAL_QUESTIONS, CHARACTER_META } from "@/data/quiz";
 import { computeQuizResult, scoreBreakdown } from "@/utils/quizScoring";
-import { resolveImage } from "@/utils/images";
+import { resolveImage, resolveCharacterImage } from "@/utils/images";
 import type { QuizResult } from "@/data/quiz";
+import { characters } from "@/data/characters";
 
 /* ─────────────────────────────────────────────────────────
    STATE MACHINE
@@ -94,14 +95,14 @@ const WelcomeScreen = ({ onStart }: { onStart: () => void }) => (
     <div className="absolute inset-0 pointer-events-none"
       style={{ background: "radial-gradient(ellipse 80% 60% at 50% 40%, rgba(212,175,55,0.07) 0%, transparent 65%)" }} />
 
-    {/* Floating character portrait ring */}
+    {/* Floating character portrait ring — all 9 characters */}
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
-      {Object.entries(CHARACTER_META).map(([id, meta], i) => {
-        const angle = (i / 5) * 360;
+      {characters.map((char, i) => {
+        const angle = (i / characters.length) * 360;
         const radius = "min(38vw, 300px)";
         return (
           <div
-            key={id}
+            key={char.id}
             className="absolute top-1/2 left-1/2 opacity-15"
             style={{
               transform: `rotate(${angle}deg) translateX(${radius}) rotate(-${angle}deg) translate(-50%, -50%)`,
@@ -109,11 +110,11 @@ const WelcomeScreen = ({ onStart }: { onStart: () => void }) => (
           >
             <div
               className="w-16 h-16 rounded-full overflow-hidden"
-              style={{ border: `2px solid rgba(${meta.accentRgb},0.4)` }}
+              style={{ border: `2px solid rgba(${char.accentRgb},0.4)` }}
             >
               <img
             loading="lazy"
-            decoding="async" src={resolveImage(meta.imageKey)} alt={meta.name}
+            decoding="async" src={resolveCharacterImage(char.id).src} alt={char.name}
                 className="w-full h-full object-cover object-top" />
             </div>
           </div>
@@ -142,7 +143,7 @@ const WelcomeScreen = ({ onStart }: { onStart: () => void }) => (
           fontSize: "clamp(17px, 2vw, 20px)", color: "hsl(var(--foreground) / 0.72)",
           fontFamily: "'Cormorant Garamond', Georgia, serif", fontStyle: "italic", maxWidth: "500px",
         }}>
-        8 questions. No right answers. Only honest ones.
+        15 questions. No right answers. Only honest ones.
       </p>
       <p className="leading-relaxed mx-auto mb-12"
         style={{
@@ -153,17 +154,17 @@ const WelcomeScreen = ({ onStart }: { onStart: () => void }) => (
         The Mahabharata has a mirror for every kind of person.
       </p>
 
-      {/* Character previews */}
+      {/* Character previews — all 9 */}
       <div className="flex justify-center gap-3 mb-10 animate-fade-up-delay-2 flex-wrap">
-        {Object.entries(CHARACTER_META).map(([id, meta]) => (
-          <div key={id} className="flex flex-col items-center gap-1.5">
-            <div className="w-12 h-12 rounded-full overflow-hidden" style={{ border: `2px solid rgba(${meta.accentRgb},0.35)` }}>
+        {characters.map((char) => (
+          <div key={char.id} className="flex flex-col items-center gap-1.5">
+            <div className="w-12 h-12 rounded-full overflow-hidden" style={{ border: `2px solid rgba(${char.accentRgb},0.35)` }}>
               <img
             loading="lazy"
-            decoding="async" src={resolveImage(meta.imageKey)} alt={meta.name} className="w-full h-full object-cover object-top" />
+            decoding="async" src={resolveCharacterImage(char.id).src} alt={char.name} className="w-full h-full object-cover object-top" />
             </div>
-            <span className="font-heading text-[9px] tracking-[0.12em] uppercase" style={{ color: `rgba(${meta.accentRgb},0.7)` }}>
-              {meta.name}
+            <span className="font-heading text-[9px] tracking-[0.12em] uppercase" style={{ color: `rgba(${char.accentRgb},0.7)` }}>
+              {char.name}
             </span>
           </div>
         ))}
@@ -529,25 +530,27 @@ const ResultScreen = ({
               </button>
             </div>
 
-            {/* Related characters */}
+            {/* Related characters — all 9 */}
             <div className="pt-2">
               <p className="font-heading text-[10px] tracking-[0.25em] uppercase text-muted-foreground mb-3">
                 Also explore
               </p>
               <div className="flex gap-3 flex-wrap">
-                {Object.entries(CHARACTER_META)
-                  .filter(([id]) => id !== result.winner)
-                  .slice(0, 4)
-                  .map(([id, m]) => (
-                    <Link key={id} to={`/blog/${m.articleSlug}`}
+                {characters
+                  .filter((c) => c.id !== result.winner)
+                  .map((char) => (
+                    <Link key={char.id} to={`/characters#char-${char.id}`}
                       className="flex items-center gap-2 glass-card px-3 py-2 rounded-full hover:border-primary/30 transition-all duration-200 group">
                       <div className="w-6 h-6 rounded-full overflow-hidden flex-shrink-0">
                         <img
-            loading="lazy"
-            decoding="async" src={resolveImage(m.imageKey)} alt={m.name} className="w-full h-full object-cover object-top" />
+                          loading="lazy"
+                          decoding="async"
+                          src={resolveCharacterImage(char.id).src}
+                          alt={char.name}
+                          className="w-full h-full object-cover object-top" />
                       </div>
                       <span className="font-heading text-[10px] tracking-[0.1em] uppercase text-muted-foreground group-hover:text-primary transition-colors">
-                        {m.name}
+                        {char.name}
                       </span>
                     </Link>
                   ))}
