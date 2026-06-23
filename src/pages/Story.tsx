@@ -416,6 +416,7 @@ const Story = () => {
     title: "The Complete Mahabharata — All 18 Parvas",
     description:
       "Read the complete Mahabharata in order — all 18 parvas summarised in plain language. From Adi Parva's beginning to Svargarohana's ascent to heaven.",
+    image: "https://mahabharatadecoded.com/og-default.jpg",
     path: "/story",
   });
 
