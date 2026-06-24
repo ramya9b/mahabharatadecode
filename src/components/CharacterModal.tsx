@@ -45,12 +45,6 @@ const CharacterModal = ({ char, sceneImage, onStart, onClose }: Props) => {
   const [customPrompt, setCustomPrompt]  = useState("");
   const [isMobile, setIsMobile]          = useState(window.innerWidth < 640);
 
-  /* ── Inline Q&A state ── */
-  const [qaQuestion, setQaQuestion]   = useState("");
-  const [qaAnswer,   setQaAnswer]     = useState("");
-  const [qaLoading,  setQaLoading]    = useState(false);
-  const [qaError,    setQaError]      = useState("");
-
   const accent  = char.accentHex || "#D4AF37";
 
   /* ── Audio — auto-plays on open, stops on close ── */
@@ -90,53 +84,7 @@ const CharacterModal = ({ char, sceneImage, onStart, onClose }: Props) => {
     ? `✨ Ask: ${customPrompt.trim().slice(0,28)}${customPrompt.trim().length>28?"…":""}`
     : hasPrompt ? `✨ ${char.prompts[selectedIdx!].label}` : "✨ Select a story above";
 
-  /* ── Inline Q&A — Gemini answers questions about the character ── */
-  const handleAskQuestion = async () => {
-    const q = qaQuestion.trim();
-    if (!q || qaLoading) return;
-    setQaLoading(true);
-    setQaAnswer("");
-    setQaError("");
-    try {
-      const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
-      if (!apiKey) {
-        setQaError("AI not configured.");
-        setQaLoading(false);
-        return;
-      }
-      const systemPrompt = `You are a wise scholar of the Mahabharata speaking about ${char.name}. 
-Answer questions about ${char.name}'s character, motivations, philosophy, and role in the epic.
-Keep answers concise (3-5 sentences), insightful, and grounded in the original text.
-Speak in a thoughtful, literary tone — not academic, not casual. No bullet points.`;
-
-      const res = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key=${apiKey}`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            system_instruction: { parts: [{ text: systemPrompt }] },
-            contents: [{ role: "user", parts: [{ text: q }] }],
-            generationConfig: { temperature: 0.7, maxOutputTokens: 512, thinkingConfig: { thinkingBudget: 0 } },
-          }),
-        }
-      );
-      const data = await res.json();
-      const raw = data?.candidates?.[0]?.content?.parts?.[0]?.text ?? "";
-      const cleaned = raw.replace(/\*\*(.*?)\*\*/g,"$1").replace(/\*(.*?)\*/g,"$1").replace(/#{1,6}\s/g,"").trim();
-      if (cleaned) {
-        setQaAnswer(cleaned);
-      } else {
-        setQaError("No answer returned. Try a different question.");
-      }
-    } catch {
-      setQaError("Something went wrong. Please try again.");
-    } finally {
-      setQaLoading(false);
-    }
-  };
-
-  const handleStart = () => {
+    const handleStart = () => {
     if (!isReady) return;
     const text  = hasCustom ? customPrompt.trim() : char.prompts[selectedIdx!].request;
     const label = hasCustom ? customPrompt.trim().slice(0,40) : char.prompts[selectedIdx!].label;
@@ -363,91 +311,11 @@ Speak in a thoughtful, literary tone — not academic, not casual. No bullet poi
                   </button>
                 ))}
               </div>
-              {/* ── Inline Q&A ── */}
               <div style={{
                 fontFamily:serif, fontSize:"11px", letterSpacing:"0.18em",
                 textTransform:"uppercase", color:`${accent}EE`, marginBottom:"10px",
               }}>
-                Ask {char.name} directly
-              </div>
-              <div style={{ display:"flex", gap:"8px", marginBottom:"10px" }}>
-                <input
-                  type="text"
-                  value={qaQuestion}
-                  onChange={e => { setQaQuestion(e.target.value); setQaAnswer(""); setQaError(""); }}
-                  onKeyDown={e => { if (e.key === "Enter") handleAskQuestion(); }}
-                  placeholder={`e.g. "Why did ${char.name} make that choice?"`}
-                  style={{
-                    flex:1, fontFamily:body, fontSize:"14px",
-                    background:"rgba(255,255,255,0.04)",
-                    border:`1px solid ${qaQuestion.trim() ? accent+"55" : "rgba(255,255,255,0.10)"}`,
-                    borderRadius:"10px", padding:"10px 14px",
-                    color:"rgba(240,230,255,0.9)", outline:"none",
-                    transition:"border-color 0.2s",
-                  }}
-                />
-                <button
-                  onClick={handleAskQuestion}
-                  disabled={!qaQuestion.trim() || qaLoading}
-                  style={{
-                    padding:"10px 16px", borderRadius:"10px", border:"none",
-                    background: qaQuestion.trim() && !qaLoading ? `${accent}DD` : "rgba(255,255,255,0.06)",
-                    color: qaQuestion.trim() && !qaLoading ? "#08040F" : "rgba(200,160,255,0.3)",
-                    cursor: qaQuestion.trim() && !qaLoading ? "pointer" : "not-allowed",
-                    fontFamily:serif, fontSize:"13px", fontWeight:700,
-                    transition:"all 0.25s", flexShrink:0,
-                  }}
-                >
-                  {qaLoading ? "…" : "Ask"}
-                </button>
-              </div>
-
-              {/* Q&A answer display */}
-              {qaLoading && (
-                <div style={{
-                  padding:"12px 14px", borderRadius:"10px", marginBottom:"12px",
-                  background:"rgba(255,255,255,0.04)",
-                  border:`1px solid ${accent}22`,
-                  fontFamily:body, fontSize:"14px",
-                  color:"rgba(240,230,255,0.6)", fontStyle:"italic",
-                }}>
-                  {char.name} is reflecting…
-                </div>
-              )}
-              {qaAnswer && !qaLoading && (
-                <div style={{
-                  padding:"14px 16px", borderRadius:"10px", marginBottom:"12px",
-                  background:`rgba(${parseInt(accent.slice(1,3),16)},${parseInt(accent.slice(3,5),16)},${parseInt(accent.slice(5,7),16)},0.07)`,
-                  border:`1px solid ${accent}30`,
-                }}>
-                  <p style={{
-                    margin:0, fontFamily:body, fontSize:"14px",
-                    color:"rgba(240,230,255,0.88)", lineHeight:1.65, fontStyle:"italic",
-                  }}>
-                    "{qaAnswer}"
-                  </p>
-                  <p style={{
-                    margin:"8px 0 0", fontFamily:serif, fontSize:"10px",
-                    letterSpacing:"0.15em", color:`${accent}88`, textTransform:"uppercase",
-                  }}>— {char.name}</p>
-                </div>
-              )}
-              {qaError && (
-                <p style={{
-                  fontFamily:body, fontSize:"13px",
-                  color:"rgba(255,100,100,0.8)", marginBottom:"10px",
-                }}>
-                  {qaError}
-                </p>
-              )}
-
-              {/* Story generation section */}
-              <div style={{
-                fontFamily:serif, fontSize:"11px", letterSpacing:"0.18em",
-                textTransform:"uppercase", color:`${accent}AA`, marginBottom:"10px",
-                marginTop:"8px",
-              }}>
-                Or generate a story
+                Or write your own prompt
               </div>
               <textarea
                 value={customPrompt}
@@ -460,7 +328,7 @@ Speak in a thoughtful, literary tone — not academic, not casual. No bullet poi
                   border:`1px solid ${customPrompt.trim()?accent+"55":"rgba(255,255,255,0.08)"}`,
                   borderRadius:"10px", padding:"10px 14px",
                   color:"rgba(240,230,255,0.9)", resize:"none", outline:"none",
-                  marginBottom:"12px", transition:"border-color 0.2s", boxSizing:"border-box",
+                  marginBottom:"16px", transition:"border-color 0.2s", boxSizing:"border-box",
                 }}
               />
               <button className="cm-cta" onClick={handleStart} disabled={!isReady} style={{

@@ -1,7 +1,7 @@
-import { memo } from "react";
+import { memo, useState, useCallback } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { ArrowRight, BookOpen, Sparkles } from "lucide-react";
+import { ArrowRight, BookOpen, Sparkles, MessageCircle, Send } from "lucide-react";
 import type { Character } from "@/data/characters";
 import { resolveImage } from "@/utils/images";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
@@ -10,6 +10,143 @@ import CharacterStatBars from "./CharacterStatBars";
 
 /* Characters whose result can come from the quiz */
 const QUIZ_CHARACTER_IDS = new Set(["karna", "krishna", "arjuna", "draupadi", "bhishma"]);
+
+/* ── Inline Q&A component ── */
+interface QAProps { character: Character; isDark: boolean; }
+const CharacterQA = ({ character, isDark }: QAProps) => {
+  const [question, setQuestion] = useState("");
+  const [answer,   setAnswer]   = useState("");
+  const [loading,  setLoading]  = useState(false);
+  const [error,    setError]    = useState("");
+
+  const ask = useCallback(async () => {
+    const q = question.trim();
+    if (!q || loading) return;
+    setLoading(true); setAnswer(""); setError("");
+    try {
+      const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
+      if (!apiKey) { setError("AI not configured."); setLoading(false); return; }
+
+      const system = `You are a wise scholar of the Mahabharata. Answer questions about ${character.name} — their character, choices, philosophy, and role in the epic. Keep answers to 3-5 sentences, insightful and grounded in the original text. Literary tone, no bullet points.`;
+
+      const res = await fetch(
+        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key=${apiKey}`,
+        {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({
+            system_instruction: { parts: [{ text: system }] },
+            contents: [{ role: "user", parts: [{ text: q }] }],
+            generationConfig: { temperature: 0.75, maxOutputTokens: 512, thinkingConfig: { thinkingBudget: 0 } },
+          }),
+        }
+      );
+      const data = await res.json();
+      const raw = data?.candidates?.[0]?.content?.parts?.[0]?.text ?? "";
+      const cleaned = raw.replace(/\*\*(.*?)\*\*/g,"$1").replace(/\*(.*?)\*/g,"$1").replace(/#{1,6}\s/g,"").trim();
+      cleaned ? setAnswer(cleaned) : setError("No answer returned. Try rephrasing.");
+    } catch { setError("Something went wrong. Please try again."); }
+    finally { setLoading(false); }
+  }, [question, loading, character.name]);
+
+  return (
+    <div
+      className="rounded-xl p-5 mb-8"
+      style={{
+        background: `linear-gradient(135deg, rgba(${character.accentRgb},0.06), rgba(${character.accentRgb},0.02))`,
+        border: `1px solid rgba(${character.accentRgb},0.18)`,
+        position: "relative", overflow: "hidden",
+      }}
+    >
+      {/* Top accent line */}
+      <div className="absolute top-0 left-0 right-0 h-px" style={{
+        background: `linear-gradient(to right, transparent, rgba(${character.accentRgb},0.5), transparent)`,
+      }} />
+
+      {/* Label */}
+      <div className="flex items-center gap-2 mb-3">
+        <MessageCircle size={12} style={{ color: character.accentHex }} />
+        <span className="font-heading text-[10px] tracking-[0.28em] uppercase"
+          style={{ color: `rgba(${character.accentRgb},0.65)` }}>
+          Ask about {character.name}
+        </span>
+      </div>
+
+      {/* Input row */}
+      <div className="flex gap-2 mb-3">
+        <input
+          type="text"
+          value={question}
+          onChange={e => { setQuestion(e.target.value); setAnswer(""); setError(""); }}
+          onKeyDown={e => e.key === "Enter" && ask()}
+          placeholder={`e.g. "Why did ${character.name} make that choice?"`}
+          className="flex-1 rounded-lg px-3 py-2.5 text-sm outline-none transition-all duration-200"
+          style={{
+            background: isDark ? "rgba(255,255,255,0.05)" : "rgba(0,0,0,0.04)",
+            border: `1px solid rgba(${character.accentRgb},${question.trim() ? "0.40" : "0.15"})`,
+            color: "hsl(var(--foreground))",
+            fontFamily: "'Cormorant Garamond', Georgia, serif",
+            fontSize: "15px",
+          }}
+        />
+        <button
+          onClick={ask}
+          disabled={!question.trim() || loading}
+          className="rounded-lg px-3 py-2.5 transition-all duration-200 flex-shrink-0"
+          style={{
+            background: question.trim() && !loading ? character.accentHex : `rgba(${character.accentRgb},0.12)`,
+            color: question.trim() && !loading ? "#0C0900" : `rgba(${character.accentRgb},0.4)`,
+            border: "none", cursor: question.trim() && !loading ? "pointer" : "not-allowed",
+          }}
+        >
+          <Send size={15} />
+        </button>
+      </div>
+
+      {/* Loading */}
+      {loading && (
+        <p className="text-sm" style={{
+          fontFamily: "'Cormorant Garamond', Georgia, serif",
+          fontStyle: "italic",
+          color: `rgba(${character.accentRgb},0.55)`,
+        }}>
+          {character.name} is reflecting…
+        </p>
+      )}
+
+      {/* Answer */}
+      {answer && !loading && (
+        <div className="rounded-lg p-4" style={{
+          background: `rgba(${character.accentRgb},0.07)`,
+          border: `1px solid rgba(${character.accentRgb},0.18)`,
+        }}>
+          <p style={{
+            margin: 0,
+            fontFamily: "'Cormorant Garamond', Georgia, serif",
+            fontSize: "clamp(15px, 1.7vw, 17px)",
+            fontStyle: "italic",
+            color: isDark ? "rgba(253,230,138,0.85)" : "rgba(42,31,14,0.85)",
+            lineHeight: 1.7,
+          }}>
+            "{answer}"
+          </p>
+          <p className="font-heading text-[10px] tracking-[0.18em] uppercase mt-2"
+            style={{ color: `rgba(${character.accentRgb},0.6)` }}>
+            — {character.name}
+          </p>
+        </div>
+      )}
+
+      {/* Error */}
+      {error && (
+        <p className="text-sm mt-1" style={{ color: "rgba(220,80,80,0.8)",
+          fontFamily: "'Cormorant Garamond', Georgia, serif" }}>
+          {error}
+        </p>
+      )}
+    </div>
+  );
+};
 
 interface CharacterProfileProps {
   character: Character;
@@ -398,6 +535,8 @@ const CharacterProfile = ({ character, index }: CharacterProfileProps) => {
             )}
 
             {/* CTA */}
+            <CharacterQA character={character} isDark={isDark} />
+
             <Link
               to={`/blog/${character.articleSlug}`}
               className="inline-flex items-center gap-3 group"
