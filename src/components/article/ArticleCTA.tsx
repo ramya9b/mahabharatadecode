@@ -13,6 +13,14 @@ const ArticleCTA = () => {
     if (email) setSubmitted(true);
   };
 
+  /* ── All text on this forced-dark card must use explicit rgba cream/gold values.
+     Never use text-foreground / text-muted-foreground on forced dark backgrounds —
+     those CSS variables resolve to dark brown in light mode. ── */
+  const heading   = "rgba(245,237,218,0.95)";
+  const body      = "rgba(245,237,218,0.80)";
+  const muted     = "rgba(245,237,218,0.50)";
+  const faint     = "rgba(245,237,218,0.35)";
+
   return (
     <section
       ref={ref}
@@ -49,7 +57,8 @@ const ArticleCTA = () => {
 
           <div className="relative z-10 px-8 md:px-14 py-12 md:py-14">
             <div className="grid md:grid-cols-2 gap-10 md:gap-16 items-center">
-              {/* Subscribe */}
+
+              {/* ── Subscribe side ── */}
               <div>
                 <div className="flex items-center gap-3 mb-4">
                   <div
@@ -61,20 +70,39 @@ const ArticleCTA = () => {
                   >
                     <Mail size={15} className="text-primary" />
                   </div>
-                  <span className="section-label !mb-0">Daily Wisdom</span>
+                  <span
+                    className="font-heading text-[11px] tracking-[0.35em] uppercase font-medium"
+                    style={{ color: "rgba(212,175,55,0.75)" }}
+                  >
+                    Daily Wisdom
+                  </span>
                 </div>
 
                 <h3
-                  className="font-heading font-bold text-foreground mb-3"
-                  style={{ fontSize: "clamp(22px, 2.5vw, 30px)" }}
+                  className="font-heading font-bold mb-3"
+                  style={{ fontSize: "clamp(22px, 2.5vw, 30px)", color: heading }}
                 >
                   Get Daily Wisdom
-                  <span className="gold-text block">Delivered Free</span>
+                  <span
+                    className="block"
+                    style={{
+                      background: "linear-gradient(135deg, #E8C547 0%, #D4AF37 45%, #B8922A 100%)",
+                      WebkitBackgroundClip: "text",
+                      WebkitTextFillColor: "transparent",
+                      backgroundClip: "text",
+                    }}
+                  >
+                    Delivered Free
+                  </span>
                 </h3>
 
                 <p
-                  className="text-muted-foreground leading-relaxed mb-6"
-                  style={{ fontSize: "17px" }}
+                  className="leading-relaxed mb-6"
+                  style={{
+                    fontSize: "17px",
+                    color: body,
+                    fontFamily: "'Cormorant Garamond', Georgia, serif",
+                  }}
                 >
                   One timeless insight from the Mahabharata in your inbox every Friday morning.
                   Ancient knowledge for the modern mind. Free always. No noise. Just depth.
@@ -85,27 +113,30 @@ const ArticleCTA = () => {
                     <div
                       className="flex-1 flex items-center gap-2.5 rounded-full px-4 py-3"
                       style={{
-                        background: "rgba(139,105,20,0.06)",
-                        border: "1px solid rgba(251,191,36,0.14)",
+                        background: "rgba(245,237,218,0.06)",
+                        border: "1px solid rgba(212,175,55,0.20)",
                       }}
                     >
-                      <Mail size={13} className="text-muted-foreground flex-shrink-0" />
+                      <Mail size={13} style={{ color: muted, flexShrink: 0 }} />
                       <input
                         type="email"
                         value={email}
                         onChange={(e) => setEmail(e.target.value)}
                         placeholder="Your email address"
                         required
-                        className="bg-transparent text-sm text-foreground placeholder:text-muted-foreground outline-none w-full"
-                        style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}
+                        className="bg-transparent text-sm outline-none w-full"
+                        style={{
+                          fontFamily: "'Cormorant Garamond', Georgia, serif",
+                          color: heading,
+                        }}
                       />
                     </div>
                     <button
                       type="submit"
-                      className="px-6 py-3 rounded-full text-primary-foreground text-sm font-semibold tracking-wide transition-all duration-300 hover:-translate-y-0.5 flex-shrink-0"
+                      className="px-6 py-3 rounded-full text-sm font-semibold tracking-wide transition-all duration-300 hover:-translate-y-0.5 flex-shrink-0"
                       style={{
-                        background:
-                          "linear-gradient(135deg, #E8C547, #D4AF37, #B8922A)",
+                        background: "linear-gradient(135deg, #E8C547, #D4AF37, #B8922A)",
+                        color: "#08040F",
                         fontFamily: "'Cinzel', serif",
                         boxShadow: "0 0 20px rgba(212,175,55,0.3)",
                       }}
@@ -122,18 +153,21 @@ const ArticleCTA = () => {
                     }}
                   >
                     <span className="text-primary">✦</span>
-                    <p className="text-foreground/80 text-sm">
+                    <p style={{ color: body, fontSize: "14px" }}>
                       You're in. First wisdom arrives tomorrow morning.
                     </p>
                   </div>
                 )}
 
-                <p className="text-muted-foreground/40 text-xs mt-4 tracking-wide">
+                <p
+                  className="text-xs mt-4 tracking-wide"
+                  style={{ color: faint }}
+                >
                   No spam. Unsubscribe anytime.
                 </p>
               </div>
 
-              {/* Divider */}
+              {/* ── Vertical divider ── */}
               <div className="hidden md:flex items-center justify-center">
                 <div
                   className="h-32 w-px"
@@ -144,7 +178,7 @@ const ArticleCTA = () => {
                 />
               </div>
 
-              {/* Read More */}
+              {/* ── Read More side ── */}
               <div className="md:col-start-2 md:row-start-1 flex flex-col justify-center">
                 <div className="flex items-center gap-3 mb-4">
                   <div
@@ -157,16 +191,19 @@ const ArticleCTA = () => {
                     <BookOpen size={15} className="text-red-400" />
                   </div>
                   <span
-                    className="text-[11px] tracking-[0.3em] uppercase text-red-400/70"
-                    style={{ fontFamily: "'Cinzel', serif" }}
+                    className="text-[11px] tracking-[0.3em] uppercase"
+                    style={{
+                      fontFamily: "'Cinzel', serif",
+                      color: "rgba(220,130,130,0.70)",
+                    }}
                   >
                     Continue Reading
                   </span>
                 </div>
 
                 <h3
-                  className="font-heading font-bold text-foreground mb-3"
-                  style={{ fontSize: "clamp(22px, 2.5vw, 28px)" }}
+                  className="font-heading font-bold mb-3"
+                  style={{ fontSize: "clamp(22px, 2.5vw, 28px)", color: heading }}
                 >
                   Explore More{" "}
                   <span
@@ -183,8 +220,12 @@ const ArticleCTA = () => {
                 </h3>
 
                 <p
-                  className="text-muted-foreground leading-relaxed mb-7"
-                  style={{ fontSize: "17px" }}
+                  className="leading-relaxed mb-7"
+                  style={{
+                    fontSize: "17px",
+                    color: body,
+                    fontFamily: "'Cormorant Garamond', Georgia, serif",
+                  }}
                 >
                   Eight deep articles on the Mahabharata's greatest characters, most
                   powerful slokas, and most transformative life lessons.
@@ -195,21 +236,24 @@ const ArticleCTA = () => {
                   className="inline-flex items-center gap-3 group"
                 >
                   <span
-                    className="px-7 py-3.5 rounded-full text-foreground text-sm font-medium tracking-wide transition-all duration-300 group-hover:border-primary/50 group-hover:text-primary"
+                    className="px-7 py-3.5 rounded-full text-sm font-medium tracking-wide transition-all duration-300 group-hover:border-primary/50"
                     style={{
-                      background: "rgba(139,105,20,0.06)",
-                      border: "1px solid rgba(251,191,36,0.14)",
+                      background: "rgba(212,175,55,0.08)",
+                      border: "1px solid rgba(212,175,55,0.22)",
                       fontFamily: "'Cinzel', serif",
+                      color: "rgba(253,230,138,0.88)",
                     }}
                   >
                     Read More Stories
                   </span>
                   <ArrowRight
                     size={16}
-                    className="text-muted-foreground group-hover:text-primary group-hover:translate-x-1 transition-all duration-300"
+                    style={{ color: muted }}
+                    className="group-hover:text-primary group-hover:translate-x-1 transition-all duration-300"
                   />
                 </Link>
               </div>
+
             </div>
           </div>
         </div>
