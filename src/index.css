@@ -439,10 +439,11 @@
   }
 
   .prose-mahabharata {
-    @apply text-muted-foreground leading-relaxed;
+    @apply text-foreground leading-relaxed;
   }
   .prose-mahabharata p {
     @apply mb-6 text-[18px];
+    color: hsl(var(--foreground) / 0.88);
   }
   .prose-mahabharata h2 {
     @apply font-heading text-2xl text-foreground mt-10 mb-4 gold-text;
