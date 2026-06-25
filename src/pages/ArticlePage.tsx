@@ -250,8 +250,12 @@ const LifeLessonsList = ({ lessons }: { lessons: string[] }) => {
             <BookOpen size={14} className="text-primary" />
           </div>
           <h3
-            className="font-heading text-foreground font-semibold"
-            style={{ fontSize: "17px", letterSpacing: "0.06em" }}
+            className="font-heading font-semibold"
+            style={{
+              fontSize: "17px",
+              letterSpacing: "0.06em",
+              color: "rgba(253,230,138,0.95)",
+            }}
           >
             Take These With You
           </h3>
@@ -260,16 +264,17 @@ const LifeLessonsList = ({ lessons }: { lessons: string[] }) => {
           {lessons.map((lesson, i) => (
             <li key={i} className="flex items-start gap-3">
               <span
-                className="font-heading text-[10px] text-primary/45 mt-0.5 flex-shrink-0"
-                style={{ letterSpacing: "0.2em" }}
+                className="font-heading text-[10px] mt-0.5 flex-shrink-0"
+                style={{ letterSpacing: "0.2em", color: "rgba(212,175,55,0.55)" }}
               >
                 {String(i + 1).padStart(2, "0")}
               </span>
               <span
-                className="text-muted-foreground leading-relaxed"
                 style={{
                   fontSize: "17px",
                   fontFamily: "'Cormorant Garamond', Georgia, serif",
+                  color: "rgba(245,237,218,0.88)",
+                  lineHeight: 1.75,
                 }}
               >
                 {lesson}
