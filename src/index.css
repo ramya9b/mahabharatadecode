@@ -13,7 +13,7 @@
      ══════════════════════════════════════════════════════ */
   :root {
     --background: 38 52% 95%;       /* #FAF5EC warm cream */
-    --foreground: 28 72% 10%;       /* slightly richer dark brown */
+    --foreground: 28 72% 7%;        /* darkened for better contrast on parchment */
 
     --card: 38 45% 92%;             /* #F5EDDA parchment card */
     --card-foreground: 28 72% 10%;
@@ -284,6 +284,16 @@
 }
 
 @layer components {
+  /* ── Dark card text utilities ──────────────────────────────────────────
+     Use these on ANY component with a forced dark background.
+     NEVER use text-foreground/text-muted-foreground on forced dark cards.
+     ─────────────────────────────────────────────────────────────────── */
+  .dark-card-heading   { color: rgba(253,230,138,0.95); }
+  .dark-card-body      { color: rgba(245,237,218,0.88); }
+  .dark-card-secondary { color: rgba(245,237,218,0.65); }
+  .dark-card-label     { color: rgba(212,175,55,0.65);  }
+  .dark-card-faint     { color: rgba(245,237,218,0.38); }
+
   .glass-card {
     background: rgba(245, 237, 218, 0.92);   /* LIGHT mode — cream parchment */
     border: 1px solid rgba(217, 119, 6, 0.22);

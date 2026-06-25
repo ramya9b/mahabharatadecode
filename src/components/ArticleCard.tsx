@@ -168,13 +168,13 @@ const ArticleCard = ({ article, variant = "default" }: ArticleCardProps) => {
         {/* Meta row */}
         <div style={{ display:"flex", alignItems:"center", gap:"8px", marginBottom:"10px" }}>
           <span style={{ display:"flex", alignItems:"center", gap:"5px",
-                         color:"rgba(253,230,138,0.50)", fontSize:"11px",
+                         color:"rgba(253,230,138,0.75)", fontSize:"11px",
                          fontFamily:"'Cinzel',serif", letterSpacing:"0.06em" }}>
             <Clock size={11} />
             {article.readTime} min read
           </span>
-          <span style={{ color:"rgba(253,230,138,0.25)", fontSize:"12px" }}>·</span>
-          <span style={{ color:"rgba(253,230,138,0.45)", fontSize:"11px",
+          <span style={{ color:"rgba(253,230,138,0.40)", fontSize:"12px" }}>·</span>
+          <span style={{ color:"rgba(253,230,138,0.70)", fontSize:"11px",
                          fontFamily:"'Cinzel',serif", letterSpacing:"0.04em" }}>
             {article.publishDate}
           </span>
@@ -197,7 +197,7 @@ const ArticleCard = ({ article, variant = "default" }: ArticleCardProps) => {
         <p style={{
           fontFamily:"'Cormorant Garamond',Georgia,serif",
           fontSize:"15px", lineHeight:1.75,
-          color:"rgba(253,230,138,0.62)",
+          color:"rgba(253,230,138,0.82)",
           flex:1,
           display:"-webkit-box",
           WebkitLineClamp:3,
@@ -221,7 +221,7 @@ const ArticleCard = ({ article, variant = "default" }: ArticleCardProps) => {
             Read More →
           </span>
           <div style={{ display:"flex", alignItems:"center", gap:"5px",
-                        color:"rgba(253,230,138,0.35)" }}>
+                        color:"rgba(253,230,138,0.65)" }}>
             <Tag size={11} />
             <span style={{ fontSize:"10px", letterSpacing:"0.08em",
                            fontFamily:"'Cinzel',serif" }}>

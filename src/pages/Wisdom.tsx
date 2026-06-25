@@ -141,7 +141,7 @@ const WisdomHero = () => {
                 </div>
                 <div
                   className="font-heading text-[9px] tracking-[0.22em] uppercase mt-1"
-                  style={{ color: isDark ? "rgba(253,230,138,0.45)" : "rgba(42,31,14,0.50)" }}
+                  style={{ color: isDark ? "rgba(253,230,138,0.70)" : "rgba(42,31,14,0.65)" }}
                 >
                   {t(meta.labelKey).split(" ")[0]}
                 </div>
