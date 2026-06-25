@@ -85,7 +85,7 @@ const Navbar = () => {
   const pillBorder = "rgba(212,175,55,0.22)";
   const pillShadow = "0 8px 40px rgba(0,0,0,0.45), 0 0 0 1px rgba(212,175,55,0.12)";
 
-  const linkColor  = "rgba(232,210,160,0.78)";
+  const linkColor  = "rgba(245,237,218,0.92)";
   const linkActive = "#FBBF24";
 
   const ctaBg      = "linear-gradient(90deg,#FBBF24 0%,#F97316 35%,#EC4899 65%,#A78BFA 100%)";
@@ -208,7 +208,7 @@ const Navbar = () => {
                   }}
                   onMouseEnter={e => {
                     if (!active)
-                      (e.currentTarget as HTMLAnchorElement).style.color = "rgba(220,195,140,0.9)";
+                      (e.currentTarget as HTMLAnchorElement).style.color = "rgba(255,245,220,1.0)";
                   }}
                   onMouseLeave={e => {
                     if (!active)
@@ -245,7 +245,7 @@ const Navbar = () => {
                 alignItems: "center",
                 gap: "5px",
                 border: "1px solid rgba(212,175,55,0.28)",
-                color: "rgba(212,175,55,0.75)",
+                color: "rgba(212,175,55,0.90)",
                 background: "transparent",
                 transition: "all 0.25s",
               }}
@@ -394,7 +394,7 @@ const Navbar = () => {
                 textTransform: "uppercase",
                 textDecoration: "none",
                 borderBottom: "1px solid rgba(212,175,55,0.1)",
-                color: isActive(to) ? "#FBBF24" : "rgba(220,195,140,0.60)",
+                color: isActive(to) ? "#FBBF24" : "rgba(245,237,218,0.88)",
                 transition: "color 0.2s",
               }}
             >
