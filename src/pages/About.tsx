@@ -244,9 +244,9 @@ const OriginSection = () => {
               <div className="absolute inset-0" style={{ background: "linear-gradient(to top, rgba(8,6,26,0.9) 0%, rgba(8,6,26,0.2) 50%, transparent 80%)" }} />
               {/* Caption */}
               <div className="absolute bottom-0 left-0 right-0 p-8">
-                <p className="font-heading text-[10px] tracking-[0.3em] uppercase text-primary/50 mb-2">The character that started everything</p>
-                <p className="font-heading text-xl text-foreground mb-1">Karna</p>
-                <p className="text-muted-foreground text-sm" style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontStyle: "italic" }}>
+                <p className="font-heading text-[10px] tracking-[0.3em] uppercase text-primary/70 mb-2">The character that started everything</p>
+                <p className="font-heading text-xl mb-1" style={{ color: "rgba(253,230,138,0.95)" }}>Karna</p>
+                <p style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontStyle: "italic", fontSize: "14px", color: "rgba(245,237,218,0.75)" }}>
                   "The greatest warrior no one talks about enough."
                 </p>
               </div>
