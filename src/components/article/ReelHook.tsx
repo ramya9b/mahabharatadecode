@@ -45,10 +45,11 @@ const ReelHook = ({ hook, supporting }: ReelHookProps) => {
 
           {/* Hook */}
           <p
-            className="text-foreground font-heading font-semibold leading-snug mb-6"
+            className="font-heading font-semibold leading-snug mb-6"
             style={{
               fontSize: "clamp(20px, 2.8vw, 30px)",
               fontStyle: "italic",
+              color: "rgba(253,230,138,0.95)",
             }}
           >
             "{hook}"

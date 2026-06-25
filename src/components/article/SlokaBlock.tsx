@@ -72,7 +72,7 @@ const SlokaBlock = ({ sloka }: SlokaBlockProps) => {
               style={{
                 fontFamily: "'Noto Serif Devanagari', 'Noto Sans Devanagari', 'Siddhanta', 'Sanskrit 2003', 'Cinzel', serif",
                 fontSize: "clamp(18px, 2.5vw, 26px)",
-                color: "rgba(139,98,8,0.9)",
+                color: "rgba(253,230,138,0.92)",
                 unicodeBidi: "normal",
                 direction: "ltr",
               }}
@@ -110,11 +110,12 @@ const SlokaBlock = ({ sloka }: SlokaBlockProps) => {
 
         {/* Translation */}
         <p
-          className="text-foreground/80 leading-relaxed max-w-xl mx-auto"
+          className="leading-relaxed max-w-xl mx-auto"
           style={{
             fontSize: "clamp(15px, 1.7vw, 18px)",
             fontFamily: "'Cormorant Garamond', Georgia, serif",
             fontStyle: "italic",
+            color: "rgba(245,237,218,0.85)",
           }}
         >
           "{sloka.translation}"
