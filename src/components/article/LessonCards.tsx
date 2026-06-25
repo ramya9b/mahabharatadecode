@@ -3,6 +3,7 @@ import { useScrollReveal, useStaggeredReveal } from "@/hooks/useScrollReveal";
 
 interface LessonCardsProps {
   lessons: KeyLesson[];
+  characterName?: string;
 }
 
 const accentStyles = {
@@ -89,7 +90,7 @@ const LessonCard = ({
   );
 };
 
-const LessonCards = ({ lessons }: LessonCardsProps) => {
+const LessonCards = ({ lessons, characterName = "the Mahabharata" }: LessonCardsProps) => {
   const headerRef = useScrollReveal<HTMLDivElement>();
   const gridRef = useStaggeredReveal(lessons.length);
 
@@ -114,7 +115,7 @@ const LessonCards = ({ lessons }: LessonCardsProps) => {
           className="font-heading font-bold text-foreground leading-tight"
           style={{ fontSize: "clamp(28px, 3.5vw, 42px)" }}
         >
-          What Karna's Story
+          What {characterName}'s Story
           <span className="gold-text"> Teaches Us</span>
         </h2>
         <p className="text-muted-foreground mt-4 leading-relaxed" style={{ fontSize: "17px" }}>

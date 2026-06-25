@@ -157,7 +157,17 @@ const ArticlePage = () => {
 
         {/* Key Lesson Cards */}
         {article.keyLessons && article.keyLessons.length > 0 && (
-          <LessonCards lessons={article.keyLessons} />
+          <LessonCards
+            lessons={article.keyLessons}
+            characterName={
+              article.imageKey === "karna"    ? "Karna"     :
+              article.imageKey === "krishna"  ? "Krishna"   :
+              article.imageKey === "arjuna"   ? "Arjuna"    :
+              article.imageKey === "draupadi" ? "Draupadi"  :
+              article.imageKey === "bhishma"  ? "Bhishma"   :
+              "the Mahabharata"
+            }
+          />
         )}
 
         {/* Modern Relevance */}
