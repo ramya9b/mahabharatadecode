@@ -24,15 +24,15 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     const root = document.documentElement;
     if (theme === "dark") {
       root.classList.add("dark");
-      /* Override any lingering anti-FOUC inline style */
-      root.style.background = "#0C0900";
+      root.removeAttribute("data-theme");
       root.style.colorScheme = "dark";
     } else {
       root.classList.remove("dark");
-      /* Must clear inline style — otherwise it overrides CSS variables */
-      root.style.background = "#FAF5EC";
+      root.setAttribute("data-theme", "light");
       root.style.colorScheme = "light";
     }
+    /* Sync background on html for overscroll area and FOUC prevention */
+    root.style.background = theme === "dark" ? "#0C0900" : "#FAF5EC";
     localStorage.setItem("mbd-theme", theme);
     document
       .querySelector('meta[name="theme-color"]')

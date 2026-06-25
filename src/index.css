@@ -151,7 +151,7 @@
   }
 
   body {
-    @apply bg-background text-foreground;
+    @apply text-foreground;
     /* ── Cormorant Garamond: explicit declaration ensures font loads ── */
     font-family: 'Cormorant Garamond', Georgia, 'Times New Roman', serif;
     -webkit-font-smoothing: antialiased;
@@ -281,6 +281,13 @@
       text-align: center;
     }
   }
+}
+
+/* ── Body background — intentionally OUTSIDE @layer so it wins over
+   the inline <style>body{background:transparent}</style> in index.html.
+   CSS Cascade Level 4: unlayered rules > layered (@layer base) rules. ── */
+body {
+  background-color: hsl(var(--background));
 }
 
 @layer components {
