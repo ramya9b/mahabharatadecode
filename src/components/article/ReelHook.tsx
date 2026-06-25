@@ -56,10 +56,13 @@ const ReelHook = ({ hook, supporting }: ReelHookProps) => {
 
           {/* Supporting */}
           <p
-            className="text-muted-foreground leading-relaxed max-w-lg mx-auto"
             style={{
               fontSize: "clamp(17px, 1.9vw, 19px)",
               fontFamily: "'Cormorant Garamond', Georgia, serif",
+              color: "rgba(245,237,218,0.72)",
+              lineHeight: 1.75,
+              maxWidth: "32rem",
+              margin: "0 auto",
             }}
           >
             {supporting}

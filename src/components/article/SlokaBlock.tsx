@@ -87,11 +87,13 @@ const SlokaBlock = ({ sloka }: SlokaBlockProps) => {
           {sloka.transliteration.split("\n").map((line, i) => (
             <p
               key={i}
-              className="leading-relaxed text-muted-foreground italic"
               style={{
                 fontSize: "clamp(13px, 1.4vw, 15px)",
                 fontFamily: "'Cormorant Garamond', Georgia, serif",
                 letterSpacing: "0.04em",
+                color: "rgba(245,237,218,0.65)",
+                fontStyle: "italic",
+                lineHeight: 1.75,
               }}
             >
               {line}
