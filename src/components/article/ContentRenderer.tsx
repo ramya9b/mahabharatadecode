@@ -5,7 +5,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const Para = ({ text }: { text: string }) => (
   <p
-    className="text-foreground/75 leading-[1.95] mb-7"
+    className="text-foreground/85 leading-[1.95] mb-7"
     style={{ fontSize: "clamp(16px, 1.8vw, 19px)", fontFamily: "'Cormorant Garamond', Georgia, serif" }}
   >
     {text}

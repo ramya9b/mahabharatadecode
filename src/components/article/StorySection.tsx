@@ -54,7 +54,7 @@ const StoryBlock = ({
         <div className="h-px flex-1" style={{ background: meta.border }} />
         <span
           className="font-heading text-[10px] tracking-[0.28em] uppercase flex-shrink-0"
-          style={{ color: meta.border === "rgba(212,175,55,0.35)" ? "rgba(212,175,55,0.7)" : "rgba(255,255,255,0.25)" }}
+          style={{ color: "rgba(212,175,55,0.60)" }}
         >
           {block.label}
         </span>
@@ -67,8 +67,8 @@ const StoryBlock = ({
             key={i}
             className={`leading-[1.9] ${
               i === 0 && block.section === "introduction"
-                ? "text-foreground/85 font-medium"
-                : "text-foreground/72"
+                ? "text-foreground/90 font-medium"
+                : "text-foreground/82"
             }`}
             style={{
               fontSize: i === 0 && block.section === "introduction"
