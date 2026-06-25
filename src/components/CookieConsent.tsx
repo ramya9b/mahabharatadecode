@@ -54,7 +54,8 @@ const CookieConsent = () => {
           </button>
           <button
             onClick={handleDecline}
-            className="p-2 rounded-full text-muted-foreground hover:text-primary hover:bg-primary/10 transition-colors"
+            className="p-2 rounded-full hover:text-primary hover:bg-primary/10 transition-colors"
+            style={{ color: "rgba(245,237,218,0.55)" }}
             aria-label={t("cookie.decline")}
           >
             <X size={16} />

@@ -124,7 +124,7 @@ const LifeLessons = () => {
                 fontFamily: "'Cinzel',serif",
                 fontSize: "10px",
                 letterSpacing: "0.18em",
-                color: "rgba(251,191,36,0.55)",
+                color: "rgba(251,191,36,0.70)",
                 textTransform: "uppercase",
               }}>
                 {lesson.chapter}
