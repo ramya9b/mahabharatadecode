@@ -622,7 +622,7 @@ const CreatorSection = () => {
             {/* Text */}
             <div className="space-y-5">
               {[
-                "My father used to read the Bhagavad Gita every day after lunch — out loud, for my mother. I would sit nearby and listen.",
+                "My father began every reading from Gita Makarandam with the Gita Devi Prarthana — Sri Vidyaprakasanandagiri Swamiji's Telugu invocation addressing Gita Devi as Talli, as Jaganmatha, as Chinmaya Swaroopini. He would read it aloud every day after lunch, for my mother. I would sit nearby and listen.",
                 "I did not know Sanskrit. I did not understand most of the words. But somehow I always understood what the sloka meant. The meaning would just arrive — before the explanation.",
                 "I did not think much of it at the time. It was just what our home sounded like after lunch.",
                 "Years later, when I started asking harder questions — about loyalty, about doing the right thing when the right thing is not clear, about why good people end up on the wrong side — I kept finding that the Mahabharata had already asked them. More honestly than anything else I had read.",
