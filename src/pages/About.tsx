@@ -391,7 +391,7 @@ const PillarsSection = () => {
    SECTION 6 — THE PROCESS (how each article is crafted)
 ───────────────────────────────────────────────────────── */
 const steps = [
-  { num: "01", icon: BookOpen,   title: "Source the Story",       body: "We go back to the original Sanskrit parva and study the full scene — not just the famous version, but the uncomfortable details that popular retellings omit." },
+  { num: "01", icon: BookOpen,   title: "Source the Story",       body: "We go back to the original Sanskrit parva and study the full scene — not just the popular version. Each article cites the specific Parva and, where relevant, the translation used (primarily Bibek Debroy's Penguin edition and K.M. Ganguli's public domain translation)." },
   { num: "02", icon: Heart,      title: "Find the Human Moment",  body: "Every great story has one scene where everything changes. We find it, sit with it, and ask: why does this still make us feel something 5,000 years later?" },
   { num: "03", icon: Lightbulb,  title: "Extract the Turning Point", body: "The Mahabharata works because every character faces an impossible choice. We name that choice exactly, so the reader can hold it clearly." },
   { num: "04", icon: Compass,    title: "Bridge to Modern Life",  body: "We identify three specific modern scenarios where the ancient lesson lives — in careers, relationships, and personal identity — and write them as real situations." },
@@ -526,7 +526,7 @@ const values = [
   { title: "Story over Information",     body: "Facts are forgotten. Experiences are carried. Every article is built to be an experience." },
   { title: "Depth over Frequency",       body: "We'd rather publish one thing that matters than ten things that fill a slot." },
   { title: "Modern over Nostalgic",      body: "We are not preservationists. We are translators. The Mahabharata is alive, not archived." },
-  { title: "Human over Algorithmic",     body: "Every word here is written by a person, for a person. No AI-generated content. Ever." },
+  { title: "Human over Algorithmic",     body: "Every article is written by a person. AI is used only for narration (Story Teller) and translation features — never for article content." },
 ];
 
 const ValuesSection = () => {
@@ -640,7 +640,14 @@ const CreatorSection = () => {
               {/* Signature */}
               <div className="pt-4">
                 <div className="h-px w-12 bg-primary/20 mb-5" />
-                <p className="font-heading text-primary/70 text-sm tracking-[0.15em]">— The Author</p>
+                <p className="font-heading text-primary/70 text-sm tracking-[0.15em]">— Ramya, Founder · MahabharataDecoded</p>
+                <a
+                  href="mailto:hello@mahabharatadecoded.com?subject=A thought on your article"
+                  className="inline-flex items-center gap-2 mt-4 text-sm transition-colors hover:text-primary"
+                  style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: "15px", color: "rgba(212,175,55,0.7)", textDecoration: "none" }}
+                >
+                  ✦ Disagree with something? Reply and tell me why →
+                </a>
               </div>
             </div>
           </div>
