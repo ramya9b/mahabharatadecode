@@ -18,31 +18,31 @@ const Index = () => {
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       <Navbar />
+      {/* ── 1. Hero — cinematic entry ── */}
       <HeroSection />
-      <ContinueReadingCard />
+
+      {/* ── 2. Stats — verified numbers only ── */}
       <SocialProofBar />
 
-      {/* ── Story Teller Feature Banner ── */}
-      <StoryTellerBanner />
+      {/* ── 3. Featured Articles — surface content immediately ── */}
+      <FeaturedStories />
 
-      {/* ── Start Reading Banner ── */}
-      <StartReadingBanner />
+      {/* ── 4. Continue Reading — returning visitors ── */}
+      <ContinueReadingCard />
 
-      {/* ── Explore Characters Banner ── */}
-      <ExploreCharactersBanner />
-
-      {/* ── Full Character Grid ── */}
+      {/* ── 5. Characters — visual exploration ── */}
       <CharactersGrid />
 
+      {/* ── 6. Story Teller — AI feature ── */}
+      <StoryTellerBanner />
+
+      {/* ── 7. Daily Wisdom — quick value ── */}
+      <DailyWisdom />
+
+      {/* ── 8. Life Lessons — philosophy hook ── */}
       <LifeLessons />
 
-      {/* ── Story Banner — /story entry point ── */}
-      <StoryBanner />
-
-      <QuizBanner />
-      <VideoSection />
-      <DailyWisdom />
-      {/* ── Newsletter banner — homepage ── */}
+      {/* ── 9. Newsletter ── */}
       <NewsletterSignup variant="banner" source="homepage" />
       <Footer />
     </div>
