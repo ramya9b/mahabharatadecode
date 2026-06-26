@@ -1,6 +1,7 @@
 /* ─────────────────────────────────────────────────────────────
    Subscription + trial state — localStorage-only.
    14-day free trial from first visit; paid plans extend access.
+   5 articles are permanently free — no trial or payment needed.
 ───────────────────────────────────────────────────────────── */
 
 const TRIAL_KEY = "mbd_trial_start";
@@ -9,6 +10,19 @@ const SUB_KEY   = "mbd_subscription";
 const DAY_MS    = 24 * 60 * 60 * 1000;
 export const TRIAL_DAYS = 14;
 const TRIAL_MS  = TRIAL_DAYS * DAY_MS;
+
+/* ── Permanently free articles — no login or payment needed ── */
+export const FREE_ARTICLE_SLUGS: string[] = [
+  "karna-loyalty-vs-self-respect",
+  "who-caused-mahabharata-war",
+  "duryodhana-why-he-was-not-wrong",
+  "bhagavad-gita-lessons-workplace-stress",
+  "draupadi-humiliation-dice-game",
+];
+
+export function isArticleFree(slug: string): boolean {
+  return FREE_ARTICLE_SLUGS.includes(slug);
+}
 
 export type PlanId = "monthly" | "yearly";
 
@@ -22,10 +36,11 @@ export interface Subscription {
 export interface Plan {
   id: PlanId;
   label: string;
-  priceInr: number;       // display price
-  amountPaise: number;    // amount sent to Razorpay
+  priceInr: number;
+  amountPaise: number;
   durationMs: number;
   tagline: string;
+  perMonth: string;
 }
 
 export const PLANS: Record<PlanId, Plan> = {
@@ -36,6 +51,7 @@ export const PLANS: Record<PlanId, Plan> = {
     amountPaise: 9900,
     durationMs: 30 * DAY_MS,
     tagline: "Cancel anytime",
+    perMonth: "₹99/month",
   },
   yearly: {
     id: "yearly",
@@ -43,7 +59,8 @@ export const PLANS: Record<PlanId, Plan> = {
     priceInr: 999,
     amountPaise: 99900,
     durationMs: 365 * DAY_MS,
-    tagline: "Save ₹189 vs monthly",
+    tagline: "Save ₹189 — 2 months free",
+    perMonth: "₹83/month",
   },
 };
 
@@ -56,7 +73,6 @@ const safeStorage = {
   },
 };
 
-/** Read trial start; initialize to "now" on first call. */
 export function getTrialStart(): number {
   const v = safeStorage.get(TRIAL_KEY);
   if (v) {
@@ -101,17 +117,12 @@ export function planExpiry(plan: PlanId): number {
   return Date.now() + PLANS[plan].durationMs;
 }
 
-/* ─────────────────────────────────────────────────────────────
-   Daily story limit for free / trial users
-   Paid subscribers get unlimited stories.
-   Free limit: 3 stories per calendar day (resets at midnight).
-───────────────────────────────────────────────────────────── */
-
+/* ── Daily story limit ── */
 const DAILY_KEY  = "mbd_daily_stories";
 export const FREE_DAILY_LIMIT = 3;
 
 interface DailyRecord {
-  date: string;  // YYYY-MM-DD local date
+  date: string;
   count: number;
 }
 
@@ -131,23 +142,19 @@ function getDailyRecord(): DailyRecord {
   return { date: todayStr(), count: 0 };
 }
 
-/** Number of stories generated today (free users). */
 export function dailyStoriesUsed(): number {
   return getDailyRecord().count;
 }
 
-/** Stories remaining today for free users. */
 export function dailyStoriesLeft(): number {
   return Math.max(0, FREE_DAILY_LIMIT - dailyStoriesUsed());
 }
 
-/** Returns true if the user can generate another story right now. */
 export function canGenerateStory(): boolean {
-  if (getSubscription() !== null) return true;   // paid — unlimited
+  if (getSubscription() !== null) return true;
   return dailyStoriesLeft() > 0;
 }
 
-/** Call this after a story is successfully generated. */
 export function recordStoryGenerated(): void {
   const rec = getDailyRecord();
   try {
