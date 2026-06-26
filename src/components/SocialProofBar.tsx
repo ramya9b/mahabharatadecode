@@ -20,10 +20,10 @@ const SocialProofBar = () => {
      - Free Always:     no paywall on free trial; subscription is optional
      Note: "AI" + "25" + "4" stay as-is (initialism + numerals are universal). */
   const STATS: Stat[] = [
-    { value: "AI",                       label: t("home.social_proof.story_teller") },
-    { value: "25",                       label: t("home.social_proof.characters") },
-    { value: "4",                        label: t("home.social_proof.languages") },
-    { value: t("home.social_proof.free"), label: t("home.social_proof.always") },
+    { value: "AI",   label: t("home.social_proof.story_teller") },
+    { value: "29",   label: t("home.social_proof.articles") },
+    { value: "4",    label: t("home.social_proof.languages") },
+    { value: "5",    label: t("home.social_proof.free_articles") },
   ];
   return (
     <section
