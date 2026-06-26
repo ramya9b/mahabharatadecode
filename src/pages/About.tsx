@@ -624,16 +624,27 @@ const CreatorSection = () => {
               {[
                 "The story behind this site begins in Telugu — the language in which it was first heard.",
                 "మా నాన్న గారు ప్రతిరోజూ భోజనం తర్వాత గీతామకరందము చదివేవారు — శ్రీ విద్యాప్రకాశానందగిరి స్వామీజీ రచించిన తెలుగు వ్యాఖ్యానం. గీతాదేవీ ప్రార్థనతో ప్రారంభించి, అమ్మకు వినిపించేవారు. నేను పక్కన కూర్చుని వినేదాన్ని.",
+                "My father used to read Gita Makarandam every day after lunch — the Telugu commentary by Sri Vidyaprakasanandagiri Swamiji. He would begin with the Gita Devi Prarthana, reading it aloud for my mother. I would sit nearby and listen.",
                 "ఆ ప్రార్థన అయిదు భావాలను తన హృదయంలో దాచుకుంది:",
+                "That prayer holds five meanings within its heart:",
                 "తల్లిగా — సంసారసాగరంలో మునిగిపోతున్న మనకు దారిచూపిన తల్లి. భయాన్ని, దుఃఖాన్ని, అజ్ఞానమనే చీకటిని తొలగించి, తన కృపాదృష్టితో జ్ఞానజ్యోతిని వెలిగించిన తల్లి — ఈ లోకంలో మనకు వెలుగు నిచ్చిన తల్లి.",
+                "As Talli (Mother) — She who shows the path to those drowning in the ocean of worldly suffering. Who removes fear, sorrow, and the darkness of ignorance — and with her compassionate grace, lights the lamp of knowledge for all.",
                 "గీతాంబికగా — శ్రీకృష్ణుని అవతారంతో పాటు ఈ లోకంలో వచ్చిన శక్తి. కృష్ణుని వాణిగా, మనకు శరణు ఇచ్చే తల్లిగా నిలిచినది.",
+                "As Geetaambika — The divine power that came into this world alongside Krishna's avatara. She who stands as the very voice of Krishna, as the one refuge for all who seek.",
                 "జ్ఞానదాత్రిగా — శాస్త్రాన్ని బోధించి, సాధకుని మనసును నిర్మలంగా చేసి, అమోఘమైన అవగాహన శక్తిని ప్రసాదించినది.",
+                "As Jnanadatri (Giver of Knowledge) — She who taught the shastra, purified the seeker's mind, and bestowed the extraordinary power of understanding upon all who approached her sincerely.",
                 "స్వారాజ్యప్రదాయినిగా — జాతి, మతం, సంప్రదాయం అనే తేడాలు లేకుండా అందరికీ అంతరంగ స్వాతంత్ర్యాన్ని ఇచ్చినది. పాపాన్ని, దుర్మార్గాన్ని తొలగించి, జీవుల యథాకరణాన్ని శుద్ధపరచినది.",
+                "As Swarajyapradayini (Giver of Inner Freedom) — Beyond caste, religion, and tradition, she grants inner sovereignty to all. She removes wrongdoing and purifies the innermost nature of every living being.",
                 "దీనజనోద్ధారిణిగా — ఆమె భవ్యమైన ఉపదేశాలు మన హృదయాంతరాళంలో చేరి, జన్మజన్మల కర్మలను నశింపజేసి, జ్ఞానోదయాన్ని కలిగిస్తాయి.",
+                "As Dinajanoddharini (Uplifter of the Suffering) — Her profound teachings reach the deepest recesses of the heart, dissolve the accumulated karma of countless lifetimes, and bring the light of wisdom to those who have lost their way.",
                 "సంస్కృతం తెలియదు. అన్ని పదాలు అర్థం కాలేదు. కానీ భావం మాత్రం నేరుగా మనసుకు చేరేది — పదాల కంటే ముందే.",
+                "I did not know Sanskrit. I did not understand every word. But the meaning always reached the heart — before the explanation did.",
                 "తర్వాతి సంవత్సరాలలో నిజమైన ప్రశ్నలు వచ్చినప్పుడు — విధేయత గురించి, ఏది ధర్మమో తెలియనప్పుడు, మంచివాళ్ళు తప్పు వైపు ఎందుకు నిలుస్తారని — మహాభారతం అన్నిటికీ సమాధానం చెప్పిందని అర్థమైంది. వేరే దేనికంటే నిజాయితీగా.",
+                "Years later, when harder questions came — about loyalty, about dharma when the right path is unclear, about why good people end up on the wrong side — I found that the Mahabharata had already asked every one of them. More honestly than anything else I had read.",
                 "రాయాలనీ, వీడియోలు చేయాలనీ అనిపించింది. AI సహాయంతో అది సాధ్యమైంది — ఈ కథలను సరిగ్గా విప్పి చెప్పే ఒక వేదిక నిర్మించడం.",
+                "I decided I wanted to write about it. Then to make videos. Then AI made it possible to build something larger — a place where these stories could be decoded properly, not summarised.",
                 "ఆ మధ్యాహ్నపు ప్రార్థన నాకు ఇచ్చిన అనుభవాన్ని మీకు ఇవ్వడానికే ఈ సైట్ ఉంది — పురాతనమైనది ఇప్పటికీ మీతో నేరుగా మాట్లాడుతుందనే అనుభూతి.",
+                "This site exists to give you what those after-lunch prayers gave me — the feeling that something ancient is still speaking directly to you.",
               ].map((para, i) => (
                 <p key={i} className="leading-relaxed"
                   style={{
