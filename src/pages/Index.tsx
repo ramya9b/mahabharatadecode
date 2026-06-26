@@ -9,6 +9,7 @@ import LifeLessons from "@/components/LifeLessons";
 import DailyWisdom from "@/components/DailyWisdom";
 import Footer from "@/components/Footer";
 import NewsletterSignup from "@/components/NewsletterSignup";
+import QuizBanner from "@/components/QuizBanner";
 
 const Index = () => {
   return (
@@ -35,10 +36,13 @@ const Index = () => {
       {/* ── 7. Daily Wisdom — quick value ── */}
       <DailyWisdom />
 
-      {/* ── 8. Life Lessons — philosophy hook ── */}
+      {/* ── 8. Quiz — personality archetype ── */}
+      <QuizBanner />
+
+      {/* ── 9. Life Lessons — philosophy hook ── */}
       <LifeLessons />
 
-      {/* ── 9. Newsletter ── */}
+      {/* ── 10. Newsletter ── */}
       <NewsletterSignup variant="banner" source="homepage" />
       <Footer />
     </div>
