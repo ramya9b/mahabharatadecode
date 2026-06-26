@@ -199,7 +199,30 @@ const ArticlePage = () => {
         )}
       </LockGate>
 
-      {/* ── 10. Share Buttons ── */}
+      {/* ── 10. Reply by email — for critical thinkers ── */}
+      <section className="pb-2">
+        <div className="max-w-[680px] mx-auto px-6 md:px-8">
+          <a
+            href={`mailto:hello@mahabharatadecoded.com?subject=On: ${encodeURIComponent(article.title)}`}
+            style={{
+              display: "inline-flex",
+              alignItems: "center",
+              gap: "8px",
+              fontFamily: "'Cormorant Garamond', Georgia, serif",
+              fontSize: "15px",
+              color: "rgba(212,175,55,0.65)",
+              textDecoration: "none",
+              borderBottom: "1px solid rgba(212,175,55,0.2)",
+              paddingBottom: "2px",
+              transition: "color 0.2s",
+            }}
+          >
+            ✦ Disagree with something in this article? Reply and tell me why →
+          </a>
+        </div>
+      </section>
+
+      {/* ── 11. Share Buttons ── */}
       <section className="pb-8" aria-label="Share this article">
         <div className="max-w-[680px] mx-auto px-6 md:px-8">
           <div className="flex items-center justify-between flex-wrap gap-4 py-6 border-t border-border/30">
