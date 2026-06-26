@@ -24,7 +24,7 @@
     "eyebrow": "Ancient Wisdom · Modern Life",
     "headline_gold": "Decode Life",
     "headline_white": "Through Mahabharata",
-    "subtitle": "AI-narrated Mahabharata in English, Telugu, Hindi & Kannada. The epic — decoded for modern decisions.",
+    "subtitle": "29 deep articles on Mahabharata characters, dharma, and decisions — decoded for modern life. Including: Why Duryodhana was not entirely wrong.",
     "cta_primary": "Start Reading",
     "cta_secondary": "Explore Characters",
     "cta_try_story": "Try Story Teller",
@@ -251,7 +251,9 @@
       "characters": "Characters",
       "languages": "Languages",
       "free": "Free",
-      "always": "Always"
+      "always": "Always",
+      "articles": "Articles",
+      "free_articles": "Always Free"
     },
     "storyteller": {
       "eyebrow": "New Feature",
