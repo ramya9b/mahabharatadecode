@@ -622,10 +622,12 @@ const CreatorSection = () => {
             {/* Text */}
             <div className="space-y-5">
               {[
-                "This site is written by one person who read the Mahabharata at a moment when modern life had run out of useful answers. Not a Sanskrit scholar. Not a mythology professor. A person who discovered that every question I had about loyalty, identity, leadership, and loss had already been asked — and answered, with more honesty than anything else I'd read — in a 5,000-year-old epic.",
-                "I'm not interested in the Mahabharata as a cultural artefact. I'm interested in it as a tool. The most precise, most honest, most psychologically sophisticated tool for understanding human decision-making that I've ever encountered.",
-                "Everything on this site is an attempt to be worthy of the source material. That means no easy lessons. No reductive summaries. No 'ten life hacks from the Gita'. Only honest engagement with what these stories actually say — and why it still matters.",
-                "If something on this site has made you think differently about a decision you're facing, then it worked.",
+                "My father used to read the Bhagavad Gita every day after lunch — out loud, for my mother. I would sit nearby and listen.",
+                "I did not know Sanskrit. I did not understand most of the words. But somehow I always understood what the sloka meant. The meaning would just arrive — before the explanation.",
+                "I did not think much of it at the time. It was just what our home sounded like after lunch.",
+                "Years later, when I started asking harder questions — about loyalty, about doing the right thing when the right thing is not clear, about why good people end up on the wrong side — I kept finding that the Mahabharata had already asked them. More honestly than anything else I had read.",
+                "I decided I wanted to write about it. Then to make videos. Then AI made it possible to build something larger — a place where these stories could be decoded properly, not summarised.",
+                "That is what this is. One person trying to give back what those after-lunch slokas gave her — the feeling that something ancient is still speaking directly to you.",
               ].map((para, i) => (
                 <p key={i} className="leading-relaxed"
                   style={{
@@ -640,7 +642,7 @@ const CreatorSection = () => {
               {/* Signature */}
               <div className="pt-4">
                 <div className="h-px w-12 bg-primary/20 mb-5" />
-                <p className="font-heading text-primary/70 text-sm tracking-[0.15em]">— Ramya, Founder · MahabharataDecoded</p>
+                <p className="font-heading text-primary/70 text-sm tracking-[0.15em]">— Rajarajeswari, Founder · MahabharataDecoded</p>
                 <a
                   href="mailto:hello@mahabharatadecoded.com?subject=A thought on your article"
                   className="inline-flex items-center gap-2 mt-4 text-sm transition-colors hover:text-primary"
