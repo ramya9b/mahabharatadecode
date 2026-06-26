@@ -41,8 +41,25 @@ const Footer = () => {
               <li><Link to="/characters" className="text-muted-foreground text-[16px] hover:text-primary transition-colors i18n-safe">{t("footer.links.characters")}</Link></li>
               <li><a href="/#lessons" className="text-muted-foreground text-[16px] hover:text-primary transition-colors i18n-safe">{t("footer.links.lessons")}</a></li>
               <li><Link to="/wisdom" className="text-muted-foreground text-[16px] hover:text-primary transition-colors i18n-safe">{t("footer.links.wisdom")}</Link></li>
+              <li><Link to="/pricing" className="text-muted-foreground text-[16px] hover:text-primary transition-colors i18n-safe">Pricing</Link></li>
               <li><Link to="/about" className="text-muted-foreground text-[16px] hover:text-primary transition-colors i18n-safe">{t("footer.links.about")}</Link></li>
             </ul>
+            {/* Social */}
+            <div className="mt-8">
+              <h4 className="font-heading text-[13px] tracking-[0.2em] uppercase text-foreground mb-4">Follow</h4>
+              <a
+                href="https://www.instagram.com/mahabharata.decoded"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 text-muted-foreground hover:text-primary transition-colors"
+                style={{ fontSize: "15px", fontFamily: "'Cormorant Garamond', Georgia, serif" }}
+              >
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/>
+                </svg>
+                @mahabharata.decoded
+              </a>
+            </div>
           </div>
 
         </div>
