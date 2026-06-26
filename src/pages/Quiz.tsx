@@ -1,4 +1,4 @@
-import { useReducer, useEffect, useRef, useCallback } from "react";
+import { useReducer, useEffect, useRef, useCallback, useState } from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft, ArrowRight, RotateCcw, Share2, Check, BookOpen, Trophy } from "lucide-react";
 import Navbar from "@/components/Navbar";
@@ -9,6 +9,132 @@ import { computeQuizResult, scoreBreakdown } from "@/utils/quizScoring";
 import { resolveImage, resolveCharacterImage } from "@/utils/images";
 import type { QuizResult } from "@/data/quiz";
 import { characters } from "@/data/characters";
+
+/* ─────────────────────────────────────────────────────────
+   SHARE CARD GENERATOR — Canvas-based image for WhatsApp/Instagram
+───────────────────────────────────────────────────────── */
+async function generateShareCard(
+  characterName: string,
+  characterTitle: string,
+  archetype: string,
+  traits: string[],
+  accentHex: string,
+  percentage: number,
+): Promise<string> {
+  const W = 1080;
+  const H = 1080;
+  const canvas = document.createElement("canvas");
+  canvas.width = W;
+  canvas.height = H;
+  const ctx = canvas.getContext("2d")!;
+
+  // Background — deep dark
+  ctx.fillStyle = "#0C0900";
+  ctx.fillRect(0, 0, W, H);
+
+  // Radial glow
+  const glow = ctx.createRadialGradient(W / 2, H / 2, 0, W / 2, H / 2, 520);
+  glow.addColorStop(0, `${accentHex}18`);
+  glow.addColorStop(1, "transparent");
+  ctx.fillStyle = glow;
+  ctx.fillRect(0, 0, W, H);
+
+  // Border
+  ctx.strokeStyle = `${accentHex}55`;
+  ctx.lineWidth = 2;
+  ctx.strokeRect(24, 24, W - 48, H - 48);
+
+  // Corner accents
+  const cornerSize = 40;
+  ctx.strokeStyle = accentHex;
+  ctx.lineWidth = 3;
+  [[24, 24], [W - 24 - cornerSize, 24], [24, H - 24 - cornerSize], [W - 24 - cornerSize, H - 24 - cornerSize]].forEach(([x, y], i) => {
+    ctx.beginPath();
+    if (i === 0) { ctx.moveTo(x + cornerSize, y); ctx.lineTo(x, y); ctx.lineTo(x, y + cornerSize); }
+    if (i === 1) { ctx.moveTo(x, y); ctx.lineTo(x + cornerSize, y); ctx.lineTo(x + cornerSize, y + cornerSize); }
+    if (i === 2) { ctx.moveTo(x, y); ctx.lineTo(x, y + cornerSize); ctx.lineTo(x + cornerSize, y + cornerSize); }
+    if (i === 3) { ctx.moveTo(x + cornerSize, y); ctx.lineTo(x + cornerSize, y + cornerSize); ctx.lineTo(x, y + cornerSize); }
+    ctx.stroke();
+  });
+
+  // Site label top
+  ctx.fillStyle = `${accentHex}99`;
+  ctx.font = "bold 26px serif";
+  ctx.textAlign = "center";
+  ctx.fillText("MahabharataDecoded", W / 2, 90);
+
+  // Divider line
+  ctx.strokeStyle = `${accentHex}44`;
+  ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(120, 110); ctx.lineTo(W - 120, 110); ctx.stroke();
+
+  // "I am" label
+  ctx.fillStyle = `${accentHex}88`;
+  ctx.font = "italic 38px serif";
+  ctx.textAlign = "center";
+  ctx.fillText("I am", W / 2, 200);
+
+  // Character name — large
+  ctx.fillStyle = accentHex;
+  ctx.font = "bold 110px serif";
+  ctx.textAlign = "center";
+  ctx.fillText(characterName.toUpperCase(), W / 2, 330);
+
+  // Title
+  ctx.fillStyle = "#F5EDDA";
+  ctx.font = "italic 42px serif";
+  ctx.textAlign = "center";
+  ctx.fillText(characterTitle, W / 2, 400);
+
+  // Horizontal rule
+  ctx.strokeStyle = `${accentHex}55`;
+  ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(200, 440); ctx.lineTo(W - 200, 440); ctx.stroke();
+
+  // Archetype
+  ctx.fillStyle = `${accentHex}cc`;
+  ctx.font = "bold 32px serif";
+  ctx.textAlign = "center";
+  ctx.fillText(`✦ ${archetype} ✦`, W / 2, 500);
+
+  // Percentage badge
+  ctx.fillStyle = `${accentHex}22`;
+  ctx.beginPath();
+  ctx.roundRect(W / 2 - 80, 530, 160, 80, 40);
+  ctx.fill();
+  ctx.strokeStyle = `${accentHex}88`;
+  ctx.lineWidth = 1.5;
+  ctx.stroke();
+  ctx.fillStyle = accentHex;
+  ctx.font = "bold 40px serif";
+  ctx.textAlign = "center";
+  ctx.fillText(`${percentage}% match`, W / 2, 582);
+
+  // Traits
+  const traitY = 660;
+  ctx.fillStyle = "#F5EDDA99";
+  ctx.font = "28px serif";
+  ctx.textAlign = "center";
+  traits.slice(0, 3).forEach((trait, i) => {
+    ctx.fillText(`· ${trait} ·`, W / 2, traitY + i * 48);
+  });
+
+  // Divider
+  ctx.strokeStyle = `${accentHex}33`;
+  ctx.lineWidth = 1;
+  ctx.beginPath(); ctx.moveTo(120, 820); ctx.lineTo(W - 120, 820); ctx.stroke();
+
+  // CTA bottom
+  ctx.fillStyle = `${accentHex}bb`;
+  ctx.font = "italic 32px serif";
+  ctx.textAlign = "center";
+  ctx.fillText("Which Mahabharata character are you?", W / 2, 880);
+  ctx.fillStyle = "#F5EDDA88";
+  ctx.font = "28px serif";
+  ctx.fillText("mahabharatadecoded.com/quiz", W / 2, 930);
+
+  return canvas.toDataURL("image/png");
+}
 
 /* ─────────────────────────────────────────────────────────
    STATE MACHINE
@@ -364,6 +490,7 @@ const ResultScreen = ({
   onRetake: () => void;
   onShare: () => void;
   shareSuccess: boolean;
+  cardGenerating?: boolean;
 }) => {
   const meta = CHARACTER_META[result.winner];
   const image = resolveImage(meta.imageKey);
@@ -519,8 +646,8 @@ const ResultScreen = ({
 
               <button onClick={onShare}
                 className="flex items-center gap-2 glass-card px-6 py-3 rounded-full font-heading text-[12px] tracking-wide hover:border-primary/40 hover:text-primary transition-all duration-300">
-                {shareSuccess ? <Check size={13} className="text-green-400" /> : <Share2 size={13} />}
-                {shareSuccess ? "Copied!" : "Share Result"}
+                {shareSuccess ? <Check size={13} className="text-green-400" /> : <Share2 size={13} className={cardGenerating ? "animate-spin" : ""} />}
+                {cardGenerating ? "Creating card..." : shareSuccess ? "Downloaded!" : "Share Result Card"}
               </button>
 
               <button onClick={onRetake}
@@ -613,18 +740,41 @@ const Quiz = () => {
     []
   );
 
+  const [cardGenerating, setCardGenerating] = useState(false);
+
   const handleShare = useCallback(async () => {
     const winner = state.result?.winner;
-    if (!winner) return;
+    if (!winner || !state.result) return;
     const meta = CHARACTER_META[winner];
-    const text = `I'm ${meta.name} — ${meta.title} — in the Mahabharata. Which character are you? 🏹`;
-    const url = window.location.href;
 
+    // Generate share card image
+    setCardGenerating(true);
     try {
-      if (navigator.share) {
-        await navigator.share({ title: "MahabharataDecoded Quiz", text, url });
+      const dataUrl = await generateShareCard(
+        meta.name,
+        meta.title,
+        meta.archetype,
+        meta.traits,
+        meta.accentHex,
+        state.result.percentage,
+      );
+
+      // Try to share as file (mobile) or download (desktop)
+      const blob = await (await fetch(dataUrl)).blob();
+      const file = new File([blob], `mahabharata-${meta.name.toLowerCase()}.png`, { type: "image/png" });
+
+      if (navigator.canShare && navigator.canShare({ files: [file] })) {
+        await navigator.share({
+          files: [file],
+          title: `I am ${meta.name} — MahabharataDecoded`,
+          text: `I am ${meta.name} — ${meta.title}. Which Mahabharata character are you? mahabharatadecoded.com/quiz`,
+        });
       } else {
-        await navigator.clipboard.writeText(`${text}\n${url}`);
+        // Desktop fallback — download the image
+        const a = document.createElement("a");
+        a.href = dataUrl;
+        a.download = `mahabharata-${meta.name.toLowerCase()}.png`;
+        a.click();
         dispatch({ type: "SET_SHARE_SUCCESS", value: true });
         setTimeout(() => dispatch({ type: "SET_SHARE_SUCCESS", value: false }), 2500);
       }
