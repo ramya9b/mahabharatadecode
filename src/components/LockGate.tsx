@@ -1,19 +1,17 @@
 import { useState, type ReactNode } from "react";
-import { Lock, Sparkles } from "lucide-react";
+import { Lock, Sparkles, Unlock } from "lucide-react";
 import { useSubscription } from "@/hooks/useSubscription";
+import { isArticleFree } from "@/lib/subscription";
 import PaywallModal from "@/components/PaywallModal";
 
 interface LockGateProps {
-  /** Content shown only when the user has access. */
   children: ReactNode;
-  /** Optional teaser content shown above the paywall when locked. */
   teaser?: ReactNode;
-  /** Headline shown in the paywall (e.g. "Your 14-day trial ended"). */
   reason?: string;
-  /** Title rendered in the locked card. */
   title?: string;
-  /** Subtext rendered in the locked card. */
   description?: string;
+  /** Article slug — if provided and slug is in FREE_ARTICLE_SLUGS, content is always shown */
+  slug?: string;
 }
 
 const LockGate = ({
@@ -22,14 +20,19 @@ const LockGate = ({
   reason,
   title = "Unlock the full story",
   description = "Your free 14 days have ended. Upgrade to keep reading.",
+  slug,
 }: LockGateProps) => {
   const { access, inTrial, trialDays, refresh } = useSubscription();
   const [modalOpen, setModalOpen] = useState(false);
 
-  if (access) {
+  /* Free articles — always show full content, no paywall ever */
+  const permanentlyFree = slug ? isArticleFree(slug) : false;
+
+  if (permanentlyFree || access) {
     return (
       <>
-        {inTrial && trialDays <= 3 && (
+        {/* Trial expiry warning — only for trial users, not free articles */}
+        {!permanentlyFree && inTrial && trialDays <= 3 && (
           <div
             role="status"
             className="sticky top-0 z-40 text-center py-2 px-4"
@@ -53,20 +56,37 @@ const LockGate = ({
             <PaywallModal open={modalOpen} onClose={() => setModalOpen(false)} onSuccess={refresh} reason={reason} />
           </div>
         )}
+
+        {/* Free article badge */}
+        {permanentlyFree && (
+          <div
+            className="flex items-center justify-center gap-2 py-2 px-4 mb-2"
+            style={{
+              background: "rgba(39,174,96,0.06)",
+              borderBottom: "1px solid rgba(39,174,96,0.15)",
+              fontSize: "11px",
+              fontFamily: "'Cinzel', serif",
+              letterSpacing: "0.2em",
+              color: "rgba(39,174,96,0.8)",
+            }}
+          >
+            <Unlock size={11} />
+            FREE ARTICLE — No account needed
+          </div>
+        )}
+
         {children}
       </>
     );
   }
 
   /* ── LOCKED STATE ──
-     The full article content is rendered in the DOM so search engine crawlers
-     (Googlebot) can index the text. It is visually hidden behind a gradient
-     overlay and the paywall card. Users see the teaser + paywall; crawlers
-     see the full content.
+     Full article content rendered in DOM for SEO crawlers.
+     Users see teaser + paywall card only.
   ── */
   return (
     <>
-      {/* Visually hidden but DOM-present article content for SEO crawlers */}
+      {/* DOM-present content for Googlebot — visually hidden */}
       <div
         aria-hidden="true"
         style={{
@@ -76,15 +96,13 @@ const LockGate = ({
           overflow: "hidden",
           clip: "rect(0,0,0,0)",
           whiteSpace: "nowrap",
-          /* Do NOT use display:none or visibility:hidden — Googlebot ignores those */
         }}
       >
         {children}
       </div>
 
-      {/* Visual paywall UI for non-subscribed users */}
+      {/* Visual paywall for users */}
       <div style={{ position: "relative" }}>
-        {/* Teaser: first story block faded out */}
         {teaser && (
           <div
             className="relative"
@@ -99,7 +117,6 @@ const LockGate = ({
           </div>
         )}
 
-        {/* Paywall card */}
         <div className="max-w-2xl mx-auto px-6 py-16">
           <div
             className="relative rounded-2xl p-8 md:p-10 text-center overflow-hidden"
@@ -111,28 +128,19 @@ const LockGate = ({
           >
             <div
               className="absolute top-0 left-0 right-0 h-px"
-              style={{
-                background:
-                  "linear-gradient(to right, transparent, rgba(212,175,55,0.6), transparent)",
-              }}
+              style={{ background: "linear-gradient(to right, transparent, rgba(212,175,55,0.6), transparent)" }}
             />
             <div
               className="inline-flex w-14 h-14 rounded-full items-center justify-center mb-5"
-              style={{
-                background: "rgba(212,175,55,0.1)",
-                border: "1px solid rgba(212,175,55,0.25)",
-              }}
+              style={{ background: "rgba(212,175,55,0.1)", border: "1px solid rgba(212,175,55,0.25)" }}
             >
               <Lock size={22} style={{ color: "hsl(var(--primary))" }} />
             </div>
-            <h2
-              className="font-heading font-bold mb-3"
-              style={{ fontSize: "clamp(22px, 3vw, 28px)" }}
-            >
+            <h2 className="font-heading font-bold mb-3" style={{ fontSize: "clamp(22px, 3vw, 28px)" }}>
               {title}
             </h2>
             <p
-              className="mb-7 mx-auto"
+              className="mb-4 mx-auto"
               style={{
                 fontFamily: "'Cormorant Garamond', Georgia, serif",
                 fontSize: "17px",
@@ -143,6 +151,27 @@ const LockGate = ({
             >
               {description}
             </p>
+
+            {/* Free articles reminder */}
+            <p
+              className="mb-6 mx-auto"
+              style={{
+                fontFamily: "'Cormorant Garamond', Georgia, serif",
+                fontSize: "14px",
+                color: "rgba(212,175,55,0.7)",
+                lineHeight: 1.6,
+                maxWidth: "400px",
+              }}
+            >
+              5 articles are always free — no account needed.{" "}
+              <a
+                href="/pricing"
+                style={{ color: "hsl(var(--primary))", textDecoration: "underline" }}
+              >
+                See what's included
+              </a>
+            </p>
+
             <button
               type="button"
               onClick={() => setModalOpen(true)}
@@ -153,7 +182,7 @@ const LockGate = ({
                 boxShadow: "0 0 24px rgba(212,175,55,0.3)",
               }}
             >
-              See plans
+              See plans — from ₹99/month
             </button>
           </div>
         </div>
