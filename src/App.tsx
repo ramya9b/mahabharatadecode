@@ -28,6 +28,7 @@ const Wisdom      = lazy(() => import("./pages/Wisdom.tsx"));
 const StoryTeller = lazy(() => import("./pages/StoryTeller.tsx"));
 const Story       = lazy(() => import("./pages/Story.tsx"));
 const NotFound    = lazy(() => import("./pages/NotFound.tsx"));
+const Pricing     = lazy(() => import("./pages/Pricing.tsx"));
 
 /* ── Page transition wrapper — fades + slides each route in ── */
 const PageTransition = ({ children }: { children: React.ReactNode }) => {
@@ -171,6 +172,7 @@ const App = () => (
                   <Route path="/wisdom"      element={<Wisdom />} />
                   <Route path="/storyteller" element={<StoryTeller />} />
                   <Route path="/story"       element={<Story />} />
+                  <Route path="/pricing"     element={<Pricing />} />
                   <Route path="*"            element={<NotFound />} />
                 </Routes>
               </PageTransition>
