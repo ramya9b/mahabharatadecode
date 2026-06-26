@@ -22,9 +22,15 @@ export interface ModernConnection {
   example: string;
 }
 
+export interface InternalLink {
+  slug: string;
+  label: string;
+}
+
 export interface ContentBlock {
-  type: "paragraph" | "heading" | "quote" | "lesson" | "divider";
+  type: "paragraph" | "heading" | "quote" | "lesson" | "divider" | "related_links";
   text: string;
+  links?: InternalLink[];
 }
 
 export interface Article {
@@ -153,6 +159,15 @@ export const articles: Article[] = [
       {
         type: "paragraph",
         text: "After the war, when the surviving Pandavas learned who Karna truly was, Yudhishthira wept. But Karna had known. He had protected his mother's secret, choosing to live within the identity he'd been given rather than claim the one he was owed. This was his greatest act of self-sacrifice. And his most devastating choice.",
+      },
+          {
+        type: "related_links",
+        text: "Read next",
+        links: [
+          { slug: "arjuna-karna-the-real-rivalry", label: "Arjuna and Karna: The Rivalry Was Never About Archery" },
+          { slug: "bhishma-terrible-oath", label: "Bhishma's Oath: When Sacrifice Becomes a Cage" },
+          { slug: "dharma-beyond-rules", label: "Dharma Is Not a Rulebook — It Is a Compass" },
+        ],
       },
     ],
     keyLessons: [
@@ -328,6 +343,24 @@ export const articles: Article[] = [
         type: "paragraph",
         text: "Krishna's most misunderstood power is not strength — it's illumination. He doesn't manipulate events so much as he makes the moral stakes so clear that each person's choice becomes a declaration of who they are. Duryodhana's refusal of five villages wasn't the moment he chose evil. It was the moment he showed everyone else what he had always been.",
       },
+          {
+        type: "related_links",
+        text: "Read next",
+        links: [
+          { slug: "arjuna-confusion-moment-of-doubt", label: "Arjuna's Confusion: Why the Greatest Warrior Broke First" },
+          { slug: "gita-verse-two-forty-seven", label: "The Most Misquoted Verse in Human History" },
+          { slug: "krishna-detachment-action", label: "Krishna's Secret: How to Act Without Burning Out" },
+              {
+        type: "related_links",
+        text: "Read next",
+        links: [
+          { slug: "bhishma-wrong-side", label: "Bhishma Knew He Was on the Wrong Side. He Stayed Anyway." },
+          { slug: "who-caused-mahabharata-war", label: "Who Was Really Responsible for the Mahabharata War?" },
+          { slug: "dharma-beyond-rules", label: "Dharma Is Not a Rulebook — It Is a Compass" },
+        ],
+      },
+    ],
+      },
     ],
     keyLessons: [
       {
@@ -496,6 +529,24 @@ export const articles: Article[] = [
         type: "lesson",
         text: "The next time you are paralysed by a decision — when every option feels like a betrayal of something you love — consider that you may be standing exactly where Arjuna stood. Not at the end of something, but at the beginning of a deeper understanding.",
       },
+          {
+        type: "related_links",
+        text: "Read next",
+        links: [
+          { slug: "gita-verse-two-forty-seven", label: "The Most Misquoted Verse in Human History" },
+          { slug: "arjuna-karna-the-real-rivalry", label: "Arjuna and Karna: The Rivalry Was Never About Archery" },
+          { slug: "krishna-leadership-secrets", label: "Krishna: The Leader Who Never Needed the Throne" },
+              {
+        type: "related_links",
+        text: "Read next",
+        links: [
+          { slug: "duryodhana-why-he-was-not-wrong", label: "The Case for Duryodhana: Why the Villain Had a Point" },
+          { slug: "bhishma-wrong-side", label: "Bhishma Knew He Was on the Wrong Side. He Stayed Anyway." },
+          { slug: "silence-of-vidura", label: "Vidura: The Wise Man Who Was Never Listened To" },
+        ],
+      },
+    ],
+      },
     ],
     keyLessons: [
       {
@@ -637,6 +688,24 @@ export const articles: Article[] = [
         type: "lesson",
         text: "Draupadi teaches us that there is a difference between forgiveness and forgetting. You can refuse to be defined by what was done to you while still insisting that it was wrong and that it matters.",
       },
+          {
+        type: "related_links",
+        text: "Read next",
+        links: [
+          { slug: "draupadi-humiliation-dice-game", label: "Draupadi Was Stripped in Front of a Thousand Men. What She Did Next Changed Everything." },
+          { slug: "draupadi-five-husbands-one-self", label: "Draupadi: The Woman Who Never Lost Herself" },
+          { slug: "mahabharata-difficult-relationships", label: "The Mahabharata's Guide to Difficult People" },
+              {
+        type: "related_links",
+        text: "Read next",
+        links: [
+          { slug: "who-caused-mahabharata-war", label: "Who Was Really Responsible for the Mahabharata War?" },
+          { slug: "karna-loyalty-vs-self-respect", label: "Karna: The Man Who Chose Honour Over Everything" },
+          { slug: "bhishma-wrong-side", label: "Bhishma Knew He Was on the Wrong Side. He Stayed Anyway." },
+        ],
+      },
+    ],
+      },
     ],
     keyLessons: [
       {
@@ -752,6 +821,15 @@ export const articles: Article[] = [
         type: "lesson",
         text: "When you make a commitment, build in a mechanism for reconsideration. An oath that cannot be broken becomes a cage. The Mahabharata asks: who does your loyalty ultimately serve?",
       },
+          {
+        type: "related_links",
+        text: "Read next",
+        links: [
+          { slug: "draupadi-fire-and-dignity", label: "Draupadi: The Fire That Would Not Go Out" },
+          { slug: "draupadi-five-husbands-one-self", label: "Draupadi: The Woman Who Never Lost Herself" },
+          { slug: "yudhishthira-gambling-addiction", label: "Yudhishthira's Gambling: The Most Honest Study of Compulsion" },
+        ],
+      },
     ],
     keyLessons: [
       {
@@ -800,8 +878,6 @@ export const articles: Article[] = [
     subtitle: "The most misunderstood concept in Indian philosophy",
     description:
       "Everyone in the Mahabharata claims to be acting according to dharma. And yet they destroy each other. What does this tell us about the nature of righteous action?",
-    metaTitle: "Dharma Is Not a Rulebook — It Is a Compass | MahabharataDecoded",
-    metaDescription: "Everyone in the Mahabharata claimed dharma. Everyone destroyed each other anyway. Here is what dharma actually means — and why it is a compass, not a rulebook.",
     summary:
       "Everyone invoked dharma. Everyone destroyed each other. The Mahabharata's most urgent lesson is about the difference between following rules and living with wisdom.",
     category: "Life Lessons",
@@ -889,8 +965,6 @@ export const articles: Article[] = [
     subtitle: "What 2.47 of the Bhagavad Gita actually means",
     description:
       "\"You have a right to perform your duties but not to the fruits\" — nine words used to justify everything from indifference to extraordinary heroism. Here is what Krishna actually meant.",
-    metaTitle: "Bhagavad Gita 2.47 — The Most Misquoted Verse Explained | MahabharataDecoded",
-    metaDescription: "Gita 2.47 is quoted to justify indifference and heroism equally. Here is what Krishna actually said, in context — and why the popular interpretation gets it wrong.",
     summary:
       "Nine words. Thousands of years of misquotation. The verse that has been used to justify everything — and what it actually says about how to act in the world.",
     category: "Slokas",
@@ -980,8 +1054,6 @@ export const articles: Article[] = [
     subtitle: "Truth-telling in a court of comfortable lies",
     description:
       "He warned Dhritarashtra before every catastrophe. He saw the war coming decades before it arrived. He was ignored every time. Vidura's story is the tragedy of wisdom without power.",
-    metaTitle: "Vidura: When Wisdom Is Ignored | Mahabharata Life Lessons",
-    metaDescription: "Vidura warned Dhritarashtra before every disaster in the Mahabharata. He was right every time. He was ignored every time. His story is the most honest study of wisdom without power.",
     summary:
       "He predicted every disaster. He was ignored every time. Vidura's story is the Mahabharata's most urgent lesson about the price of speaking truth in a room that has already decided.",
     category: "Philosophy",
@@ -2053,6 +2125,15 @@ export const articles: Article[] = [
       {
         type: "paragraph",
         text: "It turns out that is enough to change everything.",
+      },
+          {
+        type: "related_links",
+        text: "Read next",
+        links: [
+          { slug: "gita-verse-two-forty-seven", label: "The Most Misquoted Verse in Human History" },
+          { slug: "krishna-detachment-action", label: "Krishna's Secret: How to Act Without Burning Out" },
+          { slug: "arjuna-confusion-moment-of-doubt", label: "Arjuna's Confusion: Why the Greatest Warrior Broke First" },
+        ],
       },
     ],
     keyLessons: [
