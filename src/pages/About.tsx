@@ -622,12 +622,13 @@ const CreatorSection = () => {
             {/* Text */}
             <div className="space-y-5">
               {[
-                "My father began every reading from Gita Makarandam with the Gita Devi Prarthana — Sri Vidyaprakasanandagiri Swamiji's Telugu invocation addressing Gita Devi as Talli, as Jaganmatha, as Chinmaya Swaroopini. He would read it aloud every day after lunch, for my mother. I would sit nearby and listen.",
-                "I did not know Sanskrit. I did not understand most of the words. But somehow I always understood what the sloka meant. The meaning would just arrive — before the explanation.",
-                "I did not think much of it at the time. It was just what our home sounded like after lunch.",
-                "Years later, when I started asking harder questions — about loyalty, about doing the right thing when the right thing is not clear, about why good people end up on the wrong side — I kept finding that the Mahabharata had already asked them. More honestly than anything else I had read.",
-                "I decided I wanted to write about it. Then to make videos. Then AI made it possible to build something larger — a place where these stories could be decoded properly, not summarised.",
-                "That is what this is. One person trying to give back what those after-lunch slokas gave her — the feeling that something ancient is still speaking directly to you.",
+                "నా నాన్న ప్రతిరోజూ భోజనం తర్వాత గీతామకరందము చదివేవారు — శ్రీ విద్యాప్రకాశానందగిరి స్వామీజీ రచించిన తెలుగు వ్యాఖ్యానం. గీతాదేవీ ప్రార్థనతో ప్రారంభించి, అమ్మకు వినిపించేవారు. నేను పక్కన కూర్చుని వినేదాన్ని.",
+                "ఆ ప్రార్థన భావం ఇలా ఉంటుంది — తల్లీ, గీతాదేవీ, జగన్మాతా, చిన్మయస్వరూపిణీ: సంసారమనే చీకటిలో మునిగిన మాకు నువ్వు దీపంలా మార్గం చూపావు. భయాన్ని, దుఃఖాన్ని, బంధాలను తొలగించావు. నీ కృపాకటాక్షంతో జనులకు జ్ఞానతేజాన్ని ప్రసాదించావు. ఈ ప్రాపంచిక క్షేత్రంలో మాకు వెలుగు చూపావు — మీకు మా అనంతకోటి ప్రణామాలు.",
+                "సంస్కృతం తెలియదు. అన్ని పదాలు అర్థం కాలేదు. కానీ భావం మాత్రం నేరుగా మనసుకు చేరేది — పదాల కంటే ముందే.",
+                "అది మా ఇంటిలో మధ్యాహ్నం తర్వాత వినిపించే శబ్దం అంతే అనుకున్నాను. కానీ ఆ భావాలు మనసులో నిలిచిపోయాయి.",
+                "తర్వాతి సంవత్సరాలలో నిజమైన ప్రశ్నలు వచ్చినప్పుడు — విధేయత గురించి, ఏది ధర్మమో తెలియనప్పుడు, మంచివాళ్ళు తప్పు వైపు ఎందుకు నిలుస్తారని — మహాభారతం అన్నిటికీ సమాధానం చెప్పిందని అర్థమైంది. వేరే దేనికంటే నిజాయితీగా.",
+                "రాయాలనీ, వీడియోలు చేయాలనీ అనిపించింది. AI సహాయంతో అది సాధ్యమైంది — ఈ కథలను సరిగ్గా విప్పి చెప్పే ఒక వేదిక నిర్మించడం.",
+                "ఆ మధ్యాహ్నపు ప్రార్థన నాకు ఇచ్చిన అనుభవాన్ని మీకు ఇవ్వడానికే ఈ సైట్ ఉంది — పురాతనమైనది ఇప్పటికీ మీతో నేరుగా మాట్లాడుతుందనే అనుభూతి.",
               ].map((para, i) => (
                 <p key={i} className="leading-relaxed"
                   style={{
