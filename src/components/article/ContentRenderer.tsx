@@ -1,5 +1,7 @@
+import { Link } from "react-router-dom";
 import type { ContentBlock } from "@/data/articles";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
+import { ArrowRight } from "lucide-react";
 
 /* ── Individual block types ── */
 
@@ -95,6 +97,55 @@ const LessonCallout = ({ text }: { text: string }) => (
   </div>
 );
 
+/* ── Internal links block — SEO contextual links ── */
+const RelatedLinks = ({ links }: { links: { slug: string; label: string }[] }) => (
+  <nav
+    aria-label="Related articles"
+    className="my-10 rounded-2xl overflow-hidden"
+    style={{
+      background: "linear-gradient(135deg, rgba(212,175,55,0.05) 0%, rgba(212,175,55,0.02) 100%)",
+      border: "1px solid rgba(212,175,55,0.15)",
+    }}
+  >
+    <div
+      className="px-6 py-4 border-b"
+      style={{ borderColor: "rgba(212,175,55,0.1)" }}
+    >
+      <span
+        className="text-[10px] tracking-[0.3em] uppercase"
+        style={{ fontFamily: "'Cinzel', serif", color: "rgba(212,175,55,0.6)" }}
+      >
+        Continue Reading
+      </span>
+    </div>
+    <ul className="divide-y" style={{ borderColor: "rgba(212,175,55,0.08)" }}>
+      {links.map((link) => (
+        <li key={link.slug}>
+          <Link
+            to={`/blog/${link.slug}`}
+            className="flex items-center justify-between gap-4 px-6 py-4 group transition-colors duration-200"
+            style={{ color: "rgba(245,237,218,0.85)" }}
+          >
+            <span
+              className="leading-snug group-hover:text-primary transition-colors duration-200"
+              style={{
+                fontSize: "clamp(14px, 1.6vw, 16px)",
+                fontFamily: "'Cormorant Garamond', Georgia, serif",
+              }}
+            >
+              {link.label}
+            </span>
+            <ArrowRight
+              size={14}
+              className="flex-shrink-0 text-primary/40 group-hover:text-primary group-hover:translate-x-1 transition-all duration-200"
+            />
+          </Link>
+        </li>
+      ))}
+    </ul>
+  </nav>
+);
+
 /* ── Full-width pull quote (appears once, mid-article) ── */
 export const PullQuote = ({ text }: { text: string }) => {
   const ref = useScrollReveal<HTMLDivElement>();
@@ -169,6 +220,9 @@ const ContentRenderer = ({ blocks, pullQuote }: ContentRendererProps) => {
             {block.type === "heading" && <Heading text={block.text} />}
             {block.type === "quote" && <Quote text={block.text} />}
             {block.type === "lesson" && <LessonCallout text={block.text} />}
+            {block.type === "related_links" && block.links && (
+              <RelatedLinks links={block.links} />
+            )}
             {block.type === "divider" && (
               <div className="flex items-center gap-4 my-12">
                 <div className="flex-1 h-px bg-border/40" />
