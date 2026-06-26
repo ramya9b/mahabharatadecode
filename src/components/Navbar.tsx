@@ -12,6 +12,7 @@ const NAV_LINKS = [
   { to: "/wisdom",      key: "nav.wisdom"      },
   { to: "/characters",  key: "nav.characters"  },
   { to: "/blog",        key: "nav.blog"        },
+  { to: "/pricing",     key: "nav.pricing"     },
   { to: "/about",       key: "nav.about"       },
 ];
 
