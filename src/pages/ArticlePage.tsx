@@ -110,6 +110,7 @@ const ArticlePage = () => {
 
       {/* ── 2-9. Article body — gated behind subscription after 14-day trial ── */}
       <LockGate
+        slug={article.slug}
         reason="Your 14-day trial ended"
         title="Read the rest of this story"
         description="Your free 14 days have ended. Upgrade for unlimited articles and Story Teller access."
