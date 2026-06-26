@@ -800,6 +800,8 @@ export const articles: Article[] = [
     subtitle: "The most misunderstood concept in Indian philosophy",
     description:
       "Everyone in the Mahabharata claims to be acting according to dharma. And yet they destroy each other. What does this tell us about the nature of righteous action?",
+    metaTitle: "Dharma Is Not a Rulebook — It Is a Compass | MahabharataDecoded",
+    metaDescription: "Everyone in the Mahabharata claimed dharma. Everyone destroyed each other anyway. Here is what dharma actually means — and why it is a compass, not a rulebook.",
     summary:
       "Everyone invoked dharma. Everyone destroyed each other. The Mahabharata's most urgent lesson is about the difference between following rules and living with wisdom.",
     category: "Life Lessons",
@@ -887,6 +889,8 @@ export const articles: Article[] = [
     subtitle: "What 2.47 of the Bhagavad Gita actually means",
     description:
       "\"You have a right to perform your duties but not to the fruits\" — nine words used to justify everything from indifference to extraordinary heroism. Here is what Krishna actually meant.",
+    metaTitle: "Bhagavad Gita 2.47 — The Most Misquoted Verse Explained | MahabharataDecoded",
+    metaDescription: "Gita 2.47 is quoted to justify indifference and heroism equally. Here is what Krishna actually said, in context — and why the popular interpretation gets it wrong.",
     summary:
       "Nine words. Thousands of years of misquotation. The verse that has been used to justify everything — and what it actually says about how to act in the world.",
     category: "Slokas",
@@ -976,6 +980,8 @@ export const articles: Article[] = [
     subtitle: "Truth-telling in a court of comfortable lies",
     description:
       "He warned Dhritarashtra before every catastrophe. He saw the war coming decades before it arrived. He was ignored every time. Vidura's story is the tragedy of wisdom without power.",
+    metaTitle: "Vidura: When Wisdom Is Ignored | Mahabharata Life Lessons",
+    metaDescription: "Vidura warned Dhritarashtra before every disaster in the Mahabharata. He was right every time. He was ignored every time. His story is the most honest study of wisdom without power.",
     summary:
       "He predicted every disaster. He was ignored every time. Vidura's story is the Mahabharata's most urgent lesson about the price of speaking truth in a room that has already decided.",
     category: "Philosophy",
@@ -5159,3 +5165,4 @@ export const getRelatedArticles = (article: Article): Article[] => {
     )
     .slice(0, 3);
 };
+
