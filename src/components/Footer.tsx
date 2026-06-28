@@ -41,6 +41,7 @@ const Footer = () => {
               <li><Link to="/characters" className="text-muted-foreground text-[16px] hover:text-primary transition-colors i18n-safe">{t("footer.links.characters")}</Link></li>
               <li><a href="/#lessons" className="text-muted-foreground text-[16px] hover:text-primary transition-colors i18n-safe">{t("footer.links.lessons")}</a></li>
               <li><Link to="/wisdom" className="text-muted-foreground text-[16px] hover:text-primary transition-colors i18n-safe">{t("footer.links.wisdom")}</Link></li>
+              <li><Link to="/temples" className="text-muted-foreground text-[16px] hover:text-primary transition-colors i18n-safe">Temple Map</Link></li>
               <li><Link to="/pricing" className="text-muted-foreground text-[16px] hover:text-primary transition-colors i18n-safe">Pricing</Link></li>
               <li><Link to="/about" className="text-muted-foreground text-[16px] hover:text-primary transition-colors i18n-safe">{t("footer.links.about")}</Link></li>
             </ul>
