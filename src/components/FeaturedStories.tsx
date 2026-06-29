@@ -45,16 +45,20 @@ const FeaturedStories = () => {
               className="group glass-card overflow-hidden premium-card cursor-pointer block"
               style={{ borderRadius: "16px" }}
             >
-              {/* Image */}
-              <div className="relative h-80 md:h-96 overflow-hidden cinematic-frame">
-                <img
-                  src={story.image}
-                  alt={story.title}
-                  loading="lazy"
-                  width={512}
-                  height={640}
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" style={{ objectPosition: "center 0%" }}
-                />
+              {/* Image — background-image approach for precise face positioning */}
+              <div
+                className="relative h-80 md:h-96 overflow-hidden cinematic-frame"
+                style={{
+                  backgroundImage: `url(${story.image})`,
+                  backgroundSize: "cover",
+                  backgroundPosition: "center top",
+                  backgroundRepeat: "no-repeat",
+                }}
+                role="img"
+                aria-label={story.title}
+              >
+                {/* Hidden img for SEO/accessibility */}
+                <img src={story.image} alt={story.title} className="sr-only" />
                 {/* Cinematic gradient */}
                 <div
                   className="absolute inset-0 transition-opacity duration-500"
