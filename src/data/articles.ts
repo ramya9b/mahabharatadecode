@@ -176,6 +176,8 @@ export const articles: Article[] = [
         title: "Loyalty vs Truth",
         description:
           "Karna's tragedy is choosing loyalty to a person over loyalty to dharma. Loyalty is only noble when the cause it serves is just.",
+    metaTitle: "Arjuna and Karna: The Rivalry Was Never Just About Archery | MahabharataDecoded",
+    metaDescription: "Arjuna and Karna were born for each other's destruction. What the Mahabharata is really studying in their rivalry is the difference between legitimacy and merit.",
         accent: "gold",
       },
       {
@@ -372,6 +374,8 @@ export const articles: Article[] = [
         title: "Strategy Over Strength",
         description:
           "Krishna had ten million warriors and chose not to use them. The most powerful move is often knowing which power not to deploy.",
+    metaTitle: "Bhagavad Gita 2.47 — The Most Misquoted Verse Explained | MahabharataDecoded",
+    metaDescription: "Gita 2.47 is quoted to justify both indifference and heroism. Here is what Krishna actually said in context — and why the popular interpretation misses the point entirely.",
         accent: "gold",
       },
       {
@@ -568,6 +572,8 @@ export const articles: Article[] = [
         title: "Doubt Is the Beginning",
         description:
           "Arjuna's paralysis qualified him for wisdom — it didn't disqualify him. You cannot receive deep truth when you are certain. Doubt opens what certainty closes.",
+    metaTitle: "Vidura: The Wise Man Who Was Never Listened To | MahabharataDecoded",
+    metaDescription: "Vidura warned Dhritarashtra before every disaster in the Mahabharata. He was right every time. He was ignored every time. The tragedy of wisdom without power.",
         accent: "gold",
       },
       {
@@ -731,6 +737,8 @@ export const articles: Article[] = [
         title: "Dignity Is Claimed, Not Given",
         description:
           "No one in that court gave Draupadi her dignity back. She claimed it herself — with one question that no one could refute.",
+    metaTitle: "The Mahabharata's Guide to Difficult Relationships | MahabharataDecoded",
+    metaDescription: "Every difficult relationship you have lived through — the loyal friend who chose wrong, the parent who could not choose you, the rival who deserved better — is already in the Mahabharata.",
         accent: "gold",
       },
       {
@@ -861,6 +869,8 @@ export const articles: Article[] = [
         title: "Unconditional Loyalty Is Not Virtue",
         description:
           "Loyalty that cannot evaluate the worthiness of its object is not devotion — it is abdication of moral responsibility.",
+    metaTitle: "Yudhishthira's Gambling: The Mahabharata's Honest Study of Compulsion | MahabharataDecoded",
+    metaDescription: "Yudhishthira staked his kingdom, brothers, and wife at the dice game and could not stop. The Mahabharata's unflinching portrait of a righteous man destroyed by a single weakness.",
         accent: "crimson",
       },
       {
@@ -3776,6 +3786,8 @@ export const articles: Article[] = [
     category: "Characters",
     character: "karna",
     readTime: 9,
+    metaTitle: "Kunti: The Mother Who Abandoned Her Firstborn | MahabharataDecoded",
+    metaDescription: "Kunti knew Karna was her firstborn and said nothing for decades — watching him be humiliated, cursed, and killed. The impossible position the Mahabharata places its most complex mother in.",
     metaTitle: "Kunti's Impossible Secret | Mahabharata Character Analysis",
     metaDescription: "Kunti knew Karna was her firstborn and said nothing for decades — watching him be humiliated, cursed, and killed. The impossible position the Mahabharata places its most complex mother in.",
     publishDate: "June 23, 2026",
@@ -3921,6 +3933,8 @@ export const articles: Article[] = [
     category: "Philosophy",
     character: "bhishma",
     readTime: 8,
+    metaTitle: "Gandhari's Blindfold: Solidarity or Abdication? | MahabharataDecoded",
+    metaDescription: "Gandhari blindfolded herself for life to share her husband's darkness. Was it devotion, protest, or the greatest abdication in the Mahabharata? The epic's most ambiguous act of self-erasure.",
     metaTitle: "Gandhari's Blindfold: Why She Made That Choice | MahabharataDecoded",
     metaDescription: "Gandhari blindfolded herself for life to share her husband's darkness. Was it devotion, protest, or refusal? The Mahabharata's most ambiguous act of self-erasure explained.",
     publishDate: "June 23, 2026",
@@ -4056,6 +4070,8 @@ export const articles: Article[] = [
     category: "Characters",
     character: "arjuna",
     readTime: 7,
+    metaTitle: "Abhimanyu: The Boy Who Was Sent Into a Battle He Could Only Half Fight | MahabharataDecoded",
+    metaDescription: "Abhimanyu learned to enter the Chakravyuh in the womb but not how to exit. He died at 16 inside a formation he could not escape. The tragedy of incomplete inherited knowledge.",
     metaTitle: "Abhimanyu: Born Knowing Too Much | MahabharataDecoded",
     metaDescription: "Abhimanyu learned to enter the Chakravyuh in the womb but not how to exit. He died at 16 inside a formation he could not escape. The tragedy of inherited knowledge.",
     publishDate: "June 23, 2026",
@@ -4192,6 +4208,8 @@ export const articles: Article[] = [
     category: "Philosophy",
     character: "krishna",
     readTime: 8,
+    metaTitle: "What Victory Cost Krishna: The Grief Nobody Talks About | MahabharataDecoded",
+    metaDescription: "After the war, Krishna returned to Dwarka and watched his entire clan destroy itself. What the Mahabharata says about what winning costs the one who engineered the victory.",
     metaTitle: "Krishna's Grief After Kurukshetra | MahabharataDecoded",
     metaDescription: "After the war, Krishna returned to Dwarka and watched his entire clan destroy itself. The Mahabharata's study of what happens to the one who wins — and what winning costs.",
     publishDate: "June 23, 2026",
@@ -4602,6 +4620,8 @@ export const articles: Article[] = [
     category: "Philosophy",
     character: "bhishma",
     readTime: 7,
+    metaTitle: "What the Mahabharata Actually Says About Forgiveness | MahabharataDecoded",
+    metaDescription: "The Mahabharata presents forgiveness as one of the hardest acts a human being can perform — not a soft virtue but a form of strength that costs more than revenge.",
     metaTitle: "What the Mahabharata Says About Forgiveness | MahabharataDecoded",
     metaDescription: "The Mahabharata presents forgiveness as one of the hardest acts a human being can perform — not a soft virtue but a form of strength that costs more than revenge.",
     publishDate: "June 23, 2026",
@@ -4865,6 +4885,8 @@ export const articles: Article[] = [
     category: "Life Lessons",
     character: "bhishma",
     readTime: 7,
+    metaTitle: "Vidura: What Happens When Nobody Listens to the Wisest Person | MahabharataDecoded",
+    metaDescription: "Vidura was the wisest man in Hastinapura and had no power to act on it. He said the right thing every time. He was ignored every time. What his story says about wisdom in institutions.",
     metaTitle: "Vidura: Truth Without Power | Mahabharata Life Lessons",
     metaDescription: "Vidura was the wisest man in Hastinapura. He had no power. He said the right thing every time. He was ignored every time. What his story tells us about wisdom in institutions.",
     publishDate: "June 23, 2026",
@@ -5136,6 +5158,8 @@ export const articles: Article[] = [
     category: "Characters",
     character: "karna",
     readTime: 9,
+    metaTitle: "Karna Knew Everything. He Chose It Anyway. | MahabharataDecoded",
+    metaDescription: "Karna knew his birth, knew the war's outcome, knew Arjuna would kill him. He chose anyway. The Mahabharata's most deliberate act of self-destruction — and what it actually means.",
     metaTitle: "Karna: What He Knew and Still Chose | MahabharataDecoded",
     metaDescription: "Karna knew his birth. He knew the war's outcome. He knew Arjuna would kill him. He chose anyway. The Mahabharata's most deliberate act of self-destruction — and what it means.",
     publishDate: "June 23, 2026",
