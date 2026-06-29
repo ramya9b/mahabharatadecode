@@ -46,14 +46,14 @@ const FeaturedStories = () => {
               style={{ borderRadius: "16px" }}
             >
               {/* Image */}
-              <div className="relative h-64 md:h-72 overflow-hidden cinematic-frame">
+              <div className="relative h-80 md:h-96 overflow-hidden cinematic-frame">
                 <img
                   src={story.image}
                   alt={story.title}
                   loading="lazy"
                   width={512}
                   height={640}
-                  className="w-full h-full object-cover object-top transition-transform duration-700 group-hover:scale-105"
+                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105" style={{ objectPosition: "center 15%" }}
                 />
                 {/* Cinematic gradient */}
                 <div
