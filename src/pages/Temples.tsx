@@ -56,8 +56,8 @@ const IndiaMap = ({
   });
 
   return (
-    <div className="relative w-full" style={{ background: "rgba(212,175,55,0.03)", border: "1px solid rgba(212,175,55,0.15)", borderRadius: "16px", padding: "16px" }}>
-      <p className="text-center text-[10px] tracking-[0.2em] uppercase mb-3" style={{ fontFamily: "'Cinzel', serif", color: "rgba(212,175,55,0.5)" }}>
+    <div className="relative w-full" style={{ background: "hsl(var(--card))", border: "1px solid hsl(var(--border))", borderRadius: "16px", padding: "16px" }}>
+      <p className="text-center text-[10px] tracking-[0.2em] uppercase mb-3" style={{ fontFamily: "'Cinzel', serif", color: "hsl(var(--primary) / 0.6)" }}>
         Temple Locations Across India
       </p>
       {/* Simplified India outline SVG */}
@@ -65,8 +65,8 @@ const IndiaMap = ({
         {/* India outline path — simplified */}
         <path
           d="M 130 60 L 180 45 L 240 50 L 300 40 L 360 55 L 420 70 L 460 100 L 490 140 L 500 180 L 510 220 L 490 260 L 480 300 L 460 330 L 440 360 L 420 390 L 400 420 L 380 450 L 360 470 L 340 490 L 320 510 L 300 525 L 280 515 L 260 500 L 240 480 L 220 460 L 200 440 L 185 415 L 170 390 L 155 360 L 140 330 L 125 300 L 110 270 L 105 235 L 100 200 L 108 165 L 115 130 L 120 100 Z"
-          fill="rgba(212,175,55,0.05)"
-          stroke="rgba(212,175,55,0.3)"
+          fill="hsl(var(--primary) / 0.06)"
+          stroke="hsl(var(--primary) / 0.4)"
           strokeWidth="1.5"
         />
         {/* State label areas */}
@@ -81,8 +81,8 @@ const IndiaMap = ({
                 cx={pos.x}
                 cy={pos.y}
                 r={ts.length > 1 ? 14 : 8}
-                fill={hasSelected ? "rgba(212,175,55,0.4)" : "rgba(212,175,55,0.15)"}
-                stroke={hasSelected ? "#D4AF37" : "rgba(212,175,55,0.5)"}
+                fill={hasSelected ? "hsl(var(--primary) / 0.5)" : "hsl(var(--border))"}
+                stroke={hasSelected ? "#D4AF37" : "hsl(var(--primary) / 0.6)"}
                 strokeWidth="1.5"
                 style={{ cursor: "pointer" }}
                 onClick={() => onSelect(ts[0].id)}
@@ -109,7 +109,7 @@ const IndiaMap = ({
                 x={pos.x}
                 y={pos.y + (ts.length > 1 ? 26 : 20)}
                 textAnchor="middle"
-                fill="rgba(245,237,218,0.6)"
+                fill="hsl(var(--muted-foreground))"
                 fontSize="8"
                 fontFamily="serif"
                 style={{ pointerEvents: "none" }}
@@ -120,7 +120,7 @@ const IndiaMap = ({
           );
         })}
       </svg>
-      <p className="text-center mt-2 text-[9px]" style={{ color: "rgba(212,175,55,0.4)", fontFamily: "'Cormorant Garamond', serif" }}>
+      <p className="text-center mt-2 text-[9px]" style={{ color: "hsl(var(--primary) / 0.5)", fontFamily: "'Cormorant Garamond', serif" }}>
         Tap a pin to jump to that state's temples
       </p>
     </div>
@@ -153,10 +153,10 @@ const TempleCard = ({
       ref={cardRef}
       className="rounded-2xl overflow-hidden transition-all duration-300"
       style={{
-        background: "rgba(212,175,55,0.03)",
+        background: "hsl(var(--card))",
         border: isSelected
           ? `2px solid ${temple.specialDisplay?.borderColor ?? color}`
-          : `1px solid rgba(212,175,55,0.12)`,
+          : `1px solid hsl(var(--border))`,
         boxShadow: isSelected ? `0 0 24px ${color}22` : "none",
       }}
     >
@@ -197,29 +197,29 @@ const TempleCard = ({
             </div>
             <h3
               className="font-heading font-bold leading-snug mb-1"
-              style={{ fontSize: "clamp(16px, 1.8vw, 19px)", color: "rgba(245,237,218,0.95)" }}
+              style={{ fontSize: "clamp(16px, 1.8vw, 19px)", color: "hsl(var(--foreground))" }}
             >
               {temple.name}
             </h3>
-            <p className="flex items-center gap-1.5" style={{ fontSize: "13px", color: "rgba(212,175,55,0.7)", fontFamily: "'Cinzel', serif" }}>
+            <p className="flex items-center gap-1.5" style={{ fontSize: "13px", color: "hsl(var(--primary))", fontFamily: "'Cinzel', serif" }}>
               <MapPin size={11} />
               {temple.city}, {temple.state}
             </p>
           </div>
           <div className="flex-shrink-0 mt-1">
-            {expanded ? <ChevronUp size={16} style={{ color: "rgba(212,175,55,0.5)" }} /> : <ChevronDown size={16} style={{ color: "rgba(212,175,55,0.5)" }} />}
+            {expanded ? <ChevronUp size={16} style={{ color: "hsl(var(--primary) / 0.6)" }} /> : <ChevronDown size={16} style={{ color: "hsl(var(--primary) / 0.6)" }} />}
           </div>
         </div>
 
         {/* Summary */}
-        <p style={{ fontSize: "14px", fontFamily: "'Cormorant Garamond', Georgia, serif", color: "rgba(245,237,218,0.75)", lineHeight: 1.6 }}>
+        <p style={{ fontSize: "14px", fontFamily: "'Cormorant Garamond', Georgia, serif", color: "hsl(var(--muted-foreground))", lineHeight: 1.6 }}>
           {temple.verifiedSignificance.slice(0, 120)}...
         </p>
       </div>
 
       {/* Expanded content */}
       {expanded && (
-        <div className="px-5 pb-6 border-t" style={{ borderColor: "rgba(212,175,55,0.1)" }}>
+        <div className="px-5 pb-6 border-t" style={{ borderColor: "hsl(var(--primary) / 0.1)" }}>
           <div className="pt-4 space-y-5">
 
             {/* Mahabharata connection */}
@@ -228,32 +228,32 @@ const TempleCard = ({
                 Mahabharata Connection
               </p>
               <TierBadge tier={tier} />
-              <p className="mt-2" style={{ fontSize: "14px", fontFamily: "'Cormorant Garamond', Georgia, serif", color: "rgba(245,237,218,0.82)", lineHeight: 1.7 }}>
+              <p className="mt-2" style={{ fontSize: "14px", fontFamily: "'Cormorant Garamond', Georgia, serif", color: "hsl(var(--foreground) / 0.85)", lineHeight: 1.7 }}>
                 {temple.mahabharataConnection.detail}
               </p>
             </div>
 
             {/* Historical debate */}
-            <div className="rounded-xl p-4" style={{ background: "rgba(212,175,55,0.04)", border: "1px solid rgba(212,175,55,0.1)" }}>
-              <p className="text-[10px] tracking-[0.2em] uppercase mb-3" style={{ fontFamily: "'Cinzel', serif", color: "rgba(212,175,55,0.6)" }}>
+            <div className="rounded-xl p-4" style={{ background: "hsl(var(--card))", border: "1px solid hsl(var(--primary) / 0.1)" }}>
+              <p className="text-[10px] tracking-[0.2em] uppercase mb-3" style={{ fontFamily: "'Cinzel', serif", color: "hsl(var(--primary) / 0.7)" }}>
                 What Is Actually Known
               </p>
               <div className="space-y-3">
                 <div>
                   <p className="text-[10px] tracking-widest uppercase mb-1" style={{ color: "#4ADE80", fontFamily: "'Cinzel', serif" }}>Verified Fact</p>
-                  <p style={{ fontSize: "13px", fontFamily: "'Cormorant Garamond', Georgia, serif", color: "rgba(245,237,218,0.8)", lineHeight: 1.6 }}>
+                  <p style={{ fontSize: "13px", fontFamily: "'Cormorant Garamond', Georgia, serif", color: "hsl(var(--foreground) / 0.85)", lineHeight: 1.6 }}>
                     {temple.historicalDebate.verifiedFact}
                   </p>
                 </div>
                 <div>
                   <p className="text-[10px] tracking-widest uppercase mb-1" style={{ color: "#D4AF37", fontFamily: "'Cinzel', serif" }}>Tradition</p>
-                  <p style={{ fontSize: "13px", fontFamily: "'Cormorant Garamond', Georgia, serif", color: "rgba(245,237,218,0.8)", lineHeight: 1.6 }}>
+                  <p style={{ fontSize: "13px", fontFamily: "'Cormorant Garamond', Georgia, serif", color: "hsl(var(--foreground) / 0.85)", lineHeight: 1.6 }}>
                     {temple.historicalDebate.tradition}
                   </p>
                 </div>
                 <div>
                   <p className="text-[10px] tracking-widest uppercase mb-1" style={{ color: "#A78BFA", fontFamily: "'Cinzel', serif" }}>Scholarly Note</p>
-                  <p style={{ fontSize: "13px", fontFamily: "'Cormorant Garamond', Georgia, serif", color: "rgba(245,237,218,0.8)", lineHeight: 1.6 }}>
+                  <p style={{ fontSize: "13px", fontFamily: "'Cormorant Garamond', Georgia, serif", color: "hsl(var(--foreground) / 0.85)", lineHeight: 1.6 }}>
                     {temple.historicalDebate.scholarlyNote}
                   </p>
                 </div>
@@ -263,9 +263,9 @@ const TempleCard = ({
                     style={{
                       fontFamily: "'Cinzel', serif",
                       background: temple.historicalDebate.verdict === "archaeologically-confirmed"
-                        ? "rgba(34,197,94,0.1)" : "rgba(212,175,55,0.08)",
-                      border: `1px solid ${temple.historicalDebate.verdict === "archaeologically-confirmed" ? "rgba(34,197,94,0.3)" : "rgba(212,175,55,0.2)"}`,
-                      color: temple.historicalDebate.verdict === "archaeologically-confirmed" ? "#4ADE80" : "rgba(212,175,55,0.7)",
+                        ? "rgba(34,197,94,0.1)" : "hsl(var(--primary) / 0.08)",
+                      border: `1px solid ${temple.historicalDebate.verdict === "archaeologically-confirmed" ? "rgba(34,197,94,0.3)" : "hsl(var(--primary) / 0.25)"}`,
+                      color: temple.historicalDebate.verdict === "archaeologically-confirmed" ? "#4ADE80" : "hsl(var(--primary))",
                     }}
                   >
                     {temple.historicalDebate.verdict.replace(/-/g, " ")}
@@ -290,7 +290,7 @@ const TempleCard = ({
               </div>
               <p
                 className="italic leading-relaxed"
-                style={{ fontSize: "clamp(14px, 1.6vw, 16px)", fontFamily: "'Cormorant Garamond', Georgia, serif", color: "rgba(245,237,218,0.9)" }}
+                style={{ fontSize: "clamp(14px, 1.6vw, 16px)", fontFamily: "'Cormorant Garamond', Georgia, serif", color: "hsl(var(--foreground))" }}
               >
                 "{temple.criticalQuestion}"
               </p>
@@ -298,8 +298,8 @@ const TempleCard = ({
 
             {/* Visit info */}
             <div className="flex items-start gap-3">
-              <MapPin size={13} style={{ color: "rgba(212,175,55,0.5)", flexShrink: 0, marginTop: 2 }} />
-              <p style={{ fontSize: "13px", fontFamily: "'Cormorant Garamond', Georgia, serif", color: "rgba(245,237,218,0.6)", lineHeight: 1.6 }}>
+              <MapPin size={13} style={{ color: "hsl(var(--primary) / 0.6)", flexShrink: 0, marginTop: 2 }} />
+              <p style={{ fontSize: "13px", fontFamily: "'Cormorant Garamond', Georgia, serif", color: "hsl(var(--muted-foreground))", lineHeight: 1.6 }}>
                 {temple.visitInfo}
               </p>
             </div>
@@ -307,7 +307,7 @@ const TempleCard = ({
             {/* Primary sources */}
             {temple.primarySources.length > 0 && (
               <div>
-                <p className="text-[10px] tracking-[0.2em] uppercase mb-2" style={{ fontFamily: "'Cinzel', serif", color: "rgba(212,175,55,0.5)" }}>
+                <p className="text-[10px] tracking-[0.2em] uppercase mb-2" style={{ fontFamily: "'Cinzel', serif", color: "hsl(var(--primary) / 0.6)" }}>
                   Primary Sources
                 </p>
                 {temple.primarySources.map((src, i) => (
@@ -317,7 +317,7 @@ const TempleCard = ({
                     target="_blank"
                     rel="noopener noreferrer"
                     className="flex items-center gap-2 mt-1 hover:opacity-80 transition-opacity"
-                    style={{ fontSize: "12px", fontFamily: "'Cormorant Garamond', Georgia, serif", color: "rgba(212,175,55,0.7)", textDecoration: "none" }}
+                    style={{ fontSize: "12px", fontFamily: "'Cormorant Garamond', Georgia, serif", color: "hsl(var(--primary))", textDecoration: "none" }}
                   >
                     <ExternalLink size={10} style={{ flexShrink: 0 }} />
                     {src.label}
@@ -375,7 +375,7 @@ export default function Temples() {
         <section className="pt-28 pb-12 px-6 text-center max-w-4xl mx-auto">
           <span
             className="inline-block mb-4 text-[11px] tracking-[0.3em] uppercase"
-            style={{ fontFamily: "'Cinzel', serif", color: "rgba(212,175,55,0.7)" }}
+            style={{ fontFamily: "'Cinzel', serif", color: "hsl(var(--primary))" }}
           >
             Sacred Geography
           </span>
@@ -410,7 +410,7 @@ export default function Temples() {
             {([1, 2, 3] as const).map(tier => (
               <div key={tier} className="flex items-center gap-2">
                 <span className="w-2.5 h-2.5 rounded-full flex-shrink-0" style={{ background: TIER_COLORS[tier] }} />
-                <span style={{ fontSize: "12px", fontFamily: "'Cinzel', serif", color: "rgba(245,237,218,0.65)", letterSpacing: "0.05em" }}>
+                <span style={{ fontSize: "12px", fontFamily: "'Cinzel', serif", color: "hsl(var(--muted-foreground))", letterSpacing: "0.05em" }}>
                   Tier {tier}: {TIER_LABELS[tier]} ({tierCounts[tier]})
                 </span>
               </div>
@@ -431,24 +431,24 @@ export default function Temples() {
               />
 
               {/* Filters */}
-              <div className="rounded-2xl overflow-hidden" style={{ border: "1px solid rgba(212,175,55,0.15)" }}>
+              <div className="rounded-2xl overflow-hidden" style={{ border: "1px solid hsl(var(--border))" }}>
                 <button
                   className="w-full flex items-center justify-between px-5 py-4"
-                  style={{ background: "rgba(212,175,55,0.04)" }}
+                  style={{ background: "hsl(var(--card))" }}
                   onClick={() => setShowFilters(f => !f)}
                 >
-                  <span className="flex items-center gap-2" style={{ fontFamily: "'Cinzel', serif", fontSize: "12px", letterSpacing: "0.15em", color: "rgba(212,175,55,0.8)" }}>
+                  <span className="flex items-center gap-2" style={{ fontFamily: "'Cinzel', serif", fontSize: "12px", letterSpacing: "0.15em", color: "hsl(var(--primary))" }}>
                     <Filter size={13} />
                     Filter Temples
                   </span>
-                  {showFilters ? <ChevronUp size={14} style={{ color: "rgba(212,175,55,0.5)" }} /> : <ChevronDown size={14} style={{ color: "rgba(212,175,55,0.5)" }} />}
+                  {showFilters ? <ChevronUp size={14} style={{ color: "hsl(var(--primary) / 0.6)" }} /> : <ChevronDown size={14} style={{ color: "hsl(var(--primary) / 0.6)" }} />}
                 </button>
 
                 {showFilters && (
-                  <div className="px-5 pb-5 pt-3 space-y-5" style={{ background: "rgba(212,175,55,0.02)" }}>
+                  <div className="px-5 pb-5 pt-3 space-y-5" style={{ background: "hsl(var(--card))" }}>
                     {/* State filter */}
                     <div>
-                      <p className="text-[10px] tracking-[0.2em] uppercase mb-2" style={{ fontFamily: "'Cinzel', serif", color: "rgba(212,175,55,0.5)" }}>
+                      <p className="text-[10px] tracking-[0.2em] uppercase mb-2" style={{ fontFamily: "'Cinzel', serif", color: "hsl(var(--primary) / 0.6)" }}>
                         By State
                       </p>
                       <div className="flex flex-wrap gap-2">
@@ -459,9 +459,9 @@ export default function Temples() {
                             className="px-3 py-1 rounded-full text-[10px] tracking-wide transition-all"
                             style={{
                               fontFamily: "'Cinzel', serif",
-                              background: selectedState === state ? "hsl(var(--primary))" : "rgba(212,175,55,0.06)",
-                              color: selectedState === state ? "hsl(var(--primary-foreground))" : "rgba(212,175,55,0.7)",
-                              border: selectedState === state ? "none" : "1px solid rgba(212,175,55,0.2)",
+                              background: selectedState === state ? "hsl(var(--primary))" : "hsl(var(--primary) / 0.08)",
+                              color: selectedState === state ? "hsl(var(--primary-foreground))" : "hsl(var(--primary))",
+                              border: selectedState === state ? "none" : "1px solid hsl(var(--primary) / 0.25)",
                             }}
                           >
                             {state}
@@ -472,7 +472,7 @@ export default function Temples() {
 
                     {/* Tier filter */}
                     <div>
-                      <p className="text-[10px] tracking-[0.2em] uppercase mb-2" style={{ fontFamily: "'Cinzel', serif", color: "rgba(212,175,55,0.5)" }}>
+                      <p className="text-[10px] tracking-[0.2em] uppercase mb-2" style={{ fontFamily: "'Cinzel', serif", color: "hsl(var(--primary) / 0.6)" }}>
                         By Source Tier
                       </p>
                       <div className="space-y-2">
@@ -487,7 +487,7 @@ export default function Temples() {
                             }}
                           >
                             <span className="w-2 h-2 rounded-full flex-shrink-0" style={{ background: color }} />
-                            <span style={{ fontSize: "11px", fontFamily: "'Cormorant Garamond', Georgia, serif", color: selectedTier === val ? color : "rgba(245,237,218,0.65)" }}>
+                            <span style={{ fontSize: "11px", fontFamily: "'Cormorant Garamond', Georgia, serif", color: selectedTier === val ? color : "hsl(var(--muted-foreground))" }}>
                               {String(label)}
                             </span>
                           </button>
@@ -499,7 +499,7 @@ export default function Temples() {
               </div>
 
               {/* Count */}
-              <p className="text-center text-[11px]" style={{ fontFamily: "'Cinzel', serif", color: "rgba(212,175,55,0.4)", letterSpacing: "0.15em" }}>
+              <p className="text-center text-[11px]" style={{ fontFamily: "'Cinzel', serif", color: "hsl(var(--primary) / 0.5)", letterSpacing: "0.15em" }}>
                 Showing {filtered.length} of {TEMPLES.length} temples
               </p>
             </div>
@@ -508,7 +508,7 @@ export default function Temples() {
             <div className="space-y-4">
               {filtered.length === 0 ? (
                 <div className="text-center py-20">
-                  <p style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: "18px", color: "rgba(245,237,218,0.5)" }}>
+                  <p style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: "18px", color: "hsl(var(--muted-foreground) / 0.8)" }}>
                     No temples match these filters.
                   </p>
                 </div>
@@ -528,26 +528,26 @@ export default function Temples() {
           {/* Source integrity notice */}
           <div
             className="mt-16 rounded-2xl p-6 md:p-8"
-            style={{ background: "rgba(212,175,55,0.03)", border: "1px solid rgba(212,175,55,0.12)" }}
+            style={{ background: "hsl(var(--card))", border: "1px solid hsl(var(--border))" }}
           >
             <div className="max-w-3xl mx-auto">
-              <p className="text-[11px] tracking-[0.25em] uppercase mb-3" style={{ fontFamily: "'Cinzel', serif", color: "rgba(212,175,55,0.6)" }}>
+              <p className="text-[11px] tracking-[0.25em] uppercase mb-3" style={{ fontFamily: "'Cinzel', serif", color: "hsl(var(--primary) / 0.7)" }}>
                 Source Integrity Notice
               </p>
-              <p style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: "15px", color: "rgba(245,237,218,0.7)", lineHeight: 1.8 }}>
+              <p style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: "15px", color: "hsl(var(--muted-foreground))", lineHeight: 1.8 }}>
                 Every claim on this page is classified by source tier. Tier 1 entries are confirmed by ASI excavations,
                 UNESCO records, surviving inscriptions, or peer-reviewed findings — and are stated as fact.
                 Tier 2 entries appear in named, dated classical texts — and are always prefixed with the text name.
                 Tier 3 entries are regional or oral traditions — and are always written as "regional tradition holds."
               </p>
-              <p className="mt-3" style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: "15px", color: "rgba(245,237,218,0.7)", lineHeight: 1.8 }}>
+              <p className="mt-3" style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: "15px", color: "hsl(var(--muted-foreground))", lineHeight: 1.8 }}>
                 We never write "the Pandavas built this" without an ASI inscription confirming it.
                 We never write "this temple dates to the Mahabharata era" without carbon dating confirming pre-500 BCE.
                 We never conflate the age of a worship site with the age of its current structure.
               </p>
-              <p className="mt-3" style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: "14px", color: "rgba(245,237,218,0.5)", lineHeight: 1.8 }}>
+              <p className="mt-3" style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: "14px", color: "hsl(var(--muted-foreground) / 0.8)", lineHeight: 1.8 }}>
                 Primary sources linked in each entry. Last verified: June 2026.
-                Errors or corrections: <a href="mailto:hello@mahabharatadecoded.com?subject=Temple data correction" style={{ color: "rgba(212,175,55,0.7)" }}>hello@mahabharatadecoded.com</a>
+                Errors or corrections: <a href="mailto:hello@mahabharatadecoded.com?subject=Temple data correction" style={{ color: "hsl(var(--primary))" }}>hello@mahabharatadecoded.com</a>
               </p>
             </div>
           </div>
