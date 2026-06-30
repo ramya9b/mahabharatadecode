@@ -12,7 +12,7 @@
      Warm cream background, dark amber text, readable by day
      ══════════════════════════════════════════════════════ */
   :root {
-    --background: 38 52% 95%;       /* #FAF5EC warm cream */
+    --background: 0 0% 100%;         /* #FFFFFF pure white */
     --foreground: 28 72% 6%;        /* very dark warm brown — max contrast on parchment */
 
     --card: 38 45% 92%;             /* #F5EDDA parchment card */
@@ -42,7 +42,7 @@
 
     --radius: 0.75rem;
 
-    --sidebar-background: 38 52% 95%;
+    --sidebar-background: 0 0% 100%;
     --sidebar-foreground: 28 70% 12%;
     --sidebar-primary: 35 95% 45%;
     --sidebar-primary-foreground: 38 55% 97%;

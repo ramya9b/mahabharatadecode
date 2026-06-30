@@ -32,7 +32,7 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
       root.style.colorScheme = "light";
     }
     /* Sync background on html for overscroll area and FOUC prevention */
-    root.style.background = theme === "dark" ? "#0C0900" : "#FAF5EC";
+    root.style.background = theme === "dark" ? "#0C0900" : "#FFFFFF";
     localStorage.setItem("mbd-theme", theme);
     document
       .querySelector('meta[name="theme-color"]')
