@@ -71,6 +71,17 @@
     --parchment-3: 38 35% 88%;       /* warm beige */
     /* Hero overlay over the battlefield image — soft parchment veil in light mode. */
     --hero-overlay: linear-gradient(to bottom, rgba(250,243,225,0.15) 0%, rgba(250,243,225,0.45) 40%, rgba(250,243,225,0.85) 80%, hsl(38 55% 92%) 100%);
+
+    /* ── AI-content accent lane — exclusively for AI-assisted features
+          (Story Teller narration, AI translations, quiz AI commentary).
+          Deliberately a cool indigo/violet, opposite the warm gold brand
+          color, so readers can visually distinguish "AI-assisted" from
+          "human-written" at a glance — a trust/transparency signal, not
+          decoration. Never used for primary nav, CTAs, or article body. ── */
+    --ai-accent: 243 75% 59%;            /* #5B5CF2 indigo-violet, AA on cream */
+    --ai-accent-foreground: 0 0% 100%;
+    --ai-accent-soft: 243 70% 92%;       /* tinted background for AI badges/cards */
+    --ai-gradient: linear-gradient(135deg, #5B8DEF 0%, #7C5CFC 100%);
   }
 
   /* ══════════════════════════════════════════════════════
@@ -138,6 +149,14 @@
     --parchment-3: 30 50% 4%;        /* deepest */
     /* Hero overlay over the battlefield image — cinematic dark veil in dark mode. */
     --hero-overlay: linear-gradient(to bottom, rgba(8,6,26,0.55) 0%, rgba(8,6,26,0.75) 50%, rgba(8,6,26,1) 100%);
+
+    /* ── AI-content accent lane — dark theme values. Brighter/lighter
+          indigo so it stays AA-readable on the near-black background,
+          mirroring how --primary brightens from amber to gold in dark. ── */
+    --ai-accent: 243 90% 72%;            /* #9092F5 brighter indigo for dark bg */
+    --ai-accent-foreground: 30 100% 4%;
+    --ai-accent-soft: 243 45% 16%;       /* dark tinted background for AI badges/cards */
+    --ai-gradient: linear-gradient(135deg, #7C9CFF 0%, #A78BFA 100%);
   }
 }
 

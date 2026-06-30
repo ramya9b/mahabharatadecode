@@ -28,16 +28,16 @@ const StoryTellerBanner = () => {
             display: "inline-block",
             padding: "4px 16px",
             borderRadius: "99px",
-            border: "1px solid rgba(160,120,32,0.3)",
+            border: "1px solid hsl(var(--ai-accent) / 0.35)",
             fontSize: "11px",
             letterSpacing: "0.25em",
             textTransform: "uppercase",
-            color: "var(--primary, #A07820)",
+            color: "hsl(var(--ai-accent))",
             fontFamily: "'Cinzel', serif",
             marginBottom: "16px",
           }}
         >
-          {t("home.storyteller.eyebrow")}
+          ✨ {t("home.storyteller.eyebrow")}
         </span>
         <h2
           style={{
@@ -69,25 +69,25 @@ const StoryTellerBanner = () => {
             display: "inline-block",
             padding: "14px 40px",
             borderRadius: "99px",
-            background: "linear-gradient(135deg, #FBBF24 0%, #34D399 50%, #38BDF8 100%)",
+            background: "var(--ai-gradient)",
             backgroundSize: "200% auto",
             animation: "shimmer 4s linear infinite",
-            color: "#08040F",
+            color: "hsl(var(--ai-accent-foreground))",
             fontFamily: "'Cinzel', serif",
             fontSize: "14px",
             fontWeight: 700,
             letterSpacing: "0.1em",
             textDecoration: "none",
-            boxShadow: "0 4px 24px rgba(52,211,153,0.40)",
+            boxShadow: "0 4px 24px hsl(var(--ai-accent) / 0.4)",
             transition: "all 0.35s ease",
           }}
           onMouseEnter={e => {
             (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-3px) scale(1.02)";
-            (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 12px 36px rgba(52,211,153,0.60)";
+            (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 12px 36px hsl(var(--ai-accent) / 0.6)";
           }}
           onMouseLeave={e => {
             (e.currentTarget as HTMLAnchorElement).style.transform = "none";
-            (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 4px 24px rgba(52,211,153,0.40)";
+            (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 4px 24px hsl(var(--ai-accent) / 0.4)";
           }}
         >
           ✨ {t("home.storyteller.cta")} →
@@ -110,18 +110,18 @@ const StoryTellerBanner = () => {
               display: "block",
               padding: "20px",
               borderRadius: "14px",
-              background: "hsl(var(--card, 38 45% 94%))",
-              border: "1px solid hsl(var(--border))",
+              background: "hsl(var(--ai-accent-soft))",
+              border: "1px solid hsl(var(--ai-accent) / 0.2)",
               textDecoration: "none",
               transition: "all 0.2s",
             }}
             onMouseEnter={e => {
-              e.currentTarget.style.borderColor = "hsl(var(--primary))";
+              e.currentTarget.style.borderColor = "hsl(var(--ai-accent))";
               e.currentTarget.style.transform = "translateY(-2px)";
-              e.currentTarget.style.boxShadow = "0 8px 24px rgba(160,120,32,0.15)";
+              e.currentTarget.style.boxShadow = "0 8px 24px hsl(var(--ai-accent) / 0.18)";
             }}
             onMouseLeave={e => {
-              e.currentTarget.style.borderColor = "hsl(var(--border))";
+              e.currentTarget.style.borderColor = "hsl(var(--ai-accent) / 0.2)";
               e.currentTarget.style.transform = "translateY(0)";
               e.currentTarget.style.boxShadow = "none";
             }}
@@ -132,7 +132,7 @@ const StoryTellerBanner = () => {
                 fontFamily: "'Cinzel', serif",
                 fontSize: "13px",
                 fontWeight: 600,
-                color: "hsl(var(--primary))",
+                color: "hsl(var(--ai-accent))",
                 marginBottom: "6px",
               }}
             >
