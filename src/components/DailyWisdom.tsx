@@ -450,18 +450,18 @@ const DailyWisdom = () => {
                 fontFamily: "'Cinzel', serif",
                 background: activeTheme === theme
                   ? "hsl(var(--primary))"
-                  : "rgba(212,175,55,0.06)",
+                  : "hsl(var(--primary) / 0.08)",
                 color: activeTheme === theme
                   ? "hsl(var(--primary-foreground))"
-                  : "rgba(212,175,55,0.7)",
+                  : "hsl(var(--primary))",
                 border: activeTheme === theme
                   ? "1px solid transparent"
-                  : "1px solid rgba(212,175,55,0.2)",
+                  : "1px solid hsl(var(--primary) / 0.3)",
               }}
             >
               {THEME_LABELS[theme]}
               {theme !== "all" && (
-                <span style={{ opacity: 0.5, marginLeft: "4px" }}>
+                <span style={{ opacity: 0.65, marginLeft: "4px" }}>
                   {SLOKAS.filter(s => s.theme === theme).length}
                 </span>
               )}
@@ -484,9 +484,9 @@ const DailyWisdom = () => {
             className="inline-block mb-4 px-3 py-1 rounded-full text-[9px] tracking-[0.25em] uppercase"
             style={{
               fontFamily: "'Cinzel', serif",
-              background: "rgba(212,175,55,0.08)",
-              border: "1px solid rgba(212,175,55,0.2)",
-              color: "rgba(212,175,55,0.7)",
+              background: "hsl(var(--primary) / 0.1)",
+              border: "1px solid hsl(var(--primary) / 0.3)",
+              color: "hsl(var(--primary))",
             }}
           >
             {THEME_LABELS[sloka.theme]}
