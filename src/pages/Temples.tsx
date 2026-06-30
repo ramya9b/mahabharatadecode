@@ -56,7 +56,7 @@ const IndiaMap = ({
   });
 
   return (
-    <div className="relative w-full" style={{ background: "hsl(var(--card))", border: "1px solid hsl(var(--border))", borderRadius: "16px", padding: "16px" }}>
+    <div className="relative w-full" style={{ background: "hsl(var(--temple-card))", border: "1px solid hsl(var(--temple-card-border))", borderRadius: "16px", padding: "16px" }}>
       <p className="text-center text-[10px] tracking-[0.2em] uppercase mb-3" style={{ fontFamily: "'Cinzel', serif", color: "hsl(var(--primary) / 0.6)" }}>
         Temple Locations Across India
       </p>
@@ -153,10 +153,10 @@ const TempleCard = ({
       ref={cardRef}
       className="rounded-2xl overflow-hidden transition-all duration-300"
       style={{
-        background: "hsl(var(--card))",
+        background: "hsl(var(--temple-card))",
         border: isSelected
           ? `2px solid ${temple.specialDisplay?.borderColor ?? color}`
-          : `1px solid hsl(var(--border))`,
+          : `1px solid hsl(var(--temple-card-border))`,
         boxShadow: isSelected ? `0 0 24px ${color}22` : "none",
       }}
     >
@@ -431,10 +431,10 @@ export default function Temples() {
               />
 
               {/* Filters */}
-              <div className="rounded-2xl overflow-hidden" style={{ border: "1px solid hsl(var(--border))" }}>
+              <div className="rounded-2xl overflow-hidden" style={{ border: "1px solid hsl(var(--temple-card-border))" }}>
                 <button
                   className="w-full flex items-center justify-between px-5 py-4"
-                  style={{ background: "hsl(var(--card))" }}
+                  style={{ background: "hsl(var(--temple-card))" }}
                   onClick={() => setShowFilters(f => !f)}
                 >
                   <span className="flex items-center gap-2" style={{ fontFamily: "'Cinzel', serif", fontSize: "12px", letterSpacing: "0.15em", color: "hsl(var(--primary))" }}>
@@ -445,7 +445,7 @@ export default function Temples() {
                 </button>
 
                 {showFilters && (
-                  <div className="px-5 pb-5 pt-3 space-y-5" style={{ background: "hsl(var(--card))" }}>
+                  <div className="px-5 pb-5 pt-3 space-y-5" style={{ background: "hsl(var(--temple-card))" }}>
                     {/* State filter */}
                     <div>
                       <p className="text-[10px] tracking-[0.2em] uppercase mb-2" style={{ fontFamily: "'Cinzel', serif", color: "hsl(var(--primary) / 0.6)" }}>

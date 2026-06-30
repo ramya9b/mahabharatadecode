@@ -82,6 +82,13 @@
     --ai-accent-foreground: 0 0% 100%;
     --ai-accent-soft: 243 70% 92%;       /* tinted background for AI badges/cards */
     --ai-gradient: linear-gradient(135deg, #5B8DEF 0%, #7C5CFC 100%);
+
+    /* ── Temples-page lavender accent — scoped, not a global --card swap.
+          Applied only to: India map panel, temple list cards, filter
+          dropdown. Other cards (Pricing, ArticlePage, etc.) stay on the
+          existing parchment --card tone. ── */
+    --temple-card: 260 35% 95%;          /* soft lavender, AA text contrast */
+    --temple-card-border: 260 25% 80%;
   }
 
   /* ══════════════════════════════════════════════════════
@@ -157,6 +164,10 @@
     --ai-accent-foreground: 30 100% 4%;
     --ai-accent-soft: 243 45% 16%;       /* dark tinted background for AI badges/cards */
     --ai-gradient: linear-gradient(135deg, #7C9CFF 0%, #A78BFA 100%);
+
+    /* ── Temples-page lavender accent — dark theme values ── */
+    --temple-card: 260 30% 16%;          /* deep lavender-tinted dark */
+    --temple-card-border: 260 25% 30%;
   }
 }
 
