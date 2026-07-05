@@ -5148,6 +5148,138 @@ export const articles: Article[] = [
 
   /* ══════════════ WHAT KARNA KNEW ══════════════ */
   {
+    slug: "mahabharata-18-parvas-in-order",
+    title: "The 18 Parvas of the Mahabharata — What Each One Contains",
+    subtitle: "The Mahabharata is not one story. It is 18 books, each named for what it carries — a war formation, a character, a moment of reckoning. Here is what each Parva actually contains.",
+    description:
+      "Most people know the Mahabharata as a single epic. But it was compiled as 18 Parvas — 18 books, each with its own focus, characters, and philosophical weight. Knowing which Parva contains what is the difference between reading the Mahabharata and actually understanding how it is structured.",
+    summary:
+      "The Mahabharata's 18 Parvas run from the birth of the Kuru dynasty to the death of Krishna and the departure of the Pandavas. Each Parva is named for its central concern. Together they form the largest single work of literature in human history.",
+    category: "Epic Overview",
+    readTime: 11,
+    metaTitle: "The 18 Parvas of the Mahabharata In Order — Complete Guide | MahabharataDecoded",
+    metaDescription: "A complete guide to all 18 Parvas of the Mahabharata in order. What each Parva contains, who it focuses on, and why it matters. The clearest breakdown of the epic structure available.",
+    featured: false,
+    image: "/characters/krishna.webp",
+    tags: ["Epic Structure", "18 Parvas", "Mahabharata Overview", "Sanskrit Literature"],
+    relatedSlugs: [
+      "who-caused-mahabharata-war",
+      "dharma-beyond-rules",
+      "bhishma-terrible-oath",
+    ],
+    content: [
+      {
+        type: "paragraph",
+        text: "The Mahabharata is not a single continuous story. It is an anthology — 18 books called Parvas, each compiled around a specific phase of the Kuru dynasty's history. The word Parva means section or chapter in Sanskrit, but each one is large enough to be an independent epic in its own right.",
+      },
+      {
+        type: "paragraph",
+        text: "In total, the Mahabharata contains approximately 100,000 shlokas across these 18 Parvas — making it roughly ten times the length of the Iliad and Odyssey combined. It is the largest single work of literature produced by any civilisation.",
+      },
+      {
+        type: "heading",
+        text: "Why Knowing the 18 Parvas Matters",
+      },
+      {
+        type: "paragraph",
+        text: "Most people encounter the Mahabharata through retellings that compress the 18 Parvas into a single linear narrative. But the original structure is not linear. The Parvas circle back, digress, embed stories within stories, and return to themes across thousands of verses. Understanding which Parva contains what is the difference between reading the Mahabharata and actually navigating it.",
+      },
+      {
+        type: "heading",
+        text: "The 18 Parvas In Order",
+      },
+      {
+        type: "paragraph",
+        text: "Parva 1 — Adi Parva (The Book of the Beginning): The origin of the Kuru dynasty, the birth of Bhishma, Drona, Karna, and the Pandavas. The burning of the Khandava forest. The construction of Indraprastha. This Parva establishes every character and conflict that the remaining 17 books will resolve.",
+      },
+      {
+        type: "paragraph",
+        text: "Parva 2 — Sabha Parva (The Book of the Assembly Hall): The building of the Pandavas' assembly hall. The dice game — where Yudhishthira gambles away his kingdom, his brothers, and Draupadi. Draupadi's humiliation in open court. The Pandavas' first exile begins.",
+      },
+      {
+        type: "paragraph",
+        text: "Parva 3 — Vana Parva (The Book of the Forest): The longest Parva. Twelve years of forest exile. Sage Markandeya narrates dozens of stories to the Pandavas. Arjuna obtains the Pashupatastra from Shiva. The story of Nala and Damayanti. The questions of the Yaksha to Yudhishthira.",
+      },
+      {
+        type: "paragraph",
+        text: "Parva 4 — Virata Parva (The Book of Virata): The thirteenth year spent in disguise at the court of King Virata. Bhima as a cook, Arjuna as a dance teacher, Draupadi as a handmaiden. This Parva tests whether the Pandavas can survive invisibility.",
+      },
+      {
+        type: "paragraph",
+        text: "Parva 5 — Udyoga Parva (The Book of Effort): Preparations for war. Krishna's diplomatic mission to the Kaurava court. His offer of five villages in exchange for peace. Duryodhana's refusal. The alignment of all kingdoms on either side.",
+      },
+      {
+        type: "paragraph",
+        text: "Parva 6 — Bhishma Parva (The Book of Bhishma): The first ten days of the Kurukshetra war. This Parva contains the Bhagavad Gita — all 18 chapters — delivered by Krishna to Arjuna before the first arrow is fired.",
+      },
+      {
+        type: "paragraph",
+        text: "Parva 7 — Drona Parva (The Book of Drona): Days 11 through 15 of the war with Drona as commander. Abhimanyu enters the Chakravyuh formation and cannot exit — he is killed inside it. Drona's death follows.",
+      },
+      {
+        type: "paragraph",
+        text: "Parva 8 — Karna Parva (The Book of Karna): Two days with Karna as Kaurava commander. His chariot wheel sinks into the earth. Arjuna kills him while he is unarmed. The most morally contested single act of the entire war.",
+      },
+      {
+        type: "paragraph",
+        text: "Parva 9 — Shalya Parva (The Book of Shalya): The final day of the main war. The death of Duryodhana — struck below the waist by Bhima's mace in a move that violates the rules of mace combat. The war ends, and Yudhishthira confronts what victory has actually cost.",
+      },
+      {
+        type: "paragraph",
+        text: "Parva 10 — Sauptika Parva (The Book of the Sleeping Warriors): Ashwatthama's night raid — the most brutal scene in the epic. He enters the Pandava camp at midnight and kills the sleeping warriors including Draupadi's five sons. The smallest Parva by length. The most difficult to read.",
+      },
+      {
+        type: "paragraph",
+        text: "Parva 11 — Stri Parva (The Book of the Women): The women of both sides grieve on the battlefield. Gandhari, who lost all one hundred sons, curses Krishna — telling him his own clan will destroy itself exactly as the Kurus did. Krishna accepts the curse.",
+      },
+      {
+        type: "paragraph",
+        text: "Parva 12 — Shanti Parva (The Book of Peace): The longest Parva by verse count. Bhishma, dying on his bed of arrows, teaches Yudhishthira on dharma, statecraft, and governance at exhaustive length. The philosophical centre of the entire epic.",
+      },
+      {
+        type: "paragraph",
+        text: "Parva 13 — Anushasana Parva (The Book of Instructions): Bhishma continues his teachings on charity, duty, and the nature of the self. His final breath. The Pandavas perform his last rites.",
+      },
+      {
+        type: "paragraph",
+        text: "Parva 14 — Ashvamedha Parva (The Book of the Horse Sacrifice): Yudhishthira performs the Ashvamedha — the royal horse sacrifice — to atone for the war and legitimise his reign. Arjuna accompanies the horse across the subcontinent.",
+      },
+      {
+        type: "paragraph",
+        text: "Parva 15 — Ashramavasika Parva (The Book of the Hermitage): Dhritarashtra, Gandhari, and Kunti retire to the forest as ascetics. They die in a forest fire. Vidura dies in meditation. Yudhishthira performs their last rites.",
+      },
+      {
+        type: "paragraph",
+        text: "Parva 16 — Mausala Parva (The Book of the Clubs): Thirty-six years after the war. The Yadava clan destroys itself in a brawl, fulfilling Gandhari's curse. Krishna is struck by a hunter's arrow and dies near Prabhasa. Dwarka sinks into the sea.",
+      },
+      {
+        type: "paragraph",
+        text: "Parva 17 — Mahaprasthanika Parva (The Book of the Great Journey): The Pandavas and Draupadi renounce their kingdom and walk north toward the Himalayas. They fall one by one. Only Yudhishthira reaches the summit — accompanied by a dog who followed them the entire way.",
+      },
+      {
+        type: "paragraph",
+        text: "Parva 18 — Svargarohana Parva (The Book of the Ascent to Heaven): Yudhishthira enters heaven and finds his enemies there — including Duryodhana. He finds his brothers and Draupadi in what appears to be hell. The Mahabharata's final question: what is the relationship between virtue, suffering, and what comes after? The shortest Parva. The one that refuses to resolve cleanly.",
+      },
+      {
+        type: "heading",
+        text: "The Structure Itself Is the Argument",
+      },
+      {
+        type: "paragraph",
+        text: "The Bhagavad Gita sits inside Parva 6 — not at the beginning, not at the end, but at the exact midpoint of war's preparation, when a warrior had put down his bow. The most devastating Parva (Sauptika) comes after the official end of the war. The longest philosophical teaching (Shanti Parva) comes from a dying man on a bed of arrows, not from a living sage in a forest.",
+      },
+      {
+        type: "paragraph",
+        text: "The epic places its deepest wisdom in its most difficult moments. That is not an accident of compilation. That is the Mahabharata's argument about when wisdom is actually needed — and where.",
+      },
+      {
+        type: "lesson",
+        text: "The number 18 recurs throughout the Mahabharata: 18 Parvas, 18 days of war, 18 chapters of the Bhagavad Gita, 18 armies on the battlefield. Whether this is deliberate mathematical design or accumulated tradition is itself a scholarly debate the Mahabharata would have appreciated.",
+      },
+    ],
+  },
+
+  {
     slug: "karna-what-he-knew-and-chose",
     title: "Karna Knew Everything. He Chose It Anyway. That Is the Point.",
     subtitle: "He knew his birth. He knew his mother. He knew he would lose. He knew Arjuna would be the one. He chose his side, his oath, and his friend — and walked into it with complete clarity. That is not tragedy. That is something harder.",
