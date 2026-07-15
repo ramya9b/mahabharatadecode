@@ -5833,6 +5833,297 @@ export const articles: Article[] = [
         "Learn that knowledge by prostration, by inquiry, and by service; the wise, the seers of truth, will instruct you in it. — Bhagavad Gita 4.34. The verse describes the ideal disciple: humble, questioning, and devoted in service. Eklavya offered all three to a teacher who was not present and had not agreed to teach him. The distance between the ideal the verse praises and the reward Eklavya received is the whole of the story's difficulty — and the Mahabharata leaves that distance unresolved.",
     },
   },
+
+  {
+    slug: "what-happened-to-pandavas-after-war",
+    title: "What Happened to the Pandavas After the War?",
+    subtitle:
+      "They won Kurukshetra — and then the Mahabharata keeps going. Thirty-six years of rule, the self-destruction of Krishna's own clan, and a final walk into the Himalayas from which only one of them returned. The victory was never the ending.",
+    description:
+      "The Mahabharata does not end when the Pandavas win the war. Nearly a fifth of the epic follows what came after: Yudhishthira's grief-stricken kingship, the elders' retreat into the forest, the annihilation of the Yadavas, Krishna's death, and the Pandavas' final journey north toward the mountains, where they fell one by one. This is what the text actually records about their last years.",
+    summary:
+      "After winning Kurukshetra, the Pandavas ruled Hastinapura for about thirty-six years under Yudhishthira, who governed in guilt more than triumph. When Krishna departed the world and the Yadava clan destroyed itself, the brothers renounced the throne, crowned Abhimanyu's son Parikshit, and walked north into the Himalayas on their final journey. Only Yudhishthira reached heaven's gate in his mortal body.",
+    category: "Philosophy",
+    character: "Pandavas",
+    readTime: 12,
+    metaTitle: "What Happened to Pandavas After War | MahabharataDecoded",
+    metaDescription:
+      "What happened to the Pandavas after the Mahabharata war? Yudhishthira's reign, the Yadava clan's fall, and the final journey north — the epic's true ending.",
+    publishDate: "July 15, 2026",
+    featured: false,
+    imageKey: "hero",
+    image: "",
+    tags: [
+      "Pandavas",
+      "Mahaprasthanika Parva",
+      "Mausala Parva",
+      "Yudhishthira",
+      "Parikshit",
+      "End of Mahabharata",
+      "Kali Yuga",
+      "Svargarohana",
+    ],
+    pullQuote:
+      "They had spent thirteen years in exile and eighteen days at war to win a kingdom. They ruled it for a generation, and then they set it down, walked north, and let it go. The Mahabharata's last statement about the Pandavas is not that they triumphed. It is that they learned how to leave.",
+    authorNote:
+      "This article draws on the closing books of the Mahabharata: the Shanti and Anushasana Parvas (Bhishma's instruction and Yudhishthira's reign), the Ashvamedhika Parva (the horse sacrifice and the birth of Parikshit), the Ashramavasika Parva (the elders' retreat and death in the forest), the Mausala Parva (the destruction of the Yadavas and Krishna's death), and the Mahaprasthanika and Svargarohana Parvas (the final journey and its aftermath). Where later tradition or commentary adds detail beyond the text, it is labelled as such.",
+    reelHook: {
+      hook: "The Pandavas won the Mahabharata war. Most people stop the story there. But the epic keeps going for another thirty-six years — and it does not end the way you would expect.",
+      supporting: "A grieving king, a clan that destroyed itself, the death of Krishna, and a final walk into the mountains where the brothers fell one by one. Only Yudhishthira reached the end.",
+    },
+    relatedSlugs: [
+      "krishna-grief-after-kurukshetra",
+      "is-ashwatthama-still-alive",
+      "mahabharata-18-parvas-in-order",
+    ],
+    storyBlocks: [
+      {
+        section: "introduction",
+        label: "Introduction",
+        paragraphs: [
+          "Most retellings of the Mahabharata end on the eighteenth day. Duryodhana falls, the Pandavas stand victorious over an empty field, and the story is treated as complete.",
+          "The epic itself does not stop there. Roughly a fifth of the Mahabharata — several of its eighteen books — describes what happened after the war was won. And what it describes is not a reward. It is a long, sober account of rule, loss, and renunciation.",
+          "The Pandavas won everything they had fought for. Then the text follows them as they discover what winning was worth. They ruled for a generation, watched the world they knew come apart, and finally walked away from all of it. The victory at Kurukshetra was not the ending. It was the middle.",
+        ],
+      },
+      {
+        section: "background",
+        label: "The Reluctant King",
+        paragraphs: [
+          "The war left Yudhishthira crowned and inconsolable. He had won, but the cost — his teachers, his cousins, his elder brother Karna whose identity he only learned afterward, the sons of Draupadi, an entire generation of warriors — sat on him as guilt rather than triumph. According to the Mahabharata, he wanted to renounce the throne almost immediately and retire to the forest.",
+          "He is talked out of it. His brothers, Draupadi, Krishna, and the sage Vyasa all press him to accept the duty that victory has placed on him. He is brought to the dying Bhishma, who lies on his bed of arrows and delivers the epic's longest body of teaching — on kingship, law, duty, grief, and liberation — across the Shanti and Anushasana Parvas. Only after this does Yudhishthira take up the crown of Hastinapura in earnest.",
+          "To expiate the bloodshed and affirm his sovereignty, he performs the Ashvamedha, the royal horse sacrifice, recorded in the Ashvamedhika Parva. It is during this period that the dynasty's survival is secured: Parikshit, the son of the slain Abhimanyu, is born — the child Ashwatthama had tried to kill in the womb with a divine weapon and whom Krishna had shielded. The line the war nearly extinguished continues through him.",
+        ],
+      },
+      {
+        section: "turningPoint",
+        label: "The World Comes Apart",
+        paragraphs: [
+          "For about thirty-six years, the kingdom held. Then it began to end — not through invasion, but from within.",
+          "Far away in Dwaraka, the curse Gandhari had laid on Krishna after the war came due. Grieving her hundred dead sons, she had told him that his own Yadava clan would one day destroy itself as the Kauravas had. According to the Mausala Parva, that is exactly what happened: the Yadavas, at a festival by the sea, fell into a drunken quarrel and slaughtered one another. Krishna's brother Balarama departed the world in meditation, and Krishna himself was killed by a hunter named Jara, whose arrow struck his foot by mistake. The city of Dwaraka was swallowed by the ocean soon after.",
+          "When word reached Hastinapura, the Pandavas understood that their time had ended with Krishna's. They no longer belonged to the age that was beginning. They crowned Parikshit king, settled the succession, and prepared to leave — not to another kingdom, but out of the world entirely.",
+        ],
+      },
+    ],
+    content: [
+      { type: "heading", text: "The War Was Won. The Story Was Not Over." },
+      {
+        type: "paragraph",
+        text: "It is easy to assume the Mahabharata is a war story that concludes with the war. It is not. The battle at Kurukshetra ends around the tenth of the epic's eighteen books, and everything after it is the aftermath: how the victors lived with what they had done, how they governed, and how they eventually let it all go. If you have only ever heard the story up to Duryodhana's fall, you have heard the epic's climax but not its argument.",
+      },
+      {
+        type: "paragraph",
+        text: "That argument is about impermanence. The Pandavas do not get a fairy-tale reward for winning. They get decades of responsibility, a slow accumulation of further losses, and finally the task of releasing everything they had spent their lives acquiring. The closing books treat this not as punishment but as the natural shape of a life honestly lived to its end.",
+      },
+      { type: "heading", text: "Yudhishthira's Reign: Ruling in the Shadow of the Dead" },
+      {
+        type: "paragraph",
+        text: "Yudhishthira is crowned king of Hastinapura, with Indraprastha and the wider realm under Pandava control. But the Mahabharata is careful to show that he governs as a man carrying a wound. He is haunted especially by the death of Karna — revealed after the war to have been his own eldest brother, Kunti's firstborn — whom he had helped to kill without knowing it. His first instinct is renunciation, not celebration.",
+      },
+      {
+        type: "paragraph",
+        text: "The epic uses this reluctance to deliver its great treatises on dharma and statecraft. From his bed of arrows, Bhishma instructs Yudhishthira at length on the duties of a king, the nature of law, the management of grief, and the path to liberation. These teachings — the Shanti Parva and the Anushasana Parva — are among the longest sustained passages of moral and political philosophy in the epic. Only after receiving them does Yudhishthira accept that abandoning his duty would itself be a failure of dharma.",
+      },
+      {
+        type: "paragraph",
+        text: "His reign is then marked by the Ashvamedha sacrifice, performed as both expiation and a public assertion of sovereignty. The Ashvamedhika Parva also contains a famous corrective to royal pride: a mongoose, half its body turned to gold, appears at the grand sacrifice and declares it worth less than the handful of barley once given by a starving family who had nothing else to offer. The Mahabharata places this parable at the height of Yudhishthira's power precisely to unsettle it — a reminder that sincerity outweighs spectacle. Whether the mongoose episode is read as history or as instructive tale, the epic offers it as a teaching, not a report of fact.",
+      },
+      { type: "heading", text: "The Elders Walk Into the Forest" },
+      {
+        type: "paragraph",
+        text: "The blind king Dhritarashtra, father of the hundred Kauravas, remained at Hastinapura under Pandava care after the war, along with his wife Gandhari and Kunti, the Pandavas' mother. According to the Ashramavasika Parva, after roughly fifteen years Dhritarashtra chose the traditional path of vanaprastha — retirement to the forest for a life of austerity. Gandhari, Kunti, and the wise Vidura went with him.",
+      },
+      {
+        type: "paragraph",
+        text: "Their end in the forest is quiet and stark. Vidura, who had counselled righteousness throughout the epic and was never heeded, died there in ascetic practice. Some time later a wildfire swept through the woods, and Dhritarashtra, Gandhari, and Kunti — choosing not to flee — perished in it. The charioteer Sanjaya, who had narrated the war to the blind king, survived and departed for the Himalayas. Before this, the sage Vyasa is described as granting the grieving parents a vision of their dead sons and kinsmen rising from the river at night, a moment of consolation the epic offers to those who lost the most.",
+      },
+      { type: "heading", text: "The Curse Comes Due: The Fall of the Yadavas" },
+      {
+        type: "paragraph",
+        text: "The event that finally ends the Pandava era does not happen to the Pandavas at all. It happens to Krishna's people. After the war, Gandhari — holding Krishna partly responsible for allowing the slaughter of her sons — had cursed him that his own clan, the Yadavas of Dwaraka, would one day annihilate itself in the same way the Kauravas had. The Mausala Parva records that curse coming true thirty-six years later.",
+      },
+      {
+        type: "paragraph",
+        text: "At a gathering by the sea at Prabhasa, the Yadavas, inflamed by drink and old grievances, turned on one another and fought until almost none were left. Balarama, Krishna's elder brother, withdrew from the world in yogic meditation. Krishna, resting in a forest afterward, was struck in the foot by an arrow from a hunter named Jara who had mistaken him for a deer — and with that, according to the text, his time in the mortal world ended. Dwaraka itself was soon claimed by the sea.",
+      },
+      {
+        type: "paragraph",
+        text: "Arjuna travelled to Dwaraka to escort the surviving Yadava women and children to safety. What follows is one of the epic's most deliberate humiliations of its greatest warrior: on the road, bandits attacked the refugees, and Arjuna — the archer who had won the war — found his strength and his celestial weapons failing him, unable to protect those in his charge. Traditional readings take this as the sign that the age itself had shifted; the powers that belonged to the previous era no longer answered. For the Pandavas, it was confirmation that their world was over.",
+      },
+      { type: "heading", text: "The Great Departure (Mahaprasthana)" },
+      {
+        type: "paragraph",
+        text: "With Krishna gone and the old order dissolving, the Pandavas renounced the throne. They installed Parikshit as king at Hastinapura and, according to the Mahaprasthanika Parva, set out on the mahaprasthana — the Great Departure — walking north and east toward the Himalayas and the mythic Mount Meru, intending to leave the body behind on the way. Draupadi went with them. A single dog attached itself to the group and followed.",
+      },
+      {
+        type: "paragraph",
+        text: "One by one, they fell on the road. Draupadi dropped first; then Sahadeva, then Nakula, then Arjuna, then Bhima. As each collapsed, Bhima asked Yudhishthira why — and Yudhishthira, walking on without looking back, named for each a subtle failing: Draupadi's partiality toward Arjuna among her husbands, Sahadeva's pride in his own wisdom, Nakula's pride in his beauty, Arjuna's pride in his archery and an unkept vow, Bhima's excess in eating and boasting. It is important to read these as the narrative's own accounting within the story, not as a neutral verdict; the epic gives them as Yudhishthira's answers, spoken by a man forbidden to grieve or turn back.",
+      },
+      {
+        type: "lesson",
+        text: "The order of the fall is deliberate. The most heroic and beloved figures — the peerless archer, the mighty Bhima, the fire-born queen — do not make it, undone by flaws so small they had gone unnoticed for a lifetime. Only Yudhishthira, whose defining trait was steadiness in dharma, keeps walking. The Mahabharata's final image of its heroes is not their strength but the quiet weight of their imperfections.",
+      },
+      { type: "heading", text: "Heaven, Hell, and the Last Test" },
+      {
+        type: "paragraph",
+        text: "Yudhishthira alone reached the threshold of heaven still in his mortal body, with only the dog beside him. The god Indra arrived in a celestial chariot to carry him up — but refused to allow the dog aboard. Yudhishthira refused to go without it, saying he would not abandon a creature that had been loyal to him. The dog then revealed itself as Dharma, the god of righteousness and Yudhishthira's own divine father, and the refusal was revealed as a test of his character, which he had passed.",
+      },
+      {
+        type: "paragraph",
+        text: "The Svargarohana Parva, the epic's final book, holds one more reversal. In heaven, Yudhishthira found Duryodhana seated in honour but could not see his brothers or Draupadi. Told they were in a place of torment, he demanded to be taken there, and in the dark, foul path he heard their voices and chose to remain with them rather than enjoy heaven without them. Only then was this revealed as a final illusion — a last trial of his loyalty and his freedom from hatred. Bathing in the celestial river, he shed his mortal form, and the Pandavas, Draupadi, and the war's dead were restored to their true natures. The epic ends not with the winning of a kingdom but with the letting go of every attachment that a kingdom represents.",
+      },
+      { type: "heading", text: "Did You Know? Facts About the Pandavas' Final Years" },
+      {
+        type: "paragraph",
+        text: "A set of details the text records that rarely survive in retellings:",
+      },
+      {
+        type: "lesson",
+        text: "The war ends before the epic's midpoint. Roughly the final third of the Mahabharata — several of its eighteen books — is devoted to the aftermath, not the battle.",
+      },
+      {
+        type: "lesson",
+        text: "The dynasty was saved by a single unborn child. Parikshit, Abhimanyu's son, was the sole surviving heir; the Pandava line, and later Indian kingly genealogies that claim descent from it, run through him.",
+      },
+      {
+        type: "lesson",
+        text: "The Mahabharata is framed as being recited at the snake sacrifice of Janamejaya — Parikshit's son — several generations after the war. The story of the aftermath is, in a sense, the family history of the audience being told the epic.",
+      },
+      {
+        type: "lesson",
+        text: "Krishna was not killed in the war. He departed thirty-six years later, struck by a hunter's stray arrow, and by tradition his passing marks the onset of the Kali Yuga — the present, diminished age.",
+      },
+      {
+        type: "lesson",
+        text: "A dog accompanies the Pandavas on their last journey and turns out to be Dharma himself. Yudhishthira's refusal to abandon it is the final test of his life.",
+      },
+      {
+        type: "lesson",
+        text: "Only Yudhishthira reaches heaven's gate in his physical body. The other four Pandavas and Draupadi fall on the mountain path, each undone by a single, long-hidden flaw.",
+      },
+      { type: "heading", text: "Common Misconceptions" },
+      {
+        type: "paragraph",
+        text: "Misconception: The Mahabharata ends when the Pandavas win the war. It does not. The victory occurs well before the epic's close; the text continues through Yudhishthira's reign, the death of the elders, the destruction of the Yadavas, Krishna's departure, and the Pandavas' own final journey.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception: The Pandavas lived happily ever after. The epic is explicit that they did not. Yudhishthira ruled in guilt, the family suffered further losses, and the brothers ultimately renounced the throne and everything they had won. The closing note is renunciation, not contentment.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception: Krishna was immortal and never died. Krishna's mortal life ended thirty-six years after the war, when the hunter Jara's arrow struck his foot. The Mausala Parva describes his departure plainly; his divinity in the tradition does not mean his earthly form persisted.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception: All five Pandavas ascended to heaven together in their bodies. Only Yudhishthira reached heaven's threshold in his mortal form. Draupadi and the other four fell on the way north, and are restored to their true natures only afterward, in the epic's final book.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception: The dog on the journey was just a stray. Within the narrative it is Dharma, the god of righteousness and Yudhishthira's divine father, in disguise — present specifically to test whether he would abandon a loyal companion for the reward of heaven.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception: Yudhishthira went straight to a blissful heaven as his reward. He first saw his enemy Duryodhana honoured there while his own family appeared to be in torment, and chose to stay with them in suffering rather than enjoy heaven alone. Only then was the scene revealed as a final illusion. The reward came after the last test, not instead of it.",
+      },
+      { type: "heading", text: "The Ending the Epic Chose" },
+      {
+        type: "paragraph",
+        text: "The Mahabharata could have ended at Kurukshetra with a clean victory. It deliberately does not. By following the Pandavas for a generation past their triumph, the epic makes an argument that no single battle can make: that winning is not the same as arriving, that everything acquired must eventually be released, and that the measure of a life is found less in its conquests than in how it is set down at the end.",
+      },
+      {
+        type: "paragraph",
+        text: "This is why the Pandavas' last act is not to defend the kingdom they bled for but to walk away from it. They crown an heir, turn north, and let go — of the throne, of their powers, of one another, and finally of their own bodies. The epic's closing image is of a single steadfast man refusing to abandon a dog, and then refusing to abandon his family even in hell. What it asks the reader to admire at the very end is not force, but loyalty, and the willingness to let go of everything else in order to keep it.",
+      },
+    ],
+    keyLessons: [
+      {
+        icon: "🏔️",
+        title: "Winning is not arriving",
+        description: "Modern reading: the Pandavas spent their lives to win a kingdom and then discovered that the victory was a beginning, not a destination. Careers, arguments, and ambitions won often deliver responsibility and further loss rather than rest. The goal you reach is rarely the end of the road.",
+        accent: "gold",
+      },
+      {
+        icon: "🍃",
+        title: "Everything acquired has to be set down",
+        description: "Modern reading: the epic's final movement is the Pandavas releasing all they had gathered — power, status, weapons, even one another. Read as guidance for a life, it is a study in holding things without clinging, and in learning to let go while the choice is still yours to make with dignity.",
+        accent: "teal",
+      },
+      {
+        icon: "🐕",
+        title: "Small flaws outlast great strengths",
+        description: "Modern reading: the mightiest Pandavas fell on the final path over failings so minor they had gone unnoticed for a lifetime, while steadiness alone carried Yudhishthira through. The traits that undo us are usually not our obvious weaknesses but the quiet ones we never bothered to examine.",
+        accent: "crimson",
+      },
+    ],
+    modernConnections: [
+      {
+        context: "You reached a goal you had chased for years — the promotion, the win, the thing you thought would settle everything — and found not peace but a new set of burdens waiting on the other side of it.",
+        insight: "The Pandavas' story after Kurukshetra is precisely this experience written large. The Mahabharata treats the anticlimax of victory not as a failure but as the truth about achievement: it hands you responsibility, not rest. Expecting arrival to feel final is the mistake; learning to keep moving well is the skill.",
+        example: "Yudhishthira won the throne and spent his reign governing in grief, then walked away from it entirely. The kingdom was never the point. What he did with the winning, and how he eventually released it, was.",
+      },
+      {
+        context: "You are facing an ending you did not choose and cannot stop — a role that is closing, a chapter of life clearly finishing — and the instinct is to cling and defend rather than to let go cleanly.",
+        insight: "The final books of the Mahabharata are, in effect, a manual for leaving well. The Pandavas do not wait to be forced out; they read the signs, settle the succession, and depart with intention. The epic presents the willingness to let go on your own terms as a form of strength, not surrender.",
+        example: "When Krishna died and their powers waned, the Pandavas did not fight to hold their world together. They crowned Parikshit, turned north, and walked out of the story deliberately — an ending they authored rather than suffered.",
+      },
+    ],
+    lifeLessons: [
+      "A hard-won victory is usually the start of a new set of responsibilities, not the end of the struggle.",
+      "Everything you gather in a lifetime — status, power, relationships — eventually has to be set down; learning to release it well is part of living well.",
+      "The flaws that undo people are rarely their obvious weaknesses but the small, unexamined ones carried quietly for years.",
+      "Leaving on your own terms, with the succession settled and attachments loosened, is a form of strength the epic ranks above conquest.",
+      "Loyalty that holds even when there is nothing left to gain by it is, for the Mahabharata, the final measure of a person.",
+    ],
+    faqs: [
+      {
+        question: "What happened to the Pandavas after the Mahabharata war?",
+        answer: "After winning Kurukshetra, the Pandavas ruled Hastinapura for about thirty-six years under Yudhishthira. When Krishna departed the world and the Yadava clan destroyed itself, they renounced the throne, crowned Abhimanyu's son Parikshit, and set out on a final journey north into the Himalayas, where the other four brothers and Draupadi died along the way and only Yudhishthira reached heaven's gate.",
+      },
+      {
+        question: "How long did Yudhishthira rule after the war?",
+        answer: "The Mahabharata places the destruction of the Yadavas and Krishna's departure about thirty-six years after the war, and the Pandavas renounced the throne shortly afterward. Yudhishthira's reign therefore lasted roughly thirty-six years before the Great Departure.",
+      },
+      {
+        question: "Did all the Pandavas go to heaven?",
+        answer: "Only Yudhishthira reached the threshold of heaven in his mortal body. Draupadi and the other four Pandavas fell one by one on the mountain path during the final journey, each attributed a subtle personal flaw in Yudhishthira's account. According to the epic's final book, all of them are restored to their true, divine natures afterward.",
+      },
+      {
+        question: "How did Krishna die in the Mahabharata?",
+        answer: "According to the Mausala Parva, about thirty-six years after the war Krishna was resting in a forest when a hunter named Jara shot an arrow that struck his foot, mistaking him for a deer. This marked the end of his time in the mortal world. By tradition, his departure is associated with the onset of the Kali Yuga.",
+      },
+      {
+        question: "Why did the Pandavas leave the kingdom?",
+        answer: "When Krishna died and the Yadava clan destroyed itself, the Pandavas understood that their era had ended and that they no longer belonged to the age beginning around them. They crowned Parikshit as king, settled the succession, and departed on the mahaprasthana — the Great Departure — to leave the world deliberately rather than cling to a kingdom whose time had passed.",
+      },
+      {
+        question: "Who became king after the Pandavas?",
+        answer: "Parikshit, the son of Abhimanyu and grandson of Arjuna, was crowned king of Hastinapura. He was the child Ashwatthama had tried to kill in the womb and whom Krishna had protected. The Pandava line — and the frame of the epic itself, recited later at the sacrifice of Parikshit's son Janamejaya — continues through him.",
+      },
+      {
+        question: "What is the significance of the dog on the Pandavas' final journey?",
+        answer: "A dog followed the Pandavas on their Great Departure and stayed beside Yudhishthira after the others had fallen. When Indra offered to take Yudhishthira to heaven but refused the dog, Yudhishthira declined to abandon it. The dog then revealed itself as Dharma, his divine father, and the episode was revealed as the final test of his character.",
+      },
+      {
+        question: "In what order did the Pandavas die on the final journey?",
+        answer: "According to the Mahaprasthanika Parva, they fell in this order: Draupadi first, then Sahadeva, Nakula, Arjuna, and Bhima. Yudhishthira, walking ahead without turning back, named a specific failing for each. Only he reached heaven's gate alive.",
+      },
+      {
+        question: "Does the Mahabharata really continue after the war?",
+        answer: "Yes. The war ends well before the epic's close. Roughly the final third of the Mahabharata — including the Shanti, Anushasana, Ashvamedhika, Ashramavasika, Mausala, Mahaprasthanika, and Svargarohana Parvas — is devoted to the aftermath: Yudhishthira's reign, the elders' death in the forest, the fall of the Yadavas, and the Pandavas' own end.",
+      },
+      {
+        question: "What happened to Dhritarashtra, Gandhari, and Kunti?",
+        answer: "According to the Ashramavasika Parva, about fifteen years after the war Dhritarashtra retired to the forest for a life of austerity, accompanied by Gandhari, Kunti, and Vidura. Vidura died there in ascetic practice, and the others later perished in a forest wildfire, choosing not to flee. The charioteer Sanjaya survived and departed for the Himalayas.",
+      },
+    ],
+    sloka: {
+      sanskrit: "जातस्य हि ध्रुवो मृत्युर्ध्रुवं जन्म मृतस्य च।\nतस्मादपरिहार्येऽर्थे न त्वं शोचितुमर्हसि॥",
+      transliteration: "Jatasya hi dhruvo mrityur dhruvam janma mritasya cha. Tasmad aparihārye 'rthe na tvam shochitum arhasi.",
+      translation:
+        "For one who is born, death is certain; and for one who dies, birth is certain. Therefore, over the unavoidable, you should not grieve. — Bhagavad Gita 2.27. Krishna spoke this to Arjuna at the start of the war. The closing books of the Mahabharata are the Pandavas learning to live it: releasing the kingdom, one another, and finally their own bodies, over the one thing that cannot be avoided.",
+    },
+  },
 ];
 
 /* ─────────────────── Helpers ─────────────────── */
