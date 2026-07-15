@@ -16,6 +16,7 @@ import CookieConsent from "@/components/CookieConsent";
 import FloatingStoryButton from "@/components/FloatingStoryButton";
 import FirstVisitCard from "@/components/FirstVisitCard";
 import PWAUpdateNotice from "@/components/PWAUpdateNotice";
+import PaymentReturnHandler from "@/components/PaymentReturnHandler";
 import { ThemeProvider } from "@/context/ThemeContext";
 
 const Index       = lazy(() => import("./pages/Index.tsx"));
@@ -160,6 +161,8 @@ const App = () => (
         <ErrorBoundary>
           {/* Global ripple listener — zero re-renders */}
           <RippleProvider />
+          {/* Handles Cashfree redirect-flow returns (?cf_order_id=…) */}
+          <PaymentReturnHandler />
           <div id="main-content">
             <Suspense fallback={<PageLoader />}>
               <PageTransition>

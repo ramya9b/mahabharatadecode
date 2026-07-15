@@ -117,6 +117,25 @@ export function planExpiry(plan: PlanId): number {
   return Date.now() + PLANS[plan].durationMs;
 }
 
+/* ── Customer phone — our (account-less) identity for cross-device restore ── */
+const PHONE_KEY = "mbd_phone";
+
+export function getStoredPhone(): string | null {
+  const v = safeStorage.get(PHONE_KEY);
+  return v && /^[6-9]\d{9}$/.test(v) ? v : null;
+}
+
+export function setStoredPhone(phone: string): void {
+  const digits = phone.replace(/\D/g, "").slice(-10);
+  if (/^[6-9]\d{9}$/.test(digits)) safeStorage.set(PHONE_KEY, digits);
+}
+
+/** Parse the plan out of an order id (mbd_<plan>_<ts>_<rand>). */
+export function planFromOrderId(orderId: string): PlanId | null {
+  const m = /^mbd_(monthly|yearly)_/.exec(orderId || "");
+  return m ? (m[1] as PlanId) : null;
+}
+
 /* ── Daily story limit ── */
 const DAILY_KEY  = "mbd_daily_stories";
 export const FREE_DAILY_LIMIT = 3;

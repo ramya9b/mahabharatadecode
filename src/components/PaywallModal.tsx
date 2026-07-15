@@ -1,6 +1,11 @@
 import { useCallback, useEffect, useState } from "react";
 import { X, Check, Loader, Sparkles } from "lucide-react";
-import { PLANS, planExpiry, setSubscription, type PlanId } from "@/lib/subscription";
+import {
+  PLANS, planExpiry, setSubscription, getStoredPhone, setStoredPhone,
+  type PlanId,
+} from "@/lib/subscription";
+
+const PHONE_RE = /^[6-9]\d{9}$/;
 
 /* Cashfree Checkout types — SDK attaches `Cashfree` to window via v3 script. */
 interface CashfreeCheckoutResult {
@@ -56,6 +61,12 @@ const PaywallModal = ({ open, onClose, onSuccess, reason }: PaywallModalProps) =
   const [selected, setSelected] = useState<PlanId>("yearly");
   const [status, setStatus] = useState<Status>("idle");
   const [error, setError] = useState("");
+  const [phone, setPhone] = useState<string>(() => getStoredPhone() ?? "");
+  const [showRestore, setShowRestore] = useState(false);
+  const [restorePhone, setRestorePhone] = useState<string>(() => getStoredPhone() ?? "");
+  const [restoreStatus, setRestoreStatus] = useState<"idle" | "loading">("idle");
+
+  const phoneValid = PHONE_RE.test(phone);
 
   /* Lock body scroll while open */
   useEffect(() => {
@@ -74,14 +85,19 @@ const PaywallModal = ({ open, onClose, onSuccess, reason }: PaywallModalProps) =
   }, [open, onClose]);
 
   const handleUpgrade = useCallback(async () => {
+    if (!PHONE_RE.test(phone)) {
+      setError("Enter a valid 10-digit mobile number to continue.");
+      return;
+    }
+    setStoredPhone(phone);
     setStatus("loading");
     setError("");
     try {
-      /* 1. Create order on our backend */
+      /* 1. Create order on our backend — pass the real customer phone */
       const orderRes = await fetch("/payments/create-order", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ plan: selected }),
+        body: JSON.stringify({ plan: selected, customerPhone: phone }),
       });
       const orderData = await orderRes.json();
       if (!orderRes.ok || !orderData.paymentSessionId) {
@@ -148,7 +164,42 @@ const PaywallModal = ({ open, onClose, onSuccess, reason }: PaywallModalProps) =
       setStatus("error");
       setError(e instanceof Error ? e.message : "Something went wrong");
     }
-  }, [selected, onSuccess]);
+  }, [selected, phone, onSuccess]);
+
+  /* Restore a previous purchase on this device by phone number. */
+  const handleRestore = useCallback(async () => {
+    if (!PHONE_RE.test(restorePhone)) {
+      setError("Enter the 10-digit mobile number you paid with.");
+      return;
+    }
+    setRestoreStatus("loading");
+    setError("");
+    try {
+      const res = await fetch("/payments/entitlement", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ phone: restorePhone }),
+      });
+      const data = await res.json();
+      if (res.ok && data.active) {
+        setStoredPhone(restorePhone);
+        setSubscription({
+          plan:      data.plan,
+          expiresAt: data.expiresAt,
+          paymentId: data.paymentId || data.orderId,
+          orderId:   data.orderId,
+        });
+        setStatus("success");
+        onSuccess?.();
+      } else {
+        setError("No active subscription found for that number.");
+      }
+    } catch {
+      setError("Could not check — please try again.");
+    } finally {
+      setRestoreStatus("idle");
+    }
+  }, [restorePhone, onSuccess]);
 
   if (!open) return null;
 
@@ -300,22 +351,53 @@ const PaywallModal = ({ open, onClose, onSuccess, reason }: PaywallModalProps) =
               </span>
             </div>
           ) : (
-            <button
-              type="button"
-              onClick={handleUpgrade}
-              disabled={status === "loading"}
-              className="btn-ripple w-full rounded-full font-heading font-bold tracking-[0.08em] uppercase text-sm py-3.5 transition-all disabled:opacity-60"
-              style={{
-                background: "hsl(var(--primary))",
-                color: "hsl(var(--primary-foreground))",
-              }}
-            >
-              {status === "loading" ? (
-                <Loader size={16} style={{ animation: "spin 1s linear infinite", display: "inline-block" }} />
-              ) : (
-                <>Pay ₹{PLANS[selected].priceInr} · Continue</>
-              )}
-            </button>
+            <>
+              {/* Mobile number — required by the payment gateway; also our
+                  identity for restoring access on another device. */}
+              <label
+                htmlFor="mbd-phone"
+                className="block font-heading text-[10px] tracking-[0.2em] uppercase mb-1.5"
+                style={{ color: "rgba(212,175,55,0.7)" }}
+              >
+                Mobile number
+              </label>
+              <div className="flex items-stretch mb-4 rounded-xl overflow-hidden"
+                style={{ border: "1px solid rgba(212,175,55,0.25)", background: "rgba(212,175,55,0.03)" }}>
+                <span className="flex items-center px-3 text-sm"
+                  style={{ color: "hsl(var(--muted-foreground))", borderRight: "1px solid rgba(212,175,55,0.18)" }}>
+                  +91
+                </span>
+                <input
+                  id="mbd-phone"
+                  type="tel"
+                  inputMode="numeric"
+                  autoComplete="tel"
+                  placeholder="10-digit mobile"
+                  value={phone}
+                  onChange={(e) => setPhone(e.target.value.replace(/\D/g, "").slice(0, 10))}
+                  className="flex-1 bg-transparent px-3 py-3 text-sm outline-none"
+                  style={{ color: "hsl(var(--foreground))" }}
+                />
+                {phoneValid && <Check size={16} className="self-center mr-3" style={{ color: "#27AE60" }} />}
+              </div>
+
+              <button
+                type="button"
+                onClick={handleUpgrade}
+                disabled={status === "loading" || !phoneValid}
+                className="btn-ripple w-full rounded-full font-heading font-bold tracking-[0.08em] uppercase text-sm py-3.5 transition-all disabled:opacity-60 disabled:cursor-not-allowed"
+                style={{
+                  background: "hsl(var(--primary))",
+                  color: "hsl(var(--primary-foreground))",
+                }}
+              >
+                {status === "loading" ? (
+                  <Loader size={16} style={{ animation: "spin 1s linear infinite", display: "inline-block" }} />
+                ) : (
+                  <>Pay ₹{PLANS[selected].priceInr} · Continue</>
+                )}
+              </button>
+            </>
           )}
 
           {error && (
@@ -344,6 +426,48 @@ const PaywallModal = ({ open, onClose, onSuccess, reason }: PaywallModalProps) =
           >
             Secure payment via Cashfree · UPI · Cards · Net Banking
           </p>
+
+          {/* Restore access on a new device by the phone you paid with */}
+          {status !== "success" && (
+            <div className="mt-3 text-center">
+              {!showRestore ? (
+                <button
+                  type="button"
+                  onClick={() => { setShowRestore(true); setError(""); }}
+                  className="text-[12px] underline underline-offset-2"
+                  style={{ color: "hsl(var(--muted-foreground))", fontFamily: "'Cormorant Garamond',serif" }}
+                >
+                  Already paid? Restore access
+                </button>
+              ) : (
+                <div className="flex items-center gap-2 justify-center">
+                  <div className="flex items-stretch rounded-lg overflow-hidden"
+                    style={{ border: "1px solid rgba(212,175,55,0.25)", background: "rgba(212,175,55,0.03)" }}>
+                    <span className="flex items-center px-2 text-[12px]"
+                      style={{ color: "hsl(var(--muted-foreground))" }}>+91</span>
+                    <input
+                      type="tel"
+                      inputMode="numeric"
+                      placeholder="Paid mobile number"
+                      value={restorePhone}
+                      onChange={(e) => setRestorePhone(e.target.value.replace(/\D/g, "").slice(0, 10))}
+                      className="w-40 bg-transparent px-2 py-2 text-[13px] outline-none"
+                      style={{ color: "hsl(var(--foreground))" }}
+                    />
+                  </div>
+                  <button
+                    type="button"
+                    onClick={handleRestore}
+                    disabled={restoreStatus === "loading"}
+                    className="rounded-lg px-3 py-2 text-[12px] font-heading uppercase tracking-[0.1em] disabled:opacity-60"
+                    style={{ background: "rgba(212,175,55,0.15)", color: "hsl(var(--primary))" }}
+                  >
+                    {restoreStatus === "loading" ? "…" : "Restore"}
+                  </button>
+                </div>
+              )}
+            </div>
+          )}
         </div>
       </div>
       <style>{`@keyframes spin { from { transform: rotate(0deg); } to { transform: rotate(360deg); } }`}</style>

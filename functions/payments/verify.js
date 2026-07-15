@@ -5,6 +5,8 @@
    server-side (so the browser can't fake a "PAID" claim).
 ───────────────────────────────────────────────────────────── */
 
+import { recordEntitlement, planFromOrderId } from "./_shared.js";
+
 const API_VERSION = "2023-08-01";
 
 const corsHeaders = {
@@ -66,12 +68,27 @@ export async function onRequestPost(context) {
     }, 400);
   }
 
+  const resolvedPlan = plan || planFromOrderId(data.order_id);
+  const phone        = data?.customer_details?.customer_phone || null;
+  const paymentId    = data.cf_order_id ? String(data.cf_order_id) : data.order_id;
+
+  /* Persist entitlement server-side (KV) so it survives across devices and
+     can be restored by phone. No-op if the SUBS KV binding isn't set yet. */
+  await recordEntitlement(context.env.SUBS, {
+    orderId:   data.order_id,
+    plan:      resolvedPlan,
+    phone,
+    paymentId,
+    amount:    data.order_amount,
+  });
+
   return json({
     verified:  true,
-    plan,
+    plan:      resolvedPlan,
     orderId:   data.order_id,
-    paymentId: data.cf_order_id ? String(data.cf_order_id) : data.order_id,
+    paymentId,
     amount:    data.order_amount,
+    phone,
   });
 }
 
