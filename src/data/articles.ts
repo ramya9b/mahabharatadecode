@@ -56,6 +56,7 @@ export interface Article {
   reelHook?: { hook: string; supporting: string };
   relatedSlugs?: string[];
   sloka?: { sanskrit: string; transliteration: string; translation: string };
+  faqs?: { question: string; answer: string }[];
   metaTitle?: string;
   metaDescription?: string;
 }

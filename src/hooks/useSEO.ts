@@ -15,7 +15,7 @@ export interface SEOProps {
   keywords?: string;
   publishedAt?: string;
   author?: string;
-  schema?: Record<string, unknown>;
+  schema?: Record<string, unknown> | Record<string, unknown>[];
 }
 
 function setTag(
@@ -43,7 +43,7 @@ function setLink(rel: string, href: string) {
   el.setAttribute("href", href);
 }
 
-function injectSchema(schema: Record<string, unknown>) {
+function injectSchema(schema: Record<string, unknown> | Record<string, unknown>[]) {
   const id = "json-ld-schema";
   let el = document.getElementById(id) as HTMLScriptElement | null;
   if (!el) {
@@ -137,6 +137,19 @@ export function buildArticleSchema(args: {
       name: SITE_NAME,
       logo: { "@type": "ImageObject", url: `${BASE_URL}/logo.png` },
     },
+  };
+}
+
+/** Build FAQPage schema so an article's FAQ section is eligible for Google rich results */
+export function buildFAQSchema(faqs: { question: string; answer: string }[]) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "FAQPage",
+    mainEntity: faqs.map((f) => ({
+      "@type": "Question",
+      name: f.question,
+      acceptedAnswer: { "@type": "Answer", text: f.answer },
+    })),
   };
 }
 

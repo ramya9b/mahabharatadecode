@@ -3,7 +3,7 @@ import { useParams, Navigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ShareButtons from "@/components/ShareButtons";
-import { useSEO, buildArticleSchema } from "@/hooks/useSEO";
+import { useSEO, buildArticleSchema, buildFAQSchema } from "@/hooks/useSEO";
 import ArticleHero from "@/components/article/ArticleHero";
 import ReadingProgress from "@/components/article/ReadingProgress";
 import StorySection from "@/components/article/StorySection";
@@ -71,12 +71,17 @@ const ArticlePage = () => {
     type: "article",
     author: "MahabharataDecoded",
     publishedAt: article.publishDate || "2026-01-01",
-    schema: buildArticleSchema({
-      title: article.metaTitle || article.title,
-      description: article.metaDescription || article.summary || "",
-      slug: article.slug,
-      publishedAt: article.publishDate,
-    }),
+    schema: (() => {
+      const articleSchema = buildArticleSchema({
+        title: article.metaTitle || article.title,
+        description: article.metaDescription || article.summary || "",
+        slug: article.slug,
+        publishedAt: article.publishDate,
+      });
+      return article.faqs && article.faqs.length > 0
+        ? [articleSchema, buildFAQSchema(article.faqs)]
+        : articleSchema;
+    })(),
   });
 
   return (
@@ -197,6 +202,11 @@ const ArticlePage = () => {
             <AuthorNote note={article.authorNote} />
           </div>
         )}
+
+        {/* Frequently Asked Questions (also emitted as FAQPage schema for rich results) */}
+        {article.faqs && article.faqs.length > 0 && (
+          <FaqSection faqs={article.faqs} />
+        )}
       </LockGate>
 
       {/* ── 10. Reply by email — for critical thinkers ── */}
@@ -308,6 +318,68 @@ const LifeLessonsList = ({ lessons }: { lessons: string[] }) => {
         </ul>
       </div>
     </div>
+  );
+};
+
+/* ── Frequently Asked Questions ── */
+const FaqSection = ({ faqs }: { faqs: { question: string; answer: string }[] }) => {
+  const ref = useScrollReveal<HTMLDivElement>();
+  return (
+    <section className="pb-12" aria-label="Frequently asked questions">
+      <div ref={ref} className="reveal-element max-w-[680px] mx-auto px-6 md:px-8">
+        <h2
+          className="font-heading font-semibold mb-6"
+          style={{
+            fontSize: "26px",
+            letterSpacing: "0.02em",
+            color: "rgba(253,230,138,0.95)",
+          }}
+        >
+          Frequently Asked Questions
+        </h2>
+        <div className="space-y-3">
+          {faqs.map((f, i) => (
+            <details
+              key={i}
+              className="group rounded-xl px-5 py-4"
+              style={{
+                background: "rgba(255,255,255,0.02)",
+                border: "1px solid rgba(212,175,55,0.14)",
+              }}
+            >
+              <summary
+                className="cursor-pointer list-none font-heading font-medium flex items-start justify-between gap-4"
+                style={{
+                  fontSize: "18px",
+                  color: "rgba(245,237,218,0.92)",
+                  lineHeight: 1.5,
+                }}
+              >
+                <span>{f.question}</span>
+                <span
+                  className="text-primary/50 transition-transform group-open:rotate-45 flex-shrink-0"
+                  style={{ fontSize: "22px", lineHeight: 1 }}
+                  aria-hidden="true"
+                >
+                  +
+                </span>
+              </summary>
+              <p
+                className="mt-3 text-muted-foreground"
+                style={{
+                  fontSize: "17px",
+                  fontFamily: "'Cormorant Garamond', Georgia, serif",
+                  lineHeight: 1.75,
+                  color: "rgba(245,237,218,0.78)",
+                }}
+              >
+                {f.answer}
+              </p>
+            </details>
+          ))}
+        </div>
+      </div>
+    </section>
   );
 };
 
