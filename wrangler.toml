@@ -5,8 +5,7 @@ pages_build_output_dir = "dist"
 [vars]
 BREVO_LIST_ID = "2"
 
-# Server-of-record for paid subscriptions (Cashfree webhook + verify write here;
-# entitlement.js reads for cross-device "Restore access"). Namespace: mbd-subscriptions.
-[[kv_namespaces]]
-binding = "SUBS"
-id = "43528b88da1a476e8c8b476c4b6cf7df"
+# NOTE: the SUBS KV binding (namespace "mbd-subscriptions",
+# id 43528b88da1a476e8c8b476c4b6cf7df) is configured in the Cloudflare
+# Pages dashboard (Settings → Functions → KV namespace bindings), not here —
+# Git-connected Pages builds don't apply wrangler.toml resource bindings.
