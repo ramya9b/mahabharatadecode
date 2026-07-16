@@ -5,7 +5,10 @@ pages_build_output_dir = "dist"
 [vars]
 BREVO_LIST_ID = "2"
 
-# NOTE: the SUBS KV binding (namespace "mbd-subscriptions",
-# id 43528b88da1a476e8c8b476c4b6cf7df) is configured in the Cloudflare
-# Pages dashboard (Settings → Functions → KV namespace bindings), not here —
-# Git-connected Pages builds don't apply wrangler.toml resource bindings.
+# Server-of-record for paid subscriptions. This project is configured via
+# this file (Pages configuration), so bindings live here — the dashboard's
+# "Add binding" is intentionally disabled when a config file is present.
+# Namespace: mbd-subscriptions.
+[[kv_namespaces]]
+binding = "SUBS"
+id = "43528b88da1a476e8c8b476c4b6cf7df"
