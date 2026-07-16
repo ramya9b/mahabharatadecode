@@ -4,6 +4,15 @@
    5 articles are permanently free — no trial or payment needed.
 ───────────────────────────────────────────────────────────── */
 
+/* ─────────────────────────────────────────────────────────────
+   PAYWALL MASTER SWITCH
+   Set to `false` to make the whole site free — no trial gate, no
+   paywall, unlimited Story Teller, and payment entry points hidden.
+   Flip back to `true` (one line) to re-enable paid subscriptions
+   once the site has traffic. Everything else stays wired.
+───────────────────────────────────────────────────────────── */
+export const PAYWALL_ENABLED = false;
+
 const TRIAL_KEY = "mbd_trial_start";
 const SUB_KEY   = "mbd_subscription";
 
@@ -110,6 +119,7 @@ export function setSubscription(sub: Subscription): void {
 }
 
 export function hasAccess(): boolean {
+  if (!PAYWALL_ENABLED) return true;
   return isInTrial() || getSubscription() !== null;
 }
 
@@ -170,6 +180,7 @@ export function dailyStoriesLeft(): number {
 }
 
 export function canGenerateStory(): boolean {
+  if (!PAYWALL_ENABLED) return true;
   if (getSubscription() !== null) return true;
   return dailyStoriesLeft() > 0;
 }

@@ -5,6 +5,7 @@ import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
 import ThemeToggle from "@/components/ThemeToggle";
 import { useTheme } from "@/context/ThemeContext";
+import { PAYWALL_ENABLED } from "@/lib/subscription";
 
 const NAV_LINKS = [
   { to: "/story",       key: "nav.story"       },
@@ -15,7 +16,7 @@ const NAV_LINKS = [
   { to: "/pricing",     key: "nav.pricing"     },
   { to: "/temples",     key: "nav.temples"     },
   { to: "/about",       key: "nav.about"       },
-];
+].filter((l) => PAYWALL_ENABLED || l.to !== "/pricing");
 
 /* ── Floating Pill Sacred Island Navbar ── */
 const Navbar = () => {

@@ -9,7 +9,8 @@ declare global {
 
 import { lazy, Suspense, useEffect, useRef } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
-import { BrowserRouter, Route, Routes, useLocation } from "react-router-dom";
+import { BrowserRouter, Navigate, Route, Routes, useLocation } from "react-router-dom";
+import { PAYWALL_ENABLED } from "@/lib/subscription";
 import ErrorBoundary from "@/components/ErrorBoundary";
 import BackToTop from "@/components/BackToTop";
 import CookieConsent from "@/components/CookieConsent";
@@ -176,7 +177,7 @@ const App = () => (
                   <Route path="/wisdom"      element={<Wisdom />} />
                   <Route path="/storyteller" element={<StoryTeller />} />
                   <Route path="/story"       element={<Story />} />
-                  <Route path="/pricing"     element={<Pricing />} />
+                  <Route path="/pricing"     element={PAYWALL_ENABLED ? <Pricing /> : <Navigate to="/" replace />} />
                   <Route path="/temples"     element={<Temples />} />
                   <Route path="*"            element={<NotFound />} />
                 </Routes>

@@ -23,6 +23,7 @@ import { generateStory, generateLifeLesson, generateMySituation, type Tone, type
 import { synthesizeSpeech } from "@/services/tts";
 import PaywallModal from "@/components/PaywallModal";
 import { useSubscription } from "@/hooks/useSubscription";
+import { PAYWALL_ENABLED } from "@/lib/subscription";
 
 /* ── Types ── */
 type Step = "select" | "prompt" | "story";
@@ -860,7 +861,7 @@ const StoryTeller = () => {
             <style>{`@keyframes spin { to { transform: rotate(360deg); } }`}</style>
 
             {/* Daily usage counter — free/trial users only */}
-            {!subscription && hasAccess && (
+            {PAYWALL_ENABLED && !subscription && hasAccess && (
               <p style={{
                 marginTop: "10px", fontFamily: "'Cinzel', serif",
                 fontSize: "11px", letterSpacing: "0.12em",

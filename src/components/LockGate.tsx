@@ -1,7 +1,7 @@
 import { useState, type ReactNode } from "react";
 import { Lock, Sparkles, Unlock } from "lucide-react";
 import { useSubscription } from "@/hooks/useSubscription";
-import { isArticleFree } from "@/lib/subscription";
+import { isArticleFree, PAYWALL_ENABLED } from "@/lib/subscription";
 import PaywallModal from "@/components/PaywallModal";
 
 interface LockGateProps {
@@ -32,7 +32,7 @@ const LockGate = ({
     return (
       <>
         {/* Trial expiry warning — only for trial users, not free articles */}
-        {!permanentlyFree && inTrial && trialDays <= 3 && (
+        {PAYWALL_ENABLED && !permanentlyFree && inTrial && trialDays <= 3 && (
           <div
             role="status"
             className="sticky top-0 z-40 text-center py-2 px-4"
