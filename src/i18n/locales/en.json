@@ -23,10 +23,10 @@
     "temples": "Temples"
   },
   "hero": {
-    "eyebrow": "Ancient Wisdom · Modern Life",
+    "eyebrow": "The epic's hardest choices, examined.",
     "headline_gold": "Decode Life",
     "headline_white": "Through Mahabharata",
-    "subtitle": "Not mythology. A decision-making tool. 29 deep analyses of the Mahabharata's most difficult choices — and what they mean for your career, relationships, and identity today.",
+    "subtitle": "Not mythology. A decision-making tool. 30+ close readings of the Mahabharata's most difficult choices — and what they mean for your career, relationships, and identity today.",
     "cta_primary": "Start Reading",
     "cta_secondary": "Explore Characters",
     "cta_try_story": "Try Story Teller",
@@ -98,7 +98,7 @@
     "eyebrow": "Ancient Mirrors for Modern Life",
     "headline_gold": "Your life.",
     "headline_white": "Their story.",
-    "subtitle": "Every difficult thing you are going through right now has already been lived — with more weight and higher stakes — by someone in the Mahabharata.",
+    "subtitle": "Whatever you're deciding, someone in the Mahabharata faced a harder version of it. Here's how it went.",
     "subtitle_2": "Find your situation. Read their story. Take what is useful.",
     "read_story": "Read the story",
     "cta_title": "The full story is in the articles",
@@ -202,7 +202,7 @@
     "values_title": "Six Non-Negotiables",
     "creator_label": "The Person Behind This",
     "start_label": "Start Here",
-    "start_title": "Ready to Decode the Epic?",
+    "start_title": "Start with a hard case.",
     "start_desc": "Start with the articles. Explore the characters. And subscribe for one piece of ancient wisdom delivered every morning.",
     "founded": "Founded 2026"
   },
@@ -374,7 +374,7 @@
     }
   },
   "footer": {
-    "tagline": "Bridging ancient Indian wisdom with modern life through immersive storytelling and deep philosophical exploration.",
+    "tagline": "Close readings of the Mahabharata's hardest choices — what they meant, and what they're still good for.",
     "email_placeholder": "Your email",
     "subscribe": "Subscribe",
     "explore_label": "Explore",
