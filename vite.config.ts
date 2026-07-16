@@ -3,6 +3,122 @@ import { defineConfig, type Plugin } from "vite";
 import react from "@vitejs/plugin-react-swc";
 import { VitePWA } from "vite-plugin-pwa";
 import path from "path";
+import fs from "node:fs";
+import { articles } from "./src/data/articles";
+
+const BASE_URL  = "https://mahabharatadecoded.com";
+const SITE_NAME = "MahabharataDecoded";
+
+const escHtml = (s: unknown): string =>
+  String(s ?? "")
+    .replace(/&/g, "&amp;").replace(/</g, "&lt;")
+    .replace(/>/g, "&gt;").replace(/"/g, "&quot;");
+
+/* Build a crawlable static HTML representation of one article's body. */
+function articleBody(a: Record<string, any>): string {
+  const out: string[] = [`<h1>${escHtml(a.title)}</h1>`];
+  if (a.subtitle) out.push(`<p>${escHtml(a.subtitle)}</p>`);
+  for (const sb of a.storyBlocks ?? []) {
+    if (sb.label) out.push(`<h2>${escHtml(sb.label)}</h2>`);
+    for (const p of sb.paragraphs ?? []) out.push(`<p>${escHtml(p)}</p>`);
+  }
+  for (const b of a.content ?? []) {
+    if (b.type === "heading") out.push(`<h2>${escHtml(b.text)}</h2>`);
+    else if (b.type === "quote") out.push(`<blockquote>${escHtml(b.text)}</blockquote>`);
+    else if (b.type === "paragraph" || b.type === "lesson") out.push(`<p>${escHtml(b.text)}</p>`);
+  }
+  if (a.lifeLessons?.length) {
+    out.push(`<h2>Key Takeaways</h2><ul>${a.lifeLessons.map((l: string) => `<li>${escHtml(l)}</li>`).join("")}</ul>`);
+  }
+  if (a.faqs?.length) {
+    out.push(`<h2>Frequently Asked Questions</h2>`);
+    for (const f of a.faqs) out.push(`<h3>${escHtml(f.question)}</h3><p>${escHtml(f.answer)}</p>`);
+  }
+  return out.join("\n");
+}
+
+function articleJsonLd(a: Record<string, any>): string {
+  const url   = `${BASE_URL}/blog/${a.slug}`;
+  const desc  = a.metaDescription || a.summary || a.description || "";
+  const image = a.imageKey === "hero"
+    ? `${BASE_URL}/og-default.jpg`
+    : `${BASE_URL}/characters/${a.imageKey}.webp`;
+  const schemas: Record<string, any>[] = [{
+    "@context": "https://schema.org",
+    "@type": "Article",
+    headline: a.metaTitle || a.title,
+    description: desc,
+    image, url,
+    datePublished: a.publishDate || "2026-01-01",
+    author: { "@type": "Organization", name: SITE_NAME },
+    publisher: { "@type": "Organization", name: SITE_NAME, logo: { "@type": "ImageObject", url: `${BASE_URL}/logo.png` } },
+  }];
+  if (a.faqs?.length) {
+    schemas.push({
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      mainEntity: a.faqs.map((f: Record<string, string>) => ({
+        "@type": "Question", name: f.question,
+        acceptedAnswer: { "@type": "Answer", text: f.answer },
+      })),
+    });
+  }
+  // Escape "<" so article text can't break out of the <script> tag.
+  return schemas
+    .map((s) => `<script type="application/ld+json">${JSON.stringify(s).replace(/</g, "\\u003c")}</script>`)
+    .join("\n");
+}
+
+/* Prerender each article to dist/blog/<slug>.html with real per-article
+   <head> (title/meta/OG/canonical + JSON-LD) and a crawlable body, so search
+   engines, AI crawlers, and social unfurlers get full HTML without running JS.
+   The SPA (createRoot) replaces #root on mount, so users get the React app. */
+function prerenderArticles(): Plugin {
+  return {
+    name: "prerender-articles",
+    apply: "build",
+    closeBundle() {
+      const distDir = path.resolve(__dirname, "dist");
+      const templatePath = path.join(distDir, "index.html");
+      if (!fs.existsSync(templatePath)) return;
+      const template = fs.readFileSync(templatePath, "utf8");
+      const blogDir = path.join(distDir, "blog");
+      fs.mkdirSync(blogDir, { recursive: true });
+
+      let count = 0;
+      for (const a of articles as unknown as Record<string, any>[]) {
+        const url   = `${BASE_URL}/blog/${a.slug}`;
+        const title = a.metaTitle || `${a.title} | ${SITE_NAME}`;
+        const desc  = a.metaDescription || a.summary || a.description || "";
+        const image = a.imageKey === "hero"
+          ? `${BASE_URL}/og-default.jpg`
+          : `${BASE_URL}/characters/${a.imageKey}.webp`;
+
+        const fallback =
+          `<div style="max-width:720px;margin:0 auto;padding:24px;font-family:Georgia,serif;line-height:1.7;color:#F5EDDA;">${articleBody(a)}</div>`;
+
+        let html = template
+          .replace(/<title>[\s\S]*?<\/title>/, `<title>${escHtml(title)}</title>`)
+          .replace(/<meta name="description"[^>]*>/, `<meta name="description" content="${escHtml(desc)}" />`)
+          .replace(/<link rel="canonical"[^>]*>/, `<link rel="canonical" href="${url}" />`)
+          .replace(/<meta property="og:type"[^>]*>/, `<meta property="og:type" content="article" />`)
+          .replace(/<meta property="og:title"[^>]*>/, `<meta property="og:title" content="${escHtml(title)}" />`)
+          .replace(/<meta property="og:description"[^>]*>/, `<meta property="og:description" content="${escHtml(desc)}" />`)
+          .replace(/<meta property="og:image"[^>]*>/, `<meta property="og:image" content="${escHtml(image)}" />`)
+          .replace(/<meta property="og:url"[^>]*>/, `<meta property="og:url" content="${url}" />`)
+          .replace(/<meta name="twitter:title"[^>]*>/, `<meta name="twitter:title" content="${escHtml(title)}" />`)
+          .replace(/<meta name="twitter:description"[^>]*>/, `<meta name="twitter:description" content="${escHtml(desc)}" />`)
+          .replace(/<meta name="twitter:image"[^>]*>/, `<meta name="twitter:image" content="${escHtml(image)}" />`)
+          .replace("</head>", `${articleJsonLd(a)}\n</head>`)
+          .replace(/<div id="root">\s*<\/div>/, `<div id="root">${fallback}</div>`);
+
+        fs.writeFileSync(path.join(blogDir, `${a.slug}.html`), html, "utf8");
+        count++;
+      }
+      console.log(`[prerender] wrote ${count} article pages to dist/blog/`);
+    },
+  };
+}
 
 /* Injects <link rel="preload"> for the hashed hero-bg.webp so the LCP image
    starts downloading before the JS bundle even parses. Build-time only. */
@@ -49,6 +165,8 @@ export default defineConfig({
         ],
       },
     }),
+    /* Runs last: emit prerendered dist/blog/<slug>.html after the bundle. */
+    prerenderArticles(),
   ],
   esbuild: {
     pure: ["console.log", "console.warn", "console.debug"],
