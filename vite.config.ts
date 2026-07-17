@@ -18,6 +18,7 @@ const escHtml = (s: unknown): string =>
 function articleBody(a: Record<string, any>): string {
   const out: string[] = [`<h1>${escHtml(a.title)}</h1>`];
   if (a.subtitle) out.push(`<p>${escHtml(a.subtitle)}</p>`);
+  if (a.editorNote) out.push(`<aside><strong>A note from Ramya:</strong> ${escHtml(a.editorNote)}</aside>`);
   for (const sb of a.storyBlocks ?? []) {
     if (sb.label) out.push(`<h2>${escHtml(sb.label)}</h2>`);
     for (const p of sb.paragraphs ?? []) out.push(`<p>${escHtml(p)}</p>`);

@@ -125,6 +125,13 @@ const ArticlePage = () => {
           ) : null
         }
       >
+        {/* Personal note — human-written, in Ramya's voice (optional) */}
+        {article.editorNote && (
+          <div className="max-w-[680px] mx-auto px-6 md:px-8 pt-6 pb-2">
+            <EditorNote note={article.editorNote} />
+          </div>
+        )}
+
         {/* Named Story Sections (Introduction / Background / Turning Point) */}
         {article.storyBlocks?.length > 0 && (
           <StorySection storyBlocks={article.storyBlocks} />
@@ -380,6 +387,43 @@ const FaqSection = ({ faqs }: { faqs: { question: string; answer: string }[] }) 
         </div>
       </div>
     </section>
+  );
+};
+
+/* ── Personal note from Ramya — human voice, warm framing ── */
+const EditorNote = ({ note }: { note: string }) => {
+  const ref = useScrollReveal<HTMLDivElement>();
+  return (
+    <div
+      ref={ref}
+      className="reveal-element rounded-2xl px-6 py-5 md:px-7 md:py-6"
+      style={{
+        background: "hsl(var(--card))",
+        border: "1px solid hsl(var(--primary) / 0.28)",
+        borderLeft: "3px solid hsl(var(--primary))",
+      }}
+    >
+      <div className="flex items-center gap-2 mb-2.5">
+        <span
+          className="text-[10px] tracking-[0.28em] uppercase"
+          style={{ fontFamily: "'Cinzel', serif", color: "hsl(var(--primary))" }}
+        >
+          ✍️ A note from Ramya
+        </span>
+      </div>
+      <p
+        className="leading-relaxed"
+        style={{
+          fontSize: "17px",
+          fontFamily: "'Cormorant Garamond', Georgia, serif",
+          color: "hsl(var(--foreground))",
+          lineHeight: 1.75,
+          whiteSpace: "pre-line",
+        }}
+      >
+        {note}
+      </p>
+    </div>
   );
 };
 

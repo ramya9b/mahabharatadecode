@@ -53,6 +53,9 @@ export interface Article {
   lifeLessons: string[];
   pullQuote?: string;
   authorNote?: string;
+  /** Human-written personal note in Ramya's own voice. Optional; renders a
+      warm "A note from Ramya" block near the top. Left empty by the AI engine. */
+  editorNote?: string;
   reelHook?: { hook: string; supporting: string };
   relatedSlugs?: string[];
   sloka?: { sanskrit: string; transliteration: string; translation: string };
