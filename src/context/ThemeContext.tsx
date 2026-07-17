@@ -36,7 +36,7 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
     localStorage.setItem("mbd-theme", theme);
     document
       .querySelector('meta[name="theme-color"]')
-      ?.setAttribute("content", theme === "dark" ? "#0C0900" : "#D97706");
+      ?.setAttribute("content", theme === "dark" ? "#0C0900" : "#15803D");
   }, [theme]);
 
   const toggleTheme = () =>

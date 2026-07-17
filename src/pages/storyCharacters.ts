@@ -41,7 +41,7 @@ export const GROUP_COLORS: Record<CharacterGroup, string> = {
   pandavas:  "#1E8449",
   kauravas:  "#C0392B",
   women:     "#8E44AD",
-  warriors:  "#D4AF37",
+  warriors:  "#22C55E",
   divine:    "#2471A3",
   kings:     "#784212",
 };
@@ -250,7 +250,7 @@ export const storyCharacters: StoryCharacter[] = [
     title: "The Tragic Hero",
     group: "warriors",
     hook: "Born a king, raised a charioteer's son — betrayed by fate itself",
-    accentHex: "#D4AF37",
+    accentHex: "#22C55E",
     icon: "⚔️",
     prompts: [
       { label: "His Birth", request: "Tell me about Karna's miraculous birth and why his mother Kunti abandoned him on the river", mood: "tragic" },

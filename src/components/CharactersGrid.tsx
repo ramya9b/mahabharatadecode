@@ -25,7 +25,7 @@ const CharactersGrid = () => {
           aria-hidden="true"
           style={{
             width: "48px", height: "1px", margin: "16px auto 0",
-            background: "linear-gradient(90deg,transparent,rgba(212,175,55,0.7),transparent)",
+            background: "linear-gradient(90deg,transparent,rgba(34,197,94,0.7),transparent)",
           }}
         />
       </div>
@@ -57,11 +57,11 @@ const CharactersGrid = () => {
             <div
               className="absolute inset-0 rounded-2xl transition-all duration-500"
               style={{
-                boxShadow: "inset 0 0 0 1px rgba(212,175,55,0)",
+                boxShadow: "inset 0 0 0 1px rgba(34,197,94,0)",
                 transition: "box-shadow 0.4s ease",
               }}
-              onMouseEnter={e => (e.currentTarget.style.boxShadow = "inset 0 0 0 1px rgba(212,175,55,0.3)")}
-              onMouseLeave={e => (e.currentTarget.style.boxShadow = "inset 0 0 0 1px rgba(212,175,55,0)")}
+              onMouseEnter={e => (e.currentTarget.style.boxShadow = "inset 0 0 0 1px rgba(34,197,94,0.3)")}
+              onMouseLeave={e => (e.currentTarget.style.boxShadow = "inset 0 0 0 1px rgba(34,197,94,0)")}
             />
 
             {/* Name */}
@@ -89,7 +89,7 @@ const CharactersGrid = () => {
             display: "inline-block",
             padding: "14px 40px",
             borderRadius: "99px",
-            background: "linear-gradient(135deg, #FBBF24 0%, #34D399 50%, #38BDF8 100%)",
+            background: "linear-gradient(135deg, #22C55E 0%, #34D399 50%, #38BDF8 100%)",
             backgroundSize: "200% auto",
             animation: "shimmer 4s linear infinite",
             color: "#08040F",

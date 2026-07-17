@@ -42,7 +42,7 @@ const WisdomHero = () => {
         className="absolute inset-0 will-change-transform"
         style={{
           background:
-            "radial-gradient(ellipse 100% 80% at 50% 30%, rgba(139,0,0,0.12) 0%, rgba(212,175,55,0.06) 40%, transparent 70%)",
+            "radial-gradient(ellipse 100% 80% at 50% 30%, rgba(139,0,0,0.12) 0%, rgba(34,197,94,0.06) 40%, transparent 70%)",
         }}
         aria-hidden="true"
       />
@@ -53,7 +53,7 @@ const WisdomHero = () => {
         style={{
           fontFamily: "'Cinzel', serif",
           fontSize: "clamp(200px, 35vw, 380px)",
-          color: "rgba(212,175,55,0.04)",
+          color: "rgba(34,197,94,0.04)",
           lineHeight: 1,
           fontWeight: 900,
         }}
@@ -94,7 +94,7 @@ const WisdomHero = () => {
           <span className="gold-text block">{t("wisdom.headline_gold")}</span>
           <span
             className="block"
-            style={{ color: isDark ? "rgba(253,230,138,0.88)" : "rgba(42,31,14,0.90)", fontSize: "0.68em", marginTop: "6px" }}
+            style={{ color: isDark ? "rgba(134,239,172,0.88)" : "rgba(42,31,14,0.90)", fontSize: "0.68em", marginTop: "6px" }}
           >
             {t("wisdom.headline_white")}
           </span>
@@ -105,7 +105,7 @@ const WisdomHero = () => {
           className="leading-relaxed mx-auto mb-6 animate-fade-up-delay-2"
           style={{
             fontSize: "clamp(18px, 2vw, 21px)",
-            color: isDark ? "rgba(253,230,138,0.75)" : "rgba(42,31,14,0.78)",
+            color: isDark ? "rgba(134,239,172,0.75)" : "rgba(42,31,14,0.78)",
             fontFamily: "'Cormorant Garamond', Georgia, serif",
             lineHeight: 1.8,
             maxWidth: "560px",
@@ -117,7 +117,7 @@ const WisdomHero = () => {
           className="leading-relaxed mx-auto mb-14 animate-fade-up-delay-2"
           style={{
             fontSize: "17px",
-            color: isDark ? "rgba(253,230,138,0.55)" : "rgba(42,31,14,0.58)",
+            color: isDark ? "rgba(134,239,172,0.55)" : "rgba(42,31,14,0.58)",
             fontFamily: "'Cormorant Garamond', Georgia, serif",
             fontStyle: "italic",
             maxWidth: "480px",
@@ -141,7 +141,7 @@ const WisdomHero = () => {
                 </div>
                 <div
                   className="font-heading text-[9px] tracking-[0.22em] uppercase mt-1"
-                  style={{ color: isDark ? "rgba(253,230,138,0.70)" : "rgba(42,31,14,0.65)" }}
+                  style={{ color: isDark ? "rgba(134,239,172,0.70)" : "rgba(42,31,14,0.65)" }}
                 >
                   {t(meta.labelKey).split(" ")[0]}
                 </div>
@@ -207,14 +207,14 @@ const DomainTabs = ({
               className="flex items-center gap-2.5 px-5 py-2.5 rounded-full whitespace-nowrap transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40 flex-shrink-0"
               style={{
                 background: isActive
-                  ? (isDarkF ? "linear-gradient(135deg, rgba(251,191,36,0.18), rgba(251,191,36,0.08))" : "linear-gradient(135deg, rgba(217,119,6,0.15), rgba(217,119,6,0.06))")
+                  ? (isDarkF ? "linear-gradient(135deg, rgba(34,197,94,0.18), rgba(34,197,94,0.08))" : "linear-gradient(135deg, rgba(21,128,61,0.15), rgba(21,128,61,0.06))")
                   : (isDarkF ? "rgba(22,11,0,0.60)" : "rgba(139,105,20,0.06)"),
                 border: isActive
-                  ? (isDarkF ? "1px solid rgba(251,191,36,0.40)" : "1px solid rgba(217,119,6,0.45)")
-                  : (isDarkF ? "1px solid rgba(251,191,36,0.18)" : "1px solid rgba(139,105,20,0.18)"),
+                  ? (isDarkF ? "1px solid rgba(34,197,94,0.40)" : "1px solid rgba(21,128,61,0.45)")
+                  : (isDarkF ? "1px solid rgba(34,197,94,0.18)" : "1px solid rgba(139,105,20,0.18)"),
                 color: isActive
-                  ? (isDarkF ? "#FBBF24" : "#92400E")
-                  : (isDarkF ? "rgba(253,230,138,0.65)" : "rgba(80,50,10,0.70)"),
+                  ? (isDarkF ? "#22C55E" : "#166534")
+                  : (isDarkF ? "rgba(134,239,172,0.65)" : "rgba(80,50,10,0.70)"),
               }}
             >
               <span style={{ fontSize: "17px" }} aria-hidden="true">
@@ -297,7 +297,7 @@ const ScenarioCard = ({
             className="font-heading font-semibold leading-snug mb-3 group-hover:text-primary transition-colors duration-300"
             style={{
               fontSize: "clamp(15px, 1.8vw, 17px)",
-              color: isDarkC ? "rgba(253,230,138,0.92)" : "rgba(42,31,14,0.88)",
+              color: isDarkC ? "rgba(134,239,172,0.92)" : "rgba(42,31,14,0.88)",
             }}
           >
             {scenario.headline}
@@ -308,7 +308,7 @@ const ScenarioCard = ({
             className="leading-relaxed mb-5"
             style={{
               fontSize: "14px",
-              color: isDarkC ? "rgba(253,230,138,0.55)" : "rgba(42,31,14,0.60)",
+              color: isDarkC ? "rgba(134,239,172,0.55)" : "rgba(42,31,14,0.60)",
               fontFamily: "'Cormorant Garamond', Georgia, serif",
               fontStyle: "italic",
               lineHeight: 1.85,
@@ -351,9 +351,9 @@ const ScenarioDetail = ({
   const isDarkM = themeM === "dark";
 
   /* Theme-aware text colors — gold/cream on dark, dark brown on cream. */
-  const bodyTextStrong = isDarkM ? "rgba(253,230,138,0.92)" : "rgba(42,31,14,0.90)";
-  const bodyText       = isDarkM ? "rgba(253,230,138,0.82)" : "rgba(42,31,14,0.82)";
-  const bodyTextMuted  = isDarkM ? "rgba(253,230,138,0.62)" : "rgba(42,31,14,0.58)";
+  const bodyTextStrong = isDarkM ? "rgba(134,239,172,0.92)" : "rgba(42,31,14,0.90)";
+  const bodyText       = isDarkM ? "rgba(134,239,172,0.82)" : "rgba(42,31,14,0.82)";
+  const bodyTextMuted  = isDarkM ? "rgba(134,239,172,0.62)" : "rgba(42,31,14,0.58)";
 
   /* Accent-color label tints — low alpha on dark looks subtle, but on cream
      blends into the bg. Bump to ~0.95 in light mode so the brand colour
@@ -405,7 +405,7 @@ const ScenarioDetail = ({
           background: isDarkM ? "rgb(18,9,0)" : "hsl(38 55% 92%)",
           border: `1px solid rgba(${scenario.accentRgb},0.2)`,
           boxShadow: `0 0 80px rgba(${scenario.accentRgb},0.08)`,
-          color: isDarkM ? "rgba(253,230,138,0.88)" : "rgba(42,31,14,0.88)",
+          color: isDarkM ? "rgba(134,239,172,0.88)" : "rgba(42,31,14,0.88)",
         }}
       >
         {/* Top accent line */}
@@ -424,8 +424,8 @@ const ScenarioDetail = ({
           className="absolute top-5 right-5 w-9 h-9 rounded-full flex items-center justify-center transition-colors focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/40"
           style={{
             background: "rgba(139,105,20,0.07)",
-            border: "1px solid rgba(251,191,36,0.14)",
-            color: isDarkM ? "rgba(253,230,138,0.65)" : "rgba(42,31,14,0.60)",
+            border: "1px solid rgba(34,197,94,0.14)",
+            color: isDarkM ? "rgba(134,239,172,0.65)" : "rgba(42,31,14,0.60)",
           }}
         >
           <X size={16} aria-hidden="true" />
@@ -576,7 +576,7 @@ const ScenarioDetail = ({
                   <p
                     style={{
                       fontSize: "clamp(14px, 1.6vw, 16px)",
-                      color: isDarkM ? "rgba(253,230,138,0.82)" : "rgba(42,31,14,0.75)",
+                      color: isDarkM ? "rgba(134,239,172,0.82)" : "rgba(42,31,14,0.75)",
                       fontFamily: "'Cormorant Garamond', Georgia, serif",
                       lineHeight: 1.855,
                     }}
@@ -601,7 +601,7 @@ const ScenarioDetail = ({
                 <p
                   style={{
                     fontSize: "14px",
-                    color: isDarkM ? "rgba(253,230,138,0.60)" : "rgba(42,31,14,0.58)",
+                    color: isDarkM ? "rgba(134,239,172,0.60)" : "rgba(42,31,14,0.58)",
                     fontFamily: "'Cormorant Garamond', Georgia, serif",
                   }}
                 >
@@ -732,8 +732,8 @@ const DomainPanel = ({
           role="note"
           className="mb-8 px-4 py-3 rounded-lg flex items-start gap-3"
           style={{
-            background: "rgba(212,175,55,0.06)",
-            border: "1px solid rgba(212,175,55,0.18)",
+            background: "rgba(34,197,94,0.06)",
+            border: "1px solid rgba(34,197,94,0.18)",
             fontFamily: "'Cormorant Garamond', Georgia, serif",
             fontSize: "14px",
             color: "hsl(var(--muted-foreground))",
@@ -774,14 +774,14 @@ const BottomCTA = () => {
     <section
       className="py-20 text-center relative overflow-hidden"
       style={{
-        background: "linear-gradient(180deg, transparent, rgba(212,175,55,0.04), transparent)",
+        background: "linear-gradient(180deg, transparent, rgba(34,197,94,0.04), transparent)",
       }}
     >
       <div
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 70% 50% at 50% 50%, rgba(212,175,55,0.05) 0%, transparent 65%)",
+            "radial-gradient(ellipse 70% 50% at 50% 50%, rgba(34,197,94,0.05) 0%, transparent 65%)",
         }}
         aria-hidden="true"
       />

@@ -37,8 +37,8 @@ const LockGate = ({
             role="status"
             className="sticky top-0 z-40 text-center py-2 px-4"
             style={{
-              background: "linear-gradient(90deg, rgba(212,175,55,0.12), rgba(212,175,55,0.04))",
-              borderBottom: "1px solid rgba(212,175,55,0.18)",
+              background: "linear-gradient(90deg, rgba(34,197,94,0.12), rgba(34,197,94,0.04))",
+              borderBottom: "1px solid rgba(34,197,94,0.18)",
               fontFamily: "'Cormorant Garamond', Georgia, serif",
               fontSize: "13px",
               color: "hsl(var(--foreground))",
@@ -122,17 +122,17 @@ const LockGate = ({
             className="relative rounded-2xl p-8 md:p-10 text-center overflow-hidden"
             style={{
               background: "linear-gradient(180deg, hsl(var(--card)) 0%, hsl(var(--background)) 100%)",
-              border: "1px solid rgba(212,175,55,0.22)",
+              border: "1px solid rgba(34,197,94,0.22)",
               boxShadow: "0 20px 60px rgba(0,0,0,0.3)",
             }}
           >
             <div
               className="absolute top-0 left-0 right-0 h-px"
-              style={{ background: "linear-gradient(to right, transparent, rgba(212,175,55,0.6), transparent)" }}
+              style={{ background: "linear-gradient(to right, transparent, rgba(34,197,94,0.6), transparent)" }}
             />
             <div
               className="inline-flex w-14 h-14 rounded-full items-center justify-center mb-5"
-              style={{ background: "rgba(212,175,55,0.1)", border: "1px solid rgba(212,175,55,0.25)" }}
+              style={{ background: "rgba(34,197,94,0.1)", border: "1px solid rgba(34,197,94,0.25)" }}
             >
               <Lock size={22} style={{ color: "hsl(var(--primary))" }} />
             </div>
@@ -158,7 +158,7 @@ const LockGate = ({
               style={{
                 fontFamily: "'Cormorant Garamond', Georgia, serif",
                 fontSize: "14px",
-                color: "rgba(212,175,55,0.7)",
+                color: "rgba(34,197,94,0.7)",
                 lineHeight: 1.6,
                 maxWidth: "400px",
               }}
@@ -179,7 +179,7 @@ const LockGate = ({
               style={{
                 background: "hsl(var(--primary))",
                 color: "hsl(var(--primary-foreground))",
-                boxShadow: "0 0 24px rgba(212,175,55,0.3)",
+                boxShadow: "0 0 24px rgba(34,197,94,0.3)",
               }}
             >
               See plans — from ₹99/month

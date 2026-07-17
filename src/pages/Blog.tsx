@@ -170,7 +170,7 @@ const Blog = () => {
           {/* Search */}
           <div
             className={`relative flex items-center gap-3 glass-card px-5 py-3 rounded-full flex-1 max-w-sm transition-all duration-300 ${
-              isSearchFocused ? "border-primary/40 shadow-[0_0_20px_rgba(251,191,36,0.20)]" : ""
+              isSearchFocused ? "border-primary/40 shadow-[0_0_20px_rgba(34,197,94,0.20)]" : ""
             }`}
           >
             <Search size={15} className="text-muted-foreground flex-shrink-0" />
@@ -264,21 +264,21 @@ const Blog = () => {
                     className="group px-10 py-3.5 rounded-full flex items-center gap-3 text-sm font-medium tracking-wide transition-all duration-300"
                     style={{
                       background: "rgba(22,11,0,0.85)",
-                      border: "1px solid rgba(251,191,36,0.30)",
-                      color: "rgba(253,230,138,0.88)",
+                      border: "1px solid rgba(34,197,94,0.30)",
+                      color: "rgba(134,239,172,0.88)",
                       fontFamily: "'Cinzel',serif",
                       fontSize: "12px",
                       letterSpacing: "0.12em",
                     }}
                     onMouseEnter={e => {
-                      (e.currentTarget as HTMLButtonElement).style.background = "rgba(251,191,36,0.15)";
-                      (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(251,191,36,0.60)";
-                      (e.currentTarget as HTMLButtonElement).style.color = "#FBBF24";
+                      (e.currentTarget as HTMLButtonElement).style.background = "rgba(34,197,94,0.15)";
+                      (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(34,197,94,0.60)";
+                      (e.currentTarget as HTMLButtonElement).style.color = "#22C55E";
                     }}
                     onMouseLeave={e => {
                       (e.currentTarget as HTMLButtonElement).style.background = "rgba(22,11,0,0.85)";
-                      (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(251,191,36,0.30)";
-                      (e.currentTarget as HTMLButtonElement).style.color = "rgba(253,230,138,0.88)";
+                      (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(34,197,94,0.30)";
+                      (e.currentTarget as HTMLButtonElement).style.color = "rgba(134,239,172,0.88)";
                     }}
                   >
                     {t("common.load_more")}

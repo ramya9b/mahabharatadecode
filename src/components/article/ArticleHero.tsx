@@ -17,7 +17,7 @@ const CHAR_ACCENT_MAP: Record<string, string> = {
   bhishma:  "#707B7C",  /* Silver — elder */
   drona:    "#784212",  /* Brown — guru */
   yudhishthira: "#1E8449",
-  default:  "#D4AF37",  /* Gold fallback */
+  default:  "#22C55E",  /* Gold fallback */
 };
 
 const ArticleHero = ({ article }: ArticleHeroProps) => {

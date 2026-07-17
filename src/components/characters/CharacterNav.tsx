@@ -11,7 +11,7 @@ const CharacterNav = ({ characters }: CharacterNavProps) => {
   const [visible, setVisible] = useState(false);
   const { theme } = useTheme();
   const isDark = theme === "dark";
-  const inactiveColor = isDark ? "rgba(253,230,138,0.65)" : "rgba(42,31,14,0.65)";
+  const inactiveColor = isDark ? "rgba(134,239,172,0.65)" : "rgba(42,31,14,0.65)";
 
   // Visibility toggle — rAF-throttled, single boolean comparison per frame
   useEffect(() => {

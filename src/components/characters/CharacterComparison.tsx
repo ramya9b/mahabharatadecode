@@ -35,7 +35,7 @@ const CharacterComparison = ({ characters }: CharacterComparisonProps) => {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 80% 40% at 50% 50%, rgba(212,175,55,0.04) 0%, transparent 65%)",
+            "radial-gradient(ellipse 80% 40% at 50% 50%, rgba(34,197,94,0.04) 0%, transparent 65%)",
         }}
       />
 

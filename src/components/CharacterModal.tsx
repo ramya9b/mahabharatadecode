@@ -45,7 +45,7 @@ const CharacterModal = ({ char, sceneImage, onStart, onClose }: Props) => {
   const [customPrompt, setCustomPrompt]  = useState("");
   const [isMobile, setIsMobile]          = useState(window.innerWidth < 640);
 
-  const accent  = char.accentHex || "#D4AF37";
+  const accent  = char.accentHex || "#22C55E";
 
   /* ── Audio — auto-plays on open, stops on close ── */
   useCharacterAudio(char.id, true);

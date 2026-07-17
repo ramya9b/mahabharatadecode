@@ -35,7 +35,7 @@ const NotFound = () => {
         aria-hidden="true"
         style={{
           background:
-            "radial-gradient(ellipse 70% 50% at 50% 30%, rgba(212,175,55,0.05) 0%, transparent 65%)",
+            "radial-gradient(ellipse 70% 50% at 50% 30%, rgba(34,197,94,0.05) 0%, transparent 65%)",
         }}
       />
 
@@ -48,7 +48,7 @@ const NotFound = () => {
             aria-hidden="true"
             style={{
               fontSize: "clamp(96px, 18vw, 200px)",
-              background: "linear-gradient(135deg, #E8C547 0%, #D4AF37 40%, #B8922A 100%)",
+              background: "linear-gradient(135deg, #E8C547 0%, #22C55E 40%, #B8922A 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",
@@ -110,7 +110,7 @@ const NotFound = () => {
                 >
                   <div
                     className="w-10 h-10 rounded-full mx-auto mb-3 flex items-center justify-center transition-colors group-hover:bg-primary/15"
-                    style={{ background: "rgba(212,175,55,0.08)", border: "1px solid rgba(212,175,55,0.15)" }}
+                    style={{ background: "rgba(34,197,94,0.08)", border: "1px solid rgba(34,197,94,0.15)" }}
                   >
                     <Icon size={16} className="text-primary" aria-hidden="true" />
                   </div>
@@ -146,9 +146,9 @@ const NotFound = () => {
                 <span
                   className="inline-block mb-3 px-3 py-1 rounded-full text-[10px] font-heading tracking-wider uppercase"
                   style={{
-                    background: "rgba(212,175,55,0.1)",
-                    border: "1px solid rgba(212,175,55,0.2)",
-                    color: "rgba(212,175,55,0.8)",
+                    background: "rgba(34,197,94,0.1)",
+                    border: "1px solid rgba(34,197,94,0.2)",
+                    color: "rgba(34,197,94,0.8)",
                   }}
                 >
                   {article.category}

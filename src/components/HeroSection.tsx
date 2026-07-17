@@ -64,7 +64,7 @@ const HeroSection = () => {
 
       {/* ── Cinematic overlay stack ── */}
       <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(6,4,17,0.72) 0%, rgba(6,4,17,0.65) 40%, rgba(6,4,17,0.92) 85%, rgba(6,4,17,1) 100%)" }} />
-      <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 75% 55% at 50% 38%, rgba(251,191,36,0.12) 0%, transparent 65%)" }} />
+      <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 75% 55% at 50% 38%, rgba(34,197,94,0.12) 0%, transparent 65%)" }} />
       {/* Vignette edges */}
       <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 100% 100% at 50% 50%, transparent 55%, rgba(4,2,12,0.65) 100%)" }} />
 
@@ -75,7 +75,7 @@ const HeroSection = () => {
         style={{
           top: "20%", left: "50%", transform: "translateX(-50%)",
           width: "600px", height: "300px",
-          background: "radial-gradient(ellipse, rgba(251,191,36,0.15) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse, rgba(34,197,94,0.15) 0%, transparent 70%)",
           filter: "blur(40px)",
           animation: "glow-pulse 6s ease-in-out infinite",
         }}
@@ -108,7 +108,7 @@ const HeroSection = () => {
             style={{
               width: p.w + "px", height: p.w + "px",
               left: p.l + "%", bottom: "-10px",
-              background: "rgba(212,175,55,0.25)",
+              background: "rgba(34,197,94,0.25)",
               "--duration": p.dur + "s",
               "--delay":    p.del + "s",
             } as React.CSSProperties}
@@ -124,9 +124,9 @@ const HeroSection = () => {
           <span
             className="inline-block px-5 py-2 rounded-full border text-[11px] tracking-[0.32em] uppercase backdrop-blur-sm i18n-safe"
             style={{
-              borderColor: "rgba(251,191,36,0.35)",
-              color: "rgba(251,191,36,0.95)",
-              background: "rgba(251,191,36,0.06)",
+              borderColor: "rgba(34,197,94,0.35)",
+              color: "rgba(34,197,94,0.95)",
+              background: "rgba(34,197,94,0.06)",
               fontFamily: "'Cinzel', serif",
             }}
           >
@@ -141,13 +141,13 @@ const HeroSection = () => {
         >
           <span className="block" style={{
             /* Warm gold shimmer — readable on dark overlay */
-            background: "linear-gradient(135deg, #FDE68A 0%, #FBBF24 35%, #F59E0B 55%, #FDE68A 75%, #FBBF24 100%)",
+            background: "linear-gradient(135deg, #86EFAC 0%, #22C55E 35%, #16A34A 55%, #86EFAC 75%, #22C55E 100%)",
             backgroundSize: "200% auto",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             backgroundClip: "text",
             animation: "shimmer 4s linear infinite",
-            filter: "drop-shadow(0 2px 20px rgba(251,191,36,0.5))",
+            filter: "drop-shadow(0 2px 20px rgba(34,197,94,0.5))",
           }}>
             {t("hero.headline_gold")}
           </span>
@@ -191,7 +191,7 @@ const HeroSection = () => {
             style={{
               padding: "14px 32px",
               borderRadius: "9999px",
-              background: "linear-gradient(135deg, #D4AF37 0%, #FBBF24 50%, #FDE68A 100%)",
+              background: "linear-gradient(135deg, #22C55E 0%, #22C55E 50%, #86EFAC 100%)",
               backgroundSize: "200% auto",
               color: "#08040F",
               fontFamily: "'Cinzel', serif",
@@ -203,12 +203,12 @@ const HeroSection = () => {
               display: "inline-flex",
               alignItems: "center",
               gap: "8px",
-              boxShadow: "0 8px 32px rgba(251,191,36,0.4), 0 0 60px rgba(52,211,153,0.15)",
+              boxShadow: "0 8px 32px rgba(34,197,94,0.4), 0 0 60px rgba(52,211,153,0.15)",
               transition: "all 0.35s ease",
               animation: "shimmer 4s linear infinite",
             }}
-            onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-3px) scale(1.02)"; (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 12px 40px rgba(212,175,55,0.6)"; }}
-            onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.transform = "none"; (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 8px 32px rgba(212,175,55,0.45), 0 0 60px rgba(212,175,55,0.15)"; }}
+            onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-3px) scale(1.02)"; (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 12px 40px rgba(34,197,94,0.6)"; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.transform = "none"; (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 8px 32px rgba(34,197,94,0.45), 0 0 60px rgba(34,197,94,0.15)"; }}
           >
             ✨ {t("hero.cta_try_story")}
           </Link>
@@ -218,7 +218,7 @@ const HeroSection = () => {
             style={{
               padding: "14px 32px",
               borderRadius: "9999px",
-              background: "linear-gradient(135deg, #D4AF37 0%, #FBBF24 50%, #FDE68A 100%)",
+              background: "linear-gradient(135deg, #22C55E 0%, #22C55E 50%, #86EFAC 100%)",
               backgroundSize: "200% auto",
               color: "#08040F",
               fontFamily: "'Cinzel', serif",
@@ -230,12 +230,12 @@ const HeroSection = () => {
               display: "inline-flex",
               alignItems: "center",
               gap: "8px",
-              boxShadow: "0 8px 32px rgba(251,191,36,0.4), 0 0 60px rgba(52,211,153,0.15)",
+              boxShadow: "0 8px 32px rgba(34,197,94,0.4), 0 0 60px rgba(52,211,153,0.15)",
               transition: "all 0.35s ease",
               animation: "shimmer 4s linear infinite",
             }}
-            onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-3px) scale(1.02)"; (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 12px 40px rgba(212,175,55,0.6)"; }}
-            onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.transform = "none"; (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 8px 32px rgba(212,175,55,0.45), 0 0 60px rgba(212,175,55,0.15)"; }}
+            onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-3px) scale(1.02)"; (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 12px 40px rgba(34,197,94,0.6)"; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.transform = "none"; (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 8px 32px rgba(34,197,94,0.45), 0 0 60px rgba(34,197,94,0.15)"; }}
           >
             {t("hero.cta_primary")}
           </Link>
@@ -245,7 +245,7 @@ const HeroSection = () => {
             style={{
               padding: "14px 32px",
               borderRadius: "9999px",
-              background: "linear-gradient(135deg, #D4AF37 0%, #FBBF24 50%, #FDE68A 100%)",
+              background: "linear-gradient(135deg, #22C55E 0%, #22C55E 50%, #86EFAC 100%)",
               backgroundSize: "200% auto",
               color: "#08040F",
               fontFamily: "'Cinzel', serif",
@@ -257,12 +257,12 @@ const HeroSection = () => {
               display: "inline-flex",
               alignItems: "center",
               gap: "8px",
-              boxShadow: "0 8px 32px rgba(251,191,36,0.4), 0 0 60px rgba(52,211,153,0.15)",
+              boxShadow: "0 8px 32px rgba(34,197,94,0.4), 0 0 60px rgba(52,211,153,0.15)",
               transition: "all 0.35s ease",
               animation: "shimmer 4s linear infinite",
             }}
-            onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-3px) scale(1.02)"; (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 12px 40px rgba(212,175,55,0.6)"; }}
-            onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.transform = "none"; (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 8px 32px rgba(212,175,55,0.45), 0 0 60px rgba(212,175,55,0.15)"; }}
+            onMouseEnter={e => { (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-3px) scale(1.02)"; (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 12px 40px rgba(34,197,94,0.6)"; }}
+            onMouseLeave={e => { (e.currentTarget as HTMLAnchorElement).style.transform = "none"; (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 8px 32px rgba(34,197,94,0.45), 0 0 60px rgba(34,197,94,0.15)"; }}
           >
             {t("hero.cta_secondary")}
           </Link>
@@ -274,10 +274,10 @@ const HeroSection = () => {
 
       {/* Scroll indicator */}
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2" style={{ opacity: 0.5 }} aria-hidden="true">
-        <span className="text-[9px] tracking-[0.35em] uppercase" style={{ fontFamily: "'Cinzel', serif", color: "rgba(212,175,55,0.8)" }}>
+        <span className="text-[9px] tracking-[0.35em] uppercase" style={{ fontFamily: "'Cinzel', serif", color: "rgba(34,197,94,0.8)" }}>
           {t("hero.scroll")}
         </span>
-        <div className="w-px h-10" style={{ background: "linear-gradient(to bottom, rgba(212,175,55,0.7), transparent)" }} />
+        <div className="w-px h-10" style={{ background: "linear-gradient(to bottom, rgba(34,197,94,0.7), transparent)" }} />
       </div>
     </section>
   );

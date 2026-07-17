@@ -30,7 +30,7 @@ const StoryHero = () => {
         className="absolute inset-0 pointer-events-none"
         style={{
           background:
-            "radial-gradient(ellipse 80% 60% at 50% 40%, rgba(212,175,55,0.08) 0%, transparent 65%)",
+            "radial-gradient(ellipse 80% 60% at 50% 40%, rgba(34,197,94,0.08) 0%, transparent 65%)",
         }}
         aria-hidden="true"
       />
@@ -40,7 +40,7 @@ const StoryHero = () => {
         className="absolute top-0 left-0 right-0 h-[2px]"
         style={{
           background:
-            "linear-gradient(90deg,#FBBF24,#A3E635,#34D399,#38BDF8,#A78BFA,#F472B6)",
+            "linear-gradient(90deg,#22C55E,#A3E635,#34D399,#38BDF8,#A78BFA,#F472B6)",
         }}
         aria-hidden="true"
       />
@@ -49,7 +49,7 @@ const StoryHero = () => {
         {/* Eyebrow */}
         <p
           className="font-heading text-[11px] tracking-[0.4em] uppercase mb-6"
-          style={{ color: "rgba(212,175,55,0.65)" }}
+          style={{ color: "rgba(34,197,94,0.65)" }}
         >
           The Complete Story
         </p>
@@ -60,7 +60,7 @@ const StoryHero = () => {
           style={{
             fontSize: "clamp(42px, 7vw, 80px)",
             background:
-              "linear-gradient(135deg, rgba(212,175,55,1) 0%, rgba(212,175,55,0.6) 100%)",
+              "linear-gradient(135deg, rgba(34,197,94,1) 0%, rgba(34,197,94,0.6) 100%)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             backgroundClip: "text",
@@ -71,7 +71,7 @@ const StoryHero = () => {
             className="block"
             style={{
               WebkitTextFillColor: isDark
-                ? "rgba(253,230,138,0.85)"
+                ? "rgba(134,239,172,0.85)"
                 : "rgba(42,31,14,0.85)",
               fontSize: "0.6em",
               fontStyle: "italic",
@@ -90,7 +90,7 @@ const StoryHero = () => {
           style={{
             fontSize: "clamp(17px, 2vw, 20px)",
             fontFamily: "'Cormorant Garamond', Georgia, serif",
-            color: isDark ? "rgba(253,230,138,0.70)" : "rgba(42,31,14,0.70)",
+            color: isDark ? "rgba(134,239,172,0.70)" : "rgba(42,31,14,0.70)",
             maxWidth: "540px",
           }}
         >
@@ -194,7 +194,7 @@ const ParvaCard = ({ parva, isOpen, onToggle, isDark }: ParvaCardProps) => {
               className="font-heading font-bold"
               style={{
                 fontSize: "clamp(16px, 2vw, 20px)",
-                color: isDark ? "rgba(253,230,138,0.95)" : "rgba(42,31,14,0.95)",
+                color: isDark ? "rgba(134,239,172,0.95)" : "rgba(42,31,14,0.95)",
               }}
             >
               {parva.name}
@@ -216,7 +216,7 @@ const ParvaCard = ({ parva, isOpen, onToggle, isDark }: ParvaCardProps) => {
               fontFamily: "'Cormorant Garamond', Georgia, serif",
               fontSize: "clamp(14px, 1.6vw, 16px)",
               fontStyle: "italic",
-              color: isDark ? "rgba(253,230,138,0.60)" : "rgba(42,31,14,0.62)",
+              color: isDark ? "rgba(134,239,172,0.60)" : "rgba(42,31,14,0.62)",
             }}
           >
             {parva.subtitle}
@@ -266,7 +266,7 @@ const ParvaCard = ({ parva, isOpen, onToggle, isDark }: ParvaCardProps) => {
                   fontFamily: "'Cormorant Garamond', Georgia, serif",
                   fontSize: "clamp(16px, 1.8vw, 18px)",
                   color: isDark
-                    ? "rgba(253,230,138,0.82)"
+                    ? "rgba(134,239,172,0.82)"
                     : "rgba(42,31,14,0.82)",
                 }}
               >
@@ -301,7 +301,7 @@ const ParvaCard = ({ parva, isOpen, onToggle, isDark }: ParvaCardProps) => {
                       fontFamily: "'Cormorant Garamond', Georgia, serif",
                       fontSize: "clamp(14px, 1.6vw, 16px)",
                       color: isDark
-                        ? "rgba(253,230,138,0.75)"
+                        ? "rgba(134,239,172,0.75)"
                         : "rgba(42,31,14,0.75)",
                     }}
                   >
@@ -384,7 +384,7 @@ const ParvaCard = ({ parva, isOpen, onToggle, isDark }: ParvaCardProps) => {
                       className="font-heading text-[11px] tracking-[0.1em] uppercase group-hover:opacity-80 transition-opacity"
                       style={{
                         color: isDark
-                          ? "rgba(253,230,138,0.70)"
+                          ? "rgba(134,239,172,0.70)"
                           : "rgba(42,31,14,0.65)",
                       }}
                     >
@@ -449,7 +449,7 @@ const Story = () => {
             ? "rgba(12,9,0,0.90)"
             : "rgba(250,245,236,0.92)",
           backdropFilter: "blur(12px)",
-          borderBottom: "1px solid rgba(212,175,55,0.10)",
+          borderBottom: "1px solid rgba(34,197,94,0.10)",
         }}
       >
         <p
@@ -485,7 +485,7 @@ const Story = () => {
             className="hidden md:block absolute left-[-28px] top-0 bottom-0 w-px"
             style={{
               background:
-                "linear-gradient(to bottom, transparent, rgba(212,175,55,0.25) 10%, rgba(212,175,55,0.25) 90%, transparent)",
+                "linear-gradient(to bottom, transparent, rgba(34,197,94,0.25) 10%, rgba(34,197,94,0.25) 90%, transparent)",
             }}
             aria-hidden="true"
           />
@@ -509,12 +509,12 @@ const Story = () => {
             className="h-px mb-10"
             style={{
               background:
-                "linear-gradient(to right, transparent, rgba(212,175,55,0.3), transparent)",
+                "linear-gradient(to right, transparent, rgba(34,197,94,0.3), transparent)",
             }}
           />
           <p
             className="font-heading text-[10px] tracking-[0.35em] uppercase mb-4"
-            style={{ color: "rgba(212,175,55,0.55)" }}
+            style={{ color: "rgba(34,197,94,0.55)" }}
           >
             Go deeper
           </p>

@@ -19,7 +19,7 @@ const Heading = ({ text }: { text: string }) => (
     className="font-heading font-bold mt-14 mb-6 leading-tight"
     style={{
       fontSize: "clamp(22px, 2.5vw, 30px)",
-      background: "linear-gradient(135deg, #E8C547 0%, #D4AF37 55%, #B8922A 100%)",
+      background: "linear-gradient(135deg, #E8C547 0%, #22C55E 55%, #B8922A 100%)",
       WebkitBackgroundClip: "text",
       WebkitTextFillColor: "transparent",
       backgroundClip: "text",
@@ -40,7 +40,7 @@ const Quote = ({ text }: { text: string }) => (
       style={{
         fontSize: "80px",
         lineHeight: 1,
-        color: "rgba(212,175,55,0.12)",
+        color: "rgba(34,197,94,0.12)",
         fontStyle: "normal",
       }}
     >
@@ -65,8 +65,8 @@ const LessonCallout = ({ text }: { text: string }) => (
     className="relative my-10 rounded-2xl overflow-hidden"
     style={{
       background:
-        "linear-gradient(135deg, rgba(212,175,55,0.07) 0%, rgba(212,175,55,0.03) 100%)",
-      border: "1px solid rgba(212,175,55,0.18)",
+        "linear-gradient(135deg, rgba(34,197,94,0.07) 0%, rgba(34,197,94,0.03) 100%)",
+      border: "1px solid rgba(34,197,94,0.18)",
     }}
   >
     {/* Top shimmer line */}
@@ -74,15 +74,15 @@ const LessonCallout = ({ text }: { text: string }) => (
       className="absolute top-0 left-0 right-0 h-px"
       style={{
         background:
-          "linear-gradient(to right, transparent, rgba(212,175,55,0.4), transparent)",
+          "linear-gradient(to right, transparent, rgba(34,197,94,0.4), transparent)",
       }}
     />
     <div className="flex items-start gap-4 p-6 md:p-7">
       <div
         className="flex-shrink-0 w-9 h-9 rounded-full flex items-center justify-center mt-0.5"
         style={{
-          background: "rgba(212,175,55,0.12)",
-          border: "1px solid rgba(212,175,55,0.22)",
+          background: "rgba(34,197,94,0.12)",
+          border: "1px solid rgba(34,197,94,0.22)",
         }}
       >
         <span className="text-primary text-sm">✦</span>
@@ -103,22 +103,22 @@ const RelatedLinks = ({ links }: { links: { slug: string; label: string }[] }) =
     aria-label="Related articles"
     className="my-10 rounded-2xl overflow-hidden"
     style={{
-      background: "linear-gradient(135deg, rgba(212,175,55,0.05) 0%, rgba(212,175,55,0.02) 100%)",
-      border: "1px solid rgba(212,175,55,0.15)",
+      background: "linear-gradient(135deg, rgba(34,197,94,0.05) 0%, rgba(34,197,94,0.02) 100%)",
+      border: "1px solid rgba(34,197,94,0.15)",
     }}
   >
     <div
       className="px-6 py-4 border-b"
-      style={{ borderColor: "rgba(212,175,55,0.1)" }}
+      style={{ borderColor: "rgba(34,197,94,0.1)" }}
     >
       <span
         className="text-[10px] tracking-[0.3em] uppercase"
-        style={{ fontFamily: "'Cinzel', serif", color: "rgba(212,175,55,0.6)" }}
+        style={{ fontFamily: "'Cinzel', serif", color: "rgba(34,197,94,0.6)" }}
       >
         Continue Reading
       </span>
     </div>
-    <ul className="divide-y" style={{ borderColor: "rgba(212,175,55,0.08)" }}>
+    <ul className="divide-y" style={{ borderColor: "rgba(34,197,94,0.08)" }}>
       {links.map((link) => (
         <li key={link.slug}>
           <Link
@@ -155,15 +155,15 @@ export const PullQuote = ({ text }: { text: string }) => {
       className="reveal-element my-16 md:my-20 py-14 md:py-16 relative overflow-hidden"
       style={{
         background:
-          "linear-gradient(135deg, rgba(139,0,0,0.06) 0%, rgba(212,175,55,0.06) 50%, rgba(139,0,0,0.04) 100%)",
-        borderTop: "1px solid rgba(212,175,55,0.15)",
-        borderBottom: "1px solid rgba(212,175,55,0.15)",
+          "linear-gradient(135deg, rgba(139,0,0,0.06) 0%, rgba(34,197,94,0.06) 50%, rgba(139,0,0,0.04) 100%)",
+        borderTop: "1px solid rgba(34,197,94,0.15)",
+        borderBottom: "1px solid rgba(34,197,94,0.15)",
       }}
     >
       {/* Decorative quote mark */}
       <div
         className="absolute top-4 left-8 font-heading select-none pointer-events-none"
-        style={{ fontSize: "120px", lineHeight: 1, color: "rgba(212,175,55,0.06)" }}
+        style={{ fontSize: "120px", lineHeight: 1, color: "rgba(34,197,94,0.06)" }}
       >
         "
       </div>

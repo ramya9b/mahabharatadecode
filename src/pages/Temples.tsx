@@ -82,7 +82,7 @@ const IndiaMap = ({
                 cy={pos.y}
                 r={ts.length > 1 ? 14 : 8}
                 fill={hasSelected ? "hsl(var(--primary) / 0.5)" : "hsl(var(--border))"}
-                stroke={hasSelected ? "#D4AF37" : "hsl(var(--primary) / 0.6)"}
+                stroke={hasSelected ? "#22C55E" : "hsl(var(--primary) / 0.6)"}
                 strokeWidth="1.5"
                 style={{ cursor: "pointer" }}
                 onClick={() => onSelect(ts[0].id)}
@@ -92,7 +92,7 @@ const IndiaMap = ({
                   x={pos.x}
                   y={pos.y + 4}
                   textAnchor="middle"
-                  fill="#D4AF37"
+                  fill="#22C55E"
                   fontSize="10"
                   fontFamily="serif"
                   fontWeight="bold"
@@ -102,7 +102,7 @@ const IndiaMap = ({
                 </text>
               )}
               {ts.length === 1 && (
-                <circle cx={pos.x} cy={pos.y} r={3} fill="#D4AF37" style={{ pointerEvents: "none" }} />
+                <circle cx={pos.x} cy={pos.y} r={3} fill="#22C55E" style={{ pointerEvents: "none" }} />
               )}
               {/* State label */}
               <text
@@ -246,7 +246,7 @@ const TempleCard = ({
                   </p>
                 </div>
                 <div>
-                  <p className="text-[10px] tracking-widest uppercase mb-1" style={{ color: "#D4AF37", fontFamily: "'Cinzel', serif" }}>Tradition</p>
+                  <p className="text-[10px] tracking-widest uppercase mb-1" style={{ color: "#22C55E", fontFamily: "'Cinzel', serif" }}>Tradition</p>
                   <p style={{ fontSize: "13px", fontFamily: "'Cormorant Garamond', Georgia, serif", color: "hsl(var(--foreground) / 0.85)", lineHeight: 1.6 }}>
                     {temple.historicalDebate.tradition}
                   </p>
@@ -387,7 +387,7 @@ export default function Temples() {
             <span
               className="block mt-1"
               style={{
-                background: "linear-gradient(135deg, #E8C547 0%, #D4AF37 55%, #B8922A 100%)",
+                background: "linear-gradient(135deg, #E8C547 0%, #22C55E 55%, #B8922A 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -476,7 +476,7 @@ export default function Temples() {
                         By Source Tier
                       </p>
                       <div className="space-y-2">
-                        {([["all", "All Tiers", "#D4AF37"], [1, TIER_LABELS[1], TIER_COLORS[1]], [2, TIER_LABELS[2], TIER_COLORS[2]], [3, TIER_LABELS[3], TIER_COLORS[3]]] as const).map(([val, label, color]) => (
+                        {([["all", "All Tiers", "#22C55E"], [1, TIER_LABELS[1], TIER_COLORS[1]], [2, TIER_LABELS[2], TIER_COLORS[2]], [3, TIER_LABELS[3], TIER_COLORS[3]]] as const).map(([val, label, color]) => (
                           <button
                             key={String(val)}
                             onClick={() => { setSelectedTier(val as "all" | 1 | 2 | 3); setSelectedId(null); }}

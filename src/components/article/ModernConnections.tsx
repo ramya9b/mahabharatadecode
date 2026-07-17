@@ -13,7 +13,7 @@ const ConnectionCard = ({
   index: number;
 }) => {
   const colors = [
-    { border: "rgba(212,175,55,0.3)", bg: "rgba(212,175,55,0.04)", accent: "#D4AF37", label: "text-primary" },
+    { border: "rgba(34,197,94,0.3)", bg: "rgba(34,197,94,0.04)", accent: "#22C55E", label: "text-primary" },
     { border: "rgba(139,0,0,0.4)", bg: "rgba(139,0,0,0.05)", accent: "#8B0000", label: "text-red-500" },
     { border: "rgba(20,184,166,0.3)", bg: "rgba(20,184,166,0.04)", accent: "#14B8A6", label: "text-teal-400" },
   ];
@@ -98,7 +98,7 @@ const ModernConnections = ({ connections }: ModernConnectionsProps) => {
           <span
             style={{
               background:
-                "linear-gradient(135deg, #E8C547 0%, #D4AF37 45%, #B8922A 100%)",
+                "linear-gradient(135deg, #E8C547 0%, #22C55E 45%, #B8922A 100%)",
               WebkitBackgroundClip: "text",
               WebkitTextFillColor: "transparent",
               backgroundClip: "text",

@@ -21,7 +21,7 @@
     --popover: 38 50% 94%;
     --popover-foreground: 28 70% 12%;
 
-    --primary: 35 95% 45%;          /* #D97706 amber gold — readable on cream */
+    --primary: 142 72% 29%;          /* #15803D amber gold — readable on cream */
     --primary-foreground: 38 55% 97%;
 
     --secondary: 38 30% 86%;
@@ -36,31 +36,31 @@
     --destructive: 0 62% 45%;
     --destructive-foreground: 38 55% 97%;
 
-    --border: 35 28% 75%;           /* warm gold border */
-    --input:  35 28% 75%;
-    --ring:   35 95% 45%;
+    --border: 142 22% 72%;           /* warm gold border */
+    --input:  142 22% 72%;
+    --ring:   142 72% 29%;
 
     --radius: 0.75rem;
 
     --sidebar-background: 0 0% 100%;
     --sidebar-foreground: 28 70% 12%;
-    --sidebar-primary: 35 95% 45%;
+    --sidebar-primary: 142 72% 29%;
     --sidebar-primary-foreground: 38 55% 97%;
     --sidebar-accent: 38 30% 86%;
     --sidebar-accent-foreground: 28 55% 15%;
-    --sidebar-border: 35 28% 75%;
-    --sidebar-ring: 35 95% 45%;
+    --sidebar-border: 142 22% 72%;
+    --sidebar-ring: 142 72% 29%;
 
     /* ── Golden Rainbow tokens — light values ── */
-    --gold-light:    #D97706;
-    --gold-dark:     #92400E;
+    --gold-light:    #15803D;
+    --gold-dark:     #166534;
     --rainbow-green: #059669;
     --rainbow-blue:  #0284C7;
     --rainbow-purple:#7C3AED;
     --rainbow-pink:  #BE185D;
     --rainbow-lime:  #65A30D;
     --rainbow-bar: linear-gradient(90deg,
-      #D97706 0%, #65A30D 20%, #059669 40%,
+      #15803D 0%, #65A30D 20%, #059669 40%,
       #0284C7 60%, #7C3AED 80%, #BE185D 100%);
 
     /* ── Parchment tones — alternating section backgrounds.
@@ -97,7 +97,7 @@
      ══════════════════════════════════════════════════════ */
   .dark {
     --background: 30 100% 3%;       /* #0C0900 deep warm black */
-    --foreground: 45 96% 90%;       /* #FDE68A warm golden white */
+    --foreground: 45 96% 90%;       /* #86EFAC warm golden white */
 
     /* Bumped from 5% to 11% lightness so cards/popovers/buttons
        have proper visible contrast against the near-black --background.
@@ -110,7 +110,7 @@
     --popover: 30 50% 11%;
     --popover-foreground: 45 96% 90%;
 
-    --primary: 43 96% 56%;          /* #FBBF24 bright gold */
+    --primary: 142 71% 45%;          /* #22C55E bright gold */
     --primary-foreground: 30 100% 4%;
 
     --secondary: 30 50% 10%;
@@ -125,29 +125,29 @@
     --destructive: 0 62% 48%;
     --destructive-foreground: 45 90% 95%;
 
-    --border: 43 40% 20%;
-    --input:  43 40% 20%;
-    --ring:   43 96% 56%;
+    --border: 142 30% 20%;
+    --input:  142 30% 20%;
+    --ring:   142 71% 45%;
 
     --sidebar-background: 30 100% 3%;
     --sidebar-foreground: 45 96% 90%;
-    --sidebar-primary: 43 96% 56%;
+    --sidebar-primary: 142 71% 45%;
     --sidebar-primary-foreground: 30 100% 4%;
     --sidebar-accent: 30 50% 10%;
     --sidebar-accent-foreground: 45 96% 88%;
-    --sidebar-border: 43 40% 20%;
-    --sidebar-ring: 43 96% 56%;
+    --sidebar-border: 142 30% 20%;
+    --sidebar-ring: 142 71% 45%;
 
     /* ── Golden Rainbow tokens — dark values ── */
-    --gold-light:    #FBBF24;
-    --gold-dark:     #D97706;
+    --gold-light:    #22C55E;
+    --gold-dark:     #15803D;
     --rainbow-green: #34D399;
     --rainbow-blue:  #38BDF8;
     --rainbow-purple:#A78BFA;
     --rainbow-pink:  #F472B6;
     --rainbow-lime:  #A3E635;
     --rainbow-bar: linear-gradient(90deg,
-      #FBBF24 0%, #A3E635 20%, #34D399 40%,
+      #22C55E 0%, #A3E635 20%, #34D399 40%,
       #38BDF8 60%, #A78BFA 80%, #F472B6 100%);
 
     /* Parchment tones — dark mode equivalents (deep warm darks) */
@@ -325,10 +325,10 @@ body {
      Use these on ANY component with a forced dark background.
      NEVER use text-foreground/text-muted-foreground on forced dark cards.
      ─────────────────────────────────────────────────────────────────── */
-  .dark-card-heading   { color: rgba(253,230,138,0.95); }
+  .dark-card-heading   { color: rgba(134,239,172,0.95); }
   .dark-card-body      { color: rgba(245,237,218,0.88); }
   .dark-card-secondary { color: rgba(245,237,218,0.65); }
-  .dark-card-label     { color: rgba(212,175,55,0.65);  }
+  .dark-card-label     { color: rgba(34,197,94,0.65);  }
   .dark-card-faint     { color: rgba(245,237,218,0.38); }
 
   .glass-card {
@@ -342,7 +342,7 @@ body {
   .glass-card:hover {
     background: rgba(250, 244, 232, 0.97);
     border-color: rgba(212, 175, 55, 0.48);
-    box-shadow: 0 6px 28px rgba(212,175,55,0.10), inset 0 1px 0 rgba(212,175,55,0.14);
+    box-shadow: 0 6px 28px rgba(34,197,94,0.10), inset 0 1px 0 rgba(34,197,94,0.14);
   }
   .dark .glass-card {
     background: rgba(40, 25, 8, 0.88);
@@ -352,7 +352,7 @@ body {
   .dark .glass-card:hover {
     background: rgba(52, 32, 10, 0.94);
     border-color: rgba(251, 191, 36, 0.44);
-    box-shadow: 0 8px 32px rgba(212,175,55,0.13), inset 0 1px 0 rgba(212,175,55,0.10);
+    box-shadow: 0 8px 32px rgba(34,197,94,0.13), inset 0 1px 0 rgba(34,197,94,0.10);
   }
 
   .hover-lift {
@@ -363,12 +363,12 @@ body {
     transform: translateY(-5px);
     box-shadow:
       0 24px 48px rgba(139,105,20,0.20),
-      0 0 0 1px rgba(212,175,55,0.22),
-      0 0 32px rgba(212,175,55,0.08);
+      0 0 0 1px rgba(34,197,94,0.22),
+      0 0 32px rgba(34,197,94,0.08);
   }
 
   .gold-text {
-    background: linear-gradient(135deg, #7A4E08 0%, #9B6810 40%, #7A4E08 100%);
+    background: linear-gradient(135deg, #14532D 0%, #9B6810 40%, #14532D 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -476,7 +476,7 @@ body {
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 2px;
-    background: linear-gradient(90deg, transparent, rgba(212,175,55,0.75), transparent);
+    background: linear-gradient(90deg, transparent, rgba(34,197,94,0.75), transparent);
     opacity: 0;
     transition: opacity 0.4s ease;
     border-radius: 18px 18px 0 0;
@@ -502,11 +502,11 @@ body {
   .shimmer-gold {
     background: linear-gradient(
       90deg,
-      #7A4E08 0%,
+      #14532D 0%,
       #9B6810 25%,
       #C08A20 50%,
       #9B6810 75%,
-      #7A4E08 100%
+      #14532D 100%
     );
     background-size: 200% auto;
     -webkit-background-clip: text;
@@ -543,7 +543,7 @@ body {
 
   /* Gold ripple variant (for dark buttons) */
   .btn-ripple.ripple-gold .ripple-circle {
-    background: rgba(212,175,55,0.3);
+    background: rgba(34,197,94,0.3);
   }
 
   /* ── CTA micro-interaction: magnetic lift ── */
@@ -573,7 +573,7 @@ body {
     top: 50%; left: 50%;
     width: 80px; height: 80px;
     border-radius: 50%;
-    background: rgba(212,175,55,0.18);
+    background: rgba(34,197,94,0.18);
     transform: translate(-50%,-50%) scale(0);
     opacity: 0;
     pointer-events: none;
@@ -622,7 +622,7 @@ body {
   /* ── Mobile nav link active state ── */
   @media (max-width: 1023px) {
     .mobile-nav-link:active {
-      background: rgba(212,175,55,0.08);
+      background: rgba(34,197,94,0.08);
       border-radius: 8px;
     }
   }
@@ -648,13 +648,13 @@ body {
     animation: shimmer 1.6s linear infinite;
   }
   .dark .skeleton {
-    background: rgba(212,175,55,0.06);
+    background: rgba(34,197,94,0.06);
   }
   .dark .skeleton::after {
     background: linear-gradient(
       90deg,
       transparent 0%,
-      rgba(212,175,55,0.08) 50%,
+      rgba(34,197,94,0.08) 50%,
       transparent 100%
     );
     background-size: 200% 100%;
@@ -697,7 +697,7 @@ body {
 
 @keyframes pulse-glow {
   0%, 100% { filter: brightness(1); }
-  50%       { filter: brightness(1.06) drop-shadow(0 0 12px rgba(212,175,55,0.35)); }
+  50%       { filter: brightness(1.06) drop-shadow(0 0 12px rgba(34,197,94,0.35)); }
 }
 
 @keyframes shimmer {
@@ -750,7 +750,7 @@ body {
 /* Author note */
 .author-note {
   @apply glass-card px-6 py-5 rounded-xl text-muted-foreground text-sm leading-relaxed;
-  border-color: rgba(212,175,55,0.12);
+  border-color: rgba(34,197,94,0.12);
   font-style: italic;
   font-family: 'Cormorant Garamond', Georgia, serif;
 }
@@ -767,7 +767,7 @@ body {
   z-index: 9999;
   padding: 10px 22px;
   border-radius: 0 0 10px 10px;
-  background: linear-gradient(135deg, #9B6810, #7A4E08);
+  background: linear-gradient(135deg, #9B6810, #14532D);
   color: #F5EDDA;
   font-family: 'Cinzel', serif;
   font-size: 13px;
@@ -781,7 +781,7 @@ body {
 
 /* ── Focus-visible ring (keyboard only, not mouse) ── */
 :focus-visible {
-  outline: 2px solid rgba(212,175,55,0.8);
+  outline: 2px solid rgba(34,197,94,0.8);
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -796,7 +796,7 @@ input:focus-visible,
 select:focus-visible,
 textarea:focus-visible,
 [tabindex]:focus-visible {
-  outline: 2px solid rgba(212,175,55,0.8);
+  outline: 2px solid rgba(34,197,94,0.8);
   outline-offset: 3px;
 }
 

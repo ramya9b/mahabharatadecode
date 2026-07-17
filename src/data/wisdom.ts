@@ -47,8 +47,8 @@ export const scenarios: WisdomScenario[] = [
     subline: "You're always the one who adjusts. You've gotten so good at it, nobody notices you're doing it anymore.",
     characterId: "karna",
     characterName: "Karna",
-    accentHex: "#D4AF37",
-    accentRgb: "212,175,55",
+    accentHex: "#22C55E",
+    accentRgb: "34,197,94",
     yourSituation: `You love them. You have shown up for them in ways they don't even remember. You have rearranged your own life, quietly, without making a scene — because that's what you do. And somehow, every time it matters, they choose someone else. Not dramatically. Not cruelly. Just... they do. And you sit with that, alone, because you don't want to be the kind of person who makes someone feel guilty for living their life.
 
 The loneliness is not about being unloved. It is about being the person who loves harder than they are loved back. And not knowing what to do with that except carry it.`,
@@ -78,8 +78,8 @@ The real question is not "why don't they love me back the same way." The real qu
     subline: "You moved cities. You made choices they don't fully understand. The guilt is quiet but constant.",
     characterId: "karna",
     characterName: "Karna",
-    accentHex: "#D4AF37",
-    accentRgb: "212,175,55",
+    accentHex: "#22C55E",
+    accentRgb: "34,197,94",
     yourSituation: `They never said it out loud. They don't need to. You know the math: what they had, what they gave up, what they wanted for you, and where you actually ended up. You are living a life they can't always follow — different city, different values, different timelines for marriage or children or success. You love them. You are also quietly, constantly, a little bit guilty for not being who they imagined.
 
 The hardest part is that they are proud of you. And somehow, that makes it worse.`,
@@ -183,8 +183,8 @@ Her question in that court was not just about one moment. It was the question of
     subline: "You know you're better than what you're being asked to do. The people deciding don't seem to.",
     characterId: "karna",
     characterName: "Karna",
-    accentHex: "#D4AF37",
-    accentRgb: "212,175,55",
+    accentHex: "#22C55E",
+    accentRgb: "34,197,94",
     yourSituation: `You have delivered. The results exist, somewhere in a spreadsheet nobody reads. You have trained people who got promoted over you. You have solved problems that were attributed to someone else's strategy. You show up, you do more than your role requires, and you watch people with half your capability get recognised because they know how to work the room, went to the right school, or simply have the audacity to ask for things you were raised to earn.
 
 The worst part is you're starting to wonder if the problem is you.`,
@@ -398,8 +398,8 @@ Draupadi never forgot who was in that room. She never pretended it didn't happen
     subline: "Integrity doesn't pay the rent. You are holding something nobody else will hold.",
     characterId: "karna",
     characterName: "Karna",
-    accentHex: "#D4AF37",
-    accentRgb: "212,175,55",
+    accentHex: "#22C55E",
+    accentRgb: "34,197,94",
     yourSituation: `You are doing what you believe is right — telling the truth when it would be easier to be quiet, standing for someone who can't stand for themselves, refusing to compromise something that matters. And you are watching it cost you. The relationship, the opportunity, the peace. People who took the easier path are doing fine. You are holding something that is genuinely heavy and you are doing it alone.
 
 You don't regret it. But it is hard.`,
@@ -428,8 +428,8 @@ Karna died doing what he believed was right — calling for a justice that the m
     subline: "Someone asks what you enjoy. You hesitate. Then you describe what you're good at, not what you love.",
     characterId: "karna",
     characterName: "Karna",
-    accentHex: "#D4AF37",
-    accentRgb: "212,175,55",
+    accentHex: "#22C55E",
+    accentRgb: "34,197,94",
     yourSituation: `Your sense of who you are is almost entirely constructed from your usefulness to others. Your role as the reliable one, the productive one, the one people can count on. Take that away and you are not entirely sure what is left. You have not had enough time alone — or you have had too much time alone and discovered that the silence is uncomfortable. Either way, the question "who are you when nobody needs you" is one you do not have a clear answer to.`,
     epicMoment: `Karna was many things: a warrior, a son, a friend, a king, a man of extraordinary generosity. But almost all of those things were defined by his relation to someone else. The son of a charioteer. The friend of Duryodhana. The enemy of Arjuna. The abandoned child of Kunti.
 
@@ -451,8 +451,8 @@ He lived his entire life performing an identity that was always in reference to 
     subline: "Too different for where you came from. Not quite enough for where you're going.",
     characterId: "karna",
     characterName: "Karna",
-    accentHex: "#D4AF37",
-    accentRgb: "212,175,55",
+    accentHex: "#22C55E",
+    accentRgb: "34,197,94",
     yourSituation: `You grew up one way and became another. Maybe it's class, or education, or migration, or religion, or values that shifted. You go home and you are too much of what you've become. You go to the new world and you are not quite enough of what they want. The people around you in either place do not fully see you, because you are a version of yourself that requires context neither side has.
 
 This is lonely in a specific way that is hard to explain to people who have only ever belonged completely to one place.`,
@@ -576,8 +576,8 @@ She had won. And in winning, she found that victory and peace are not the same t
     subline: "You have achieved things that should have settled this. They haven't.",
     characterId: "karna",
     characterName: "Karna",
-    accentHex: "#D4AF37",
-    accentRgb: "212,175,55",
+    accentHex: "#22C55E",
+    accentRgb: "34,197,94",
     yourSituation: `It was not always said directly. Sometimes it was a look, or a comparison, or a silence where encouragement should have been. You were too much of some things and not enough of others, and the message — repeated enough times — became a belief. You have done enough in your life to know, intellectually, that it isn't true. But the belief lives below the intellect. It shows up when you are about to do something good and tells you not to bother. When you are in a room of people you respect and tells you you don't belong there.`,
     epicMoment: `Karna was told, from the moment the world discovered who he was, that he did not belong. Not in the tournament. Not in the halls of power. Not with the warriors who were his equals. He was reminded of his origin — the charioteer's son — by people who were afraid of him, because only someone afraid of what he was capable of would need to remind him of where he came from.
 

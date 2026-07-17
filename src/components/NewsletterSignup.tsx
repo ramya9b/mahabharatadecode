@@ -100,8 +100,8 @@ const NewsletterSignup = ({
               style={{
                 padding:     "7px 14px",
                 borderRadius:"99px",
-                border:      "1px solid rgba(212,175,55,0.25)",
-                background:  "rgba(212,175,55,0.04)",
+                border:      "1px solid rgba(34,197,94,0.25)",
+                background:  "rgba(34,197,94,0.04)",
                 color:       "hsl(var(--foreground))",
                 fontSize:    "13px",
                 fontFamily:  "'Cormorant Garamond',serif",
@@ -116,7 +116,7 @@ const NewsletterSignup = ({
               style={{
                 padding: "7px 16px",
                 borderRadius: "99px",
-                background: "linear-gradient(135deg, #FBBF24 0%, #34D399 50%, #38BDF8 100%)",
+                background: "linear-gradient(135deg, #22C55E 0%, #34D399 50%, #38BDF8 100%)",
                 backgroundSize: "200% auto",
                 animation: "shimmer 4s linear infinite",
                 color: "#08040F",
@@ -149,20 +149,20 @@ const NewsletterSignup = ({
         style={{
           padding:    "64px 24px",
           background: "linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--background)) 100%)",
-          borderTop:  "1px solid rgba(212,175,55,0.12)",
-          borderBottom:"1px solid rgba(212,175,55,0.12)",
+          borderTop:  "1px solid rgba(34,197,94,0.12)",
+          borderBottom:"1px solid rgba(34,197,94,0.12)",
           textAlign:  "center",
           position:   "relative",
           overflow:   "hidden",
         }}
       >
         {/* Gold glow */}
-        <div aria-hidden="true" style={{ position:"absolute", top:"50%", left:"50%", transform:"translate(-50%,-50%)", width:"500px", height:"200px", background:"radial-gradient(ellipse, rgba(212,175,55,0.06) 0%, transparent 70%)", pointerEvents:"none" }} />
+        <div aria-hidden="true" style={{ position:"absolute", top:"50%", left:"50%", transform:"translate(-50%,-50%)", width:"500px", height:"200px", background:"radial-gradient(ellipse, rgba(34,197,94,0.06) 0%, transparent 70%)", pointerEvents:"none" }} />
 
         <div style={{ position:"relative", maxWidth:"520px", margin:"0 auto" }}>
           {/* Icon */}
           <div style={{ display:"flex", justifyContent:"center", marginBottom:"20px" }}>
-            <div style={{ width:"48px", height:"48px", borderRadius:"50%", background:"rgba(212,175,55,0.1)", border:"1px solid rgba(212,175,55,0.2)", display:"flex", alignItems:"center", justifyContent:"center" }}>
+            <div style={{ width:"48px", height:"48px", borderRadius:"50%", background:"rgba(34,197,94,0.1)", border:"1px solid rgba(34,197,94,0.2)", display:"flex", alignItems:"center", justifyContent:"center" }}>
               <Mail size={20} color="hsl(var(--primary))" />
             </div>
           </div>
@@ -186,7 +186,7 @@ const NewsletterSignup = ({
             </div>
           ) : (
             <form onSubmit={handleSubmit} aria-label="Newsletter signup" style={{ display:"flex", flexDirection:"column", alignItems:"center", gap:"12px" }}>
-              <div style={{ display:"flex", gap:"0", width:"100%", maxWidth:"400px", borderRadius:"99px", overflow:"hidden", border:"1px solid rgba(212,175,55,0.25)", background:"hsl(var(--card))" }}>
+              <div style={{ display:"flex", gap:"0", width:"100%", maxWidth:"400px", borderRadius:"99px", overflow:"hidden", border:"1px solid rgba(34,197,94,0.25)", background:"hsl(var(--card))" }}>
                 <label htmlFor={inputId + "-banner"} style={{ position:"absolute", width:"1px", height:"1px", overflow:"hidden", clip:"rect(0,0,0,0)" }}>
                   Email address
                 </label>
@@ -206,7 +206,7 @@ const NewsletterSignup = ({
                   className="btn-ripple"
                   style={{
                     padding: "13px 24px",
-                    background: "linear-gradient(135deg, #FBBF24 0%, #34D399 50%, #38BDF8 100%)",
+                    background: "linear-gradient(135deg, #22C55E 0%, #34D399 50%, #38BDF8 100%)",
                     backgroundSize: "200% auto",
                     animation: "shimmer 4s linear infinite",
                     color: "#08040F",
@@ -249,13 +249,13 @@ const NewsletterSignup = ({
       style={{
         borderRadius:"16px",
         padding:     "28px 28px 24px",
-        background:  "linear-gradient(135deg, rgba(212,175,55,0.06) 0%, rgba(212,175,55,0.02) 100%)",
-        border:      "1px solid rgba(212,175,55,0.18)",
+        background:  "linear-gradient(135deg, rgba(34,197,94,0.06) 0%, rgba(34,197,94,0.02) 100%)",
+        border:      "1px solid rgba(34,197,94,0.18)",
         margin:      "40px 0",
       }}
     >
       <div style={{ display:"flex", alignItems:"flex-start", gap:"14px", marginBottom:"16px" }}>
-        <div style={{ width:"38px", height:"38px", borderRadius:"50%", background:"rgba(212,175,55,0.12)", border:"1px solid rgba(212,175,55,0.2)", display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0, marginTop:"2px" }}>
+        <div style={{ width:"38px", height:"38px", borderRadius:"50%", background:"rgba(34,197,94,0.12)", border:"1px solid rgba(34,197,94,0.2)", display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0, marginTop:"2px" }}>
           <Mail size={16} color="hsl(var(--primary))" />
         </div>
         <div>
@@ -286,7 +286,7 @@ const NewsletterSignup = ({
               onChange={e => { setEmail(e.target.value); setError(""); }}
               placeholder="your@email.com"
               required
-              style={{ flex:1, minWidth:"200px", padding:"10px 16px", borderRadius:"99px", border:"1px solid rgba(212,175,55,0.22)", background:"hsl(var(--background))", color:"hsl(var(--foreground))", fontSize:"15px", fontFamily:"'Cormorant Garamond',serif", outline:"none" }}
+              style={{ flex:1, minWidth:"200px", padding:"10px 16px", borderRadius:"99px", border:"1px solid rgba(34,197,94,0.22)", background:"hsl(var(--background))", color:"hsl(var(--foreground))", fontSize:"15px", fontFamily:"'Cormorant Garamond',serif", outline:"none" }}
             />
             <button
               type="submit"
@@ -296,7 +296,7 @@ const NewsletterSignup = ({
               style={{
                 padding: "10px 22px",
                 borderRadius: "99px",
-                background: "linear-gradient(135deg, #FBBF24 0%, #34D399 50%, #38BDF8 100%)",
+                background: "linear-gradient(135deg, #22C55E 0%, #34D399 50%, #38BDF8 100%)",
                 backgroundSize: "200% auto",
                 animation: "shimmer 4s linear infinite",
                 color: "#08040F",

@@ -28,7 +28,7 @@ const StartReadingBanner = () => {
             display: "inline-block",
             padding: "4px 16px",
             borderRadius: "99px",
-            border: "1px solid rgba(160,120,32,0.3)",
+            border: "1px solid rgba(22,163,74,0.3)",
             fontSize: "11px",
             letterSpacing: "0.25em",
             textTransform: "uppercase",
@@ -70,7 +70,7 @@ const StartReadingBanner = () => {
             padding: "14px 40px",
             borderRadius: "99px",
             background:
-              "linear-gradient(135deg, #D4AF37 0%, #FBBF24 50%, #FDE68A 100%)",
+              "linear-gradient(135deg, #22C55E 0%, #22C55E 50%, #86EFAC 100%)",
             backgroundSize: "200% auto",
             animation: "shimmer 4s linear infinite",
             color: "#08040F",
@@ -79,19 +79,19 @@ const StartReadingBanner = () => {
             fontWeight: 700,
             letterSpacing: "0.1em",
             textDecoration: "none",
-            boxShadow: "0 4px 24px rgba(212,175,55,0.45)",
+            boxShadow: "0 4px 24px rgba(34,197,94,0.45)",
             transition: "all 0.35s ease",
           }}
           onMouseEnter={(e) => {
             (e.currentTarget as HTMLAnchorElement).style.transform =
               "translateY(-3px) scale(1.02)";
             (e.currentTarget as HTMLAnchorElement).style.boxShadow =
-              "0 12px 36px rgba(212,175,55,0.65)";
+              "0 12px 36px rgba(34,197,94,0.65)";
           }}
           onMouseLeave={(e) => {
             (e.currentTarget as HTMLAnchorElement).style.transform = "none";
             (e.currentTarget as HTMLAnchorElement).style.boxShadow =
-              "0 4px 24px rgba(212,175,55,0.45)";
+              "0 4px 24px rgba(34,197,94,0.45)";
           }}
         >
           📖 {t("home.start_reading.cta")} →
@@ -123,7 +123,7 @@ const StartReadingBanner = () => {
               e.currentTarget.style.borderColor = "hsl(var(--primary))";
               e.currentTarget.style.transform = "translateY(-2px)";
               e.currentTarget.style.boxShadow =
-                "0 8px 24px rgba(160,120,32,0.15)";
+                "0 8px 24px rgba(22,163,74,0.15)";
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.borderColor = "hsl(var(--border))";

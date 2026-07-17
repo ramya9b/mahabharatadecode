@@ -6,7 +6,7 @@ import arjunaImg  from "@/assets/arjuna.webp";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const STORY_META = [
-  { id: "karna",   image: karnaImg,   tagKey: "home.featured.tag_characters",   slug: "karna-loyalty-vs-self-respect",    accent: "#D4AF37" },
+  { id: "karna",   image: karnaImg,   tagKey: "home.featured.tag_characters",   slug: "karna-loyalty-vs-self-respect",    accent: "#22C55E" },
   { id: "krishna", image: krishnaImg, tagKey: "home.featured.tag_life_lessons", slug: "krishna-leadership-secrets",       accent: "#4A90D9" },
   { id: "arjuna",  image: arjunaImg,  tagKey: "home.featured.tag_life_lessons", slug: "arjuna-confusion-moment-of-doubt", accent: "#27AE60" },
 ] as const;
@@ -69,7 +69,7 @@ const FeaturedStories = () => {
                   <span
                     className="font-heading text-[10px] tracking-[0.2em] uppercase px-3 py-1.5 rounded-full backdrop-blur-sm"
                     style={{
-                      background: `rgba(${story.accent === "#D4AF37" ? "212,175,55" : story.accent === "#4A90D9" ? "74,144,217" : "39,174,96"},0.2)`,
+                      background: `rgba(${story.accent === "#22C55E" ? "34,197,94" : story.accent === "#4A90D9" ? "74,144,217" : "39,174,96"},0.2)`,
                       border: `1px solid ${story.accent}55`,
                       color: story.accent,
                     }}

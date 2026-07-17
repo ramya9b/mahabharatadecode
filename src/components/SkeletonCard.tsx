@@ -1,7 +1,7 @@
 /** Shimmer keyframes are already in index.css — we reuse them */
 const shimmerStyle: React.CSSProperties = {
   background:
-    "linear-gradient(90deg, rgba(139,105,20,0.05) 0%, rgba(212,175,55,0.06) 50%, rgba(139,105,20,0.05) 100%)",
+    "linear-gradient(90deg, rgba(139,105,20,0.05) 0%, rgba(34,197,94,0.06) 50%, rgba(139,105,20,0.05) 100%)",
   backgroundSize: "200% 100%",
   animation: "shimmer 1.8s infinite",
   borderRadius: "8px",

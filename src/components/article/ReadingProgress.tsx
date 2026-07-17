@@ -28,7 +28,7 @@ const ReadingProgress = () => {
         style={{
           width: "0%",
           background:
-            "linear-gradient(to right, #B8922A, #D4AF37, #E8C547, #D4AF37)",
+            "linear-gradient(to right, #B8922A, #22C55E, #E8C547, #22C55E)",
         }}
       />
     </div>

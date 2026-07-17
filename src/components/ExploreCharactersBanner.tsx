@@ -30,7 +30,7 @@ const ExploreCharactersBanner = () => {
             display: "inline-block",
             padding: "4px 16px",
             borderRadius: "99px",
-            border: "1px solid rgba(160,120,32,0.3)",
+            border: "1px solid rgba(22,163,74,0.3)",
             fontSize: "11px",
             letterSpacing: "0.25em",
             textTransform: "uppercase",
@@ -72,7 +72,7 @@ const ExploreCharactersBanner = () => {
             padding: "14px 40px",
             borderRadius: "99px",
             background:
-              "linear-gradient(135deg, #FBBF24 0%, #34D399 50%, #38BDF8 100%)",
+              "linear-gradient(135deg, #22C55E 0%, #34D399 50%, #38BDF8 100%)",
             backgroundSize: "200% auto",
             animation: "shimmer 4s linear infinite",
             color: "#08040F",
@@ -125,7 +125,7 @@ const ExploreCharactersBanner = () => {
               e.currentTarget.style.borderColor = "hsl(var(--primary))";
               e.currentTarget.style.transform = "translateY(-2px)";
               e.currentTarget.style.boxShadow =
-                "0 8px 24px rgba(160,120,32,0.15)";
+                "0 8px 24px rgba(22,163,74,0.15)";
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.borderColor = "hsl(var(--border))";

@@ -18,9 +18,9 @@ const SlokaBlock = ({ sloka }: SlokaBlockProps) => {
       style={{
         background:
           "linear-gradient(135deg, rgba(11,15,26,0.9) 0%, rgba(20,16,8,0.95) 50%, rgba(11,15,26,0.9) 100%)",
-        border: "1px solid rgba(212,175,55,0.2)",
+        border: "1px solid rgba(34,197,94,0.2)",
         boxShadow:
-          "0 0 60px rgba(212,175,55,0.05), inset 0 0 60px rgba(212,175,55,0.02)",
+          "0 0 60px rgba(34,197,94,0.05), inset 0 0 60px rgba(34,197,94,0.02)",
       }}
     >
       {/* Corner ornaments */}
@@ -33,7 +33,7 @@ const SlokaBlock = ({ sloka }: SlokaBlockProps) => {
         <div
           key={i}
           className={`absolute w-6 h-6 ${pos}`}
-          style={{ borderColor: "rgba(212,175,55,0.25)" }}
+          style={{ borderColor: "rgba(34,197,94,0.25)" }}
         />
       ))}
 
@@ -42,14 +42,14 @@ const SlokaBlock = ({ sloka }: SlokaBlockProps) => {
         className="absolute top-0 left-0 right-0 h-px"
         style={{
           background:
-            "linear-gradient(to right, transparent, rgba(212,175,55,0.5), transparent)",
+            "linear-gradient(to right, transparent, rgba(34,197,94,0.5), transparent)",
         }}
       />
 
       <div className="px-8 md:px-14 py-12 md:py-14 text-center">
         {/* Header */}
         <div className="flex items-center justify-center gap-4 mb-10">
-          <div className="h-px flex-1 max-w-[60px]" style={{ background: "rgba(212,175,55,0.3)" }} />
+          <div className="h-px flex-1 max-w-[60px]" style={{ background: "rgba(34,197,94,0.3)" }} />
           <div className="flex items-center gap-2">
             <span className="text-primary/40 text-xs">✦</span>
             <span
@@ -60,7 +60,7 @@ const SlokaBlock = ({ sloka }: SlokaBlockProps) => {
             </span>
             <span className="text-primary/40 text-xs">✦</span>
           </div>
-          <div className="h-px flex-1 max-w-[60px]" style={{ background: "rgba(212,175,55,0.3)" }} />
+          <div className="h-px flex-1 max-w-[60px]" style={{ background: "rgba(34,197,94,0.3)" }} />
         </div>
 
         {/* Sanskrit text */}
@@ -72,7 +72,7 @@ const SlokaBlock = ({ sloka }: SlokaBlockProps) => {
               style={{
                 fontFamily: "'Noto Serif Devanagari', 'Noto Sans Devanagari', 'Siddhanta', 'Sanskrit 2003', 'Cinzel', serif",
                 fontSize: "clamp(18px, 2.5vw, 26px)",
-                color: "rgba(253,230,138,0.92)",
+                color: "rgba(134,239,172,0.92)",
                 unicodeBidi: "normal",
                 direction: "ltr",
               }}
@@ -103,9 +103,9 @@ const SlokaBlock = ({ sloka }: SlokaBlockProps) => {
 
         {/* Divider */}
         <div className="flex items-center justify-center gap-3 mb-8">
-          <div className="h-px w-16" style={{ background: "rgba(212,175,55,0.2)" }} />
+          <div className="h-px w-16" style={{ background: "rgba(34,197,94,0.2)" }} />
           <span className="text-primary/30 text-[8px] tracking-widest">✦</span>
-          <div className="h-px w-16" style={{ background: "rgba(212,175,55,0.2)" }} />
+          <div className="h-px w-16" style={{ background: "rgba(34,197,94,0.2)" }} />
         </div>
 
         {/* Translation */}
