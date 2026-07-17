@@ -113,7 +113,7 @@ const RelatedLinks = ({ links }: { links: { slug: string; label: string }[] }) =
     >
       <span
         className="text-[10px] tracking-[0.3em] uppercase"
-        style={{ fontFamily: "'Cinzel', serif", color: "rgba(34,197,94,0.6)" }}
+        style={{ fontFamily: "'Cinzel', serif", color: "hsl(var(--primary))" }}
       >
         Continue Reading
       </span>
@@ -124,7 +124,7 @@ const RelatedLinks = ({ links }: { links: { slug: string; label: string }[] }) =
           <Link
             to={`/blog/${link.slug}`}
             className="flex items-center justify-between gap-4 px-6 py-4 group transition-colors duration-200"
-            style={{ color: "rgba(245,237,218,0.85)" }}
+            style={{ color: "hsl(var(--primary))" }}
           >
             <span
               className="leading-snug group-hover:text-primary transition-colors duration-200"

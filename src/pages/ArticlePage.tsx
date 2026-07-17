@@ -332,7 +332,7 @@ const FaqSection = ({ faqs }: { faqs: { question: string; answer: string }[] }) 
           style={{
             fontSize: "26px",
             letterSpacing: "0.02em",
-            color: "rgba(134,239,172,0.95)",
+            color: "hsl(var(--primary))",
           }}
         >
           Frequently Asked Questions
@@ -343,15 +343,15 @@ const FaqSection = ({ faqs }: { faqs: { question: string; answer: string }[] }) 
               key={i}
               className="group rounded-xl px-5 py-4"
               style={{
-                background: "rgba(255,255,255,0.02)",
-                border: "1px solid rgba(34,197,94,0.14)",
+                background: "hsl(var(--card))",
+                border: "1px solid hsl(var(--border))",
               }}
             >
               <summary
                 className="cursor-pointer list-none font-heading font-medium flex items-start justify-between gap-4"
                 style={{
                   fontSize: "18px",
-                  color: "rgba(245,237,218,0.92)",
+                  color: "hsl(var(--foreground))",
                   lineHeight: 1.5,
                 }}
               >
@@ -370,7 +370,7 @@ const FaqSection = ({ faqs }: { faqs: { question: string; answer: string }[] }) 
                   fontSize: "17px",
                   fontFamily: "'Cormorant Garamond', Georgia, serif",
                   lineHeight: 1.75,
-                  color: "rgba(245,237,218,0.78)",
+                  color: "hsl(var(--muted-foreground))",
                 }}
               >
                 {f.answer}
