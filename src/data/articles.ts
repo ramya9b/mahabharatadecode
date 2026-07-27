@@ -6371,6 +6371,263 @@ export const articles: Article[] = [
       },
     ],
   },
+
+  {
+    slug: "who-was-barbarika-khatu-shyam",
+    title: "Who Was Barbarika? The Warrior Who Watched the War from a Hilltop",
+    subtitle:
+      "He had three arrows that could not miss and a vow to fight for whichever side was losing. That combination would have destroyed both armies. So Krishna, before a single day of Kurukshetra had been fought, asked for his head. Barbarika gave it — and became the god millions now know as Khatu Shyam.",
+    description:
+      "Barbarika was a warrior of unimaginable power who never fought in the Mahabharata war — because Krishna asked for his head as charity before it began. His story is one of the most beloved in Indian devotional life, yet it is almost entirely absent from the Sanskrit epic itself. This is the full account: who he was, why his vow was so dangerous, why he gave his head willingly, and how he became Khatu Shyam, worshipped today by millions in Rajasthan and beyond.",
+    summary:
+      "Barbarika, said in tradition to be Ghatotkacha's son and Bhima's grandson, held three infallible arrows and had vowed to fight only for the weaker side. Because that vow would have made him switch sides endlessly and wipe out both armies, Krishna asked for his head before the war. Barbarika gave it, and was granted the boon of watching the entire war. He is worshipped today as Khatu Shyam. Note: this story comes from later Puranic and folk tradition, not the Mahabharata's critical text.",
+    category: "Characters",
+    character: "Barbarika",
+    readTime: 12,
+    metaTitle: "Who Was Barbarika? The Khatu Shyam Story | MahabharataDecoded",
+    metaDescription:
+      "Who was Barbarika? The warrior with three infallible arrows who became Khatu Shyam. Why Krishna asked for his head before Kurukshetra, and what his head saw.",
+    publishDate: "July 27, 2026",
+    featured: false,
+    imageKey: "hero",
+    image: "",
+    tags: ["Barbarika", "Khatu Shyam", "Khatushyam", "Teen Baan Dhari", "Ghatotkacha", "Skanda Purana", "Mahabharata folklore", "Krishna"],
+    pullQuote:
+      "Give me the name of the winning side, Barbarika told the disguised Krishna, and I will fight for the other one. He meant it as devotion to the underdog. Krishna heard something else: a man who could not lose, sworn to join whoever was losing, would keep switching until there was nobody left standing on either side. The kindest thing his three unstoppable arrows could do was never be fired.",
+    authorNote:
+      "A note on sources, because it matters here more than usual. Barbarika does not appear in the Mahabharata's Critical Edition (BORI) or in Vyasa's Sanskrit epic as it is normally read. His story is preserved in later Puranic and regional devotional tradition — most often associated with the Skanda Purana and with the folk and temple tradition of Khatu Shyam in Rajasthan. Details differ from telling to telling, including his mother's name and who gave him his arrows. Throughout, I have tried to mark clearly what is tradition rather than epic text, and to note where traditions disagree.",
+    reelHook: {
+      hook: "There was a warrior at Kurukshetra who could have ended the entire war in one minute, with three arrows, for either side. He never fired a single shot. Krishna made sure of it — by asking for his head before the fighting even started.",
+      supporting: "His name was Barbarika. He gave his head willingly, watched the whole war as a severed head on a hill, and is worshipped today by millions as Khatu Shyam. Here is the full story, and what is history versus what is devotion.",
+    },
+    relatedSlugs: ["how-did-ghatotkacha-die", "is-ashwatthama-still-alive", "krishna-leadership-secrets"],
+    storyBlocks: [
+      {
+        section: "introduction",
+        label: "Introduction",
+        paragraphs: [
+          "Here is a puzzle worth sitting with. One of the most worshipped figures to come out of the Mahabharata never actually fought in it. Temples fill with his devotees. Millions walk for days to reach his shrine in a small Rajasthani village. And yet if you open the Sanskrit epic and read it front to back, you will not find him in the war at all.",
+          "His name is Barbarika. In the devotional tradition he is the grandson of Bhima, the holder of three arrows that could not miss, and a warrior powerful enough to have finished the whole eighteen-day war by himself in a matter of moments. He is also the man Krishna stopped before he could lift a bow — by asking, as a wandering Brahmin, for the one thing Barbarika could not refuse a guest: his own head.",
+          "Before we go further, one honest thing. This story is not in the Mahabharata as scholars reconstruct it. Barbarika belongs to later Puranic and folk tradition, especially the living tradition around the god Khatu Shyam. That does not make it worth less. It makes it a different kind of thing — a story India told after the epic, to work out what devotion, sacrifice, and power really cost. Read it that way and it opens up.",
+        ],
+      },
+      {
+        section: "background",
+        label: "The Boy with Three Arrows",
+        paragraphs: [
+          "In the tradition, Barbarika is the son of Ghatotkacha, the half-rakshasa son of Bhima, which makes him Bhima's grandson and a great-grandson of the Pandava line by blood. His mother's name changes depending on who is telling the story — you will hear Maurvi, Kamkantaka, and Ahilawati in different tellings. That kind of variation is a useful signal. It tells you that you are in the territory of folk memory, where the shape of the story is fixed but the fine details drift.",
+          "What every version agrees on is his power. Through devotion and penance — most tellings say to Shiva, some add the Goddess — Barbarika received three arrows that could not fail. This is why one of his most common titles is Teen Baan Dhari, the bearer of three arrows. The three were not just weapons; they were a closed system. In the usual telling, the first arrow marks every target the archer intends to destroy, and the last destroys all of them at once, after which the arrows return. Against that, armour is decoration and skill is beside the point. A single archer with those three arrows does not win battles. He ends them.",
+          "So when the great war approached, Barbarika wanted to see it, and his mother gave him a condition before he went. She made him promise to fight on behalf of whichever side was losing. It sounds like a noble instinct — the instinct to protect the weak, to stand with the underdog. Hold onto that phrase for a moment, because it is exactly the noble instinct that turns, under Krishna's questioning, into the reason he has to be stopped.",
+        ],
+      },
+      {
+        section: "turningPoint",
+        label: "Krishna's Test and the Question of the Head",
+        paragraphs: [
+          "In the story, Krishna meets Barbarika on the road disguised as a Brahmin and does what Krishna always does: he asks questions until the truth of a situation shows itself. How long, he asks, would it take you to finish this war? Barbarika answers that it would take him a minute, perhaps less. The Brahmin looks at the three arrows and, gently mocking, asks how three arrows could possibly do so much. Barbarika offers to show him.",
+          "Krishna points to a peepal tree and challenges him to tie every leaf on it with a single arrow. Barbarika releases one arrow, and it begins to pierce and bind every leaf on the tree. Then it hovers, circling Krishna's foot. Krishna had quietly placed one leaf under his foot to test the claim, and the arrow would not rest until it had accounted for that leaf too. To keep his foot where it was would be to let the arrow strike him. In that instant Krishna understood exactly what he was dealing with, and Barbarika, in most tellings, began to understand exactly who the Brahmin was.",
+          "Then Krishna asks the real question, and it is not about the arrows. It is about the vow. Which side will you fight for? The losing one, Barbarika says. And Krishna, who can see the whole shape of the coming war, follows that promise to its end. If Barbarika joins the weaker side, that side stops being weaker. So by his own vow he must switch to the other, now-weaker side. Which then grows stronger, so he must switch back. A man who cannot lose, bound to join whoever is losing, does not save the underdog. He grinds both armies to nothing and is left standing on a field of the dead. This is why Krishna, still in the guise of a Brahmin asking for alms, asks Barbarika to give him his head in charity.",
+        ],
+      },
+    ],
+    content: [
+      { type: "heading", text: "Why This Story Sits Outside the Epic" },
+      {
+        type: "paragraph",
+        text: "It is worth being very clear about this, because a great deal of what circulates online blurs it. The Mahabharata that scholars study — the Critical Edition assembled at the Bhandarkar Oriental Research Institute, and the traditional Sanskrit recensions behind it — does not contain the Barbarika story. There is no severed head watching the war from a hill in Vyasa's text as it is normally read. Barbarika is a figure of later tradition, carried by Puranic material commonly linked to the Skanda Purana and, above all, by the living devotional tradition of Khatu Shyam in Rajasthan.",
+      },
+      {
+        type: "paragraph",
+        text: "That gap between epic and tradition is not a flaw in the story. It is the most interesting thing about it. India did not stop thinking about the Mahabharata when the epic was finished. It kept adding to the edges, telling new stories in the same world to ask questions the epic left open. Barbarika is one of those questions given a face: what would it mean to be so powerful that your very sense of fairness became a danger, and what does it cost to hand that power over?",
+      },
+      {
+        type: "lesson",
+        text: "A simple rule of thumb when you read about the Mahabharata online: if a character has a dramatic pre-war backstory involving a boon that would have made the war unnecessary — an unstoppable warrior held back at the last moment — check whether that character is in the epic itself or in later tradition. Barbarika, like several beloved figures, lives mainly in the tradition that grew up around the epic rather than inside its critical text.",
+      },
+      { type: "heading", text: "The Logic of the Vow" },
+      {
+        type: "paragraph",
+        text: "The heart of the story is not the arrows. It is the vow, and the trap hidden inside a good intention. Barbarika promised to fight for the losing side because siding with the weak felt like the honourable thing. Most of us would feel the same pull. The story's insight is that when you attach that instinct to overwhelming, guaranteed power, it stops behaving like virtue and starts behaving like a machine that cannot switch off.",
+      },
+      {
+        type: "paragraph",
+        text: "Follow it step by step, the way the tradition says Krishna did. Whichever side Barbarika joins instantly becomes the stronger one, because he cannot lose. His vow then requires him to abandon it for the other side, which he has just made weaker. That side now surges ahead, and his vow flips him again. There is no stable place for him to stand. The oscillation only ends when one army is wiped out — and by the logic of the vow, so is the other. His fairness, armed with three infallible arrows, becomes the most efficient way imaginable to kill everyone. Krishna's request for his head is the tradition's way of saying that some powers are safest when they are never used, and that a vow taken without seeing its consequences can be more destructive than any malice.",
+      },
+      { type: "heading", text: "Why Barbarika Gave His Head Willingly" },
+      {
+        type: "paragraph",
+        text: "The moral weight of the story turns on the fact that this was not a killing. It was a gift. In the tradition, once Barbarika realised the Brahmin was Krishna, he did not resist. To give charity to a guest, and above all to God appearing as a guest, was the deepest expression of who he was. But he asked for one thing in return. Having come all this way to witness the greatest war of the age, he wished to see it. Krishna granted the boon. Barbarika's head was placed on a high point overlooking the battlefield, and from there, alive and aware, he watched every one of the eighteen days.",
+      },
+      {
+        type: "paragraph",
+        text: "This is why the tradition treats him not as a victim but as one of the supreme sacrificers of the whole story — the man who gave up not a kingdom or a throne but his own head, freely, before the war he was born to dominate. His most common devotional titles carry this directly: Sheesh Ke Daani, the donor of the head, and Haare Ka Sahara, the support of the defeated, the one who stands with those who have lost. The warrior sworn to fight for the losing side became, in worship, the refuge of everyone who feels they are losing.",
+      },
+      { type: "heading", text: "What the Head Saw, and How He Became Khatu Shyam" },
+      {
+        type: "paragraph",
+        text: "After the war, the tradition adds a coda that ties the whole thing together. When the victorious Pandavas argued over who among them had truly won the war, they turned to the one witness who had watched it all without taking a side: Barbarika's head. His answer, in the popular telling, was humbling. He said he had not really seen the warriors at all. He had seen Krishna's Sudarshana chakra moving across the field doing the work of destruction, and, in many versions, the Goddess in fierce form receiving the fallen. The greatest fighters, he implied, were instruments; the real force behind the war was divine.",
+      },
+      {
+        type: "paragraph",
+        text: "Pleased with his devotion and his sacrifice, Krishna is said to have blessed him: in the age of Kali, Barbarika would be worshipped by Krishna's own name, Shyam. That blessing is the origin story devotees give for Khatu Shyam. His shrine stands in the village of Khatu, in the Sikar district of Rajasthan, and it is one of the most visited pilgrimage sites in northern India. The great annual fair falls in the month of Phalguna, drawing enormous crowds who walk to the temple on foot. Whatever one makes of the legend, the devotion is a concrete, present-day fact: Khatu Shyam is worshipped by millions, and behind that worship stands the warrior who never fought.",
+      },
+      { type: "heading", text: "Did You Know" },
+      {
+        type: "paragraph",
+        text: "A handful of details worth carrying away, each labelled for what it is.",
+      },
+      {
+        type: "lesson",
+        text: "One of Barbarika's most common names, Teen Baan Dhari, literally means the bearer of three arrows — the three infallible arrows the tradition says he received through devotion and penance.",
+      },
+      {
+        type: "paragraph",
+        text: "The peepal-leaf test, in which a single arrow accounts for every leaf and then hovers over the one Krishna hides under his foot, is the most retold episode of the story and the one you are most likely to see illustrated. It is a device to show, rather than tell, that the arrows are genuinely infallible.",
+      },
+      {
+        type: "paragraph",
+        text: "His devotional titles map his whole story. Haare Ka Sahara means the support of the defeated; Sheesh Ke Daani means the one who donated his head; Khatu Shyam names both the village of his shrine and the name Krishna is said to have given him. Different communities emphasise different titles.",
+      },
+      {
+        type: "paragraph",
+        text: "The Khatu Shyam temple in Sikar district, Rajasthan, and its Phalguna fair are verifiable, present-day realities, quite apart from the question of the legend's historicity. The scale of the pilgrimage is one of the reasons Barbarika's name is so widely known today even among people who have never read the epic.",
+      },
+      {
+        type: "paragraph",
+        text: "The traditions genuinely disagree on several points, and honest retellings admit it: his mother's name, whether the arrows came from Shiva alone or from more than one deity, and the precise wording of his vow all vary. Where a story has this much internal variation, it is a sign that it lived orally and devotionally rather than in a single fixed text.",
+      },
+      { type: "heading", text: "Common Misconceptions" },
+      {
+        type: "paragraph",
+        text: "Misconception 1: Barbarika is a character in the Mahabharata epic. He is not part of the Critical Edition or Vyasa's Sanskrit epic as normally read. His story comes from later Puranic and regional devotional tradition, especially the Khatu Shyam tradition of Rajasthan. Treating the legend as if it were a chapter of the epic is the single most common error.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception 2: Barbarika and Khatu Shyam are two different figures. They are the same. Khatu Shyam is the name by which Barbarika is worshipped, said to have been granted to him by Krishna. Shyam is a name of Krishna, and Khatu is the Rajasthani village where his principal shrine stands.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception 3: Barbarika fought in the Kurukshetra war. In the tradition he never fought at all. He gave his head to Krishna before the war began and experienced the entire conflict only as a witness. His fame rests on the war he did not fight, not one he won.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception 4: Krishna took his head out of cruelty or to remove a rival. The tradition frames it very differently. Barbarika's own vow, combined with his invincible arrows, would have destroyed both armies. Krishna's request prevents a catastrophe, and Barbarika gives his head freely, as charity to a divine guest, in what the tradition treats as an act of supreme devotion rewarded with a lasting boon.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception 5: Barbarika is the same as Aravan, the deity of the Tamil Koothandavar tradition. They are distinct figures from different regional traditions. It is true that both share a striking motif — a warrior connected to the Mahabharata who is sacrificed before or during the war and whose head or spirit witnesses it. But Aravan, or Iravan, is a son of Arjuna and appears within the epic, whereas Barbarika belongs to the northern folk and Puranic tradition around Khatu Shyam. Some scholars study them together as parallel developments of a shared theme; that is not the same as saying they are one character.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception 6: The details of Barbarika's story are fixed and canonical. They are not. His mother's name, the source of his arrows, and the exact terms of his vow all vary between tellings. Anyone who presents a single version as the definitive one is smoothing over a tradition that is genuinely plural.",
+      },
+      { type: "heading", text: "Why the Story Still Lands" },
+      {
+        type: "paragraph",
+        text: "Strip away the arrows and the severed head and what remains is a question the epic itself never stops asking: what is the right thing to do with overwhelming power? The Mahabharata answers it mostly through people who use their power and pay for it. Barbarika's story answers it the other way, through a man whose greatest act is to not use his at all. His restraint is not weakness; it is the whole point. He is honoured precisely because his invincible arrows were never loosed.",
+      },
+      {
+        type: "paragraph",
+        text: "There is a reason his shrine fills with people who feel they are losing. The warrior who vowed to stand with the weaker side did, in a sense, keep that vow — not by fighting for them, but by becoming, in the tradition, the one who stands beside anyone who has lost. That is a very human idea to build a god around, and it explains why a figure absent from the epic became one of the most beloved presences in the devotion that grew up around it.",
+      },
+      {
+        type: "related_links",
+        text: "Read next",
+        links: [
+          { slug: "how-did-ghatotkacha-die", label: "Ghatotkacha Had to Die So Arjuna Could Live" },
+          { slug: "is-ashwatthama-still-alive", label: "Is Ashwatthama Still Alive? The Curse That Made Him Immortal" },
+          { slug: "krishna-leadership-secrets", label: "Krishna: The Leader Who Never Needed the Throne" },
+        ],
+      },
+    ],
+    keyLessons: [
+      {
+        icon: "🏹",
+        title: "The most powerful move is sometimes the one you never make",
+        description: "Barbarika is honoured for arrows he never fired. Read as a modern lesson, real strength often shows up as restraint — the deal you walk away from, the argument you decline to win, the capability you choose to hold in reserve rather than unleash.",
+        accent: "gold",
+      },
+      {
+        icon: "🧭",
+        title: "A good intention plus unchecked power can still cause harm",
+        description: "The vow to defend the weaker side sounded noble, and it was — until it met invincible arrows and turned into a machine for destroying everyone. Good intentions do not exempt us from thinking through consequences, especially when we hold real power.",
+        accent: "crimson",
+      },
+      {
+        icon: "🤲",
+        title: "What you give freely can outlast what you win",
+        description: "Barbarika won no battles, yet he is remembered longer than most who did — because of what he gave, not what he took. Interpreted for modern life, generosity and sacrifice tend to leave a deeper mark than victories.",
+        accent: "teal",
+      },
+    ],
+    modernConnections: [
+      {
+        context: "You hold a real advantage in a conflict — leverage, information, the ability to end an argument or a negotiation on your terms whenever you choose — and you are deciding whether to use it.",
+        insight: "Barbarika's story is the tradition's case that possessing overwhelming power and choosing not to deploy it can be the more honourable move. The value is not in never having the power; it is in the deliberate restraint of holding it back when using it would break more than it fixes.",
+        example: "His three arrows could have ended the war in a minute. He is worshipped not for using them but for handing them, and himself, over instead. The unfired arrow became the whole legend.",
+      },
+      {
+        context: "You have made a rule for yourself that felt principled when you set it — always defend the underdog, never back down, always finish what you start — and you are starting to see it produce outcomes you did not intend.",
+        insight: "The vow that would have made Barbarika destroy both armies is a warning about principles held rigidly without tracking where they actually lead. A good rule can become harmful when it is applied without checking its consequences in the specific situation in front of you.",
+        example: "Defend the losing side is a fine instinct until you are strong enough that joining a side makes it the winning one, and the rule quietly reverses on you. The tradition asks you to look one step further down the chain than the rule itself does.",
+      },
+    ],
+    lifeLessons: [
+      "Restraint can be a greater strength than force; the capability you hold back is sometimes worth more than the one you use.",
+      "A noble intention attached to unchecked power still needs its consequences thought all the way through.",
+      "What you give away freely can outlast anything you manage to win.",
+      "When the details of a story vary this much between tellings, treat it as living tradition, not fixed history — and say which is which.",
+      "The figure a culture builds a shrine to often reveals what it most wants to believe: here, that someone stands with those who are losing.",
+    ],
+    sloka: {
+      sanskrit: "सर्वधर्मान्परित्यज्य मामेकं शरणं व्रज।\nअहं त्वां सर्वपापेभ्यो मोक्षयिष्यामि मा शुचः॥",
+      transliteration: "Sarva-dharman parityajya mam ekam sharanam vraja. Aham tvam sarva-papebhyo mokshayishyami ma shuchah.",
+      translation:
+        "Abandon all varieties of dharma and simply surrender unto Me alone. I shall liberate you from all sins; do not fear. — Bhagavad Gita 18.66. This verse is Krishna's, from the Gita, not from Barbarika's story, which is not part of the epic. But it names the note the tradition strikes: total surrender to the divine. Barbarika, in giving even his own head when Krishna as a guest asked for it, is remembered as an image of exactly that self-offering — which is why the tradition rewards him not with a warrior's death but with a god's name.",
+    },
+    faqs: [
+      {
+        question: "Who was Barbarika in the Mahabharata?",
+        answer: "In devotional tradition, Barbarika was a warrior of extraordinary power, said to be the son of Ghatotkacha and grandson of Bhima, who held three infallible arrows. He is best known for giving his head to Krishna before the Kurukshetra war and then watching the entire war as a witness. Importantly, his story is not part of the Mahabharata's critical Sanskrit text; it comes from later Puranic and folk tradition, especially the Khatu Shyam tradition.",
+      },
+      {
+        question: "Is Barbarika the same as Khatu Shyam?",
+        answer: "Yes. Khatu Shyam is the name by which Barbarika is worshipped today. According to tradition, Krishna blessed him that in the age of Kali he would be worshipped by Krishna's own name, Shyam. Khatu is the village in Sikar district, Rajasthan, where his principal shrine stands, so the deity is known as Khatu Shyam.",
+      },
+      {
+        question: "Why did Krishna ask for Barbarika's head?",
+        answer: "Because Barbarika had vowed to fight for whichever side was losing, and his three arrows made him invincible. Krishna reasoned that this vow would force him to keep switching sides — each side he joined would become the stronger one — until both armies were destroyed. To prevent that catastrophe, Krishna, disguised as a Brahmin, asked Barbarika to give his head in charity. This is the standard explanation given in the tradition.",
+      },
+      {
+        question: "Did Barbarika fight in the Kurukshetra war?",
+        answer: "No. In the tradition he never fought. He gave his head to Krishna before the war began and experienced the entire conflict only as a witness, his head placed on a hill overlooking the battlefield. His fame rests on the war he chose not to fight rather than any battle he won.",
+      },
+      {
+        question: "What were Barbarika's three arrows?",
+        answer: "The three infallible arrows, from which he gets the title Teen Baan Dhari (bearer of three arrows), are said in tradition to have been won through devotion and penance, most often to Shiva. In the usual telling, the first arrow marks every intended target and the last destroys them all before the arrows return, making him effectively unbeatable. This is a feature of the folk tradition, not of the Mahabharata's own text.",
+      },
+      {
+        question: "Is the Barbarika story actually in the Mahabharata?",
+        answer: "No, not in the Critical Edition or the Sanskrit epic as scholars normally read it. Barbarika is a figure of later Puranic and regional devotional tradition, commonly associated with the Skanda Purana and with the Khatu Shyam temple tradition of Rajasthan. It is best understood as a story told in the epic's world after the epic itself, rather than a chapter of Vyasa's text.",
+      },
+      {
+        question: "Who were Barbarika's parents?",
+        answer: "Tradition holds that Barbarika was the son of Ghatotkacha, the half-rakshasa son of Bhima, which makes him Bhima's grandson. His mother's name varies between tellings — you will find Maurvi, Kamkantaka, and Ahilawati in different versions. The variation is one sign that the story lived in oral and devotional tradition rather than a single fixed text.",
+      },
+      {
+        question: "What did Barbarika's head say after the war?",
+        answer: "In the popular telling, when the Pandavas argued about who had truly won, Barbarika's head said he had not really seen the warriors fighting at all. He had seen Krishna's Sudarshana chakra doing the work of destruction and, in many versions, the Goddess in fierce form receiving the slain — implying that the true force behind the victory was divine, and the great warriors were instruments.",
+      },
+      {
+        question: "Where is Barbarika worshipped today?",
+        answer: "As Khatu Shyam, at the temple in Khatu village, Sikar district, Rajasthan, which is one of the most visited pilgrimage sites in northern India. The largest annual gathering falls in the month of Phalguna, when huge crowds travel to the shrine, many on foot. He is also worshipped as Shyam in temples across northern and western India.",
+      },
+      {
+        question: "Is Barbarika the same as Aravan or Iravan?",
+        answer: "No, they are distinct figures from different traditions, though they share a similar motif. Aravan, or Iravan, is a son of Arjuna and appears within the Mahabharata; in Tamil tradition he is worshipped as Koothandavar and is associated with a pre-war sacrifice. Barbarika belongs to the northern folk and Puranic tradition of Khatu Shyam. Some scholars compare them as parallel developments of a shared 'sacrificed witness' theme, but they are not the same character.",
+      },
+    ],
+  },
 ];
 
 /* ─────────────────── Helpers ─────────────────── */
