@@ -6914,6 +6914,307 @@ export const articles: Article[] = [
         "I am the gambling of the fraudulent, and the splendour of the splendid. I am victory, I am determination, and I am the goodness of the good. — Bhagavad Gita 10.36. Krishna speaks these words while naming his presence in all things. The line is not about Shakuni, yet it hangs over his story: the same dice-play that ruined the Pandavas is claimed, in the Gita's cosmic vision, as one more form the divine takes. The epic never lets deceit sit comfortably outside the order of the world.",
     },
   },
+
+  {
+    slug: "who-are-the-8-chiranjivi-immortals",
+    title: "Who Are the 8 Chiranjivi? The Immortals Who Never Die",
+    subtitle:
+      "Seven names in a single verse, plus an eighth — the beings Hindu tradition says are still alive right now, walking the earth until the age itself ends. Some earned it. One was sentenced to it. Here is who they are and what their deathlessness actually means.",
+    description:
+      "The Chiranjivi are the immortals of Hindu tradition — a small group of beings believed to live on through the ages until the end of the current cosmic cycle. A famous smarana verse names seven and adds an eighth: Ashwatthama, Mahabali, Vyasa, Hanuman, Vibhishana, Kripacharya, Parashurama and Markandeya. This is who each of them is, how they came to be deathless, which of them belong to the Mahabharata, and why the list matters.",
+    summary:
+      "The eight Chiranjivi are Ashwatthama, Mahabali, Vyasa, Hanuman, Vibhishana, Kripacharya, Parashurama and Markandeya — beings Hindu tradition holds to be deathless until the end of the current world-age. Their immortality comes in different flavours: some as blessing, some as duty, and one, Ashwatthama, as a curse. They are long-lived, not eternal like the gods.",
+    category: "Characters",
+    readTime: 13,
+    metaTitle: "Who Are the 8 Chiranjivi? The Immortals | MahabharataDecoded",
+    metaDescription:
+      "Who are the 8 Chiranjivi, the immortals of Hindu myth who never die? Meet Ashwatthama, Mahabali, Vyasa, Hanuman, Vibhishana, Kripa, Parashurama, Markandeya.",
+    publishDate: "July 29, 2026",
+    featured: false,
+    imageKey: "hero",
+    image: "",
+    tags: ["Chiranjivi", "Immortals", "Hindu Mythology", "Ashwatthama", "Hanuman", "Parashurama", "Markandeya", "Mahabharata"],
+    pullQuote:
+      "There is a difference the tradition never lets you forget. Hanuman lives on because Rama blessed him to. Ashwatthama lives on because Krishna refused to let him die. Same deathlessness, opposite meaning. Immortality is only a gift if you still have something to live for.",
+    authorNote:
+      "This article draws on the well-known smarana verse that names the seven Chiranjivi and adds Markandeya as the eighth. That verse is a traditional devotional recitation, not a line from the main text of the Mahabharata. The individual stories come from across the epic (Ashwatthama, Kripa, Vyasa and Parashurama appear directly; Markandeya narrates in the Aranyaka Parva; Hanuman meets Bhima there too) and from the Ramayana and the Puranas for Bali, Hanuman and Vibhishana. Where a detail belongs to later tradition rather than a specific text, I have said so.",
+    reelHook: {
+      hook: "Hindu tradition says eight beings never died. They are still alive — right now — and one of them was made immortal not as a reward but as a punishment worse than death.",
+      supporting: "A single verse names seven Chiranjivi and adds an eighth. Here is who they are, how each became deathless, and the one distinction that changes how you read the whole list.",
+    },
+    relatedSlugs: ["is-ashwatthama-still-alive", "karna-what-he-knew-and-chose", "what-happened-to-pandavas-after-war"],
+    storyBlocks: [
+      {
+        section: "introduction",
+        label: "Introduction",
+        paragraphs: [
+          "There is a short Sanskrit verse that millions of people have recited at the start of the day for centuries. It is a smarana shloka — a verse of remembrance — and it lists names. Seven of them, with an eighth added in the next line.",
+          "The names belong to the Chiranjivi. The word breaks down simply: chiram, meaning long or lasting, and jivi, one who lives. The long-lived. The deathless. Tradition holds that these beings did not die at the end of their stories the way everyone else does. They are, according to the belief, still here — alive somewhere on this earth right now, and destined to remain until the current cosmic age runs out.",
+          "It is worth being precise about what that claim is and is not. The Chiranjivi are not gods. They are not eternal in the way the divine is eternal. They are extraordinarily long-lived beings who continue through the ages of this world-cycle. That distinction matters, and the tradition guards it carefully.",
+        ],
+      },
+      {
+        section: "background",
+        label: "The Verse That Names Them",
+        paragraphs: [
+          "The list is not something scholars pieced together. It comes down in a compact devotional verse that names the seven and then names the eighth: Ashwatthama, Bali, Vyasa, Hanuman, Vibhishana, Kripa and Parashurama are the seven; Markandeya is remembered as the eighth. The verse promises that one who recalls these names daily lives long and free of disease.",
+          "One thing to keep straight from the start: this smarana verse is a traditional recitation, not a sentence lifted from the main text of the Mahabharata. The epic tells you the individual stories. The verse is what later devotional tradition made of them, gathering the deathless ones into a single breath.",
+          "And they are a mixed set. Four of the eight walk through the Mahabharata itself. Two come from the Ramayana. One is an asura king from the Puranas. One is a sage who beat death directly. What binds them is not a shared story but a shared fate: none of them got the ordinary ending.",
+        ],
+      },
+      {
+        section: "turningPoint",
+        label: "Why the List Is Not Really About Living Forever",
+        paragraphs: [
+          "The temptation is to read a list of immortals as a list of winners. Look closer and it does not hold.",
+          "Hanuman's deathlessness is devotion made permanent. Markandeya's is the reward of a boy who refused to let go of the divine. Parashurama's and Vyasa's are tied to work still unfinished. Vibhishana's and Bali's are the strange grace of enemies who were spared and honoured. And Ashwatthama's is not a gift at all. It is the heaviest curse in the entire epic.",
+          "So the real question the list poses is not who gets to live forever. It is: what is deathlessness for? Handed to a devotee, it is joy. Handed to a man with nothing left, it is a prison with no door. The Chiranjivi are the tradition's way of asking that question eight different ways.",
+        ],
+      },
+    ],
+    content: [
+      { type: "heading", text: "What Chiranjivi Actually Means" },
+      {
+        type: "paragraph",
+        text: "Before the names, the idea. Chiranjivi does not mean eternal in the absolute sense. It describes beings who live across the great spans of cosmic time — through the yugas, the four ages that turn like seasons, and in some accounts on to the very end of the present kalpa, when the world dissolves and begins again. They are the deathless of this cycle, not of all existence.",
+      },
+      {
+        type: "paragraph",
+        text: "That is why the tradition can say, without contradiction, both that they never die and that some of them have a role waiting for them at the turn of the next age. Bali is said to become the next Indra. Kripacharya and others are named among the sages of a future manvantara. Their immortality is a long assignment, not a blank cheque.",
+      },
+      {
+        type: "paragraph",
+        text: "Now the eight. Take them one at a time, because they could hardly be more different from each other.",
+      },
+      { type: "heading", text: "1. Ashwatthama — Immortality as a Curse" },
+      {
+        type: "paragraph",
+        text: "Ashwatthama is the son of Drona, the guru who trained both the Pandavas and the Kauravas. On the night after the Mahabharata war was already won, he entered the sleeping Pandava camp and slaughtered its occupants, then aimed a divine weapon at an unborn child to end the dynasty. Krishna's judgment was not execution. He cursed Ashwatthama to wander the earth for three thousand years, alone, with a wound that never heals. Of all the Chiranjivi, he is the only one for whom deathlessness is the punishment itself.",
+      },
+      {
+        type: "paragraph",
+        text: "He is the one people still claim to see. A living folklore places him at remote forts and forest shrines in central India, an old man with a sunken, wounded forehead. Whether you read those reports literally or as legend, notice which of the eight the popular imagination fixed on. Not a hero. The man who could not be allowed to rest.",
+      },
+      { type: "heading", text: "2. Mahabali — The King Vishnu Pushed Down and Then Honoured" },
+      {
+        type: "paragraph",
+        text: "Mahabali, usually called Bali, was an asura king — grandson of the devotee Prahlada — so just and so powerful that his rule threatened the balance of the worlds. Vishnu descended as Vamana, a small brahmin boy, and asked for as much ground as he could cover in three steps. Bali granted it. Vamana grew vast, covered the earth and sky in two strides, and for the third step Bali offered his own head. Pressed down into the netherworld, he was not destroyed. Vishnu, moved by his generosity, granted him deathlessness and a promise: Bali will become Indra, king of the gods, in the age to come.",
+      },
+      {
+        type: "paragraph",
+        text: "In Kerala, the festival of Onam celebrates his yearly return to visit the people he once ruled. It is one of the warmest images in the whole tradition — an immortality that is really about being remembered with love by those you governed well.",
+      },
+      { type: "heading", text: "3. Vyasa — The Author Inside His Own Story" },
+      {
+        type: "paragraph",
+        text: "Vyasa, known as Krishna Dvaipayana or Vedavyasa, is the sage traditionally credited with arranging the Vedas and composing the Mahabharata. He is also inside the story he tells: through the practice of niyoga he is the biological father of Dhritarashtra, Pandu and Vidura, which makes him the ancestral grandfather of the very princes whose war he narrates. He appears again and again in the epic, counselling, warning, and quietly steering.",
+      },
+      {
+        type: "paragraph",
+        text: "His deathlessness is usually understood as bound to his work: as long as the Vedas and the great epic are transmitted, the one who arranged them endures with them. In some accounts he is also named among the sages who will guide a future age. Of the eight, he is the immortal whose task is knowledge itself.",
+      },
+      { type: "heading", text: "4. Hanuman — Deathless as Long as Rama's Story Is Told" },
+      {
+        type: "paragraph",
+        text: "Hanuman is the vanara devotee of Rama in the Ramayana, and his immortality is the most tender in the list. Tradition holds that he was blessed to live for as long as Rama's name and story endure on the earth. Since that story shows no sign of being forgotten, Hanuman remains — the eternal servant who chose to stay behind rather than ascend, so that he could keep hearing his lord's name spoken.",
+      },
+      {
+        type: "paragraph",
+        text: "He belongs to the Mahabharata too. In the Aranyaka Parva, Bhima goes searching for a rare flower and finds an old monkey blocking his path whose tail he cannot lift. It is Hanuman, his own half-brother — both are sons of the wind-god Vayu. The meeting is one of the epic's gentlest moments, an immortal from one age quietly humbling a hero of the next.",
+      },
+      { type: "heading", text: "5. Vibhishana — The Brother Who Changed Sides" },
+      {
+        type: "paragraph",
+        text: "Vibhishana was the younger brother of Ravana, the demon king of Lanka. When he could not talk Ravana out of the war over Sita, he left and joined Rama. After Ravana's fall, Rama crowned Vibhishana king of Lanka and, in the tradition, granted him a life that would last through the ages so that he could rule justly for a very long time. He is the immortal who is remembered for a hard choice: loyalty to what is right over loyalty to blood.",
+      },
+      {
+        type: "paragraph",
+        text: "That choice has always divided readers. Some honour him as the one who refused to defend an injustice. Others have used his name for a certain kind of betrayer. The tradition itself comes down clearly on his side, which is why he sits among the blessed and not the cursed.",
+      },
+      { type: "heading", text: "6. Kripacharya — The Teacher Who Outlived the War" },
+      {
+        type: "paragraph",
+        text: "Kripa, or Kripacharya, was a martial teacher of the royal princes, brother of Kripi who was Drona's wife. He fought on the Kaurava side and was one of only a handful of warriors left standing when the war ended. Afterwards he became a teacher to Parikshit, the grandson of Arjuna and the surviving heir. Tradition counts him among the Chiranjivi and holds that he is destined to be one of the saptarishi, the seven great sages, in the next manvantara.",
+      },
+      {
+        type: "paragraph",
+        text: "He is the quietest name on the list, and the easiest to overlook. But there is something fitting in a teacher being granted the long view — the one whose job was always to carry knowledge forward from one generation to the next given a lifespan that spans the ages.",
+      },
+      { type: "heading", text: "7. Parashurama — The Warrior-Sage Still Waiting" },
+      {
+        type: "paragraph",
+        text: "Parashurama, 'Rama with the axe,' is counted as the sixth avatar of Vishnu — a brahmin who took up arms. The tradition tells of him clearing the earth of tyrannical warrior-kings many times over after his father was killed. He is the great teacher of weapons, and here the eight cross paths with the rest of the epic: he trained Bhishma, and he trained Karna, and his curse on Karna would surface at the worst possible moment on the battlefield.",
+      },
+      {
+        type: "paragraph",
+        text: "His deathlessness has a forward edge to it. Tradition holds that Parashurama still lives in retreat and will reappear at the end of the age as the martial teacher of Kalki, the avatar yet to come. He is the immortal who is not finished — the one with a role still ahead of him.",
+      },
+      { type: "heading", text: "8. Markandeya — The Boy Who Defeated Death" },
+      {
+        type: "paragraph",
+        text: "Markandeya is the eighth name, and his story is the most direct answer to the question the whole list circles. Born to a sage after long devotion, he was fated to die at sixteen. When the appointed hour came and Yama, the lord of death, arrived with his noose, the boy clung to a Shiva linga and would not let go. Shiva burst forth to defend his devotee and stopped death in its tracks, granting Markandeya eternal youth. He is the immortal who did not receive a curse or a diplomatic reward but simply refused to release his hold on the divine.",
+      },
+      {
+        type: "paragraph",
+        text: "He appears in the Mahabharata as a narrator. In the Aranyaka Parva, during the Pandavas' long exile, the ancient sage Markandeya visits them and tells story after story — including, in some tellings, an account of the world's dissolution that he alone has lived through more than once. An immortal, it turns out, makes a very good storyteller.",
+      },
+      { type: "divider", text: "" },
+      { type: "heading", text: "Did You Know" },
+      {
+        type: "paragraph",
+        text: "The word Chiranjivi is still an ordinary Indian name today. Parents give it to sons as a blessing — literally, 'may you live long' — with no thought of the mythological list behind it.",
+      },
+      {
+        type: "paragraph",
+        text: "Four of the eight are directly present in the Mahabharata: Ashwatthama, Kripacharya, Vyasa and Parashurama. Hanuman and Markandeya both make guest appearances during the Pandavas' forest exile in the Aranyaka Parva.",
+      },
+      {
+        type: "paragraph",
+        text: "The smarana verse promises a very practical reward for reciting the eight names each morning: long life free of disease. It is treated less as history than as a protective daily prayer.",
+      },
+      {
+        type: "paragraph",
+        text: "Mahabali's story is the reason for Onam, one of Kerala's biggest festivals. The king's annual homecoming is celebrated with flower carpets, feasts and boat races.",
+      },
+      {
+        type: "paragraph",
+        text: "Two of the Chiranjivi are said to have futures still ahead of them: Bali is to become the next Indra, and Parashurama is to be the teacher of the future avatar Kalki.",
+      },
+      {
+        type: "paragraph",
+        text: "Not every list agrees on the eighth name. The most common version adds Markandeya, but some regional traditions include Jambavan, the bear-king of the Ramayana, instead of or alongside him.",
+      },
+      {
+        type: "paragraph",
+        text: "Ashwatthama is the only Chiranjivi whose immortality is explicitly a punishment. Every other name earned the gift, was granted it as grace, or received it as reward. His was imposed.",
+      },
+      { type: "heading", text: "Common Misconceptions" },
+      {
+        type: "lesson",
+        text: "Misconception: The Chiranjivi are gods. Correction: They are not. They are long-lived beings — some human, some vanara, some asura, one an avatar — who continue through the ages of this world-cycle. The tradition is careful to keep them a rung below the divine and to treat their lifespan as extraordinarily long rather than truly eternal.",
+      },
+      {
+        type: "lesson",
+        text: "Misconception: The list of eight comes from the Mahabharata itself. Correction: The stories do, but the collected list is a later devotional smarana verse, not a line from the epic's main text. It is a summary the tradition made, not a passage the epic contains.",
+      },
+      {
+        type: "lesson",
+        text: "Misconception: Being a Chiranjivi is always a blessing. Correction: For Ashwatthama it is the opposite — the cruelest sentence in the epic. Deathlessness in his case means a wound that never closes and an ending that never comes. Same gift, inverted into torment.",
+      },
+      {
+        type: "lesson",
+        text: "Misconception: There are exactly eight, fixed for all time. Correction: The best-known verse names seven and adds Markandeya as the eighth, but the tradition is not perfectly uniform. Some versions swap in Jambavan. The number eight is conventional, not a strict, single canon.",
+      },
+      {
+        type: "lesson",
+        text: "Misconception: The Chiranjivi will live literally forever. Correction: Their deathlessness is tied to the current cosmic cycle. Several are said to take up new roles at the turn of the next age — Bali as Indra, Kripa among the future sages. Their immortality is a very long term of service, not endlessness without limit.",
+      },
+      {
+        type: "lesson",
+        text: "Misconception: Hanuman and Parashurama belong only to the Ramayana. Correction: Both appear in the Mahabharata as well. Hanuman meets Bhima in the forest, and Parashurama is the weapons-teacher of Bhishma and Karna. The Chiranjivi move between the two great epics precisely because they outlive the boundaries of any single story.",
+      },
+      { type: "heading", text: "So Why Does the List Endure?" },
+      {
+        type: "paragraph",
+        text: "You could treat the Chiranjivi as a piece of folklore and leave it there. But the reason the verse is still recited, the reason people still argue about Ashwatthama sightings, is that the list is doing something quietly serious. It is a meditation on what a life is for, told through eight beings who were denied the ordinary exit.",
+      },
+      {
+        type: "paragraph",
+        text: "Line them up and the pattern is unmistakable. The ones for whom deathlessness is a joy are the ones with something outside themselves to serve — Hanuman with his devotion, Vyasa with his knowledge, Markandeya with his refusal to release the divine. The one for whom it is agony is the one left with nothing but himself and his wound. The tradition is not really telling you that eight people never died. It is telling you that time without purpose is not a prize.",
+      },
+      {
+        type: "paragraph",
+        text: "That is a strange and useful thing to carry out of an old verse. Most of us will never face the question of literal immortality. All of us face its smaller version every day: what do you do with the time you have, and is any of it pointed at something beyond yourself? The Chiranjivi answer by example, eight different ways. The happy immortals are the ones who kept serving. The cursed one is the one who ran out of reasons.",
+      },
+    ],
+    keyLessons: [
+      {
+        icon: "🕰️",
+        title: "Long life is only worth having if it points somewhere",
+        description: "The Chiranjivi who are content are the ones with a purpose outside themselves — devotion, knowledge, service. The one in torment is the one left with nothing to live for. Duration without direction is the actual curse.",
+        accent: "gold",
+      },
+      {
+        icon: "⚖️",
+        title: "The same circumstance can be a gift or a sentence",
+        description: "Immortality blesses Hanuman and destroys Ashwatthama. What changes is not the fact but its meaning. Before you envy someone's situation, ask what it is actually like to live inside it.",
+        accent: "crimson",
+      },
+      {
+        icon: "🧭",
+        title: "Loyalty to what is right can outrank loyalty to your own side",
+        description: "Vibhishana left his brother to stand with justice and is honoured for it among the deathless. The tradition treats the hard, correct choice as more durable than the comfortable, tribal one.",
+        accent: "teal",
+      },
+    ],
+    modernConnections: [
+      {
+        context: "You are chasing more — more years, more security, more runway — on the assumption that more time will make things better on its own.",
+        insight: "The Chiranjivi quietly reject that assumption. The tradition gives its longest lives to the ones with a reason for them and shows, through Ashwatthama, that time itself heals nothing when there is nothing behind it. The question is never how much time. It is what the time is for.",
+        example: "Hanuman's endless life is a joy because it is spent in devotion. Ashwatthama's is a horror because it is spent alone with a wound. Identical spans, opposite lives.",
+      },
+      {
+        context: "You are being pressured to stay loyal to a group, a family, or a side even though you can see it is in the wrong.",
+        insight: "Vibhishana faced exactly this and chose the harder loyalty — to what was right over who he was related to. The tradition did not brand him a traitor; it seated him among the honoured immortals. Sometimes leaving is the faithful act.",
+        example: "He warned his brother, was ignored, and walked. He was made a king for it, not a villain — a verdict the tradition has never revised.",
+      },
+    ],
+    lifeLessons: [
+      "Deathlessness in these stories is a mirror: it magnifies whatever a life already was, joy or emptiness.",
+      "A purpose outside yourself is what makes a long life bearable rather than a burden.",
+      "The same situation can be blessing or curse depending entirely on what you bring to it.",
+      "Choosing what is right over your own side, as Vibhishana did, can be the most faithful thing you ever do.",
+      "The character a tradition cannot stop retelling — here, the cursed immortal Ashwatthama — reveals what it is most afraid of.",
+    ],
+    faqs: [
+      {
+        question: "Who are the 8 Chiranjivi?",
+        answer: "The eight Chiranjivi named in the well-known smarana verse are Ashwatthama, Mahabali (Bali), Vyasa, Hanuman, Vibhishana, Kripacharya (Kripa), Parashurama and Markandeya. The verse lists the first seven and adds Markandeya as the eighth.",
+      },
+      {
+        question: "What does the word Chiranjivi mean?",
+        answer: "It combines chiram, meaning long or lasting, with jivi, one who lives — so 'the long-lived' or 'the deathless.' It refers to beings who live across the ages of the present cosmic cycle rather than beings who are eternal in the way the gods are.",
+      },
+      {
+        question: "Are the Chiranjivi still alive today?",
+        answer: "According to tradition, yes — they are believed to live on until the end of the current world-age. This is a matter of religious belief and folklore rather than something the historical or scientific record can confirm. The persistence of the belief, especially around Ashwatthama, is itself part of the tradition.",
+      },
+      {
+        question: "Which of the Chiranjivi appear in the Mahabharata?",
+        answer: "Four appear directly in the epic: Ashwatthama, Kripacharya, Vyasa and Parashurama. Two more make appearances during the Pandavas' forest exile in the Aranyaka Parva — Hanuman, who meets Bhima, and Markandeya, who visits the Pandavas as a narrator of ancient stories.",
+      },
+      {
+        question: "Why is Ashwatthama a Chiranjivi?",
+        answer: "His immortality is unique among the eight because it is a punishment. After he slaughtered a sleeping camp and aimed a divine weapon at an unborn child once the war was already won, Krishna cursed him to wander the earth for three thousand years with a wound that never heals — denied the death he wanted.",
+      },
+      {
+        question: "How did Hanuman become immortal?",
+        answer: "Tradition holds that Hanuman was blessed to live for as long as the name and story of Rama endure on earth. Because that story continues to be told, Hanuman is believed to remain — the devotee who chose to stay behind rather than ascend, so he could keep hearing his lord's name.",
+      },
+      {
+        question: "Is the list of eight Chiranjivi from the Mahabharata itself?",
+        answer: "The individual stories come from the Mahabharata, the Ramayana and the Puranas, but the collected list of eight is a later devotional smarana verse, not a passage from the main text of any single epic. It is a summary the tradition assembled, recited as a protective daily prayer.",
+      },
+      {
+        question: "Is Markandeya always the eighth Chiranjivi?",
+        answer: "Markandeya is the eighth in the most widely recited version of the verse. But the tradition is not perfectly uniform — some regional lists include Jambavan, the bear-king of the Ramayana, instead of or alongside Markandeya. The number eight is conventional rather than a single fixed canon.",
+      },
+      {
+        question: "Do any Chiranjivi have a role in the future?",
+        answer: "Yes. Tradition holds that Mahabali will become the next Indra, king of the gods, in the coming age, and that Parashurama will reappear at the end of the age as the martial teacher of Kalki, the avatar yet to come. Kripacharya is named among the sages of a future manvantara.",
+      },
+      {
+        question: "Are the Chiranjivi the same as gods?",
+        answer: "No. They are extraordinarily long-lived beings — human, vanara, asura, and in Parashurama's case an avatar of Vishnu — who continue through the ages of this cycle. The tradition keeps them a rung below the eternal divine and treats their deathlessness as a very long term rather than as absolute eternity.",
+      },
+    ],
+    sloka: {
+      sanskrit: "अश्वत्थामा बलिर्व्यासो हनूमांश्च विभीषणः।\nकृपः परशुरामश्च सप्तैते चिरजीविनः॥\nसप्तैतान् संस्मरेन्नित्यं मार्कण्डेयमथाष्टमम्।\nजीवेद्वर्षशतं सोऽपि सर्वव्याधिविवर्जितः॥",
+      transliteration: "Ashwatthama balir vyaso hanumamsch cha vibhishanah. Kripah parashuramascha saptaite chirajivinah. Saptaitan samsmaren nityam markandeyam athashtamam. Jived varsha-shatam so'pi sarva-vyadhi-vivarjitah.",
+      translation:
+        "Ashwatthama, Bali, Vyasa, Hanuman and Vibhishana; Kripa and Parashurama — these seven are the immortals. Remembering these seven daily, along with Markandeya as the eighth, a person will live a hundred years, free from all disease. — a traditional smarana (remembrance) verse. It is a devotional recitation rather than a line from the epic's own text, which is why it gathers figures from the Mahabharata, the Ramayana and the Puranas into one breath. What it offers the reciter is not a claim about history but a blessing: long life and health, invoked by remembering those who outlived death.",
+    },
+  },
 ];
 
 /* ─────────────────── Helpers ─────────────────── */
