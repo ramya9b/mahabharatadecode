@@ -7788,6 +7788,309 @@ export const articles: Article[] = [
       },
     ],
   },
+
+  {
+    slug: "how-did-krishna-die",
+    title: "How Did Krishna Die? The Hunter, the Arrow, and the End of an Age",
+    subtitle:
+      "Not in battle. Not by an enemy. The most powerful figure in the Mahabharata died alone in a quiet forest, struck in the foot by a hunter who thought he was aiming at a deer. Here is the full story of Krishna's death, exactly as the epic tells it.",
+    description:
+      "Krishna's death is one of the strangest and most quietly devastating passages in the Mahabharata. It comes not on a battlefield but in a forest, thirty-six years after the war, after his own clan has torn itself apart. This is the complete, source-grounded account from the Mausala Parva and the Stri Parva: the curse that started it, the drunken brawl that ended the Yadavas, Balarama's departure, and the hunter's arrow that killed a god's human form. Fact and later tradition are kept clearly apart.",
+    summary:
+      "After the Mahabharata war, the Yadava clan destroyed itself in a drunken brawl, fulfilling a sage's curse and Gandhari's. Balarama left the world in meditation. Krishna, resting in a forest, was struck in the foot by a hunter named Jara who mistook him for a deer, and he departed his body.",
+    category: "Characters",
+    character: "krishna",
+    readTime: 12,
+    metaTitle: "How Did Krishna Die? The True Story | MahabharataDecoded",
+    metaDescription:
+      "How did Krishna die? The Mausala Parva tells it plainly: a hunter's stray arrow, a clan that destroyed itself, and the curse of Gandhari behind it all.",
+    publishDate: "August 1, 2026",
+    featured: false,
+    imageKey: "krishna",
+    image: "",
+    tags: ["Krishna death", "how did Krishna die", "Mausala Parva", "Jara hunter", "Yadava destruction", "Gandhari curse", "Kali Yuga", "Dwaraka"],
+    pullQuote:
+      "The man who steered the outcome of the greatest war in the epic did not die in that war, or in any war. He died on the ground in a forest, mistaken for a deer, forgiving the frightened hunter who had killed him. The Mahabharata could have given Krishna any death it wanted. It chose the quietest one imaginable.",
+    authorNote:
+      "This article draws mainly from the Mausala Parva, the sixteenth of the Mahabharata's eighteen books, which narrates the destruction of the Yadavas and the deaths of Balarama and Krishna, and from Gandhari's curse in the Stri Parva, the eleventh book. Where I mention the tradition that the hunter Jara was Vali reborn, tying Krishna's death back to Rama's killing of Vali in the Ramayana, I have flagged it as later and regional tradition rather than something the Mausala Parva states. The core sequence, the sages' curse, the iron mace, the reeds, the brawl at Prabhasa and the hunter's arrow, follows the epic's own account.",
+    reelHook: {
+      hook: "The most powerful figure in the Mahabharata did not die in the war. He died years later, alone in a forest, shot in the foot by a hunter who thought he was a deer.",
+      supporting: "Krishna's death is the strangest ending in the whole epic. A prank, a curse, a clan that drank itself into a massacre, and one stray arrow. This is how it actually happened.",
+    },
+    relatedSlugs: ["krishna-grief-after-kurukshetra", "what-happened-to-pandavas-after-war", "is-ashwatthama-still-alive"],
+    storyBlocks: [
+      {
+        section: "introduction",
+        label: "Introduction",
+        paragraphs: [
+          "You would expect the death of Krishna to be a huge event. A cosmic battle, a blaze of light, the sky splitting open. He is the one who drives the whole Mahabharata, the charioteer who speaks the Bhagavad Gita, the strategist behind the Pandavas' victory. If anyone in the epic deserves a grand exit, it is him.",
+          "He does not get one.",
+          "Krishna dies quietly, on the ground, in an ordinary forest, thirty-six years after the war is over. There is no army watching. His own great city is about to sink into the sea. And the arrow that ends his human life is fired by accident, by a hunter who never even knew who he was shooting at. It is one of the most deliberately understated deaths in all of world literature, and the Mahabharata builds toward it with terrible care.",
+        ],
+      },
+      {
+        section: "background",
+        label: "The Curse Still Running",
+        paragraphs: [
+          "To understand how Krishna dies, you have to go back to the end of the war. When Gandhari, the blindfolded queen of the Kauravas, walks the battlefield and sees all hundred of her sons dead, she turns on Krishna. In her grief she accuses him of letting it happen, of having the power to stop the slaughter and choosing not to. Then she curses him.",
+          "Her curse, in the Stri Parva, is precise. Thirty-six years from now, she tells him, you will lose everyone you love the way I have lost mine. Your kinsmen will kill each other. Your people will be destroyed. And you yourself will die alone, in the wilderness, in a wretched and obscure manner.",
+          "Krishna accepts it. He does not argue or defend himself. He simply says he already knew the Yadavas could only ever be destroyed by their own hands, and that if she wishes it too, so be it. That acceptance is the quiet engine of everything that follows. The war is won, but the clock on Krishna's own world has started.",
+        ],
+      },
+      {
+        section: "turningPoint",
+        label: "A Prank Sets the Fuse",
+        paragraphs: [
+          "The thing that lights the fuse is almost embarrassingly small. It is a joke.",
+          "Years later, a group of young Yadava men decide to play a prank on some visiting sages at Dwaraka. In the Mausala Parva these are named as Vishvamitra, Kanva and Narada, three of the most formidable rishis in the tradition. The youths dress up Samba, one of Krishna's sons, as a pregnant woman, present him to the sages, and mockingly ask what child this woman will bear.",
+          "The sages, seeing through the insult, do not laugh. They pronounce a curse: this woman will give birth to an iron mace, a musala, and that mace will bring about the annihilation of the entire Vrishni and Andhaka race, the whole Yadava clan. It is a strange, specific doom, and the young men have brought it on their own people with a prank. The next day, Samba does bring forth a bolt of iron. The curse is no longer a threat. It is an object.",
+        ],
+      },
+    ],
+    content: [
+      { type: "heading", text: "Why Krishna's Death Is Worth Understanding" },
+      {
+        type: "paragraph",
+        text: "Most people who know Krishna know him from the Gita, or from the stories of his childhood in Vrindavan, or as the blue-skinned figure who lifts a mountain and steals butter. Far fewer know how his story ends. When the Mahabharata finally lets him die, it does something surprising: it strips away every trace of grandeur. No enemy defeats him. No weapon can touch him in battle. The end comes sideways, through an accident, in a place nobody was watching.",
+      },
+      {
+        type: "paragraph",
+        text: "That choice is not careless. The epic could have written any death it wanted for its most important character. It wrote this one on purpose. To read how Krishna dies is to watch the Mahabharata make its final, hardest argument about time, consequence and the limits even a divine incarnation places on itself once it takes on a human body. So the question is worth taking seriously and answering carefully, without embroidery. Here is what the text actually says.",
+      },
+      { type: "heading", text: "Thirty-Six Years After the War" },
+      {
+        type: "paragraph",
+        text: "Krishna's death belongs to the Mausala Parva, the sixteenth of the eighteen books of the Mahabharata. The name comes from mausala, the iron mace, because the whole book turns on that cursed weapon. By the time it opens, a long time has passed. The great war is thirty-six years gone. The Pandavas rule at Hastinapura. Krishna's city, Dwaraka, is prosperous and secure. On the surface, everything is calm.",
+      },
+      {
+        type: "paragraph",
+        text: "But the omens begin. The epic describes unnatural signs multiplying across Dwaraka: rats infesting the houses and gnawing at sleeping men, pots cracking without cause, the sun appearing to be devoured, days and nights losing their order. Krishna, who understands what is coming, recognises Gandhari's curse and the sages' curse arriving together. He does not try to escape it. Instead he tells the Yadavas to go on a pilgrimage to the coast at Prabhasa, perhaps sensing that if the end must come, it should come away from the innocent.",
+      },
+      { type: "heading", text: "The Iron Powder, the Reeds, and the Fish" },
+      {
+        type: "paragraph",
+        text: "First, though, the Yadavas try to defuse the curse. When Samba produces the iron mace, the horrified king Ugrasena orders it filed down into powder and thrown into the sea. He bans the making and drinking of liquor on pain of death, trying to remove the fuel for any drunken quarrel. It is a reasonable plan. It does not work.",
+      },
+      {
+        type: "paragraph",
+        text: "The powdered iron washes up on the shore at Prabhasa and takes root there as a dense growth of sharp reeds, a coarse grass the text calls eraka. Every filing of the destroyed mace becomes a blade waiting in the sand. And one piece could not be ground down at all: a hard fragment left over from the filing. That fragment was thrown into the sea, swallowed by a fish, and the fish was later caught by a hunter, who took the sharp sliver of iron and fixed it to the tip of an arrow. The mace the Yadavas thought they had destroyed had simply changed its shape and scattered itself into the two forms that would finish the job.",
+      },
+      {
+        type: "lesson",
+        text: "This is one of the epic's darkest structural jokes. The Yadavas do everything right. They grind the weapon to dust, they throw it in the ocean, they ban the drink. And every single one of those precautions becomes the exact mechanism of their destruction. The powder becomes the reeds that will be their clubs. The one shard they could not grind becomes the arrowhead that will kill Krishna. You cannot file a curse into nothing. It only changes form.",
+      },
+      { type: "heading", text: "The Brawl at Prabhasa" },
+      {
+        type: "paragraph",
+        text: "At Prabhasa, the pilgrimage turns into a festival, and the festival turns into slaughter. Despite the ban, wine is drunk. As the Yadava warriors grow intoxicated, an old grievance surfaces. Satyaki, a loyal Pandava ally, taunts Kritavarma over his part in the night raid at the end of the war, when Kritavarma had helped Ashwatthama massacre the sleeping Pandava camp. The insult catches fire. Satyaki beheads Kritavarma. Others leap in on both sides, and within moments the whole gathering is a brawl.",
+      },
+      {
+        type: "paragraph",
+        text: "That is when the reeds do their work. Men reaching for anything to fight with tear up handfuls of the eraka grass growing along the shore, and in their hands each blade of grass turns into an iron bolt, hard and deadly, an heir of the destroyed mace. The Yadavas, the mightiest clan of their age, begin killing one another with fistfuls of grass. Krishna's own sons and grandsons fall in the chaos. Pradyumna, Samba, Aniruddha, Satyaki, Gada, the great names of the Vrishnis, cut each other down in a drunken frenzy on a beach. It is not war. It is a clan committing suicide with its own hands, exactly as Krishna had told Gandhari it one day would.",
+      },
+      {
+        type: "paragraph",
+        text: "The Mahabharata even shows Krishna himself, seeing his kin and children slain around him, taking up a handful of the reeds and killing in his grief and rage. There is no dignity in this scene, and the epic does not pretend there is. The clan that had seemed untouchable is gone by the end of a single afternoon.",
+      },
+      { type: "heading", text: "Balarama Leaves First" },
+      {
+        type: "paragraph",
+        text: "When it is over, Krishna goes looking for his elder brother, Balarama. He finds him sitting alone at the edge of the forest, withdrawn from the world, in deep meditation. As Krishna watches, Balarama gives up his body through yoga. The Mahabharata describes a great white serpent issuing from his mouth and passing away toward the ocean, and traditional readers understand this as Balarama returning to his true nature as the cosmic serpent Ananta, or Shesha. His departure is calm, chosen, and complete. He simply lets go.",
+      },
+      {
+        type: "paragraph",
+        text: "Krishna is now the last of them. His brother is gone, his sons are dead, his city is about to be abandoned. He sends his charioteer Daruka to Hastinapura to bring Arjuna, so the surviving women and children of Dwaraka can be led to safety. Then he walks into the forest alone.",
+      },
+      { type: "heading", text: "Jara's Arrow" },
+      {
+        type: "paragraph",
+        text: "This is the moment the whole book has been building toward, and it happens in a few plain sentences. Krishna lies down on the ground in the forest to rest, drawing up his knees, absorbed in yogic meditation, one foot resting so that the sole is exposed. A hunter named Jara comes through the trees. From a distance, glimpsing the reddish sole of Krishna's foot moving among the leaves, he takes it for the ear or the flank of a deer. He looses an arrow, the one tipped with iron from the fragment of the cursed mace, and it pierces Krishna's foot.",
+      },
+      {
+        type: "paragraph",
+        text: "When Jara runs up to claim his kill and sees a man, not a deer, he is stricken with terror and grief and falls at Krishna's feet, begging forgiveness for what he has done. Krishna, in his last moments, comforts the trembling hunter. He tells him not to be afraid, forgives him completely, and then leaves his body, ascending from the world. There is no curse in return, no anger, no drama. The most powerful figure in the epic dies consoling the frightened man who killed him by mistake.",
+      },
+      {
+        type: "paragraph",
+        text: "Traditional and regional retellings add a layer here that the Mausala Parva itself does not spell out. In some later tellings, the hunter Jara is the reborn form of Vali, the monkey king whom Rama killed in the Ramayana by shooting him from concealment. Since Krishna and Rama are understood in tradition as incarnations of the same Vishnu, the idea is that this arrow settles an old karmic account: the one who was struck unseen in a previous age now strikes unseen in this one. This is a meaningful and widely loved interpretation, but it is later and regional tradition layered onto the story, not part of the plain narrative of the Mausala Parva, and it is worth keeping the two apart.",
+      },
+      { type: "heading", text: "What Happened to Dwaraka" },
+      {
+        type: "paragraph",
+        text: "The end of Krishna is also the end of his world. When Arjuna arrives, he performs the funeral rites for Krishna, Balarama and the fallen Yadavas, and gathers the survivors, mostly women, children and the elderly, to lead them out of Dwaraka toward safer country. As the last of them leave, the sea rises and swallows the city. Dwaraka, the golden capital Krishna had built, sinks beneath the ocean and is gone.",
+      },
+      {
+        type: "paragraph",
+        text: "The journey out is bleak. On the road, a band of Abhira robbers attacks the defenceless caravan, and Arjuna, the greatest archer of the age, finds to his horror that his strength has failed him. His celebrated bow Gandiva feels too heavy, his divine weapons will not come when he calls them, and he cannot protect the very people Krishna asked him to save. The Mahabharata presents this collapse of Arjuna's power as a sign that an age is ending. With Krishna gone from the earth, the world itself has shifted into something diminished.",
+      },
+      { type: "heading", text: "Did You Know?" },
+      {
+        type: "paragraph",
+        text: "A few verified details from the tradition that even readers who know the epic well sometimes get wrong:",
+      },
+      {
+        type: "paragraph",
+        text: "One. Krishna's death is told in the Mausala Parva, the sixteenth of the Mahabharata's eighteen books, one of the shortest in the whole epic. The name means the Book of the Mace, after the cursed iron weapon that sets the destruction in motion.",
+      },
+      {
+        type: "paragraph",
+        text: "Two. According to the epic the destruction of the Yadavas and the death of Krishna come thirty-six years after the great war, the exact span named in Gandhari's curse in the Stri Parva.",
+      },
+      {
+        type: "paragraph",
+        text: "Three. The hunter's name, Jara, means old age or decay in Sanskrit. Whether or not one reads deeper meaning into it, the being who brings the end to Krishna's era literally carries the name of ageing itself.",
+      },
+      {
+        type: "paragraph",
+        text: "Four. The arrowhead that killed Krishna was made from the one fragment of the cursed mace that could not be ground into powder. It was swallowed by a fish and later recovered by the hunter, so the same weapon named in the sages' curse is the thing that ends Krishna's life.",
+      },
+      {
+        type: "paragraph",
+        text: "Five. Balarama, Krishna's elder brother, dies before him, giving up his body through yoga at the forest's edge. The text describes a great serpent leaving his mouth and moving into the sea, which tradition reads as his return to his identity as the cosmic serpent Ananta or Shesha.",
+      },
+      {
+        type: "paragraph",
+        text: "Six. After Krishna's death and Arjuna's evacuation of the survivors, Dwaraka is submerged by the ocean. The epic states plainly that the sea reclaimed the city almost as soon as its people had left it.",
+      },
+      {
+        type: "paragraph",
+        text: "Seven. In traditional Hindu reckoning, the departure of Krishna marks the transition from the Dvapara Yuga to the Kali Yuga, the present age. The date usually given for this is a matter of tradition and calculation rather than of the Mahabharata's own narrative, and different traditions place it differently.",
+      },
+      { type: "heading", text: "Common Misconceptions" },
+      {
+        type: "paragraph",
+        text: "Because Krishna's death is far less well known than his life, the gaps tend to fill with guesswork. Here are the errors worth clearing up.",
+      },
+      {
+        type: "lesson",
+        text: "Misconception 1: Krishna was killed by an enemy in battle. He was not. There is no duel and no opponent. His human form ends by accident, struck by a hunter who mistook his foot for a deer and never intended to harm anyone, let alone Krishna. The Mahabharata deliberately denies him a warrior's death.",
+      },
+      {
+        type: "lesson",
+        text: "Misconception 2: A god cannot die, so this cannot really be Krishna's death. Tradition draws a careful line here. What ends is the mortal body Krishna took on as an avatar; his departure is understood as a chosen laying-down of that human form rather than a defeat. The epic narrates a real death of the body while tradition reads it as a willing return, not an ending forced upon him.",
+      },
+      {
+        type: "lesson",
+        text: "Misconception 3: The Yadava clan was wiped out by an outside army. No external enemy destroys them. They kill one another in a drunken brawl at Prabhasa, using reeds that turn to iron in their hands. The destruction is entirely self-inflicted, which is precisely the point Krishna made to Gandhari: the Yadavas could only ever be destroyed by themselves.",
+      },
+      {
+        type: "lesson",
+        text: "Misconception 4: Gandhari's curse means Krishna was punished and defeated. Krishna accepts the curse rather than resisting it, and states that he already knew this end was coming. In the epic's framing, this is closer to a foreseen and accepted fate than to a punishment inflicted on a helpless victim. He is not outmatched by the curse; he consents to it.",
+      },
+      {
+        type: "lesson",
+        text: "Misconception 5: Krishna died in his city of Dwaraka, or on a battlefield. He dies in a forest, alone, resting in meditation, well away from the city and years after any war. Dwaraka is not the site of his death but is swallowed by the sea shortly afterward, once its people have been led out.",
+      },
+      {
+        type: "lesson",
+        text: "Misconception 6: The idea that the hunter Jara was Vali reborn is a core part of the Mahabharata. It is a beloved and meaningful interpretation, but it belongs to later and regional tradition connecting Krishna's death to Rama's killing of Vali in the Ramayana. The Mausala Parva itself simply describes a hunter named Jara who shoots by mistake.",
+      },
+      { type: "heading", text: "What the Story Is Really Saying" },
+      {
+        type: "paragraph",
+        text: "So why does the Mahabharata end its greatest figure this way? Think about what it refuses to give him. No glory. No final battle. No enemy worthy of the moment. The most capable person in the entire epic, the one who could read every situation and bend every outcome, dies from a stray arrow while resting, and the last thing he does is reassure the terrified man who killed him.",
+      },
+      {
+        type: "paragraph",
+        text: "Read one way, this is the epic being scrupulously honest. It has spent eighteen books insisting that actions have consequences and that no one, however great, stands outside that law. Krishna presided over a war of appalling cost. He used deception, he bent rules, he made choices that saved the righteous side and left a trail of grief behind them. The Mausala Parva does not let even him escape the weight of all that. His own clan repeats the Kurukshetra pattern in miniature, and he goes down with it. Consequence reaches everyone.",
+      },
+      {
+        type: "paragraph",
+        text: "Read another way, his death is the deepest expression of the very teaching he gave Arjuna on the battlefield. In the Gita he had said the body is like a worn garment the self sets aside, and that the one who is wise grieves neither for the living nor the dead. When his own turn comes, he lives it out exactly. No fear, no protest, no clinging. He simply forgives, releases the body, and goes. The teacher does not get an exception from his own teaching. He gets to demonstrate it.",
+      },
+      {
+        type: "paragraph",
+        text: "That is the real answer to how Krishna died. On the surface, a hunter's arrow in a forest, thirty-six years after a war, at the end of a curse that filed a mace into dust and grew it back as grass. Underneath, a quiet argument that not even the divine, once it steps into a human life, gets to skip the ending that a human life contains. The Mahabharata gives Krishna the smallest possible death on purpose, because the smallness is the message.",
+      },
+    ],
+    keyLessons: [
+      {
+        icon: "🌾",
+        title: "You cannot destroy a consequence, only change its shape",
+        description: "The Yadavas ground the cursed mace to powder and banned the wine, and each precaution became the exact instrument of their ruin. When you try to bury a problem instead of resolving it, watch for the way it re-enters through the very measures meant to contain it.",
+        accent: "gold",
+      },
+      {
+        icon: "🍷",
+        title: "The largest disasters often start with the smallest lapse",
+        description: "A prank on some sages, a few cups of banned wine, one old insult spoken at the wrong moment. None of it looked catastrophic. Together they annihilated the mightiest clan of the age in an afternoon. Small ungoverned things, compounding, do the real damage.",
+        accent: "crimson",
+      },
+      {
+        icon: "🕊️",
+        title: "How you meet the end is its own kind of power",
+        description: "Krishna could not stop his death, but he chose how to meet it: without fear, without blame, forgiving the man who caused it. When an outcome is beyond changing, the one thing still fully yours is the manner in which you accept it.",
+        accent: "teal",
+      },
+    ],
+    modernConnections: [
+      {
+        context: "You have a problem you would rather bury than face, so you take steps to hide it, contain it, or file it down out of sight, telling yourself it is handled.",
+        insight: "The Mausala Parva is brutal about this. The Yadavas did everything to neutralise the mace, and every containment measure quietly turned into the mechanism of the disaster. Suppression is not resolution. A thing you refuse to deal with tends to come back wearing the shape of your own defences.",
+        example: "The powder they scattered became the reeds that armed the brawl; the one shard they could not grind became the arrowhead that killed Krishna. Nothing was destroyed. It was only postponed and disguised.",
+      },
+      {
+        context: "You are facing an ending you cannot prevent, an illness, a loss, the close of something you built, and you feel the pull to rage against it or to deny it is happening.",
+        insight: "Krishna's death models the alternative. He does not pretend the end is not coming, and he does not fight it with bitterness. He accepts what is fixed, and pours his remaining agency into how he meets it, which turns out to be with forgiveness and calm.",
+        example: "His final act is to console the hunter who shot him. The circumstances were entirely out of his control by then. His response to them was completely his own.",
+      },
+    ],
+    lifeLessons: [
+      "A consequence you refuse to resolve does not vanish; it changes form and often returns through the very measures you took to hide it.",
+      "Enormous damage is usually assembled out of small, ungoverned things, a joke, a drink, an old grudge, that no one thought worth stopping.",
+      "When an outcome is fixed, the manner in which you meet it is still entirely yours to choose.",
+      "Even the most capable people do not get to stand outside the law of consequence; greatness postpones a reckoning, it does not cancel it.",
+      "Facing an ending with acceptance rather than fear is not weakness; the Mahabharata treats it as the highest form of strength.",
+    ],
+    sloka: {
+      sanskrit: "वासांसि जीर्णानि यथा विहाय\nनवानि गृह्णाति नरोऽपराणि।\nतथा शरीराणि विहाय जीर्णा-\nन्यन्यानि संयाति नवानि देही॥",
+      transliteration: "Vasamsi jirnani yatha vihaya navani grihnati naro'parani. Tatha sharirani vihaya jirnany anyani samyati navani dehi.",
+      translation:
+        "Just as a person casts off worn-out garments and puts on new ones, so the embodied self casts off worn-out bodies and enters others that are new. — Bhagavad Gita 2.22. Krishna spoke this to Arjuna on the battlefield, years before his own end. When his death finally came in that forest, he met it exactly as this verse describes: setting the body aside without fear, without grasping, the way one lays down a garment that has done its work.",
+    },
+    faqs: [
+      {
+        question: "How did Krishna die?",
+        answer: "According to the Mausala Parva of the Mahabharata, Krishna died in a forest after his Yadava clan had destroyed itself in a drunken brawl. Resting on the ground in meditation with the sole of his foot exposed, he was struck by an arrow from a hunter named Jara, who mistook the reddish sole for a deer. Krishna forgave the hunter and left his body. His death came thirty-six years after the Kurukshetra war.",
+      },
+      {
+        question: "Who killed Krishna?",
+        answer: "A hunter named Jara killed Krishna, but entirely by accident. Seeing the sole of Krishna's foot moving among the leaves, he mistook it for a deer and shot. When he realised he had struck a man, he was overcome with grief and fell at Krishna's feet. Krishna forgave him before departing the world. There was no enemy and no intent to kill; the death was a mistake.",
+      },
+      {
+        question: "Why did Krishna's clan, the Yadavas, destroy themselves?",
+        answer: "The Yadavas were doomed by a sage's curse. Young Yadava men had insulted the sages Vishvamitra, Kanva and Narada by disguising Krishna's son Samba as a pregnant woman and asking what child he would bear. The sages cursed that he would bring forth an iron mace that would annihilate the clan. Years later, at a festival at Prabhasa, the Yadavas got drunk, an old quarrel flared, and they killed one another using reeds that turned to iron, fulfilling the curse.",
+      },
+      {
+        question: "Did Gandhari curse Krishna?",
+        answer: "Yes. In the Stri Parva, after seeing her hundred sons dead, Gandhari blamed Krishna for allowing the war's slaughter and cursed him: that thirty-six years later his own kinsmen would kill each other and he would die alone and wretched in the wilderness. Krishna accepted the curse, saying he already knew the Yadavas could only be destroyed by their own hands. His death and the fall of the Yadavas fulfil this curse.",
+      },
+      {
+        question: "Which book of the Mahabharata describes Krishna's death?",
+        answer: "The Mausala Parva, the sixteenth of the eighteen books, describes the destruction of the Yadava clan and the deaths of Balarama and Krishna. It is one of the shortest books in the epic. Gandhari's earlier curse, which sets the timing, appears in the Stri Parva, the eleventh book.",
+      },
+      {
+        question: "How long after the Mahabharata war did Krishna die?",
+        answer: "The epic places Krishna's death and the destruction of the Yadavas thirty-six years after the Kurukshetra war, the exact interval Gandhari named in her curse. During those years Dwaraka remained prosperous and the Pandavas ruled at Hastinapura before the omens of the end began to appear.",
+      },
+      {
+        question: "Was Krishna's death a punishment or a defeat?",
+        answer: "The Mahabharata does not frame it as a defeat. Krishna is not outfought or overpowered; his death comes by accident, and he accepts the curse behind it knowingly. Tradition understands the death of an avatar as a chosen laying-down of the human body rather than a punishment. The epic narrates a genuine death of the body while treating Krishna's departure as foreseen and accepted.",
+      },
+      {
+        question: "What happened to Dwaraka after Krishna died?",
+        answer: "After Krishna's death, Arjuna performed the funeral rites and led the surviving women, children and elders out of the city. As the last of them departed, the sea rose and submerged Dwaraka. On the journey, Arjuna found his divine powers had failed and could not protect the caravan from robbers, which the epic presents as a sign that an age was ending.",
+      },
+      {
+        question: "Is it true that the hunter Jara was Vali reborn?",
+        answer: "That is a later and regional tradition rather than a statement of the Mausala Parva itself. Because Krishna and Rama are understood as incarnations of the same Vishnu, some traditions link Krishna's death by a hunter's hidden arrow to Rama's killing of the monkey king Vali from concealment in the Ramayana, reading it as a settled karmic account. The epic's own text simply names a hunter, Jara, who shoots by mistake.",
+      },
+      {
+        question: "Does Krishna's death mark the start of the Kali Yuga?",
+        answer: "In traditional Hindu reckoning, yes. Krishna's departure from the world is widely held to mark the transition from the Dvapara Yuga to the present age, the Kali Yuga. The specific date assigned to this is a matter of traditional calculation rather than something the Mahabharata's narrative states, and different traditions place it differently.",
+      },
+    ],
+  },
 ];
 
 /* ─────────────────── Helpers ─────────────────── */
