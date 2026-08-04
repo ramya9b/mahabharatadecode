@@ -8695,6 +8695,304 @@ export const articles: Article[] = [
         "On the field of dharma, the field of the Kurus, gathered together and eager to fight, what did my people and the sons of Pandu do, O Sanjaya? — Bhagavad Gita 1.1. This is the very first verse of the Gita, and the question that opens the account of the war. It is asked by Dhritarashtra, the blind king, who cannot see the battlefield and must have it described to him. The whole story of the eighteen days is, in a sense, the answer to this one anxious question from a father who already senses how it will end.",
     },
   },
+
+  {
+    slug: "why-did-karnas-chariot-wheel-sink",
+    title: "Why Did Karna's Chariot Wheel Sink? The Two Curses That Came Due at Kurukshetra",
+    subtitle:
+      "On the seventeenth day of the war, the earth swallowed the left wheel of the greatest archer's chariot. It was not bad luck. Two curses, spoken years apart, arrived in the same afternoon. Here is the whole story — and the part that is myth.",
+    description:
+      "Karna's chariot wheel sinking into the earth is one of the most famous deaths in the Mahabharata. This article explains why it happened: the curse of a grieving Brahmin whose cow Karna had killed, and the curse of Parashurama that made his greatest weapon fail him. It separates what the epic actually says from the popular stories that were added later.",
+    summary:
+      "Karna's chariot wheel sank because of a Brahmin's curse: Karna had accidentally killed the man's cow, and was told the earth would seize his wheel and he would die helpless, as the cow had. At the same moment, Parashurama's curse made him forget his most powerful weapon. Arjuna beheaded him as he struggled to free the wheel.",
+    category: "Characters",
+    character: "Karna",
+    readTime: 12,
+    metaTitle: "Why Did Karna's Chariot Wheel Sink? | MahabharataDecoded",
+    metaDescription:
+      "Why did Karna's chariot wheel sink at Kurukshetra? Two curses, spoken years apart, came due in a single afternoon. The full story of his death, and what is myth.",
+    publishDate: "August 4, 2026",
+    featured: false,
+    imageKey: "karna",
+    image: "",
+    tags: [
+      "Karna",
+      "Karna curse",
+      "Karna chariot wheel",
+      "Parashurama curse",
+      "Karna death",
+      "Karna Parva",
+      "curses of Karna",
+      "Kurukshetra",
+    ],
+    pullQuote:
+      "The wheel did not sink because the ground was soft. It sank because years earlier a heartbroken man had watched Karna kill his cow and said: one day the earth will hold your wheel the way you held that animal in your sights, and you will be as helpless as she was. The Mahabharata is careful about this. Nothing in Karna's death is random.",
+    authorNote:
+      "This article draws on the Karna Parva (Book 8), where Karna's chariot wheel sinks and he recalls the curses as he dies, and on the epic's narration of his earlier life under Parashurama. The two curses — Parashurama's and the Brahmin's — are part of the Sanskrit epic; details of the insect and the cow vary across recensions and later retellings, and I have flagged where the popular 'mother earth over spilled ghee' story is a later addition rather than part of Vyasa's text.",
+    reelHook: {
+      hook: "Everyone remembers that Karna's chariot wheel got stuck in the mud at the worst possible moment. Almost no one remembers why. It was not an accident. It was a curse, spoken out loud, years before the war.",
+      supporting: "And it was not the only one. A second curse hit him in the same breath — the one that made him forget his greatest weapon. Here is how both came due on the same afternoon.",
+    },
+    relatedSlugs: ["karna-what-he-knew-and-chose", "karna-loyalty-vs-self-respect", "arjuna-karna-the-real-rivalry"],
+    storyBlocks: [
+      {
+        section: "introduction",
+        label: "Introduction",
+        paragraphs: [
+          "Picture the seventeenth day of the war. Karna finally has what he has wanted his whole life: an open field, his chariot, and Arjuna in front of him. This is the duel the entire epic has been building toward.",
+          "And then the ground opens under his left wheel. It does not break. It sinks, the earth closing around it like a hand.",
+          "Karna gets down to lift it free. In that moment, unarmed and off his chariot, he is killed. It is the most talked-about death in the Mahabharata, and the question people ask is almost always the same one: why did the wheel sink right then, at the one moment it could not afford to?",
+          "The answer is not luck, and it is not fate in the vague sense people usually mean. The epic gives a specific reason, and it involves two curses spoken years apart, by two different people, for two different reasons. On the seventeenth day, both came due at once.",
+        ],
+      },
+      {
+        section: "background",
+        label: "Two Curses, Years Apart",
+        paragraphs: [
+          "The first curse came from Parashurama, the warrior-sage Karna went to for training. Parashurama had sworn to teach only Brahmins. Karna, born to a charioteer's family, presented himself as a Brahmin to be accepted. He learned everything, including the handling of the most powerful celestial weapons.",
+          "The lie unravelled over an insect. One day Parashurama slept with his head resting on Karna's thigh. An insect bored into that thigh and Karna, refusing to move and wake his teacher, sat through the pain in silence while the blood ran. The warmth of the blood woke Parashurama, who understood at once that no Brahmin student would sit through agony like a soldier. Karna confessed. Furious at the deception, Parashurama cursed him: the knowledge he had gained by lying would desert him at the one moment he needed it most.",
+          "The second curse came from an ordinary Brahmin. Karna, practising with his bow, loosed an arrow that killed the man's cow. He offered to make it right. The Brahmin, grieving, refused every offer and cursed him instead: as the cow had been struck down helpless and unaware, so the earth would one day swallow the wheel of Karna's chariot and leave him helpless before his enemy.",
+          "Two men. Two griefs. Two very specific promises about how Karna would one day be undone. He carried both of them, quietly, all the way to Kurukshetra.",
+        ],
+      },
+      {
+        section: "turningPoint",
+        label: "The Wheel Sinks",
+        paragraphs: [
+          "By the time Karna faces Arjuna in their final duel, he is commanding the Kaurava army, with Shalya, the reluctant king of Madra, as his charioteer. The fight is even. Then the earth takes the wheel.",
+          "The Mahabharata says Karna wept from sheer rage as he felt it go, because he remembered the Brahmin's words in that instant and knew exactly what was happening. He climbed down to lift the wheel and asked Arjuna, in the name of the warrior code, to hold his fire while he was unarmed and off his chariot.",
+          "Krishna answered for Arjuna, and his answer was a list. Where was that code, he asked, when a grown Karna helped drag Draupadi into the assembly and called her names? Where was it when a ring of warriors, Karna among them, cut down the boy Abhimanyu after he was disarmed? The code Karna was invoking, Krishna said, was one Karna himself had broken when it suited him.",
+          "And here the first curse arrived on top of the second. Karna reached for his most powerful weapon and the words to summon it would not come. Parashurama's curse had chosen this exact moment to take his knowledge from him. Still tangled with the wheel, his memory failing him, Karna was beheaded by Arjuna's Anjalika arrow. Both curses, spoken so long ago, closed on him in the same breath.",
+        ],
+      },
+    ],
+    content: [
+      { type: "heading", text: "Why This Death Is Different From Every Other" },
+      {
+        type: "paragraph",
+        text: "Almost everyone in the Mahabharata dies in a way you could see coming. Bhishma chooses his own moment. Drona lays down his weapons and is killed. Duryodhana falls in a duel he insisted on. Karna is different. He is arguably the finest archer on the field, he is winning his last fight, and he is taken out by his own chariot wheel. That gap — between how good he is and how small the thing is that stops him — is why the scene stays with people.",
+      },
+      {
+        type: "paragraph",
+        text: "It is tempting to read it as the universe playing a cruel trick. But the epic is more precise than that. It tells you, in Karna's own memory as he dies, exactly why the wheel sank and why his weapon failed. Two people, years earlier, told him this was coming. To understand the death, you have to go back to the two curses.",
+      },
+      { type: "heading", text: "The First Curse: Parashurama and the Insect" },
+      {
+        type: "paragraph",
+        text: "Karna wanted the best military education available, and the best teacher of celestial weapons was Parashurama. There was a problem. Parashurama, after his long conflict with the warrior class, had taken a vow to teach only Brahmins. Karna, raised in a charioteer's household, did not qualify. So he presented himself as a Brahmin and was accepted as a student.",
+      },
+      {
+        type: "paragraph",
+        text: "For a while it worked. Karna learned the full range of weapons, the kind that could turn a single archer into an army. Then came the afternoon that undid it. Parashurama, tired, slept with his head on Karna's thigh. An insect began boring into the flesh of that thigh. The pain was severe and the wound bled, but Karna would not shift his leg, because moving would wake his teacher. He held still and let it happen.",
+      },
+      {
+        type: "paragraph",
+        text: "When the blood reached him, Parashurama woke. He looked at the wound, looked at the student who had sat through it without a sound, and drew the obvious conclusion: a Brahmin boy does not endure pain the way a trained soldier does. Pressed, Karna admitted the truth about his background. Parashurama's response was the curse that follows Karna to the end: because he had gained this knowledge through deception, the knowledge would abandon him at the decisive moment, when he needed it against his greatest enemy.",
+      },
+      {
+        type: "lesson",
+        text: "Notice the shape of the curse. Parashurama does not take Karna's skill away or make him weak. He leaves everything intact and removes only one thing: reliable access to it at the crucial moment. It is a punishment aimed precisely at the seam between having power and being able to use it when it counts.",
+      },
+      { type: "heading", text: "The Second Curse: The Brahmin's Cow" },
+      {
+        type: "paragraph",
+        text: "The second curse is quieter and, in some ways, sadder, because no one in it means any harm. Karna, practising with his bow, released an arrow that struck and killed a Brahmin's cow. There was no malice in it. It was the kind of accident that happens when a weapon is in the wrong place at the wrong time.",
+      },
+      {
+        type: "paragraph",
+        text: "Karna did what a decent person does. He apologised and offered to compensate the loss in any way the man wanted. But the Brahmin was not interested in compensation. He had lost an animal that had done nothing and could not defend itself, and his grief came out as a curse with a very specific design: since Karna had killed a helpless creature caught off guard, one day the earth would seize the wheel of Karna's chariot and leave him equally helpless and off guard before the enemy who would kill him.",
+      },
+      {
+        type: "paragraph",
+        text: "Read the two curses side by side and you can see the epic's moral engineering. Parashurama's curse punishes a lie about who Karna was. The Brahmin's curse punishes a death Karna caused without meaning to. One is about deception, the other about carelessness. Neither is dramatic villainy. And both are designed to return to Karna in exactly the shape he sent them out: helplessness for helplessness, a failure of knowledge for a lie about knowledge.",
+      },
+      { type: "heading", text: "The Seventeenth Day: When Both Curses Came True" },
+      {
+        type: "paragraph",
+        text: "By the sixteenth and seventeenth days of the war, Karna is commanding the Kaurava army. His charioteer is Shalya, a king pressed into the role, who spends much of the battle needling and demoralising him rather than encouraging him. The duel Karna has waited his whole life for finally arrives: Arjuna, in the open, nothing else in the way.",
+      },
+      {
+        type: "paragraph",
+        text: "The fight is close. And then the left wheel of Karna's chariot sinks into the ground. The Mahabharata says Karna wept from rage in that moment, because he recognised it instantly. He knew the Brahmin's curse had arrived. He got down to lift the wheel by hand and called out to Arjuna to honour the code that says you do not strike a warrior who is unarmed and off his chariot.",
+      },
+      {
+        type: "paragraph",
+        text: "Krishna refused the appeal, and his refusal is one of the most pointed speeches in the epic. He reminded Arjuna of the times Karna had thrown that same code aside: the humiliation of Draupadi in the open court, where Karna's tongue was among the cruellest; the killing of the teenage Abhimanyu by a group of warriors after the boy had been disarmed and surrounded. The protection Karna was now asking for, Krishna argued, was the protection Karna had denied others.",
+      },
+      {
+        type: "paragraph",
+        text: "As Karna struggled with the wheel, he reached for his greatest weapon — and the mantra to summon it would not come. This is Parashurama's curse landing in the same window as the Brahmin's. The knowledge was there and simply out of reach. With Karna caught between a wheel he could not free and a weapon he could not recall, Arjuna loosed the Anjalika arrow and cut off his head. Two curses, spoken years and miles apart, finished their work in the same handful of moments.",
+      },
+      { type: "heading", text: "Did You Know?" },
+      {
+        type: "paragraph",
+        text: "Parashurama taught Karna at all only because of the disguise. His vow to teach Brahmins alone is the reason Karna lied about his birth in the first place, which means the education and the curse came from the same single decision.",
+      },
+      {
+        type: "paragraph",
+        text: "It is the endurance that gives Karna away, not a confession. Parashurama deduces Karna's warrior background from the plain fact that no Brahmin student would sit silently through that kind of pain. The very toughness Karna is famous for is what exposes him.",
+      },
+      {
+        type: "paragraph",
+        text: "Karna's charioteer on his final day was Shalya, an unwilling ally who used the position to sap Karna's confidence during the battle rather than steady him. In a duel this close, a hostile charioteer is not a small disadvantage.",
+      },
+      {
+        type: "paragraph",
+        text: "The wheel sinks on the seventeenth day of the eighteen-day war, during the stretch when Karna led the Kaurava forces. His command lasts only two days before it ends here.",
+      },
+      {
+        type: "paragraph",
+        text: "Arjuna kills Karna with a specific named weapon, the Anjalika. The epic does not treat this as a stray shot; it is the deliberate stroke that ends the duel while Karna is off his chariot.",
+      },
+      {
+        type: "paragraph",
+        text: "Karna himself is the one who recalls the curses at the end. The Mahabharata does not have a narrator step in to explain the wheel. It puts the memory in Karna's own mind as he dies, which is part of what makes the scene land.",
+      },
+      { type: "heading", text: "Common Misconceptions" },
+      {
+        type: "paragraph",
+        text: "Myth: there was one curse. In fact there are at least two distinct curses at work, from two different people. Parashurama's curse takes away Karna's access to his weapon; the Brahmin's curse is the one that sinks the wheel. People often blur them into a single event, but the epic keeps them separate, and both are needed to explain the death.",
+      },
+      {
+        type: "paragraph",
+        text: "Myth: the earth goddess cursed Karna as a boy over spilled ghee, and that is why his wheel sank. This is a popular story — a child spills butter, young Karna squeezes the ground to recover it and hurts Mother Earth, who vows to trap his wheel one day. It is a memorable tale, but it is a later and regional addition, not part of Vyasa's Sanskrit epic. In the Mahabharata itself, the wheel is tied to the Brahmin whose cow Karna killed.",
+      },
+      {
+        type: "paragraph",
+        text: "Myth: Karna forgot all his weapons and became powerless. Parashurama's curse is narrower than that. It takes his reliable recall of his most powerful astra at the decisive moment. He is not reduced to a helpless novice; he loses the one thing that would have won the exchange, at the exact instant it would have won it.",
+      },
+      {
+        type: "paragraph",
+        text: "Myth: losing his natural armour and earrings was one of the curses. It was not a curse at all. Before the war, Indra came to Karna disguised as a beggar and asked for the armour and earrings Karna had been born with, knowing Karna never refused a genuine request. Karna gave them away with his eyes open. That is a sacrifice under his own vow of charity, and a deception on Indra's part, but it is not a curse.",
+      },
+      {
+        type: "paragraph",
+        text: "Myth: Kunti cursed Karna. Kunti, his birth mother, asked him for a promise, not the reverse. He agreed to spare four of the five Pandavas and aim only at Arjuna, so that whatever happened she would still have five living sons. That is a vow he gave freely, and it narrowed his war, but calling it a curse gets the direction exactly backwards.",
+      },
+      {
+        type: "paragraph",
+        text: "Myth: Karna was simply cheated out of a fair fight. This one is a real debate, not a clean error. The mechanism of his death is a sunk wheel and a failed weapon, and it does look like the deck was stacked. But the epic pairs that with Krishna's argument that Karna had himself broken the same code he was now invoking. The text does not hand you a verdict. It sets the two things next to each other — the curses that trapped him and the acts that came back to him — and leaves you to weigh them.",
+      },
+      { type: "heading", text: "So Was It Fate, or Was It Earned?" },
+      {
+        type: "paragraph",
+        text: "Here is the honest answer: the Mahabharata does not choose for you, and that is deliberate. You can read Karna's death as the purest tragedy in the epic. He is loyal, generous, born into a disadvantage he never asked for, and destroyed at his best moment by curses set in motion by an accident and a lie he told to escape his low birth. On that reading, the wheel is the universe being unfair to the one man who least deserved it.",
+      },
+      {
+        type: "paragraph",
+        text: "You can also read it as consequence catching up. The lie to Parashurama, the arrow that killed the cow, the cruelty to Draupadi, the part in Abhimanyu's death — the epic lines these up so that each one returns in its own shape. On that reading, the wheel is not the universe being unfair. It is the universe being exact.",
+      },
+      {
+        type: "paragraph",
+        text: "What makes Karna one of the great characters in world literature is that both readings are true at once, and the text refuses to collapse them. He is a victim of forces he did not fully control and the author of the choices that armed those forces. Interpretation, not fact, is where readers land differently — and the Mahabharata seems to want it that way.",
+      },
+      { type: "heading", text: "What the Wheel Was Really About" },
+      {
+        type: "paragraph",
+        text: "Strip away the drama and the sinking wheel is a single, uncomfortable idea: the things you do, even the small careless ones, even the ones you thought you got away with, keep a record. Karna's record was mostly a decent one. He was braver and more generous than almost anyone around him. But the two moments the epic chose to make decisive were a lie and an accident, and it let both of them return at the worst possible time.",
+      },
+      {
+        type: "paragraph",
+        text: "That is why the scene has outlasted three thousand years of retelling. Not because a wheel got stuck, but because everyone watching understands the fear underneath it — that somewhere, quietly, the past is keeping count, and it may present the bill on the day you can least afford to pay it. Karna paid his in full on the seventeenth day, off his chariot, reaching for a weapon whose name he could no longer remember.",
+      },
+      {
+        type: "related_links",
+        text: "Keep reading about Karna:",
+        links: [
+          { slug: "karna-what-he-knew-and-chose", label: "Karna Knew Everything. He Chose It Anyway. That Is the Point." },
+          { slug: "karna-loyalty-vs-self-respect", label: "Karna: The Man Who Chose Honour Over Everything" },
+          { slug: "arjuna-karna-the-real-rivalry", label: "Arjuna and Karna: The Rivalry Was Never About Archery" },
+        ],
+      },
+    ],
+    keyLessons: [
+      {
+        icon: "🎯",
+        title: "The harm you do tends to return in its own shape",
+        description: "Karna killed a helpless creature and was cursed to die helpless; he lied to gain knowledge and lost that knowledge at the crucial moment. The Mahabharata designs consequences to mirror the act. It is worth asking what shape your own careless moments might take on their way back.",
+        accent: "crimson",
+      },
+      {
+        icon: "🧠",
+        title: "Having the ability is not the same as being able to use it when it counts",
+        description: "Parashurama's curse left Karna's skill intact and stole only his access to it at the decisive instant. Most failures under pressure work like this — the knowledge is there, the recall isn't. Preparation has to include the moment of use, not just the learning.",
+        accent: "gold",
+      },
+      {
+        icon: "⚖️",
+        title: "You cannot invoke a rule you have already broken",
+        description: "Karna asked for the protection of the warrior code at the exact instant he needed it, and Krishna answered by naming the times Karna had denied that protection to others. The standards you hold others to are the standards you will be held to.",
+        accent: "teal",
+      },
+    ],
+    modernConnections: [
+      {
+        context: "You are about to deliver on something you know cold — a talk, an interview, a high-stakes conversation — and you are quietly afraid your mind will go blank at the worst moment.",
+        insight: "Parashurama's curse is a precise picture of choking: the ability is fully present and momentarily unreachable. The fix is never just knowing more; it is rehearsing recall under the same pressure you will face, so the moment of use is practised, not just the material.",
+        example: "Karna could have summoned his weapon in his sleep on any ordinary day. It deserted him only when everything depended on it. Train the retrieval, not only the knowledge.",
+      },
+      {
+        context: "You want to hold someone to a standard — punctuality, honesty, fairness — and you sense they might point back at your own record.",
+        insight: "Krishna's answer to Karna is the whole lesson: a rule you have broken loses its force in your mouth. Before you invoke a standard, check whether you have lived it, because the other person almost certainly remembers when you didn't.",
+        example: "Karna's plea for fairness was reasonable in itself. It failed because the person making it had thrown fairness aside when it was convenient. The argument was sound; the messenger had disqualified himself.",
+      },
+    ],
+    lifeLessons: [
+      "Small careless acts keep a record, and the record can come due at the worst possible time.",
+      "Knowing something is not the same as being able to reach it under pressure — practise the moment of use.",
+      "You forfeit the right to invoke a standard you have already broken for others.",
+      "Consequences in the Mahabharata tend to return in the same shape as the original act, which is worth remembering before you act.",
+      "A person can be genuinely admirable and still be undone by the few things they got wrong; both can be true at once.",
+    ],
+    faqs: [
+      {
+        question: "Why did Karna's chariot wheel sink into the earth?",
+        answer: "Because of a curse. Karna had accidentally killed a Brahmin's cow years earlier, and the grieving Brahmin cursed him that the earth would one day swallow his chariot wheel and leave him helpless before his enemy, just as the cow had been helpless. On the seventeenth day of the war, during his duel with Arjuna, the curse came true.",
+      },
+      {
+        question: "How many curses did Karna have?",
+        answer: "The Mahabharata gives him two that matter most: Parashurama's curse, that his knowledge of his greatest weapon would fail him at the decisive moment, and the Brahmin's curse, that his chariot wheel would be swallowed by the earth. A third story, in which the earth goddess curses him over spilled ghee, is a later and regional addition rather than part of Vyasa's epic.",
+      },
+      {
+        question: "What was Parashurama's curse on Karna?",
+        answer: "Karna had studied under Parashurama by pretending to be a Brahmin, since Parashurama taught only Brahmins. When Parashurama discovered the deception — after Karna silently endured an insect boring into his thigh so as not to wake his sleeping teacher — he cursed Karna that the knowledge gained by lying would desert him when he needed it most. In the final duel, Karna could not recall the mantra for his most powerful weapon.",
+      },
+      {
+        question: "Did Karna kill a cow, and why did that matter?",
+        answer: "Yes. While practising archery, Karna loosed an arrow that killed a Brahmin's cow by accident. He offered to compensate the loss, but the Brahmin refused and cursed him instead. That curse is the direct cause of the chariot wheel sinking at the end of his life.",
+      },
+      {
+        question: "On which day of the war did Karna die?",
+        answer: "On the seventeenth day of the eighteen-day Kurukshetra war. Karna commanded the Kaurava army for two days, the sixteenth and seventeenth, and was killed by Arjuna in their final duel when his chariot wheel sank.",
+      },
+      {
+        question: "Was Karna killed unfairly?",
+        answer: "It is debated. Karna was off his chariot and unarmed, trying to free his wheel, when Arjuna killed him, which looks like a violation of the warrior code. But when Karna appealed to that code, Krishna answered by listing the times Karna himself had broken it — including the humiliation of Draupadi and the killing of the disarmed Abhimanyu. The epic presents both sides and does not deliver a single verdict.",
+      },
+      {
+        question: "Is the story of Karna and the earth goddess and the spilled ghee true?",
+        answer: "It is a popular retelling, not part of the original Sanskrit Mahabharata. In that version, a young Karna presses the earth to recover butter a girl spilled, hurting Mother Earth, who vows to seize his wheel one day. The epic itself attributes the sinking wheel to the Brahmin whose cow Karna killed, so the ghee story is best treated as a later folk addition.",
+      },
+      {
+        question: "Did Karna forget all his divine weapons?",
+        answer: "No. Parashurama's curse was specific: it removed his reliable recall of his most powerful weapon at the decisive moment, not his entire training. He lost access to the one thing that would have decided the fight, at the exact instant it mattered, which is what makes the curse so precise and so cruel.",
+      },
+      {
+        question: "Who was Karna's charioteer when he died?",
+        answer: "Shalya, the king of Madra, was pressed into serving as Karna's charioteer. He was a reluctant ally who spent much of the battle undermining and demoralising Karna rather than supporting him, which added to the difficulty of an already close duel.",
+      },
+      {
+        question: "What weapon did Arjuna use to kill Karna?",
+        answer: "Arjuna beheaded Karna with the Anjalika, a specific named arrow. The Mahabharata treats it as the deliberate final stroke of the duel, delivered while Karna was off his chariot and struggling to free the sunken wheel.",
+      },
+    ],
+    sloka: {
+      sanskrit: "जातस्य हि ध्रुवो मृत्युर्ध्रुवं जन्म मृतस्य च।\nतस्मादपरिहार्येऽर्थे न त्वं शोचितुमर्हसि॥",
+      transliteration: "Jatasya hi dhruvo mrityur dhruvam janma mritasya cha. Tasmad apariharye 'rthe na tvam shochitum arhasi.",
+      translation:
+        "For one who is born, death is certain; and for one who dies, birth is certain. Therefore you should not grieve over the inevitable. — Bhagavad Gita 2.27. Krishna speaks this to Arjuna, not about Karna, so read it as a theme rather than a caption for the death scene. But it fits Karna better than almost anyone: his end was set in motion long before the wheel sank, by curses spoken years earlier. The Gita's point is not that Karna deserved to die, only that the wheel was always going to catch him. What he did with the life before it is the part that was his to shape.",
+    },
+  },
 ];
 
 /* ─────────────────── Helpers ─────────────────── */
