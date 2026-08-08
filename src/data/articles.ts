@@ -9807,6 +9807,272 @@ export const articles: Article[] = [
         "As a person casts off worn-out garments and puts on new ones, so the embodied self casts off worn-out bodies and enters into others that are new. — Bhagavad Gita 2.22. Krishna offers this as a teaching about the deathless self moving from body to body. It is not a caption for Shikhandi's story, but it is the frame the tradition uses to make sense of Amba returning as Shikhandi — one continuous self, a new form, an unfinished purpose carried across the change.",
     },
   },
+
+  {
+    slug: "who-wrote-the-mahabharata",
+    title: "Who Wrote the Mahabharata? The Real Answer Is Stranger Than One Name",
+    subtitle:
+      "Tradition says the sage Vyasa composed it and the god Ganesha wrote it down. Scholars say it grew over centuries in many hands. Both are true in their own way — and Vyasa, the supposed author, is also a character inside his own story.",
+    description:
+      "Ask who wrote the Mahabharata and you get two honest answers that do not quite match. The tradition names Vyasa — a sage who is also the grandfather of the very princes he writes about — dictating to Ganesha. Modern scholarship describes an oral epic that swelled from a few thousand verses to a hundred thousand over centuries. This is the full picture: what the text says about its own making, what researchers reconstruct, and why the two stories sit side by side without cancelling out.",
+    summary:
+      "The Mahabharata is traditionally credited to Vyasa (Krishna Dvaipayana), who is said to have dictated it to the god Ganesha. But the epic also describes itself growing in stages, and modern scholars treat it as an oral work composed and expanded by many hands over roughly eight centuries. Vyasa is both its named author and a character within the plot.",
+    category: "Epic Overview",
+    character: "Vyasa",
+    readTime: 13,
+    metaTitle: "Who Wrote the Mahabharata? Vyasa & the Truth | MahabharataDecoded",
+    metaDescription:
+      "Who wrote the Mahabharata? Tradition credits the sage Vyasa, who dictated it to Ganesha. Here is what the epic says about itself, what scholars think, and where the two part ways.",
+    publishDate: "August 8, 2026",
+    featured: false,
+    imageKey: "hero",
+    image: "",
+    tags: ["Who wrote the Mahabharata", "Vyasa", "Veda Vyasa", "Ganesha", "Critical Edition", "Adi Parva", "Mahabharata author", "Sanskrit epic"],
+    pullQuote:
+      "The strangest fact about the Mahabharata's author is that he is inside the book. Vyasa fathers the line whose downfall he then narrates. He is not a distant poet looking in — he is a grandfather writing about his own grandchildren killing each other.",
+    authorNote:
+      "This article draws mainly on the Adi Parva, which contains the epic's account of its own composition and transmission, and on the scholarship surrounding the Bhandarkar Oriental Research Institute (BORI) Critical Edition of the Mahabharata (1919–1966). Where the text's self-description, later tradition, and academic reconstruction differ, I have tried to say so rather than blend them.",
+    reelHook: {
+      hook: "Who actually wrote the Mahabharata? The answer is weirder than a name. The man credited with writing it is also a character in it — the grandfather of the heroes and villains both.",
+      supporting: "Tradition says Vyasa dictated it to Ganesha, who used his own broken tusk as a pen. Scholars say it grew over centuries. Here is why both answers are honest.",
+    },
+    relatedSlugs: ["mahabharata-18-parvas-in-order", "who-are-the-8-chiranjivi-immortals", "gita-verse-two-forty-seven"],
+    storyBlocks: [
+      {
+        section: "introduction",
+        label: "Introduction",
+        paragraphs: [
+          "You type the question into a search bar expecting a name, the way 'Iliad' gives you Homer. And you do get a name. The Mahabharata is credited to Vyasa — full title Krishna Dvaipayana Vyasa, a sage born on an island in a river.",
+          "But the name does not close the question. It opens a stranger one.",
+          "Because Vyasa is not standing outside the story like a poet at a desk. He is in it. He is the biological grandfather of the Pandavas and the Kauravas — the two sets of cousins whose war the whole epic describes. The author of the family's ruin is a member of the family. And the text itself, when you read how it talks about its own making, describes not one act of writing but a work that grew, stage by stage, from a few thousand verses into the longest poem humanity has ever produced.",
+          "So who wrote it? Hold both answers at once. That is the only honest way to carry this question.",
+        ],
+      },
+      {
+        section: "background",
+        label: "Who Vyasa Actually Was",
+        paragraphs: [
+          "Start with the man the tradition names. Vyasa was the son of the sage Parashara and a fisherman's daughter named Satyavati. He was born on a small island in the Yamuna, which is where 'Dvaipayana' comes from — dvipa means island. 'Krishna' here means dark, describing his complexion. So Krishna Dvaipayana is simply 'the dark one, born on the island.'",
+          "'Vyasa' is not a personal name at all. It comes from a root meaning to divide or arrange, and it is really a title — the compiler, the one who puts things in order. Tradition also credits him with dividing the single body of Vedic hymns into the four Vedas we know, which is why he is called Veda Vyasa. Later tradition goes further and treats 'Vyasa' as a recurring office held by different sages across the ages, with Krishna Dvaipayana as the Vyasa of the present cycle. Read that way, the author's name is closer to a job description than a signature.",
+          "Here is where it gets personal. According to the Adi Parva, Satyavati later married King Shantanu of Hastinapura. When her royal grandsons died without heirs, the line faced extinction. She called on her first son, Vyasa, to father children with the widowed queens through the old custom of niyoga. From those unions came Dhritarashtra, Pandu, and — through a maid — Vidura. Which means the blind king, the pale king, and the wise counsellor at the heart of the epic are all Vyasa's sons. The Pandavas and Kauravas are his grandchildren. He did not just write the tragedy. He seeded it.",
+        ],
+      },
+      {
+        section: "turningPoint",
+        label: "The Dictation, and the God With the Broken Tusk",
+        paragraphs: [
+          "The most famous image of the epic's composition is Vyasa dictating while the elephant-headed god Ganesha writes. It is a wonderful scene, and it comes with conditions on both sides.",
+          "In this account, Vyasa needed a scribe who could keep pace with a poem of a hundred thousand verses. He asked Ganesha. Ganesha agreed on one condition: Vyasa must never pause in his dictation — the pen must never stop. Vyasa accepted, but added his own clause: Ganesha must fully understand each verse before writing it down. To buy himself time to compose, Vyasa seeded the poem with knotted verses, deliberately dense lines that even Ganesha had to stop and puzzle over. The pauses those knots forced gave the sage room to think ahead. And in the best-known version, when Ganesha's pen broke mid-flow, he snapped off one of his own tusks to keep writing — which tradition offers as one explanation for why he is so often shown with a single tusk.",
+          "It is a beautiful story. It is also, and this matters, not part of the oldest reconstructed text. The Ganesha episode appears in later northern manuscripts of the epic, and when scholars assembled the Critical Edition from the manuscript evidence, they judged it a later addition and left it out of the constituted text. So the scene is genuine tradition, cherished and old — but it is tradition about the writing, not necessarily a record of it. That distinction is the whole game with a question like this one.",
+        ],
+      },
+    ],
+    content: [
+      { type: "heading", text: "Why This Question Is Harder Than It Looks" },
+      {
+        type: "paragraph",
+        text: "We are used to books having authors — one person, one act of writing, a date on the copyright page. The Mahabharata predates all of that. It began as oral literature, recited and sung and passed down before it was ever a fixed manuscript. An oral epic does not get written so much as it accumulates. Tellers add, expand, explain, and fold in older stories, and over generations the thing swells. Asking for a single author is a little like asking who 'wrote' a language.",
+      },
+      {
+        type: "paragraph",
+        text: "So the tradition and the scholarship are answering slightly different questions. The tradition answers 'who is the author-figure this work belongs to?' — and says Vyasa, with real conviction. Scholarship answers 'how did this specific text come to exist in the form we have?' — and describes a long process of composition and expansion. Neither answer is a lie. They are pointed at different things.",
+      },
+      { type: "heading", text: "The Epic's Own Account: A Book That Grew" },
+      {
+        type: "paragraph",
+        text: "Read carefully, the Mahabharata describes its own growth. The Adi Parva speaks of a core of especially dense verses — a figure of 8,800 is given for the knotted lines only a few could untangle — and elsewhere the text refers to a version of 24,000 verses, called simply the Bharata, stripped of its subsidiary tales. And then there is the full thing, the roughly 100,000-verse Mahabharata, the 'great' Bharata, with all its embedded stories, genealogies, and discourses folded in.",
+      },
+      {
+        type: "paragraph",
+        text: "Whether you take those numbers as literal history or as the tradition's own memory of a layered work, they point the same way: the epic understood itself as something that expanded. A seed, a fuller telling, and finally the vast encyclopaedia of story and teaching we now call the Mahabharata. Tradition even preserves an older name for the core — Jaya, meaning 'victory' — which survives in the invocation that opens the whole poem.",
+      },
+      { type: "heading", text: "Three Narrators, Nested Like Boxes" },
+      {
+        type: "paragraph",
+        text: "The epic does not simply begin. It arrives through a chain of tellers, and the frame is part of what it says about its own authorship. Vyasa composes the poem and teaches it to his disciples. One of them, Vaishampayana, recites it aloud at the great snake sacrifice of King Janamejaya — a descendant of the Pandavas — as an act of memory and expiation. Present at that sacrifice is a bard named Ugrashravas, called Sauti. He hears the whole recitation, and later he retells it to a gathering of sages in the Naimisha forest. The version we read is framed as Sauti reporting what Vaishampayana recited of what Vyasa composed.",
+      },
+      {
+        type: "paragraph",
+        text: "This is not decoration. A story told three times, across three settings, by three voices, is a text openly admitting it has passed through hands. The Mahabharata builds transmission into its own architecture. It tells you, in its structure, that it reached you the way oral epics always do — carried, repeated, and handed on.",
+      },
+      { type: "heading", text: "What Modern Scholarship Reconstructs" },
+      {
+        type: "paragraph",
+        text: "Academic study, working from language, style, and the manuscript record, treats the Mahabharata as a composite work built up over a long span. There is no scholarly consensus on exact dates, but a commonly cited range places the composition and expansion of the text roughly between 400 BCE and 400 CE, with an older narrative core that may reach back further. Within that span, material was added in layers — the sprawling didactic sections, philosophical dialogues, and inserted legends generally regarded as later than the central war narrative.",
+      },
+      {
+        type: "paragraph",
+        text: "That is why the Bhagavad Gita, for instance, sits inside the Bhishma Parva as part of the whole rather than as a separate book: it is one of the epic's embedded teachings. On the dating of the war itself, traditions differ sharply and there is no settled answer — traditional reckonings place it over three thousand years before the common era, while scholars who argue for a historical kernel generally propose far later dates. The honest position is that the war's historicity and date remain unresolved.",
+      },
+      { type: "heading", text: "The Critical Edition: The Closest Thing to an Original" },
+      {
+        type: "paragraph",
+        text: "If you want the most careful modern answer to 'what did the text look like,' it lives in Pune. Between 1919 and 1966, scholars at the Bhandarkar Oriental Research Institute produced the Critical Edition of the Mahabharata, first under the editorship of V. S. Sukthankar. They collated well over a thousand manuscripts from across India, in many scripts, and reconstructed the oldest recoverable form of the text — the archetype the surviving manuscripts point back toward.",
+      },
+      {
+        type: "paragraph",
+        text: "The result is telling. The constituted critical text runs to roughly 75,000 verses, notably shorter than the traditional 100,000-verse figure of the popular recensions. Passages that appear in some manuscript families but not others — the Ganesha scribe episode among them — are set apart as later growth rather than part of the reconstructed core. The Critical Edition does not claim to be Vyasa's original words. It claims something more modest and more defensible: the earliest version the evidence can reach. That is as close to an 'original' as this kind of text allows.",
+      },
+      {
+        type: "lesson",
+        text: "The two answers are not rivals. 'Vyasa wrote it' names the author-figure the tradition honours and the frame the epic gives itself. 'It grew over centuries in many hands' describes how the physical text we hold came to be. A work can have a mythic author and a composite history at the same time — and the Mahabharata is the clearest example in world literature of exactly that.",
+      },
+      { type: "heading", text: "Did You Know" },
+      {
+        type: "paragraph",
+        text: "The name 'Vyasa' is not a name but a title. It comes from a Sanskrit root meaning to divide or arrange, and it marks him as the compiler — the one who orders the material. Tradition credits the same figure with dividing the Vedas into their four collections, which is why he is called Veda Vyasa.",
+      },
+      {
+        type: "paragraph",
+        text: "Vyasa is a character inside his own epic. According to the Adi Parva he fathered Dhritarashtra, Pandu, and Vidura, making him the biological grandfather of both the Pandavas and the Kauravas whose conflict the poem narrates.",
+      },
+      {
+        type: "paragraph",
+        text: "The Mahabharata is the longest epic poem in the world. In its full traditional form of around 100,000 verses it runs to well over a million words — several times the combined length of the Iliad and the Odyssey.",
+      },
+      {
+        type: "paragraph",
+        text: "The epic reaches us through a nested frame of three narrators: Vyasa composes it, his disciple Vaishampayana recites it at King Janamejaya's snake sacrifice, and the bard Ugrashravas Sauti retells it to the sages of the Naimisha forest.",
+      },
+      {
+        type: "paragraph",
+        text: "The Ganesha dictation story — including the god snapping off his tusk to use as a pen — belongs to later northern manuscripts and was not included in the constituted text of the Critical Edition. It is beloved tradition rather than part of the oldest reconstructed epic.",
+      },
+      {
+        type: "paragraph",
+        text: "The Critical Edition took forty-seven years to complete (1919–1966) and drew on well over a thousand manuscripts. Its reconstructed text of about 75,000 verses is meaningfully shorter than the 100,000-verse popular versions.",
+      },
+      {
+        type: "paragraph",
+        text: "Vyasa is traditionally counted among the Chiranjivi, the immortals of Hindu tradition believed to live on across the ages — the same list that includes Hanuman, Parashurama, and Ashwatthama.",
+      },
+      { type: "heading", text: "Common Misconceptions" },
+      {
+        type: "paragraph",
+        text: "Misconception: one man sat down and wrote the whole Mahabharata start to finish. Correction: the epic began as oral literature and, by its own account and by scholarly reconstruction, grew in stages over a long period. Attributing it to Vyasa names its author-figure; it does not mean a single person penned all hundred thousand verses in one sitting.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception: Ganesha writing the epic with his broken tusk is part of the original text. Correction: that episode appears in later northern recensions and was left out of the Critical Edition's constituted text as a later addition. It is genuine and cherished tradition — but tradition about the composition, not part of the oldest recoverable poem.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception: Vyasa only ever wrote the Mahabharata. Correction: tradition credits him with far more — dividing the Vedas into four, and, in later tradition, composing the Puranas and the Brahma Sutras. Combined with the idea of 'Vyasa' as a recurring title, this makes him less a single biographical author and more a traditional attribution for a whole body of foundational literature.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception: the Mahabharata has always contained exactly 100,000 verses. Correction: the text itself refers to smaller forms — a dense core and a 24,000-verse Bharata — and the Critical Edition reconstructs roughly 75,000 verses. Verse counts vary across manuscript traditions. The round number of a lakh of verses is the traditional figure for the fullest recension, not a fixed constant.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception: we know exactly when it was written. Correction: there is no scholarly consensus on the date. A commonly cited window for the composition and expansion of the text is roughly 400 BCE to 400 CE, with debate about how far back an older core may go. Anyone who gives you a single confident year is overstating what the evidence supports.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception: the Bhagavad Gita is a separate book that was later inserted into the Mahabharata as an outside text. Correction: the Gita sits within the Bhishma Parva as one of the epic's embedded teachings. Whatever its layered history, in the form we have it is presented as part of the whole, not a foreign document stapled on.",
+      },
+      { type: "heading", text: "So, Who Wrote It?" },
+      {
+        type: "paragraph",
+        text: "Here is the answer that respects both the tradition and the evidence. The Mahabharata is credited to Vyasa, and that credit is meaningful: he is the author-figure the work belongs to, the compiler whose name marks the ordering intelligence behind it, and — uniquely — a character woven into the very story he is said to have made. That is the tradition's truth, and it is not naïve. It is a culture telling you who owns this book.",
+      },
+      {
+        type: "paragraph",
+        text: "And the Mahabharata is also a composite epic that grew over centuries, carried on the breath of reciters, expanded by many hands, and finally fixed in writing in forms that still varied from region to region until modern scholars did the patient work of tracing them back toward a common source. That is the historian's truth.",
+      },
+      {
+        type: "paragraph",
+        text: "You do not have to choose. The remarkable thing about this particular question is that the two answers illuminate each other. A mythic author and a living, growing text — that is not a contradiction to be resolved. It is what a scripture that a whole civilisation kept retelling for two thousand years actually looks like from the inside.",
+      },
+    ],
+    keyLessons: [
+      {
+        icon: "🖋️",
+        title: "Authorship can be real without being singular",
+        description: "Vyasa is genuinely the Mahabharata's author-figure and also not its only maker. In your own work, crediting one guiding mind and acknowledging many contributing hands are not in conflict — most large things are built both ways at once.",
+        accent: "gold",
+      },
+      {
+        icon: "🧩",
+        title: "Separate what a source says from how a source came to be",
+        description: "The tradition answers 'whose work is this?' and scholarship answers 'how did this text form?' Confusing the two questions creates false arguments. Learning to ask which question is on the table is a real thinking skill.",
+        accent: "teal",
+      },
+      {
+        icon: "🌱",
+        title: "The best things accumulate",
+        description: "The epic grew from a core into a hundred thousand verses over generations. Enduring work is rarely finished in one act — it is seeded, retold, expanded, and refined by people who never meet each other. Patience with slow accretion is its own discipline.",
+        accent: "crimson",
+      },
+    ],
+    modernConnections: [
+      {
+        context: "You are trying to establish who is responsible for something large — a codebase, a research field, a long-running project — and you keep looking for a single name to assign it to.",
+        insight: "The Mahabharata's authorship shows that 'who made this?' and 'who is it credited to?' can have different, equally valid answers. A guiding author-figure and a long chain of contributors coexist. Naming one does not erase the other.",
+        example: "Vyasa is the credited author and also one node in a chain — composer, then Vaishampayana the reciter, then Sauti the bard, then centuries of transmission. The credit and the history are both true.",
+      },
+      {
+        context: "You encounter a confident claim about an ancient text — an exact date, a single author, a definitive original — and you are not sure how much to trust it.",
+        insight: "With works like this, the honest answer is usually a range and a method, not a fact and a name. The Critical Edition's value is precisely that it says what it can defend and no more. Confidence beyond the evidence is a warning sign, not a strength.",
+        example: "Scholars offer roughly 400 BCE to 400 CE and a reconstructed archetype of about 75,000 verses — bounded, sourced, revisable. That modesty is what makes it credible.",
+      },
+    ],
+    lifeLessons: [
+      "A mythic author and a composite history can both be true of the same work — you do not always have to pick one story.",
+      "Separating 'who is this credited to?' from 'how did this actually form?' dissolves a lot of pointless arguments.",
+      "Great works usually accumulate over time and many hands rather than arriving finished from one mind.",
+      "Beware anyone who gives a single confident date or author for something the evidence can only bound — modesty about sources is a mark of seriousness.",
+      "How a tradition remembers its origins tells you what that tradition values, even when it is not literal history.",
+    ],
+    faqs: [
+      {
+        question: "Who wrote the Mahabharata?",
+        answer: "Tradition credits the sage Vyasa (Krishna Dvaipayana Vyasa) as the author. Modern scholarship treats the epic as a composite oral work that grew over several centuries in many hands. Both answers are honest: 'Vyasa' names the author-figure the work is attributed to, while the scholarly account describes how the physical text came to exist.",
+      },
+      {
+        question: "Did Vyasa really write the whole Mahabharata himself?",
+        answer: "Not in the modern sense of a single person writing a finished book. The Mahabharata began as oral literature and, by its own account and by scholarly reconstruction, expanded in stages. Vyasa is the tradition's author-figure and compiler; the text as we have it reflects a long process of composition, recitation, and expansion.",
+      },
+      {
+        question: "Did Ganesha actually write the Mahabharata?",
+        answer: "The story of Ganesha writing while Vyasa dictated is a well-loved tradition, but it appears in later northern manuscripts and was not included in the constituted text of the Critical Edition. It is treasured tradition about the epic's composition rather than part of the oldest reconstructed poem.",
+      },
+      {
+        question: "What does the name 'Vyasa' mean?",
+        answer: "It comes from a Sanskrit root meaning to divide or arrange, so it functions as a title — the compiler or arranger — rather than a personal name. He is called Veda Vyasa because tradition credits him with dividing the Vedas into four. Later tradition treats 'Vyasa' as a recurring office held across the ages.",
+      },
+      {
+        question: "How is Vyasa related to the Pandavas and Kauravas?",
+        answer: "According to the Adi Parva, Vyasa fathered Dhritarashtra, Pandu, and Vidura through the custom of niyoga after the royal line faced extinction. That makes him the biological grandfather of both the Pandavas and the Kauravas — the author is literally a character within the family whose story he tells.",
+      },
+      {
+        question: "When was the Mahabharata written?",
+        answer: "There is no scholarly consensus on exact dates. A commonly cited range places the composition and expansion of the text roughly between 400 BCE and 400 CE, with debate about an older narrative core. Traditional reckonings of the war itself differ sharply from scholarly estimates, and its date remains unresolved.",
+      },
+      {
+        question: "How long is the Mahabharata?",
+        answer: "In its full traditional form it contains around 100,000 verses and well over a million words, making it the longest epic poem in the world — several times the combined length of the Iliad and the Odyssey. The Critical Edition's reconstructed text is shorter, at roughly 75,000 verses.",
+      },
+      {
+        question: "What is the Critical Edition of the Mahabharata?",
+        answer: "It is a scholarly reconstruction produced at the Bhandarkar Oriental Research Institute (BORI) in Pune between 1919 and 1966, initially under V. S. Sukthankar. Editors collated well over a thousand manuscripts to recover the oldest reachable form of the text, roughly 75,000 verses, setting aside passages judged to be later additions.",
+      },
+      {
+        question: "Is the Bhagavad Gita a separate book from the Mahabharata?",
+        answer: "No. The Bhagavad Gita sits within the Bhishma Parva as one of the epic's embedded teachings — the dialogue between Krishna and Arjuna on the battlefield. Whatever its layered textual history, in the form we have it is part of the Mahabharata rather than an independent work inserted from outside.",
+      },
+      {
+        question: "Is Vyasa considered immortal?",
+        answer: "Yes. Hindu tradition counts Vyasa among the Chiranjivi, the immortals believed to live on through the ages until the end of the current cosmic cycle — the same tradition that includes figures such as Hanuman, Parashurama, and Ashwatthama.",
+      },
+    ],
+    sloka: {
+      sanskrit: "नारायणं नमस्कृत्य नरं चैव नरोत्तमम्।\nदेवीं सरस्वतीं व्यासं ततो जयमुदीरयेत्॥",
+      transliteration: "Narayanam namaskritya naram chaiva narottamam. Devim sarasvatim vyasam tato jayam udirayet.",
+      translation:
+        "Having bowed to Narayana and to Nara, the most exalted of beings, and to the goddess Sarasvati, and to Vyasa — then let one utter Jaya. — the traditional invocation that opens the Mahabharata. It is worth noticing that the epic's own first breath names Vyasa alongside the divine, and calls the story that follows not 'Mahabharata' but Jaya, 'Victory' — the older name for the work, preserved right at the threshold.",
+    },
+  },
 ];
 
 /* ─────────────────── Helpers ─────────────────── */
