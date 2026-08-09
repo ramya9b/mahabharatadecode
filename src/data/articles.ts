@@ -10073,6 +10073,304 @@ export const articles: Article[] = [
         "Having bowed to Narayana and to Nara, the most exalted of beings, and to the goddess Sarasvati, and to Vyasa — then let one utter Jaya. — the traditional invocation that opens the Mahabharata. It is worth noticing that the epic's own first breath names Vyasa alongside the divine, and calls the story that follows not 'Mahabharata' but Jaya, 'Victory' — the older name for the work, preserved right at the threshold.",
     },
   },
+
+  {
+    slug: "how-did-jarasandha-die",
+    title: "How Did Jarasandha Die? The King Who Could Not Be Wounded",
+    subtitle:
+      "He was the most powerful king of his age, and his body simply would not stay hurt. Cut him and the cut closed. Break him and he mended. Killing Jarasandha took the strength of Bhima, days of wrestling, and one silent hint from Krishna that turned on the strangest fact of his birth.",
+    description:
+      "Jarasandha, emperor of Magadha, was so strong that even Krishna avoided fighting him directly for years. The reason he was so hard to kill goes back to how he was born — in two halves, joined together by a demoness. This is the full story of his death: why he had to die before Yudhishthira's Rajasuya, how Bhima wrestled him for days, and the wordless hint from Krishna that finally ended him.",
+    summary:
+      "Jarasandha, the mighty king of Magadha, was born in two halves that a demoness fitted together, so wounds on his body simply sealed shut. Bhima wrestled him for days and could not finish him — until Krishna silently split a twig and threw the two pieces in opposite directions. Bhima understood, tore Jarasandha in two, and cast the halves apart so they could not rejoin.",
+    category: "Characters",
+    character: "Jarasandha",
+    readTime: 12,
+    metaTitle: "How Did Jarasandha Die? The Full Story | MahabharataDecoded",
+    metaDescription:
+      "How did Jarasandha die? Born in two halves and rejoined by a demoness, he could be killed only one way: Bhima's grip and Krishna's silent hint with a twig.",
+    publishDate: "August 9, 2026",
+    featured: false,
+    imageKey: "krishna",
+    image: "",
+    tags: ["Jarasandha", "Bhima", "Krishna", "Sabha Parva", "Magadha", "Rajasuya", "Mahabharata"],
+    pullQuote:
+      "Krishna did not kill Jarasandha, and he did not need to lift a hand in the fight. He picked up a twig, tore it down the middle, and threw the two halves in opposite directions. Bhima looked up, understood, and did the same thing to a living king. The whole strategy fit inside a single silent gesture.",
+    authorNote:
+      "This article draws mainly from the Sabha Parva of the Mahabharata, which contains both Jarasandha's birth story and the account of his death at Bhima's hands. The background of his long feud with Krishna and the Yadavas — the repeated attacks on Mathura and Krishna's move to Dwarka — comes largely from Puranic and Harivamsha tradition rather than the core epic, and is labelled as such below.",
+    reelHook: {
+      hook: "There was one king in the Mahabharata so strong that Krishna refused to fight him. His body would not stay wounded — every cut just closed. So how do you kill a man who cannot be hurt?",
+      supporting: "The answer was hidden in how he was born. Bhima wrestled him for days and got nowhere. Then Krishna picked up a twig, split it, and threw the halves apart. That gesture ended Jarasandha.",
+    },
+    relatedSlugs: ["krishna-leadership-secrets", "how-did-ghatotkacha-die", "what-is-the-chakravyuh"],
+    storyBlocks: [
+      {
+        section: "introduction",
+        label: "Introduction",
+        paragraphs: [
+          "Every dangerous figure in the Mahabharata has a weak point. Karna has his curses. Duryodhana has his thigh. Bhishma has the day he chooses to die. But Jarasandha, the emperor of Magadha, had something stranger than a weakness — he had a body that refused to stay broken.",
+          "Cut him, and the cut closed. Snap a bone, and it knit back. He was the strongest king of his generation, and for a long stretch of the story he is the one opponent even Krishna will not meet head-on in open war.",
+          "So here is the puzzle the epic sets for you: how do you kill a man who cannot be hurt in any ordinary way? The answer is one of the quietest, cleverest moments in the whole Mahabharata, and it turns entirely on how Jarasandha came into the world.",
+        ],
+      },
+      {
+        section: "background",
+        label: "A Child Assembled by a Demoness",
+        paragraphs: [
+          "Jarasandha's father was Brihadratha, the king of Magadha. He had everything a king could want except the one thing he needed — an heir. According to the Sabha Parva, a sage named Chandakaushika took pity on him and gave him a single fruit to hand to his queen, promising it would bring a son.",
+          "Here the story turns on a small, human decision. Brihadratha had two wives, and he loved them equally. Rather than choose between them, he cut the fruit in half and gave one piece to each. In time each queen gave birth — but each delivered only half of a child. Two lifeless halves, perfectly divided down the middle.",
+          "Horrified, the attendants wrapped the two pieces and left them at a crossroads. There a rakshasi named Jara found them. To carry them more easily she happened to fit the two halves together — and the moment they joined, the child came alive and cried out. The name Jarasandha means exactly this: 'joined by Jara.' A boy who was, quite literally, two halves made one. Hold on to that detail. It is the whole story.",
+        ],
+      },
+      {
+        section: "turningPoint",
+        label: "The Match at Girivraja",
+        paragraphs: [
+          "Years later, Krishna leads Bhima and Arjuna into Jarasandha's capital in disguise and forces a confrontation. Jarasandha, offered a choice of opponent, picks Bhima — the only one of the three he judges his equal in raw strength. The two men fight bare-handed, and the contest goes on for days.",
+          "And nothing works. Every time Bhima seems to finish him, Jarasandha recovers. His body keeps doing what it has always done: closing, mending, coming back together. Bhima is the strongest man alive, and he is running out of strength against a man who cannot be worn down.",
+          "Then Krishna, watching from the side, picks up a twig from the ground. He splits it lengthwise and throws the two halves in opposite directions. He says nothing. Bhima understands. He seizes Jarasandha, tears him in two down the middle — the same seam he was born along — and hurls the two halves far apart, so they land facing away from each other and cannot join back. That is how Jarasandha dies.",
+        ],
+      },
+    ],
+    content: [
+      { type: "heading", text: "Why This One Death Matters" },
+      {
+        type: "paragraph",
+        text: "Most deaths in the Mahabharata are settled by force or by a broken rule. Jarasandha's is settled by an idea. He is the rare enemy who cannot be beaten by being stronger, because he is already stronger than almost everyone. To kill him, someone has to understand him — has to know the one fact about his body that undoes all his power. That is why his death is remembered less as a battle and more as a puzzle solved.",
+      },
+      {
+        type: "paragraph",
+        text: "It also matters because of what it made possible. Jarasandha stood directly in the path of Yudhishthira's ambition to be recognised as emperor. Removing him is the move that clears the board for the Rajasuya sacrifice, which in turn feeds the pride and rivalry that eventually lead to Kurukshetra. Pull this one thread and a lot of the later story starts to move.",
+      },
+      { type: "heading", text: "A King Born in Two Pieces" },
+      {
+        type: "paragraph",
+        text: "It is worth slowing down on the birth, because everything else depends on it. The Mahabharata does not describe Jarasandha as a demon or a monster. He is a human king — devout, disciplined, and by most accounts a fair ruler to his own people. What sets him apart is the manner of his making. He was formed from two separate halves, grown in two different mothers, brought to life only when a passing rakshasi pressed them together.",
+      },
+      {
+        type: "paragraph",
+        text: "A body assembled that way carries the logic of its assembly. It holds together with a kind of stubbornness that ordinary bodies do not have. In the wrestling match this shows up as a near-total resistance to damage: strike him and the two halves simply re-seal along the seam where they were first joined. The catch, and the only catch, is direction. He can be rejoined, but only if the pieces face the right way. Reverse them, and the mending has nothing to grip.",
+      },
+      {
+        type: "paragraph",
+        text: "This is the elegance of Krishna's hint. He does not tell Bhima to hit harder or aim better. He tells him, without a word, that the answer is not force at all — it is orientation. Split the man and turn the halves away from each other. The strength was Bhima's. The insight was Krishna's. Neither alone would have been enough.",
+      },
+      { type: "heading", text: "The King Krishna Would Not Fight" },
+      {
+        type: "paragraph",
+        text: "Long before this wrestling match, Jarasandha and Krishna were bitter enemies — and here the story leans on tradition beyond the core epic. According to Puranic and Harivamsha accounts, Jarasandha's two daughters, Asti and Prapti, were married to Kamsa, the tyrant of Mathura whom Krishna killed. When Krishna struck down Kamsa, he did not just remove an uncle who had tried to murder him since birth; he made a widow-maker of himself in Jarasandha's eyes. A powerful emperor now had a personal reason to destroy him.",
+      },
+      {
+        type: "paragraph",
+        text: "Traditional retellings say Jarasandha attacked Mathura again and again — the figure often quoted is seventeen assaults — and that Krishna repeatedly chose to withdraw rather than commit his people to a war they could not yet win. Eventually he moved the entire Yadava community west, to the sea-fortress city of Dwarka, out of Jarasandha's reach. It is from these retreats that devotional tradition gives Krishna the affectionate title 'Ranchhod,' meaning roughly 'the one who left the battle.' In that tradition it is worn as praise, not insult: the wisdom to protect your people is not the same as fear.",
+      },
+      {
+        type: "paragraph",
+        text: "You should treat these details with a light hand. The repeated sieges of Mathura and the move to Dwarka belong mostly to the Puranas and the Harivamsha, not to the main body of the Mahabharata. What the epic itself makes very clear is the underlying fact: Jarasandha was strong enough that a direct, open confrontation with him was something even Krishna preferred to avoid. The whole plan that follows is built around not fighting him fairly.",
+      },
+      { type: "heading", text: "The Problem Called Rajasuya" },
+      {
+        type: "paragraph",
+        text: "Fast forward to the Pandavas. Yudhishthira wants to perform the Rajasuya, the great imperial sacrifice that would mark him as a sovereign over other kings. Krishna, when asked, gives him a blunt piece of political counsel: you cannot become emperor while Jarasandha lives. As long as he holds power, no one else can truly claim the top of the order.",
+      },
+      {
+        type: "paragraph",
+        text: "There was a darker piece to it as well. The Mahabharata says Jarasandha had captured many rival kings and was holding them prisoner, intending to offer them in a great sacrifice of his own. Freeing those captive kings was reason enough to act, quite apart from Yudhishthira's ambitions. So the mission is framed two ways at once: it is a power play, and it is a rescue. Both things are true.",
+      },
+      {
+        type: "paragraph",
+        text: "Krishna's proposed method is telling. He does not suggest marching the Pandava army to Magadha. He suggests that three men go quietly — himself, Bhima, and Arjuna — and settle the matter through a single duel. Against a king who cannot be beaten in open war, the plan is to make the war small enough that one man's strength, guided by one man's cunning, can decide it.",
+      },
+      { type: "heading", text: "Three Brahmins Who Were Not Brahmins" },
+      {
+        type: "paragraph",
+        text: "Krishna, Bhima, and Arjuna travel to Jarasandha's capital, Girivraja — also called Rajagriha, in the Magadha region of what is now Bihar — dressed as brahmins. According to the Sabha Parva they enter the city by an unconventional route rather than the main gate, a small act of defiance that announces they are not ordinary guests. Jarasandha, a generous host to brahmins, receives them.",
+      },
+      {
+        type: "paragraph",
+        text: "But he is no fool. He notices that these men have the bearing and the scarred forearms of warriors, not the manner of priests. He challenges the disguise. At that point Krishna drops the pretense and names them: the Yadava prince and two of the Pandava brothers. He tells Jarasandha plainly why they have come and offers him a choice of single combat against any one of the three.",
+      },
+      {
+        type: "paragraph",
+        text: "Jarasandha chooses Bhima. It is a revealing choice. Of the three, Bhima is the one whose strength most resembles his own, and Jarasandha is a fighter who respects a real contest. He does not pick the weakest opponent to guarantee a win; he picks the strongest, because a king like Jarasandha measures himself against the best. That instinct is, in a way, admirable. It is also exactly what Krishna is counting on.",
+      },
+      { type: "heading", text: "The Fight That Would Not End" },
+      {
+        type: "paragraph",
+        text: "The two men wrestle. Not for an afternoon — for a long stretch that traditional retellings commonly describe as running many days, though the exact figure varies between versions and is not something the text pins down in a single agreed number. What matters is not the count but the pattern: Bhima lands blow after blow, throw after throw, and Jarasandha keeps getting up. The damage will not hold. His body keeps sealing itself back together.",
+      },
+      {
+        type: "paragraph",
+        text: "This is the moment where brute force reaches its limit. Bhima is the physically strongest man in the epic, and strength alone is not going to do it. He is tiring against an opponent who does not seem able to tire the same way. If nothing changes, the longer fight will eventually go to Jarasandha simply by outlasting him.",
+      },
+      {
+        type: "paragraph",
+        text: "And then comes the gesture. Krishna, forbidden by the rules of the duel to intervene directly, communicates without words. He takes a twig — some versions say a straw or a small branch — splits it cleanly down the middle, and tosses the two halves in opposite directions. It is the plainest possible visual instruction. Bhima reads it instantly. He gets his grip, tears Jarasandha apart along the old seam, and throws the two halves so that they fall pointing away from each other. With no way to line back up, the pieces cannot rejoin. The king who could not be wounded is finally, permanently, dead.",
+      },
+      {
+        type: "lesson",
+        text: "The design of Jarasandha's death is almost surgical: the very thing that made him invincible — a body joined from two halves — is the thing that kills him. His strength and his weakness are the same fact, read from two directions. Krishna does not overpower the flaw; he simply points at it. It is a small masterclass in the idea that the answer to an impossible problem is often hidden inside the problem itself.",
+      },
+      { type: "heading", text: "Did You Know: Eight Facts About Jarasandha" },
+      {
+        type: "paragraph",
+        text: "His name is a description of his birth. 'Jarasandha' breaks down into 'Jara' — the rakshasi who found him — and 'sandha,' meaning joined or united. He is, by name, the child that was put together.",
+      },
+      {
+        type: "paragraph",
+        text: "He ruled Magadha from Girivraja. His kingdom, Magadha, and its hill-ringed capital Girivraja (Rajagriha) correspond to the region around modern Rajgir in Bihar, a place that would later become one of the most important centres of ancient India.",
+      },
+      {
+        type: "paragraph",
+        text: "He chose the hardest fight on offer. Given three opponents, Jarasandha picked Bhima, the strongest — not the weakest. It was a fighter's choice, driven by pride in a fair contest.",
+      },
+      {
+        type: "paragraph",
+        text: "He was not immortal. Unlike the Chiranjivi such as Ashwatthama or Hanuman, Jarasandha had no blessing of deathlessness. He was hard to kill because of a specific physical quirk, not because he could not die at all.",
+      },
+      {
+        type: "paragraph",
+        text: "He was Kamsa's father-in-law, by tradition. Puranic accounts hold that his daughters were married to Kamsa of Mathura, which is why Krishna's killing of Kamsa turned Jarasandha into a lifelong enemy of the Yadavas.",
+      },
+      {
+        type: "paragraph",
+        text: "His capture of rival kings set the moral stage. The epic says he had imprisoned many kings and intended to sacrifice them; his death freed those captives, which is part of why the mission is framed as just and not merely ambitious.",
+      },
+      {
+        type: "paragraph",
+        text: "He never reached the Kurukshetra war. Jarasandha died years before the eighteen-day war, during the events leading up to the Rajasuya. He is background to that conflict, not a participant in it.",
+      },
+      {
+        type: "paragraph",
+        text: "His son continued the line. Sahadeva of Magadha — not to be confused with the Pandava of the same name — succeeded him and later allied with the Pandavas, appearing among the kings who supported Yudhishthira.",
+      },
+      { type: "heading", text: "Common Misconceptions About Jarasandha" },
+      {
+        type: "paragraph",
+        text: "Misconception: Jarasandha fought at Kurukshetra. He did not. He was killed well before the great war, in the run-up to Yudhishthira's Rajasuya. His death is a cause of later events, not part of the war itself.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception: Bhima killed him with a weapon. It was a bare-handed wrestling match, an unarmed duel. Bhima finished him with his own hands by tearing him apart, not with a mace or a blade.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception: Krishna killed Jarasandha. Krishna designed the whole plan and gave the decisive hint, but he never entered the fight. The kill belonged to Bhima. Krishna's role was strategy, not the blow — a distinction the epic is careful to keep.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception: Jarasandha was a demon. He was a human king. The only rakshasi in the story is Jara, who joined his two halves at birth. His power was extraordinary, but he was mortal and, in his own realm, a respected ruler.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception: Krishna abandoning Mathura was cowardice. In the tradition that records those retreats, the withdrawal to Dwarka is read as protecting the Yadava people against a stronger foe until the odds could be changed. The title 'Ranchhod' is carried in that tradition as honour, not shame.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception: Jarasandha could never be killed. He was not unkillable, only very hard to kill by normal means. He had one exploitable vulnerability — the direction his rejoined halves had to face — and once that was understood, his death was straightforward.",
+      },
+      { type: "heading", text: "What Jarasandha's Death Is Really About" },
+      {
+        type: "paragraph",
+        text: "Strip away the wrestling and the disguises and you are left with a simple lesson the Mahabharata keeps teaching in different costumes: some problems cannot be solved by more of the same. Bhima's strength was never going to be enough, because the problem was not a shortage of strength. It was a misunderstanding of what kind of problem Jarasandha was.",
+      },
+      {
+        type: "paragraph",
+        text: "Krishna's contribution is not power. It is a change of frame. He looks at a body that heals and asks a different question — not 'how do I hurt it more?' but 'what does it need in order to heal, and can I take that away?' The twig is the whole answer compressed into a gesture. Turn the halves apart, and the strength that made Jarasandha invincible has nothing to work with.",
+      },
+      {
+        type: "paragraph",
+        text: "There is a second, gentler thread here too. Jarasandha is not a cartoon villain. He is generous to guests, honest in combat, willing to face the strongest man across from him. The epic lets him keep his dignity even as it removes him from the board. His death is not a punishment for wickedness so much as the clearing of an obstacle — a reminder that the Mahabharata rarely deals in pure heroes and pure monsters, and that even the people standing in the way of the story can be granted their measure of respect.",
+      },
+    ],
+    keyLessons: [
+      {
+        icon: "🧩",
+        title: "The hardest problems are solved by reframing, not by force",
+        description: "Bhima had all the strength in the world and it wasn't enough. What ended Jarasandha was Krishna seeing the problem differently — not 'hit harder' but 'take away what lets him recover.' When effort stops working, change the question.",
+        accent: "gold",
+      },
+      {
+        icon: "🔄",
+        title: "A great strength and a great weakness are often the same trait",
+        description: "The joined body that made Jarasandha invincible was the exact thing that killed him. Look closely at whatever makes someone or something powerful — the flaw is usually folded into it, waiting to be read from the other side.",
+        accent: "crimson",
+      },
+      {
+        icon: "🤝",
+        title: "The right people plus the right insight beats either one alone",
+        description: "Krishna could not have torn Jarasandha apart, and Bhima would never have thought to reverse the halves. The kill needed both the strength and the idea. Most real victories are a partnership between someone who can act and someone who can see.",
+        accent: "teal",
+      },
+    ],
+    modernConnections: [
+      {
+        context: "You are pushing hard at a problem — more hours, more effort, more of the same tactic — and it simply is not moving. The harder you push, the more it seems to absorb.",
+        insight: "Jarasandha teaches that when force stops working, the issue is usually the frame, not the effort. Bhima's strength was never the missing piece. The missing piece was understanding what kind of problem he was actually facing.",
+        example: "Krishna did not tell Bhima to try harder. He showed him, with a split twig, that the solution was about orientation, not power. One change of angle ended a fight that days of raw force could not.",
+      },
+      {
+        context: "You are facing an opponent, a competitor, or an obstacle that seems to have no weak spot — every attack just bounces off.",
+        insight: "The Mahabharata's answer is to study what the thing needs in order to keep going, and then remove that, rather than attacking the strong parts directly. The vulnerability is rarely where the strength is; it is in what the strength depends on.",
+        example: "Jarasandha's body could rejoin, but only in one orientation. His invincibility had a hidden condition. Find the condition, and the invincibility ends.",
+      },
+    ],
+    lifeLessons: [
+      "When more effort stops working, the problem is usually the approach, not the amount of effort.",
+      "The trait that makes someone strongest often hides the exact way they can be undone.",
+      "Raw ability needs the right insight beside it — strength without strategy runs out of road.",
+      "An opponent who looks unbeatable usually has a hidden condition their power depends on; find it.",
+      "You can remove someone from your path and still grant them their dignity — the two are not in conflict.",
+    ],
+    sloka: {
+      sanskrit: "परित्राणाय साधूनां विनाशाय च दुष्कृताम्।\nधर्मसंस्थापनार्थाय सम्भवामि युगे युगे॥",
+      transliteration: "Paritranaya sadhunam vinashaya cha dushkritam. Dharma-samsthapanarthaya sambhavami yuge yuge.",
+      translation:
+        "To protect the good, to destroy the wicked, and to reestablish dharma, I appear age after age. — Bhagavad Gita 4.8. Krishna speaks this later, on a different battlefield, but the engineering of Jarasandha's death is the same principle in action. A tyrant holding kings captive is removed not by a fair open war he would win, but by insight applied at exactly the right point. Whether you read Krishna's methods as divine order or hard-edged statecraft is a question the epic leaves genuinely open.",
+    },
+    faqs: [
+      {
+        question: "How did Jarasandha die?",
+        answer: "Bhima killed him in a bare-handed wrestling match. Because Jarasandha's body could seal any wound, ordinary blows failed. Krishna silently split a twig and threw the halves in opposite directions, hinting that Jarasandha had to be torn in two along the seam of his birth and the pieces flung apart so they could not rejoin. Bhima did exactly that.",
+      },
+      {
+        question: "Why couldn't Bhima kill Jarasandha normally?",
+        answer: "Jarasandha was born in two halves that a demoness joined together, and his body kept re-sealing itself along that seam. No matter how hard Bhima struck, the damage closed up. He could only be killed by splitting him apart and reversing the halves so they had no way to line back up.",
+      },
+      {
+        question: "Who was Jarasandha in the Mahabharata?",
+        answer: "Jarasandha was the king of Magadha and one of the most powerful monarchs of his era. He ruled from Girivraja (Rajagriha) and was strong enough that even Krishna avoided fighting him directly in open war. He stood as the main obstacle to Yudhishthira's ambition to perform the Rajasuya sacrifice.",
+      },
+      {
+        question: "How was Jarasandha born?",
+        answer: "According to the Sabha Parva, King Brihadratha of Magadha was given a fruit by a sage to grant him a son. He divided it between his two wives, and each gave birth to one lifeless half of a child. The halves were discarded and found by a rakshasi named Jara, who fitted them together — bringing the boy to life. His name means 'joined by Jara.'",
+      },
+      {
+        question: "Why did Krishna want Jarasandha dead?",
+        answer: "Two reasons. Politically, Krishna advised that Yudhishthira could not be recognised as emperor through the Rajasuya while Jarasandha held power. Morally, the epic says Jarasandha had captured many rival kings and meant to sacrifice them, so his defeat freed those prisoners. In Puranic tradition there was also a long personal feud after Krishna killed Jarasandha's son-in-law, Kamsa.",
+      },
+      {
+        question: "How many days did Bhima and Jarasandha fight?",
+        answer: "The epic describes a prolonged contest, and traditional retellings commonly speak of it lasting many days. The exact number varies between versions and is not fixed by a single agreed figure. What the story emphasises is not the count but that Bhima's strength alone could not end it until Krishna gave his hint.",
+      },
+      {
+        question: "Did Krishna kill Jarasandha?",
+        answer: "No. Krishna planned the mission and gave the decisive silent hint, but he never fought. The kill belonged to Bhima. The Mahabharata is careful to keep this distinction — Krishna supplied the strategy and the insight, Bhima supplied the strength and struck the final act.",
+      },
+      {
+        question: "Which Parva tells the story of Jarasandha's death?",
+        answer: "The Sabha Parva, the second book of the Mahabharata. It contains both his birth story and the account of the duel with Bhima. The background of his feud with Krishna and the Yadavas comes largely from Puranic sources such as the Harivamsha rather than from the core epic.",
+      },
+      {
+        question: "Did Jarasandha fight in the Kurukshetra war?",
+        answer: "No. He died years before the great war, during the events leading to the Rajasuya sacrifice. His son Sahadeva of Magadha later ruled the kingdom and allied with the Pandavas, but Jarasandha himself was never part of the eighteen-day war.",
+      },
+      {
+        question: "Was Jarasandha immortal like the Chiranjivi?",
+        answer: "No. Jarasandha was mortal. He was extremely difficult to kill because of the way his body rejoined after injury, but he had no blessing of deathlessness. That sets him apart from the Chiranjivi such as Ashwatthama, Hanuman, or Parashurama, who are traditionally held to live on through the ages.",
+      },
+    ],
+  },
 ];
 
 /* ─────────────────── Helpers ─────────────────── */
