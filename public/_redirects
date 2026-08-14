@@ -1,2 +1,7 @@
 /google2f9abffe6ce43652.html /google2f9abffe6ce43652.html 200
+
+# Consolidated duplicates — both slugs served the same article, splitting
+# ranking signals for one query. Keep the linked-to slug, 301 the orphan.
+/blog/karna-tragic-hero-world-literature-analysis /blog/karna-tragic-hero-world-literature 301
+
 /* /index.html 200
