@@ -11731,6 +11731,285 @@ export const articles: Article[] = [
       },
     ],
   },
+
+  {
+    slug: "what-was-the-lakshagriha-house-of-lac",
+    title: "What Was the Lakshagriha? The Plot to Burn the Pandavas Alive",
+    subtitle:
+      "Before the dice game, before the war, someone tried to murder all five Pandavas in their sleep. The weapon was a house — a mansion built out of wax, oil and dry grass, waiting for a spark. This is the story of the house of lac, and how the men it was meant to kill walked out through the floor.",
+    description:
+      "The Lakshagriha, or house of lac, was the first attempt to wipe out the Pandavas. On Duryodhana's orders, a minister named Purochana built a beautiful mansion at Varanavata out of flammable materials, meaning to burn the five brothers and their mother Kunti alive. This is the full story from the Adi Parva — Duryodhana's plot, Vidura's coded warning, the secret tunnel, the night of the fire, the innocent people who died in the Pandavas' place, and how a failed assassination turned five princes into hidden fugitives.",
+    summary:
+      "The Lakshagriha, or house of lac, was a palace built from flammable materials at Varanavata on Duryodhana's orders, meant to burn the Pandavas and their mother alive in their sleep. Warned in secret by Vidura, the brothers dug an escape tunnel, set the house on fire themselves one night, and slipped away into the forest — letting all of Hastinapura believe they had died.",
+    category: "Characters",
+    readTime: 13,
+    metaTitle: "Lakshagriha (House of Lac) Explained | MahabharataDecoded",
+    metaDescription:
+      "What was the Lakshagriha, the house of lac? Duryodhana built it to burn the Pandavas alive at Varanavata. Here's the plot, Vidura's warning, and their escape.",
+    publishDate: "August 15, 2026",
+    featured: false,
+    imageKey: "hero",
+    image: "",
+    tags: ["Lakshagriha", "house of lac", "Varanavata", "Adi Parva", "Purochana", "Vidura", "Pandavas escape", "Duryodhana"],
+    pullQuote:
+      "Duryodhana did not build the Pandavas a palace. He built them a pyre and called it a palace. The whole cleverness of the trap was that it looked like a gift — and the whole cleverness of the escape was that the Pandavas let him go on believing it had worked.",
+    authorNote:
+      "This article draws on the Adi Parva of the Mahabharata — the Jatugriha Parva, the sub-book named for the house of lac — which narrates Duryodhana's plot at Varanavata, Vidura's coded warning, the digging of the escape tunnel, the fire, and the Pandavas' flight into the forest. Where local tradition or later retellings add detail the critical text does not, I have said so.",
+    reelHook: {
+      hook: "Long before the Mahabharata war, someone tried to kill all five Pandavas at once — by building them a mansion designed to burn. This is the house of lac, and how they escaped it.",
+      supporting: "The house was made of wax, oil and dry grass. The plan was to set it alight while they slept. What Duryodhana did not know was that Vidura had already warned them, and that under the floor was a tunnel.",
+    },
+    relatedSlugs: ["vidura-truth-power-ignored", "how-were-the-100-kauravas-born", "who-caused-mahabharata-war"],
+    storyBlocks: [
+      {
+        section: "introduction",
+        label: "Introduction",
+        paragraphs: [
+          "There is a moment early in the Mahabharata when the rivalry between the cousins stops being a rivalry and becomes something else. Up to that point it is the ordinary friction of a crowded household — a hundred Kaurava brothers and five Pandavas, jealous of each other, competing at everything, throwing insults and occasionally worse. Then Duryodhana decides he would rather they were dead.",
+          "Not defeated. Dead. All five of them, and their mother with them.",
+          "The tool he reaches for is not a sword or an army. It is a house. A magnificent one, built specially for the Pandavas in a pleasant town, and built entirely to burn. This is the episode of the Lakshagriha — the house of lac — and it is where the feud that ends at Kurukshetra first turns lethal. It is also, quietly, one of the smartest survival stories in the whole epic, because the Pandavas get out of it not by being stronger than their enemy but by being warned in time and patient enough to wait.",
+        ],
+      },
+      {
+        section: "background",
+        label: "How the Pandavas Ended Up in Varanavata",
+        paragraphs: [
+          "After Pandu died in the forest, Kunti brought his five sons back to Hastinapura, where they were raised alongside Dhritarashtra's hundred sons, the Kauravas. The two sets of cousins never fit together. Bhima, stronger than all the Kaurava boys put together, spent his childhood tossing them out of trees and holding them underwater for sport, and Duryodhana grew up with a resentment that hardened into hatred.",
+          "The real problem was not the roughhousing. It was the throne. Pandu had been king before he renounced it, and his eldest son Yudhishthira had a strong claim. As the boys grew into men, the Pandavas won the affection of the citizens — they were capable, generous and popular, and Yudhishthira was named heir-apparent. Duryodhana watched the crown he considered his drifting toward Pandu's line, and he could not bear it.",
+          "So he built a plan on top of his father's weakness. Dhritarashtra, blind and endlessly indulgent toward his own sons, was easy to steer. Duryodhana and his uncle Shakuni suggested that the Pandavas be sent, with every honour, to Varanavata, a town then celebrating a grand festival in honour of Shiva. It sounded generous. A holiday, a religious fair, a gesture of family goodwill. Dhritarashtra, half-knowing and choosing not to know, agreed to send them.",
+        ],
+      },
+      {
+        section: "turningPoint",
+        label: "A Mansion Built to Burn",
+        paragraphs: [
+          "Ahead of the Pandavas, Duryodhana sent a trusted minister named Purochana with secret instructions. Purochana was to build them a residence — and to build it out of everything that catches fire. Lac, the sticky resin that gives the house its name, went into the walls along with hemp, dry grass, ghee, oil and resinous, combustible earth worked into the plaster. From the outside it was a beautiful mansion. In substance it was kindling shaped like a home.",
+          "The plan was patient. Purochana would settle the Pandavas in, wait until they felt entirely safe and had let their guard down, and then, on a chosen night, set the house alight while they slept. Everyone would assume a terrible accident. A festival, a fire, a tragedy — and the heirs to Pandu's throne gone, with no blade traceable to Duryodhana's hand.",
+          "This is the hinge of the whole episode. The trap was not designed to look like murder. It was designed to look like fate. And that is exactly why it so nearly worked, and exactly why the Pandavas' answer to it had to be so careful.",
+        ],
+      },
+    ],
+    content: [
+      { type: "heading", text: "Why the House of Lac Is Where the Feud Turns Real" },
+      {
+        type: "paragraph",
+        text: "It is tempting to skip past this story on the way to the famous set pieces — the dice game, the exile, the war. Don't. The house of lac is the first time anyone in the Mahabharata tries to solve the Kuru succession by killing people, and once that line is crossed it never gets uncrossed. Everything colder that comes later has its first rehearsal here.",
+      },
+      {
+        type: "paragraph",
+        text: "It is also a different kind of story than the ones around it. The Pandavas are usually admired for strength, skill, righteousness. Here none of that saves them. Bhima's arms and Arjuna's bow are useless against a building that is going to be burned down around them in the dark. What saves them is information, arriving in time, and the discipline to sit on it and pretend they know nothing. That is a rarer kind of heroism, and the epic clearly finds it worth telling.",
+      },
+      { type: "heading", text: "Vidura's Warning in a Tongue Only Yudhishthira Understood" },
+      {
+        type: "paragraph",
+        text: "The person who saves the Pandavas is Vidura — the half-brother of Dhritarashtra and Pandu, born to a serving woman, kept out of the line of kings, and by far the most clear-eyed man in the palace. Vidura understood exactly what a house of lac at Varanavata was for. But he could not say so openly. Duryodhana's people were everywhere, and the Pandavas were leaving under escort.",
+      },
+      {
+        type: "paragraph",
+        text: "So as the brothers departed, Vidura walked a little way with Yudhishthira and spoke to him in a coded, obscure speech that the escorts around them could not follow. The gist, as the tradition preserves it, was a string of riddling warnings: that a weapon need not be made of steel to kill; that fire does not consume the creature who has dug itself an escape, the way a burrowing animal survives a blaze in the forest; that a man who reads the stars and knows the four directions never loses his way; and that the one who stays alert to his enemies' designs lives, while the careless man dies. It was a warning about fire, about tunnels, and about staying awake — wrapped so that only the person it was meant for would catch it.",
+      },
+      {
+        type: "paragraph",
+        text: "Yudhishthira caught every word. He answered, just as obliquely, that he had understood. Only later, on the road and out of earshot, did he explain to his brothers and mother what Vidura had really said. They travelled to Varanavata already knowing the beautiful house waiting for them was meant to be their grave.",
+      },
+      { type: "heading", text: "Living Inside the Trap" },
+      {
+        type: "paragraph",
+        text: "This is the part that makes the story. The Pandavas arrive, are welcomed, and are shown into the splendid mansion Purochana has prepared. And they say nothing. Yudhishthira walks through the rooms and, by the smell of lac and fat and ghee worked into the walls, confirms exactly what Vidura warned him of. He tells his brothers quietly that the house is built to burn. And then they settle in and behave, for months, like contented, unsuspecting guests.",
+      },
+      {
+        type: "paragraph",
+        text: "They could not simply run. To flee openly would tell Duryodhana the plot was known, and he would only try again by some other means, somewhere they were not forewarned. So they played the part. They roamed the countryside on the pretext of hunting, which let them learn the paths and directions out of Varanavata — exactly what Vidura's riddle about the stars had told them to do. And they waited for a way out that would not look like an escape at all.",
+      },
+      {
+        type: "paragraph",
+        text: "Vidura had planned for this too. He secretly sent a skilled miner — a professional digger — to the Pandavas, a man who could prove he came from Vidura by repeating the private warning. Working in secret, the digger opened a concealed tunnel that ran from inside the house out beyond its grounds, hidden by day beneath the floor so that Purochana, living right there, never suspected it. By traditional accounts close to a year passed like this: the Pandavas smiling by day, the tunnel deepening beneath them, everyone waiting to see who would strike first.",
+      },
+      { type: "heading", text: "The Night the House of Lac Burned" },
+      {
+        type: "paragraph",
+        text: "When the digger learned that Purochana meant to set the fire soon, the Pandavas decided to move first — to burn the house on their own terms and vanish through the tunnel, leaving a scene that looked exactly like the accident Duryodhana had hoped to stage.",
+      },
+      {
+        type: "paragraph",
+        text: "On the chosen night, Kunti held a feast and gave food and drink to many guests. Among those who came was a Nishada woman, a tribal woman, with her five sons. They ate and drank heavily, and, drunk, fell asleep inside the house. Purochana too was asleep in his own quarters nearby. When the household had gone quiet, Bhima set the fire — first at Purochana's door, so the man who built the trap died in it, and then through the lac-soaked house. As the mansion went up, the five brothers and their mother slipped down into the tunnel and out into the night, then away into the forest. Where they tired, Bhima carried them, mother and brothers both.",
+      },
+      { type: "heading", text: "The Six Bodies — the Part the Epic Does Not Dwell On" },
+      {
+        type: "paragraph",
+        text: "By morning the house of lac was ash, and in the ruins the townspeople found bodies: the Nishada woman and her five sons, and the burned remains of Purochana. Six charred figures where a mother and five sons had slept. The people of Varanavata drew the obvious, wrong conclusion — that Kunti and the five Pandavas had died in an accidental blaze, and that Purochana, the builder, had been caught in his own carelessness. Word went back to Hastinapura that Pandu's line was gone.",
+      },
+      {
+        type: "paragraph",
+        text: "It is worth stopping on this honestly, because the Mahabharata does not. Six innocent people burned to death so that the Pandavas could live and, just as importantly, could seem to have died. The woman and her sons were guests at a feast, not participants in anyone's war. The epic reports their deaths plainly and moves on without lament, and many readers over the centuries have felt the moral shadow it casts over the heroes. Some later commentators soften it — the guests died drunk in their sleep, the Pandavas did not bring them there meaning to kill them — but the hard fact remains that the escape was built on their bodies being mistaken for the family's. The Mahabharata is not a story about spotless heroes. It is a story about real people doing what survival asks of them, and then having to carry it.",
+      },
+      { type: "heading", text: "What the Escape Set in Motion" },
+      {
+        type: "paragraph",
+        text: "In Hastinapura, the court went into mourning. Bhishma, Drona, Dhritarashtra and the rest believed the Pandavas dead and grieved them. Duryodhana grieved in public and rejoiced in private, certain his problem had solved itself. Only Vidura knew the truth, and he kept it, quietly comforting himself while the city wept over an empty story.",
+      },
+      {
+        type: "paragraph",
+        text: "For the Pandavas, being thought dead was the one gift the fire gave them. Invisible, unhunted, free of the palace and its schemes, they wandered in disguise as poor Brahmins. That wandering leads straight into the next chapters of the epic — the encounter with the demon Hidimba and his sister Hidimbi, who becomes Bhima's wife and the mother of Ghatotkacha; the killing of the man-eater Bakasura while they shelter at Ekachakra; and finally their arrival at the kingdom of Panchala, where Arjuna wins Draupadi at her swayamvara and the Pandavas step back into the light as a force no one expected to see again. The house of lac is the hinge that turns five princes into hidden fugitives, and hidden fugitives into something Duryodhana can no longer control.",
+      },
+      { type: "heading", text: "Did You Know?" },
+      {
+        type: "paragraph",
+        text: "A few things about the house of lac that often get lost in the retellings — each grounded in the Adi Parva.",
+      },
+      {
+        type: "paragraph",
+        text: "1. The episode has its own name. It is told in the Jatugriha Parva, a sub-book of the Adi Parva. 'Jatugriha' and 'Lakshagriha' both mean the same thing — house of lac — from 'jatu' and 'laksha', two words for the same resinous substance.",
+      },
+      {
+        type: "paragraph",
+        text: "2. Lac is real, and really flammable. It is a resin secreted by tiny insects, used for centuries to make varnish, sealing wax and red dye. A house impregnated with lac, ghee and oil was, in practical terms, a firetrap by design — the detail is not fantasy but chemistry.",
+      },
+      {
+        type: "paragraph",
+        text: "3. Vidura's warning is one of the epic's clearest scenes of covert communication. He deliberately used an obscure speech so that Duryodhana's escorts, standing right there, would not understand a word he said to Yudhishthira.",
+      },
+      {
+        type: "paragraph",
+        text: "4. The tunnel was professional work. Vidura did not just warn the Pandavas; he sent them a skilled miner to dig a concealed escape passage, and arranged a private password so they would know the man was genuinely his.",
+      },
+      {
+        type: "paragraph",
+        text: "5. Seven people died in the fire, not the Pandavas. The Nishada woman, her five sons, and Purochana the architect of the plot — their bodies were what convinced everyone the family had perished.",
+      },
+      {
+        type: "paragraph",
+        text: "6. Almost no one knew the truth. Bhishma, Drona and the whole court mourned the Pandavas as dead. Vidura alone knew they had survived, and he said nothing, letting the disguise hold.",
+      },
+      {
+        type: "paragraph",
+        text: "7. Local tradition points to a specific place. Varanavata is traditionally identified with modern Barnawa in Uttar Pradesh, where a large earthen mound is still popularly called the Lakshagraha. This is a traditional and local identification, not an established historical fact.",
+      },
+      { type: "heading", text: "Common Misconceptions" },
+      {
+        type: "paragraph",
+        text: "This story gets compressed and misremembered in a few predictable ways. Here are the ones worth clearing up.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception 1: The Pandavas were caught off guard and barely escaped. They were not surprised at all. Vidura warned them before they ever reached Varanavata, they knew for months what the house was, and they left through a tunnel they had prepared in advance. The escape was planned, not lucky.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception 2: The fire was an accident. It was the opposite. The house was purpose-built to burn as a disguised assassination, and on the night in question it was the Pandavas — not Purochana — who lit it, precisely so it would read as the accident their enemies had wanted to stage.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception 3: Krishna rescued them. Krishna has no part in this episode. The Pandavas have not yet come into his orbit; that happens later, around Draupadi's swayamvara. The one who saves them here is Vidura, working entirely by foresight and quiet planning.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception 4: Bhishma and Drona were in on the plot. They were not. The scheme was Duryodhana's, kept secret even from his own father in its full intent. The elders believed the Varanavata trip was a genuine festival honour and mourned the Pandavas sincerely when the news of the fire arrived.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception 5: No one died, or the Pandavas killed no one to escape. Seven people died in the house of lac — a Nishada woman, her five sons, and Purochana. The woman and her sons were innocent guests, and their deaths are the uncomfortable cost the escape was built on. The epic does not pretend otherwise.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception 6: The house of lac and the dice game are the same trap. They are separate events, far apart in the story. The house of lac is the first attempt on the Pandavas' lives, when they are young men. The dice game comes much later, after they have been restored, married and established — a different kind of trap using rules rather than fire.",
+      },
+      {
+        type: "lesson",
+        text: "The house of lac sets a pattern the Mahabharata returns to again and again: the deadliest threats arrive dressed as gifts. A festival honour. A splendid new home. A friendly invitation to a game of dice. In each case the danger is hidden inside a courtesy, and in each case the people who survive are the ones who look hard at what they are being handed instead of at how nicely it is wrapped. Vidura's whole warning comes down to that single instinct — read the gift, and always keep an exit.",
+      },
+      { type: "heading", text: "What the House of Lac Is Really About" },
+      {
+        type: "paragraph",
+        text: "Strip away the lac and the tunnel and what you have is a story about a specific kind of danger — the threat that does not look like a threat. Duryodhana's genius was not cruelty; plenty of people are cruel. It was disguise. He made murder look like generosity, and he almost got away with it because generosity is exactly what you are least inclined to inspect.",
+      },
+      {
+        type: "paragraph",
+        text: "The Pandavas survive because one honest man told them the truth in time, and because they had the nerve to act on it slowly. They did not panic, did not flee, did not tip their hand. They lived inside the trap, smiling, until they could leave it on their own terms. That is a harder thing to do than it sounds, and it is why this quiet episode, with no great duel and no famous verse, keeps its grip. Long before Kurukshetra, the Pandavas learn the lesson the whole epic will keep teaching them: that the people who wish you harm will rarely announce it, and that surviving them often depends less on strength than on who is willing to warn you, and whether you are calm enough to listen.",
+      },
+    ],
+    keyLessons: [
+      {
+        icon: "🎁",
+        title: "Look hardest at the gift you least want to question",
+        description: "Duryodhana disguised an assassination as a festival honour and a splendid new home. The Pandavas survived because they inspected the generosity instead of enjoying it. When something arrives wrapped as pure goodwill from someone who has reason to want you gone, that is precisely the moment to check the walls.",
+        accent: "gold",
+      },
+      {
+        icon: "🕯️",
+        title: "The person who warns you at real risk is worth more than a crowd of flatterers",
+        description: "Vidura had nothing to gain and much to lose by warning the Pandavas, and he did it anyway, in code, so the spies would not catch him. The honest voice that tells you what you do not want to hear is rare. Recognising it — and acting on it — can be the whole difference between surviving and not.",
+        accent: "teal",
+      },
+      {
+        icon: "🚪",
+        title: "Escaping a trap can leave a mark you do not get to feel clean about",
+        description: "The Pandavas lived, but seven people died in their place, and the epic does not hide it. Survival sometimes carries a cost that no amount of justification fully erases. The mature response is not to pretend the cost away but to carry it honestly.",
+        accent: "crimson",
+      },
+    ],
+    modernConnections: [
+      {
+        context: "Someone with power over you offers you something that looks unusually generous — a plum posting, a lavish opportunity, a sudden warmth from a person who has never shown you any — and part of you senses it does not add up.",
+        insight: "The house of lac is a warning about exactly this shape of danger: harm disguised as favour. The Pandavas did not refuse the gift outright, which would have tipped their hand, but they never stopped examining it, and they made sure they always had a way out. Read the offer, not just the wrapping, and keep an exit you did not tell anyone about.",
+        example: "A beautiful mansion, built specially for you, in a pleasant town, as a mark of family honour — and every wall of it soaked in oil and lac, waiting for a match.",
+      },
+      {
+        context: "You get a warning from someone who cannot say it openly — a colleague who hints, a friend who chooses their words carefully because the wrong person is listening.",
+        insight: "Vidura could not speak plainly, so he spoke in code, and the Pandavas' survival depended entirely on Yudhishthira being alert enough to decode it and disciplined enough to act quietly. The lesson runs both ways: pay close attention to the person taking a risk to warn you, and build in redundancy — the warning and the tunnel together saved them, not either alone.",
+        example: "A few riddling sentences about fire, burrowing animals and the stars, spoken on a roadside where anyone could hear — and understood by exactly one person, the one they were meant for.",
+      },
+    ],
+    lifeLessons: [
+      "A trap dressed as a gift is still a trap; inspect what you are being handed, especially when it comes from someone with reason to want you gone.",
+      "The friend who warns you at real cost to himself is worth more than a hundred people telling you what you want to hear.",
+      "Survival sometimes means staying calm inside the danger and playing along while you quietly prepare your way out.",
+      "Escape can come at a cost you do not get to feel clean about — the honest response is to carry it, not deny it.",
+      "Letting your enemy believe he has won can be worth more than proving him wrong; being thought finished is its own kind of freedom.",
+    ],
+    faqs: [
+      {
+        question: "What was the Lakshagriha or house of lac?",
+        answer: "The Lakshagriha was a mansion built at Varanavata on Duryodhana's orders, made from lac, ghee, oil, hemp and other flammable materials. It looked like a splendid guest palace but was designed to be burned down with the Pandavas and their mother Kunti asleep inside, so their murder would look like an accidental fire.",
+      },
+      {
+        question: "Who built the house of lac and why?",
+        answer: "It was built by Purochana, a minister Duryodhana trusted with the plot. Duryodhana wanted the Pandavas dead because Yudhishthira, the eldest, had a strong claim to the throne of Hastinapura and the brothers were popular with the citizens. Killing them in a disguised accident would remove that threat without anyone being able to trace the deaths to Duryodhana.",
+      },
+      {
+        question: "How did the Pandavas find out about the plot?",
+        answer: "Vidura, the wise half-brother of Dhritarashtra and Pandu, knew what the house was for and warned Yudhishthira before the Pandavas left. Because they were surrounded by Duryodhana's escorts, he spoke in a coded, obscure speech that only Yudhishthira could understand, hinting at fire, tunnels and staying alert. Yudhishthira decoded it and told his brothers once they were safely away.",
+      },
+      {
+        question: "How did the Pandavas escape the house of lac?",
+        answer: "They played along for months, pretending to be unsuspecting guests, while a skilled miner sent secretly by Vidura dug a hidden tunnel out of the house. On a chosen night, after a feast, Bhima set the house on fire himself and the five brothers and Kunti escaped through the tunnel into the forest, leaving the scene looking like the accident their enemies had planned.",
+      },
+      {
+        question: "Who died in the fire at Varanavata?",
+        answer: "Seven people died: a Nishada (tribal) woman and her five sons, who had come to Kunti's feast and fell asleep drunk inside the house, and Purochana, the minister who built the trap. Their charred bodies were mistaken for the Pandavas and Kunti, which is why everyone believed the family had perished.",
+      },
+      {
+        question: "Why did Duryodhana want to kill the Pandavas?",
+        answer: "Because of the throne. Pandu had been king, and his son Yudhishthira had been named heir-apparent. The Pandavas were capable and beloved by the people, and Duryodhana feared the crown he considered his own would pass to Pandu's line. Rather than compete with them, he decided to have them killed.",
+      },
+      {
+        question: "Did the Kauravas know the Pandavas survived?",
+        answer: "No. The whole court of Hastinapura, including Bhishma and Drona, believed the Pandavas had died in the fire and mourned them. Duryodhana thought his plan had succeeded. Only Vidura knew the truth and kept it secret, which allowed the Pandavas to travel and regroup unhunted.",
+      },
+      {
+        question: "Was Krishna involved in the escape from the house of lac?",
+        answer: "No. Krishna plays no part in this episode. The Pandavas do not come fully into his orbit until later, around the time of Draupadi's swayamvara. In the house of lac, the person who saves them is Vidura, entirely through foresight, a coded warning, and the tunnel he arranged.",
+      },
+      {
+        question: "Where was Varanavata and the house of lac located?",
+        answer: "Varanavata was a town within the Kuru realm where a festival in honour of Shiva was being held. Local tradition identifies it with modern Barnawa in Uttar Pradesh, where a large mound is still popularly called the Lakshagraha. That identification is traditional and local rather than an established historical fact.",
+      },
+      {
+        question: "Which part of the Mahabharata tells the story of the house of lac?",
+        answer: "It is told in the Adi Parva, the first book of the epic, in a section known as the Jatugriha Parva — the 'Book of the House of Lac.' It follows the Pandavas' upbringing in Hastinapura and leads directly into their forest wanderings and, eventually, Draupadi's swayamvara.",
+      },
+    ],
+  },
 ];
 
 /* ─────────────────── Helpers ─────────────────── */
