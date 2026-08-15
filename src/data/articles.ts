@@ -792,122 +792,6 @@ export const articles: Article[] = [
   },
 
   /* ══════════════ BHISHMA ══════════════ */
-  {
-    slug: "bhishma-terrible-oath",
-    title: "Bhishma's Oath: The Sacrifice That Became a Prison",
-    subtitle: "When self-denial becomes the greatest indulgence",
-    description:
-      "He gave up a throne and a wife to secure his father's happiness. Centuries later, he died defending the very injustice his sacrifice had made possible.",
-    summary:
-      "His oath was made in love. But by making it absolute, he removed his own moral agency — and became a weapon in the hands of whoever held the throne.",
-    category: "Characters",
-    character: "Bhishma",
-    readTime: 9,
-    metaTitle: "The Mahabharata's Guide to Difficult Relationships | MahabharataDecoded",
-    metaDescription: "Every difficult relationship you have lived through — the loyal friend who chose wrong, the parent who could not choose you, the rival who deserved better — is in the Mahabharata.",
-    metaTitle: "Draupadi: The Woman Who Never Lost Herself | MahabharataDecoded",
-    metaDescription: "Draupadi had five husbands, survived public humiliation, and outlasted a war that killed everyone she knew. How she remained herself through all of it.",
-    metaTitle: "Draupadi's Humiliation in the Dice Game | MahabharataDecoded",
-    metaDescription: "Draupadi was stripped in front of a thousand men. She asked one legal question nobody answered. That silence started the war. The most important scene in the Mahabharata.",
-    publishDate: "April 2, 2026",
-    imageKey: "bhishma",
-    image: "",
-    metaTitle: "Bhishma's Vow: When Sacrifice Becomes a Cage | Mahabharata",
-    metaDescription:
-      "Bhishma gave up everything out of love — and his sacrifice enabled every injustice that followed. The most cautionary story in the Mahabharata about unconditional loyalty.",
-    pullQuote:
-      "His oath was made in love. But by making it absolute — by removing his own moral agency — he became a weapon in the hands of whoever held the throne.",
-    relatedSlugs: ["karna-loyalty-vs-self-respect", "draupadi-fire-and-dignity"],
-    storyBlocks: [
-      {
-        section: "introduction",
-        label: "Introduction",
-        paragraphs: [
-          "Devavrata was the greatest warrior of his age. The son of Ganga herself, trained by Parashurama, heir to the throne of Hastinapura.",
-          "He gave all of it up. Not under compulsion. Not in defeat.",
-          "He gave it up to make a fisherman feel comfortable about giving his daughter to an old king.",
-        ],
-      },
-      {
-        section: "background",
-        label: "Background",
-        paragraphs: [
-          "The vow Devavrata took was so extreme, so total in its renunciation, that the gods themselves named him Bhishma — he of the terrible oath.",
-          "He would never marry, never father children, and would serve whoever sat on the throne of Hastinapura — regardless of their worthiness.",
-          "In one act of love for his father, Bhishma removed himself as a moral agent from his own life. He would not choose. He would only serve.",
-        ],
-      },
-      {
-        section: "turningPoint",
-        label: "The Turning Point",
-        paragraphs: [
-          "Decades later, Bhishma sat in the court of Hastinapura while Draupadi was being disrobed.",
-          "He could have stood up. He could have spoken the word that would have ended it. He was the most powerful man in that room.",
-          "Instead he said: I cannot speak against the king I am sworn to serve. The question of dharma is too subtle for me to answer.",
-          "The Mahabharata does not let Bhishma hide behind subtlety. His silence was a choice. And it was the most consequential choice in the entire epic.",
-        ],
-      },
-    ],
-    content: [
-      {
-        type: "quote",
-        text: "A man can have great power and great goodness and still, through a single misplaced commitment, become an instrument of great harm.",
-      },
-      {
-        type: "lesson",
-        text: "When you make a commitment, build in a mechanism for reconsideration. An oath that cannot be broken becomes a cage. The Mahabharata asks: who does your loyalty ultimately serve?",
-      },
-          {
-        type: "related_links",
-        text: "Read next",
-        links: [
-          { slug: "draupadi-fire-and-dignity", label: "Draupadi: The Fire That Would Not Go Out" },
-          { slug: "draupadi-five-husbands-one-self", label: "Draupadi: The Woman Who Never Lost Herself" },
-          { slug: "yudhishthira-gambling-addiction", label: "Yudhishthira's Gambling: The Most Honest Study of Compulsion" },
-        ],
-      },
-    ],
-    keyLessons: [
-      {
-        icon: "🔒",
-        title: "Unconditional Loyalty Is Not Virtue",
-        description:
-          "Loyalty that cannot evaluate the worthiness of its object is not devotion — it is abdication of moral responsibility.",
-    metaTitle: "Yudhishthira's Gambling: The Mahabharata's Honest Study of Compulsion | MahabharataDecoded",
-    metaDescription: "Yudhishthira staked his kingdom, brothers, and wife at the dice game and could not stop. The Mahabharata's unflinching portrait of a righteous man destroyed by a single weakness.",
-        accent: "crimson",
-      },
-      {
-        icon: "⏳",
-        title: "Not Every Oath Deserves to Be Kept Indefinitely",
-        description:
-          "Bhishma's oath was noble when made. It became monstrous over time, as the throne it served became corrupt. Wisdom requires knowing when to release what you once committed to.",
-        accent: "gold",
-      },
-      {
-        icon: "🎭",
-        title: "Silence in the Face of Injustice Is a Choice",
-        description:
-          "Bhishma did not act against Draupadi — he simply did nothing. The Mahabharata treats his silence as one of the great moral failures of the epic.",
-        accent: "crimson",
-      },
-    ],
-    modernConnections: [
-      {
-        context: "In Your Career",
-        insight:
-          "Have you ever stayed silent in a meeting when you knew something wrong was happening — because speaking would have complicated your position? Bhishma was the most powerful person in that room. He chose institutional loyalty over moral clarity.",
-        example:
-          "The question is not whether you have the power to speak. Bhishma clearly did. The question is whether you have built your identity so deeply around a role that the role now speaks for you.",
-      },
-    ],
-    lifeLessons: [
-      "Not every oath deserves to be kept indefinitely",
-      "Loyalty without ongoing moral evaluation becomes complicity",
-      "Silence in the face of injustice is itself a choice",
-      "Wisdom requires knowing when to release what you once committed to",
-    ],
-  },
 
   /* ══════════════ DHARMA ══════════════ */
   {
@@ -2529,7 +2413,7 @@ export const articles: Article[] = [
 
   /* ══════════════ ARTICLE 5 — BHISHMA'S OATH ══════════════ */
   {
-    slug: "bhishma-oath-terrible-vow",
+    slug: "bhishma-terrible-oath",
     title: "Bhishma Made One Promise to Make His Father Happy. It Destroyed Everything.",
     subtitle: "The wisest man in the Mahabharata took an oath at age twenty. He spent the next eighty years watching it destroy everyone he loved.",
     description:
@@ -4899,146 +4783,6 @@ export const articles: Article[] = [
     ],
   },
 
-  {
-    slug: "karna-what-he-knew-and-chose",
-    title: "Karna Knew Everything. He Chose It Anyway. That Is the Point.",
-    subtitle: "He knew his birth. He knew his mother. He knew he would lose. He knew Arjuna would be the one. He chose his side, his oath, and his friend — and walked into it with complete clarity. That is not tragedy. That is something harder.",
-    description:
-      "The standard reading of Karna is that he was a tragic hero destroyed by fate and circumstances. But the Mahabharata is more precise than this: Karna, at multiple points, was given choices. He made them knowingly. He was not destroyed by fate. He chose his end with more information about it than most people have about anything. That is not tragedy — it is a different category entirely.",
-    summary:
-      "Karna knew who he was, what side he was on, what it would cost him, and what the result would be. He chose it anyway — not from ignorance, not from compulsion, but from a commitment to a code he had decided was more important than survival. The Mahabharata's distinction between fate and choice is most clearly drawn in his story.",
-    category: "Characters",
-    character: "karna",
-    readTime: 9,
-    metaTitle: "Karna Knew Everything. He Chose It Anyway. | MahabharataDecoded",
-    metaDescription: "Karna knew his birth, knew the war's outcome, knew Arjuna would kill him. He chose anyway. The Mahabharata's most deliberate act of self-destruction — and what it actually means.",
-    metaTitle: "Karna: What He Knew and Still Chose | MahabharataDecoded",
-    metaDescription: "Karna knew his birth. He knew the war's outcome. He knew Arjuna would kill him. He chose anyway. The Mahabharata's most deliberate act of self-destruction — and what it means.",
-    publishDate: "June 23, 2026",
-    featured: false,
-    imageKey: "karna",
-    image: "",
-    metaTitle: "Karna Knew Everything and Chose It Anyway | Mahabharata",
-    metaDescription:
-      "Karna knew his birth, his fate, and his end. He chose his side anyway. The Mahabharata's most honest observation is that his story is not tragedy — it is something harder and more deliberate.",
-    pullQuote:
-      "Krishna told him he was Kunti's son. Karna already knew. Indra took his armour. Parashurama's curse would neutralise him at the critical moment. He knew all of this and chose Duryodhana and the field at Kurukshetra. A man who chooses his end with full information has gone past tragedy into something that requires a different word.",
-    authorNote:
-      "This article draws from the Karna Parva, Udyoga Parva (Krishna's offer), and the narrative sections around Parashurama and Indra. The reading engages with the Mahabharata's own distinction between what Karna did not know and what he did — and when.",
-    reelHook: {
-      hook: "Krishna offered Karna everything — the throne of Hastinapura, the eldest Pandava position, Draupadi as wife, the victory. Karna already knew who he was. He said no. Here is what that choice actually was.",
-      supporting: "It was not fate. It was not compulsion. It was a decision made with more information than most people have about anything — and the Mahabharata is honest about what kind of thing that is.",
-    },
-    relatedSlugs: ["karna-loyalty-vs-self-respect", "karna-tragic-hero-world-literature", "kunti-impossible-secret"],
-    storyBlocks: [
-      {
-        section: "introduction",
-        label: "Introduction",
-        paragraphs: [
-          "By the time the Mahabharata war begins, Karna knows everything.",
-          "He knows he is Kunti's son — he discovered this before Krishna told him. He knows which side will win. He knows Parashurama's curse will neutralise him at the moment he needs his knowledge most. He knows Indra has taken his natural armour, leaving him vulnerable.",
-          "He chooses to fight for the Kauravas.",
-          "This is not the behaviour of a man destroyed by fate. This is the behaviour of a man who, with full information, decided that his commitment to Duryodhana and his sense of who he was mattered more than survival or victory.",
-        ],
-      },
-      {
-        section: "background",
-        label: "Krishna's Offer",
-        paragraphs: [
-          "Before the war, Krishna meets Karna privately. He tells him the truth of his birth — knowing that Karna may already know. He offers him everything the Pandavas would give him if he switched sides: the throne of Hastinapura as the eldest, command of the Pandava army, Draupadi as wife alongside Yudhishthira's queens, the loyalty of all five Pandava brothers.",
-          "Karna listens to the entire offer. Then he declines.",
-          "His reasons are not those of someone confused or deceived. He says: I know who I am. I know what Duryodhana gave me when no one else would. I know what my oath requires. I know the war's outcome. I choose this anyway.",
-        ],
-      },
-      {
-        section: "turningPoint",
-        label: "Kunti's Visit: The Second Offer",
-        paragraphs: [
-          "Then Kunti comes to him — his mother, finally saying what she has held for sixty years.",
-          "She asks him to come to the Pandavas' side. He declines again, with the same clarity. He gives her the promise that she will still have five sons — because he will only seek Arjuna's death. He cannot give her more than that.",
-          "He also tells her, directly, that this visit is not the reunion she might have wished. She is coming to protect her other children. He sees this clearly and holds no bitterness about it.",
-          "Both times — with Krishna, with Kunti — he is offered a way out. Both times he says no. Both times he knows exactly what he is saying no to.",
-        ],
-      },
-    ],
-    content: [
-      { type: "heading", text: "What This Means for How We Read His Death" },
-      {
-        type: "paragraph",
-        text: "Karna's death at Kurukshetra — killed by Arjuna while his chariot wheel is stuck, his divine knowledge neutralised by Parashurama's curse — is often read as pure tragedy: a man undone by circumstances beyond his control.",
-      },
-      {
-        type: "paragraph",
-        text: "But he knew about the curse. He knew about the wheel. He had been told, with reasonable clarity, what the battle would look like. He chose the field anyway. The circumstances that undid him were circumstances he had been warned about and had chosen to enter.",
-      },
-      {
-        type: "paragraph",
-        text: "This does not make his death less moving. It makes it something different from tragedy — something that requires a word for a person who chooses a difficult end with full information, because they have decided that certain commitments matter more than outcomes.",
-      },
-      {
-        type: "quote",
-        text: "Tell me, Keshava, who among men has more honour than I — who knows the right side and chooses the wrong one, not from ignorance but from love? — Karna to Krishna, Udyoga Parva (paraphrase)",
-      },
-      { type: "heading", text: "The Code He Was Actually Living" },
-      {
-        type: "paragraph",
-        text: "Karna's code throughout the Mahabharata is consistent: loyalty given cannot be withdrawn when it becomes inconvenient. Duryodhana gave him a kingdom when every door was closed to him. That gift created an obligation Karna decided was non-negotiable.",
-      },
-      {
-        type: "paragraph",
-        text: "This is not the same as being unaware of Duryodhana's flaws. Karna knew Duryodhana. He disagreed with him on specific things — including the dice game. But he had decided that the obligation of loyalty was more fundamental than agreement about decisions.",
-      },
-      {
-        type: "paragraph",
-        text: "The Mahabharata does not fully endorse this code. It shows its cost clearly. But it also treats Karna's commitment to it as genuine and deserving of the reader's engagement — not easy dismissal.",
-      },
-    ],
-    keyLessons: [
-      {
-        icon: "🧭",
-        title: "Knowing the consequences and choosing anyway is not the same as being trapped",
-        description: "Karna had full information. He chose his end deliberately. The Mahabharata distinguishes between fate — what happens to you — and informed choice — what you walk into knowing what it is.",
-        accent: "gold",
-      },
-      {
-        icon: "🤝",
-        title: "Loyalty given when it was inconvenient for the giver creates a particular kind of obligation",
-        description: "Duryodhana gave Karna a kingdom when the entire world was closed to him. Karna decided this gift created an obligation that superseded self-interest. The Mahabharata does not say this is wrong — it shows what it costs.",
-        accent: "crimson",
-      },
-      {
-        icon: "👁️",
-        title: "Clarity about your end is different from acceptance of defeat",
-        description: "Karna knew he would lose. He went in anyway — not resigned, not passive, but fighting at full capacity until the last moment. Knowing the outcome and committing fully to the action within that outcome are not in contradiction.",
-        accent: "teal",
-      },
-    ],
-    modernConnections: [
-      {
-        context: "You are committed to something — a relationship, a project, an organisation — that you can see clearly will not end the way you want. People are asking you to leave. You are not sure whether staying is integrity or stubbornness.",
-        insight: "Karna's standard for staying was this: has the person who gave me their loyalty when it was costly for them to do so earned my loyalty even when it is costly for me to give it? That is the test. Not outcome. Not odds.",
-        example: "He stayed not because he thought the Kauravas would win. He stayed because Duryodhana had given him something when no one else would. The gift created the obligation. The obligation was real.",
-      },
-      {
-        context: "You know something will cost you significantly — a choice, a relationship, a commitment you have made. You are looking for a reason to renegotiate. The reason keeps coming back to your own comfort.",
-        insight: "Karna was offered every reason to renegotiate: the throne, the safety, the winning side, his own mother's request. He evaluated each offer and chose the commitment. The evaluation was real. The choice was real.",
-        example: "He told Krishna: I know. I still choose this. That sentence — the acknowledgment of what is known and the conscious selection of what comes after — is the Mahabharata's most precise definition of integrity under pressure.",
-      },
-    ],
-    lifeLessons: [
-      "Knowing the consequences of a choice and making it anyway is not the same as being trapped by fate.",
-      "Loyalty given when it was costly creates obligations that are real regardless of whether they are convenient.",
-      "Clarity about an outcome does not require you to stop committing fully to the action within that outcome.",
-      "The difference between integrity and stubbornness is whether the commitment is grounded in genuine values or in the avoidance of being wrong.",
-      "The Mahabharata's most difficult figure is not the one who failed — it is the one who knew exactly what he was choosing.",
-    ],
-    sloka: {
-      sanskrit: "श्रेयान्स्वधर्मो विगुणः परधर्मात्स्वनुष्ठितात्।\nस्वधर्मे निधनं श्रेयः परधर्मो भयावहः॥",
-      transliteration: "Shreyan svadharmo vigunah paradharmat svanushthitat. Svadharme nidhanam shreyah paradharmo bhayavahah.",
-      translation:
-        "It is far better to discharge one's own duties, even though imperfectly, than to perform the duties of another perfectly. Death in the performance of one's own duty is better; to follow another's path is dangerous. — Bhagavad Gita 3.35. Krishna said this. Karna lived it — choosing his own code over the easier path that was being offered to him. Whether the code he chose was right is something the Mahabharata leaves genuinely open. That he lived it completely is not in question.",
-    },
-  },
 
   {
     slug: "is-ashwatthama-still-alive",
@@ -5772,7 +5516,7 @@ export const articles: Article[] = [
       hook: "Krishna is the only person in the entire army who smiles when Bhima's son is killed. He climbs off the chariot and embraces Arjuna while everyone else weeps. Why?",
       supporting: "Because Karna had been saving one divine weapon for a year to kill Arjuna — and he just wasted it on Ghatotkacha. The boy's death bought Arjuna's life. That was the plan.",
     },
-    relatedSlugs: ["karna-what-he-knew-and-chose", "abhimanyu-born-knowing-too-much", "krishna-leadership-secrets"],
+    relatedSlugs: ["karna-loyalty-vs-self-respect", "abhimanyu-born-knowing-too-much", "krishna-leadership-secrets"],
     storyBlocks: [
       {
         section: "introduction",
@@ -5893,7 +5637,7 @@ export const articles: Article[] = [
         type: "related_links",
         text: "Read next",
         links: [
-          { slug: "karna-what-he-knew-and-chose", label: "Karna Knew Everything. He Chose It Anyway. That Is the Point." },
+          { slug: "karna-loyalty-vs-self-respect", label: "Karna: The Man Who Chose Honour Over Everything" },
           { slug: "abhimanyu-born-knowing-too-much", label: "Abhimanyu: The Boy Who Was Born Knowing Too Much" },
           { slug: "krishna-leadership-secrets", label: "Krishna: The Leader Who Never Needed the Throne" },
         ],
@@ -6558,7 +6302,7 @@ export const articles: Article[] = [
       hook: "Hindu tradition says eight beings never died. They are still alive — right now — and one of them was made immortal not as a reward but as a punishment worse than death.",
       supporting: "A single verse names seven Chiranjivi and adds an eighth. Here is who they are, how each became deathless, and the one distinction that changes how you read the whole list.",
     },
-    relatedSlugs: ["is-ashwatthama-still-alive", "karna-what-he-knew-and-chose", "what-happened-to-pandavas-after-war"],
+    relatedSlugs: ["is-ashwatthama-still-alive", "karna-loyalty-vs-self-respect", "what-happened-to-pandavas-after-war"],
     storyBlocks: [
       {
         section: "introduction",
@@ -8349,7 +8093,7 @@ export const articles: Article[] = [
       hook: "Everyone remembers that Karna's chariot wheel got stuck in the mud at the worst possible moment. Almost no one remembers why. It was not an accident. It was a curse, spoken out loud, years before the war.",
       supporting: "And it was not the only one. A second curse hit him in the same breath — the one that made him forget his greatest weapon. Here is how both came due on the same afternoon.",
     },
-    relatedSlugs: ["karna-what-he-knew-and-chose", "karna-loyalty-vs-self-respect", "arjuna-karna-the-real-rivalry"],
+    relatedSlugs: ["karna-loyalty-vs-self-respect", "arjuna-karna-the-real-rivalry"],
     storyBlocks: [
       {
         section: "introduction",
@@ -8515,7 +8259,6 @@ export const articles: Article[] = [
         type: "related_links",
         text: "Keep reading about Karna:",
         links: [
-          { slug: "karna-what-he-knew-and-chose", label: "Karna Knew Everything. He Chose It Anyway. That Is the Point." },
           { slug: "karna-loyalty-vs-self-respect", label: "Karna: The Man Who Chose Honour Over Everything" },
           { slug: "arjuna-karna-the-real-rivalry", label: "Arjuna and Karna: The Rivalry Was Never About Archery" },
         ],

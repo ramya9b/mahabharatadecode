@@ -1,7 +1,13 @@
 /google2f9abffe6ce43652.html /google2f9abffe6ce43652.html 200
 
-# Consolidated duplicates — both slugs served the same article, splitting
-# ranking signals for one query. Keep the linked-to slug, 301 the orphan.
+# Consolidated duplicates — each pair answered the same question twice,
+# splitting ranking signals across two URLs. The surviving slug is the one
+# other articles already link to; the retired slug 301s onto it.
 /blog/karna-tragic-hero-world-literature-analysis /blog/karna-tragic-hero-world-literature 301
+/blog/karna-what-he-knew-and-chose /blog/karna-loyalty-vs-self-respect 301
+
+# bhishma-terrible-oath kept its URL (16 inbound links) but now carries the
+# fuller article that had been published separately at the slug below.
+/blog/bhishma-oath-terrible-vow /blog/bhishma-terrible-oath 301
 
 /* /index.html 200
