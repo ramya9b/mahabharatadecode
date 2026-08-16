@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { Check, Unlock, Lock } from "lucide-react";
+import { Check, Unlock } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import PaywallModal from "@/components/PaywallModal";

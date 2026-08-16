@@ -44,7 +44,8 @@ const CharacterQA = ({ character, isDark }: QAProps) => {
       const data = await res.json();
       const raw = data?.candidates?.[0]?.content?.parts?.[0]?.text ?? "";
       const cleaned = raw.replace(/\*\*(.*?)\*\*/g,"$1").replace(/\*(.*?)\*/g,"$1").replace(/#{1,6}\s/g,"").trim();
-      cleaned ? setAnswer(cleaned) : setError("No answer returned. Try rephrasing.");
+      if (cleaned) setAnswer(cleaned);
+      else setError("No answer returned. Try rephrasing.");
     } catch { setError("Something went wrong. Please try again."); }
     finally { setLoading(false); }
   }, [question, loading, character.name]);

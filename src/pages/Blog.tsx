@@ -11,9 +11,9 @@ import type { Article } from "@/data/articles";
 import { useSEO } from "@/hooks/useSEO";
 import { useDebounce } from "@/hooks/useDebounce";
 
-const CATEGORY_KEYS = ["all","characters","life_lessons","slokas","philosophy"] as const;
+const CATEGORY_KEYS = ["all","characters","life_lessons","slokas","philosophy","epic_overview"] as const;
 type CategoryKey = (typeof CATEGORY_KEYS)[number];
-const CATEGORY_API: Record<CategoryKey, string> = { all:"All", characters:"Characters", life_lessons:"Life Lessons", slokas:"Slokas", philosophy:"Philosophy" };
+const CATEGORY_API: Record<CategoryKey, string> = { all:"All", characters:"Characters", life_lessons:"Life Lessons", slokas:"Slokas", philosophy:"Philosophy", epic_overview:"Epic Overview" };
 
 const ARTICLES_PER_PAGE = 6;
 

@@ -18,7 +18,9 @@
     "close_menu": "नेविगेशन मेनू बंद करें",
     "skip_to_main": "मुख्य सामग्री पर जाएं",
     "storyteller": "कथावाचक",
-    "story": "कथा"
+    "story": "कथा",
+    "pricing": "मूल्य निर्धारण",
+    "temples": "मंदिर"
   },
   "hero": {
     "eyebrow": "प्राचीन ज्ञान · आधुनिक जीवन",
@@ -87,7 +89,8 @@
       "characters": "पात्र",
       "life_lessons": "जीवन पाठ",
       "slokas": "श्लोक",
-      "philosophy": "दर्शन"
+      "philosophy": "दर्शन",
+      "epic_overview": "महाकाव्य अवलोकन"
     }
   },
   "wisdom": {
@@ -251,7 +254,9 @@
       "characters": "पात्र",
       "languages": "भाषाएँ",
       "free": "निःशुल्क",
-      "always": "हमेशा"
+      "always": "हमेशा",
+      "articles": "लेख",
+      "free_articles": "हमेशा मुफ़्त"
     },
     "storyteller": {
       "eyebrow": "नई सुविधा",

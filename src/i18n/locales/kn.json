@@ -18,7 +18,9 @@
     "close_menu": "ನ್ಯಾವಿಗೇಷನ್ ಮೆನು ಮುಚ್ಚಿ",
     "skip_to_main": "ಮುಖ್ಯ ವಿಷಯಕ್ಕೆ ಹೋಗಿ",
     "storyteller": "ಕಥೆ ಹೇಳುವವರು",
-    "story": "ಕಥೆ"
+    "story": "ಕಥೆ",
+    "pricing": "ಬೆಲೆ",
+    "temples": "ದೇವಾಲಯಗಳು"
   },
   "hero": {
     "eyebrow": "ಪ್ರಾಚೀನ ಜ್ಞಾನ · ಆಧುನಿಕ ಜೀವನ",
@@ -87,7 +89,8 @@
       "characters": "ಪಾತ್ರಗಳು",
       "life_lessons": "ಜೀವನ ಪಾಠಗಳು",
       "slokas": "ಶ್ಲೋಕಗಳು",
-      "philosophy": "ತತ್ವಶಾಸ್ತ್ರ"
+      "philosophy": "ತತ್ವಶಾಸ್ತ್ರ",
+      "epic_overview": "ಮಹಾಕಾವ್ಯ ಅವಲೋಕನ"
     }
   },
   "wisdom": {
@@ -251,7 +254,9 @@
       "characters": "ಪಾತ್ರಗಳು",
       "languages": "ಭಾಷೆಗಳು",
       "free": "ಉಚಿತ",
-      "always": "ಯಾವಾಗಲೂ"
+      "always": "ಯಾವಾಗಲೂ",
+      "articles": "ಲೇಖನಗಳು",
+      "free_articles": "ಯಾವಾಗಲೂ ಉಚಿತ"
     },
     "storyteller": {
       "eyebrow": "ಹೊಸ ವೈಶಿಷ್ಟ್ಯ",

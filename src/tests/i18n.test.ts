@@ -349,7 +349,7 @@ describe("SUITE-AA: Unicode and character encoding", () => {
   });
 
   it("English translations contain only ASCII/Latin characters in nav keys", () => {
-    const enNavValues = Object.values((en as any).nav);
+    const enNavValues = Object.values((en as unknown as Record<string, Record<string, string>>).nav);
     enNavValues.forEach((val) => {
       if (typeof val === "string") {
         expect(
@@ -424,14 +424,14 @@ describe("SUITE-AB: Regression after i18n — existing features intact", () => {
   });
 
   it("article categories still match the expected set", () => {
-    const VALID_CATEGORIES = ["Characters", "Life Lessons", "Slokas", "Philosophy"];
+    const VALID_CATEGORIES = ["Characters", "Life Lessons", "Slokas", "Philosophy", "Epic Overview"];
     articles.forEach((a) => {
       expect(VALID_CATEGORIES).toContain(a.category);
     });
   });
 
   it("en category translations match article categories exactly", () => {
-    const enCats = (en as any).blog.categories;
+    const enCats = (en as unknown as { blog: { categories: Record<string, string> } }).blog.categories;
     expect(enCats.characters).toBe("Characters");
     expect(enCats.life_lessons).toBe("Life Lessons");
     expect(enCats.slokas).toBe("Slokas");
@@ -447,9 +447,9 @@ describe("SUITE-AB: Regression after i18n — existing features intact", () => {
   });
 
   it("i18n translation for quiz has correct interpolation keys", () => {
-    const trophyKey = (en as any).quiz.read_story;
+    const trophyKey = (en as unknown as Record<string, Record<string, string>>).quiz.read_story;
     expect(trophyKey).toContain("{{name}}");
-    const tornKey = (en as any).quiz.torn_between;
+    const tornKey = (en as unknown as Record<string, Record<string, string>>).quiz.torn_between;
     expect(tornKey).toContain("{{char1}}");
     expect(tornKey).toContain("{{char2}}");
   });

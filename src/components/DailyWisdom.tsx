@@ -386,14 +386,6 @@ const SLOKAS: Sloka[] = [
   },
 ];
 
-function getRandomSloka(exclude?: number): number {
-  let idx = Math.floor(Math.random() * SLOKAS.length);
-  if (exclude !== undefined && SLOKAS.length > 1) {
-    while (idx === exclude) idx = Math.floor(Math.random() * SLOKAS.length);
-  }
-  return idx;
-}
-
 const DailyWisdom = () => {
   const { t } = useTranslation();
   const [activeTheme, setActiveTheme] = useState<Theme>("all");

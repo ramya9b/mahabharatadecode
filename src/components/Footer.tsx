@@ -1,6 +1,7 @@
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { Mail } from "lucide-react";
+import { PAYWALL_ENABLED } from "@/lib/subscription";
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -42,7 +43,10 @@ const Footer = () => {
               <li><a href="/#lessons" className="text-muted-foreground text-[16px] hover:text-primary transition-colors i18n-safe">{t("footer.links.lessons")}</a></li>
               <li><Link to="/wisdom" className="text-muted-foreground text-[16px] hover:text-primary transition-colors i18n-safe">{t("footer.links.wisdom")}</Link></li>
               <li><Link to="/temples" className="text-muted-foreground text-[16px] hover:text-primary transition-colors i18n-safe">Temple Map</Link></li>
-              <li><Link to="/pricing" className="text-muted-foreground text-[16px] hover:text-primary transition-colors i18n-safe">Pricing</Link></li>
+              {/* /pricing redirects to home while the paywall is off — matches Navbar. */}
+              {PAYWALL_ENABLED && (
+                <li><Link to="/pricing" className="text-muted-foreground text-[16px] hover:text-primary transition-colors i18n-safe">{t("nav.pricing")}</Link></li>
+              )}
               <li><Link to="/about" className="text-muted-foreground text-[16px] hover:text-primary transition-colors i18n-safe">{t("footer.links.about")}</Link></li>
             </ul>
             {/* Social */}

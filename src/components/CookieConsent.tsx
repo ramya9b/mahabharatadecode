@@ -10,7 +10,7 @@ function getStoredConsent(): ConsentValue {
   catch { return null; }
 }
 function storeConsent(v: "accepted" | "declined") {
-  try { localStorage.setItem(STORAGE_KEY, v); } catch {}
+  try { localStorage.setItem(STORAGE_KEY, v); } catch { /* private mode / quota — consent is best-effort */ }
 }
 
 const CookieConsent = () => {

@@ -28,22 +28,21 @@ const ArticlePage = () => {
     window.scrollTo({ top: 0, behavior: "instant" });
   }, [slug]);
 
-  if (!slug) return <Navigate to="/blog" replace />;
-  const article = getArticleBySlug(slug);
-  if (!article) return <Navigate to="/blog" replace />;
+  const article = slug ? getArticleBySlug(slug) : undefined;
 
-  /* Track last-read for the homepage "Continue reading" card */
-  recordLastRead(article.slug, article.title);
-
-  const related    = getRelatedArticles(article);
-  const articleUrl = `https://mahabharatadecoded.com/blog/${article.slug}`;
+  /* Track last-read for the homepage "Continue reading" card. Runs as an
+     effect rather than during render so it stays a side effect, not a
+     render-time mutation. */
+  useEffect(() => {
+    if (article) recordLastRead(article.slug, article.title);
+  }, [article]);
 
   /* ── Translation state ── */
   const [currentLang, setCurrentLang] = React.useState<LangCode>("en");
   const [translatedContent, setTranslatedContent] = React.useState<string | null>(null);
 
   const plainText = React.useMemo(
-    () => extractPlainText(article.title, article.content ?? [], article.lifeLessons),
+    () => (article ? extractPlainText(article.title, article.content ?? [], article.lifeLessons) : ""),
     [article]
   );
 
@@ -59,19 +58,24 @@ const ArticlePage = () => {
     setCurrentLang(lang);
   }, []);
 
-  const ogImage = article.imageKey === "hero"
-    ? `https://mahabharatadecoded.com/og-default.jpg`
-    : `https://mahabharatadecoded.com/characters/${article.imageKey}.webp`;
+  const ogImage = !article
+    ? ""
+    : article.imageKey === "hero"
+      ? `https://mahabharatadecoded.com/og-default.jpg`
+      : `https://mahabharatadecoded.com/characters/${article.imageKey}.webp`;
 
   useSEO({
-    title: article.metaTitle || article.title,
-    description: article.metaDescription || article.summary || article.description || "",
+    title: article ? article.metaTitle || article.title : "",
+    description: article
+      ? article.metaDescription || article.summary || article.description || ""
+      : "",
     image: ogImage,
-    path: `/blog/${article.slug}`,
+    path: article ? `/blog/${article.slug}` : "",
     type: "article",
     author: "MahabharataDecoded",
-    publishedAt: article.publishDate || "2026-01-01",
+    publishedAt: article?.publishDate || "2026-01-01",
     schema: (() => {
+      if (!article) return undefined;
       const articleSchema = buildArticleSchema({
         title: article.metaTitle || article.title,
         description: article.metaDescription || article.summary || "",
@@ -83,6 +87,14 @@ const ArticlePage = () => {
         : articleSchema;
     })(),
   });
+
+  /* Every hook above runs on all renders, so the redirects must come after
+     them — otherwise the hook count changes between a valid and an unknown
+     slug and React throws "rendered fewer hooks than expected". */
+  if (!slug || !article) return <Navigate to="/blog" replace />;
+
+  const related    = getRelatedArticles(article);
+  const articleUrl = `https://mahabharatadecoded.com/blog/${article.slug}`;
 
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">

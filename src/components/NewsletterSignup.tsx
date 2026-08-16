@@ -62,7 +62,7 @@ const NewsletterSignup = ({
         /* Also cache locally so we know this browser already subscribed */
         try {
           localStorage.setItem("mbd_subscribed", "1");
-        } catch (_) {}
+        } catch { /* private mode / quota — the signup already succeeded */ }
       } else {
         throw new Error(data.error || "Server error");
       }

@@ -39,7 +39,7 @@ export interface Article {
   subtitle: string;
   description: string;
   summary: string;
-  category: "Characters" | "Life Lessons" | "Slokas" | "Philosophy";
+  category: "Characters" | "Life Lessons" | "Slokas" | "Philosophy" | "Epic Overview";
   character?: string;
   readTime: number;
   publishDate: string;
@@ -62,6 +62,9 @@ export interface Article {
   faqs?: { question: string; answer: string }[];
   metaTitle?: string;
   metaDescription?: string;
+  /** SEO keywords carried per article. The daily generator is instructed to
+      populate this, so it is declared here rather than left implicit. */
+  tags?: string[];
 }
 
 export const articles: Article[] = [
@@ -180,8 +183,6 @@ export const articles: Article[] = [
         title: "Loyalty vs Truth",
         description:
           "Karna's tragedy is choosing loyalty to a person over loyalty to dharma. Loyalty is only noble when the cause it serves is just.",
-    metaTitle: "Arjuna and Karna: The Rivalry Was Never Just About Archery | MahabharataDecoded",
-    metaDescription: "Arjuna and Karna were born for each other's destruction. What the Mahabharata is really studying in their rivalry is the difference between legitimacy and merit.",
         accent: "gold",
       },
       {
@@ -274,10 +275,6 @@ export const articles: Article[] = [
     category: "Life Lessons",
     character: "Krishna",
     readTime: 6,
-    metaTitle: "Arjuna and Karna: The Rivalry Was Never Just About Archery | MahabharataDecoded",
-    metaDescription: "Arjuna and Karna were born for each other's destruction. But what the Mahabharata is really studying in their rivalry is the difference between legitimacy and merit.",
-    metaTitle: "Dharma Is Not a Rulebook — It Is a Compass | MahabharataDecoded",
-    metaDescription: "Everyone in the Mahabharata claimed dharma. Everyone destroyed each other anyway. Here is what dharma actually means — and why it is a compass, not a rulebook.",
     publishDate: "April 8, 2026",
     imageKey: "krishna",
     image: "",
@@ -360,15 +357,6 @@ export const articles: Article[] = [
           { slug: "arjuna-confusion-moment-of-doubt", label: "Arjuna's Confusion: Why the Greatest Warrior Broke First" },
           { slug: "gita-verse-two-forty-seven", label: "The Most Misquoted Verse in Human History" },
           { slug: "krishna-detachment-action", label: "Krishna's Secret: How to Act Without Burning Out" },
-              {
-        type: "related_links",
-        text: "Read next",
-        links: [
-          { slug: "bhishma-wrong-side", label: "Bhishma Knew He Was on the Wrong Side. He Stayed Anyway." },
-          { slug: "who-caused-mahabharata-war", label: "Who Was Really Responsible for the Mahabharata War?" },
-          { slug: "dharma-beyond-rules", label: "Dharma Is Not a Rulebook — It Is a Compass" },
-        ],
-      },
     ],
       },
     ],
@@ -378,8 +366,6 @@ export const articles: Article[] = [
         title: "Strategy Over Strength",
         description:
           "Krishna had ten million warriors and chose not to use them. The most powerful move is often knowing which power not to deploy.",
-    metaTitle: "Bhagavad Gita 2.47 — The Most Misquoted Verse Explained | MahabharataDecoded",
-    metaDescription: "Gita 2.47 is quoted to justify both indifference and heroism. Here is what Krishna actually said in context — and why the popular interpretation misses the point entirely.",
         accent: "gold",
       },
       {
@@ -463,16 +449,6 @@ export const articles: Article[] = [
     category: "Life Lessons",
     character: "Arjuna",
     readTime: 5,
-    metaTitle: "Bhishma Knew He Was on the Wrong Side. He Stayed Anyway. | MahabharataDecoded",
-    metaDescription: "Bhishma told Duryodhana he was wrong. Then he picked up his bow and fought for him. The Mahabharata's deepest study of institutional loyalty and its price.",
-    metaTitle: "Krishna's Secret: How to Act Without Burning Out | MahabharataDecoded",
-    metaDescription: "Krishna acted constantly — advising, negotiating, strategising, fighting — and remained untouched by any of it. The Gita's teaching on detachment decoded for modern life.",
-    metaTitle: "Who Was Really Responsible for the Mahabharata War? | MahabharataDecoded",
-    metaDescription: "Everyone says Duryodhana. But Dhritarashtra enabled him. Bhishma had the power to stop it. Shakuni engineered it. A rigorous analysis of where the real responsibility lies.",
-    metaTitle: "Bhagavad Gita 2.47 — The Most Misquoted Verse Explained | MahabharataDecoded",
-    metaDescription: "Gita 2.47 is quoted to justify indifference and heroism equally. Here is what Krishna actually said, in context — and why the popular interpretation misses the point.",
-    metaTitle: "Arjuna's Confusion: Why the Greatest Warrior Broke First | MahabharataDecoded",
-    metaDescription: "On the most important day of his life, Arjuna put down his bow. In that breakdown, the Bhagavad Gita was born. What his collapse can tell us about our own.",
     publishDate: "April 6, 2026",
     imageKey: "arjuna",
     image: "",
@@ -558,15 +534,6 @@ export const articles: Article[] = [
           { slug: "gita-verse-two-forty-seven", label: "The Most Misquoted Verse in Human History" },
           { slug: "arjuna-karna-the-real-rivalry", label: "Arjuna and Karna: The Rivalry Was Never About Archery" },
           { slug: "krishna-leadership-secrets", label: "Krishna: The Leader Who Never Needed the Throne" },
-              {
-        type: "related_links",
-        text: "Read next",
-        links: [
-          { slug: "duryodhana-why-he-was-not-wrong", label: "The Case for Duryodhana: Why the Villain Had a Point" },
-          { slug: "bhishma-wrong-side", label: "Bhishma Knew He Was on the Wrong Side. He Stayed Anyway." },
-          { slug: "silence-of-vidura", label: "Vidura: The Wise Man Who Was Never Listened To" },
-        ],
-      },
     ],
       },
     ],
@@ -576,8 +543,6 @@ export const articles: Article[] = [
         title: "Doubt Is the Beginning",
         description:
           "Arjuna's paralysis qualified him for wisdom — it didn't disqualify him. You cannot receive deep truth when you are certain. Doubt opens what certainty closes.",
-    metaTitle: "Vidura: The Wise Man Who Was Never Listened To | MahabharataDecoded",
-    metaDescription: "Vidura warned Dhritarashtra before every disaster in the Mahabharata. He was right every time. He was ignored every time. The tragedy of wisdom without power.",
         accent: "gold",
       },
       {
@@ -660,10 +625,6 @@ export const articles: Article[] = [
     category: "Characters",
     character: "Draupadi",
     readTime: 10,
-    metaTitle: "The Case for Duryodhana: Why the Villain Had a Point | MahabharataDecoded",
-    metaDescription: "The Mahabharata never calls Duryodhana wrong. His grievance was real, his logic was consistent, and his loyalty never wavered. The argument the epic quietly makes for its villain.",
-    metaTitle: "Vidura: When Wisdom Is Ignored | Mahabharata Life Lessons",
-    metaDescription: "Vidura warned Dhritarashtra before every disaster in the Mahabharata. He was right every time. He was ignored every time. The tragedy of wisdom without power.",
     publishDate: "April 4, 2026",
     imageKey: "draupadi",
     image: "",
@@ -723,15 +684,6 @@ export const articles: Article[] = [
           { slug: "draupadi-humiliation-dice-game", label: "Draupadi Was Stripped in Front of a Thousand Men. What She Did Next Changed Everything." },
           { slug: "draupadi-five-husbands-one-self", label: "Draupadi: The Woman Who Never Lost Herself" },
           { slug: "mahabharata-difficult-relationships", label: "The Mahabharata's Guide to Difficult People" },
-              {
-        type: "related_links",
-        text: "Read next",
-        links: [
-          { slug: "who-caused-mahabharata-war", label: "Who Was Really Responsible for the Mahabharata War?" },
-          { slug: "karna-loyalty-vs-self-respect", label: "Karna: The Man Who Chose Honour Over Everything" },
-          { slug: "bhishma-wrong-side", label: "Bhishma Knew He Was on the Wrong Side. He Stayed Anyway." },
-        ],
-      },
     ],
       },
     ],
@@ -741,8 +693,6 @@ export const articles: Article[] = [
         title: "Dignity Is Claimed, Not Given",
         description:
           "No one in that court gave Draupadi her dignity back. She claimed it herself — with one question that no one could refute.",
-    metaTitle: "The Mahabharata's Guide to Difficult Relationships | MahabharataDecoded",
-    metaDescription: "Every difficult relationship you have lived through — the loyal friend who chose wrong, the parent who could not choose you, the rival who deserved better — is already in the Mahabharata.",
         accent: "gold",
       },
       {
@@ -1379,8 +1329,6 @@ export const articles: Article[] = [
     category: "Life Lessons",
     character: "Krishna",
     readTime: 8,
-    metaTitle: "Bhagavad Gita Lessons for Workplace Stress | MahabharataDecoded",
-    metaDescription: "The Bhagavad Gita was not spoken in a temple. It was spoken on a battlefield. Seven lessons from the Gita that apply directly to modern workplace pressure and burnout.",
     publishDate: "May 22, 2026",
     featured: false,
     imageKey: "krishna",
@@ -2423,8 +2371,6 @@ export const articles: Article[] = [
     category: "Characters",
     character: "Bhishma",
     readTime: 10,
-    metaTitle: "Bhishma's Oath: The Vow That Became a Prison | MahabharataDecoded",
-    metaDescription: "Bhishma gave up a throne and a wife to secure his father's happiness. Centuries later he died defending the injustice his sacrifice had made possible.",
     publishDate: "May 22, 2026",
     featured: false,
     imageKey: "bhishma",
@@ -3007,8 +2953,6 @@ export const articles: Article[] = [
     category: "Life Lessons",
     character: "Bhishma",
     readTime: 7,
-    metaTitle: "What the Mahabharata Says About Anger | MahabharataDecoded",
-    metaDescription: "From Drona's vendetta to Duryodhana's rage to Draupadi's vow — the Mahabharata studies anger more carefully than any modern psychology text. Here is what it found.",
     publishDate: "June 20, 2026",
     featured: false,
     imageKey: "bhishma",
@@ -3290,10 +3234,6 @@ export const articles: Article[] = [
     category: "Characters",
     character: "karna",
     readTime: 9,
-    metaTitle: "Kunti: The Mother Who Abandoned Her Firstborn | MahabharataDecoded",
-    metaDescription: "Kunti knew Karna was her firstborn and said nothing for decades — watching him be humiliated, cursed, and killed. The impossible position the Mahabharata places its most complex mother in.",
-    metaTitle: "Kunti's Impossible Secret | Mahabharata Character Analysis",
-    metaDescription: "Kunti knew Karna was her firstborn and said nothing for decades — watching him be humiliated, cursed, and killed. The impossible position the Mahabharata places its most complex mother in.",
     publishDate: "June 23, 2026",
     featured: false,
     imageKey: "karna",
@@ -3437,10 +3377,6 @@ export const articles: Article[] = [
     category: "Philosophy",
     character: "bhishma",
     readTime: 8,
-    metaTitle: "Gandhari's Blindfold: Solidarity or Abdication? | MahabharataDecoded",
-    metaDescription: "Gandhari blindfolded herself for life to share her husband's darkness. Was it devotion, protest, or the greatest abdication in the Mahabharata? The epic's most ambiguous act of self-erasure.",
-    metaTitle: "Gandhari's Blindfold: Why She Made That Choice | MahabharataDecoded",
-    metaDescription: "Gandhari blindfolded herself for life to share her husband's darkness. Was it devotion, protest, or refusal? The Mahabharata's most ambiguous act of self-erasure explained.",
     publishDate: "June 23, 2026",
     featured: false,
     imageKey: "bhishma",
@@ -3574,10 +3510,6 @@ export const articles: Article[] = [
     category: "Characters",
     character: "arjuna",
     readTime: 7,
-    metaTitle: "Abhimanyu: The Boy Who Was Sent Into a Battle He Could Only Half Fight | MahabharataDecoded",
-    metaDescription: "Abhimanyu learned to enter the Chakravyuh in the womb but not how to exit. He died at 16 inside a formation he could not escape. The tragedy of incomplete inherited knowledge.",
-    metaTitle: "Abhimanyu: Born Knowing Too Much | MahabharataDecoded",
-    metaDescription: "Abhimanyu learned to enter the Chakravyuh in the womb but not how to exit. He died at 16 inside a formation he could not escape. The tragedy of inherited knowledge.",
     publishDate: "June 23, 2026",
     featured: false,
     imageKey: "arjuna",
@@ -3712,10 +3644,6 @@ export const articles: Article[] = [
     category: "Philosophy",
     character: "krishna",
     readTime: 8,
-    metaTitle: "What Victory Cost Krishna: The Grief Nobody Talks About | MahabharataDecoded",
-    metaDescription: "After the war, Krishna returned to Dwarka and watched his entire clan destroy itself. What the Mahabharata says about what winning costs the one who engineered the victory.",
-    metaTitle: "Krishna's Grief After Kurukshetra | MahabharataDecoded",
-    metaDescription: "After the war, Krishna returned to Dwarka and watched his entire clan destroy itself. The Mahabharata's study of what happens to the one who wins — and what winning costs.",
     publishDate: "June 23, 2026",
     featured: false,
     imageKey: "krishna",
@@ -4124,10 +4052,6 @@ export const articles: Article[] = [
     category: "Philosophy",
     character: "bhishma",
     readTime: 7,
-    metaTitle: "What the Mahabharata Actually Says About Forgiveness | MahabharataDecoded",
-    metaDescription: "The Mahabharata presents forgiveness as one of the hardest acts a human being can perform — not a soft virtue but a form of strength that costs more than revenge.",
-    metaTitle: "What the Mahabharata Says About Forgiveness | MahabharataDecoded",
-    metaDescription: "The Mahabharata presents forgiveness as one of the hardest acts a human being can perform — not a soft virtue but a form of strength that costs more than revenge.",
     publishDate: "June 23, 2026",
     featured: false,
     imageKey: "bhishma",
@@ -4389,10 +4313,6 @@ export const articles: Article[] = [
     category: "Life Lessons",
     character: "bhishma",
     readTime: 7,
-    metaTitle: "Vidura: What Happens When Nobody Listens to the Wisest Person | MahabharataDecoded",
-    metaDescription: "Vidura was the wisest man in Hastinapura and had no power to act on it. He said the right thing every time. He was ignored every time. What his story says about wisdom in institutions.",
-    metaTitle: "Vidura: Truth Without Power | Mahabharata Life Lessons",
-    metaDescription: "Vidura was the wisest man in Hastinapura. He had no power. He said the right thing every time. He was ignored every time. What his story tells us about wisdom in institutions.",
     publishDate: "June 23, 2026",
     featured: false,
     imageKey: "bhishma",
@@ -4661,10 +4581,17 @@ export const articles: Article[] = [
       "The Mahabharata's 18 Parvas run from the birth of the Kuru dynasty to the death of Krishna and the departure of the Pandavas. Each Parva is named for its central concern. Together they form the largest single work of literature in human history.",
     category: "Epic Overview",
     readTime: 11,
+    publishDate: "July 5, 2026",
     metaTitle: "The 18 Parvas of the Mahabharata In Order — Complete Guide | MahabharataDecoded",
     metaDescription: "A complete guide to all 18 Parvas of the Mahabharata in order. What each Parva contains, who it focuses on, and why it matters. The clearest breakdown of the epic structure available.",
     featured: false,
+    imageKey: "krishna",
     image: "/characters/krishna.webp",
+    /* A reference guide rather than a narrative: the whole article lives in
+       `content`, so it carries no story blocks or life lessons. Declared
+       explicitly so the shape still matches every other article. */
+    storyBlocks: [],
+    lifeLessons: [],
     tags: ["Epic Structure", "18 Parvas", "Mahabharata Overview", "Sanskrit Literature"],
     relatedSlugs: [
       "who-caused-mahabharata-war",

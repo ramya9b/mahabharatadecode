@@ -495,7 +495,7 @@ describe("SUITE-K: Articles data integrity", () => {
   });
 
   it("all categories are from the known set", () => {
-    const validCats = new Set(["Characters","Life Lessons","Slokas","Philosophy"]);
+    const validCats = new Set(["Characters","Life Lessons","Slokas","Philosophy","Epic Overview"]);
     articles.forEach((a) => {
       expect(validCats.has(a.category), `Unknown category: ${a.category}`).toBe(true);
     });

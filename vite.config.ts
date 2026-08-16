@@ -14,8 +14,27 @@ const escHtml = (s: unknown): string =>
     .replace(/&/g, "&amp;").replace(/</g, "&lt;")
     .replace(/>/g, "&gt;").replace(/"/g, "&quot;");
 
+/* The subset of an Article this prerenderer actually reads. Declared here so
+   the build does not depend on `any` to reach into the data model. */
+type PrerenderArticle = {
+  slug: string;
+  title: string;
+  subtitle?: string;
+  editorNote?: string;
+  summary?: string;
+  description?: string;
+  metaTitle?: string;
+  metaDescription?: string;
+  imageKey?: string;
+  publishDate?: string;
+  storyBlocks?: { label?: string; paragraphs?: string[] }[];
+  content?: { type: string; text: string }[];
+  lifeLessons?: string[];
+  faqs?: { question: string; answer: string }[];
+};
+
 /* Build a crawlable static HTML representation of one article's body. */
-function articleBody(a: Record<string, any>): string {
+function articleBody(a: PrerenderArticle): string {
   const out: string[] = [`<h1>${escHtml(a.title)}</h1>`];
   if (a.subtitle) out.push(`<p>${escHtml(a.subtitle)}</p>`);
   if (a.editorNote) out.push(`<aside><strong>A note from Ramya:</strong> ${escHtml(a.editorNote)}</aside>`);
@@ -38,13 +57,13 @@ function articleBody(a: Record<string, any>): string {
   return out.join("\n");
 }
 
-function articleJsonLd(a: Record<string, any>): string {
+function articleJsonLd(a: PrerenderArticle): string {
   const url   = `${BASE_URL}/blog/${a.slug}`;
   const desc  = a.metaDescription || a.summary || a.description || "";
   const image = a.imageKey === "hero"
     ? `${BASE_URL}/og-default.jpg`
     : `${BASE_URL}/characters/${a.imageKey}.webp`;
-  const schemas: Record<string, any>[] = [{
+  const schemas: Record<string, unknown>[] = [{
     "@context": "https://schema.org",
     "@type": "Article",
     headline: a.metaTitle || a.title,
@@ -87,7 +106,7 @@ function prerenderArticles(): Plugin {
       fs.mkdirSync(blogDir, { recursive: true });
 
       let count = 0;
-      for (const a of articles as unknown as Record<string, any>[]) {
+      for (const a of articles as unknown as PrerenderArticle[]) {
         const url   = `${BASE_URL}/blog/${a.slug}`;
         const title = a.metaTitle || `${a.title} | ${SITE_NAME}`;
         const desc  = a.metaDescription || a.summary || a.description || "";
@@ -98,7 +117,7 @@ function prerenderArticles(): Plugin {
         const fallback =
           `<div style="max-width:720px;margin:0 auto;padding:24px;font-family:Georgia,serif;line-height:1.7;color:#F5EDDA;">${articleBody(a)}</div>`;
 
-        let html = template
+        const html = template
           .replace(/<title>[\s\S]*?<\/title>/, `<title>${escHtml(title)}</title>`)
           .replace(/<meta name="description"[^>]*>/, `<meta name="description" content="${escHtml(desc)}" />`)
           .replace(/<link rel="canonical"[^>]*>/, `<link rel="canonical" href="${url}" />`)

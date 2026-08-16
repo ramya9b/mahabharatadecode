@@ -483,7 +483,7 @@ const CalculatingScreen = () => (
    RESULT SCREEN
 ───────────────────────────────────────────────────────── */
 const ResultScreen = ({
-  result, answers, onRetake, onShare, shareSuccess,
+  result, answers, onRetake, onShare, shareSuccess, cardGenerating,
 }: {
   result: QuizResult;
   answers: (number | null)[];
@@ -837,6 +837,7 @@ const Quiz = () => {
           onRetake={() => dispatch({ type: "RETAKE" })}
           onShare={handleShare}
           shareSuccess={state.shareSuccess}
+          cardGenerating={cardGenerating}
         />
       )}
 

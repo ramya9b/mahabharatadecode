@@ -18,7 +18,9 @@
     "close_menu": "నావిగేషన్ మెనూ మూయండి",
     "skip_to_main": "ప్రధాన విషయానికి వెళ్ళండి",
     "storyteller": "కథా చెప్పేవాడు",
-    "story": "కథ"
+    "story": "కథ",
+    "pricing": "ధరలు",
+    "temples": "ఆలయాలు"
   },
   "hero": {
     "eyebrow": "పురాతన జ్ఞానం · ఆధునిక జీవితం",
@@ -87,7 +89,8 @@
       "characters": "పాత్రలు",
       "life_lessons": "జీవిత పాఠాలు",
       "slokas": "శ్లోకాలు",
-      "philosophy": "తత్వశాస్త్రం"
+      "philosophy": "తత్వశాస్త్రం",
+      "epic_overview": "ఇతిహాస పరిచయం"
     }
   },
   "wisdom": {
@@ -251,7 +254,9 @@
       "characters": "పాత్రలు",
       "languages": "భాషలు",
       "free": "ఉచితం",
-      "always": "ఎల్లప్పుడూ"
+      "always": "ఎల్లప్పుడూ",
+      "articles": "వ్యాసాలు",
+      "free_articles": "ఎల్లప్పుడూ ఉచితం"
     },
     "storyteller": {
       "eyebrow": "కొత్త ఫీచర్",
