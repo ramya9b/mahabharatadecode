@@ -14,25 +14,10 @@ export const LANGUAGES: Record<LangCode, { label: string; native: string; flag: 
 /* ── Cache key per article+language ─────────────────────────────── */
 const cacheKey = (slug: string, lang: LangCode) => `mbd_tx_${slug}_${lang}`;
 
-/* ── System prompt for natural translations ──────────────────────── */
-const buildPrompt = (lang: LangCode, title: string, content: string) => `
-You are a skilled literary translator specialising in Indian mythology and philosophy.
-
-Translate the following Mahabharata article into ${LANGUAGES[lang].label} (${LANGUAGES[lang].native}).
-
-CRITICAL RULES:
-- Translate naturally — as if a native ${LANGUAGES[lang].label} speaker wrote this originally
-- Do NOT translate word-for-word — translate meaning and tone
-- Keep Sanskrit terms (dharma, karma, yoga, arjuna, krishna etc.) in their original form
-- Keep the same emotional register — conversational, direct, human
-- Keep all paragraph breaks exactly as in the original
-- Do not add any preamble like "Here is the translation" — just give the translated text
-
-Article title: ${title}
-
-Article content:
-${content}
-`.trim();
+/* Translation runs through our own /translate function, which holds the API
+   key server-side and builds the prompt. The browser never sees a key, and
+   the endpoint can't be repurposed as a general-purpose LLM. */
+const TRANSLATE_ENDPOINT = "/translate";
 
 interface ArticleTranslatorProps {
   slug:    string;
@@ -76,26 +61,19 @@ const ArticleTranslator = ({
     setLoading(lang);
 
     try {
-      const response = await fetch("https://api.anthropic.com/v1/messages", {
+      const response = await fetch(TRANSLATE_ENDPOINT, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          model:      "claude-sonnet-4-20250514",
-          max_tokens: 4096,
-          messages: [
-            {
-              role:    "user",
-              content: buildPrompt(lang, title, content),
-            },
-          ],
-        }),
+        body: JSON.stringify({ lang, title, content }),
       });
 
-      if (!response.ok) throw new Error(`API ${response.status}`);
+      const data = await response.json().catch(() => ({}));
 
-      const data       = await response.json();
-      const translated = data?.content?.[0]?.text ?? "";
+      if (!response.ok || !data?.success) {
+        throw new Error(data?.error || `Translation failed (${response.status})`);
+      }
 
+      const translated = data.translated ?? "";
       if (!translated) throw new Error("Empty translation");
 
       /* Cache in localStorage — survives page refresh */
@@ -107,8 +85,14 @@ const ArticleTranslator = ({
       onLangChange(lang);
     } catch (err) {
       console.error("Translation failed:", err);
-      /* Graceful fallback — stay on current language */
-      alert(`Translation to ${LANGUAGES[lang].label} failed. Please try again.`);
+      /* Graceful fallback — stay on current language. Surface the reason so a
+         misconfigured key or an over-long article is diagnosable, not just
+         "try again" forever. */
+      const reason = err instanceof Error ? err.message : "";
+      alert(
+        `Translation to ${LANGUAGES[lang].label} failed. Please try again.` +
+        (reason ? `\n\n(${reason})` : "")
+      );
     } finally {
       setLoading(null);
     }
