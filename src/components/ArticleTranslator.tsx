@@ -17,7 +17,7 @@ const cacheKey = (slug: string, lang: LangCode) => `mbd_tx_${slug}_${lang}`;
 /* Translation runs through our own /translate function, which holds the API
    key server-side and builds the prompt. The browser never sees a key, and
    the endpoint can't be repurposed as a general-purpose LLM. */
-const TRANSLATE_ENDPOINT = "/translate";
+const TRANSLATE_ENDPOINT = "/api/translate";
 
 interface ArticleTranslatorProps {
   slug:    string;

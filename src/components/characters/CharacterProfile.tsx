@@ -24,26 +24,25 @@ const CharacterQA = ({ character, isDark }: QAProps) => {
     if (!q || loading) return;
     setLoading(true); setAnswer(""); setError("");
     try {
-      const apiKey = import.meta.env.VITE_GEMINI_API_KEY;
-      if (!apiKey) { setError("AI not configured."); setLoading(false); return; }
+      /* Runs through /api/story, which holds the key and builds the prompt —
+         nothing provider-specific reaches the browser. */
+      const res = await fetch("/api/story", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          kind: "character",
+          characterName: character.name,
+          question: q,
+        }),
+      });
 
-      const system = `You are a wise scholar of the Mahabharata. Answer questions about ${character.name} — their character, choices, philosophy, and role in the epic. Keep answers to 3-5 sentences, insightful and grounded in the original text. Literary tone, no bullet points.`;
+      const data = await res.json().catch(() => ({}));
+      if (!res.ok || !data?.success) {
+        setError(data?.error || "Something went wrong. Please try again.");
+        return;
+      }
 
-      const res = await fetch(
-        `https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash-lite:generateContent?key=${apiKey}`,
-        {
-          method: "POST",
-          headers: { "Content-Type": "application/json" },
-          body: JSON.stringify({
-            system_instruction: { parts: [{ text: system }] },
-            contents: [{ role: "user", parts: [{ text: q }] }],
-            generationConfig: { temperature: 0.75, maxOutputTokens: 512, thinkingConfig: { thinkingBudget: 0 } },
-          }),
-        }
-      );
-      const data = await res.json();
-      const raw = data?.candidates?.[0]?.content?.parts?.[0]?.text ?? "";
-      const cleaned = raw.replace(/\*\*(.*?)\*\*/g,"$1").replace(/\*(.*?)\*/g,"$1").replace(/#{1,6}\s/g,"").trim();
+      const cleaned = (data.story ?? "").trim();
       if (cleaned) setAnswer(cleaned);
       else setError("No answer returned. Try rephrasing.");
     } catch { setError("Something went wrong. Please try again."); }

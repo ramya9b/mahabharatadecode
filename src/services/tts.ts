@@ -1,19 +1,15 @@
 /* ─────────────────────────────────────────────
-   Google Cloud Text-to-Speech Service
+   Text-to-Speech client — MahabharataDecoded
    Supports: English (Indian), Telugu, Hindi, Kannada
-   Free tier: 1 million chars/month (WaveNet)
-   Works on ALL devices — no installs needed
+
+   Synthesis runs in the /api/tts function, which holds the Google
+   key and picks the voice. The browser sends text plus a language
+   and gets back base64 MP3 to play.
 ───────────────────────────────────────────── */
 
 export type Language = "en" | "te" | "hi" | "kn";
 
-/* Best WaveNet voices per language */
-const VOICE_CONFIG: Record<Language, { languageCode: string; name: string; ssmlGender: string }> = {
-  en: { languageCode: "en-IN", name: "en-IN-Wavenet-D", ssmlGender: "MALE"   },
-  te: { languageCode: "te-IN", name: "te-IN-Standard-A", ssmlGender: "FEMALE" },
-  hi: { languageCode: "hi-IN", name: "hi-IN-Wavenet-D", ssmlGender: "MALE"   },
-  kn: { languageCode: "kn-IN", name: "kn-IN-Standard-A", ssmlGender: "FEMALE" },
-};
+const TTS_ENDPOINT = "/api/tts";
 
 /* Simple in-memory cache — avoid re-fetching same text */
 const audioCache = new Map<string, string>();
@@ -22,51 +18,26 @@ export async function synthesizeSpeech(
   text: string,
   language: Language
 ): Promise<{ audioUrl: string; error?: string }> {
-  const apiKey = import.meta.env.VITE_GOOGLE_TTS_KEY;
-
-  if (!apiKey) {
-    return { audioUrl: "", error: "Google TTS API key not configured." };
-  }
-
   /* Check cache first */
   const cacheKey = `${language}:${text.slice(0, 100)}`;
   if (audioCache.has(cacheKey)) {
     return { audioUrl: audioCache.get(cacheKey)! };
   }
 
-  const voice = VOICE_CONFIG[language] ?? VOICE_CONFIG.en;
-
   try {
-    const response = await fetch(
-      `https://texttospeech.googleapis.com/v1/text:synthesize?key=${apiKey}`,
-      {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({
-          input: { text },
-          voice: {
-            languageCode: voice.languageCode,
-            name: voice.name,
-            ssmlGender: voice.ssmlGender,
-          },
-          audioConfig: {
-            audioEncoding: "MP3",
-            speakingRate: language === "te" || language === "kn" ? 0.9 : 0.95,
-            pitch: 0.0,
-            volumeGainDb: 2.0,
-          },
-        }),
-      }
-    );
+    const response = await fetch(TTS_ENDPOINT, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ text, language }),
+    });
 
-    if (!response.ok) {
-      const err = await response.json().catch(() => ({}));
-      throw new Error(err?.error?.message || `TTS API error ${response.status}`);
+    const data = await response.json().catch(() => ({}));
+
+    if (!response.ok || !data?.success) {
+      throw new Error(data?.error || `TTS failed (${response.status})`);
     }
 
-    const data = await response.json();
     const audioContent = data.audioContent;
-
     if (!audioContent) throw new Error("Empty audio response");
 
     /* Convert base64 to blob URL */

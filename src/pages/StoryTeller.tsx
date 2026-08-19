@@ -345,9 +345,10 @@ const StoryTeller = () => {
     setSpeaking(true);
     stoppedRef.current = false;
 
-    /* ── Google Cloud TTS (works on ALL devices, ALL languages) ── */
-    const googleKey = import.meta.env.VITE_GOOGLE_TTS_KEY;
-    if (googleKey) {
+    /* ── Google Cloud TTS (works on ALL devices, ALL languages) ──
+       The key lives in /api/tts, so the client can't check for it up
+       front — try the call and fall back to browser TTS if it fails. */
+    {
       const { audioUrl, error } = await synthesizeSpeech(cleanText, language);
       if (audioUrl && !stoppedRef.current) {
         const audio = new Audio(audioUrl);
@@ -890,7 +891,7 @@ const StoryTeller = () => {
                   ⚠️ {error}
                 </p>
                 <p style={{ fontFamily: body, fontSize: "12px", color: inkMuted, marginTop: "8px" }}>
-                  Make sure VITE_GROQ_API_KEY is set in your .env file. Get a free key at console.groq.com
+                  If this keeps happening, the story service may not be configured. Please try again in a moment.
                 </p>
               </div>
             )}
@@ -1329,18 +1330,10 @@ const StoryTeller = () => {
           </section>
         )}
 
-        {/* ── API Key notice (dev only) ── */}
-        {!import.meta.env.VITE_GROQ_API_KEY && !import.meta.env.VITE_GEMINI_API_KEY && step !== "story" && (
-          <div style={{
-            marginTop: "48px", padding: "20px 24px", borderRadius: "12px",
-            background: "rgba(34,197,94,0.08)", border: "1px solid rgba(34,197,94,0.25)",
-          }}>
-            <p style={{ fontFamily: serif, fontSize: "13px", color: goldDark, margin: 0 }}>
-              🔑 Add <code style={{ background: "rgba(34,197,94,0.15)", padding: "2px 6px", borderRadius: "4px" }}>VITE_GROQ_API_KEY=your_key</code> to your <code>.env</code> file to activate story generation.
-              Get a free key at <a href="https://console.groq.com" target="_blank" rel="noreferrer" style={{ color: gold }}>console.groq.com</a>
-            </p>
-          </div>
-        )}
+        {/* The "add your API key" notice used to live here. Keys now sit in
+            /api/story, so the browser has no way to know whether they are
+            configured — an unconfigured server returns an error on the first
+            generation instead. */}
       </main>
 
       {/* Footer must stay INSIDE the relative/zIndex:1 wrapper so it
