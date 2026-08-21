@@ -12693,6 +12693,300 @@ export const articles: Article[] = [
       },
     ],
   },
+
+  {
+    slug: "what-is-the-sudarshana-chakra",
+    title: "What Is the Sudarshana Chakra? Krishna's Spinning Discus, Explained",
+    subtitle:
+      "It is the weapon everyone recognizes on Krishna's raised finger — a blazing, whirling disc with a serrated edge. But most of what people 'know' about the Sudarshana Chakra comes from art and later Puranic stories, not the Mahabharata. Here is what the epic itself actually says, and the one moment where the discus does exactly what its legend promises.",
+    description:
+      "The Sudarshana Chakra is the spinning discus of Vishnu, carried by Krishna throughout the Mahabharata. This is a careful, source-honest look at the weapon: what its name means, how the Adi Parva says Krishna acquired it, its one decisive use in the epic — the beheading of King Shishupala at the Rajasuya sacrifice — and how much of the familiar lore about it is Puranic rather than from the epic. Fact and later tradition are kept clearly apart.",
+    summary:
+      "The Sudarshana Chakra is the spinning, razor-edged discus of Vishnu, wielded by Krishna in the Mahabharata. Its clearest use in the epic is the beheading of King Shishupala at Yudhishthira's Rajasuya sacrifice, after Shishupala's insults passed the limit Krishna had vowed to forgive. Much of its later, more elaborate lore comes from the Puranas, not the epic itself.",
+    category: "Epic Overview",
+    character: "Krishna",
+    readTime: 12,
+    metaTitle: "Sudarshana Chakra: Krishna's Discus | MahabharataDecoded",
+    metaDescription:
+      "What is the Sudarshana Chakra? Krishna's spinning discus beheaded Shishupala at the Rajasuya sacrifice. The Mahabharata's account of Vishnu's fiery weapon.",
+    publishDate: "August 21, 2026",
+    featured: false,
+    imageKey: "krishna",
+    image: "",
+    tags: ["Sudarshana Chakra", "Krishna", "Vishnu", "Shishupala", "divine weapons", "Sabha Parva", "chakra", "Mahabharata"],
+    pullQuote:
+      "The discus everyone pictures spinning on Krishna's finger is, in the Mahabharata itself, drawn exactly once to kill — and even then, only after a hundred insults had been counted and forgiven. The weapon is famous. Its restraint is the part the paintings leave out.",
+    authorNote:
+      "This article draws mainly on two books of the Mahabharata: the Adi Parva, which describes Krishna receiving his discus and mace at the burning of the Khandava forest, and the Sabha Parva, which narrates the beheading of Shishupala at Yudhishthira's Rajasuya sacrifice — the discus's one decisive use in the epic. The scene of Krishna charging Bhishma is from the Bhishma Parva. Where the familiar imagery and origin stories of the chakra come from the Puranas or later iconography rather than the epic, I have said so plainly rather than blending them together.",
+    reelHook: {
+      hook: "Everyone knows the spinning disc balanced on Krishna's finger. But in the entire Mahabharata, the Sudarshana Chakra is actually drawn to kill just once. Here is what the epic really says about it.",
+      supporting: "Most of what we picture — the forging from sunlight, the 108 flaming edges — is Puranic, not from the epic. The Mahabharata's own account is quieter, and its one great moment comes with a strange condition attached: a hundred offenses forgiven first.",
+    },
+    relatedSlugs: ["what-is-the-brahmastra", "how-did-arjuna-get-the-pashupatastra", "how-did-krishna-die"],
+    storyBlocks: [
+      {
+        section: "introduction",
+        label: "Introduction",
+        paragraphs: [
+          "You have seen it a thousand times without being told what it is. A calm blue figure, one arm raised, a glowing wheel spinning on the tip of a single finger. That wheel is the Sudarshana Chakra, and for a lot of people it is the most instantly recognizable weapon in all of Hindu tradition. It is also one of the most misunderstood.",
+          "Ask what it does and you will get a flood of answers: it can behead an enemy from any distance, it returns to the hand like a boomerang, it was forged from the leftover brilliance of the sun, its edge carries a hundred and eight flaming teeth. Some of that is genuinely old. A lot of it comes from Puranic stories and centuries of temple art, not from the Mahabharata itself.",
+          "So this piece does something a little unfashionable. It separates the two. What does the epic actually say about Krishna's discus — where he got it, when he used it, and what it did? And where does the rest of the legend come from? The honest answer is more interesting than the myth, because the Mahabharata treats this famous weapon with a restraint the paintings never show.",
+        ],
+      },
+      {
+        section: "background",
+        label: "Vishnu's Weapon, Krishna's Hand",
+        paragraphs: [
+          "Start with the name, because it quietly corrects a common assumption. Sudarshana breaks into su, meaning good, fair, or auspicious, and darshana, meaning sight or vision. Put together it means something close to 'fair to behold' or 'of good vision.' It is not a word for destruction. The most famous killing weapon in the tradition is named for how it looks and for the clarity it stands for, not for slaughter.",
+          "In the broad sweep of Hindu tradition, the chakra is not really Krishna's private weapon at all. It belongs to Vishnu. Images of Vishnu almost always show him holding four things — the conch, the discus, the mace, and the lotus — and the discus among them is the Sudarshana. Krishna, understood as an avatar of Vishnu, carries it because it is Vishnu's to carry. That framing matters: the discus is less a gadget Krishna owns than an emblem of the divine force he embodies.",
+          "The Mahabharata does give Krishna the discus inside its own story, though. According to the Adi Parva, during the burning of the Khandava forest, the fire god Agni equips Krishna and Arjuna for the task ahead. Arjuna receives the great bow Gandiva, inexhaustible quivers, and a divine chariot. Krishna receives a discus and the mace called Kaumodaki. That discus — blazing, able to be hurled and to return — is the weapon the tradition knows as the Sudarshana. It is worth noticing that in the epic Krishna does not descend from the sky brandishing it; he is handed it, on Earth, for a specific job.",
+        ],
+      },
+      {
+        section: "turningPoint",
+        label: "The One Time It Is Drawn to Kill",
+        paragraphs: [
+          "If you want to see the Sudarshana Chakra do in the Mahabharata what its legend promises, there is really only one scene, and it is unforgettable. It happens in the Sabha Parva, at the height of Yudhishthira's Rajasuya — the great imperial sacrifice that declares him supreme king.",
+          "When the assembled kings are being honored, Bhishma advises that Krishna receive the first and highest honor. One guest refuses to sit quietly for it. Shishupala, the king of Chedi, rises and pours out insult after insult — that Krishna is a mere cowherd, no true king, unworthy of any honor at all, and that Bhishma is a fool for proposing it. The hall goes tense. Some kings reach for their weapons. And Krishna, of all people, does nothing for a long time.",
+          "The reason is a promise. According to the Sabha Parva, Shishupala's mother was Krishna's own aunt, and years earlier she had begged Krishna to forgive her son's offenses. Krishna had vowed to bear a hundred of them. So he sits, and he counts, and only when Shishupala's abuse passes that hundredth mark does he finally summon the discus. The Sudarshana Chakra takes Shishupala's head in a single stroke. It is swift, it is exact, and it comes only after an almost unbearable patience. That is the epic's one clean, decisive use of the weapon — and the condition attached to it tells you as much about Krishna as about the discus.",
+        ],
+      },
+    ],
+    content: [
+      { type: "heading", text: "So What Exactly Is the Sudarshana Chakra?" },
+      {
+        type: "paragraph",
+        text: "At the simplest level, it is a chakra — a discus, a spinning bladed wheel thrown as a weapon. Discuses were a real class of weapon in ancient India, and in myth they become something more: a whirling disc of energy that flies to its target and returns to the thrower's hand. The Sudarshana is the grandest of them, the discus of Vishnu himself, and in the Mahabharata it rests in the hand of Krishna.",
+      },
+      {
+        type: "paragraph",
+        text: "Here is the thing worth holding onto before we go further. The Mahabharata is a huge text, and Krishna is at the center of it for most of its length, yet the discus barely appears as a weapon in action. Krishna spends the great war of Kurukshetra not fighting at all but driving Arjuna's chariot, having vowed to carry no weapon into the battle. So the image people carry — Krishna endlessly loosing his flaming disc across the battlefield — is almost the opposite of what the epic shows. The weapon is present the way a sheathed sword is present. Its power is understood. It is drawn to kill exactly once.",
+      },
+      { type: "heading", text: "What the Name Actually Means" },
+      {
+        type: "paragraph",
+        text: "People often assume Sudarshana means something fierce — 'destroyer,' 'the deadly one.' It does not. Su is a prefix for good, fair, or auspicious. Darshana means sight, seeing, or vision — the same word used for the act of beholding a deity in a temple. So Sudarshana means roughly 'fair to behold,' or 'that which is good to see,' or, read another way, 'clear sight.'",
+      },
+      {
+        type: "paragraph",
+        text: "That is a strange name for a beheading weapon, and the strangeness is the point. Later commentators lean into it: the discus is read as the wheel of time, or the turning of dharma, or the clear discernment that cuts through confusion. Those are interpretations, added by tradition rather than stated by the epic, and they should be read as such. But even the plain meaning of the word nudges you away from thinking of the chakra as brute force. It is named for vision, not violence.",
+      },
+      { type: "heading", text: "Where Krishna Got It: The Burning of the Khandava Forest" },
+      {
+        type: "paragraph",
+        text: "The Mahabharata's own account of how Krishna comes to hold the discus sits in the Adi Parva, in the episode of the Khandava forest. The fire god Agni wants to consume the vast forest but cannot, because it is protected. He seeks the help of Krishna and Arjuna, and to make them equal to the task he arranges divine weapons for both.",
+      },
+      {
+        type: "paragraph",
+        text: "Arjuna is given the celebrated bow Gandiva, two quivers whose arrows never run out, and a chariot flying a monkey banner. Krishna is given a discus and a mace named Kaumodaki. The discus is described as blazing and irresistible, a weapon that can be hurled and will come back to the hand that threw it. This is the Sudarshana entering the story as an object Krishna physically receives, for a particular purpose, rather than as a cosmic attribute he was born holding. Both framings live side by side in the tradition, and the epic is comfortable with that: the discus is Vishnu's eternal emblem and also a weapon handed to Krishna one day in a burning forest.",
+      },
+      { type: "heading", text: "Its Most Famous Moment: The Beheading of Shishupala" },
+      {
+        type: "paragraph",
+        text: "The single scene where the Sudarshana Chakra acts decisively is the death of Shishupala, and it rewards slowing down, because it is not really a story about a weapon. It is a story about patience running out.",
+      },
+      {
+        type: "paragraph",
+        text: "The setting is Yudhishthira's Rajasuya sacrifice in the Sabha Parva — a ceremony that confirms him as a paramount ruler, attended by kings from across the land. When it comes time to offer the ceremonial first honor, Bhishma, the eldest and most respected figure present, names Krishna as the worthiest to receive it. Most of the hall accepts this. Shishupala, king of Chedi, does not.",
+      },
+      {
+        type: "paragraph",
+        text: "He stands and unleashes a torrent of contempt — Krishna is a cowherd, not a king; he has no throne, no lineage worth the honor; Bhishma is senile to have suggested it. According to the Sabha Parva, this is not a first offense but the culmination of a long history. Shishupala had wronged Krishna and his people repeatedly over the years. And there was a bond between them: Shishupala's mother was the sister of Krishna's father, which made the two men cousins, and she had once pleaded with Krishna to be patient with her son. Krishna had promised her he would forgive a hundred of Shishupala's offenses.",
+      },
+      {
+        type: "paragraph",
+        text: "So the strange, tense heart of the scene is that Krishna keeps count. He lets the insults land. He absorbs them one after another, holding to a promise made long ago to a frightened mother. Only when the offenses cross the agreed hundred does he act. He summons the Sudarshana Chakra and, in a single motion, severs Shishupala's head. The epic describes a light rising from the fallen king. The kings who had reached for their swords never had to use them. It was over.",
+      },
+      {
+        type: "paragraph",
+        text: "Read it again and notice what the Mahabharata is doing. The most powerful weapon in the tradition is used not in rage but at the end of a very long fuse. The killing is real and it is final, but it is bounded by a vow, delayed to the last possible moment, and triggered by a count rather than a temper. If you only know the discus from posters, this is the scene that should reset the picture.",
+      },
+      { type: "heading", text: "The Scene Everyone Pictures — and What the Text Actually Says" },
+      {
+        type: "paragraph",
+        text: "There is a second moment where people are sure they remember Krishna using the Sudarshana Chakra, and it is worth handling carefully, because the popular memory and the text do not quite match. During the war, in the Bhishma Parva, Krishna twice becomes so frustrated with Bhishma's onslaught — and with Arjuna's reluctance to fight his grandfather with full force — that he leaps down from the chariot and rushes at Bhishma himself, apparently ready to break his own vow never to take up a weapon in the war.",
+      },
+      {
+        type: "paragraph",
+        text: "In countless paintings, the object in Krishna's raised hand at this moment is the flaming Sudarshana Chakra. But the epic's own description of the scene has him snatching up a chariot wheel from the ground, not the divine discus. Bhishma, far from being afraid, welcomes death at Krishna's hands as the highest honor. And crucially, Krishna never strikes: Arjuna races after him, catches him, and begs him to stop, promising to fight properly. So the famous 'Krishna charges Bhishma' image blends a real, dramatic moment with a weapon the text does not clearly name there. It is a good example of how the discus has been painted into scenes it does not strictly occupy.",
+      },
+      { type: "heading", text: "The Chakra Beyond the Mahabharata" },
+      {
+        type: "paragraph",
+        text: "A great deal of what people know about the Sudarshana Chakra comes not from the Mahabharata but from the Puranas and from later iconography, and that material deserves to be labeled honestly rather than folded in as if the epic said it.",
+      },
+      {
+        type: "paragraph",
+        text: "Puranic tradition supplies the origin stories the epic never tells — accounts of the discus being fashioned for Vishnu out of cosmic material, sometimes described as shaped from the excess brilliance of the sun. The vivid iconographic details, like a rim of many flaming serrated edges, belong to temple sculpture and painting that developed over centuries. And the Bhagavata Purana carries a striking tale in which the Sudarshana Chakra, sent to protect the devout king Ambarisha, relentlessly pursues the sage Durvasa until the sage begs forgiveness — a story used to show that the discus answers to devotion and to divine order, not to human anger. These are rich and old in their own right. They are simply later than, and separate from, the Mahabharata, and reading them back into the epic muddies what the epic actually claims.",
+      },
+      {
+        type: "lesson",
+        text: "The discus is a study in power under restraint. Its single decisive act in the Mahabharata comes only after a hundred insults have been counted and forgiven — after every patience has been spent. The tradition names it not for destruction but for clear sight. Held together, those two facts say something the paintings cannot: real power is not measured by how quickly it strikes, but by how long it can choose not to.",
+      },
+      { type: "heading", text: "Did You Know?" },
+      {
+        type: "paragraph",
+        text: "A handful of things about the Sudarshana Chakra that tend to get lost — each grounded either in the epic or clearly marked as later tradition.",
+      },
+      {
+        type: "paragraph",
+        text: "1. The name means 'fair to behold,' not 'destroyer.' It comes from su (good, auspicious) and darshana (sight, vision). The tradition's deadliest weapon is named for how it looks and for clarity of vision.",
+      },
+      {
+        type: "paragraph",
+        text: "2. In the whole Mahabharata, its one clearly decisive killing is the beheading of Shishupala at the Rajasuya sacrifice, told in the Sabha Parva.",
+      },
+      {
+        type: "paragraph",
+        text: "3. The Adi Parva says Krishna received the discus, along with the mace Kaumodaki, from the fire god Agni at the burning of the Khandava forest — the same episode in which Arjuna received the Gandiva bow.",
+      },
+      {
+        type: "paragraph",
+        text: "4. In the wider tradition the chakra is Vishnu's, not Krishna's alone. It is one of the four emblems Vishnu is almost always shown holding — conch, discus, mace, and lotus. Krishna wields it as an avatar of Vishnu.",
+      },
+      {
+        type: "paragraph",
+        text: "5. The Shishupala killing was bound by a vow. According to the Sabha Parva, Krishna had promised Shishupala's mother — his own aunt — to forgive a hundred of her son's offenses, and he acted only once that count was crossed.",
+      },
+      {
+        type: "paragraph",
+        text: "6. The elaborate origin lore — the forging from cosmic or solar brilliance, the flaming serrated rim — comes from Puranic texts and later temple art, not from the Mahabharata.",
+      },
+      {
+        type: "paragraph",
+        text: "7. One of the most famous chakra stories, in which the discus chases the sage Durvasa to protect King Ambarisha, is from the Bhagavata Purana, a separate and later source from the epic.",
+      },
+      { type: "heading", text: "Common Misconceptions" },
+      {
+        type: "paragraph",
+        text: "Few objects in the tradition are as recognizable and as misremembered as this one. Here are the corrections worth making.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception 1: Krishna used the Sudarshana Chakra constantly throughout the Kurukshetra war. He did not. Krishna served as Arjuna's charioteer and had vowed not to fight or bear a weapon in the war. The discus's most famous use in the epic, the killing of Shishupala, happens before the war even begins.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception 2: Krishna hurled the discus at Bhishma. The scene where Krishna charges Bhishma is real and dramatic, but the epic describes him seizing a chariot wheel, not the Sudarshana, and he never actually strikes — Arjuna stops him. The flaming disc in that image is added by later art, not stated by the text there.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception 3: Sudarshana means 'destroyer' or 'the deadly one.' It means almost the opposite — 'fair to behold' or 'good vision.' The weapon is named for sight and clarity, not for killing.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception 4: The detailed origin of the chakra — forged from the sun, ringed with a hundred and eight edges — is told in the Mahabharata. It is not. Those details come from Puranic literature and later iconography. The epic simply presents Krishna as receiving and wielding the discus.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception 5: Krishna killed Shishupala in a sudden fit of anger over one insult. The Mahabharata frames it as the crossing of a fixed limit. Krishna had promised to forgive a hundred offenses and held to that promise, acting only when the count was exceeded. The killing is deliberate and bounded, not impulsive.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception 6: The Sudarshana Chakra is essentially a Mahabharata invention. The discus of Vishnu runs across the whole of Hindu tradition — the Vedas' imagery, the Puranas, temple worship, and beyond. The Mahabharata is one important text that features it, not its origin point, and much of the weapon's developed lore lives outside the epic.",
+      },
+      { type: "heading", text: "What the Sudarshana Chakra Really Represents" },
+      {
+        type: "paragraph",
+        text: "Strip away the special effects and a quieter meaning is left. In the tradition, the discus is the instrument by which the divine restores balance — the thing that finally moves when patience, persuasion, and every softer option have been exhausted. That is exactly how the Mahabharata stages its one great use of it. Krishna does not reach for the weapon first. He reaches for it last, after a promise has been honored to its final margin.",
+      },
+      {
+        type: "paragraph",
+        text: "There is a reason the discus keeps its grip on the imagination long after you learn how rarely it is used. It stands for a kind of power most of us find hard to picture: overwhelming force that is also completely disciplined, held in reserve, released only when it must be and never a moment sooner. The name says vision, and that is the harder half of the lesson. The point is not that the wheel can cut. The point is knowing, clearly, when it should — and having the restraint to wait until then.",
+      },
+      {
+        type: "quote",
+        text: "To protect the good, to destroy the wicked, and to establish dharma, I am born in age after age. — Bhagavad Gita 4.8",
+      },
+    ],
+    keyLessons: [
+      {
+        icon: "🎯",
+        title: "Power is measured by restraint, not speed",
+        description: "The Mahabharata's most feared weapon is drawn to kill exactly once, and only after a hundred insults are counted and forgiven. Force that can wait is more impressive than force that reacts. The strongest response is often the one you choose not to give yet.",
+        accent: "gold",
+      },
+      {
+        icon: "👁️",
+        title: "Clear sight before decisive action",
+        description: "The discus is named for vision, not destruction. Before Krishna acts, he sees the whole situation exactly for what it is — the history, the vow, the limit. Act only once you truly understand what is in front of you, and the action tends to be clean.",
+        accent: "teal",
+      },
+      {
+        icon: "⚖️",
+        title: "Keep the promise you made, right to the edge",
+        description: "Krishna had vowed to bear a hundred offenses, and he honored that vow to its last margin before responding. A commitment is worth most precisely when it is hardest to keep. Hold the line you set until the line is genuinely crossed.",
+        accent: "crimson",
+      },
+    ],
+    modernConnections: [
+      {
+        context: "You are being provoked — a colleague, a rival, someone testing how much they can get away with — and everyone is watching to see whether you will snap.",
+        insight: "The Shishupala scene is a masterclass in composure. Krishna does not pretend the offenses are fine, and he does not lash out. He holds a clear internal boundary, absorbs what he promised to absorb, and responds decisively only when the real limit is reached. That combination — patient but not passive — is far more powerful than an immediate reaction.",
+        example: "Krishna sat through a hall full of insults, counting, while other kings reached for their swords. When he finally moved, it was over in a single stroke and no one questioned that the line had been crossed.",
+      },
+      {
+        context: "You feel pressure to look strong by responding fast and hard to every slight or challenge.",
+        insight: "The discus reframes what strength looks like. Its whole legend rests on force held in reserve — present, understood, rarely used. Reputation built on restraint outlasts reputation built on quick retaliation, because people trust power that clearly knows when not to strike.",
+        example: "For most of the Mahabharata, the Sudarshana Chakra simply rests unused while Krishna drives a chariot and gives counsel. Its authority comes from what everyone knows it could do, not from constant display.",
+      },
+    ],
+    lifeLessons: [
+      "The strongest response is often the one you deliberately hold back until it is truly needed.",
+      "Name and know your limit in advance, and you will act cleanly when it is crossed rather than flailing in the moment.",
+      "Real power is disciplined power — force that waits is more impressive than force that reacts.",
+      "See the whole situation clearly before you act; clarity is what makes decisive action land right.",
+      "Keep a promise to its final margin, especially the ones that are hard to keep — that is where they mean the most.",
+    ],
+    faqs: [
+      {
+        question: "What is the Sudarshana Chakra?",
+        answer: "It is the spinning, bladed discus of the god Vishnu, wielded in the Mahabharata by Krishna, who is understood as an avatar of Vishnu. In tradition it is a whirling disc of energy that flies to its target and returns to the hand. Its name means roughly 'fair to behold' or 'good vision,' not 'destroyer.'",
+      },
+      {
+        question: "What does 'Sudarshana' mean?",
+        answer: "The word combines su, meaning good, fair, or auspicious, with darshana, meaning sight or vision. So Sudarshana means something like 'fair to behold' or 'that which is good to see.' Despite being a weapon's name, it points to vision and clarity rather than to destruction.",
+      },
+      {
+        question: "How did Krishna get the Sudarshana Chakra?",
+        answer: "According to the Adi Parva, Krishna received the discus, along with the mace Kaumodaki, from the fire god Agni during the burning of the Khandava forest — the same episode in which Arjuna received the Gandiva bow. In the wider tradition, the discus is Vishnu's eternal weapon, which Krishna carries as Vishnu's avatar.",
+      },
+      {
+        question: "When did Krishna use the Sudarshana Chakra in the Mahabharata?",
+        answer: "Its one clearly decisive use in the epic is the beheading of King Shishupala at Yudhishthira's Rajasuya sacrifice, narrated in the Sabha Parva. Krishna summons the discus only after Shishupala's insults exceed the hundred offenses Krishna had vowed to forgive.",
+      },
+      {
+        question: "Why did Krishna kill Shishupala with the chakra?",
+        answer: "Shishupala publicly insulted Krishna and Bhishma at the Rajasuya sacrifice, the latest in a long history of offenses. Krishna had earlier promised Shishupala's mother, who was his aunt, to forgive a hundred of her son's offenses. When the insults crossed that count, Krishna used the Sudarshana Chakra to behead him.",
+      },
+      {
+        question: "Did Krishna use the Sudarshana Chakra against Bhishma?",
+        answer: "Not exactly. In the Bhishma Parva, Krishna does furiously charge at Bhishma, seemingly ready to break his vow not to fight, but the epic describes him seizing a chariot wheel, not the discus, and he never strikes — Arjuna stops him. The common image of Krishna raising the flaming Sudarshana at Bhishma comes largely from later art.",
+      },
+      {
+        question: "Did Krishna use the Sudarshana Chakra in the Kurukshetra war?",
+        answer: "No, not as a battlefield weapon. Krishna served as Arjuna's charioteer and had vowed not to fight or bear arms in the war. The discus's famous use, against Shishupala, happens before the war begins, not during it.",
+      },
+      {
+        question: "Is the Sudarshana Chakra only Krishna's weapon?",
+        answer: "In the broader tradition it belongs to Vishnu. It is one of the four emblems Vishnu is almost always depicted holding — conch, discus, mace, and lotus. Krishna wields it because he is an avatar of Vishnu, so the discus is really Vishnu's, appearing in Krishna's hand.",
+      },
+      {
+        question: "Where do the stories about the chakra's origin and powers come from?",
+        answer: "Much of the elaborate lore — the forging from cosmic or solar brilliance, the flaming serrated rim, tales like the discus chasing the sage Durvasa to protect King Ambarisha — comes from the Puranas and from later iconography, not from the Mahabharata. The epic itself is comparatively spare about the weapon.",
+      },
+      {
+        question: "What does the Sudarshana Chakra symbolize?",
+        answer: "Traditionally it is read as the instrument by which the divine restores balance, moving only when softer options are exhausted. Later commentators connect it to the wheel of time, the turning of dharma, and clear discernment. These are interpretations added by tradition; the epic itself presents it more plainly as Krishna's decisive weapon.",
+      },
+    ],
+    sloka: {
+      sanskrit: "परित्राणाय साधूनां विनाशाय च दुष्कृताम्।\nधर्मसंस्थापनार्थाय सम्भवामि युगे युगे॥",
+      transliteration: "Paritranaya sadhunam vinashaya cha dushkritam, dharma-samsthapanarthaya sambhavami yuge yuge.",
+      translation:
+        "To protect the good, to destroy the wicked, and to establish dharma, I am born in age after age. — Bhagavad Gita 4.8. Krishna speaks this line to Arjuna about why the divine takes form in the world. It is a fitting frame for the Sudarshana Chakra, which the tradition treats as the instrument of exactly this work — the restoring of balance when the wicked have exhausted every mercy. The Shishupala episode is that verse in miniature: patience first, and the decisive stroke only at the very end.",
+    },
+  },
 ];
 
 /* ─────────────────── Helpers ─────────────────── */
