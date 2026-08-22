@@ -12987,6 +12987,310 @@ export const articles: Article[] = [
         "To protect the good, to destroy the wicked, and to establish dharma, I am born in age after age. — Bhagavad Gita 4.8. Krishna speaks this line to Arjuna about why the divine takes form in the world. It is a fitting frame for the Sudarshana Chakra, which the tradition treats as the instrument of exactly this work — the restoring of balance when the wicked have exhausted every mercy. The Shishupala episode is that verse in miniature: patience first, and the decisive stroke only at the very end.",
     },
   },
+
+  {
+    slug: "who-survived-the-mahabharata-war",
+    title: "Who Survived the Mahabharata War? The Handful Left Standing After 18 Days",
+    subtitle:
+      "Two vast armies marched onto Kurukshetra. Eighteen days later almost no one was left. The question people ask is simple — who walked away? The answer is a very short list, and the reasons each name is on it tell you more about the war than any body count could.",
+    description:
+      "Who survived the Mahabharata war? Only a small number of named warriors lived through the eighteen days at Kurukshetra. On the winning side: the five Pandavas, Krishna, Satyaki, and Yuyutsu. On the Kaurava side: Ashwatthama, Kripacharya, and Kritavarma. This is the full account of who lived, why they lived, and the night raid in the Sauptika Parva that decided the final roster.",
+    summary:
+      "Almost no one survived the Mahabharata war. Of the millions who fought, the named survivors number around eleven: the five Pandavas, Krishna, Satyaki, and Yuyutsu on the winning side, and Ashwatthama, Kripacharya, and Kritavarma on the Kaurava side. The Pandavas and Krishna lived largely because they were away from their camp on the night Ashwatthama raided it.",
+    category: "Epic Overview",
+    readTime: 13,
+    metaTitle: "Who All Survived the Mahabharata War? | MahabharataDecoded",
+    metaDescription:
+      "Who survived the Mahabharata war? Only about eleven named warriors: the five Pandavas, Krishna, Satyaki, Yuyutsu, and three Kauravas. Here is who lived and why.",
+    publishDate: "August 22, 2026",
+    featured: false,
+    imageKey: "hero",
+    image: "",
+    tags: [
+      "who survived the Mahabharata war",
+      "Kurukshetra survivors",
+      "Sauptika Parva",
+      "Ashwatthama",
+      "Pandavas",
+      "Kripacharya",
+      "Kritavarma",
+      "Mahabharata war",
+    ],
+    pullQuote:
+      "The war did not end with a great duel or a final charge. It ended with three exhausted men creeping into a sleeping camp in the dark. By morning the question was no longer who would win. It was who was left.",
+    authorNote:
+      "This article draws mainly on the closing books of the Mahabharata — the Shalya Parva and Sauptika Parva for the last days and the night raid, and the Stri Parva for the aftermath. The core roster of survivors (the five Pandavas, Krishna, Satyaki, Yuyutsu, Ashwatthama, Kripacharya, and Kritavarma) is consistent across the tradition. Where retellings differ on the exact total, or add figures like Vrishaketu, I have said so rather than pretending the number is tidy.",
+    reelHook: {
+      hook: "Two armies of millions met at Kurukshetra. Eighteen days later, you could count the survivors on your fingers. Here is exactly who walked away — and why.",
+      supporting: "The five Pandavas lived. Krishna lived. And so did three men from the losing side. The reason most of the winners survived is grim: they simply were not in camp the night it was slaughtered in its sleep.",
+    },
+    relatedSlugs: [
+      "what-happened-to-pandavas-after-war",
+      "is-ashwatthama-still-alive",
+      "who-are-the-8-chiranjivi-immortals",
+    ],
+    storyBlocks: [
+      {
+        section: "introduction",
+        label: "Introduction",
+        paragraphs: [
+          "Picture the numbers the epic throws at you. Eighteen akshauhinis of troops — eleven for the Kauravas, seven for the Pandavas — a sea of chariots, elephants, horses, and foot soldiers stretching past the horizon. Now picture the field on the nineteenth morning. Silent. Emptied. The Mahabharata does not soften this. It tells you plainly that of everyone who marched onto Kurukshetra, only a handful were still breathing when it was over.",
+          "So when people ask who survived the Mahabharata war, they are often surprised by how short the honest answer is. This was not a war with heavy casualties. It was a war with almost total casualties. Whole clans were wiped out in a single generation. The survivors are not a crowd. They are a list you can hold in your head.",
+          "And the reasons each of them lived are worth sitting with. Some survived through skill. Some through Krishna's foresight. Some through a night of butchery that the winners were lucky enough to miss. The roster of who walked away tells you something the death toll never could: what this war actually cost, and how little of either family was left to inherit the peace.",
+        ],
+      },
+      {
+        section: "background",
+        label: "How the Field Emptied",
+        paragraphs: [
+          "The war ran eighteen days, and it thinned both armies steadily. The great commanders fell one after another — Bhishma brought down on the tenth day, Drona on the fifteenth, Karna on the seventeenth, and Duryodhana himself broken in a mace duel on the eighteenth. Each fall took thousands of soldiers with it, because armies in the epic move and die with their leaders.",
+          "By the evening of the eighteenth day, the Kaurava host was effectively gone. Duryodhana lay dying by the lake with his thigh shattered. Of his eleven armies, only three warriors of any standing were still alive: Ashwatthama, the son of Drona; Kripacharya, the old teacher; and Kritavarma, the Yadava who had fought for the Kauravas. That was the remnant of the larger force.",
+          "The Pandava side had fared better, but not by as much as their victory suggests. The five brothers were alive. Krishna, who had fought no battles himself, was alive. Satyaki, the fierce Yadava on their side, was alive. Yuyutsu, the one son of Dhritarashtra who had crossed over to them before the war, was alive. And crucially, so were the Pandava army's remaining leaders and Draupadi's five grown sons. On the night of the eighteenth day, the winning side still had a camp full of people who had come through the whole war. What happened to them next is the hinge of the entire question.",
+        ],
+      },
+      {
+        section: "turningPoint",
+        label: "The Night That Decided the List",
+        paragraphs: [
+          "The victory did not hold through the night. This is the part most casual retellings skip, and it is the reason the final survivor list looks the way it does.",
+          "Ashwatthama, half-mad with grief and rage after his father's death and Duryodhana's fall, went to the dying Duryodhana and was made commander of what was left. That same night, with Kripacharya and Kritavarma guarding the entrance, he stole into the sleeping Pandava camp and killed almost everyone in it. Dhrishtadyumna, who had slain Drona. Shikhandi. The five sons of Draupadi, asleep in their tents. The remaining Panchala and Somaka warriors, cut down in the dark before they could stand and fight.",
+          "The five Pandavas, Krishna, and Satyaki survived that massacre for one reason: they were not there. On Krishna's counsel they had spent the night away from the camp. When they returned at dawn, the war they thought they had won had taken almost everything from them in their sleep. That single night is why the winners' survivor list is so much shorter than their victory would lead you to expect — and why three men from the beaten side were still standing at the very end.",
+        ],
+      },
+    ],
+    content: [
+      { type: "heading", text: "The Short Answer: Who Actually Walked Away" },
+      {
+        type: "paragraph",
+        text: "Let us start with the list, because it is genuinely short. The named warriors who survived the Kurukshetra war, according to the epic, are these. On the victorious Pandava side: the five Pandava brothers — Yudhishthira, Bhima, Arjuna, Nakula, and Sahadeva — along with Krishna, Satyaki, and Yuyutsu. On the defeated Kaurava side: Ashwatthama, Kripacharya, and Kritavarma. That is around eleven principal survivors out of an army the epic numbers in the millions.",
+      },
+      {
+        type: "paragraph",
+        text: "Everyone else you can name from the war is gone. Bhishma, Drona, Karna, Duryodhana and his ninety-nine brothers, Dushasana, Shakuni, Jarasandha's allies, Dhrishtadyumna, Shikhandi, Abhimanyu, Ghatotkacha, the five sons of Draupadi — all dead. The Mahabharata is a story about a generation that essentially destroyed itself, and the survivor list is the clearest proof of it.",
+      },
+      {
+        type: "lesson",
+        text: "Hold two facts side by side and the war comes into focus. The Pandavas won. And of everyone they went to war with and for, almost no one came home. Victory in the Mahabharata is never clean. It is counted in who is missing from the table afterward, not in who holds the throne.",
+      },
+      { type: "heading", text: "The Pandava-Side Survivors" },
+      {
+        type: "paragraph",
+        text: "The five Pandavas are the obvious survivors — they are the heroes, and the story continues through them. But it is worth remembering how close even they came. Arjuna and Bhima carried the war on their shoulders; Yudhishthira, Nakula, and Sahadeva all fought and were wounded. They lived through eighteen days of the deadliest fighting in the epic and then, on the final night, survived only because they happened to be elsewhere when their camp was destroyed.",
+      },
+      {
+        type: "paragraph",
+        text: "Krishna survived too, though he never lifted a weapon in the war. He had taken a vow not to fight, and served instead as Arjuna's charioteer and counsel — the voice behind the Bhagavad Gita on the first morning. His survival is not a warrior's survival. It is the survival of the strategist who kept his side alive, including by advising them to sleep away from the camp on the last night.",
+      },
+      {
+        type: "paragraph",
+        text: "Satyaki, also called Yuyudhana, was a Yadava warrior and a devoted follower of Krishna who fought fiercely for the Pandavas throughout the war. He was one of the few front-line fighters on the winning side to come through it alive. Years later, though, his story would end badly — he was killed in the Yadava civil war that destroyed Krishna's own clan.",
+      },
+      {
+        type: "paragraph",
+        text: "Yuyutsu is the survivor most people forget. He was a son of Dhritarashtra — born to a serving woman rather than to Gandhari, and so not counted among the hundred Kauravas. When the two sides lined up before the war and Yudhishthira invited anyone who wished to change sides, Yuyutsu alone crossed the field to join the Pandavas. He fought for them, survived, and afterward was one of the few members of the older generation trusted to help govern. He is a quiet reminder that the family line was not divided as neatly as the war made it look.",
+      },
+      { type: "heading", text: "The Kaurava-Side Survivors" },
+      {
+        type: "paragraph",
+        text: "The three survivors from the losing side are the ones that surprise people, because their side was annihilated. Yet Ashwatthama, Kripacharya, and Kritavarma all lived — and it was these three, not any of the great fallen commanders, who struck the war's final, terrible blow in the night raid.",
+      },
+      {
+        type: "paragraph",
+        text: "Ashwatthama, Drona's son, is the most consequential of them. Consumed by grief over his father's death by deceit, he led the night attack on the sleeping camp. Afterward, when the Pandavas pursued him, he loosed a celestial weapon aimed at wiping out their line entirely, striking at the unborn child in Uttara's womb — the future king Parikshit. Krishna intervened, and in the tradition Ashwatthama was cursed to wander the earth for an unimaginable span of time, alone and unhealing. He survives the war only to be denied any ending at all.",
+      },
+      {
+        type: "paragraph",
+        text: "Kripacharya, the aged teacher who trained both the Pandavas and the Kauravas in their boyhood, also survived. In tradition he is counted among the Chiranjivi, the deathless ones, which is one reason his survival is treated as a given. After the war he was among those who helped raise and instruct Parikshit, carrying the old knowledge forward into the generation that inherited the emptied kingdom.",
+      },
+      {
+        type: "paragraph",
+        text: "Kritavarma was a Yadava chief — from Krishna's own people — who chose the Kaurava side and fought well for it. He survived the war and stood guard while Ashwatthama carried out the night raid. His survival, like Satyaki's, turned out to be temporary in the long view: he was killed years later in the Mausala Parva, when the Yadavas turned on one another and destroyed their own clan in a single drunken brawl.",
+      },
+      { type: "heading", text: "Why So Few Lived: The Sauptika Parva" },
+      {
+        type: "paragraph",
+        text: "The reason the survivor list is so lopsided — why the winning side lost nearly everyone except its named heroes — comes down to one night, described in the Sauptika Parva, the book of the sleeping. It is one of the darkest passages in the whole epic.",
+      },
+      {
+        type: "paragraph",
+        text: "After Duryodhana fell on the eighteenth day, the Pandavas believed the war was over. Their remaining warriors and Draupadi's five sons returned to camp to rest. But Ashwatthama, Kripacharya, and Kritavarma had escaped into the forest, and Ashwatthama could not accept the end. He resolved to kill the sleeping enemy rather than let the victory stand. In the night he entered the camp and put to death everyone he could find, while his two companions cut down any who tried to flee the entrance.",
+      },
+      {
+        type: "paragraph",
+        text: "The dead that night included Dhrishtadyumna, the commander who had killed Drona; Shikhandi, who had been the instrument of Bhishma's fall; and the Upapandavas, the five sons Draupadi had borne to the five brothers. These were not minor figures. They had come through the entire war alive, and they were killed defenseless in the dark. The five Pandavas, Krishna, and Satyaki were spared only because Krishna had led them to spend that night outside the camp. Without that single decision, the Mahabharata's list of survivors might have been shorter still.",
+      },
+      { type: "heading", text: "Did You Know?" },
+      {
+        type: "paragraph",
+        text: "A few facts about the survivors that often get lost in the retellings — each grounded in the closing books of the epic.",
+      },
+      {
+        type: "paragraph",
+        text: "1. The three Kaurava-side survivors were the raiders. Ashwatthama, Kripacharya, and Kritavarma did not merely happen to live — they carried out the night attack that killed most of the Pandava camp after the war was supposedly won.",
+      },
+      {
+        type: "paragraph",
+        text: "2. The Pandavas survived by not being there. On the final night, Krishna had advised the five brothers, himself, and Satyaki to rest away from the camp. That is the main reason the winning side's heroes came through the massacre at all.",
+      },
+      {
+        type: "paragraph",
+        text: "3. Two survivors are counted among the immortals. Both Kripacharya and Ashwatthama appear in the traditional list of the Chiranjivi, the deathless ones — which is why later tradition treats their survival as more than luck.",
+      },
+      {
+        type: "paragraph",
+        text: "4. Draupadi's sons survived the war and then didn't. The five Upapandavas came through all eighteen days of open battle, only to be killed asleep on the last night. Surviving the war proper was not the same as surviving the war.",
+      },
+      {
+        type: "paragraph",
+        text: "5. One of Dhritarashtra's sons fought for the Pandavas. Yuyutsu, born to a serving woman, switched sides before the fighting began and survived — the only son of Dhritarashtra to live through it.",
+      },
+      {
+        type: "paragraph",
+        text: "6. Some survivors did not survive for long. Kritavarma and Satyaki both lived through Kurukshetra only to die years later in the Yadava civil war of the Mausala Parva, killing each other's kind in a self-inflicted catastrophe.",
+      },
+      {
+        type: "paragraph",
+        text: "7. Tradition names a few more survivors on the edges. The narrative also has Vrishaketu, a surviving son of Karna, live through the war; after the Pandavas learned Karna was their brother, Arjuna is said to have taken the young man under his protection. Figures like this are why the exact survivor count varies between retellings.",
+      },
+      {
+        type: "paragraph",
+        text: "8. The death toll is given as a symbolic vastness. In the Stri Parva, the scale of the dead is described with an enormous figure — traditionally cited as over 1.6 billion killed, with tens of thousands more never found. The number is meant to convey totality, not a literal census, and it sets the survivors' handful in stark relief.",
+      },
+      { type: "heading", text: "Common Misconceptions" },
+      {
+        type: "paragraph",
+        text: "This is one of those questions where confident-sounding answers on the internet are often wrong. Here are the ones worth clearing up.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception 1: Only the Pandavas survived. Not true. Several warriors on both sides lived, including three from the Kaurava army — Ashwatthama, Kripacharya, and Kritavarma. The winning family did not have a monopoly on survival; it barely had a majority of it.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception 2: Exactly eighteen people survived. The number eighteen runs everywhere through the epic — eighteen parvas, eighteen days, eighteen akshauhinis, eighteen chapters of the Gita — so it is tempting to say eighteen survived too. But the text names roughly eleven principal survivors, and retellings differ on the total. There is no clean, canonical count of exactly eighteen survivors.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception 3: Krishna survived as a warrior. Krishna took a vow not to fight and lifted no weapon in the war. He survived as Arjuna's charioteer and adviser, not as a combatant. Treating him as a surviving fighter misreads the role he actually played.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception 4: Ashwatthama died in the war. He did not. He survived, led the night raid, and — in the tradition — was cursed by Krishna to wander deathless for ages. The whole point of his fate is that he is denied the ending that death would have given him.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception 5: Draupadi's sons survived because they were strong enough. Their survival through the open war had nothing to do with why they died. They were killed asleep, defenseless, in the night raid. Skill in battle could not save someone who was never given the chance to fight.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception 6: The survivors lived happily ever after. Several died soon after in ways the war set in motion. Kritavarma and Satyaki fell in the Yadava massacre, Krishna's mortal life ended not long after, and the Pandavas themselves eventually renounced the throne and died on their final journey to the mountains. Surviving Kurukshetra was not the same as being spared its consequences.",
+      },
+      { type: "heading", text: "What the Survivor List Is Really Telling You" },
+      {
+        type: "paragraph",
+        text: "Step back from the names and look at the shape of the thing. A war fought to settle who deserved the throne of Hastinapura ended with the throne intact and almost everyone who might have enjoyed it dead. The next king, Parikshit, was a child not yet born when the war ended — he had to be revived by Krishna after Ashwatthama's weapon struck him in the womb. The generation that fought did not get to rule the peace it bought. It handed a scorched inheritance to a grandchild.",
+      },
+      {
+        type: "paragraph",
+        text: "That is why the survivor list matters more than the victory. Ask who won and the answer is the Pandavas. Ask who survived and you start to feel what winning cost. Eleven or so names out of millions. Sons buried by their parents. A teacher outliving all his students. A charioteer who came home to a camp of the dead. The Mahabharata never lets you celebrate the outcome without counting the chairs left empty to reach it.",
+      },
+      {
+        type: "paragraph",
+        text: "So the next time someone tells you the Pandavas won the Mahabharata war, you can agree, and then ask the harder question. Won what, exactly, and with whom left to share it? The survivor list is the epic's own answer, and it is not a triumphant one. It is a quiet, unsparing account of how much a family can lose while technically winning.",
+      },
+      {
+        type: "quote",
+        text: "As a person casts off worn-out garments and puts on new ones, so the embodied self casts off worn-out bodies and takes on others that are new. — Bhagavad Gita 2.22",
+      },
+    ],
+    keyLessons: [
+      {
+        icon: "⚖️",
+        title: "Winning and surviving are not the same thing",
+        description: "The Pandavas won the war and still lost almost everyone. Before you throw everything at a victory, be honest about what will actually be left standing on the other side of it — a win that empties the room around you is a strange kind of win.",
+        accent: "crimson",
+      },
+      {
+        icon: "🌙",
+        title: "The decisive move is sometimes knowing where not to be",
+        description: "The Pandavas survived the final night not by fighting but by being elsewhere, on good counsel. Positioning and foresight can protect you where raw strength cannot. Knowing when to step out of the line of fire is its own skill.",
+        accent: "teal",
+      },
+      {
+        icon: "🕯️",
+        title: "Some costs come due after the win",
+        description: "Several survivors died soon after, in feuds the war had set in motion. Consequences do not stop at the finish line. The real reckoning of a conflict often arrives quietly, years later, among the people who thought they had come through it.",
+        accent: "gold",
+      },
+    ],
+    modernConnections: [
+      {
+        context: "You are pushing hard toward a goal — a deal, a case, a competition — and treating the win as the only thing that matters.",
+        insight: "The Mahabharata's survivor count is a warning about victories that hollow out everything around them. Winning is real, but so is the cost, and the epic insists you keep both in view. A goal worth reaching is one where you can live with who and what is still standing when you get there.",
+        example: "The Pandavas took the throne and buried nearly everyone they loved to do it. The story does not call that a clean triumph, and neither should you when the arithmetic of a win starts to look like that.",
+      },
+      {
+        context: "You have come through a hard, draining period and you assume the danger is behind you.",
+        insight: "The Sauptika Parva is a brutal reminder that the moment you believe it is over is exactly when guard drops and disaster slips in. The end of the visible fight is not always the end of the risk. Staying alert a little longer than feels necessary is often what actually keeps you safe.",
+        example: "The Pandava camp let its guard down the night the war was 'won,' and lost almost everyone in it. The survivors were the ones who, on wiser counsel, did not assume the danger had passed.",
+      },
+    ],
+    lifeLessons: [
+      "Victory and survival are different questions; a win can leave you standing almost alone.",
+      "Foresight and positioning can protect you where sheer strength cannot — knowing where not to be is a skill.",
+      "The most dangerous moment is often the one right after you believe the danger has passed.",
+      "The consequences of a conflict keep arriving long after it is officially over.",
+      "Count the cost of a win by who and what is left, not only by who holds the prize.",
+    ],
+    faqs: [
+      {
+        question: "Who survived the Mahabharata war?",
+        answer: "The named survivors are around eleven. On the Pandava side: the five brothers (Yudhishthira, Bhima, Arjuna, Nakula, Sahadeva), Krishna, Satyaki, and Yuyutsu. On the Kaurava side: Ashwatthama, Kripacharya, and Kritavarma. Nearly everyone else who fought at Kurukshetra was killed.",
+      },
+      {
+        question: "How many people survived the Mahabharata war?",
+        answer: "The epic names roughly eleven principal warriors as survivors, out of an army numbered in the millions. Exact totals vary between retellings, since a few edge figures like Vrishaketu are sometimes added, but the core survivor list is consistently small — a handful of names against a near-total death toll.",
+      },
+      {
+        question: "Did any Kauravas survive the war?",
+        answer: "None of Dhritarashtra's hundred sons by Gandhari survived — Duryodhana and all his brothers were killed. But three warriors of the Kaurava army lived: Ashwatthama, Kripacharya, and Kritavarma. Yuyutsu, a son of Dhritarashtra by a serving woman, also survived, though he had switched to the Pandava side before the war.",
+      },
+      {
+        question: "Why did the Pandavas survive the war?",
+        answer: "The five Pandavas fought through eighteen days and then survived the final night for a specific reason: on Krishna's counsel they slept away from their camp on the night Ashwatthama raided it. Most of their remaining warriors, who stayed in the camp, were killed in that attack.",
+      },
+      {
+        question: "Did Krishna survive the Mahabharata war?",
+        answer: "Yes. Krishna took a vow not to fight and served as Arjuna's charioteer and adviser rather than as a warrior. He survived the war, though his mortal life ended some years later, after the Yadava clan destroyed itself in the events of the Mausala Parva.",
+      },
+      {
+        question: "How did Ashwatthama survive?",
+        answer: "Ashwatthama survived the eighteen days and then carried out the night raid on the sleeping Pandava camp. Afterward he was pursued for aiming a celestial weapon at the unborn Parikshit, and in tradition Krishna cursed him to wander the earth deathless for ages. He is counted among the Chiranjivi, the immortals.",
+      },
+      {
+        question: "Did Draupadi's sons survive the war?",
+        answer: "No. Draupadi's five sons, the Upapandavas, came through all eighteen days of open battle but were killed in their sleep during Ashwatthama's night raid, described in the Sauptika Parva. Their deaths are among the war's most bitter, because they had already survived the fighting itself.",
+      },
+      {
+        question: "What was the night raid that killed most of the survivors?",
+        answer: "It is told in the Sauptika Parva. After Duryodhana fell, Ashwatthama, with Kripacharya and Kritavarma guarding the entrance, entered the Pandava camp at night and killed almost everyone in it, including Dhrishtadyumna, Shikhandi, and Draupadi's five sons. It is why the winning side's survivor list is so short.",
+      },
+      {
+        question: "Who was Yuyutsu, and how did he survive?",
+        answer: "Yuyutsu was a son of Dhritarashtra by a serving woman, so he was not one of the hundred Kauravas. Before the war he crossed over to the Pandava side when Yudhishthira invited anyone who wished to change allegiance. He fought for the Pandavas, survived, and afterward helped govern the kingdom.",
+      },
+      {
+        question: "Did the survivors live happily after the war?",
+        answer: "Mostly not. Kritavarma and Satyaki died years later in the Yadava civil war, Krishna's mortal life ended around the same time, and the Pandavas eventually renounced the throne and died on their final journey. Surviving Kurukshetra did not spare them the long consequences of the war.",
+      },
+    ],
+    sloka: {
+      sanskrit: "वासांसि जीर्णानि यथा विहाय नवानि गृह्णाति नरोऽपराणि।\nतथा शरीराणि विहाय जीर्णान्यन्यानि संयाति नवानि देही॥",
+      transliteration: "Vasamsi jirnani yatha vihaya navani grihnati naro'parani. Tatha sharirani vihaya jirnany anyani samyati navani dehi.",
+      translation:
+        "As a person casts off worn-out garments and puts on new ones, so the embodied self casts off worn-out bodies and takes on others that are new. — Bhagavad Gita 2.22. Krishna speaks this to Arjuna on the first morning of the war, before the killing begins. Set it beside the survivor list at the end and it lands differently. The verse offers the soul's continuity as a consolation for death, but the field it is spoken over becomes, in eighteen days, a place where almost no body is left to cast anything off. The Gita's calm and the war's devastation are held in the same story on purpose.",
+    },
+  },
 ];
 
 /* ─────────────────── Helpers ─────────────────── */
