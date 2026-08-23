@@ -13291,6 +13291,306 @@ export const articles: Article[] = [
         "As a person casts off worn-out garments and puts on new ones, so the embodied self casts off worn-out bodies and takes on others that are new. — Bhagavad Gita 2.22. Krishna speaks this to Arjuna on the first morning of the war, before the killing begins. Set it beside the survivor list at the end and it lands differently. The verse offers the soul's continuity as a consolation for death, but the field it is spoken over becomes, in eighteen days, a place where almost no body is left to cast anything off. The Gita's calm and the war's devastation are held in the same story on purpose.",
     },
   },
+
+  {
+    slug: "how-did-parikshit-die",
+    title: "How Did Parikshit Die? Takshaka's Bite and the Curse That Closed the Epic",
+    subtitle:
+      "The child Krishna revived in the womb grew up to be a good king. Then, worn out on a hunt, he did one careless thing to a silent sage — and a furious boy's curse gave him seven days to live.",
+    description:
+      "Parikshit, grandson of Arjuna and the heir who continued the Kuru line after the war, died from a serpent's bite brought on by a curse. Exhausted on a hunt, he insulted a meditating sage by hanging a dead snake around his neck. The sage's son cursed him to die within seven days, bitten by Takshaka, king of serpents. This is the full story from the Adi Parva — the careless act, the curse, the guarded tower, the bribed healer, and the death that set the entire Mahabharata in motion.",
+    summary:
+      "Parikshit died of a snakebite because of a curse. Tired and thirsty on a hunt, he draped a dead snake over a sage who was deep in silent meditation. The sage's young son cursed him to die within seven days, bitten by the serpent Takshaka. Despite building a guarded tower, Parikshit was killed on the seventh day when Takshaka reached him hidden inside a piece of fruit.",
+    category: "Characters",
+    character: "Parikshit",
+    readTime: 13,
+    metaTitle: "How Did Parikshit Die? Takshaka's Bite | MahabharataDecoded",
+    metaDescription:
+      "How did Parikshit die? Arjuna's grandson, saved in the womb by Krishna, was cursed to die within seven days after insulting a sage. Then Takshaka came for him.",
+    publishDate: "August 23, 2026",
+    featured: false,
+    imageKey: "hero",
+    image: "",
+    tags: [
+      "Parikshit",
+      "how did Parikshit die",
+      "Takshaka",
+      "Janamejaya",
+      "snake sacrifice",
+      "Adi Parva",
+      "Shringi curse",
+      "Kuru dynasty",
+    ],
+    pullQuote:
+      "He survived a divine weapon aimed at him before he was born. He ruled well for a lifetime. And in the end a tired man, a silent sage, and a dead snake picked up on the tip of a bow were enough to undo him. The Mahabharata never lets its kings die the deaths their power promises.",
+    authorNote:
+      "This article draws on the Adi Parva, the first book of the Mahabharata, and specifically the frame material of the Astika Parva group — the story of King Parikshit's death, his son Janamejaya's snake sacrifice, and the sage Astika who halts it. Parikshit's rescue in the womb belongs to the Sauptika and Ashvamedhika Parvas. Where the later Bhagavata Purana tells his death differently, I have labelled it as a separate Puranic tradition rather than blending it with the epic.",
+    reelHook: {
+      hook: "He was killed by a divine weapon before he was even born, and Krishna brought him back to life. So how did King Parikshit finally die? A dead snake, a furious boy, and a seven-day countdown.",
+      supporting: "Exhausted on a hunt, Parikshit draped a dead snake over a sage lost in meditation. The sage's son cursed him: within seven days, Takshaka the serpent king would kill him. He built a guarded tower. It was not enough.",
+    },
+    relatedSlugs: [
+      "what-happened-to-pandavas-after-war",
+      "who-wrote-the-mahabharata",
+      "is-ashwatthama-still-alive",
+    ],
+    storyBlocks: [
+      {
+        section: "introduction",
+        label: "Introduction",
+        paragraphs: [
+          "Most people who know the Mahabharata can tell you how the war ended. Far fewer can tell you how the story that frames the whole epic begins — with the death of a king almost nobody talks about. His name was Parikshit, and the strange thing is that the entire Mahabharata, as we have it, is being recited because of how he died.",
+          "Parikshit was the grandson of Arjuna and the only heir left standing after Kurukshetra emptied the Kuru family of nearly everyone who might have inherited it. He had already cheated death once, before he drew a single breath. You would expect a man like that to die grandly, or peacefully, at the end of a long reign.",
+          "Instead he died of a snakebite, on a countdown, because of one thoughtless act on an ordinary hunting trip. And that death set off a chain of events that ends with the Mahabharata itself being spoken aloud. This is the story of how it happened.",
+        ],
+      },
+      {
+        section: "background",
+        label: "The Heir Who Was Saved in the Womb",
+        paragraphs: [
+          "To understand Parikshit's death, you have to start with his birth, because he is one of the few people in the epic who was killed and revived before he was born. His father was Abhimanyu, Arjuna's brilliant young son, who died on the thirteenth day of the war trapped inside the Chakravyuha. His mother was Uttara, princess of the Matsya kingdom. When Abhimanyu fell, Uttara was already carrying his child.",
+          "After the war, Drona's son Ashwatthama, half-mad with grief, loosed a Brahma-weapon with a terrible aim: to end the Pandava line for good by killing the unborn child in Uttara's womb. The child was struck and born lifeless. According to the Mahabharata, Krishna intervened and restored the infant to life, and because he was born into a family that had been all but wiped out — pariksheena, nearly extinct — the boy was named Parikshit. Later tradition, especially the Bhagavata Purana, offers a second explanation of the name: that as a child he went about examining, or 'testing', everyone around him, searching for the shining being he had glimpsed protecting him in the womb.",
+          "When the Pandavas finally renounced the throne and walked north on their last journey, it was Parikshit they crowned king of Hastinapura. He was a child then, guided by the aged teacher Kripa and the surviving elders. Tradition remembers him as a just and capable ruler; some accounts give his reign as sixty years. The line that the war had nearly extinguished, and that Ashwatthama had tried to end in the womb, now ran entirely through this one man.",
+        ],
+      },
+      {
+        section: "turningPoint",
+        label: "One Tired Afternoon in the Forest",
+        paragraphs: [
+          "The turning point is almost embarrassingly small. Parikshit was hunting deer in the forest, as kings did. He wounded a deer with an arrow and chased it deep into the woods, and somewhere in that pursuit he lost the animal and lost himself — hungry, thirsty, worn down, and separated from his party.",
+          "He came upon a sage named Shamika sitting in deep meditation, holding a vow of silence. Parikshit asked him whether he had seen the wounded deer pass by. The sage, absorbed in his practice and bound by his vow, said nothing. To an exhausted, irritated king, the silence read as contempt.",
+          "So Parikshit did something petty and cruel. He spotted a dead snake nearby, lifted it on the end of his bow, and looped it around the silent sage's shoulders. Then he went home. Shamika did not react at all; he stayed exactly as he was. But the insult did not stay in the forest. It found the one person who would not let it go.",
+        ],
+      },
+    ],
+    content: [
+      { type: "heading", text: "The King Who Was Never Supposed to Live" },
+      {
+        type: "paragraph",
+        text: "Parikshit is easy to miss. He arrives near the very end of the main story and dies at the start of the frame that wraps around it, so most retellings hurry past him to get to the war. But slow down, because his life is one of the strangest shapes in the whole epic. He is the person the Mahabharata was nearly written without — the heir the war almost erased, saved at the last possible instant, only to be undone decades later by a moment of ordinary bad temper.",
+      },
+      {
+        type: "paragraph",
+        text: "The short answer to how he died is this: a serpent named Takshaka bit him, and he died from the venom, because a young ascetic had cursed him to that exact death. But the short answer misses everything that makes the story land. What killed Parikshit was not really the snake. It was a chain of small human failures — his own exhaustion, a boy's rage, a sage's silence, a healer's greed — that added up to a death no single person quite intended. That chain is worth walking through slowly.",
+      },
+      { type: "heading", text: "The Curse of a Furious Boy" },
+      {
+        type: "paragraph",
+        text: "Shamika had a son named Shringi, a young ascetic with real spiritual power and a temper to match. He was away when the king passed through, and he heard what had happened not from his father but from a companion, who told him — with the exaggeration that gossip always carries — that some king had hung a dead snake around his meditating father's neck like a garland.",
+      },
+      {
+        type: "paragraph",
+        text: "Shringi did not go and check on his father. He did not ask what had actually happened. He reached straight for the most powerful thing he had. Standing there in his fury, he touched sacred water and pronounced a curse: within seven days, the serpent Takshaka — king of the Nagas — would bite the king who had insulted his father, and Parikshit would die and be carried to the house of Yama, the lord of death.",
+      },
+      {
+        type: "paragraph",
+        text: "Here is a detail the Mahabharata is careful to include, because it changes how you read the whole episode. When Shamika came out of his meditation and learned what his son had done, he was not proud. He was distressed. The sage understood that the king had acted out of exhaustion and hunger, not malice, and that a fatal curse was wildly out of proportion to a rude gesture. Shamika reproached his son for his rashness. Then, unable to undo the curse, he did the one decent thing left to him: he sent a disciple, Gaurmukha, to warn Parikshit that his death had been fixed and that he had seven days to prepare.",
+      },
+      {
+        type: "lesson",
+        text: "Two people did something wrong here, and the epic weighs them differently. Parikshit's insult was petty and beneath a king, but it was the tired lapse of a decent man. Shringi's curse was the considered use of enormous power in a fit of secondhand rage, without even checking the facts. The Mahabharata quietly sides with the father who was horrified by his own son. A wrong done in weakness is not the same as a wrong done from power, and the story never pretends it is.",
+      },
+      { type: "heading", text: "Seven Days Behind Every Wall He Could Build" },
+      {
+        type: "paragraph",
+        text: "To his credit, Parikshit took the warning seriously and did not fall apart. He also felt the guilt of it; the epic presents him as a man who recognised he had brought this on himself. But he was still a king with a kingdom to protect and a son too young to lose him, so he did what a sensible ruler would do. He tried to make the curse impossible to fulfil.",
+      },
+      {
+        type: "paragraph",
+        text: "He had a special dwelling raised on a single tall pillar, ringed with guards, and forbade anyone to approach without being checked. He surrounded himself with physicians and with brahmins skilled in the mantras and remedies that were believed to counter snake venom. For seven days he lived at the top of that tower, watched over, medicated, and guarded, with no gap for a serpent to slip through. On paper, it should have worked.",
+      },
+      {
+        type: "paragraph",
+        text: "Meanwhile Takshaka, the serpent king, set out to keep the curse. He had his own reasons to want Parikshit dead; the Nagas and the Kuru line had old blood between them. On the way he met a brahmin named Kashyapa, who was travelling toward Hastinapura precisely because he had heard the king would be bitten and he knew the art of curing any poison. Kashyapa meant to save Parikshit — and to be rewarded for it.",
+      },
+      {
+        type: "paragraph",
+        text: "Takshaka needed the healer out of the way, so he tested him. He bit a great banyan tree and reduced it to a heap of ash in front of Kashyapa's eyes, then asked whether the brahmin could truly undo that. Kashyapa gathered the ashes and, with his knowledge, brought the whole tree back — green, whole, alive. The serpent had met a man who could genuinely reverse his venom. So Takshaka changed tactics. He argued that the king's death was fixed by a brahmin's curse and could not honestly be averted, and he offered Kashyapa more wealth than any royal reward. Kashyapa took the payment, judged the fight unwinnable, and turned back. That is the moment Parikshit's last real chance walked away.",
+      },
+      { type: "heading", text: "Takshaka's Bite" },
+      {
+        type: "paragraph",
+        text: "By the seventh day, nothing had happened, and it is very human that Parikshit began to relax. He had survived almost the entire window. Takshaka, though, did not come as a serpent at the gate. He sent a group of Nagas disguised as ascetics to approach the tower carrying gifts — water, leaves, and fruit — the kind of humble offering no guard would refuse from holy men.",
+      },
+      {
+        type: "paragraph",
+        text: "Parikshit accepted the fruit. As the day's last light faded and the deadline neared its close, he picked up one piece to eat and found a tiny copper-coloured insect with black eyes inside it. In some tellings the king, half in relief and half in a kind of dark acceptance, said that since the sun was nearly down and he had almost outlasted the curse, he would let this little creature bite him so that the sage's word would not be made false. He placed it on his neck.",
+      },
+      {
+        type: "paragraph",
+        text: "The insect was Takshaka. The serpent king resumed his true, immense form, coiled around Parikshit, and bit him. The venom was beyond any cure left in that tower. Parikshit died at once, exactly as Shringi had cursed and exactly on the day he had named. Every wall, every guard, every physician had been arranged against a snake at the door, and death arrived in a piece of fruit.",
+      },
+      { type: "heading", text: "How One Death Became the Whole Epic" },
+      {
+        type: "paragraph",
+        text: "This is where Parikshit's private tragedy turns into the reason we have the Mahabharata at all. Parikshit's son, Janamejaya, grew up, took the throne, and eventually learned the full story of how his father had died. His response was rage on a cosmic scale. He resolved to wipe out the entire race of serpents in revenge, and he began a vast ritual called the Sarpa Satra, the snake sacrifice, in which the chanting of the priests dragged serpents from everywhere into the sacrificial fire.",
+      },
+      {
+        type: "paragraph",
+        text: "As the snakes were burning by the thousands and Takshaka himself was being pulled toward the flames, a young sage named Astika arrived. Astika was himself half-Naga through his mother, and he came to plead for mercy. Janamejaya, impressed by the boy, offered him a boon, and Astika used it to ask that the sacrifice be stopped. The king kept his word. The remaining serpents, Takshaka among them, were spared, and the slaughter ended.",
+      },
+      {
+        type: "paragraph",
+        text: "It is at Janamejaya's snake sacrifice, in the pause and aftermath of all this, that the Mahabharata is recited. The sage Vaishampayana, a disciple of Vyasa who composed the poem, tells the whole history of the Kuru family to Janamejaya so that the king may understand where he comes from. A bard named Ugrashravas hears it there and later repeats it to the sages of the Naimisha forest, and that is the version framed for us. So the epic you read is, in effect, the family story told to Parikshit's grieving son. Parikshit's death is not a footnote to the Mahabharata. It is the doorway the whole thing is spoken through.",
+      },
+      { type: "heading", text: "Did You Know?" },
+      {
+        type: "paragraph",
+        text: "A few things about Parikshit that often get lost, each grounded in the epic or clearly labelled where it comes from tradition.",
+      },
+      {
+        type: "paragraph",
+        text: "1. He was killed before he was born. Ashwatthama's Brahma-weapon struck Parikshit in his mother's womb, and he was born lifeless. According to the Mahabharata, Krishna restored him to life — which means the man who continued the Kuru dynasty was, at birth, its second miracle after the war itself.",
+      },
+      {
+        type: "paragraph",
+        text: "2. His name points to a nearly dead family. The epic connects 'Parikshit' to the word pariksheena — diminished, nearly extinguished — because he was born into a house the war had emptied. It is a name that carries the memory of how close the line came to ending.",
+      },
+      {
+        type: "paragraph",
+        text: "3. The sage he insulted never cursed him. Shamika, the meditating sage, held his silence and his composure even with a dead snake on his shoulders. It was his son Shringi who pronounced the curse, and Shamika actively tried to warn the king so he could prepare. The person Parikshit wronged wanted him to live.",
+      },
+      {
+        type: "paragraph",
+        text: "4. A healer who could have saved him was bribed away. The brahmin Kashyapa could genuinely neutralise Takshaka's venom — he proved it by restoring a tree the serpent had burned to ash — but Takshaka bought his retreat with wealth and the argument that a brahmin's curse cannot truly be undone.",
+      },
+      {
+        type: "paragraph",
+        text: "5. His death is the seed of the epic's frame. Parikshit's snakebite leads directly to his son Janamejaya's snake sacrifice, and it is at that sacrifice that the Mahabharata is recited by Vaishampayana. Without this death, there is no occasion for the telling.",
+      },
+      {
+        type: "paragraph",
+        text: "6. The later Bhagavata Purana tells his last days very differently. In that tradition, once he is cursed, Parikshit renounces his throne, sits on the bank of the Ganga to fast until death, and spends his final seven days listening to the sage Shuka recite the Bhagavata Purana. That version turns his death into a model of spiritual preparation. The Mahabharata's own account, with the guarded tower and the fruit, is more about a man trying and failing to outrun a fixed fate. They are two different lessons drawn from the same king.",
+      },
+      {
+        type: "paragraph",
+        text: "7. His grandson's line is where later dynasties trace their roots. Janamejaya, Parikshit's son, is a fixed point in the traditional genealogies of Indian kingship, which reach back to the Kuru line through Parikshit. He is the narrow neck of the hourglass through which the whole future of the family passes.",
+      },
+      { type: "heading", text: "Common Misconceptions" },
+      {
+        type: "paragraph",
+        text: "This story gets compressed and confused often, partly because Parikshit shows up in both the Mahabharata and the Puranas with different emphases. Here are the tangles worth straightening out.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception 1: Parikshit died in the Mahabharata war. He was not even born when the war ended — he was still in the womb. He died decades later, as an established king, from a snakebite, in a completely separate episode that opens the epic's frame story rather than closing its battle.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception 2: The sage he insulted cursed him. He did not. Shamika kept his silence and his calm and then tried to save the king. It was Shamika's hot-tempered son Shringi who cursed Parikshit, acting on a secondhand account and without his father's approval.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception 3: Parikshit did nothing to protect himself. On the contrary, he took the warning seriously, built a guarded tower on a pillar, and surrounded himself with physicians and venom-experts for the full seven days. The point of the story is not that he was careless the second time. It is that a fixed curse found the one gap no guard was watching.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception 4: Takshaka simply slithered in and bit him. Takshaka worked by indirection — first removing the healer Kashyapa, then infiltrating the tower disguised, hidden as a tiny insect inside a piece of fruit that holy-seeming visitors offered. The serpent won by patience and trickery, not by force.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception 5: Janamejaya destroyed all the snakes to avenge his father. He tried to, in the great snake sacrifice, and came close — but the ritual was halted before it finished when the sage Astika asked for it to be stopped as a boon. Takshaka and many serpents survived. The revenge was interrupted, which is itself part of the point.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception 6: The Bhagavata Purana and the Mahabharata tell the same death. They agree that Parikshit was cursed and died by Takshaka after insulting a sage, but they frame his final days very differently — the Mahabharata with a walled tower and a failed escape, the Bhagavata with a king who renounces everything and spends his last week hearing scripture on a riverbank. It is worth knowing which version a given retelling is drawing from.",
+      },
+      { type: "heading", text: "What Parikshit's Death Is Really About" },
+      {
+        type: "paragraph",
+        text: "Step back from the snake and the tower and look at the shape of it. Here is a man who was handed his life twice — once by Krishna in the womb, once by simply being the heir who lived when almost everyone else died. He ruled well for a long time. And then, on a single tired afternoon, he did something small and unworthy, and it cost him everything. The gap between the scale of his rescue and the pettiness of his undoing is the whole meaning of the episode.",
+      },
+      {
+        type: "paragraph",
+        text: "There is a second thread underneath it, and it is the one the Mahabharata seems most interested in. Almost no one in this story is a villain. Parikshit is a good king having a bad day. Shamika is a sage who tries to help the man who wronged him. Even Shringi is not evil, just young and furious and too powerful for his own restraint. The catastrophe is built out of ordinary reactions that were each a little too much or a little too fast. That is how the epic usually shows disaster arriving — not through a single wicked choice, but through a chain of human ones that no one steps in to break in time.",
+      },
+      {
+        type: "paragraph",
+        text: "And then, at the very end, the story does the thing the Mahabharata does best: it turns a death into a beginning. Parikshit dies, his son burns with the need for revenge, and out of that grief comes the occasion on which the entire epic is told. The last king of the story you have been reading is the reason the story exists to be read. He is worth remembering — not for how he ruled, but for how his ending quietly opens the door to everything else.",
+      },
+    ],
+    keyLessons: [
+      {
+        icon: "🐍",
+        title: "A single careless moment can outweigh a lifetime of doing right",
+        description: "Parikshit ruled justly for decades, then undid it all with one petty act when he was tired and hungry. The Mahabharata is unsentimental about this: the version of you that shows up on your worst afternoon can cost you everything the rest of you has built.",
+        accent: "crimson",
+      },
+      {
+        icon: "🔥",
+        title: "Power used in anger, before you know the facts, does the most damage",
+        description: "Shringi cursed a king to death on the strength of a secondhand story he never checked. His own father was horrified. The greatest harm in the tale comes not from malice but from strength wielded fast, without pause, by someone who never asked what really happened.",
+        accent: "gold",
+      },
+      {
+        icon: "🏯",
+        title: "You can guard every door you expect and still miss the one you don't",
+        description: "Parikshit built a tower against a serpent at the gate, and death arrived hidden in a piece of fruit. Preparing hard against the danger you imagine is not the same as being safe from the one you haven't pictured.",
+        accent: "teal",
+      },
+    ],
+    modernConnections: [
+      {
+        context: "You lost your temper once — snapped at someone, sent the message, made the gesture — on a day when you were running on empty, and the consequence has outlived the moment by far.",
+        insight: "Parikshit's story takes that experience seriously instead of waving it away. It does not tell you the lapse didn't matter; it shows a good man genuinely undone by one. But it also refuses to reduce him to that single act. He is still the king who was saved and who ruled well. The lesson is to hold both: own the lapse fully, and don't let it become the whole story of who you are.",
+        example: "A king with a lifetime of just rule hung a dead snake on a silent sage because he was exhausted and felt ignored. The epic records the act plainly and still calls him a good king. Both things are allowed to be true.",
+      },
+      {
+        context: "You are furious on someone else's behalf and you have the power to make somebody pay for it — a public post, a complaint, a decision that will stick — before you have actually checked what happened.",
+        insight: "Shringi is the warning here. His anger was real and his father had been wronged, but he acted on a secondhand account, aimed maximum force at it instantly, and could not take it back. The person closest to the injury, his own father, was the one most appalled. Borrowed outrage plus real power plus no pause is the exact recipe the Mahabharata flags as most dangerous.",
+        example: "Shringi's curse killed a king over a gesture that his father, the actual victim, considered forgivable. The distance between the harm and the punishment is the whole warning.",
+      },
+    ],
+    lifeLessons: [
+      "A lifetime of good conduct can be undermined by a single unworthy moment — the tired, worst version of you still counts.",
+      "Power used quickly, in anger, and before checking the facts tends to do more harm than deliberate malice.",
+      "Preparing hard against the danger you expect is not the same as being safe from the one you never pictured.",
+      "Catastrophes in the Mahabharata are usually built from a chain of ordinary overreactions that no one stops in time, not from one villain.",
+      "How you meet a fixed ending is its own kind of choice, even when the ending itself is no longer up to you.",
+    ],
+    faqs: [
+      {
+        question: "How did Parikshit die?",
+        answer: "Parikshit died from a snakebite because of a curse. Tired and thirsty on a hunt, he insulted a meditating sage named Shamika by draping a dead snake over his shoulders. The sage's son Shringi cursed him to die within seven days, bitten by the serpent king Takshaka. Despite building a guarded tower, Parikshit was killed on the seventh day when Takshaka reached him hidden inside a piece of fruit.",
+      },
+      {
+        question: "Who was Parikshit in the Mahabharata?",
+        answer: "Parikshit was the son of Abhimanyu and Uttara, and the grandson of Arjuna. He was the heir who continued the Kuru dynasty after the war. Struck by Ashwatthama's divine weapon in his mother's womb and born lifeless, he was — according to the Mahabharata — revived by Krishna, and later crowned king of Hastinapura when the Pandavas left on their final journey.",
+      },
+      {
+        question: "Why was Parikshit cursed?",
+        answer: "While hunting, an exhausted Parikshit came upon the sage Shamika, who was in silent meditation, and asked him about a wounded deer. When the sage did not answer, the irritated king hung a dead snake around his neck and left. Shamika's son Shringi, hearing of the insult, cursed the king to die within seven days from the bite of the serpent Takshaka.",
+      },
+      {
+        question: "Who was Takshaka?",
+        answer: "Takshaka was the king of the Nagas, the race of serpents, and a recurring figure in the Mahabharata. He carried an old grievance against the Kuru line, so when Shringi's curse named him as the instrument of Parikshit's death, he was willing to fulfil it. He killed Parikshit and later survived Janamejaya's snake sacrifice when the sage Astika intervened.",
+      },
+      {
+        question: "Did Parikshit try to escape the curse?",
+        answer: "Yes. Warned by the sage Shamika's disciple, Parikshit had a dwelling built atop a single pillar, ringed it with guards, and surrounded himself with physicians and brahmins skilled in curing snake venom. He lived there under heavy protection for the seven days. The precautions failed because Takshaka entered disguised, hidden as a tiny insect inside a piece of fruit.",
+      },
+      {
+        question: "Who was Shringi?",
+        answer: "Shringi was the young son of the sage Shamika, an ascetic with real spiritual power and a fierce temper. He pronounced the curse that killed Parikshit after hearing, secondhand, that a king had insulted his father. His own father disapproved of the curse and tried to warn the king, considering the punishment far too harsh for the offence.",
+      },
+      {
+        question: "How is Parikshit's death connected to the telling of the Mahabharata?",
+        answer: "Parikshit's death by snakebite led his son Janamejaya to hold a great snake sacrifice in revenge. It is at that sacrifice that the sage Vaishampayana, a disciple of Vyasa, recites the entire Mahabharata to Janamejaya. The epic as we have it is framed as that recitation, so Parikshit's death is essentially the occasion for the whole story being told.",
+      },
+      {
+        question: "Was Parikshit a good king?",
+        answer: "By the epic's account, yes. He is remembered as a just and capable ruler who governed Hastinapura well after inheriting it from the Pandavas; some traditions give his reign as sixty years. That reputation is part of what makes his death striking — a good king undone by a single tired, petty act rather than by any pattern of misrule.",
+      },
+      {
+        question: "Does the Bhagavata Purana tell Parikshit's death the same way?",
+        answer: "Not quite. The Bhagavata Purana agrees that Parikshit was cursed to die by Takshaka after insulting a sage, but it frames his final days differently: he renounces his throne, sits by the Ganga to fast, and spends his last seven days hearing the Bhagavata Purana recited by the sage Shuka. The Mahabharata's version centers on the guarded tower and the failed attempt to outrun the curse.",
+      },
+      {
+        question: "Who became king after Parikshit died?",
+        answer: "Parikshit's son Janamejaya succeeded him. It was Janamejaya who, on learning how his father had died, undertook the snake sacrifice to avenge him — the ritual at which the Mahabharata is recited. The sage Astika eventually persuaded Janamejaya to halt the sacrifice, sparing Takshaka and the surviving serpents.",
+      },
+    ],
+  },
 ];
 
 /* ─────────────────── Helpers ─────────────────── */
