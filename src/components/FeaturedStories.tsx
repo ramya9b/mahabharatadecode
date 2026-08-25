@@ -6,9 +6,9 @@ import arjunaImg  from "@/assets/arjuna.webp";
 import { useScrollReveal } from "@/hooks/useScrollReveal";
 
 const STORY_META = [
-  { id: "karna",   image: karnaImg,   tagKey: "home.featured.tag_characters",   slug: "karna-loyalty-vs-self-respect",    accent: "#C2410C" },
+  { id: "karna",   image: karnaImg,   tagKey: "home.featured.tag_characters",   slug: "karna-loyalty-vs-self-respect",    accent: "#6B2D8F" },
   { id: "krishna", image: krishnaImg, tagKey: "home.featured.tag_life_lessons", slug: "krishna-leadership-secrets",       accent: "#4A90D9" },
-  { id: "arjuna",  image: arjunaImg,  tagKey: "home.featured.tag_life_lessons", slug: "arjuna-confusion-moment-of-doubt", accent: "#C2410C" },
+  { id: "arjuna",  image: arjunaImg,  tagKey: "home.featured.tag_life_lessons", slug: "arjuna-confusion-moment-of-doubt", accent: "#6B2D8F" },
 ] as const;
 
 const FeaturedStories = () => {
@@ -69,7 +69,7 @@ const FeaturedStories = () => {
                   <span
                     className="font-heading text-[10px] tracking-[0.2em] uppercase px-3 py-1.5 rounded-full backdrop-blur-sm"
                     style={{
-                      background: `rgba(${story.accent === "#C2410C" ? "194,65,12" : story.accent === "#4A90D9" ? "74,144,217" : "39,174,96"},0.2)`,
+                      background: `rgba(${story.accent === "#6B2D8F" ? "107,45,143" : story.accent === "#4A90D9" ? "74,144,217" : "39,174,96"},0.2)`,
                       border: `1px solid ${story.accent}55`,
                       color: story.accent,
                     }}

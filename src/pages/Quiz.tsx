@@ -29,7 +29,7 @@ async function generateShareCard(
   const ctx = canvas.getContext("2d")!;
 
   // Background — deep dark
-  ctx.fillStyle = "#100713";
+  ctx.fillStyle = "#130717";
   ctx.fillRect(0, 0, W, H);
 
   // Radial glow
@@ -219,7 +219,7 @@ const WelcomeScreen = ({ onStart }: { onStart: () => void }) => (
   <div className="min-h-screen flex items-center justify-center relative overflow-hidden px-6">
     {/* Background radial glows */}
     <div className="absolute inset-0 pointer-events-none"
-      style={{ background: "radial-gradient(ellipse 80% 60% at 50% 40%, rgba(194,65,12,0.07) 0%, transparent 65%)" }} />
+      style={{ background: "radial-gradient(ellipse 80% 60% at 50% 40%, rgba(107,45,143,0.07) 0%, transparent 65%)" }} />
 
     {/* Floating character portrait ring — all 9 characters */}
     <div className="absolute inset-0 overflow-hidden pointer-events-none">
@@ -349,7 +349,7 @@ const QuestionScreen = ({
             className="h-full rounded-full transition-all duration-700 ease-out"
             style={{
               width: `${selectedAnswer !== null ? progressAfter : progress}%`,
-              background: "linear-gradient(to right, rgba(194,65,12,0.6), #C2410C)",
+              background: "linear-gradient(to right, rgba(107,45,143,0.6), #6B2D8F)",
             }}
           />
         </div>
@@ -386,10 +386,10 @@ const QuestionScreen = ({
                 className="w-full text-left group relative overflow-hidden rounded-2xl transition-all duration-300 hover:scale-[1.01]"
                 style={{
                   background: isSelected
-                    ? "linear-gradient(135deg, rgba(194,65,12,0.15), rgba(194,65,12,0.08))"
+                    ? "linear-gradient(135deg, rgba(107,45,143,0.15), rgba(107,45,143,0.08))"
                     : "hsl(var(--primary) / 0.07)",
                   border: isSelected
-                    ? "1px solid rgba(194,65,12,0.5)"
+                    ? "1px solid rgba(107,45,143,0.5)"
                     : "1px solid rgba(139,105,20,0.1)",
                   opacity: isOtherSelected ? 0.45 : 1,
                   transform: isOtherSelected ? "scale(0.99)" : undefined,
@@ -398,15 +398,15 @@ const QuestionScreen = ({
                 {/* Top shimmer on selected */}
                 {isSelected && (
                   <div className="absolute top-0 left-0 right-0 h-px"
-                    style={{ background: "linear-gradient(to right, transparent, rgba(194,65,12,0.5), transparent)" }} />
+                    style={{ background: "linear-gradient(to right, transparent, rgba(107,45,143,0.5), transparent)" }} />
                 )}
 
                 <div className="flex items-center gap-4 p-4 md:p-5">
                   {/* Letter indicator */}
                   <div className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0 transition-all duration-300"
                     style={{
-                      background: isSelected ? "rgba(194,65,12,0.2)" : "hsl(var(--primary) / 0.08)",
-                      border: isSelected ? "1px solid rgba(194,65,12,0.4)" : "1px solid rgba(194,65,12,0.14)",
+                      background: isSelected ? "rgba(107,45,143,0.2)" : "hsl(var(--primary) / 0.08)",
+                      border: isSelected ? "1px solid rgba(107,45,143,0.4)" : "1px solid rgba(107,45,143,0.14)",
                     }}>
                     {isSelected ? (
                       <Check size={14} className="text-primary" />
@@ -452,20 +452,20 @@ const CalculatingScreen = () => (
       <div className="relative w-32 h-32 mx-auto mb-8">
         <svg viewBox="0 0 120 120" className="w-full h-full">
           <g style={{ animation: "spin 3s linear infinite", transformOrigin: "60px 60px" }}>
-            <circle cx="60" cy="60" r="56" stroke="rgba(194,65,12,0.25)" strokeWidth="0.5" fill="none" strokeDasharray="4 6" />
-            <circle cx="60" cy="60" r="46" stroke="rgba(194,65,12,0.35)" strokeWidth="0.8" fill="none" />
+            <circle cx="60" cy="60" r="56" stroke="rgba(107,45,143,0.25)" strokeWidth="0.5" fill="none" strokeDasharray="4 6" />
+            <circle cx="60" cy="60" r="46" stroke="rgba(107,45,143,0.35)" strokeWidth="0.8" fill="none" />
             {[0, 45, 90, 135, 180, 225, 270, 315].map((deg) => (
               <line key={deg}
                 x1="60" y1="4" x2="60" y2="18"
-                stroke="rgba(194,65,12,0.5)" strokeWidth="1"
+                stroke="rgba(107,45,143,0.5)" strokeWidth="1"
                 style={{ transformOrigin: "60px 60px", transform: `rotate(${deg}deg)` }} />
             ))}
           </g>
           <g style={{ animation: "spin 2s linear infinite reverse", transformOrigin: "60px 60px" }}>
-            <circle cx="60" cy="60" r="32" stroke="rgba(194,65,12,0.4)" strokeWidth="1" fill="none" />
-            <polygon points="60,28 72,50 60,72 48,50" stroke="rgba(194,65,12,0.6)" strokeWidth="0.8" fill="rgba(194,65,12,0.06)" />
+            <circle cx="60" cy="60" r="32" stroke="rgba(107,45,143,0.4)" strokeWidth="1" fill="none" />
+            <polygon points="60,28 72,50 60,72 48,50" stroke="rgba(107,45,143,0.6)" strokeWidth="0.8" fill="rgba(107,45,143,0.06)" />
           </g>
-          <circle cx="60" cy="60" r="10" stroke="rgba(194,65,12,0.6)" strokeWidth="1" fill="rgba(194,65,12,0.12)" />
+          <circle cx="60" cy="60" r="10" stroke="rgba(107,45,143,0.6)" strokeWidth="1" fill="rgba(107,45,143,0.12)" />
         </svg>
       </div>
 
@@ -550,10 +550,10 @@ const ResultScreen = ({
                   {meta.archetype}
                 </p>
                 {/* Text sits on the image's dark gradient overlay — keep light in both themes. */}
-                <h2 className="font-heading font-black" style={{ fontSize: "clamp(32px, 5vw, 52px)", color: "rgba(245,235,218,0.95)" }}>
+                <h2 className="font-heading font-black" style={{ fontSize: "clamp(32px, 5vw, 52px)", color: "rgba(245,232,238,0.95)" }}>
                   {meta.name}
                 </h2>
-                <p className="font-heading italic" style={{ fontSize: "17px", color: "rgba(245,235,218,0.70)" }}>
+                <p className="font-heading italic" style={{ fontSize: "17px", color: "rgba(245,232,238,0.70)" }}>
                   {meta.title}
                 </p>
               </div>
@@ -810,7 +810,7 @@ const Quiz = () => {
         style={{
           background: state.phase === "result" && state.result
             ? `radial-gradient(ellipse 70% 50% at 50% 30%, rgba(${CHARACTER_META[state.result.winner].accentRgb},0.05) 0%, transparent 65%)`
-            : "radial-gradient(ellipse 70% 50% at 50% 30%, rgba(194,65,12,0.04) 0%, transparent 65%)",
+            : "radial-gradient(ellipse 70% 50% at 50% 30%, rgba(107,45,143,0.04) 0%, transparent 65%)",
         }} />
 
       {/* Phase renderer */}

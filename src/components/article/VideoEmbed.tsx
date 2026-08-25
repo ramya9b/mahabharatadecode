@@ -41,7 +41,7 @@ const VideoEmbed = ({ youtubeId, title }: VideoEmbedProps) => {
         <div
           className="relative rounded-2xl overflow-hidden group cursor-pointer"
           style={{
-            border: "1px solid rgba(194,65,12,0.15)",
+            border: "1px solid rgba(107,45,143,0.15)",
             boxShadow: "0 0 40px rgba(0,0,0,0.4)",
           }}
           onClick={() => setPlaying(true)}
@@ -75,8 +75,8 @@ const VideoEmbed = ({ youtubeId, title }: VideoEmbedProps) => {
                     style={{
                       width: "72px",
                       height: "72px",
-                      background: "rgba(194,65,12,0.92)",
-                      boxShadow: "0 0 30px rgba(194,65,12,0.4), 0 0 0 1px rgba(194,65,12,0.3)",
+                      background: "rgba(107,45,143,0.92)",
+                      boxShadow: "0 0 30px rgba(107,45,143,0.4), 0 0 0 1px rgba(107,45,143,0.3)",
                     }}
                   >
                     <Play

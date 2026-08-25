@@ -52,7 +52,7 @@ const LessonCard = ({
         style={{
           background:
             accent === "gold"
-              ? "linear-gradient(to right, transparent, rgba(194,65,12,0.4), transparent)"
+              ? "linear-gradient(to right, transparent, rgba(107,45,143,0.4), transparent)"
               : accent === "crimson"
               ? "linear-gradient(to right, transparent, rgba(139,0,0,0.5), transparent)"
               : "linear-gradient(to right, transparent, rgba(20,184,166,0.4), transparent)",
@@ -99,7 +99,7 @@ const LessonCards = ({ lessons, characterName = "the Mahabharata" }: LessonCards
       className="py-20 md:py-24 relative"
       style={{
         background:
-          "linear-gradient(180deg, transparent 0%, rgba(194,65,12,0.03) 30%, rgba(139,0,0,0.03) 70%, transparent 100%)",
+          "linear-gradient(180deg, transparent 0%, rgba(107,45,143,0.03) 30%, rgba(139,0,0,0.03) 70%, transparent 100%)",
       }}
     >
       {/* Section header */}

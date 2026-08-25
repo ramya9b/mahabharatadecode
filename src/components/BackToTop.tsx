@@ -47,12 +47,12 @@ const BackToTop = () => {
         alignItems: "center",
         justifyContent: "center",
         background: hovered
-          ? "linear-gradient(135deg, #F5D76E, #C2410C)"
+          ? "linear-gradient(135deg, #F5D76E, #6B2D8F)"
           : "linear-gradient(135deg, #E8C547, #B8922A)",
         boxShadow: hovered
-          ? "0 8px 24px rgba(194,65,12,0.55)"
-          : "0 4px 16px rgba(194,65,12,0.35)",
-        color: "#100713",
+          ? "0 8px 24px rgba(107,45,143,0.55)"
+          : "0 4px 16px rgba(107,45,143,0.35)",
+        color: "#130717",
         opacity: visible ? 1 : 0,
         pointerEvents: visible ? "auto" : "none",
         transform: visible ? "translateY(0) scale(1)" : "translateY(12px) scale(0.9)",

@@ -12,12 +12,12 @@ const sectionMeta: Record<
   introduction: {
     numeral: "I",
     color: "text-primary/60",
-    border: "rgba(194,65,12,0.35)",
+    border: "rgba(107,45,143,0.35)",
   },
   background: {
     numeral: "II",
     color: "text-muted-foreground/60",
-    border: "rgba(194,65,12,0.22)",
+    border: "rgba(107,45,143,0.22)",
   },
   turningPoint: {
     numeral: "III",
@@ -54,7 +54,7 @@ const StoryBlock = ({
         <div className="h-px flex-1" style={{ background: meta.border }} />
         <span
           className="font-heading text-[10px] tracking-[0.28em] uppercase flex-shrink-0"
-          style={{ color: "rgba(194,65,12,0.60)" }}
+          style={{ color: "rgba(107,45,143,0.60)" }}
         >
           {block.label}
         </span>

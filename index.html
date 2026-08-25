@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#C2410C" />
+    <meta name="theme-color" content="#6B2D8F" />
 
     <!-- PWA -->
     <link rel="manifest" href="/manifest.json" />
@@ -64,11 +64,11 @@
           var stored = localStorage.getItem('mbd-theme');
           if (stored === 'light') {
             /* User explicitly chose light — pure white */
-            document.documentElement.style.background = '#FEFBF6';
+            document.documentElement.style.background = '#FDF1F4';
           } else {
             /* Default: dark Golden Rainbow for all new visitors */
             document.documentElement.classList.add('dark');
-            document.documentElement.style.background = '#100713';
+            document.documentElement.style.background = '#130717';
           }
         } catch(e) {}
       })();
@@ -81,7 +81,7 @@
         font-family: 'Cinzel', serif; font-size: 13px; font-weight: 700;
         border-radius: 0 0 8px 8px; text-decoration: none; transition: top 0.2s;
       }
-      .skip-nav:focus { top: 0; outline: 3px solid #7A4A05; outline-offset: 2px; }
+      .skip-nav:focus { top: 0; outline: 3px solid #6E570A; outline-offset: 2px; }
     </style>
 
     <!-- Google Analytics 4 — MahabharataDecoded -->

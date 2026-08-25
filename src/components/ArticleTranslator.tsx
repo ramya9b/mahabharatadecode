@@ -115,8 +115,8 @@ const ArticleTranslator = ({
           gap:            "7px",
           padding:        "8px 14px",
           borderRadius:   "99px",
-          border:         "1px solid rgba(194,65,12,0.25)",
-          background:     "rgba(194,65,12,0.06)",
+          border:         "1px solid rgba(107,45,143,0.25)",
+          background:     "rgba(107,45,143,0.06)",
           color:          "hsl(var(--foreground))",
           cursor:         "pointer",
           fontFamily:     "'Cinzel', serif",
@@ -153,7 +153,7 @@ const ArticleTranslator = ({
             left:         0,
             minWidth:     "160px",
             borderRadius: "12px",
-            border:       "1px solid rgba(194,65,12,0.2)",
+            border:       "1px solid rgba(107,45,143,0.2)",
             background:   "hsl(var(--card))",
             boxShadow:    "0 8px 32px rgba(0,0,0,0.2)",
             zIndex:       100,
@@ -178,7 +178,7 @@ const ArticleTranslator = ({
                   padding:        "11px 16px",
                   border:         "none",
                   background:     currentLang === code
-                    ? "rgba(194,65,12,0.1)"
+                    ? "rgba(107,45,143,0.1)"
                     : "transparent",
                   cursor:         loading !== null ? "wait" : "pointer",
                   transition:     "background 0.15s",
@@ -186,7 +186,7 @@ const ArticleTranslator = ({
                 }}
                 onMouseEnter={e => {
                   if (currentLang !== code)
-                    (e.currentTarget as HTMLButtonElement).style.background = "rgba(194,65,12,0.06)";
+                    (e.currentTarget as HTMLButtonElement).style.background = "rgba(107,45,143,0.06)";
                 }}
                 onMouseLeave={e => {
                   if (currentLang !== code)
@@ -212,7 +212,7 @@ const ArticleTranslator = ({
               </button>
             )
           )}
-          <div style={{ padding: "8px 16px 10px", borderTop: "1px solid rgba(194,65,12,0.1)" }}>
+          <div style={{ padding: "8px 16px 10px", borderTop: "1px solid rgba(107,45,143,0.1)" }}>
             <p style={{ fontFamily: "'Cormorant Garamond',serif", fontSize: "11px", color: "hsl(var(--muted-foreground))", margin: 0, lineHeight: 1.5 }}>
               Translations are AI-powered and cached locally.
             </p>

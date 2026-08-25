@@ -85,13 +85,13 @@ const Navbar = () => {
     : "rgba(250,246,238,0.85)";
 
   const pillBg     = "rgba(10,6,20,0.92)";
-  const pillBorder = "rgba(194,65,12,0.22)";
-  const pillShadow = "0 8px 40px rgba(0,0,0,0.45), 0 0 0 1px rgba(194,65,12,0.12)";
+  const pillBorder = "rgba(107,45,143,0.22)";
+  const pillShadow = "0 8px 40px rgba(0,0,0,0.45), 0 0 0 1px rgba(107,45,143,0.12)";
 
   const linkColor  = "rgba(245,237,218,0.92)";
-  const linkActive = "#C2410C";
+  const linkActive = "#6B2D8F";
 
-  const ctaBg      = "linear-gradient(90deg,#C2410C 0%,#F97316 35%,#EC4899 65%,#A78BFA 100%)";
+  const ctaBg      = "linear-gradient(90deg,#6B2D8F 0%,#F97316 35%,#EC4899 65%,#A78BFA 100%)";
   const ctaColor   = "#06030E";
 
   return (
@@ -109,7 +109,7 @@ const Navbar = () => {
           background: scrolled ? wrapBgScrolled : wrapBg,
           backdropFilter: scrolled ? "blur(16px)" : "none",
           WebkitBackdropFilter: scrolled ? "blur(16px)" : "none",
-          borderBottom: scrolled ? `1px solid rgba(194,65,12,0.1)` : "none",
+          borderBottom: scrolled ? `1px solid rgba(107,45,143,0.1)` : "none",
           transition: "all 0.4s cubic-bezier(0.4,0,0.2,1)",
           overflow: "hidden",
         }}
@@ -137,14 +137,14 @@ const Navbar = () => {
             <div style={{
               width: "34px", height: "34px", borderRadius: "50%",
               background: "#0E0900",
-              boxShadow: "0 0 0 2px #C2410C, 0 0 0 4px rgba(167,139,250,0.4), 0 0 16px rgba(194,65,12,0.25)",
+              boxShadow: "0 0 0 2px #6B2D8F, 0 0 0 4px rgba(167,139,250,0.4), 0 0 16px rgba(107,45,143,0.25)",
               display: "flex", alignItems: "center", justifyContent: "center",
               flexShrink: 0,
             }}>
               <span style={{
                 fontFamily: "'Cinzel',serif", fontSize: "14px",
                 fontWeight: 700,
-                background: "linear-gradient(135deg,#C2410C,#F472B6,#A78BFA)",
+                background: "linear-gradient(135deg,#6B2D8F,#F472B6,#A78BFA)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -156,9 +156,9 @@ const Navbar = () => {
               fontWeight: 700,
               letterSpacing: "0.16em",
               textTransform: "uppercase",
-              color: "#C2410C",
+              color: "#6B2D8F",
               whiteSpace: "nowrap",
-              textShadow: "0 0 20px rgba(194,65,12,0.80), 0 2px 10px rgba(194,65,12,0.60)",
+              textShadow: "0 0 20px rgba(107,45,143,0.80), 0 2px 10px rgba(107,45,143,0.60)",
             }}
               className="hidden xs:inline sm:inline"
             >
@@ -199,14 +199,14 @@ const Navbar = () => {
                     whiteSpace: "nowrap",
                     transition: "all 0.25s",
                     background: active
-                      ? "linear-gradient(135deg,rgba(194,65,12,0.18),rgba(194,65,12,0.06))"
+                      ? "linear-gradient(135deg,rgba(107,45,143,0.18),rgba(107,45,143,0.06))"
                       : "transparent",
                     border: active
-                      ? "1px solid rgba(194,65,12,0.28)"
+                      ? "1px solid rgba(107,45,143,0.28)"
                       : "1px solid transparent",
                     color: active ? linkActive : linkColor,
                     boxShadow: active
-                      ? "inset 0 1px 0 rgba(194,65,12,0.15)"
+                      ? "inset 0 1px 0 rgba(107,45,143,0.15)"
                       : "none",
                   }}
                   onMouseEnter={e => {
@@ -226,7 +226,7 @@ const Navbar = () => {
             {/* Divider */}
             <div style={{
               width: "1px", height: "20px",
-              background: "rgba(194,65,12,0.18)",
+              background: "rgba(107,45,143,0.18)",
               margin: "0 4px",
               flexShrink: 0,
             }} aria-hidden="true" />
@@ -247,18 +247,18 @@ const Navbar = () => {
                 display: "flex",
                 alignItems: "center",
                 gap: "5px",
-                border: "1px solid rgba(194,65,12,0.28)",
-                color: "rgba(194,65,12,0.90)",
+                border: "1px solid rgba(107,45,143,0.28)",
+                color: "rgba(107,45,143,0.90)",
                 background: "transparent",
                 transition: "all 0.25s",
               }}
               onMouseEnter={e => {
-                (e.currentTarget as HTMLAnchorElement).style.color = "#C2410C";
-                (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(194,65,12,0.5)";
+                (e.currentTarget as HTMLAnchorElement).style.color = "#6B2D8F";
+                (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(107,45,143,0.5)";
               }}
               onMouseLeave={e => {
-                (e.currentTarget as HTMLAnchorElement).style.color = "rgba(194,65,12,0.75)";
-                (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(194,65,12,0.28)";
+                (e.currentTarget as HTMLAnchorElement).style.color = "rgba(107,45,143,0.75)";
+                (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(107,45,143,0.28)";
               }}
             >
               <span aria-hidden="true" style={{ fontSize: "9px" }}>✦</span>
@@ -285,18 +285,18 @@ const Navbar = () => {
                 letterSpacing: "0.12em",
                 textDecoration: "none",
                 textTransform: "uppercase",
-                boxShadow: "0 4px 24px rgba(194,65,12,0.5), 0 0 0 1px rgba(194,65,12,0.15)",
+                boxShadow: "0 4px 24px rgba(107,45,143,0.5), 0 0 0 1px rgba(107,45,143,0.15)",
                 whiteSpace: "nowrap",
                 transition: "all 0.3s ease",
                 display: "inline-block",
               }}
               onMouseEnter={e => {
                 (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-2px)";
-                (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 8px 36px rgba(194,65,12,0.65), 0 0 0 1px rgba(194,65,12,0.25)";
+                (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 8px 36px rgba(107,45,143,0.65), 0 0 0 1px rgba(107,45,143,0.25)";
               }}
               onMouseLeave={e => {
                 (e.currentTarget as HTMLAnchorElement).style.transform = "none";
-                (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 4px 20px rgba(194,65,12,0.3)";
+                (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 4px 20px rgba(107,45,143,0.3)";
               }}
             >
               {t("nav.start_reading")}
@@ -318,13 +318,13 @@ const Navbar = () => {
             <div style={{
               width: "32px", height: "32px", borderRadius: "50%",
               background: "#0E0900",
-              boxShadow: "0 0 0 2px #C2410C, 0 0 0 3.5px rgba(167,139,250,0.3)",
+              boxShadow: "0 0 0 2px #6B2D8F, 0 0 0 3.5px rgba(167,139,250,0.3)",
               display: "flex", alignItems: "center", justifyContent: "center",
               flexShrink: 0,
             }}>
               <span style={{
                 fontFamily: "'Cinzel',serif", fontSize: "13px", fontWeight: 700,
-                background: "linear-gradient(135deg,#C2410C,#A78BFA)",
+                background: "linear-gradient(135deg,#6B2D8F,#A78BFA)",
                 WebkitBackgroundClip: "text", WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
               }}>M</span>
@@ -332,7 +332,7 @@ const Navbar = () => {
             <span style={{
               fontFamily: "'Cinzel',serif", fontSize: "11px", fontWeight: 600,
               letterSpacing: "0.12em", textTransform: "uppercase",
-              color: "#C2410C", whiteSpace: "nowrap",
+              color: "#6B2D8F", whiteSpace: "nowrap",
               maxWidth: "160px", overflow: "hidden", textOverflow: "ellipsis",
             }}>MahabharataDecoded</span>
           </Link>
@@ -348,10 +348,10 @@ const Navbar = () => {
               aria-label={mobileOpen ? t("nav.close_menu") : t("nav.open_menu")}
               style={{
                 width: "34px", height: "34px", borderRadius: "10px",
-                background: "rgba(194,65,12,0.1)",
-                border: "1px solid rgba(194,65,12,0.2)",
+                background: "rgba(107,45,143,0.1)",
+                border: "1px solid rgba(107,45,143,0.2)",
                 display: "flex", alignItems: "center", justifyContent: "center",
-                color: "#C2410C", cursor: "pointer", flexShrink: 0,
+                color: "#6B2D8F", cursor: "pointer", flexShrink: 0,
               }}
             >
               {mobileOpen ? <X size={18} aria-hidden="true"/> : <Menu size={18} aria-hidden="true"/>}
@@ -374,7 +374,7 @@ const Navbar = () => {
             backdropFilter: "blur(24px)",
             WebkitBackdropFilter: "blur(24px)",
             borderRadius: "16px",
-            border: "1px solid rgba(194,65,12,0.18)",
+            border: "1px solid rgba(107,45,143,0.18)",
             boxShadow: "0 16px 48px rgba(0,0,0,0.5)",
             opacity: mobileOpen ? 1 : 0,
             transform: mobileOpen ? "translateY(0)" : "translateY(-8px)",
@@ -396,8 +396,8 @@ const Navbar = () => {
                 letterSpacing: "0.14em",
                 textTransform: "uppercase",
                 textDecoration: "none",
-                borderBottom: "1px solid rgba(194,65,12,0.1)",
-                color: isActive(to) ? "#C2410C" : "rgba(245,237,218,0.88)",
+                borderBottom: "1px solid rgba(107,45,143,0.1)",
+                color: isActive(to) ? "#6B2D8F" : "rgba(245,237,218,0.88)",
                 transition: "color 0.2s",
               }}
             >
@@ -412,8 +412,8 @@ const Navbar = () => {
               fontFamily: "'Cinzel',serif", fontSize: "11px",
               letterSpacing: "0.14em", textTransform: "uppercase",
               textDecoration: "none",
-              borderBottom: "1px solid rgba(194,65,12,0.1)",
-              color: "rgba(194,65,12,0.8)",
+              borderBottom: "1px solid rgba(107,45,143,0.1)",
+              color: "rgba(107,45,143,0.8)",
             }}
           >
             ✦ {t("nav.quiz")}
@@ -426,7 +426,7 @@ const Navbar = () => {
               marginTop: "14px",
               padding: "12px 20px",
               borderRadius: "100px",
-              background: "linear-gradient(90deg,#C2410C 0%,#F97316 35%,#EC4899 65%,#A78BFA 100%)",
+              background: "linear-gradient(90deg,#6B2D8F 0%,#F97316 35%,#EC4899 65%,#A78BFA 100%)",
               color: "#06030E",
               fontFamily: "'Cinzel',serif",
               fontSize: "11px",

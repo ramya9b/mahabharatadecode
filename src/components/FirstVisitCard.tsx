@@ -79,7 +79,7 @@ const FirstVisitCard = () => {
           width: "min(480px, 92vw)",
           borderRadius: "20px",
           background: "linear-gradient(160deg, hsl(38 50% 96%) 0%, hsl(28 45% 93%) 100%)",
-          border: "1px solid rgba(194,65,12,0.3)",
+          border: "1px solid rgba(107,45,143,0.3)",
           boxShadow: "0 24px 64px rgba(20,12,4,0.35)",
           padding: "36px 32px 28px",
           fontFamily: "'Cormorant Garamond', Georgia, serif",
@@ -98,7 +98,7 @@ const FirstVisitCard = () => {
             transition: "background 0.15s, color 0.15s",
           }}
           onMouseEnter={e => {
-            e.currentTarget.style.background = "rgba(194,65,12,0.1)";
+            e.currentTarget.style.background = "rgba(107,45,143,0.1)";
             e.currentTarget.style.color = "rgba(100,70,20,0.8)";
           }}
           onMouseLeave={e => {
@@ -131,7 +131,7 @@ const FirstVisitCard = () => {
         <p style={{
           fontFamily: "'Cinzel', serif", fontSize: "10px",
           letterSpacing: "0.2em", textTransform: "uppercase",
-          color: "rgba(194,65,12,0.8)", marginBottom: "12px", textAlign: "center",
+          color: "rgba(107,45,143,0.8)", marginBottom: "12px", textAlign: "center",
         }}>
           Start with a character
         </p>
@@ -144,19 +144,19 @@ const FirstVisitCard = () => {
               style={{
                 display: "flex", alignItems: "center", gap: "14px",
                 padding: "13px 16px", borderRadius: "12px",
-                background: "rgba(194,65,12,0.05)",
-                border: "1.5px solid rgba(194,65,12,0.18)",
+                background: "rgba(107,45,143,0.05)",
+                border: "1.5px solid rgba(107,45,143,0.18)",
                 cursor: "pointer", textAlign: "left",
                 transition: "all 0.2s",
               }}
               onMouseEnter={e => {
-                e.currentTarget.style.background = "rgba(194,65,12,0.1)";
-                e.currentTarget.style.borderColor = "rgba(194,65,12,0.45)";
+                e.currentTarget.style.background = "rgba(107,45,143,0.1)";
+                e.currentTarget.style.borderColor = "rgba(107,45,143,0.45)";
                 e.currentTarget.style.transform = "translateX(4px)";
               }}
               onMouseLeave={e => {
-                e.currentTarget.style.background = "rgba(194,65,12,0.05)";
-                e.currentTarget.style.borderColor = "rgba(194,65,12,0.18)";
+                e.currentTarget.style.background = "rgba(107,45,143,0.05)";
+                e.currentTarget.style.borderColor = "rgba(107,45,143,0.18)";
                 e.currentTarget.style.transform = "translateX(0)";
               }}
             >
@@ -172,7 +172,7 @@ const FirstVisitCard = () => {
                   {p.prompt.slice(0, 55)}…
                 </div>
               </div>
-              <span style={{ marginLeft: "auto", color: "rgba(194,65,12,0.5)", fontSize: "16px" }}>→</span>
+              <span style={{ marginLeft: "auto", color: "rgba(107,45,143,0.5)", fontSize: "16px" }}>→</span>
             </button>
           ))}
         </div>

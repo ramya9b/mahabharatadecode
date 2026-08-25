@@ -32,11 +32,11 @@ export const ThemeProvider = ({ children }: { children: React.ReactNode }) => {
       root.style.colorScheme = "light";
     }
     /* Sync background on html for overscroll area and FOUC prevention */
-    root.style.background = theme === "dark" ? "#100713" : "#FEFBF6";
+    root.style.background = theme === "dark" ? "#130717" : "#FDF1F4";
     localStorage.setItem("mbd-theme", theme);
     document
       .querySelector('meta[name="theme-color"]')
-      ?.setAttribute("content", theme === "dark" ? "#100713" : "#C2410C");
+      ?.setAttribute("content", theme === "dark" ? "#130717" : "#6B2D8F");
   }, [theme]);
 
   const toggleTheme = () =>

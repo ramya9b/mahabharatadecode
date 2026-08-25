@@ -22,9 +22,9 @@ const CharactersHero = ({ characters }: CharactersHeroProps) => {
     ? "linear-gradient(to bottom, rgba(8,6,26,0.6) 0%, rgba(8,6,26,0.4) 40%, rgba(8,6,26,0.85) 80%, rgba(8,6,26,1) 100%)"
     : "linear-gradient(to bottom, rgba(250,243,225,0.15) 0%, rgba(250,243,225,0.45) 40%, rgba(250,243,225,0.85) 80%, hsl(38 55% 92%) 100%)";
 
-  const subtitleColor    = isDark ? "rgba(245,235,218,0.78)" : "rgba(42,31,14,0.85)";
-  const heroParaColor    = isDark ? "rgba(245,235,218,0.68)" : "rgba(42,31,14,0.72)";
-  const portraitLabel    = isDark ? "rgba(245,235,218,0.65)" : "rgba(42,31,14,0.65)";
+  const subtitleColor    = isDark ? "rgba(245,232,238,0.78)" : "rgba(42,31,14,0.85)";
+  const heroParaColor    = isDark ? "rgba(245,232,238,0.68)" : "rgba(42,31,14,0.72)";
+  const portraitLabel    = isDark ? "rgba(245,232,238,0.65)" : "rgba(42,31,14,0.65)";
 
   // rAF-throttled parallax + skip work while hero is offscreen
   useEffect(() => {
@@ -100,7 +100,7 @@ const CharactersHero = ({ characters }: CharactersHeroProps) => {
         className="absolute inset-0"
         style={{
           background:
-            "radial-gradient(ellipse 70% 50% at 50% 40%, rgba(194,65,12,0.07) 0%, transparent 65%)",
+            "radial-gradient(ellipse 70% 50% at 50% 40%, rgba(107,45,143,0.07) 0%, transparent 65%)",
         }}
       />
 

@@ -22,17 +22,17 @@ const VARIANT_DEFAULTS: Record<EmptyVariant, { title: string; description: strin
   search: {
     title: "No results found",
     description: "Try different keywords or browse all stories below.",
-    icon: <SearchX size={28} style={{ color: "rgba(194,65,12,0.7)" }} aria-hidden="true" />,
+    icon: <SearchX size={28} style={{ color: "rgba(107,45,143,0.7)" }} aria-hidden="true" />,
   },
   articles: {
     title: "No articles yet",
     description: "New stories are being written. Subscribe to be notified when they arrive.",
-    icon: <BookOpen size={28} style={{ color: "rgba(194,65,12,0.7)" }} aria-hidden="true" />,
+    icon: <BookOpen size={28} style={{ color: "rgba(107,45,143,0.7)" }} aria-hidden="true" />,
   },
   generic: {
     title: "Nothing here yet",
     description: "Check back soon.",
-    icon: <Inbox size={28} style={{ color: "rgba(194,65,12,0.7)" }} aria-hidden="true" />,
+    icon: <Inbox size={28} style={{ color: "rgba(107,45,143,0.7)" }} aria-hidden="true" />,
   },
 };
 
@@ -70,8 +70,8 @@ const EmptyState = ({
           width: "60px",
           height: "60px",
           borderRadius: "50%",
-          background: "rgba(194,65,12,0.08)",
-          border: "1px solid rgba(194,65,12,0.18)",
+          background: "rgba(107,45,143,0.08)",
+          border: "1px solid rgba(107,45,143,0.18)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",
@@ -116,7 +116,7 @@ const EmptyState = ({
             style={{
               padding: "10px 24px",
               borderRadius: "99px",
-              background: "linear-gradient(135deg, #E8C547, #C2410C)",
+              background: "linear-gradient(135deg, #E8C547, #6B2D8F)",
               color: "#08061A",
               fontFamily: "'Cinzel', serif",
               fontSize: "12px",
@@ -135,7 +135,7 @@ const EmptyState = ({
             style={{
               padding: "10px 24px",
               borderRadius: "99px",
-              background: "linear-gradient(135deg, #E8C547, #C2410C)",
+              background: "linear-gradient(135deg, #E8C547, #6B2D8F)",
               color: "#08061A",
               fontFamily: "'Cinzel', serif",
               fontSize: "12px",

@@ -288,7 +288,7 @@ function iconBtnStyle(): React.CSSProperties {
     alignItems:     "center",
     justifyContent: "center",
     background:     "rgba(139,105,20,0.06)",
-    border:         "1px solid rgba(194,65,12,0.15)",
+    border:         "1px solid rgba(107,45,143,0.15)",
     color:          "hsl(var(--foreground) / 0.70)",
     cursor:         "pointer",
     transition:     "all 0.2s",
@@ -305,7 +305,7 @@ function btnStyle(success: boolean): React.CSSProperties {
     background:  success ? "rgba(76,175,80,0.12)" : "rgba(139,105,20,0.06)",
     border:      success
       ? "1px solid rgba(76,175,80,0.3)"
-      : "1px solid rgba(194,65,12,0.15)",
+      : "1px solid rgba(107,45,143,0.15)",
     color:       success ? "rgba(76,175,80,0.9)" : "hsl(var(--foreground) / 0.70)",
     cursor:      "pointer",
     fontSize:    "12px",

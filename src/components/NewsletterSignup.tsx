@@ -85,7 +85,7 @@ const NewsletterSignup = ({
           Email address
         </label>
         {status === "success" ? (
-          <span style={{ display: "flex", alignItems: "center", gap: "6px", color: "#C2410C", fontSize: "13px", fontFamily: "'Cormorant Garamond',serif" }}>
+          <span style={{ display: "flex", alignItems: "center", gap: "6px", color: "#6B2D8F", fontSize: "13px", fontFamily: "'Cormorant Garamond',serif" }}>
             <Check size={14} /> You're in!
           </span>
         ) : (
@@ -100,8 +100,8 @@ const NewsletterSignup = ({
               style={{
                 padding:     "7px 14px",
                 borderRadius:"99px",
-                border:      "1px solid rgba(194,65,12,0.25)",
-                background:  "rgba(194,65,12,0.04)",
+                border:      "1px solid rgba(107,45,143,0.25)",
+                background:  "rgba(107,45,143,0.04)",
                 color:       "hsl(var(--foreground))",
                 fontSize:    "13px",
                 fontFamily:  "'Cormorant Garamond',serif",
@@ -116,7 +116,7 @@ const NewsletterSignup = ({
               style={{
                 padding: "7px 16px",
                 borderRadius: "99px",
-                background: "linear-gradient(135deg, #C2410C 0%, #C2410C 50%, #38BDF8 100%)",
+                background: "linear-gradient(135deg, #6B2D8F 0%, #6B2D8F 50%, #38BDF8 100%)",
                 backgroundSize: "200% auto",
                 animation: "shimmer 4s linear infinite",
                 color: "#08040F",
@@ -129,7 +129,7 @@ const NewsletterSignup = ({
                 alignItems: "center",
                 gap: "5px",
                 fontWeight: 700,
-                boxShadow: "0 2px 12px rgba(194,65,12,0.35)",
+                boxShadow: "0 2px 12px rgba(107,45,143,0.35)",
                 transition: "all 0.2s",
               }}
             >
@@ -149,20 +149,20 @@ const NewsletterSignup = ({
         style={{
           padding:    "64px 24px",
           background: "linear-gradient(135deg, hsl(var(--card)) 0%, hsl(var(--background)) 100%)",
-          borderTop:  "1px solid rgba(194,65,12,0.12)",
-          borderBottom:"1px solid rgba(194,65,12,0.12)",
+          borderTop:  "1px solid rgba(107,45,143,0.12)",
+          borderBottom:"1px solid rgba(107,45,143,0.12)",
           textAlign:  "center",
           position:   "relative",
           overflow:   "hidden",
         }}
       >
         {/* Gold glow */}
-        <div aria-hidden="true" style={{ position:"absolute", top:"50%", left:"50%", transform:"translate(-50%,-50%)", width:"500px", height:"200px", background:"radial-gradient(ellipse, rgba(194,65,12,0.06) 0%, transparent 70%)", pointerEvents:"none" }} />
+        <div aria-hidden="true" style={{ position:"absolute", top:"50%", left:"50%", transform:"translate(-50%,-50%)", width:"500px", height:"200px", background:"radial-gradient(ellipse, rgba(107,45,143,0.06) 0%, transparent 70%)", pointerEvents:"none" }} />
 
         <div style={{ position:"relative", maxWidth:"520px", margin:"0 auto" }}>
           {/* Icon */}
           <div style={{ display:"flex", justifyContent:"center", marginBottom:"20px" }}>
-            <div style={{ width:"48px", height:"48px", borderRadius:"50%", background:"rgba(194,65,12,0.1)", border:"1px solid rgba(194,65,12,0.2)", display:"flex", alignItems:"center", justifyContent:"center" }}>
+            <div style={{ width:"48px", height:"48px", borderRadius:"50%", background:"rgba(107,45,143,0.1)", border:"1px solid rgba(107,45,143,0.2)", display:"flex", alignItems:"center", justifyContent:"center" }}>
               <Mail size={20} color="hsl(var(--primary))" />
             </div>
           </div>
@@ -179,14 +179,14 @@ const NewsletterSignup = ({
 
           {status === "success" ? (
             <div style={{ display:"flex", flexDirection:"column", alignItems:"center", gap:"10px" }}>
-              <div style={{ display:"flex", alignItems:"center", gap:"8px", color:"#C2410C", fontSize:"16px", fontFamily:"'Cormorant Garamond',serif" }}>
+              <div style={{ display:"flex", alignItems:"center", gap:"8px", color:"#6B2D8F", fontSize:"16px", fontFamily:"'Cormorant Garamond',serif" }}>
                 <Check size={20} /> {t("home.newsletter_banner.success")}
               </div>
               <p style={{ fontSize:"13px", color:"hsl(var(--muted-foreground))", fontFamily:"'Cormorant Garamond',serif" }}>{t("home.newsletter_banner.confirm_inbox")}</p>
             </div>
           ) : (
             <form onSubmit={handleSubmit} aria-label="Newsletter signup" style={{ display:"flex", flexDirection:"column", alignItems:"center", gap:"12px" }}>
-              <div style={{ display:"flex", gap:"0", width:"100%", maxWidth:"400px", borderRadius:"99px", overflow:"hidden", border:"1px solid rgba(194,65,12,0.25)", background:"hsl(var(--card))" }}>
+              <div style={{ display:"flex", gap:"0", width:"100%", maxWidth:"400px", borderRadius:"99px", overflow:"hidden", border:"1px solid rgba(107,45,143,0.25)", background:"hsl(var(--card))" }}>
                 <label htmlFor={inputId + "-banner"} style={{ position:"absolute", width:"1px", height:"1px", overflow:"hidden", clip:"rect(0,0,0,0)" }}>
                   Email address
                 </label>
@@ -206,7 +206,7 @@ const NewsletterSignup = ({
                   className="btn-ripple"
                   style={{
                     padding: "13px 24px",
-                    background: "linear-gradient(135deg, #C2410C 0%, #C2410C 50%, #38BDF8 100%)",
+                    background: "linear-gradient(135deg, #6B2D8F 0%, #6B2D8F 50%, #38BDF8 100%)",
                     backgroundSize: "200% auto",
                     animation: "shimmer 4s linear infinite",
                     color: "#08040F",
@@ -220,7 +220,7 @@ const NewsletterSignup = ({
                     alignItems: "center",
                     gap: "6px",
                     flexShrink: 0,
-                    boxShadow: "0 4px 20px rgba(194,65,12,0.40)",
+                    boxShadow: "0 4px 20px rgba(107,45,143,0.40)",
                     transition: "all 0.35s ease",
                   }}
                 >
@@ -249,13 +249,13 @@ const NewsletterSignup = ({
       style={{
         borderRadius:"16px",
         padding:     "28px 28px 24px",
-        background:  "linear-gradient(135deg, rgba(194,65,12,0.06) 0%, rgba(194,65,12,0.02) 100%)",
-        border:      "1px solid rgba(194,65,12,0.18)",
+        background:  "linear-gradient(135deg, rgba(107,45,143,0.06) 0%, rgba(107,45,143,0.02) 100%)",
+        border:      "1px solid rgba(107,45,143,0.18)",
         margin:      "40px 0",
       }}
     >
       <div style={{ display:"flex", alignItems:"flex-start", gap:"14px", marginBottom:"16px" }}>
-        <div style={{ width:"38px", height:"38px", borderRadius:"50%", background:"rgba(194,65,12,0.12)", border:"1px solid rgba(194,65,12,0.2)", display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0, marginTop:"2px" }}>
+        <div style={{ width:"38px", height:"38px", borderRadius:"50%", background:"rgba(107,45,143,0.12)", border:"1px solid rgba(107,45,143,0.2)", display:"flex", alignItems:"center", justifyContent:"center", flexShrink:0, marginTop:"2px" }}>
           <Mail size={16} color="hsl(var(--primary))" />
         </div>
         <div>
@@ -269,9 +269,9 @@ const NewsletterSignup = ({
       </div>
 
       {status === "success" ? (
-        <div style={{ display:"flex", alignItems:"center", gap:"8px", padding:"12px 16px", borderRadius:"10px", background:"rgba(194,65,12,0.1)", border:"1px solid rgba(194,65,12,0.2)" }}>
-          <Check size={16} color="#C2410C" />
-          <span style={{ fontFamily:"'Cormorant Garamond',serif", fontSize:"16px", color:"#C2410C" }}>You're subscribed! Check your inbox to confirm.</span>
+        <div style={{ display:"flex", alignItems:"center", gap:"8px", padding:"12px 16px", borderRadius:"10px", background:"rgba(107,45,143,0.1)", border:"1px solid rgba(107,45,143,0.2)" }}>
+          <Check size={16} color="#6B2D8F" />
+          <span style={{ fontFamily:"'Cormorant Garamond',serif", fontSize:"16px", color:"#6B2D8F" }}>You're subscribed! Check your inbox to confirm.</span>
         </div>
       ) : (
         <form onSubmit={handleSubmit} aria-label="Newsletter signup" style={{ display:"flex", flexDirection:"column", gap:"10px" }}>
@@ -286,7 +286,7 @@ const NewsletterSignup = ({
               onChange={e => { setEmail(e.target.value); setError(""); }}
               placeholder="your@email.com"
               required
-              style={{ flex:1, minWidth:"200px", padding:"10px 16px", borderRadius:"99px", border:"1px solid rgba(194,65,12,0.22)", background:"hsl(var(--background))", color:"hsl(var(--foreground))", fontSize:"15px", fontFamily:"'Cormorant Garamond',serif", outline:"none" }}
+              style={{ flex:1, minWidth:"200px", padding:"10px 16px", borderRadius:"99px", border:"1px solid rgba(107,45,143,0.22)", background:"hsl(var(--background))", color:"hsl(var(--foreground))", fontSize:"15px", fontFamily:"'Cormorant Garamond',serif", outline:"none" }}
             />
             <button
               type="submit"
@@ -296,7 +296,7 @@ const NewsletterSignup = ({
               style={{
                 padding: "10px 22px",
                 borderRadius: "99px",
-                background: "linear-gradient(135deg, #C2410C 0%, #C2410C 50%, #38BDF8 100%)",
+                background: "linear-gradient(135deg, #6B2D8F 0%, #6B2D8F 50%, #38BDF8 100%)",
                 backgroundSize: "200% auto",
                 animation: "shimmer 4s linear infinite",
                 color: "#08040F",
@@ -310,7 +310,7 @@ const NewsletterSignup = ({
                 alignItems: "center",
                 gap: "6px",
                 whiteSpace: "nowrap",
-                boxShadow: "0 4px 16px rgba(194,65,12,0.35)",
+                boxShadow: "0 4px 16px rgba(107,45,143,0.35)",
                 transition: "all 0.35s ease",
               }}
             >

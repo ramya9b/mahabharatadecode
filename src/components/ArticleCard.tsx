@@ -105,7 +105,7 @@ const ArticleCard = ({ article, variant = "default" }: ArticleCardProps) => {
       className="group hover-lift flex flex-col"
       style={{
         background:     "linear-gradient(160deg, rgba(28,14,2,1) 0%, rgba(18,9,0,1) 100%)",
-        border:         "1px solid rgba(194,65,12,0.18)",
+        border:         "1px solid rgba(107,45,143,0.18)",
         borderRadius:   "18px",
         overflow:       "hidden",
         textDecoration: "none",
@@ -114,12 +114,12 @@ const ArticleCard = ({ article, variant = "default" }: ArticleCardProps) => {
       }}
       onMouseEnter={e => {
         const el = e.currentTarget as HTMLAnchorElement;
-        el.style.borderColor = "rgba(194,65,12,0.50)";
-        el.style.boxShadow   = "0 20px 50px rgba(194,65,12,0.14), inset 0 1px 0 rgba(194,65,12,0.12)";
+        el.style.borderColor = "rgba(107,45,143,0.50)";
+        el.style.boxShadow   = "0 20px 50px rgba(107,45,143,0.14), inset 0 1px 0 rgba(107,45,143,0.12)";
       }}
       onMouseLeave={e => {
         const el = e.currentTarget as HTMLAnchorElement;
-        el.style.borderColor = "rgba(194,65,12,0.18)";
+        el.style.borderColor = "rgba(107,45,143,0.18)";
         el.style.boxShadow   = "none";
       }}
     >
@@ -127,7 +127,7 @@ const ArticleCard = ({ article, variant = "default" }: ArticleCardProps) => {
       <div
         className="absolute top-0 left-0 right-0 h-[2px] opacity-0 group-hover:opacity-100 transition-opacity duration-500"
         style={{
-          background: "linear-gradient(90deg, transparent, rgba(194,65,12,0.8), transparent)",
+          background: "linear-gradient(90deg, transparent, rgba(107,45,143,0.8), transparent)",
         }}
         aria-hidden="true"
       />
@@ -153,8 +153,8 @@ const ArticleCard = ({ article, variant = "default" }: ArticleCardProps) => {
           position:"absolute", top:"14px", left:"14px",
           padding:"4px 12px", borderRadius:"99px",
           background:"rgba(10,5,0,0.80)",
-          border:"1px solid rgba(194,65,12,0.28)",
-          color:"#C2410C",
+          border:"1px solid rgba(107,45,143,0.28)",
+          color:"#6B2D8F",
           fontFamily:"'Cinzel',serif",
           fontSize:"10px", letterSpacing:"0.16em",
           backdropFilter:"blur(8px)",
@@ -168,13 +168,13 @@ const ArticleCard = ({ article, variant = "default" }: ArticleCardProps) => {
         {/* Meta row */}
         <div style={{ display:"flex", alignItems:"center", gap:"8px", marginBottom:"10px" }}>
           <span style={{ display:"flex", alignItems:"center", gap:"5px",
-                         color:"rgba(245,235,218,0.75)", fontSize:"11px",
+                         color:"rgba(245,232,238,0.75)", fontSize:"11px",
                          fontFamily:"'Cinzel',serif", letterSpacing:"0.06em" }}>
             <Clock size={11} />
             {article.readTime} min read
           </span>
-          <span style={{ color:"rgba(245,235,218,0.40)", fontSize:"12px" }}>·</span>
-          <span style={{ color:"rgba(245,235,218,0.70)", fontSize:"11px",
+          <span style={{ color:"rgba(245,232,238,0.40)", fontSize:"12px" }}>·</span>
+          <span style={{ color:"rgba(245,232,238,0.70)", fontSize:"11px",
                          fontFamily:"'Cinzel',serif", letterSpacing:"0.04em" }}>
             {article.publishDate}
           </span>
@@ -184,7 +184,7 @@ const ArticleCard = ({ article, variant = "default" }: ArticleCardProps) => {
         <h3 style={{
           fontFamily:"'Cinzel',serif",
           fontSize:"15px", fontWeight:600,
-          color:"#F5EBDA",
+          color:"#F5E8EE",
           marginBottom:"10px", lineHeight:1.35,
           transition:"color 0.2s",
         }}
@@ -197,7 +197,7 @@ const ArticleCard = ({ article, variant = "default" }: ArticleCardProps) => {
         <p style={{
           fontFamily:"'Cormorant Garamond',Georgia,serif",
           fontSize:"15px", lineHeight:1.75,
-          color:"rgba(245,235,218,0.82)",
+          color:"rgba(245,232,238,0.82)",
           flex:1,
           display:"-webkit-box",
           WebkitLineClamp:3,
@@ -210,18 +210,18 @@ const ArticleCard = ({ article, variant = "default" }: ArticleCardProps) => {
         {/* Footer */}
         <div style={{
           marginTop:"16px", paddingTop:"14px",
-          borderTop:"1px solid rgba(194,65,12,0.12)",
+          borderTop:"1px solid rgba(107,45,143,0.12)",
           display:"flex", alignItems:"center", justifyContent:"space-between",
         }}>
           <span style={{
-            color:"#C2410C", fontSize:"12px",
+            color:"#6B2D8F", fontSize:"12px",
             fontFamily:"'Cinzel',serif", letterSpacing:"0.10em",
             fontWeight:500, transition:"letter-spacing 0.3s",
           }}>
             Read More →
           </span>
           <div style={{ display:"flex", alignItems:"center", gap:"5px",
-                        color:"rgba(245,235,218,0.65)" }}>
+                        color:"rgba(245,232,238,0.65)" }}>
             <Tag size={11} />
             <span style={{ fontSize:"10px", letterSpacing:"0.08em",
                            fontFamily:"'Cinzel',serif" }}>

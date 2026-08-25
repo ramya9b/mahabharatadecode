@@ -38,7 +38,7 @@ const AboutHero = () => {
 
       {/* Overlays — theme-aware via --hero-overlay (cinematic dark or parchment veil). */}
       <div className="absolute inset-0" style={{ background: "var(--hero-overlay)" }} />
-      <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 70% 50% at 50% 40%, rgba(194,65,12,0.07) 0%, transparent 65%)" }} />
+      <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 70% 50% at 50% 40%, rgba(107,45,143,0.07) 0%, transparent 65%)" }} />
 
       {/* Particles */}
       <div className="particles absolute inset-0 overflow-hidden pointer-events-none">
@@ -127,7 +127,7 @@ const MissionSection = () => {
                     : "clamp(18px, 2.2vw, 22px)",
                   fontFamily: "'Cormorant Garamond', Georgia, serif",
                   color: i === 1
-                    ? "rgba(194,65,12,0.9)"
+                    ? "rgba(107,45,143,0.9)"
                     : "hsl(var(--foreground) / 0.85)",
                   fontStyle: i === 1 ? "italic" : "normal",
                   fontWeight: i === 1 ? 500 : 400,
@@ -189,7 +189,7 @@ const StatCard = ({ value, suffix = "", label, desc }: { value: number; suffix?:
         <span
           ref={ref}
           style={{
-            background: "linear-gradient(135deg, #E8C547 0%, #C2410C 50%, #B8922A 100%)",
+            background: "linear-gradient(135deg, #E8C547 0%, #6B2D8F 50%, #B8922A 100%)",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             backgroundClip: "text",
@@ -208,7 +208,7 @@ const StatCard = ({ value, suffix = "", label, desc }: { value: number; suffix?:
 const StatsSection = () => {
   const ref = useScrollReveal<HTMLDivElement>();
   return (
-    <section className="py-10 md:py-14" style={{ background: "linear-gradient(180deg, hsl(var(--parchment-1)), hsl(var(--parchment-2)))", borderTop: "1px solid rgba(194,65,12,0.08)", borderBottom: "1px solid rgba(194,65,12,0.08)" }}>
+    <section className="py-10 md:py-14" style={{ background: "linear-gradient(180deg, hsl(var(--parchment-1)), hsl(var(--parchment-2)))", borderTop: "1px solid rgba(107,45,143,0.08)", borderBottom: "1px solid rgba(107,45,143,0.08)" }}>
       <div className="max-w-6xl mx-auto px-6 md:px-12">
         <div ref={ref} className="reveal-element grid grid-cols-2 md:grid-cols-4 gap-10 md:gap-8">
           <StatCard value={14}   suffix=""   label="Deep Articles"      desc="Each 6–10 min read" />
@@ -236,7 +236,7 @@ const OriginSection = () => {
 
           {/* Image side */}
           <div ref={imgRef} className="reveal-element">
-            <div className="relative rounded-3xl overflow-hidden" style={{ aspectRatio: "4/5", boxShadow: "0 40px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(194,65,12,0.12)" }}>
+            <div className="relative rounded-3xl overflow-hidden" style={{ aspectRatio: "4/5", boxShadow: "0 40px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(107,45,143,0.12)" }}>
               <img
         loading="eager"
         fetchPriority="high"
@@ -245,7 +245,7 @@ const OriginSection = () => {
               {/* Caption */}
               <div className="absolute bottom-0 left-0 right-0 p-8">
                 <p className="font-heading text-[10px] tracking-[0.3em] uppercase text-primary/70 mb-2">The character that started everything</p>
-                <p className="font-heading text-xl mb-1" style={{ color: "rgba(245,235,218,0.95)" }}>Karna</p>
+                <p className="font-heading text-xl mb-1" style={{ color: "rgba(245,232,238,0.95)" }}>Karna</p>
                 <p style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontStyle: "italic", fontSize: "14px", color: "rgba(245,237,218,0.75)" }}>
                   "The greatest warrior no one talks about enough."
                 </p>
@@ -306,8 +306,8 @@ const pillars = [
   {
     icon: Heart,
     title: "Story-First",
-    accent: "194,65,12",
-    hex: "#C2410C",
+    accent: "107,45,143",
+    hex: "#6B2D8F",
     body: "We don't summarise the Mahabharata. We tell stories from it — with the same weight and care that Vyasa intended. Every article is structured to be an experience, not a briefing.",
     detail: "Introduction → Background → Turning Point → Key Lessons → Modern Parallels",
   },
@@ -323,7 +323,7 @@ const pillars = [
     icon: Layers,
     title: "Depth Over Volume",
     accent: "76,175,80",
-    hex: "#C2410C",
+    hex: "#6B2D8F",
     body: "We will never publish eighty shallow articles to rank on Google. We publish eight articles that say something true — with full research, emotional honesty, and modern psychological insight.",
     detail: "8 articles, each 1,500–3,000 words",
   },
@@ -424,7 +424,7 @@ const ProcessSection = () => {
         <div ref={stepsRef} className="relative">
           {/* Connecting line */}
           <div className="absolute left-[22px] top-10 bottom-10 w-px hidden md:block"
-            style={{ background: "linear-gradient(to bottom, rgba(194,65,12,0.3), rgba(194,65,12,0.05))" }} />
+            style={{ background: "linear-gradient(to bottom, rgba(107,45,143,0.3), rgba(107,45,143,0.05))" }} />
 
           <div className="space-y-6">
             {steps.map(({ num, icon: Icon, title, body }) => (
@@ -432,12 +432,12 @@ const ProcessSection = () => {
                 {/* Step circle */}
                 <div className="flex-shrink-0 w-11 h-11 rounded-full flex items-center justify-center transition-all duration-400 group-hover:scale-110"
                   style={{
-                    background: "rgba(194,65,12,0.1)",
-                    border: "1px solid rgba(194,65,12,0.25)",
-                    boxShadow: "0 0 0 0 rgba(194,65,12,0)",
+                    background: "rgba(107,45,143,0.1)",
+                    border: "1px solid rgba(107,45,143,0.25)",
+                    boxShadow: "0 0 0 0 rgba(107,45,143,0)",
                   }}
-                  onMouseEnter={e => (e.currentTarget.style.boxShadow = "0 0 20px rgba(194,65,12,0.3)")}
-                  onMouseLeave={e => (e.currentTarget.style.boxShadow = "0 0 0 0 rgba(194,65,12,0)")}
+                  onMouseEnter={e => (e.currentTarget.style.boxShadow = "0 0 20px rgba(107,45,143,0.3)")}
+                  onMouseLeave={e => (e.currentTarget.style.boxShadow = "0 0 0 0 rgba(107,45,143,0)")}
                 >
                   <Icon size={16} className="text-primary" />
                 </div>
@@ -471,7 +471,7 @@ const PhilosophySection = () => {
       style={{ background: "linear-gradient(180deg, hsl(var(--parchment-1)), hsl(var(--parchment-2)))" }}>
       {/* Large decorative quote mark */}
       <div className="absolute top-8 left-1/2 -translate-x-1/2 font-heading select-none pointer-events-none"
-        style={{ fontSize: "240px", lineHeight: 1, color: "rgba(194,65,12,0.04)" }}>
+        style={{ fontSize: "240px", lineHeight: 1, color: "rgba(107,45,143,0.04)" }}>
         "
       </div>
       <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 70% 50% at 50% 50%, rgba(139,0,0,0.06), transparent 70%)" }} />
@@ -485,7 +485,7 @@ const PhilosophySection = () => {
         </div>
 
         {/* Sanskrit */}
-        <p className="font-heading mb-4" style={{ fontSize: "clamp(18px, 2.5vw, 26px)", color: "rgba(194,65,12,0.8)", lineHeight: 1.85, letterSpacing: "0.06em" }}>
+        <p className="font-heading mb-4" style={{ fontSize: "clamp(18px, 2.5vw, 26px)", color: "rgba(107,45,143,0.8)", lineHeight: 1.85, letterSpacing: "0.06em" }}>
           यदा यदा हि धर्मस्य ग्लानिर्भवति भारत
         </p>
         <p className="text-muted-foreground italic mb-10" style={{ fontSize: "14px", fontFamily: "'Cormorant Garamond', Georgia, serif", letterSpacing: "0.04em" }}>
@@ -498,13 +498,13 @@ const PhilosophySection = () => {
           "Whenever there is a decline in righteousness and a rise in unrighteousness —
           at that time, I manifest myself on earth."
         </p>
-        <p className="font-heading text-[11px] tracking-[0.3em] uppercase" style={{ color: "rgba(194,65,12,0.4)" }}>
+        <p className="font-heading text-[11px] tracking-[0.3em] uppercase" style={{ color: "rgba(107,45,143,0.4)" }}>
           — Bhagavad Gita 4.7
         </p>
 
         {/* Site's interpretation */}
         <div className="mt-12 max-w-2xl mx-auto">
-          <div className="h-px w-16 mx-auto mb-8" style={{ background: "rgba(194,65,12,0.2)" }} />
+          <div className="h-px w-16 mx-auto mb-8" style={{ background: "rgba(107,45,143,0.2)" }} />
           <p className="leading-relaxed" style={{ fontSize: "clamp(17px, 2vw, 20px)", color: "hsl(var(--foreground) / 0.65)", fontFamily: "'Cormorant Garamond', Georgia, serif", fontStyle: "italic" }}>
             This is our operating principle. Every time a person faces a real choice —
             in their career, their relationships, their identity — and feels unequipped to
@@ -546,7 +546,7 @@ const ValuesSection = () => {
           {values.map(({ title, body }, i) => (
             <div key={title} className="reveal-element glass-card rounded-xl p-6 hover-lift group relative overflow-hidden">
               <div className="absolute top-0 left-0 bottom-0 w-0.5 opacity-0 group-hover:opacity-100 transition-opacity duration-400"
-                style={{ background: "linear-gradient(to bottom, rgba(194,65,12,0.6), rgba(194,65,12,0.1))" }} />
+                style={{ background: "linear-gradient(to bottom, rgba(107,45,143,0.6), rgba(107,45,143,0.1))" }} />
               <div className="flex items-start gap-3 mb-3">
                 <span className="font-heading text-[10px] tracking-[0.25em] text-primary/35 mt-0.5 flex-shrink-0">
                   {String(i + 1).padStart(2, "0")}
@@ -589,14 +589,14 @@ const CreatorSection = () => {
               <div
                 className="w-32 h-32 rounded-full flex items-center justify-center relative"
                 style={{
-                  background: "linear-gradient(135deg, rgba(194,65,12,0.12), rgba(194,65,12,0.04))",
-                  border: "1px solid rgba(194,65,12,0.25)",
-                  boxShadow: "0 0 40px rgba(194,65,12,0.1)",
+                  background: "linear-gradient(135deg, rgba(107,45,143,0.12), rgba(107,45,143,0.04))",
+                  border: "1px solid rgba(107,45,143,0.25)",
+                  boxShadow: "0 0 40px rgba(107,45,143,0.1)",
                 }}
               >
                 {/* Rotating ring */}
                 <svg className="absolute inset-0 w-full h-full" style={{ animation: "spin 30s linear infinite" }} viewBox="0 0 128 128">
-                  <circle cx="64" cy="64" r="60" fill="none" stroke="rgba(194,65,12,0.15)" strokeWidth="0.5" strokeDasharray="4 6" />
+                  <circle cx="64" cy="64" r="60" fill="none" stroke="rgba(107,45,143,0.15)" strokeWidth="0.5" strokeDasharray="4 6" />
                 </svg>
                 <span className="font-heading font-black text-3xl gold-text">M</span>
               </div>
@@ -663,7 +663,7 @@ const CreatorSection = () => {
                 <a
                   href="mailto:hello@mahabharatadecoded.com?subject=A thought on your article"
                   className="inline-flex items-center gap-2 mt-4 text-sm transition-colors hover:text-primary"
-                  style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: "15px", color: "rgba(194,65,12,0.7)", textDecoration: "none" }}
+                  style={{ fontFamily: "'Cormorant Garamond', Georgia, serif", fontSize: "15px", color: "rgba(107,45,143,0.7)", textDecoration: "none" }}
                 >
                   ✦ Disagree with something? Reply and tell me why →
                 </a>
@@ -686,7 +686,7 @@ const AboutCTA = () => {
     <section className="py-12 md:py-16 relative overflow-hidden text-center"
       style={{ background: "linear-gradient(180deg, hsl(var(--parchment-2)), hsl(var(--parchment-1)))" }}>
       <div className="absolute inset-0 pointer-events-none"
-        style={{ background: "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(194,65,12,0.06), transparent 65%)" }} />
+        style={{ background: "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(107,45,143,0.06), transparent 65%)" }} />
 
       <div ref={ref} className="reveal-element relative z-10 max-w-2xl mx-auto px-6">
         <span className="section-label block mb-4">{t("about.start_label")}</span>
@@ -709,8 +709,8 @@ const AboutCTA = () => {
         </div>
 
         {/* Newsletter */}
-        <div className="glass-card rounded-2xl px-8 py-8 max-w-md mx-auto relative overflow-hidden" style={{ borderColor: "rgba(194,65,12,0.15)" }}>
-          <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(to right, transparent, rgba(194,65,12,0.4), transparent)" }} />
+        <div className="glass-card rounded-2xl px-8 py-8 max-w-md mx-auto relative overflow-hidden" style={{ borderColor: "rgba(107,45,143,0.15)" }}>
+          <div className="absolute top-0 left-0 right-0 h-px" style={{ background: "linear-gradient(to right, transparent, rgba(107,45,143,0.4), transparent)" }} />
           <Users size={20} className="text-primary mx-auto mb-3" />
           <p className="font-heading font-semibold text-foreground mb-1" style={{ fontSize: "17px" }}>Free Weekly Wisdom</p>
           <p className="text-muted-foreground mb-5 text-sm" style={{ fontFamily: "'Cormorant Garamond', Georgia, serif" }}>

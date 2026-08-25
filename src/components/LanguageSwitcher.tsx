@@ -113,7 +113,7 @@ const LanguageSwitcher = (_: LanguageSwitcherProps = {}) => {
         aria-label={t("lang.select")}
         className="flex items-center gap-1.5 px-3 py-1.5 rounded-full transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
         style={{
-          background: open ? "rgba(194,65,12,0.14)" : "rgba(139,105,20,0.06)",
+          background: open ? "rgba(107,45,143,0.14)" : "rgba(139,105,20,0.06)",
           border: "1px solid rgba(139,105,20,0.2)",
           color: "hsl(var(--primary))",
         }}
@@ -163,7 +163,7 @@ const LanguageSwitcher = (_: LanguageSwitcherProps = {}) => {
             maxWidth: "min(200px, calc(100vw - 2rem))",
             minWidth: "160px",
             background: "hsl(38 52% 93%)",
-            border: "1px solid rgba(194,65,12,0.25)",
+            border: "1px solid rgba(107,45,143,0.25)",
             boxShadow: "0 8px 32px rgba(42,31,14,0.15)",
           }}
         >
@@ -185,7 +185,7 @@ const LanguageSwitcher = (_: LanguageSwitcherProps = {}) => {
                   textAlign: "left",
                 }}
                 onFocus={(e) => {
-                  (e.currentTarget as HTMLElement).style.background = "rgba(194,65,12,0.08)";
+                  (e.currentTarget as HTMLElement).style.background = "rgba(107,45,143,0.08)";
                 }}
                 onBlur={(e) => {
                   if (!isActive) (e.currentTarget as HTMLElement).style.background = "transparent";
@@ -202,7 +202,7 @@ const LanguageSwitcher = (_: LanguageSwitcherProps = {}) => {
                 <span
                   className="w-8 h-6 flex items-center justify-center rounded text-[10px] font-bold flex-shrink-0"
                   style={{
-                    background: isActive ? "rgba(139,105,20,0.2)" : "rgba(194,65,12,0.08)",
+                    background: isActive ? "rgba(139,105,20,0.2)" : "rgba(107,45,143,0.08)",
                     color: "hsl(var(--primary))",
                     fontFamily: "monospace",
                   }}

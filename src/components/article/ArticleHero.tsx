@@ -12,12 +12,12 @@ interface ArticleHeroProps {
 const CHAR_ACCENT_MAP: Record<string, string> = {
   karna:    "#C0392B",  /* Crimson — tragic */
   krishna:  "#2471A3",  /* Sapphire — divine */
-  arjuna:   "#7A4A05",  /* Emerald — warrior */
+  arjuna:   "#6E570A",  /* Emerald — warrior */
   draupadi: "#8E44AD",  /* Violet — fire */
   bhishma:  "#707B7C",  /* Silver — elder */
   drona:    "#784212",  /* Brown — guru */
-  yudhishthira: "#7A4A05",
-  default:  "#C2410C",  /* Gold fallback */
+  yudhishthira: "#6E570A",
+  default:  "#6B2D8F",  /* Gold fallback */
 };
 
 const ArticleHero = ({ article }: ArticleHeroProps) => {

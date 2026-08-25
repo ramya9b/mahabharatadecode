@@ -70,7 +70,7 @@ class ErrorBoundary extends Component<Props, State> {
               right: 0,
               height: "3px",
               background:
-                "linear-gradient(90deg,#C2410C,#FBBF24,#C2410C,#38BDF8,#A78BFA,#F472B6)",
+                "linear-gradient(90deg,#6B2D8F,#E4C04A,#6B2D8F,#38BDF8,#A78BFA,#F472B6)",
             }}
             aria-hidden="true"
           />
@@ -181,7 +181,7 @@ class ErrorBoundary extends Component<Props, State> {
                 gap: "8px",
                 padding: "12px 28px",
                 borderRadius: "99px",
-                background: "linear-gradient(135deg, #C2410C, #C2410C)",
+                background: "linear-gradient(135deg, #6B2D8F, #6B2D8F)",
                 border: "none",
                 color: "#1A0A00",
                 fontFamily: "'Cinzel', serif",
@@ -189,7 +189,7 @@ class ErrorBoundary extends Component<Props, State> {
                 fontWeight: 700,
                 letterSpacing: "0.08em",
                 cursor: "pointer",
-                boxShadow: "0 4px 20px rgba(194,65,12,0.30)",
+                boxShadow: "0 4px 20px rgba(107,45,143,0.30)",
               }}
             >
               <RefreshCw size={15} aria-hidden="true" />

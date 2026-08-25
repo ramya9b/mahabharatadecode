@@ -12,84 +12,84 @@
      Warm cream background, dark amber text, readable by day
      ══════════════════════════════════════════════════════ */
   :root {
-    --background: 38 60% 98%;        /* #FEFBF6 warm ivory — page surface */
-    --foreground: 285 45% 10%;       /* deep temple purple-black — body text */
+    /* ── TTD palette: blush page, lavender cards, temple purple, coral ── */
+    --background: 345 55% 97%;       /* #FDF1F4 blush — TTD page surface */
+    --foreground: 285 62% 13%;       /* #2B0D3B deep temple purple — body text */
 
-    --card: 36 55% 96%;              /* warm cream card */
-    --card-foreground: 285 45% 12%;
+    --card: 292 42% 93%;             /* #F1E4F6 lavender card — TTD tiles */
+    --card-foreground: 285 62% 15%;
 
-    --popover: 36 55% 97%;
-    --popover-foreground: 285 45% 12%;
+    --popover: 292 45% 96%;
+    --popover-foreground: 285 62% 15%;
 
-    --primary: 18 88% 40%;           /* #C2410C saffron — links, CTAs */
-    --primary-foreground: 38 60% 98%;
+    --primary: 281 56% 34%;          /* #6B2D8F TTD temple purple — links, CTAs */
+    --primary-foreground: 345 55% 98%;
 
-    --secondary: 285 30% 93%;        /* pale temple lilac */
-    --secondary-foreground: 285 50% 18%;
+    --secondary: 292 34% 90%;
+    --secondary-foreground: 285 55% 20%;
 
-    --muted: 36 35% 91%;
-    --muted-foreground: 285 22% 28%; /* muted body copy — still AA on ivory */
+    --muted: 320 28% 92%;
+    --muted-foreground: 285 26% 31%; /* muted copy — still AA on blush */
 
-    --accent: 43 70% 90%;            /* temple gold tint */
-    --accent-foreground: 285 50% 18%;
+    --accent: 292 40% 90%;           /* soft lavender hover */
+    --accent-foreground: 285 55% 20%;
 
     --destructive: 0 62% 45%;
-    --destructive-foreground: 38 55% 97%;
+    --destructive-foreground: 345 55% 98%;
 
-    --border: 43 45% 78%;            /* temple gold hairline */
-    --input:  43 45% 78%;
-    --ring:   18 88% 40%;
+    --border: 292 30% 84%;
+    --input:  292 30% 84%;
+    --ring:   281 56% 34%;
 
     --radius: 0.75rem;
 
-    --sidebar-background: 38 60% 98%;
-    --sidebar-foreground: 285 45% 12%;
-    --sidebar-primary: 18 88% 40%;
-    --sidebar-primary-foreground: 38 60% 98%;
-    --sidebar-accent: 43 70% 90%;
-    --sidebar-accent-foreground: 285 50% 18%;
-    --sidebar-border: 43 45% 78%;
-    --sidebar-ring: 18 88% 40%;
+    --sidebar-background: 345 55% 97%;
+    --sidebar-foreground: 285 62% 15%;
+    --sidebar-primary: 281 56% 34%;
+    --sidebar-primary-foreground: 345 55% 98%;
+    --sidebar-accent: 292 40% 90%;
+    --sidebar-accent-foreground: 285 55% 20%;
+    --sidebar-border: 292 30% 84%;
+    --sidebar-ring: 281 56% 34%;
 
-    /* ── Brand golds. These are real golds; before this they held green
-          values while still being named gold. Used mostly as button-hover
-          backgrounds and gradient stops, plus one hover:text usage. ── */
-    --gold-light:    #A16207;
-    --gold-dark:     #7A4A05;
+    /* ── TTD brand colours, sampled from the TTD site ── */
+    --ttd-purple-deep: #3E1259;      /* nav / header base */
+    --ttd-purple:      #6B2D8F;      /* mid purple */
+    --ttd-violet:      #8B4BAE;      /* nav gradient top */
+    --ttd-coral:       #E0574B;      /* hero gradient foot */
+    --ttd-saffron:     #F5821F;      /* temple saffron accent */
+    --ttd-gold:        #C9A227;      /* logo / gopuram gold */
+    --nav-gradient: linear-gradient(90deg, #3E1259 0%, #6B2D8F 45%, #8B4BAE 100%);
+    --hero-gradient: linear-gradient(180deg, #6B2D8F 0%, #A03C7C 55%, #E0574B 100%);
 
-    /* Decorative multi-hue divider bar. Left as a true rainbow — each name
-       still describes the hue it holds. */
+    /* Brand golds — TTD's gold is real gold (logo, gopuram). */
+    --gold-light:    #9A7B12;
+    --gold-dark:     #6E570A;
+
     --rainbow-green: #059669;
     --rainbow-blue:  #0284C7;
     --rainbow-purple:#7C3AED;
     --rainbow-pink:  #BE185D;
     --rainbow-lime:  #65A30D;
     --rainbow-bar: linear-gradient(90deg,
-      #C2410C 0%, #A16207 20%, #65A30D 40%,
-      #0284C7 60%, #7C3AED 80%, #BE185D 100%);
+      #6B2D8F 0%, #8B4BAE 20%, #C9A227 40%,
+      #F5821F 60%, #E0574B 80%, #BE185D 100%);
 
-    /* ── Parchment tones — alternating section backgrounds.
-          Light mode: warm ivories. Dark mode: deep purple-darks. ── */
-    --parchment-1: 38 55% 95%;
-    --parchment-2: 36 45% 92%;
-    --parchment-3: 43 40% 93%;
-    --hero-overlay: linear-gradient(to bottom, rgba(254,251,246,0.15) 0%, rgba(254,251,246,0.45) 40%, rgba(254,251,246,0.85) 80%, hsl(38 60% 96%) 100%);
+    /* Alternating section backgrounds — blush and lavender tints. */
+    --parchment-1: 345 50% 96%;
+    --parchment-2: 292 38% 94%;
+    --parchment-3: 330 40% 95%;
+    --hero-overlay: linear-gradient(to bottom, rgba(253,241,244,0.10) 0%, rgba(253,241,244,0.45) 40%, rgba(253,241,244,0.85) 80%, hsl(345 55% 96%) 100%);
 
-    /* ── AI-content accent lane — exclusively for AI-assisted features
-          (Story Teller narration, AI translations, quiz AI commentary).
-          Deliberately a cool teal, distinct from both the saffron primary
-          and the temple purple, so readers can tell "AI-assisted" from
-          "human-written" at a glance. It was indigo, which collided with
-          the purple brand introduced here. Never used for primary nav,
-          CTAs, or article body. ── */
-    --ai-accent: 187 85% 28%;            /* deep teal, AA on ivory */
+    /* ── AI-content accent lane — teal, distinct from the purple brand and
+          the coral accent, so AI-assisted content stays visually flagged. ── */
+    --ai-accent: 187 85% 27%;
     --ai-accent-foreground: 0 0% 100%;
-    --ai-accent-soft: 187 55% 92%;       /* tinted background for AI badges/cards */
+    --ai-accent-soft: 187 50% 92%;
     --ai-gradient: linear-gradient(135deg, #0E7490 0%, #0891B2 100%);
 
-    /* ── Temples-page accent — scoped, not a global --card swap. ── */
-    --temple-card: 285 35% 95%;
-    --temple-card-border: 285 25% 82%;
+    --temple-card: 292 45% 95%;
+    --temple-card-border: 292 30% 82%;
   }
 
   /* ══════════════════════════════════════════════════════
@@ -97,47 +97,55 @@
      Deep warm black, bright gold, cinematic by night
      ══════════════════════════════════════════════════════ */
   .dark {
-    --background: 285 45% 5%;       /* deep temple purple-black */
-    --foreground: 38 55% 92%;       /* warm cream — body text */
+    /* TTD has no dark mode; this is a night version of the same family. */
+    --background: 285 52% 6%;       /* deep temple purple night */
+    --foreground: 330 30% 92%;      /* soft blush white — body text */
 
-    /* Card sits clearly above --background so panels stay visible. */
-    --card: 285 30% 12%;
-    --card-foreground: 38 55% 92%;
+    --card: 285 34% 13%;
+    --card-foreground: 330 30% 92%;
 
-    --popover: 285 30% 12%;
-    --popover-foreground: 38 55% 92%;
+    --popover: 285 34% 13%;
+    --popover-foreground: 330 30% 92%;
 
-    --primary: 27 96% 61%;           /* #FB923C bright saffron */
-    --primary-foreground: 285 45% 6%;
+    --primary: 285 72% 74%;          /* light temple purple — readable on night */
+    --primary-foreground: 285 52% 7%;
 
-    --secondary: 285 28% 11%;
-    --secondary-foreground: 38 50% 90%;
+    --secondary: 285 30% 12%;
+    --secondary-foreground: 330 28% 90%;
 
-    --muted: 285 25% 13%;
-    --muted-foreground: 38 30% 70%;
+    --muted: 285 26% 14%;
+    --muted-foreground: 330 22% 72%;
 
-    --accent: 285 28% 11%;
-    --accent-foreground: 38 50% 90%;
+    --accent: 285 30% 12%;
+    --accent-foreground: 330 28% 90%;
 
     --destructive: 0 62% 48%;
-    --destructive-foreground: 45 90% 95%;
+    --destructive-foreground: 345 80% 95%;
 
-    --border: 285 25% 22%;
-    --input:  285 25% 22%;
-    --ring:   27 96% 61%;
+    --border: 285 26% 24%;
+    --input:  285 26% 24%;
+    --ring:   285 72% 74%;
 
-    --sidebar-background: 285 45% 5%;
-    --sidebar-foreground: 38 55% 92%;
-    --sidebar-primary: 27 96% 61%;
-    --sidebar-primary-foreground: 285 45% 6%;
-    --sidebar-accent: 285 28% 11%;
-    --sidebar-accent-foreground: 38 50% 90%;
-    --sidebar-border: 285 25% 22%;
-    --sidebar-ring: 27 96% 61%;
+    --sidebar-background: 285 52% 6%;
+    --sidebar-foreground: 330 30% 92%;
+    --sidebar-primary: 285 72% 74%;
+    --sidebar-primary-foreground: 285 52% 7%;
+    --sidebar-accent: 285 30% 12%;
+    --sidebar-accent-foreground: 330 28% 90%;
+    --sidebar-border: 285 26% 24%;
+    --sidebar-ring: 285 72% 74%;
 
-    /* ── Brand golds — dark values ── */
-    --gold-light:    #FBBF24;
-    --gold-dark:     #B45309;
+    --ttd-purple-deep: #3E1259;
+    --ttd-purple:      #8B4BAE;
+    --ttd-violet:      #A96BC8;
+    --ttd-coral:       #F0705F;
+    --ttd-saffron:     #FB923C;
+    --ttd-gold:        #E4C04A;
+    --nav-gradient: linear-gradient(90deg, #2A0B3D 0%, #4A1D6A 45%, #6B2D8F 100%);
+    --hero-gradient: linear-gradient(180deg, #3E1259 0%, #7B2D6E 55%, #B0453C 100%);
+
+    --gold-light:    #E4C04A;
+    --gold-dark:     #A8842B;
 
     --rainbow-green: #34D399;
     --rainbow-blue:  #38BDF8;
@@ -145,25 +153,21 @@
     --rainbow-pink:  #F472B6;
     --rainbow-lime:  #A3E635;
     --rainbow-bar: linear-gradient(90deg,
-      #FB923C 0%, #FBBF24 20%, #A3E635 40%,
-      #38BDF8 60%, #A78BFA 80%, #F472B6 100%);
+      #A96BC8 0%, #C89BE0 20%, #E4C04A 40%,
+      #FB923C 60%, #F0705F 80%, #F472B6 100%);
 
-    /* Parchment tones — dark mode equivalents (deep purple-darks) */
-    --parchment-1: 285 40% 6%;
-    --parchment-2: 285 35% 9%;
-    --parchment-3: 285 45% 4%;
-    --hero-overlay: linear-gradient(to bottom, rgba(15,7,20,0.55) 0%, rgba(15,7,20,0.75) 50%, rgba(15,7,20,1) 100%);
+    --parchment-1: 285 45% 7%;
+    --parchment-2: 285 38% 10%;
+    --parchment-3: 285 50% 5%;
+    --hero-overlay: linear-gradient(to bottom, rgba(17,7,24,0.55) 0%, rgba(17,7,24,0.75) 50%, rgba(17,7,24,1) 100%);
 
-    /* ── AI-content accent lane — dark theme values. Brighter teal so it
-          stays AA-readable on the near-black background. ── */
     --ai-accent: 187 80% 62%;
-    --ai-accent-foreground: 285 45% 6%;
+    --ai-accent-foreground: 285 52% 7%;
     --ai-accent-soft: 187 45% 15%;
     --ai-gradient: linear-gradient(135deg, #22D3EE 0%, #67E8F9 100%);
 
-    /* ── Temples-page accent — dark theme values ── */
-    --temple-card: 285 30% 16%;
-    --temple-card-border: 285 25% 32%;
+    --temple-card: 285 32% 16%;
+    --temple-card-border: 285 28% 32%;
   }
 }
 
@@ -321,10 +325,10 @@ body {
      Use these on ANY component with a forced dark background.
      NEVER use text-foreground/text-muted-foreground on forced dark cards.
      ─────────────────────────────────────────────────────────────────── */
-  .dark-card-heading   { color: rgba(245,235,218,0.95); }
+  .dark-card-heading   { color: rgba(245,232,238,0.95); }
   .dark-card-body      { color: rgba(245,237,218,0.88); }
   .dark-card-secondary { color: rgba(245,237,218,0.65); }
-  .dark-card-label     { color: rgba(194,65,12,0.65);  }
+  .dark-card-label     { color: rgba(107,45,143,0.65);  }
   .dark-card-faint     { color: rgba(245,237,218,0.38); }
 
   .glass-card {
@@ -338,7 +342,7 @@ body {
   .glass-card:hover {
     background: rgba(250, 244, 232, 0.97);
     border-color: rgba(212, 175, 55, 0.48);
-    box-shadow: 0 6px 28px rgba(194,65,12,0.10), inset 0 1px 0 rgba(194,65,12,0.14);
+    box-shadow: 0 6px 28px rgba(107,45,143,0.10), inset 0 1px 0 rgba(107,45,143,0.14);
   }
   .dark .glass-card {
     background: rgba(40, 25, 8, 0.88);
@@ -348,7 +352,7 @@ body {
   .dark .glass-card:hover {
     background: rgba(52, 32, 10, 0.94);
     border-color: rgba(251, 191, 36, 0.44);
-    box-shadow: 0 8px 32px rgba(194,65,12,0.13), inset 0 1px 0 rgba(194,65,12,0.10);
+    box-shadow: 0 8px 32px rgba(107,45,143,0.13), inset 0 1px 0 rgba(107,45,143,0.10);
   }
 
   .hover-lift {
@@ -359,12 +363,12 @@ body {
     transform: translateY(-5px);
     box-shadow:
       0 24px 48px rgba(139,105,20,0.20),
-      0 0 0 1px rgba(194,65,12,0.22),
-      0 0 32px rgba(194,65,12,0.08);
+      0 0 0 1px rgba(107,45,143,0.22),
+      0 0 32px rgba(107,45,143,0.08);
   }
 
   .gold-text {
-    background: linear-gradient(135deg, #7A4A05 0%, #9B6810 40%, #7A4A05 100%);
+    background: linear-gradient(135deg, #6E570A 0%, #9B6810 40%, #6E570A 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -472,7 +476,7 @@ body {
     position: absolute;
     top: 0; left: 0; right: 0;
     height: 2px;
-    background: linear-gradient(90deg, transparent, rgba(194,65,12,0.75), transparent);
+    background: linear-gradient(90deg, transparent, rgba(107,45,143,0.75), transparent);
     opacity: 0;
     transition: opacity 0.4s ease;
     border-radius: 18px 18px 0 0;
@@ -498,11 +502,11 @@ body {
   .shimmer-gold {
     background: linear-gradient(
       90deg,
-      #7A4A05 0%,
+      #6E570A 0%,
       #9B6810 25%,
       #C08A20 50%,
       #9B6810 75%,
-      #7A4A05 100%
+      #6E570A 100%
     );
     background-size: 200% auto;
     -webkit-background-clip: text;
@@ -539,7 +543,7 @@ body {
 
   /* Gold ripple variant (for dark buttons) */
   .btn-ripple.ripple-gold .ripple-circle {
-    background: rgba(194,65,12,0.3);
+    background: rgba(107,45,143,0.3);
   }
 
   /* ── CTA micro-interaction: magnetic lift ── */
@@ -569,7 +573,7 @@ body {
     top: 50%; left: 50%;
     width: 80px; height: 80px;
     border-radius: 50%;
-    background: rgba(194,65,12,0.18);
+    background: rgba(107,45,143,0.18);
     transform: translate(-50%,-50%) scale(0);
     opacity: 0;
     pointer-events: none;
@@ -618,7 +622,7 @@ body {
   /* ── Mobile nav link active state ── */
   @media (max-width: 1023px) {
     .mobile-nav-link:active {
-      background: rgba(194,65,12,0.08);
+      background: rgba(107,45,143,0.08);
       border-radius: 8px;
     }
   }
@@ -644,13 +648,13 @@ body {
     animation: shimmer 1.6s linear infinite;
   }
   .dark .skeleton {
-    background: rgba(194,65,12,0.06);
+    background: rgba(107,45,143,0.06);
   }
   .dark .skeleton::after {
     background: linear-gradient(
       90deg,
       transparent 0%,
-      rgba(194,65,12,0.08) 50%,
+      rgba(107,45,143,0.08) 50%,
       transparent 100%
     );
     background-size: 200% 100%;
@@ -693,7 +697,7 @@ body {
 
 @keyframes pulse-glow {
   0%, 100% { filter: brightness(1); }
-  50%       { filter: brightness(1.06) drop-shadow(0 0 12px rgba(194,65,12,0.35)); }
+  50%       { filter: brightness(1.06) drop-shadow(0 0 12px rgba(107,45,143,0.35)); }
 }
 
 @keyframes shimmer {
@@ -746,7 +750,7 @@ body {
 /* Author note */
 .author-note {
   @apply glass-card px-6 py-5 rounded-xl text-muted-foreground text-sm leading-relaxed;
-  border-color: rgba(194,65,12,0.12);
+  border-color: rgba(107,45,143,0.12);
   font-style: italic;
   font-family: 'Cormorant Garamond', Georgia, serif;
 }
@@ -763,7 +767,7 @@ body {
   z-index: 9999;
   padding: 10px 22px;
   border-radius: 0 0 10px 10px;
-  background: linear-gradient(135deg, #9B6810, #7A4A05);
+  background: linear-gradient(135deg, #9B6810, #6E570A);
   color: #F5EDDA;
   font-family: 'Cinzel', serif;
   font-size: 13px;
@@ -777,7 +781,7 @@ body {
 
 /* ── Focus-visible ring (keyboard only, not mouse) ── */
 :focus-visible {
-  outline: 2px solid rgba(194,65,12,0.8);
+  outline: 2px solid rgba(107,45,143,0.8);
   outline-offset: 3px;
   border-radius: 4px;
 }
@@ -792,7 +796,7 @@ input:focus-visible,
 select:focus-visible,
 textarea:focus-visible,
 [tabindex]:focus-visible {
-  outline: 2px solid rgba(194,65,12,0.8);
+  outline: 2px solid rgba(107,45,143,0.8);
   outline-offset: 3px;
 }
 

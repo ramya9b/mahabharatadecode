@@ -58,7 +58,7 @@ const CharactersCTA = () => (
       className="absolute inset-0 pointer-events-none"
       style={{
         background:
-          "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(12,9,0,0.6) 0%, rgba(194,65,12,0.08) 40%, transparent 70%)",
+          "radial-gradient(ellipse 80% 60% at 50% 50%, rgba(12,9,0,0.6) 0%, rgba(107,45,143,0.08) 40%, transparent 70%)",
       }}
     />
 
@@ -103,13 +103,13 @@ const CharactersCTA = () => (
       {/* Mini newsletter */}
       <div
         className="glass-card rounded-2xl px-8 py-8 max-w-md mx-auto relative overflow-hidden"
-        style={{ borderColor: "rgba(194,65,12,0.22)" }}
+        style={{ borderColor: "rgba(107,45,143,0.22)" }}
       >
         <div
           className="absolute top-0 left-0 right-0 h-px"
           style={{
             background:
-              "linear-gradient(to right, transparent, rgba(194,65,12,0.5), transparent)",
+              "linear-gradient(to right, transparent, rgba(107,45,143,0.5), transparent)",
           }}
         />
         <span className="text-primary text-lg block mb-3">✦</span>

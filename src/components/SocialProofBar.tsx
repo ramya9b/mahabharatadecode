@@ -32,8 +32,8 @@ const SocialProofBar = () => {
         position: "relative",
         padding: "36px 24px",
         background: "hsl(var(--card) / 0.4)",
-        borderTop:    "1px solid rgba(194,65,12,0.10)",
-        borderBottom: "1px solid rgba(194,65,12,0.10)",
+        borderTop:    "1px solid rgba(107,45,143,0.10)",
+        borderBottom: "1px solid rgba(107,45,143,0.10)",
       }}
     >
       {/* Top hairline glow */}
@@ -43,7 +43,7 @@ const SocialProofBar = () => {
           position: "absolute",
           top: 0, left: 0, right: 0,
           height: "1px",
-          background: "linear-gradient(to right, transparent, rgba(194,65,12,0.45), transparent)",
+          background: "linear-gradient(to right, transparent, rgba(107,45,143,0.45), transparent)",
         }}
       />
 
@@ -108,7 +108,7 @@ const SocialProofBar = () => {
                   width: "4px",
                   height: "4px",
                   borderRadius: "50%",
-                  background: "rgba(194,65,12,0.45)",
+                  background: "rgba(107,45,143,0.45)",
                   flexShrink: 0,
                 }}
               />

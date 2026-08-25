@@ -217,8 +217,8 @@ const PaywallModal = ({ open, onClose, onSuccess, reason }: PaywallModalProps) =
         onClick={(e) => e.stopPropagation()}
         style={{
           background: "linear-gradient(180deg, hsl(var(--card)) 0%, hsl(var(--background)) 100%)",
-          border: "1px solid rgba(194,65,12,0.25)",
-          boxShadow: "0 30px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(194,65,12,0.1)",
+          border: "1px solid rgba(107,45,143,0.25)",
+          boxShadow: "0 30px 80px rgba(0,0,0,0.5), 0 0 0 1px rgba(107,45,143,0.1)",
         }}
       >
         <button
@@ -235,7 +235,7 @@ const PaywallModal = ({ open, onClose, onSuccess, reason }: PaywallModalProps) =
             <Sparkles size={16} style={{ color: "hsl(var(--primary))" }} />
             <span
               className="font-heading text-[10px] tracking-[0.3em] uppercase"
-              style={{ color: "rgba(194,65,12,0.7)" }}
+              style={{ color: "rgba(107,45,143,0.7)" }}
             >
               {reason || "Unlock Full Access"}
             </span>
@@ -278,10 +278,10 @@ const PaywallModal = ({ open, onClose, onSuccess, reason }: PaywallModalProps) =
                   style={{
                     border: active
                       ? "2px solid hsl(var(--primary))"
-                      : "1px solid rgba(194,65,12,0.18)",
+                      : "1px solid rgba(107,45,143,0.18)",
                     background: active
-                      ? "rgba(194,65,12,0.08)"
-                      : "rgba(194,65,12,0.02)",
+                      ? "rgba(107,45,143,0.08)"
+                      : "rgba(107,45,143,0.02)",
                   }}
                 >
                   <div className="flex items-center justify-between mb-2">
@@ -295,7 +295,7 @@ const PaywallModal = ({ open, onClose, onSuccess, reason }: PaywallModalProps) =
                       <span
                         className="font-heading text-[9px] tracking-[0.15em] uppercase px-2 py-0.5 rounded-full"
                         style={{
-                          background: "rgba(194,65,12,0.15)",
+                          background: "rgba(107,45,143,0.15)",
                           color: "hsl(var(--primary))",
                         }}
                       >
@@ -343,10 +343,10 @@ const PaywallModal = ({ open, onClose, onSuccess, reason }: PaywallModalProps) =
           {status === "success" ? (
             <div
               className="flex items-center gap-2 rounded-xl px-4 py-3"
-              style={{ background: "rgba(194,65,12,0.1)", border: "1px solid rgba(194,65,12,0.25)" }}
+              style={{ background: "rgba(107,45,143,0.1)", border: "1px solid rgba(107,45,143,0.25)" }}
             >
-              <Check size={18} color="#C2410C" />
-              <span style={{ color: "#C2410C", fontFamily: "'Cormorant Garamond',serif", fontSize: "15px" }}>
+              <Check size={18} color="#6B2D8F" />
+              <span style={{ color: "#6B2D8F", fontFamily: "'Cormorant Garamond',serif", fontSize: "15px" }}>
                 Welcome! Your access is unlocked.
               </span>
             </div>
@@ -357,14 +357,14 @@ const PaywallModal = ({ open, onClose, onSuccess, reason }: PaywallModalProps) =
               <label
                 htmlFor="mbd-phone"
                 className="block font-heading text-[10px] tracking-[0.2em] uppercase mb-1.5"
-                style={{ color: "rgba(194,65,12,0.7)" }}
+                style={{ color: "rgba(107,45,143,0.7)" }}
               >
                 Mobile number
               </label>
               <div className="flex items-stretch mb-4 rounded-xl overflow-hidden"
-                style={{ border: "1px solid rgba(194,65,12,0.25)", background: "rgba(194,65,12,0.03)" }}>
+                style={{ border: "1px solid rgba(107,45,143,0.25)", background: "rgba(107,45,143,0.03)" }}>
                 <span className="flex items-center px-3 text-sm"
-                  style={{ color: "hsl(var(--muted-foreground))", borderRight: "1px solid rgba(194,65,12,0.18)" }}>
+                  style={{ color: "hsl(var(--muted-foreground))", borderRight: "1px solid rgba(107,45,143,0.18)" }}>
                   +91
                 </span>
                 <input
@@ -378,7 +378,7 @@ const PaywallModal = ({ open, onClose, onSuccess, reason }: PaywallModalProps) =
                   className="flex-1 bg-transparent px-3 py-3 text-sm outline-none"
                   style={{ color: "hsl(var(--foreground))" }}
                 />
-                {phoneValid && <Check size={16} className="self-center mr-3" style={{ color: "#C2410C" }} />}
+                {phoneValid && <Check size={16} className="self-center mr-3" style={{ color: "#6B2D8F" }} />}
               </div>
 
               <button
@@ -442,7 +442,7 @@ const PaywallModal = ({ open, onClose, onSuccess, reason }: PaywallModalProps) =
               ) : (
                 <div className="flex items-center gap-2 justify-center">
                   <div className="flex items-stretch rounded-lg overflow-hidden"
-                    style={{ border: "1px solid rgba(194,65,12,0.25)", background: "rgba(194,65,12,0.03)" }}>
+                    style={{ border: "1px solid rgba(107,45,143,0.25)", background: "rgba(107,45,143,0.03)" }}>
                     <span className="flex items-center px-2 text-[12px]"
                       style={{ color: "hsl(var(--muted-foreground))" }}>+91</span>
                     <input
@@ -460,7 +460,7 @@ const PaywallModal = ({ open, onClose, onSuccess, reason }: PaywallModalProps) =
                     onClick={handleRestore}
                     disabled={restoreStatus === "loading"}
                     className="rounded-lg px-3 py-2 text-[12px] font-heading uppercase tracking-[0.1em] disabled:opacity-60"
-                    style={{ background: "rgba(194,65,12,0.15)", color: "hsl(var(--primary))" }}
+                    style={{ background: "rgba(107,45,143,0.15)", color: "hsl(var(--primary))" }}
                   >
                     {restoreStatus === "loading" ? "…" : "Restore"}
                   </button>

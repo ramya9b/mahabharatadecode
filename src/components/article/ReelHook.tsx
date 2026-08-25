@@ -18,8 +18,8 @@ const ReelHook = ({ hook, supporting }: ReelHookProps) => {
           className="relative rounded-3xl overflow-hidden px-8 md:px-14 py-14 md:py-16 text-center"
           style={{
             background:
-              "linear-gradient(135deg, rgba(139,0,0,0.07) 0%, rgba(11,15,26,0.97) 40%, rgba(194,65,12,0.06) 100%)",
-            border: "1px solid rgba(194,65,12,0.14)",
+              "linear-gradient(135deg, rgba(139,0,0,0.07) 0%, rgba(11,15,26,0.97) 40%, rgba(107,45,143,0.06) 100%)",
+            border: "1px solid rgba(107,45,143,0.14)",
           }}
         >
           {/* Top shimmer */}
@@ -27,7 +27,7 @@ const ReelHook = ({ hook, supporting }: ReelHookProps) => {
             className="absolute top-0 left-0 right-0 h-px"
             style={{
               background:
-                "linear-gradient(to right, transparent, rgba(194,65,12,0.5), transparent)",
+                "linear-gradient(to right, transparent, rgba(107,45,143,0.5), transparent)",
             }}
           />
 
@@ -49,7 +49,7 @@ const ReelHook = ({ hook, supporting }: ReelHookProps) => {
             style={{
               fontSize: "clamp(20px, 2.8vw, 30px)",
               fontStyle: "italic",
-              color: "rgba(245,235,218,0.95)",
+              color: "rgba(245,232,238,0.95)",
             }}
           >
             "{hook}"

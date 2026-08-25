@@ -53,21 +53,21 @@ const PWAUpdateNotice = () => {
           padding: "12px 14px",
           borderRadius: "14px",
           background: "rgb(20,10,0)",
-          border: "1px solid rgba(194,65,12,0.35)",
-          boxShadow: "0 12px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(194,65,12,0.10)",
+          border: "1px solid rgba(107,45,143,0.35)",
+          boxShadow: "0 12px 40px rgba(0,0,0,0.5), 0 0 0 1px rgba(107,45,143,0.10)",
         }}
       >
         <RefreshCw
           size={16}
           aria-hidden="true"
-          style={{ color: "#C2410C", flexShrink: 0 }}
+          style={{ color: "#6B2D8F", flexShrink: 0 }}
         />
         <p
           style={{
             flex: 1,
             margin: 0,
             fontSize: "14px",
-            color: "rgba(245,235,218,0.92)",
+            color: "rgba(245,232,238,0.92)",
             fontFamily: "'Cormorant Garamond', Georgia, serif",
             lineHeight: 1.4,
           }}
@@ -80,7 +80,7 @@ const PWAUpdateNotice = () => {
           style={{
             padding: "6px 14px",
             borderRadius: "99px",
-            background: "linear-gradient(135deg,#C2410C 0%,#C2410C 50%,#F5EBDA 100%)",
+            background: "linear-gradient(135deg,#6B2D8F 0%,#6B2D8F 50%,#F5E8EE 100%)",
             color: "#08040F",
             border: "none",
             cursor: "pointer",
@@ -103,7 +103,7 @@ const PWAUpdateNotice = () => {
             border: "none",
             cursor: "pointer",
             padding: "4px",
-            color: "rgba(245,235,218,0.55)",
+            color: "rgba(245,232,238,0.55)",
             display: "flex",
             alignItems: "center",
             flexShrink: 0,

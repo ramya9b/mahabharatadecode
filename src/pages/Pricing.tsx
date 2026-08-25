@@ -50,7 +50,7 @@ export default function Pricing() {
         <div className="text-center mb-16">
           <span
             className="inline-block mb-4 text-[11px] tracking-[0.3em] uppercase"
-            style={{ fontFamily: "'Cinzel', serif", color: "rgba(194,65,12,0.7)" }}
+            style={{ fontFamily: "'Cinzel', serif", color: "rgba(107,45,143,0.7)" }}
           >
             Simple, honest pricing
           </span>
@@ -61,7 +61,7 @@ export default function Pricing() {
             Start free.{" "}
             <span
               style={{
-                background: "linear-gradient(135deg, #E8C547 0%, #C2410C 55%, #B8922A 100%)",
+                background: "linear-gradient(135deg, #E8C547 0%, #6B2D8F 55%, #B8922A 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -91,16 +91,16 @@ export default function Pricing() {
           <div
             className="rounded-2xl p-8 relative"
             style={{
-              background: "rgba(194,65,12,0.03)",
-              border: "1px solid rgba(194,65,12,0.15)",
+              background: "rgba(107,45,143,0.03)",
+              border: "1px solid rgba(107,45,143,0.15)",
             }}
           >
             <div className="mb-6">
               <div className="flex items-center gap-2 mb-2">
-                <Unlock size={16} style={{ color: "rgba(194,65,12,0.8)" }} />
+                <Unlock size={16} style={{ color: "rgba(107,45,143,0.8)" }} />
                 <span
                   className="text-[11px] tracking-[0.25em] uppercase"
-                  style={{ fontFamily: "'Cinzel', serif", color: "rgba(194,65,12,0.8)" }}
+                  style={{ fontFamily: "'Cinzel', serif", color: "rgba(107,45,143,0.8)" }}
                 >
                   Always Free
                 </span>
@@ -122,7 +122,7 @@ export default function Pricing() {
             <ul className="space-y-3 mb-8">
               {FREE_BENEFITS.map((b) => (
                 <li key={b} className="flex items-start gap-3">
-                  <Check size={15} style={{ color: "rgba(194,65,12,0.8)", marginTop: "2px", flexShrink: 0 }} />
+                  <Check size={15} style={{ color: "rgba(107,45,143,0.8)", marginTop: "2px", flexShrink: 0 }} />
                   <span style={{ fontSize: "15px", fontFamily: "'Cormorant Garamond', Georgia, serif", color: "hsl(var(--foreground))", lineHeight: 1.5 }}>
                     {b}
                   </span>
@@ -133,7 +133,7 @@ export default function Pricing() {
               href="/blog"
               className="block text-center w-full rounded-full py-3 font-heading font-semibold tracking-wide text-sm transition-all"
               style={{
-                border: "1px solid rgba(194,65,12,0.3)",
+                border: "1px solid rgba(107,45,143,0.3)",
                 color: "rgba(245,237,218,0.8)",
                 fontSize: "13px",
                 letterSpacing: "0.1em",
@@ -147,14 +147,14 @@ export default function Pricing() {
           <div
             className="rounded-2xl p-8 relative"
             style={{
-              background: "linear-gradient(135deg, rgba(194,65,12,0.08) 0%, rgba(194,65,12,0.03) 100%)",
-              border: "2px solid rgba(194,65,12,0.35)",
-              boxShadow: "0 0 40px rgba(194,65,12,0.08)",
+              background: "linear-gradient(135deg, rgba(107,45,143,0.08) 0%, rgba(107,45,143,0.03) 100%)",
+              border: "2px solid rgba(107,45,143,0.35)",
+              boxShadow: "0 0 40px rgba(107,45,143,0.08)",
             }}
           >
             <div
               className="absolute top-0 left-0 right-0 h-px"
-              style={{ background: "linear-gradient(to right, transparent, rgba(194,65,12,0.6), transparent)" }}
+              style={{ background: "linear-gradient(to right, transparent, rgba(107,45,143,0.6), transparent)" }}
             />
 
             {/* Plan toggle */}
@@ -171,7 +171,7 @@ export default function Pricing() {
                     fontFamily: "'Cinzel', serif",
                     background: selected === id ? "hsl(var(--primary))" : "transparent",
                     color: selected === id ? "hsl(var(--primary-foreground))" : "hsl(var(--muted-foreground))",
-                    border: selected === id ? "none" : "1px solid rgba(194,65,12,0.2)",
+                    border: selected === id ? "none" : "1px solid rgba(107,45,143,0.2)",
                   }}
                 >
                   {PLANS[id].label}
@@ -190,7 +190,7 @@ export default function Pricing() {
                 </span>
               </div>
               {selected === "yearly" && (
-                <p style={{ fontSize: "13px", color: "rgba(194,65,12,0.8)", fontFamily: "'Cormorant Garamond', serif" }}>
+                <p style={{ fontSize: "13px", color: "rgba(107,45,143,0.8)", fontFamily: "'Cormorant Garamond', serif" }}>
                   ₹83/month · Save ₹189
                 </p>
               )}
@@ -221,10 +221,10 @@ export default function Pricing() {
             {access ? (
               <div
                 className="flex items-center justify-center gap-2 rounded-full py-3"
-                style={{ background: "rgba(194,65,12,0.1)", border: "1px solid rgba(194,65,12,0.25)" }}
+                style={{ background: "rgba(107,45,143,0.1)", border: "1px solid rgba(107,45,143,0.25)" }}
               >
-                <Check size={15} color="#C2410C" />
-                <span style={{ color: "#C2410C", fontFamily: "'Cinzel', serif", fontSize: "12px", letterSpacing: "0.1em" }}>
+                <Check size={15} color="#6B2D8F" />
+                <span style={{ color: "#6B2D8F", fontFamily: "'Cinzel', serif", fontSize: "12px", letterSpacing: "0.1em" }}>
                   {inTrial ? `Trial active — ${trialDays} days left` : "Access active"}
                 </span>
               </div>
@@ -236,7 +236,7 @@ export default function Pricing() {
                 style={{
                   background: "hsl(var(--primary))",
                   color: "hsl(var(--primary-foreground))",
-                  boxShadow: "0 0 24px rgba(194,65,12,0.3)",
+                  boxShadow: "0 0 24px rgba(107,45,143,0.3)",
                 }}
               >
                 Get Full Access — ₹{PLANS[selected].priceInr}
@@ -248,14 +248,14 @@ export default function Pricing() {
         {/* Free articles list */}
         <div className="mb-16">
           <div className="flex items-center gap-4 mb-6">
-            <div className="h-px flex-1" style={{ background: "rgba(194,65,12,0.15)" }} />
+            <div className="h-px flex-1" style={{ background: "rgba(107,45,143,0.15)" }} />
             <span
               className="text-[11px] tracking-[0.3em] uppercase"
-              style={{ fontFamily: "'Cinzel', serif", color: "rgba(194,65,12,0.6)" }}
+              style={{ fontFamily: "'Cinzel', serif", color: "rgba(107,45,143,0.6)" }}
             >
               5 Free Articles
             </span>
-            <div className="h-px flex-1" style={{ background: "rgba(194,65,12,0.15)" }} />
+            <div className="h-px flex-1" style={{ background: "rgba(107,45,143,0.15)" }} />
           </div>
           <div className="grid md:grid-cols-1 gap-3">
             {freeArticles.map((article) => article && (
@@ -264,11 +264,11 @@ export default function Pricing() {
                 href={`/blog/${article.slug}`}
                 className="flex items-center gap-4 rounded-xl px-5 py-4 group transition-all"
                 style={{
-                  background: "rgba(194,65,12,0.03)",
-                  border: "1px solid rgba(194,65,12,0.1)",
+                  background: "rgba(107,45,143,0.03)",
+                  border: "1px solid rgba(107,45,143,0.1)",
                 }}
               >
-                <Unlock size={14} style={{ color: "rgba(194,65,12,0.7)", flexShrink: 0 }} />
+                <Unlock size={14} style={{ color: "rgba(107,45,143,0.7)", flexShrink: 0 }} />
                 <span
                   className="flex-1 group-hover:text-primary transition-colors"
                   style={{
@@ -284,7 +284,7 @@ export default function Pricing() {
                   style={{
                     fontSize: "11px",
                     fontFamily: "'Cinzel', serif",
-                    color: "rgba(194,65,12,0.6)",
+                    color: "rgba(107,45,143,0.6)",
                     letterSpacing: "0.1em",
                     flexShrink: 0,
                   }}
@@ -299,14 +299,14 @@ export default function Pricing() {
         {/* FAQ — simple, honest */}
         <div>
           <div className="flex items-center gap-4 mb-8">
-            <div className="h-px flex-1" style={{ background: "rgba(194,65,12,0.15)" }} />
+            <div className="h-px flex-1" style={{ background: "rgba(107,45,143,0.15)" }} />
             <span
               className="text-[11px] tracking-[0.3em] uppercase"
-              style={{ fontFamily: "'Cinzel', serif", color: "rgba(194,65,12,0.6)" }}
+              style={{ fontFamily: "'Cinzel', serif", color: "rgba(107,45,143,0.6)" }}
             >
               Questions
             </span>
-            <div className="h-px flex-1" style={{ background: "rgba(194,65,12,0.15)" }} />
+            <div className="h-px flex-1" style={{ background: "rgba(107,45,143,0.15)" }} />
           </div>
           <div className="space-y-6">
             {[
@@ -327,7 +327,7 @@ export default function Pricing() {
                 a: "UPI, all major credit and debit cards, and net banking via Cashfree — a trusted Indian payment gateway.",
               },
             ].map(({ q, a }) => (
-              <div key={q} style={{ borderBottom: "1px solid rgba(194,65,12,0.1)", paddingBottom: "20px" }}>
+              <div key={q} style={{ borderBottom: "1px solid rgba(107,45,143,0.1)", paddingBottom: "20px" }}>
                 <h3
                   className="font-heading font-semibold mb-2"
                   style={{ fontSize: "16px", color: "rgba(245,237,218,0.9)" }}
