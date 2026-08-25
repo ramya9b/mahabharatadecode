@@ -323,7 +323,7 @@ const pillars = [
     icon: Layers,
     title: "Depth Over Volume",
     accent: "76,175,80",
-    hex: "#4CAF50",
+    hex: "#C2410C",
     body: "We will never publish eighty shallow articles to rank on Google. We publish eight articles that say something true — with full research, emotional honesty, and modern psychological insight.",
     detail: "8 articles, each 1,500–3,000 words",
   },

@@ -85,7 +85,7 @@ const NewsletterSignup = ({
           Email address
         </label>
         {status === "success" ? (
-          <span style={{ display: "flex", alignItems: "center", gap: "6px", color: "#27AE60", fontSize: "13px", fontFamily: "'Cormorant Garamond',serif" }}>
+          <span style={{ display: "flex", alignItems: "center", gap: "6px", color: "#C2410C", fontSize: "13px", fontFamily: "'Cormorant Garamond',serif" }}>
             <Check size={14} /> You're in!
           </span>
         ) : (
@@ -116,7 +116,7 @@ const NewsletterSignup = ({
               style={{
                 padding: "7px 16px",
                 borderRadius: "99px",
-                background: "linear-gradient(135deg, #C2410C 0%, #34D399 50%, #38BDF8 100%)",
+                background: "linear-gradient(135deg, #C2410C 0%, #C2410C 50%, #38BDF8 100%)",
                 backgroundSize: "200% auto",
                 animation: "shimmer 4s linear infinite",
                 color: "#08040F",
@@ -129,7 +129,7 @@ const NewsletterSignup = ({
                 alignItems: "center",
                 gap: "5px",
                 fontWeight: 700,
-                boxShadow: "0 2px 12px rgba(52,211,153,0.35)",
+                boxShadow: "0 2px 12px rgba(194,65,12,0.35)",
                 transition: "all 0.2s",
               }}
             >
@@ -179,7 +179,7 @@ const NewsletterSignup = ({
 
           {status === "success" ? (
             <div style={{ display:"flex", flexDirection:"column", alignItems:"center", gap:"10px" }}>
-              <div style={{ display:"flex", alignItems:"center", gap:"8px", color:"#27AE60", fontSize:"16px", fontFamily:"'Cormorant Garamond',serif" }}>
+              <div style={{ display:"flex", alignItems:"center", gap:"8px", color:"#C2410C", fontSize:"16px", fontFamily:"'Cormorant Garamond',serif" }}>
                 <Check size={20} /> {t("home.newsletter_banner.success")}
               </div>
               <p style={{ fontSize:"13px", color:"hsl(var(--muted-foreground))", fontFamily:"'Cormorant Garamond',serif" }}>{t("home.newsletter_banner.confirm_inbox")}</p>
@@ -206,7 +206,7 @@ const NewsletterSignup = ({
                   className="btn-ripple"
                   style={{
                     padding: "13px 24px",
-                    background: "linear-gradient(135deg, #C2410C 0%, #34D399 50%, #38BDF8 100%)",
+                    background: "linear-gradient(135deg, #C2410C 0%, #C2410C 50%, #38BDF8 100%)",
                     backgroundSize: "200% auto",
                     animation: "shimmer 4s linear infinite",
                     color: "#08040F",
@@ -220,7 +220,7 @@ const NewsletterSignup = ({
                     alignItems: "center",
                     gap: "6px",
                     flexShrink: 0,
-                    boxShadow: "0 4px 20px rgba(52,211,153,0.40)",
+                    boxShadow: "0 4px 20px rgba(194,65,12,0.40)",
                     transition: "all 0.35s ease",
                   }}
                 >
@@ -269,9 +269,9 @@ const NewsletterSignup = ({
       </div>
 
       {status === "success" ? (
-        <div style={{ display:"flex", alignItems:"center", gap:"8px", padding:"12px 16px", borderRadius:"10px", background:"rgba(39,174,96,0.1)", border:"1px solid rgba(39,174,96,0.2)" }}>
-          <Check size={16} color="#27AE60" />
-          <span style={{ fontFamily:"'Cormorant Garamond',serif", fontSize:"16px", color:"#27AE60" }}>You're subscribed! Check your inbox to confirm.</span>
+        <div style={{ display:"flex", alignItems:"center", gap:"8px", padding:"12px 16px", borderRadius:"10px", background:"rgba(194,65,12,0.1)", border:"1px solid rgba(194,65,12,0.2)" }}>
+          <Check size={16} color="#C2410C" />
+          <span style={{ fontFamily:"'Cormorant Garamond',serif", fontSize:"16px", color:"#C2410C" }}>You're subscribed! Check your inbox to confirm.</span>
         </div>
       ) : (
         <form onSubmit={handleSubmit} aria-label="Newsletter signup" style={{ display:"flex", flexDirection:"column", gap:"10px" }}>
@@ -296,7 +296,7 @@ const NewsletterSignup = ({
               style={{
                 padding: "10px 22px",
                 borderRadius: "99px",
-                background: "linear-gradient(135deg, #C2410C 0%, #34D399 50%, #38BDF8 100%)",
+                background: "linear-gradient(135deg, #C2410C 0%, #C2410C 50%, #38BDF8 100%)",
                 backgroundSize: "200% auto",
                 animation: "shimmer 4s linear infinite",
                 color: "#08040F",
@@ -310,7 +310,7 @@ const NewsletterSignup = ({
                 alignItems: "center",
                 gap: "6px",
                 whiteSpace: "nowrap",
-                boxShadow: "0 4px 16px rgba(52,211,153,0.35)",
+                boxShadow: "0 4px 16px rgba(194,65,12,0.35)",
                 transition: "all 0.35s ease",
               }}
             >

@@ -97,10 +97,10 @@ export default function Pricing() {
           >
             <div className="mb-6">
               <div className="flex items-center gap-2 mb-2">
-                <Unlock size={16} style={{ color: "rgba(39,174,96,0.8)" }} />
+                <Unlock size={16} style={{ color: "rgba(194,65,12,0.8)" }} />
                 <span
                   className="text-[11px] tracking-[0.25em] uppercase"
-                  style={{ fontFamily: "'Cinzel', serif", color: "rgba(39,174,96,0.8)" }}
+                  style={{ fontFamily: "'Cinzel', serif", color: "rgba(194,65,12,0.8)" }}
                 >
                   Always Free
                 </span>
@@ -122,7 +122,7 @@ export default function Pricing() {
             <ul className="space-y-3 mb-8">
               {FREE_BENEFITS.map((b) => (
                 <li key={b} className="flex items-start gap-3">
-                  <Check size={15} style={{ color: "rgba(39,174,96,0.8)", marginTop: "2px", flexShrink: 0 }} />
+                  <Check size={15} style={{ color: "rgba(194,65,12,0.8)", marginTop: "2px", flexShrink: 0 }} />
                   <span style={{ fontSize: "15px", fontFamily: "'Cormorant Garamond', Georgia, serif", color: "hsl(var(--foreground))", lineHeight: 1.5 }}>
                     {b}
                   </span>
@@ -221,10 +221,10 @@ export default function Pricing() {
             {access ? (
               <div
                 className="flex items-center justify-center gap-2 rounded-full py-3"
-                style={{ background: "rgba(39,174,96,0.1)", border: "1px solid rgba(39,174,96,0.25)" }}
+                style={{ background: "rgba(194,65,12,0.1)", border: "1px solid rgba(194,65,12,0.25)" }}
               >
-                <Check size={15} color="#27AE60" />
-                <span style={{ color: "#27AE60", fontFamily: "'Cinzel', serif", fontSize: "12px", letterSpacing: "0.1em" }}>
+                <Check size={15} color="#C2410C" />
+                <span style={{ color: "#C2410C", fontFamily: "'Cinzel', serif", fontSize: "12px", letterSpacing: "0.1em" }}>
                   {inTrial ? `Trial active — ${trialDays} days left` : "Access active"}
                 </span>
               </div>
@@ -268,7 +268,7 @@ export default function Pricing() {
                   border: "1px solid rgba(194,65,12,0.1)",
                 }}
               >
-                <Unlock size={14} style={{ color: "rgba(39,174,96,0.7)", flexShrink: 0 }} />
+                <Unlock size={14} style={{ color: "rgba(194,65,12,0.7)", flexShrink: 0 }} />
                 <span
                   className="flex-1 group-hover:text-primary transition-colors"
                   style={{
@@ -284,7 +284,7 @@ export default function Pricing() {
                   style={{
                     fontSize: "11px",
                     fontFamily: "'Cinzel', serif",
-                    color: "rgba(39,174,96,0.6)",
+                    color: "rgba(194,65,12,0.6)",
                     letterSpacing: "0.1em",
                     flexShrink: 0,
                   }}

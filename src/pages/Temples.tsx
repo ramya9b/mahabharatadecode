@@ -190,7 +190,7 @@ const TempleCard = ({
                 </span>
               )}
               {temple.isASIProtected && (
-                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[9px] tracking-[0.1em] uppercase" style={{ background: "rgba(194,65,12,0.1)", border: "1px solid rgba(194,65,12,0.3)", color: "#4ADE80" }}>
+                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[9px] tracking-[0.1em] uppercase" style={{ background: "rgba(194,65,12,0.1)", border: "1px solid rgba(194,65,12,0.3)", color: "#FBBF24" }}>
                   ASI
                 </span>
               )}
@@ -240,7 +240,7 @@ const TempleCard = ({
               </p>
               <div className="space-y-3">
                 <div>
-                  <p className="text-[10px] tracking-widest uppercase mb-1" style={{ color: "#4ADE80", fontFamily: "'Cinzel', serif" }}>Verified Fact</p>
+                  <p className="text-[10px] tracking-widest uppercase mb-1" style={{ color: "#FBBF24", fontFamily: "'Cinzel', serif" }}>Verified Fact</p>
                   <p style={{ fontSize: "13px", fontFamily: "'Cormorant Garamond', Georgia, serif", color: "hsl(var(--foreground) / 0.85)", lineHeight: 1.6 }}>
                     {temple.historicalDebate.verifiedFact}
                   </p>
@@ -265,7 +265,7 @@ const TempleCard = ({
                       background: temple.historicalDebate.verdict === "archaeologically-confirmed"
                         ? "rgba(194,65,12,0.1)" : "hsl(var(--primary) / 0.08)",
                       border: `1px solid ${temple.historicalDebate.verdict === "archaeologically-confirmed" ? "rgba(194,65,12,0.3)" : "hsl(var(--primary) / 0.25)"}`,
-                      color: temple.historicalDebate.verdict === "archaeologically-confirmed" ? "#4ADE80" : "hsl(var(--primary))",
+                      color: temple.historicalDebate.verdict === "archaeologically-confirmed" ? "#FBBF24" : "hsl(var(--primary))",
                     }}
                   >
                     {temple.historicalDebate.verdict.replace(/-/g, " ")}

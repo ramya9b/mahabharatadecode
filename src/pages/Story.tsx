@@ -40,7 +40,7 @@ const StoryHero = () => {
         className="absolute top-0 left-0 right-0 h-[2px]"
         style={{
           background:
-            "linear-gradient(90deg,#C2410C,#A3E635,#34D399,#38BDF8,#A78BFA,#F472B6)",
+            "linear-gradient(90deg,#C2410C,#FBBF24,#C2410C,#38BDF8,#A78BFA,#F472B6)",
         }}
         aria-hidden="true"
       />

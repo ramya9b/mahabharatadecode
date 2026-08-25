@@ -89,7 +89,7 @@ const CharactersGrid = () => {
             display: "inline-block",
             padding: "14px 40px",
             borderRadius: "99px",
-            background: "linear-gradient(135deg, #C2410C 0%, #34D399 50%, #38BDF8 100%)",
+            background: "linear-gradient(135deg, #C2410C 0%, #C2410C 50%, #38BDF8 100%)",
             backgroundSize: "200% auto",
             animation: "shimmer 4s linear infinite",
             color: "#08040F",
@@ -98,16 +98,16 @@ const CharactersGrid = () => {
             fontWeight: 700,
             letterSpacing: "0.1em",
             textDecoration: "none",
-            boxShadow: "0 4px 24px rgba(52,211,153,0.40)",
+            boxShadow: "0 4px 24px rgba(194,65,12,0.40)",
             transition: "all 0.35s ease",
           }}
           onMouseEnter={(e) => {
             (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-3px) scale(1.02)";
-            (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 12px 36px rgba(52,211,153,0.60)";
+            (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 12px 36px rgba(194,65,12,0.60)";
           }}
           onMouseLeave={(e) => {
             (e.currentTarget as HTMLAnchorElement).style.transform = "none";
-            (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 4px 24px rgba(52,211,153,0.40)";
+            (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 4px 24px rgba(194,65,12,0.40)";
           }}
         >
           {t("home.meet_five.cta")} →

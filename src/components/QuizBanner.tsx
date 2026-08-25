@@ -59,7 +59,7 @@ const QuizBanner = () => {
             display: "inline-block",
             padding: "4px 16px",
             borderRadius: "99px",
-            border: "1px solid rgba(22,163,74,0.3)",
+            border: "1px solid rgba(194,65,12,0.3)",
             fontSize: "11px",
             letterSpacing: "0.25em",
             textTransform: "uppercase",

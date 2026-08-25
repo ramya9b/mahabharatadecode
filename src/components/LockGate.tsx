@@ -62,12 +62,12 @@ const LockGate = ({
           <div
             className="flex items-center justify-center gap-2 py-2 px-4 mb-2"
             style={{
-              background: "rgba(39,174,96,0.06)",
-              borderBottom: "1px solid rgba(39,174,96,0.15)",
+              background: "rgba(194,65,12,0.06)",
+              borderBottom: "1px solid rgba(194,65,12,0.15)",
               fontSize: "11px",
               fontFamily: "'Cinzel', serif",
               letterSpacing: "0.2em",
-              color: "rgba(39,174,96,0.8)",
+              color: "rgba(194,65,12,0.8)",
             }}
           >
             <Unlock size={11} />

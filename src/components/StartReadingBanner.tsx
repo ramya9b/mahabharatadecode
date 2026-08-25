@@ -28,7 +28,7 @@ const StartReadingBanner = () => {
             display: "inline-block",
             padding: "4px 16px",
             borderRadius: "99px",
-            border: "1px solid rgba(22,163,74,0.3)",
+            border: "1px solid rgba(194,65,12,0.3)",
             fontSize: "11px",
             letterSpacing: "0.25em",
             textTransform: "uppercase",
@@ -123,7 +123,7 @@ const StartReadingBanner = () => {
               e.currentTarget.style.borderColor = "hsl(var(--primary))";
               e.currentTarget.style.transform = "translateY(-2px)";
               e.currentTarget.style.boxShadow =
-                "0 8px 24px rgba(22,163,74,0.15)";
+                "0 8px 24px rgba(194,65,12,0.15)";
             }}
             onMouseLeave={(e) => {
               e.currentTarget.style.borderColor = "hsl(var(--border))";

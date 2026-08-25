@@ -33,7 +33,7 @@ const ThemeToggle = ({ className = "" }: Props) => {
           position: "absolute",
         }}
       >
-        <Sun size={16} color="#4ADE80" />
+        <Sun size={16} color="#FBBF24" />
       </span>
       <span
         style={{

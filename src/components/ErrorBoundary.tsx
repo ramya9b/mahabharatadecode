@@ -70,7 +70,7 @@ class ErrorBoundary extends Component<Props, State> {
               right: 0,
               height: "3px",
               background:
-                "linear-gradient(90deg,#C2410C,#A3E635,#34D399,#38BDF8,#A78BFA,#F472B6)",
+                "linear-gradient(90deg,#C2410C,#FBBF24,#C2410C,#38BDF8,#A78BFA,#F472B6)",
             }}
             aria-hidden="true"
           />

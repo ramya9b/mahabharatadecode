@@ -22,7 +22,7 @@ const VideoSection = () => {
         : "linear-gradient(180deg,hsl(38 52% 91%) 0%,hsl(38 48% 88%) 100%)",
     }}>
       {/* Rainbow top bar */}
-      <div style={{ height:"2px", background:"linear-gradient(90deg,#C2410C,#A3E635,#34D399,#38BDF8,#A78BFA,#F472B6)", marginBottom:"48px" }} />
+      <div style={{ height:"2px", background:"linear-gradient(90deg,#C2410C,#FBBF24,#C2410C,#38BDF8,#A78BFA,#F472B6)", marginBottom:"48px" }} />
 
       <div style={{ maxWidth:"900px", margin:"0 auto" }}>
 
@@ -110,11 +110,11 @@ const VideoSection = () => {
             style={{
               display:"inline-flex", alignItems:"center", gap:"8px",
               padding:"12px 28px", borderRadius:"99px",
-              background:"linear-gradient(135deg,#C2410C,#34D399,#38BDF8)",
+              background:"linear-gradient(135deg,#C2410C,#C2410C,#38BDF8)",
               color:"#08040F", fontFamily:"'Cinzel',serif",
               fontSize:"13px", fontWeight:700, letterSpacing:"0.1em",
               textDecoration:"none",
-              boxShadow:"0 4px 20px rgba(52,211,153,0.35)",
+              boxShadow:"0 4px 20px rgba(194,65,12,0.35)",
             }}
           >
             ▶ Watch on YouTube

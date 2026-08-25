@@ -141,7 +141,7 @@ const HeroSection = () => {
         >
           <span className="block" style={{
             /* Warm gold shimmer — readable on dark overlay */
-            background: "linear-gradient(135deg, #F5EBDA 0%, #C2410C 35%, #16A34A 55%, #F5EBDA 75%, #C2410C 100%)",
+            background: "linear-gradient(135deg, #F5EBDA 0%, #C2410C 35%, #C2410C 55%, #F5EBDA 75%, #C2410C 100%)",
             backgroundSize: "200% auto",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
@@ -203,7 +203,7 @@ const HeroSection = () => {
               display: "inline-flex",
               alignItems: "center",
               gap: "8px",
-              boxShadow: "0 8px 32px rgba(194,65,12,0.4), 0 0 60px rgba(52,211,153,0.15)",
+              boxShadow: "0 8px 32px rgba(194,65,12,0.4), 0 0 60px rgba(194,65,12,0.15)",
               transition: "all 0.35s ease",
               animation: "shimmer 4s linear infinite",
             }}
@@ -230,7 +230,7 @@ const HeroSection = () => {
               display: "inline-flex",
               alignItems: "center",
               gap: "8px",
-              boxShadow: "0 8px 32px rgba(194,65,12,0.4), 0 0 60px rgba(52,211,153,0.15)",
+              boxShadow: "0 8px 32px rgba(194,65,12,0.4), 0 0 60px rgba(194,65,12,0.15)",
               transition: "all 0.35s ease",
               animation: "shimmer 4s linear infinite",
             }}
@@ -257,7 +257,7 @@ const HeroSection = () => {
               display: "inline-flex",
               alignItems: "center",
               gap: "8px",
-              boxShadow: "0 8px 32px rgba(194,65,12,0.4), 0 0 60px rgba(52,211,153,0.15)",
+              boxShadow: "0 8px 32px rgba(194,65,12,0.4), 0 0 60px rgba(194,65,12,0.15)",
               transition: "all 0.35s ease",
               animation: "shimmer 4s linear infinite",
             }}

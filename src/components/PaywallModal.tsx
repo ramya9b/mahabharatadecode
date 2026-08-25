@@ -343,10 +343,10 @@ const PaywallModal = ({ open, onClose, onSuccess, reason }: PaywallModalProps) =
           {status === "success" ? (
             <div
               className="flex items-center gap-2 rounded-xl px-4 py-3"
-              style={{ background: "rgba(39,174,96,0.1)", border: "1px solid rgba(39,174,96,0.25)" }}
+              style={{ background: "rgba(194,65,12,0.1)", border: "1px solid rgba(194,65,12,0.25)" }}
             >
-              <Check size={18} color="#27AE60" />
-              <span style={{ color: "#27AE60", fontFamily: "'Cormorant Garamond',serif", fontSize: "15px" }}>
+              <Check size={18} color="#C2410C" />
+              <span style={{ color: "#C2410C", fontFamily: "'Cormorant Garamond',serif", fontSize: "15px" }}>
                 Welcome! Your access is unlocked.
               </span>
             </div>
@@ -378,7 +378,7 @@ const PaywallModal = ({ open, onClose, onSuccess, reason }: PaywallModalProps) =
                   className="flex-1 bg-transparent px-3 py-3 text-sm outline-none"
                   style={{ color: "hsl(var(--foreground))" }}
                 />
-                {phoneValid && <Check size={16} className="self-center mr-3" style={{ color: "#27AE60" }} />}
+                {phoneValid && <Check size={16} className="self-center mr-3" style={{ color: "#C2410C" }} />}
               </div>
 
               <button

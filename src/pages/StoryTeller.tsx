@@ -438,7 +438,7 @@ const StoryTeller = () => {
             }} />
             <div style={{
               position: "absolute", inset: 0, pointerEvents: "none",
-              background: "radial-gradient(ellipse 50% 55% at 20% 65%, rgba(52,211,153,0.12) 0%, transparent 50%)",
+              background: "radial-gradient(ellipse 50% 55% at 20% 65%, rgba(194,65,12,0.12) 0%, transparent 50%)",
             }} />
             <div style={{
               position: "absolute", inset: 0, pointerEvents: "none",
@@ -465,7 +465,7 @@ const StoryTeller = () => {
           .gr-particle { position:absolute; border-radius:50%; animation:float-p var(--d) var(--dl) infinite; }
         `}</style>
         {/* Rainbow top bar */}
-        <div style={{ position:"absolute", top:0, left:0, right:0, height:"2px", background:"linear-gradient(90deg,#C2410C,#A3E635,#34D399,#38BDF8,#A78BFA,#F472B6)", zIndex:10 }} />
+        <div style={{ position:"absolute", top:0, left:0, right:0, height:"2px", background:"linear-gradient(90deg,#C2410C,#FBBF24,#C2410C,#38BDF8,#A78BFA,#F472B6)", zIndex:10 }} />
 
         {/* Badge */}
         <div className="intro-badge" style={{
@@ -559,15 +559,15 @@ const StoryTeller = () => {
             currentTheme === "divine" ? "radial-gradient(ellipse 45% 55% at 18% 65%, rgba(124,58,237,0.14) 0%, transparent 50%)" :
             currentTheme === "forest" ? "radial-gradient(ellipse 45% 55% at 18% 65%, rgba(5,150,105,0.14) 0%, transparent 50%)" :
             currentTheme === "tragic" ? "radial-gradient(ellipse 45% 55% at 18% 65%, rgba(180,83,9,0.16) 0%, transparent 50%)" :
-            currentTheme === "gita"   ? "radial-gradient(ellipse 45% 55% at 18% 65%, rgba(52,211,153,0.13) 0%, transparent 50%)" :
-            "radial-gradient(ellipse 45% 55% at 18% 65%, rgba(52,211,153,0.12) 0%, transparent 50%)"
+            currentTheme === "gita"   ? "radial-gradient(ellipse 45% 55% at 18% 65%, rgba(194,65,12,0.13) 0%, transparent 50%)" :
+            "radial-gradient(ellipse 45% 55% at 18% 65%, rgba(194,65,12,0.12) 0%, transparent 50%)"
           }} />
           {/* Purple mid-glow */}
           <div style={{ position:"absolute", inset:0, background:"radial-gradient(ellipse 40% 45% at 50% 50%, rgba(167,139,250,0.07) 0%, transparent 45%)" }} />
           {/* Blue bottom-glow */}
           <div style={{ position:"absolute", inset:0, background:"radial-gradient(ellipse 35% 40% at 65% 80%, rgba(56,189,248,0.09) 0%, transparent 40%)" }} />
           {/* Rainbow top bar */}
-          <div style={{ position:"absolute", top:0, left:0, right:0, height:"2px", background:"linear-gradient(90deg,#C2410C,#A3E635,#34D399,#38BDF8,#A78BFA,#F472B6)" }} />
+          <div style={{ position:"absolute", top:0, left:0, right:0, height:"2px", background:"linear-gradient(90deg,#C2410C,#FBBF24,#C2410C,#38BDF8,#A78BFA,#F472B6)" }} />
         </div>
       )}
       <div style={{ position: "relative", zIndex: 1 }}>
@@ -656,9 +656,9 @@ const StoryTeller = () => {
               width: "32px", height: "32px", borderRadius: "50%",
               display: "flex", alignItems: "center", justifyContent: "center",
               fontFamily: serif, fontSize: "13px", fontWeight: 600,
-              background: step === s ? gold : step === "prompt" && s === "select" ? gold : step === "story" ? gold : "rgba(22,163,74,0.15)",
+              background: step === s ? gold : step === "prompt" && s === "select" ? gold : step === "story" ? gold : "rgba(194,65,12,0.15)",
               color: (step === s || (step === "prompt" && s === "select") || step === "story") ? "#2A1506" : inkMuted,
-              border: `2px solid ${step === s ? gold : "rgba(22,163,74,0.2)"}`,
+              border: `2px solid ${step === s ? gold : "rgba(194,65,12,0.2)"}`,
               transition: "all 0.3s",
             }}>
               {i + 1}
@@ -666,7 +666,7 @@ const StoryTeller = () => {
             <span style={{ fontFamily: serif, fontSize: "11px", letterSpacing: "0.1em", color: step === s ? gold : inkMuted, margin: "0 8px", display: "none" /* hide on small screens */ }}>
               {s === "select" ? t("storyteller.step_character") : s === "prompt" ? t("storyteller.step_story") : t("storyteller.step_read")}
             </span>
-            {i < 2 && <div style={{ width: "40px", height: "1px", background: "rgba(22,163,74,0.3)" }} />}
+            {i < 2 && <div style={{ width: "40px", height: "1px", background: "rgba(194,65,12,0.3)" }} />}
           </div>
         ))}
       </div>
@@ -827,8 +827,8 @@ const StoryTeller = () => {
               style={{
                 width: "100%", padding: "12px 16px", borderRadius: "10px", resize: "vertical",
                 fontFamily: body, fontSize: "14px", color: inkDark,
-                background: "rgba(22,163,74,0.04)",
-                border: `1.5px solid ${customPrompt ? gold : "rgba(22,163,74,0.2)"}`,
+                background: "rgba(194,65,12,0.04)",
+                border: `1.5px solid ${customPrompt ? gold : "rgba(194,65,12,0.2)"}`,
                 outline: "none", transition: "border 0.2s",
                 boxSizing: "border-box",
               }}
@@ -840,7 +840,7 @@ const StoryTeller = () => {
               disabled={loading || (activePromptIdx === null && !customPrompt.trim()) || !canGenerate}
               style={{
                 marginTop: "16px", padding: "14px 40px", borderRadius: "99px",
-                background: (activePromptIdx !== null || customPrompt.trim()) && !loading && canGenerate ? GROUP_COLORS[selected.group] : "rgba(22,163,74,0.2)",
+                background: (activePromptIdx !== null || customPrompt.trim()) && !loading && canGenerate ? GROUP_COLORS[selected.group] : "rgba(194,65,12,0.2)",
                 color: (activePromptIdx !== null || customPrompt.trim()) && !loading && canGenerate ? "#FFF8E8" : inkMuted,
                 border: "none", cursor: (activePromptIdx !== null || customPrompt.trim()) && !loading && canGenerate ? "pointer" : "not-allowed",
                 fontFamily: serif, fontSize: "14px", letterSpacing: "0.12em",
@@ -866,7 +866,7 @@ const StoryTeller = () => {
               <p style={{
                 marginTop: "10px", fontFamily: "'Cinzel', serif",
                 fontSize: "11px", letterSpacing: "0.12em",
-                color: storiesLeft === 0 ? "rgba(192,57,43,0.8)" : "rgba(22,163,74,0.65)",
+                color: storiesLeft === 0 ? "rgba(192,57,43,0.8)" : "rgba(194,65,12,0.65)",
                 textAlign: "center",
               }}>
                 {storiesLeft === 0
@@ -1132,8 +1132,8 @@ const StoryTeller = () => {
                             style={{
                               width: "100%", padding: "14px 16px", borderRadius: "12px",
                               fontFamily: body, fontSize: "14px", color: inkDark,
-                              background: "rgba(22,163,74,0.04)",
-                              border: `1.5px solid ${situationInput ? ((selected ? GROUP_COLORS[selected.group] : gold)) : "rgba(22,163,74,0.2)"}`,
+                              background: "rgba(194,65,12,0.04)",
+                              border: `1.5px solid ${situationInput ? ((selected ? GROUP_COLORS[selected.group] : gold)) : "rgba(194,65,12,0.2)"}`,
                               outline: "none", resize: "vertical", boxSizing: "border-box",
                               transition: "border 0.2s",
                             }}
@@ -1169,7 +1169,7 @@ const StoryTeller = () => {
                             disabled={situationLoading || !situationInput.trim()}
                             style={{
                               marginTop: "14px", padding: "12px 32px", borderRadius: "99px",
-                              background: situationInput.trim() ? ((selected ? GROUP_COLORS[selected.group] : gold)) : "rgba(22,163,74,0.2)",
+                              background: situationInput.trim() ? ((selected ? GROUP_COLORS[selected.group] : gold)) : "rgba(194,65,12,0.2)",
                               color: situationInput.trim() ? "#FFF8E8" : inkMuted,
                               border: "none", cursor: situationInput.trim() ? "pointer" : "not-allowed",
                               fontFamily: serif, fontSize: "13px", letterSpacing: "0.1em",

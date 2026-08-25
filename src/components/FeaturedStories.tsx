@@ -8,7 +8,7 @@ import { useScrollReveal } from "@/hooks/useScrollReveal";
 const STORY_META = [
   { id: "karna",   image: karnaImg,   tagKey: "home.featured.tag_characters",   slug: "karna-loyalty-vs-self-respect",    accent: "#C2410C" },
   { id: "krishna", image: krishnaImg, tagKey: "home.featured.tag_life_lessons", slug: "krishna-leadership-secrets",       accent: "#4A90D9" },
-  { id: "arjuna",  image: arjunaImg,  tagKey: "home.featured.tag_life_lessons", slug: "arjuna-confusion-moment-of-doubt", accent: "#27AE60" },
+  { id: "arjuna",  image: arjunaImg,  tagKey: "home.featured.tag_life_lessons", slug: "arjuna-confusion-moment-of-doubt", accent: "#C2410C" },
 ] as const;
 
 const FeaturedStories = () => {

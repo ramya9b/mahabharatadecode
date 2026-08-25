@@ -364,7 +364,7 @@ body {
   }
 
   .gold-text {
-    background: linear-gradient(135deg, #14532D 0%, #9B6810 40%, #14532D 100%);
+    background: linear-gradient(135deg, #7A4A05 0%, #9B6810 40%, #7A4A05 100%);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
@@ -498,11 +498,11 @@ body {
   .shimmer-gold {
     background: linear-gradient(
       90deg,
-      #14532D 0%,
+      #7A4A05 0%,
       #9B6810 25%,
       #C08A20 50%,
       #9B6810 75%,
-      #14532D 100%
+      #7A4A05 100%
     );
     background-size: 200% auto;
     -webkit-background-clip: text;
@@ -763,7 +763,7 @@ body {
   z-index: 9999;
   padding: 10px 22px;
   border-radius: 0 0 10px 10px;
-  background: linear-gradient(135deg, #9B6810, #14532D);
+  background: linear-gradient(135deg, #9B6810, #7A4A05);
   color: #F5EDDA;
   font-family: 'Cinzel', serif;
   font-size: 13px;
