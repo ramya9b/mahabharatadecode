@@ -306,7 +306,7 @@ const pillars = [
   {
     icon: Heart,
     title: "Story-First",
-    accent: "34,197,94",
+    accent: "194,65,12",
     hex: "#C2410C",
     body: "We don't summarise the Mahabharata. We tell stories from it — with the same weight and care that Vyasa intended. Every article is structured to be an experience, not a briefing.",
     detail: "Introduction → Background → Turning Point → Key Lessons → Modern Parallels",

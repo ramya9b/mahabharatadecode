@@ -41,7 +41,7 @@ export const parvas: Parva[] = [
     relatedSlugs: ["bhishma-terrible-oath", "karna-loyalty-vs-self-respect"],
     readTime: 5,
     accentHex: "#C2410C",
-    accentRgb: "34,197,94",
+    accentRgb: "194,65,12",
   },
   {
     number: 2,
@@ -209,7 +209,7 @@ export const parvas: Parva[] = [
     relatedSlugs: ["karna-tragic-hero-world-literature", "arjuna-karna-the-real-rivalry", "karna-what-he-knew-and-chose"],
     readTime: 5,
     accentHex: "#C2410C",
-    accentRgb: "34,197,94",
+    accentRgb: "194,65,12",
   },
   {
     number: 9,
@@ -449,7 +449,7 @@ export const parvas: Parva[] = [
     relatedSlugs: ["dharma-beyond-rules", "mahabharata-on-forgiveness", "krishna-detachment-action"],
     readTime: 3,
     accentHex: "#C2410C",
-    accentRgb: "34,197,94",
+    accentRgb: "194,65,12",
   },
 ];
 

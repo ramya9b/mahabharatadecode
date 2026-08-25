@@ -56,7 +56,7 @@ export const characters: Character[] = [
       "Loyalty is only noble when the cause it serves is just. Self-worth is forged through action, not ancestry — but blind gratitude can chain even the greatest soul.",
     articleSlug: "karna-loyalty-vs-self-respect",
     accentHex: "#C2410C",
-    accentRgb: "34,197,94",
+    accentRgb: "194,65,12",
     parva: "Karna Parva",
     weapon: "Vasavi Shakti",
     alliance: "Kaurava",

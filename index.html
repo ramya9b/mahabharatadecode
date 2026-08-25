@@ -7,7 +7,7 @@
     <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32.png" />
     <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16.png" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="theme-color" content="#22C55E" />
+    <meta name="theme-color" content="#C2410C" />
 
     <!-- PWA -->
     <link rel="manifest" href="/manifest.json" />
@@ -64,11 +64,11 @@
           var stored = localStorage.getItem('mbd-theme');
           if (stored === 'light') {
             /* User explicitly chose light — pure white */
-            document.documentElement.style.background = '#FFFFFF';
+            document.documentElement.style.background = '#FEFBF6';
           } else {
             /* Default: dark Golden Rainbow for all new visitors */
             document.documentElement.classList.add('dark');
-            document.documentElement.style.background = '#0C0900';
+            document.documentElement.style.background = '#100713';
           }
         } catch(e) {}
       })();
@@ -77,7 +77,7 @@
     <style>
       .skip-nav {
         position: absolute; top: -100px; left: 16px; z-index: 9999;
-        padding: 12px 20px; background: #14532D; color: #F5EDDA;
+        padding: 12px 20px; background: #4A1D6A; color: #F5EDDA;
         font-family: 'Cinzel', serif; font-size: 13px; font-weight: 700;
         border-radius: 0 0 8px 8px; text-decoration: none; transition: top 0.2s;
       }

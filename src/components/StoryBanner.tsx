@@ -6,10 +6,10 @@ import { Link } from "react-router-dom";
 import { useTheme } from "@/context/ThemeContext";
 
 const PARVA_PREVIEWS = [
-  { number: "01", name: "Adi Parva",   subtitle: "Bhishma's oath. Karna set adrift. The seeds of war.",    accentHex: "#C2410C", accentRgb: "34,197,94" },
+  { number: "01", name: "Adi Parva",   subtitle: "Bhishma's oath. Karna set adrift. The seeds of war.",    accentHex: "#C2410C", accentRgb: "194,65,12" },
   { number: "02", name: "Sabha Parva", subtitle: "The dice game. Draupadi's question. Everything breaks.", accentHex: "#E53935", accentRgb: "229,57,53" },
   { number: "06", name: "Bhishma Parva", subtitle: "The Bhagavad Gita is spoken. The war begins.",         accentHex: "#7986CB", accentRgb: "121,134,203" },
-  { number: "08", name: "Karna Parva", subtitle: "The final battle. The rivalry nobody could resolve.",     accentHex: "#C2410C", accentRgb: "34,197,94" },
+  { number: "08", name: "Karna Parva", subtitle: "The final battle. The rivalry nobody could resolve.",     accentHex: "#C2410C", accentRgb: "194,65,12" },
 ];
 
 const StoryBanner = () => {

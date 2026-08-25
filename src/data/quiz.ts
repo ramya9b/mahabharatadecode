@@ -39,7 +39,7 @@ export const CHARACTER_META: Record<
     name: "Karna",
     title: "The Loyal Warrior",
     accentHex: "#C2410C",
-    accentRgb: "34,197,94",
+    accentRgb: "194,65,12",
     imageKey: "karna",
     articleSlug: "karna-loyalty-vs-self-respect",
     archetype: "The Devoted One",
