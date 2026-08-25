@@ -3,7 +3,6 @@ import { Menu, X } from "lucide-react";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
-import ThemeToggle from "@/components/ThemeToggle";
 import { useTheme } from "@/context/ThemeContext";
 import { PAYWALL_ENABLED } from "@/lib/subscription";
 
@@ -269,7 +268,6 @@ const Navbar = () => {
           {/* Right — language, theme, CTA */}
           <div style={{ display: "flex", alignItems: "center", gap: "10px", flexShrink: 0 }}>
             <LanguageSwitcher />
-            <ThemeToggle />
             <Link
               to="/blog"
               style={{
@@ -338,7 +336,6 @@ const Navbar = () => {
           </Link>
 
           <div style={{ display: "flex", alignItems: "center", gap: "6px", flexShrink: 0 }}>
-            <ThemeToggle />
             <LanguageSwitcher />
             <button
               ref={burgerRef}

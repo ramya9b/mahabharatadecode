@@ -57,19 +57,12 @@
     <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;900&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Noto+Serif+Devanagari:wght@400;600;700&family=Tiro+Devanagari+Hindi:ital@0;1&family=Noto+Serif+Telugu:wght@400;600;700&family=Noto+Serif+Kannada:wght@400;600;700&display=swap" onload="this.onload=null;this.rel='stylesheet'" />
     <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400;500;600;700;900&family=Cinzel+Decorative:wght@400;700&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600&family=Noto+Serif+Devanagari:wght@400;600;700&family=Tiro+Devanagari+Hindi:ital@0;1&family=Noto+Serif+Telugu:wght@400;600;700&family=Noto+Serif+Kannada:wght@400;600;700&display=swap" /></noscript>
 
-    <!-- Anti-FOUC: apply saved theme before React loads -->
+    <!-- Light-only theme: set the background before React loads -->
     <script>
       (function() {
         try {
-          var stored = localStorage.getItem('mbd-theme');
-          if (stored === 'light') {
-            /* User explicitly chose light — pure white */
-            document.documentElement.style.background = '#FDF1F4';
-          } else {
-            /* Default: dark Golden Rainbow for all new visitors */
-            document.documentElement.classList.add('dark');
-            document.documentElement.style.background = '#130717';
-          }
+          document.documentElement.setAttribute('data-theme', 'light');
+          document.documentElement.style.background = '#FDF1F4';
         } catch(e) {}
       })();
     </script>

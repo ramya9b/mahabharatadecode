@@ -92,83 +92,7 @@
     --temple-card-border: 292 30% 82%;
   }
 
-  /* ══════════════════════════════════════════════════════
-     GOLDEN RAINBOW — DARK MODE  (.dark class)
-     Deep warm black, bright gold, cinematic by night
-     ══════════════════════════════════════════════════════ */
-  .dark {
-    /* TTD has no dark mode; this is a night version of the same family. */
-    --background: 285 52% 6%;       /* deep temple purple night */
-    --foreground: 330 30% 92%;      /* soft blush white — body text */
 
-    --card: 285 34% 13%;
-    --card-foreground: 330 30% 92%;
-
-    --popover: 285 34% 13%;
-    --popover-foreground: 330 30% 92%;
-
-    --primary: 285 72% 74%;          /* light temple purple — readable on night */
-    --primary-foreground: 285 52% 7%;
-
-    --secondary: 285 30% 12%;
-    --secondary-foreground: 330 28% 90%;
-
-    --muted: 285 26% 14%;
-    --muted-foreground: 330 22% 72%;
-
-    --accent: 285 30% 12%;
-    --accent-foreground: 330 28% 90%;
-
-    --destructive: 0 62% 48%;
-    --destructive-foreground: 345 80% 95%;
-
-    --border: 285 26% 24%;
-    --input:  285 26% 24%;
-    --ring:   285 72% 74%;
-
-    --sidebar-background: 285 52% 6%;
-    --sidebar-foreground: 330 30% 92%;
-    --sidebar-primary: 285 72% 74%;
-    --sidebar-primary-foreground: 285 52% 7%;
-    --sidebar-accent: 285 30% 12%;
-    --sidebar-accent-foreground: 330 28% 90%;
-    --sidebar-border: 285 26% 24%;
-    --sidebar-ring: 285 72% 74%;
-
-    --ttd-purple-deep: #3E1259;
-    --ttd-purple:      #8B4BAE;
-    --ttd-violet:      #A96BC8;
-    --ttd-coral:       #F0705F;
-    --ttd-saffron:     #FB923C;
-    --ttd-gold:        #E4C04A;
-    --nav-gradient: linear-gradient(90deg, #2A0B3D 0%, #4A1D6A 45%, #6B2D8F 100%);
-    --hero-gradient: linear-gradient(180deg, #3E1259 0%, #7B2D6E 55%, #B0453C 100%);
-
-    --gold-light:    #E4C04A;
-    --gold-dark:     #A8842B;
-
-    --rainbow-green: #34D399;
-    --rainbow-blue:  #38BDF8;
-    --rainbow-purple:#A78BFA;
-    --rainbow-pink:  #F472B6;
-    --rainbow-lime:  #A3E635;
-    --rainbow-bar: linear-gradient(90deg,
-      #A96BC8 0%, #C89BE0 20%, #E4C04A 40%,
-      #FB923C 60%, #F0705F 80%, #F472B6 100%);
-
-    --parchment-1: 285 45% 7%;
-    --parchment-2: 285 38% 10%;
-    --parchment-3: 285 50% 5%;
-    --hero-overlay: linear-gradient(to bottom, rgba(17,7,24,0.55) 0%, rgba(17,7,24,0.75) 50%, rgba(17,7,24,1) 100%);
-
-    --ai-accent: 187 80% 62%;
-    --ai-accent-foreground: 285 52% 7%;
-    --ai-accent-soft: 187 45% 15%;
-    --ai-gradient: linear-gradient(135deg, #22D3EE 0%, #67E8F9 100%);
-
-    --temple-card: 285 32% 16%;
-    --temple-card-border: 285 28% 32%;
-  }
 }
 
 @layer base {
@@ -343,16 +267,6 @@ body {
     background: rgba(250, 244, 232, 0.97);
     border-color: rgba(212, 175, 55, 0.48);
     box-shadow: 0 6px 28px rgba(107,45,143,0.10), inset 0 1px 0 rgba(107,45,143,0.14);
-  }
-  .dark .glass-card {
-    background: rgba(40, 25, 8, 0.88);
-    border-color: rgba(251, 191, 36, 0.18);
-    transition: border-color 0.3s ease, background 0.3s ease, box-shadow 0.35s ease;
-  }
-  .dark .glass-card:hover {
-    background: rgba(52, 32, 10, 0.94);
-    border-color: rgba(251, 191, 36, 0.44);
-    box-shadow: 0 8px 32px rgba(107,45,143,0.13), inset 0 1px 0 rgba(107,45,143,0.10);
   }
 
   .hover-lift {
@@ -647,18 +561,7 @@ body {
     background-size: 200% 100%;
     animation: shimmer 1.6s linear infinite;
   }
-  .dark .skeleton {
-    background: rgba(107,45,143,0.06);
-  }
-  .dark .skeleton::after {
-    background: linear-gradient(
-      90deg,
-      transparent 0%,
-      rgba(107,45,143,0.08) 50%,
-      transparent 100%
-    );
-    background-size: 200% 100%;
-  }
+
 
   /* ── Focus ring — mobile accessible ── */
   @media (max-width: 639px) {
