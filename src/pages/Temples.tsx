@@ -82,7 +82,7 @@ const IndiaMap = ({
                 cy={pos.y}
                 r={ts.length > 1 ? 14 : 8}
                 fill={hasSelected ? "hsl(var(--primary) / 0.5)" : "hsl(var(--border))"}
-                stroke={hasSelected ? "#22C55E" : "hsl(var(--primary) / 0.6)"}
+                stroke={hasSelected ? "#C2410C" : "hsl(var(--primary) / 0.6)"}
                 strokeWidth="1.5"
                 style={{ cursor: "pointer" }}
                 onClick={() => onSelect(ts[0].id)}
@@ -92,7 +92,7 @@ const IndiaMap = ({
                   x={pos.x}
                   y={pos.y + 4}
                   textAnchor="middle"
-                  fill="#22C55E"
+                  fill="#C2410C"
                   fontSize="10"
                   fontFamily="serif"
                   fontWeight="bold"
@@ -102,7 +102,7 @@ const IndiaMap = ({
                 </text>
               )}
               {ts.length === 1 && (
-                <circle cx={pos.x} cy={pos.y} r={3} fill="#22C55E" style={{ pointerEvents: "none" }} />
+                <circle cx={pos.x} cy={pos.y} r={3} fill="#C2410C" style={{ pointerEvents: "none" }} />
               )}
               {/* State label */}
               <text
@@ -190,7 +190,7 @@ const TempleCard = ({
                 </span>
               )}
               {temple.isASIProtected && (
-                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[9px] tracking-[0.1em] uppercase" style={{ background: "rgba(34,197,94,0.1)", border: "1px solid rgba(34,197,94,0.3)", color: "#4ADE80" }}>
+                <span className="inline-flex items-center gap-1 px-2 py-0.5 rounded-full text-[9px] tracking-[0.1em] uppercase" style={{ background: "rgba(194,65,12,0.1)", border: "1px solid rgba(194,65,12,0.3)", color: "#4ADE80" }}>
                   ASI
                 </span>
               )}
@@ -246,7 +246,7 @@ const TempleCard = ({
                   </p>
                 </div>
                 <div>
-                  <p className="text-[10px] tracking-widest uppercase mb-1" style={{ color: "#22C55E", fontFamily: "'Cinzel', serif" }}>Tradition</p>
+                  <p className="text-[10px] tracking-widest uppercase mb-1" style={{ color: "#C2410C", fontFamily: "'Cinzel', serif" }}>Tradition</p>
                   <p style={{ fontSize: "13px", fontFamily: "'Cormorant Garamond', Georgia, serif", color: "hsl(var(--foreground) / 0.85)", lineHeight: 1.6 }}>
                     {temple.historicalDebate.tradition}
                   </p>
@@ -263,8 +263,8 @@ const TempleCard = ({
                     style={{
                       fontFamily: "'Cinzel', serif",
                       background: temple.historicalDebate.verdict === "archaeologically-confirmed"
-                        ? "rgba(34,197,94,0.1)" : "hsl(var(--primary) / 0.08)",
-                      border: `1px solid ${temple.historicalDebate.verdict === "archaeologically-confirmed" ? "rgba(34,197,94,0.3)" : "hsl(var(--primary) / 0.25)"}`,
+                        ? "rgba(194,65,12,0.1)" : "hsl(var(--primary) / 0.08)",
+                      border: `1px solid ${temple.historicalDebate.verdict === "archaeologically-confirmed" ? "rgba(194,65,12,0.3)" : "hsl(var(--primary) / 0.25)"}`,
                       color: temple.historicalDebate.verdict === "archaeologically-confirmed" ? "#4ADE80" : "hsl(var(--primary))",
                     }}
                   >
@@ -387,7 +387,7 @@ export default function Temples() {
             <span
               className="block mt-1"
               style={{
-                background: "linear-gradient(135deg, #E8C547 0%, #22C55E 55%, #B8922A 100%)",
+                background: "linear-gradient(135deg, #E8C547 0%, #C2410C 55%, #B8922A 100%)",
                 WebkitBackgroundClip: "text",
                 WebkitTextFillColor: "transparent",
                 backgroundClip: "text",
@@ -476,7 +476,7 @@ export default function Temples() {
                         By Source Tier
                       </p>
                       <div className="space-y-2">
-                        {([["all", "All Tiers", "#22C55E"], [1, TIER_LABELS[1], TIER_COLORS[1]], [2, TIER_LABELS[2], TIER_COLORS[2]], [3, TIER_LABELS[3], TIER_COLORS[3]]] as const).map(([val, label, color]) => (
+                        {([["all", "All Tiers", "#C2410C"], [1, TIER_LABELS[1], TIER_COLORS[1]], [2, TIER_LABELS[2], TIER_COLORS[2]], [3, TIER_LABELS[3], TIER_COLORS[3]]] as const).map(([val, label, color]) => (
                           <button
                             key={String(val)}
                             onClick={() => { setSelectedTier(val as "all" | 1 | 2 | 3); setSelectedId(null); }}

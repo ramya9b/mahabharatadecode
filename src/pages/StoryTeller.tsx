@@ -434,7 +434,7 @@ const StoryTeller = () => {
           <>
             <div style={{
               position: "absolute", inset: 0, pointerEvents: "none",
-              background: "radial-gradient(ellipse 60% 60% at 80% 35%, rgba(34,197,94,0.16) 0%, transparent 50%)",
+              background: "radial-gradient(ellipse 60% 60% at 80% 35%, rgba(194,65,12,0.16) 0%, transparent 50%)",
             }} />
             <div style={{
               position: "absolute", inset: 0, pointerEvents: "none",
@@ -465,7 +465,7 @@ const StoryTeller = () => {
           .gr-particle { position:absolute; border-radius:50%; animation:float-p var(--d) var(--dl) infinite; }
         `}</style>
         {/* Rainbow top bar */}
-        <div style={{ position:"absolute", top:0, left:0, right:0, height:"2px", background:"linear-gradient(90deg,#22C55E,#A3E635,#34D399,#38BDF8,#A78BFA,#F472B6)", zIndex:10 }} />
+        <div style={{ position:"absolute", top:0, left:0, right:0, height:"2px", background:"linear-gradient(90deg,#C2410C,#A3E635,#34D399,#38BDF8,#A78BFA,#F472B6)", zIndex:10 }} />
 
         {/* Badge */}
         <div className="intro-badge" style={{
@@ -483,14 +483,14 @@ const StoryTeller = () => {
           fontSize: "clamp(2.2rem, 7vw, 4.5rem)",
           fontWeight: 700, color: "hsl(var(--foreground))", lineHeight: 1.15,
           marginBottom: "20px",
-          textShadow: "0 0 60px rgba(34,197,94,0.3)",
+          textShadow: "0 0 60px rgba(194,65,12,0.3)",
           letterSpacing: "0.04em",
         }}>
           The Story Teller
         </h1>
 
         {/* Divider */}
-        <div style={{ width: "80px", height: "2px", background: "linear-gradient(90deg, transparent, #22C55E, transparent)", margin: "0 auto 20px" }} />
+        <div style={{ width: "80px", height: "2px", background: "linear-gradient(90deg, transparent, #C2410C, transparent)", margin: "0 auto 20px" }} />
 
         {/* Subtitle */}
         <p className="intro-sub" style={{
@@ -519,15 +519,15 @@ const StoryTeller = () => {
           onClick={() => setShowIntro(false)}
           style={{
             padding: "16px 48px", borderRadius: "99px",
-            background: "linear-gradient(135deg, #A07820 0%, #22C55E 50%, #A07820 100%)",
+            background: "linear-gradient(135deg, #A07820 0%, #C2410C 50%, #A07820 100%)",
             border: "none", cursor: "pointer", fontFamily: serif,
             fontSize: "15px", letterSpacing: "0.15em", color: "#2A1506",
-            fontWeight: 600, boxShadow: "0 8px 32px rgba(34,197,94,0.35)",
+            fontWeight: 600, boxShadow: "0 8px 32px rgba(194,65,12,0.35)",
             transition: "all 0.3s", backgroundSize: "200%",
             animation: "intro-btn 0.8s ease 1s forwards, shimmer 3s ease-in-out 2s infinite",
           }}
-          onMouseEnter={e => { e.currentTarget.style.boxShadow = "0 12px 40px rgba(34,197,94,0.55)"; e.currentTarget.style.transform = "translateY(-2px)"; }}
-          onMouseLeave={e => { e.currentTarget.style.boxShadow = "0 8px 32px rgba(34,197,94,0.35)"; e.currentTarget.style.transform = "translateY(0)"; }}
+          onMouseEnter={e => { e.currentTarget.style.boxShadow = "0 12px 40px rgba(194,65,12,0.55)"; e.currentTarget.style.transform = "translateY(-2px)"; }}
+          onMouseLeave={e => { e.currentTarget.style.boxShadow = "0 8px 32px rgba(194,65,12,0.35)"; e.currentTarget.style.transform = "translateY(0)"; }}
         >
           ✨ Enter the Epic
         </button>
@@ -550,9 +550,9 @@ const StoryTeller = () => {
       {isGlobalDark && (
         <div style={{ position: "fixed", inset: 0, zIndex: 0, pointerEvents: "none" }}>
           {/* Golden Rainbow base */}
-          <div style={{ position:"absolute", inset:0, background:"linear-gradient(145deg,#0C0900 0%,#100A00 25%,#080A18 55%,#060410 80%,#0C0900 100%)" }} />
+          <div style={{ position:"absolute", inset:0, background:"linear-gradient(145deg,#100713 0%,#140919 25%,#0B0714 55%,#08050E 80%,#100713 100%)" }} />
           {/* Gold glow — top-right */}
-          <div style={{ position:"absolute", inset:0, background:"radial-gradient(ellipse 55% 60% at 80% 30%, rgba(34,197,94,0.14) 0%, transparent 50%)" }} />
+          <div style={{ position:"absolute", inset:0, background:"radial-gradient(ellipse 55% 60% at 80% 30%, rgba(194,65,12,0.14) 0%, transparent 50%)" }} />
           {/* Theme accent glow — mid-left — changes per mood */}
           <div style={{ position:"absolute", inset:0, background:
             currentTheme === "war"    ? "radial-gradient(ellipse 45% 55% at 18% 65%, rgba(220,38,38,0.14) 0%, transparent 50%)" :
@@ -567,7 +567,7 @@ const StoryTeller = () => {
           {/* Blue bottom-glow */}
           <div style={{ position:"absolute", inset:0, background:"radial-gradient(ellipse 35% 40% at 65% 80%, rgba(56,189,248,0.09) 0%, transparent 40%)" }} />
           {/* Rainbow top bar */}
-          <div style={{ position:"absolute", top:0, left:0, right:0, height:"2px", background:"linear-gradient(90deg,#22C55E,#A3E635,#34D399,#38BDF8,#A78BFA,#F472B6)" }} />
+          <div style={{ position:"absolute", top:0, left:0, right:0, height:"2px", background:"linear-gradient(90deg,#C2410C,#A3E635,#34D399,#38BDF8,#A78BFA,#F472B6)" }} />
         </div>
       )}
       <div style={{ position: "relative", zIndex: 1 }}>
@@ -586,7 +586,7 @@ const StoryTeller = () => {
         {/* Decorative glow */}
         <div style={{
           position: "absolute", inset: 0, pointerEvents: "none",
-          background: "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(34,197,94,0.12) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse 70% 60% at 50% 50%, rgba(194,65,12,0.12) 0%, transparent 70%)",
         }} />
 
         <p style={{ fontFamily: serif, fontSize: "11px", letterSpacing: "0.35em", color: "hsl(var(--primary))", textTransform: "uppercase", marginBottom: "16px" }}>
@@ -643,7 +643,7 @@ const StoryTeller = () => {
 
         {/* Scroll hint */}
         <div style={{ marginTop: "32px", animation: "bounce 2s infinite" }}>
-          <ChevronDown size={24} style={{ color: "rgba(34,197,94,0.4)", margin: "0 auto" }} />
+          <ChevronDown size={24} style={{ color: "rgba(194,65,12,0.4)", margin: "0 auto" }} />
         </div>
         <style>{`@keyframes bounce { 0%,100%{transform:translateY(0)} 50%{transform:translateY(6px)} }`}</style>
       </section>

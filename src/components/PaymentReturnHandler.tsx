@@ -93,7 +93,7 @@ const PaymentReturnHandler = () => {
         <div
           style={{
             width: 40, height: 40, margin: "0 auto 16px",
-            border: "3px solid rgba(34,197,94,0.3)", borderTopColor: "rgba(34,197,94,0.9)",
+            border: "3px solid rgba(194,65,12,0.3)", borderTopColor: "rgba(194,65,12,0.9)",
             borderRadius: "50%", animation: "spin 1s linear infinite",
           }}
         />

@@ -1053,7 +1053,7 @@ export const TIER_LABELS: Record<1 | 2 | 3, string> = {
 
 export const TIER_COLORS: Record<1 | 2 | 3, string> = {
   1: "#27AE60",
-  2: "#22C55E",
+  2: "#C2410C",
   3: "#E67E22",
 };
 

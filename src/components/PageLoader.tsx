@@ -15,7 +15,7 @@ const PageLoader = () => (
           width: "48px",
           height: "48px",
           borderRadius: "50%",
-          background: "linear-gradient(135deg, #22C55E, #34D399, #38BDF8)",
+          background: "linear-gradient(135deg, #C2410C, #34D399, #38BDF8)",
           display: "flex",
           alignItems: "center",
           justifyContent: "center",

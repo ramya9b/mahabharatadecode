@@ -95,7 +95,7 @@ const CharacterQA = ({ character, isDark }: QAProps) => {
           className="rounded-lg px-3 py-2.5 transition-all duration-200 flex-shrink-0"
           style={{
             background: question.trim() && !loading ? character.accentHex : `rgba(${character.accentRgb},0.12)`,
-            color: question.trim() && !loading ? "#0C0900" : `rgba(${character.accentRgb},0.4)`,
+            color: question.trim() && !loading ? "#100713" : `rgba(${character.accentRgb},0.4)`,
             border: "none", cursor: question.trim() && !loading ? "pointer" : "not-allowed",
           }}
         >
@@ -125,7 +125,7 @@ const CharacterQA = ({ character, isDark }: QAProps) => {
             fontFamily: "'Cormorant Garamond', Georgia, serif",
             fontSize: "clamp(15px, 1.7vw, 17px)",
             fontStyle: "italic",
-            color: isDark ? "rgba(134,239,172,0.85)" : "rgba(42,31,14,0.85)",
+            color: isDark ? "rgba(245,235,218,0.85)" : "rgba(42,31,14,0.85)",
             lineHeight: 1.7,
           }}>
             "{answer}"
@@ -154,14 +154,14 @@ interface CharacterProfileProps {
 }
 
 const ARCHETYPE_COLORS_DARK: Record<string, string> = {
-  Warrior: "rgba(34,197,94,0.15)",
+  Warrior: "rgba(194,65,12,0.15)",
   Divine:  "rgba(74,144,217,0.15)",
   Royalty: "rgba(229,57,53,0.15)",
   Elder:   "rgba(121,134,203,0.15)",
 };
 
 const ARCHETYPE_COLORS_LIGHT: Record<string, string> = {
-  Warrior: "rgba(34,197,94,0.20)",
+  Warrior: "rgba(194,65,12,0.20)",
   Divine:  "rgba(74,144,217,0.18)",
   Royalty: "rgba(229,57,53,0.18)",
   Elder:   "rgba(121,134,203,0.18)",
@@ -178,16 +178,16 @@ const CharacterProfile = ({ character, index }: CharacterProfileProps) => {
   /* Theme-aware palette — cinematic dark or warm parchment cream. */
   const sectionBg = isDark
     ? (isEven
-        ? "linear-gradient(180deg, #0C0900, #160B00)"
-        : "linear-gradient(180deg, #160B00, #0C0900)")
+        ? "linear-gradient(180deg, #100713, #180C20)"
+        : "linear-gradient(180deg, #180C20, #100713)")
     : (isEven
         ? "linear-gradient(180deg, hsl(38 55% 92%), hsl(38 50% 89%))"
         : "linear-gradient(180deg, hsl(38 50% 89%), hsl(38 55% 92%))");
 
-  const titleColor    = isDark ? "rgba(134,239,172,0.65)" : "rgba(42,31,14,0.65)";
-  const bioColor      = isDark ? "rgba(134,239,172,0.82)" : "rgba(42,31,14,0.82)";
-  const quoteColor    = isDark ? "rgba(134,239,172,0.92)" : "rgba(42,31,14,0.90)";
-  const lessonColor   = isDark ? "rgba(134,239,172,0.90)" : "rgba(42,31,14,0.85)";
+  const titleColor    = isDark ? "rgba(245,235,218,0.65)" : "rgba(42,31,14,0.65)";
+  const bioColor      = isDark ? "rgba(245,235,218,0.82)" : "rgba(42,31,14,0.82)";
+  const quoteColor    = isDark ? "rgba(245,235,218,0.92)" : "rgba(42,31,14,0.90)";
+  const lessonColor   = isDark ? "rgba(245,235,218,0.90)" : "rgba(42,31,14,0.85)";
   const archetypeMap  = isDark ? ARCHETYPE_COLORS_DARK : ARCHETYPE_COLORS_LIGHT;
   const fallbackBg    = isDark ? "rgba(139,105,20,0.06)" : "rgba(139,105,20,0.10)";
 
@@ -237,7 +237,7 @@ const CharacterProfile = ({ character, index }: CharacterProfileProps) => {
                 onError={(e) => {
                   const el = e.currentTarget;
                   el.style.opacity = "0";
-                  el.style.backgroundColor = "rgba(34,197,94,0.08)";
+                  el.style.backgroundColor = "rgba(194,65,12,0.08)";
                 }}
               />
 
@@ -277,9 +277,9 @@ const CharacterProfile = ({ character, index }: CharacterProfileProps) => {
                 <span
                   className="font-heading text-[10px] tracking-[0.2em] uppercase px-3 py-1.5 rounded-full backdrop-blur-sm"
                   style={{
-                    background: "rgba(34,197,94,0.08)",
-                    border: "1px solid rgba(34,197,94,0.18)",
-                    color: "rgba(134,239,172,0.75)",
+                    background: "rgba(194,65,12,0.08)",
+                    border: "1px solid rgba(194,65,12,0.18)",
+                    color: "rgba(245,235,218,0.75)",
                   }}
                 >
                   {character.alliance}
@@ -516,7 +516,7 @@ const CharacterProfile = ({ character, index }: CharacterProfileProps) => {
                     fontSize: "clamp(15px, 1.7vw, 17px)",
                     fontFamily: "'Cormorant Garamond', Georgia, serif",
                     fontStyle: "italic",
-                    color: isDark ? "rgba(134,239,172,0.82)" : "rgba(42,31,14,0.82)",
+                    color: isDark ? "rgba(245,235,218,0.82)" : "rgba(42,31,14,0.82)",
                   }}
                 >
                   {character.personalityInsight}
@@ -545,7 +545,7 @@ const CharacterProfile = ({ character, index }: CharacterProfileProps) => {
                 className="px-7 py-3.5 rounded-full font-heading text-[12px] tracking-[0.1em] uppercase transition-all duration-300"
                 style={{
                   background: `linear-gradient(135deg, rgba(${character.accentRgb},0.9), rgba(${character.accentRgb},0.7))`,
-                  color: "#0C0900",
+                  color: "#100713",
                   fontWeight: 700,
                   boxShadow: `0 0 24px rgba(${character.accentRgb},0.35)`,
                 }}

@@ -30,7 +30,7 @@ const ContinueReadingCard = () => {
           padding: "14px 18px",
           borderRadius: "12px",
           background: "hsl(var(--card) / 0.6)",
-          border: "1px solid rgba(34,197,94,0.22)",
+          border: "1px solid rgba(194,65,12,0.22)",
           boxShadow: "0 4px 18px rgba(0,0,0,0.06)",
         }}
       >

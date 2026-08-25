@@ -15,10 +15,10 @@ const ThemeToggle = ({ className = "" }: Props) => {
       className={`relative w-9 h-9 rounded-full flex items-center justify-center transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50 ${className}`}
       style={{
         background: isDark
-          ? "rgba(34,197,94,0.12)"
+          ? "rgba(194,65,12,0.12)"
           : "rgba(139,98,20,0.08)",
         border: isDark
-          ? "1px solid rgba(34,197,94,0.35)"
+          ? "1px solid rgba(194,65,12,0.35)"
           : "1px solid rgba(139,98,20,0.22)",
       }}
       aria-label={isDark ? "Switch to light mode" : "Switch to dark mode"}

@@ -6,10 +6,10 @@ import { Link } from "react-router-dom";
 import { useTheme } from "@/context/ThemeContext";
 
 const PARVA_PREVIEWS = [
-  { number: "01", name: "Adi Parva",   subtitle: "Bhishma's oath. Karna set adrift. The seeds of war.",    accentHex: "#22C55E", accentRgb: "34,197,94" },
+  { number: "01", name: "Adi Parva",   subtitle: "Bhishma's oath. Karna set adrift. The seeds of war.",    accentHex: "#C2410C", accentRgb: "34,197,94" },
   { number: "02", name: "Sabha Parva", subtitle: "The dice game. Draupadi's question. Everything breaks.", accentHex: "#E53935", accentRgb: "229,57,53" },
   { number: "06", name: "Bhishma Parva", subtitle: "The Bhagavad Gita is spoken. The war begins.",         accentHex: "#7986CB", accentRgb: "121,134,203" },
-  { number: "08", name: "Karna Parva", subtitle: "The final battle. The rivalry nobody could resolve.",     accentHex: "#22C55E", accentRgb: "34,197,94" },
+  { number: "08", name: "Karna Parva", subtitle: "The final battle. The rivalry nobody could resolve.",     accentHex: "#C2410C", accentRgb: "34,197,94" },
 ];
 
 const StoryBanner = () => {
@@ -31,7 +31,7 @@ const StoryBanner = () => {
             display: "inline-block",
             padding: "4px 16px",
             borderRadius: "99px",
-            border: "1px solid rgba(34,197,94,0.3)",
+            border: "1px solid rgba(194,65,12,0.3)",
             fontSize: "11px",
             letterSpacing: "0.25em",
             textTransform: "uppercase",
@@ -90,7 +90,7 @@ const StoryBanner = () => {
             padding: "14px 40px",
             borderRadius: "99px",
             background:
-              "linear-gradient(135deg, #22C55E 0%, #22C55E 50%, #86EFAC 100%)",
+              "linear-gradient(135deg, #C2410C 0%, #C2410C 50%, #F5EBDA 100%)",
             backgroundSize: "200% auto",
             animation: "shimmer 4s linear infinite",
             color: "#08040F",
@@ -99,19 +99,19 @@ const StoryBanner = () => {
             fontWeight: 700,
             letterSpacing: "0.1em",
             textDecoration: "none",
-            boxShadow: "0 4px 24px rgba(34,197,94,0.45)",
+            boxShadow: "0 4px 24px rgba(194,65,12,0.45)",
             transition: "all 0.35s ease",
           }}
           onMouseEnter={(e) => {
             (e.currentTarget as HTMLAnchorElement).style.transform =
               "translateY(-3px) scale(1.02)";
             (e.currentTarget as HTMLAnchorElement).style.boxShadow =
-              "0 12px 36px rgba(34,197,94,0.65)";
+              "0 12px 36px rgba(194,65,12,0.65)";
           }}
           onMouseLeave={(e) => {
             (e.currentTarget as HTMLAnchorElement).style.transform = "none";
             (e.currentTarget as HTMLAnchorElement).style.boxShadow =
-              "0 4px 24px rgba(34,197,94,0.45)";
+              "0 4px 24px rgba(194,65,12,0.45)";
           }}
         >
           📜 Read the Full Story →

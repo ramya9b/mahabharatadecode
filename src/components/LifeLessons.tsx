@@ -67,7 +67,7 @@ const LifeLessons = () => {
               style={{
                 width: "300px",
                 background: "rgba(22,11,0,0.85)",
-                border: "1px solid rgba(34,197,94,0.22)",
+                border: "1px solid rgba(194,65,12,0.22)",
                 borderRadius: "16px",
                 padding: "28px",
                 backdropFilter: "blur(12px)",
@@ -75,25 +75,25 @@ const LifeLessons = () => {
                 transition: "border-color 0.3s, transform 0.3s",
               }}
               onMouseEnter={e => {
-                (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(34,197,94,0.55)";
+                (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(194,65,12,0.55)";
                 (e.currentTarget as HTMLDivElement).style.transform = "translateY(-6px)";
               }}
               onMouseLeave={e => {
-                (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(34,197,94,0.22)";
+                (e.currentTarget as HTMLDivElement).style.borderColor = "rgba(194,65,12,0.22)";
                 (e.currentTarget as HTMLDivElement).style.transform = "none";
               }}
             >
               {/* Number badge */}
               <div style={{
                 width: "36px", height: "36px", borderRadius: "50%",
-                background: "rgba(34,197,94,0.12)",
-                border: "1px solid rgba(34,197,94,0.30)",
+                background: "rgba(194,65,12,0.12)",
+                border: "1px solid rgba(194,65,12,0.30)",
                 display: "flex", alignItems: "center", justifyContent: "center",
                 marginBottom: "20px",
               }}>
                 <span style={{
                   fontFamily: "'Cinzel',serif", fontSize: "11px",
-                  color: "#22C55E", fontWeight: 600,
+                  color: "#C2410C", fontWeight: 600,
                 }}>
                   {String(i + 1).padStart(2, "0")}
                 </span>
@@ -103,7 +103,7 @@ const LifeLessons = () => {
                 fontFamily: "'Cinzel',serif",
                 fontSize: "17px",
                 fontWeight: 600,
-                color: "#86EFAC",
+                color: "#F5EBDA",
                 marginBottom: "12px",
                 lineHeight: 1.3,
               }}>
@@ -114,7 +114,7 @@ const LifeLessons = () => {
                 fontFamily: "'Cormorant Garamond',Georgia,serif",
                 fontSize: "16px",
                 lineHeight: 1.8,
-                color: "rgba(134,239,172,0.75)",
+                color: "rgba(245,235,218,0.75)",
                 marginBottom: "20px",
               }}>
                 {lesson.insight}
@@ -124,7 +124,7 @@ const LifeLessons = () => {
                 fontFamily: "'Cinzel',serif",
                 fontSize: "10px",
                 letterSpacing: "0.18em",
-                color: "rgba(34,197,94,0.70)",
+                color: "rgba(194,65,12,0.70)",
                 textTransform: "uppercase",
               }}>
                 {lesson.chapter}

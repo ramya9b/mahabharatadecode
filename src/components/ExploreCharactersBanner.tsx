@@ -72,7 +72,7 @@ const ExploreCharactersBanner = () => {
             padding: "14px 40px",
             borderRadius: "99px",
             background:
-              "linear-gradient(135deg, #22C55E 0%, #34D399 50%, #38BDF8 100%)",
+              "linear-gradient(135deg, #C2410C 0%, #34D399 50%, #38BDF8 100%)",
             backgroundSize: "200% auto",
             animation: "shimmer 4s linear infinite",
             color: "#08040F",

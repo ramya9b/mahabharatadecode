@@ -32,9 +32,9 @@ const ArticleCTA = () => {
           style={{
             background:
               "linear-gradient(135deg, rgba(15,18,30,0.95) 0%, rgba(20,14,8,0.98) 50%, rgba(15,18,30,0.95) 100%)",
-            border: "1px solid rgba(34,197,94,0.15)",
+            border: "1px solid rgba(194,65,12,0.15)",
             boxShadow:
-              "0 0 80px rgba(34,197,94,0.04), 0 30px 60px rgba(0,0,0,0.4)",
+              "0 0 80px rgba(194,65,12,0.04), 0 30px 60px rgba(0,0,0,0.4)",
           }}
         >
           {/* Top shimmer */}
@@ -42,7 +42,7 @@ const ArticleCTA = () => {
             className="absolute top-0 left-0 right-0 h-px"
             style={{
               background:
-                "linear-gradient(to right, transparent, rgba(34,197,94,0.45), transparent)",
+                "linear-gradient(to right, transparent, rgba(194,65,12,0.45), transparent)",
             }}
           />
 
@@ -51,7 +51,7 @@ const ArticleCTA = () => {
             className="absolute inset-0 pointer-events-none"
             style={{
               background:
-                "radial-gradient(ellipse 60% 50% at 50% 100%, rgba(34,197,94,0.05) 0%, transparent 70%)",
+                "radial-gradient(ellipse 60% 50% at 50% 100%, rgba(194,65,12,0.05) 0%, transparent 70%)",
             }}
           />
 
@@ -64,15 +64,15 @@ const ArticleCTA = () => {
                   <div
                     className="w-9 h-9 rounded-full flex items-center justify-center flex-shrink-0"
                     style={{
-                      background: "rgba(34,197,94,0.1)",
-                      border: "1px solid rgba(34,197,94,0.2)",
+                      background: "rgba(194,65,12,0.1)",
+                      border: "1px solid rgba(194,65,12,0.2)",
                     }}
                   >
                     <Mail size={15} className="text-primary" />
                   </div>
                   <span
                     className="font-heading text-[11px] tracking-[0.35em] uppercase font-medium"
-                    style={{ color: "rgba(34,197,94,0.75)" }}
+                    style={{ color: "rgba(194,65,12,0.75)" }}
                   >
                     Daily Wisdom
                   </span>
@@ -86,7 +86,7 @@ const ArticleCTA = () => {
                   <span
                     className="block"
                     style={{
-                      background: "linear-gradient(135deg, #E8C547 0%, #22C55E 45%, #B8922A 100%)",
+                      background: "linear-gradient(135deg, #E8C547 0%, #C2410C 45%, #B8922A 100%)",
                       WebkitBackgroundClip: "text",
                       WebkitTextFillColor: "transparent",
                       backgroundClip: "text",
@@ -114,7 +114,7 @@ const ArticleCTA = () => {
                       className="flex-1 flex items-center gap-2.5 rounded-full px-4 py-3"
                       style={{
                         background: "rgba(245,237,218,0.06)",
-                        border: "1px solid rgba(34,197,94,0.20)",
+                        border: "1px solid rgba(194,65,12,0.20)",
                       }}
                     >
                       <Mail size={13} style={{ color: muted, flexShrink: 0 }} />
@@ -135,10 +135,10 @@ const ArticleCTA = () => {
                       type="submit"
                       className="px-6 py-3 rounded-full text-sm font-semibold tracking-wide transition-all duration-300 hover:-translate-y-0.5 flex-shrink-0"
                       style={{
-                        background: "linear-gradient(135deg, #E8C547, #22C55E, #B8922A)",
+                        background: "linear-gradient(135deg, #E8C547, #C2410C, #B8922A)",
                         color: "#08040F",
                         fontFamily: "'Cinzel', serif",
-                        boxShadow: "0 0 20px rgba(34,197,94,0.3)",
+                        boxShadow: "0 0 20px rgba(194,65,12,0.3)",
                       }}
                     >
                       Subscribe
@@ -148,8 +148,8 @@ const ArticleCTA = () => {
                   <div
                     className="flex items-center gap-3 px-5 py-3.5 rounded-full"
                     style={{
-                      background: "rgba(34,197,94,0.08)",
-                      border: "1px solid rgba(34,197,94,0.2)",
+                      background: "rgba(194,65,12,0.08)",
+                      border: "1px solid rgba(194,65,12,0.2)",
                     }}
                   >
                     <span className="text-primary">✦</span>
@@ -173,7 +173,7 @@ const ArticleCTA = () => {
                   className="h-32 w-px"
                   style={{
                     background:
-                      "linear-gradient(to bottom, transparent, rgba(34,197,94,0.2), transparent)",
+                      "linear-gradient(to bottom, transparent, rgba(194,65,12,0.2), transparent)",
                   }}
                 />
               </div>
@@ -209,7 +209,7 @@ const ArticleCTA = () => {
                   <span
                     style={{
                       background:
-                        "linear-gradient(135deg, #E8C547 0%, #22C55E 45%, #B8922A 100%)",
+                        "linear-gradient(135deg, #E8C547 0%, #C2410C 45%, #B8922A 100%)",
                       WebkitBackgroundClip: "text",
                       WebkitTextFillColor: "transparent",
                       backgroundClip: "text",
@@ -238,10 +238,10 @@ const ArticleCTA = () => {
                   <span
                     className="px-7 py-3.5 rounded-full text-sm font-medium tracking-wide transition-all duration-300 group-hover:border-primary/50"
                     style={{
-                      background: "rgba(34,197,94,0.08)",
-                      border: "1px solid rgba(34,197,94,0.22)",
+                      background: "rgba(194,65,12,0.08)",
+                      border: "1px solid rgba(194,65,12,0.22)",
                       fontFamily: "'Cinzel', serif",
-                      color: "rgba(134,239,172,0.88)",
+                      color: "rgba(245,235,218,0.88)",
                     }}
                   >
                     Read More Stories

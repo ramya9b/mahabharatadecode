@@ -12,7 +12,7 @@ const CharacterStatBars = ({ stats, accentHex, accentRgb }: CharacterStatBarsPro
   const containerRef = useRef<HTMLDivElement>(null);
   const { theme } = useTheme();
   const isDark = theme === "dark";
-  const labelColor = isDark ? "rgba(134,239,172,0.72)" : "rgba(42,31,14,0.65)";
+  const labelColor = isDark ? "rgba(245,235,218,0.72)" : "rgba(42,31,14,0.65)";
 
   useEffect(() => {
     const bars = containerRef.current?.querySelectorAll<HTMLDivElement>(".stat-fill");

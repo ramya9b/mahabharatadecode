@@ -239,9 +239,9 @@ const ArticlePage = () => {
               gap: "8px",
               fontFamily: "'Cormorant Garamond', Georgia, serif",
               fontSize: "15px",
-              color: "rgba(34,197,94,0.65)",
+              color: "rgba(194,65,12,0.65)",
               textDecoration: "none",
-              borderBottom: "1px solid rgba(34,197,94,0.2)",
+              borderBottom: "1px solid rgba(194,65,12,0.2)",
               paddingBottom: "2px",
               transition: "color 0.2s",
             }}
@@ -282,22 +282,22 @@ const LifeLessonsList = ({ lessons }: { lessons: string[] }) => {
         style={{
           background:
             "linear-gradient(135deg, rgba(15,18,30,0.85) 0%, rgba(20,14,8,0.85) 100%)",
-          border: "1px solid rgba(34,197,94,0.14)",
+          border: "1px solid rgba(194,65,12,0.14)",
         }}
       >
         <div
           className="absolute top-0 left-0 right-0 h-px"
           style={{
             background:
-              "linear-gradient(to right, transparent, rgba(34,197,94,0.35), transparent)",
+              "linear-gradient(to right, transparent, rgba(194,65,12,0.35), transparent)",
           }}
         />
         <div className="flex items-center gap-3 mb-6">
           <div
             className="w-8 h-8 rounded-full flex items-center justify-center flex-shrink-0"
             style={{
-              background: "rgba(34,197,94,0.1)",
-              border: "1px solid rgba(34,197,94,0.2)",
+              background: "rgba(194,65,12,0.1)",
+              border: "1px solid rgba(194,65,12,0.2)",
             }}
           >
             <BookOpen size={14} className="text-primary" />
@@ -307,7 +307,7 @@ const LifeLessonsList = ({ lessons }: { lessons: string[] }) => {
             style={{
               fontSize: "17px",
               letterSpacing: "0.06em",
-              color: "rgba(134,239,172,0.95)",
+              color: "rgba(245,235,218,0.95)",
             }}
           >
             Take These With You
@@ -318,7 +318,7 @@ const LifeLessonsList = ({ lessons }: { lessons: string[] }) => {
             <li key={i} className="flex items-start gap-3">
               <span
                 className="font-heading text-[10px] mt-0.5 flex-shrink-0"
-                style={{ letterSpacing: "0.2em", color: "rgba(34,197,94,0.55)" }}
+                style={{ letterSpacing: "0.2em", color: "rgba(194,65,12,0.55)" }}
               >
                 {String(i + 1).padStart(2, "0")}
               </span>
@@ -447,7 +447,7 @@ const AuthorNote = ({ note }: { note: string }) => {
       ref={ref}
       className="reveal-element rounded-xl px-6 py-5"
       style={{
-        borderLeft: "2px solid rgba(34,197,94,0.18)",
+        borderLeft: "2px solid rgba(194,65,12,0.18)",
         background: "rgba(255,255,255,0.02)",
       }}
     >

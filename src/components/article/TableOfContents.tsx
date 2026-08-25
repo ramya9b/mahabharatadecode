@@ -103,7 +103,7 @@ const TableOfContents = ({
       data-testid="table-of-contents"
       style={{
         background: "rgba(255,255,255,0.025)",
-        border: "1px solid rgba(34,197,94,0.12)",
+        border: "1px solid rgba(194,65,12,0.12)",
         borderRadius: "16px",
         overflow: "hidden",
         marginBottom: "32px",
@@ -125,11 +125,11 @@ const TableOfContents = ({
           background: "transparent",
           border: "none",
           cursor: "pointer",
-          borderBottom: collapsed ? "none" : "1px solid rgba(34,197,94,0.1)",
+          borderBottom: collapsed ? "none" : "1px solid rgba(194,65,12,0.1)",
         }}
       >
         <div style={{ display: "flex", alignItems: "center", gap: "8px" }}>
-          <List size={14} style={{ color: "rgba(34,197,94,0.7)" }} aria-hidden="true" />
+          <List size={14} style={{ color: "rgba(194,65,12,0.7)" }} aria-hidden="true" />
           <span
             style={{
               fontFamily: "'Cinzel', serif",
@@ -173,7 +173,7 @@ const TableOfContents = ({
                     border: "none",
                     cursor: "pointer",
                     transition: "color 0.2s",
-                    color: isActive ? "rgba(34,197,94,0.95)" : "hsl(var(--foreground) / 0.75)",
+                    color: isActive ? "rgba(194,65,12,0.95)" : "hsl(var(--foreground) / 0.75)",
                   }}
                 >
                   {/* Active indicator dot */}
@@ -184,7 +184,7 @@ const TableOfContents = ({
                       height: "5px",
                       borderRadius: "50%",
                       flexShrink: 0,
-                      background: isActive ? "#22C55E" : "transparent",
+                      background: isActive ? "#C2410C" : "transparent",
                       border: isActive ? "none" : "1px solid hsl(var(--foreground) / 0.25)",
                       transition: "all 0.2s",
                     }}

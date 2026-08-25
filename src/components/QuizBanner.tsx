@@ -25,7 +25,7 @@ const QuizBanner = () => {
           overflow: "hidden",
           background:
             "linear-gradient(135deg, hsl(var(--card) / 0.6), hsl(var(--card) / 0.3))",
-          border: "1px solid rgba(34,197,94,0.18)",
+          border: "1px solid rgba(194,65,12,0.18)",
           boxShadow: "0 12px 48px rgba(0,0,0,0.08)",
         }}
       >
@@ -39,7 +39,7 @@ const QuizBanner = () => {
             right: 0,
             height: "1px",
             background:
-              "linear-gradient(to right, transparent, rgba(34,197,94,0.55), transparent)",
+              "linear-gradient(to right, transparent, rgba(194,65,12,0.55), transparent)",
           }}
         />
         {/* Ambient radial */}
@@ -49,7 +49,7 @@ const QuizBanner = () => {
             position: "absolute",
             inset: 0,
             background:
-              "radial-gradient(ellipse 70% 60% at 50% 0%, rgba(34,197,94,0.10), transparent 60%)",
+              "radial-gradient(ellipse 70% 60% at 50% 0%, rgba(194,65,12,0.10), transparent 60%)",
             pointerEvents: "none",
           }}
         />
@@ -107,7 +107,7 @@ const QuizBanner = () => {
             padding: "14px 40px",
             borderRadius: "99px",
             background:
-              "linear-gradient(135deg, #22C55E 0%, #22C55E 50%, #86EFAC 100%)",
+              "linear-gradient(135deg, #C2410C 0%, #C2410C 50%, #F5EBDA 100%)",
             backgroundSize: "200% auto",
             animation: "shimmer 4s linear infinite",
             color: "#08040F",
@@ -116,7 +116,7 @@ const QuizBanner = () => {
             fontWeight: 700,
             letterSpacing: "0.1em",
             textDecoration: "none",
-            boxShadow: "0 4px 24px rgba(34,197,94,0.45)",
+            boxShadow: "0 4px 24px rgba(194,65,12,0.45)",
             transition: "all 0.35s ease",
             textTransform: "uppercase",
             position: "relative",
@@ -125,12 +125,12 @@ const QuizBanner = () => {
             (e.currentTarget as HTMLAnchorElement).style.transform =
               "translateY(-3px) scale(1.02)";
             (e.currentTarget as HTMLAnchorElement).style.boxShadow =
-              "0 12px 36px rgba(34,197,94,0.65)";
+              "0 12px 36px rgba(194,65,12,0.65)";
           }}
           onMouseLeave={(e) => {
             (e.currentTarget as HTMLAnchorElement).style.transform = "none";
             (e.currentTarget as HTMLAnchorElement).style.boxShadow =
-              "0 4px 24px rgba(34,197,94,0.45)";
+              "0 4px 24px rgba(194,65,12,0.45)";
           }}
         >
           {t("home.quiz_banner.cta")} →

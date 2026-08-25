@@ -132,7 +132,7 @@ const PageLoader = () => (
         aria-hidden="true"
       >
         <circle cx="24" cy="24" r="20"
-          stroke="rgba(34,197,94,0.4)"
+          stroke="rgba(194,65,12,0.4)"
           strokeWidth="2.5" fill="none"
           strokeDasharray="62 30" strokeLinecap="round"
         />
@@ -141,7 +141,7 @@ const PageLoader = () => (
         fontFamily: "'Cinzel', serif",
         fontSize: "10px",
         letterSpacing: "0.35em",
-        color: "rgba(34,197,94,0.6)",
+        color: "rgba(194,65,12,0.6)",
         textTransform: "uppercase",
       }}>
         Loading…
