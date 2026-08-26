@@ -88,7 +88,7 @@ const Navbar = () => {
   const pillShadow = "0 8px 40px rgba(0,0,0,0.45), 0 0 0 1px rgba(107,45,143,0.12)";
 
   const linkColor  = "rgba(245,237,218,0.92)";
-  const linkActive = "#6B2D8F";
+  const linkActive = "#F0C24B";
 
   const ctaBg      = "linear-gradient(90deg,#6B2D8F 0%,#F97316 35%,#EC4899 65%,#A78BFA 100%)";
   const ctaColor   = "#06030E";
@@ -201,7 +201,7 @@ const Navbar = () => {
                       ? "linear-gradient(135deg,rgba(107,45,143,0.18),rgba(107,45,143,0.06))"
                       : "transparent",
                     border: active
-                      ? "1px solid rgba(107,45,143,0.28)"
+                      ? "1px solid rgba(240,194,75,0.38)"
                       : "1px solid transparent",
                     color: active ? linkActive : linkColor,
                     boxShadow: active
@@ -246,18 +246,20 @@ const Navbar = () => {
                 display: "flex",
                 alignItems: "center",
                 gap: "5px",
-                border: "1px solid rgba(107,45,143,0.28)",
-                color: "rgba(107,45,143,0.90)",
-                background: "transparent",
+                border: "1px solid rgba(255,246,228,0.55)",
+                color: "#2B0D3B",
+                fontWeight: 700,
+                background: "linear-gradient(135deg,#F5D678 0%,#C9A227 100%)",
+                boxShadow: "0 2px 14px rgba(201,162,39,0.45)",
                 transition: "all 0.25s",
               }}
               onMouseEnter={e => {
-                (e.currentTarget as HTMLAnchorElement).style.color = "#6B2D8F";
-                (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(107,45,143,0.5)";
+                (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 4px 20px rgba(201,162,39,0.7)";
+                (e.currentTarget as HTMLAnchorElement).style.transform = "translateY(-1px)";
               }}
               onMouseLeave={e => {
-                (e.currentTarget as HTMLAnchorElement).style.color = "rgba(107,45,143,0.75)";
-                (e.currentTarget as HTMLAnchorElement).style.borderColor = "rgba(107,45,143,0.28)";
+                (e.currentTarget as HTMLAnchorElement).style.boxShadow = "0 2px 14px rgba(201,162,39,0.45)";
+                (e.currentTarget as HTMLAnchorElement).style.transform = "none";
               }}
             >
               <span aria-hidden="true" style={{ fontSize: "9px" }}>✦</span>
@@ -394,7 +396,7 @@ const Navbar = () => {
                 textTransform: "uppercase",
                 textDecoration: "none",
                 borderBottom: "1px solid rgba(107,45,143,0.1)",
-                color: isActive(to) ? "#6B2D8F" : "rgba(245,237,218,0.88)",
+                color: isActive(to) ? "#6B2D8F" : "#3E1259",
                 transition: "color 0.2s",
               }}
             >
@@ -409,8 +411,12 @@ const Navbar = () => {
               fontFamily: "'Cinzel',serif", fontSize: "11px",
               letterSpacing: "0.14em", textTransform: "uppercase",
               textDecoration: "none",
-              borderBottom: "1px solid rgba(107,45,143,0.1)",
-              color: "rgba(107,45,143,0.8)",
+              margin: "12px 0 2px",
+              borderRadius: "100px",
+              textAlign: "center",
+              fontWeight: 700,
+              background: "linear-gradient(135deg,#F5D678 0%,#C9A227 100%)",
+              color: "#2B0D3B",
             }}
           >
             ✦ {t("nav.quiz")}
