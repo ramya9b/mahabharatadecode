@@ -1,7 +1,6 @@
 import { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
-import heroBgWebp from "@/assets/hero-bg.webp";
 
 /* Gold particles — varied sizes, drift angles, durations */
 const GOLD_PARTICLES = Array.from({ length: 28 }, () => ({
@@ -20,6 +19,38 @@ const DUST = Array.from({ length: 12 }, () => ({
   dur: Math.random() * 10 + 8,
   del: Math.random() * 6,
 }));
+
+
+/* ── Gopuram silhouette. Stepped tiers narrowing upward with a kalasham
+      finial, echoing the temple towers on the TTD site. Drawn rather than
+      photographed so it scales, recolours with the palette, and costs no
+      network request. ── */
+const Gopuram = ({ x, w, h, opacity }: { x: number; w: number; h: number; opacity: number }) => {
+  const TIERS = 6;
+  const tierH = h / TIERS;
+  const tiers = Array.from({ length: TIERS }, (_, i) => {
+    const tw = w * (1 - i * 0.115);
+    return (
+      <rect
+        key={i}
+        x={x + (w - tw) / 2}
+        y={320 - (i + 1) * tierH}
+        width={tw}
+        height={tierH * 0.82}
+        rx={1.5}
+      />
+    );
+  });
+  const cx = x + w / 2;
+  const top = 320 - h;
+  return (
+    <g opacity={opacity}>
+      {tiers}
+      <rect x={cx - 1.4} y={top - 17} width={2.8} height={13} />
+      <circle cx={cx} cy={top - 21} r={5.5} />
+    </g>
+  );
+};
 
 const HeroSection = () => {
   const { t }   = useTranslation();
@@ -41,32 +72,38 @@ const HeroSection = () => {
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
 
-      {/* ── Parallax background ── */}
+      {/* ── TTD gradient ground. Replaces the Kurukshetra photograph: the
+             palette now carries the mood, and dropping the image removes a
+             160KB render-blocking download from the largest paint. ── */}
+      <div className="absolute inset-0" style={{ background: "var(--hero-gradient)" }} />
+
+      {/* Sunrise behind the towers */}
+      <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 72% 52% at 50% 80%, rgba(255,206,120,0.42) 0%, transparent 62%)" }} />
+
+      {/* Soft light from above */}
+      <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 85% 55% at 50% 6%, rgba(255,255,255,0.18) 0%, transparent 58%)" }} />
+
+      {/* ── Gopuram skyline, parallaxed ── */}
       <div
         ref={heroRef}
-        className="absolute will-change-transform"
-        style={{ inset: "-15% 0", height: "130%" }}
+        className="absolute inset-x-0 bottom-0 will-change-transform pointer-events-none"
+        aria-hidden="true"
       >
-        <picture>
-          <source srcSet={heroBgWebp} type="image/webp" />
-          <img
-            src={heroBgWebp}
-            alt="Kurukshetra battlefield at dawn"
-            loading="eager"
-            fetchPriority="high"
-            decoding="sync"
-            width={1920}
-            height={1080}
-            className="w-full h-full object-cover"
-          />
-        </picture>
+        <svg viewBox="0 0 1440 320" preserveAspectRatio="xMidYMax slice" className="w-full" style={{ height: "46vh", display: "block" }}>
+          <g fill="#3E1259">
+            <Gopuram x={40}   w={150} h={150} opacity={0.28} />
+            <Gopuram x={250}  w={210} h={232} opacity={0.38} />
+            <Gopuram x={560}  w={300} h={300} opacity={0.5} />
+            <Gopuram x={950}  w={205} h={225} opacity={0.38} />
+            <Gopuram x={1230} w={155} h={158} opacity={0.28} />
+          </g>
+          {/* ground line the towers stand on */}
+          <rect x="0" y="304" width="1440" height="16" fill="#3E1259" opacity="0.5" />
+        </svg>
       </div>
 
-      {/* ── Cinematic overlay stack ── */}
-      <div className="absolute inset-0" style={{ background: "linear-gradient(to bottom, rgba(6,4,17,0.72) 0%, rgba(6,4,17,0.65) 40%, rgba(6,4,17,0.92) 85%, rgba(6,4,17,1) 100%)" }} />
-      <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 75% 55% at 50% 38%, rgba(107,45,143,0.12) 0%, transparent 65%)" }} />
-      {/* Vignette edges */}
-      <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 100% 100% at 50% 50%, transparent 55%, rgba(4,2,12,0.65) 100%)" }} />
+      {/* Vignette */}
+      <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 100% 100% at 50% 45%, transparent 58%, rgba(62,18,89,0.42) 100%)" }} />
 
       {/* ── Moving ambient glow ── */}
       <div
@@ -75,7 +112,7 @@ const HeroSection = () => {
         style={{
           top: "20%", left: "50%", transform: "translateX(-50%)",
           width: "600px", height: "300px",
-          background: "radial-gradient(ellipse, rgba(107,45,143,0.15) 0%, transparent 70%)",
+          background: "radial-gradient(ellipse, rgba(255,214,138,0.22) 0%, transparent 70%)",
           filter: "blur(40px)",
           animation: "glow-pulse 6s ease-in-out infinite",
         }}
@@ -124,9 +161,9 @@ const HeroSection = () => {
           <span
             className="inline-block px-5 py-2 rounded-full border text-[11px] tracking-[0.32em] uppercase backdrop-blur-sm i18n-safe"
             style={{
-              borderColor: "rgba(107,45,143,0.35)",
-              color: "rgba(107,45,143,0.95)",
-              background: "rgba(107,45,143,0.06)",
+              borderColor: "rgba(255,255,255,0.42)",
+              color: "rgba(255,246,232,0.96)",
+              background: "rgba(255,255,255,0.10)",
               fontFamily: "'Cinzel', serif",
             }}
           >
@@ -140,14 +177,14 @@ const HeroSection = () => {
           style={{ fontSize: "clamp(48px, 8.5vw, 100px)" }}
         >
           <span className="block" style={{
-            /* Warm gold shimmer — readable on dark overlay */
-            background: "linear-gradient(135deg, #F5E8EE 0%, #6B2D8F 35%, #6B2D8F 55%, #F5E8EE 75%, #6B2D8F 100%)",
+            /* Gold shimmer on the purple ground — the TTD pairing */
+            background: "linear-gradient(135deg, #FFF6E8 0%, #E4C04A 32%, #F0D67A 52%, #FFF6E8 72%, #E4C04A 100%)",
             backgroundSize: "200% auto",
             WebkitBackgroundClip: "text",
             WebkitTextFillColor: "transparent",
             backgroundClip: "text",
             animation: "shimmer 4s linear infinite",
-            filter: "drop-shadow(0 2px 20px rgba(107,45,143,0.5))",
+            filter: "drop-shadow(0 2px 18px rgba(62,18,89,0.55))",
           }}>
             {t("hero.headline_gold")}
           </span>
