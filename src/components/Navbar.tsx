@@ -1,5 +1,6 @@
 import { useState, useEffect, useRef, useCallback } from "react";
 import { Menu, X } from "lucide-react";
+import TempleBells from "@/components/TempleBells";
 import { Link, useLocation } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
@@ -275,6 +276,7 @@ const Navbar = () => {
           {/* Right — language, theme, CTA */}
           <div style={{ display: "flex", alignItems: "center", gap: "10px", flexShrink: 0 }}>
             <LanguageSwitcher />
+            <TempleBells />
             <Link
               to="/blog"
               style={{
@@ -346,6 +348,7 @@ const Navbar = () => {
 
           <div style={{ display: "flex", alignItems: "center", gap: "6px", flexShrink: 0 }}>
             <LanguageSwitcher />
+            <TempleBells />
             <button
               ref={burgerRef}
               onClick={() => setMobileOpen(v => !v)}

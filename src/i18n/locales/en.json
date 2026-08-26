@@ -401,5 +401,9 @@
     "linkedin": "Share on LinkedIn",
     "copy": "Copy link",
     "native": "Share this article"
+  },
+  "bells": {
+    "mute": "Silence the temple bells",
+    "unmute": "Ring the temple bells"
   }
 }

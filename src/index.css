@@ -811,3 +811,43 @@ textarea:focus-visible,
   0%   { transform: translate(-50%,-50%) scale(0); opacity: 0.4; }
   100% { transform: translate(-50%,-50%) scale(3.5); opacity: 0; }
 }
+
+/* ── Pushpa vrishti — falling temple flowers ───────────────────────────── */
+.flower-fall {
+  position: fixed;
+  inset: 0;
+  overflow: hidden;
+  pointer-events: none;   /* never intercepts a click */
+  z-index: 30;            /* above the page, below the navbar (50) */
+}
+
+.flower-fall .petal {
+  position: absolute;
+  top: -8vh;
+  opacity: 0;
+  border-radius: 100% 0 100% 0;          /* a petal, not a dot */
+  box-shadow: 0 1px 5px rgba(62, 18, 89, 0.16);
+  will-change: transform, opacity;
+  animation-name: petal-fall;
+  animation-timing-function: linear;
+  animation-iteration-count: infinite;
+}
+
+/* A second silhouette so the fall does not look stamped from one mould. */
+.flower-fall .petal--round { border-radius: 60% 40% 55% 45% / 50% 55% 45% 50%; }
+
+@keyframes petal-fall {
+  0%   { transform: translate3d(0, 0, 0) rotate(0deg); opacity: 0; }
+  8%   { opacity: 0.72; }
+  88%  { opacity: 0.62; }
+  100% { transform: translate3d(var(--drift, 30px), 116vh, 0) rotate(var(--spin, 200deg)); opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .flower-fall { display: none; }
+}
+
+/* Phones get a lighter fall — less paint, and less over small text. */
+@media (max-width: 640px) {
+  .flower-fall .petal:nth-child(even) { display: none; }
+}

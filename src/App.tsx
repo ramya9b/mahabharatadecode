@@ -16,6 +16,7 @@ import BackToTop from "@/components/BackToTop";
 import CookieConsent from "@/components/CookieConsent";
 import FloatingStoryButton from "@/components/FloatingStoryButton";
 import FirstVisitCard from "@/components/FirstVisitCard";
+import FallingFlowers from "@/components/FallingFlowers";
 import PWAUpdateNotice from "@/components/PWAUpdateNotice";
 import PaymentReturnHandler from "@/components/PaymentReturnHandler";
 import { ThemeProvider } from "@/context/ThemeContext";
@@ -184,6 +185,7 @@ const App = () => (
               </PageTransition>
             </Suspense>
           </div>
+          <FallingFlowers />
           <BackToTop />
           <CookieConsent />
           <FloatingStoryButton />
