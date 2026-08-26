@@ -1,6 +1,11 @@
-/* ── Fonts loaded in index.html: Cinzel + Cormorant Garamond ── */
-/* Indian language fonts — loaded on demand via font-display:swap */
-@import url('https://fonts.googleapis.com/css2?family=Noto+Serif+Devanagari:wght@400;600;700&family=Tiro+Devanagari+Hindi:ital@0;1&family=Noto+Serif+Telugu:wght@400;600;700&family=Noto+Serif+Kannada:wght@400;600;700&display=swap');
+/* ── Fonts are loaded once, in index.html: Cinzel, Cinzel Decorative,
+      Cormorant Garamond and the four Indian-script families (Noto Serif
+      Devanagari / Telugu / Kannada, Tiro Devanagari Hindi).
+
+      Do not @import them here as well. That request duplicated the four
+      script families index.html already preloads, and an @import at the
+      top of the main stylesheet is render-blocking — it delayed first
+      paint and widened the window for font-swap layout shift. ── */
 
 @tailwind base;
 @tailwind components;
