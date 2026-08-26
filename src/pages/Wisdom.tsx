@@ -208,7 +208,7 @@ const DomainTabs = ({
               style={{
                 background: isActive
                   ? (isDarkF ? "linear-gradient(135deg, rgba(107,45,143,0.18), rgba(107,45,143,0.08))" : "linear-gradient(135deg, rgba(107,45,143,0.15), rgba(107,45,143,0.06))")
-                  : (isDarkF ? "rgba(22,11,0,0.60)" : "rgba(139,105,20,0.06)"),
+                  : (isDarkF ? "hsl(var(--card))" : "rgba(139,105,20,0.06)"),
                 border: isActive
                   ? (isDarkF ? "1px solid rgba(107,45,143,0.40)" : "1px solid rgba(107,45,143,0.45)")
                   : (isDarkF ? "1px solid rgba(107,45,143,0.18)" : "1px solid rgba(139,105,20,0.18)"),

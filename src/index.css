@@ -368,8 +368,8 @@ body {
     @apply px-5 py-2 rounded-full text-[12px] tracking-wider font-medium transition-all duration-300 cursor-pointer;
   }
   .filter-pill-inactive {
-    background: rgba(22,11,0,0.8);
-    border: 1px solid rgba(139,105,20,0.2);
+    background: hsl(var(--secondary));
+    border: 1px solid hsl(var(--border));
     color: hsl(var(--muted-foreground));
   }
   .filter-pill-inactive:hover {

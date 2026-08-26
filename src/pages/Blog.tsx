@@ -263,9 +263,9 @@ const Blog = () => {
                     aria-label={`Load more stories. Showing ${visibleCount} of ${filtered.length}`}
                     className="group px-10 py-3.5 rounded-full flex items-center gap-3 text-sm font-medium tracking-wide transition-all duration-300"
                     style={{
-                      background: "rgba(22,11,0,0.85)",
+                      background: "hsl(var(--primary))",
                       border: "1px solid rgba(107,45,143,0.30)",
-                      color: "rgba(245,232,238,0.88)",
+                      color: "hsl(var(--primary-foreground))",
                       fontFamily: "'Cinzel',serif",
                       fontSize: "12px",
                       letterSpacing: "0.12em",
@@ -276,7 +276,7 @@ const Blog = () => {
                       (e.currentTarget as HTMLButtonElement).style.color = "#6B2D8F";
                     }}
                     onMouseLeave={e => {
-                      (e.currentTarget as HTMLButtonElement).style.background = "rgba(22,11,0,0.85)";
+                      (e.currentTarget as HTMLButtonElement).style.background = "hsl(var(--primary))";
                       (e.currentTarget as HTMLButtonElement).style.borderColor = "rgba(107,45,143,0.30)";
                       (e.currentTarget as HTMLButtonElement).style.color = "rgba(245,232,238,0.88)";
                     }}

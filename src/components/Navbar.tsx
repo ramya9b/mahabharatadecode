@@ -135,7 +135,7 @@ const Navbar = () => {
           >
             <div style={{
               width: "34px", height: "34px", borderRadius: "50%",
-              background: "#0E0900",
+              background: "hsl(var(--card))",
               boxShadow: "0 0 0 2px #6B2D8F, 0 0 0 4px rgba(167,139,250,0.4), 0 0 16px rgba(107,45,143,0.25)",
               display: "flex", alignItems: "center", justifyContent: "center",
               flexShrink: 0,
@@ -315,7 +315,7 @@ const Navbar = () => {
           >
             <div style={{
               width: "32px", height: "32px", borderRadius: "50%",
-              background: "#0E0900",
+              background: "hsl(var(--card))",
               boxShadow: "0 0 0 2px #6B2D8F, 0 0 0 3.5px rgba(167,139,250,0.3)",
               display: "flex", alignItems: "center", justifyContent: "center",
               flexShrink: 0,
@@ -367,7 +367,7 @@ const Navbar = () => {
           style={{
             margin: "10px 0 0",
             padding: "16px",
-            background: "rgba(10,6,20,0.96)",
+            background: "hsl(var(--card))",
             backdropFilter: "blur(24px)",
             WebkitBackdropFilter: "blur(24px)",
             borderRadius: "16px",

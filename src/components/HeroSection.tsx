@@ -213,7 +213,7 @@ const HeroSection = () => {
             fontFamily: "'Cormorant Garamond', Georgia, serif",
             fontSize: "clamp(17px, 2.1vw, 20px)",
             lineHeight: 1.8,
-            color: "rgba(220,205,175,0.78)",
+            color: "rgba(255,246,232,0.94)",
             letterSpacing: "0.015em",
           }}
         >

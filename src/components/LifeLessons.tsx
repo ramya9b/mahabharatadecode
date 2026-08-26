@@ -66,7 +66,7 @@ const LifeLessons = () => {
               className="flex-shrink-0 snap-start premium-card"
               style={{
                 width: "300px",
-                background: "rgba(22,11,0,0.85)",
+                background: "hsl(var(--card))",
                 border: "1px solid rgba(107,45,143,0.22)",
                 borderRadius: "16px",
                 padding: "28px",
@@ -103,7 +103,7 @@ const LifeLessons = () => {
                 fontFamily: "'Cinzel',serif",
                 fontSize: "17px",
                 fontWeight: 600,
-                color: "#F5E8EE",
+                color: "hsl(var(--card-foreground))",
                 marginBottom: "12px",
                 lineHeight: 1.3,
               }}>
@@ -114,7 +114,7 @@ const LifeLessons = () => {
                 fontFamily: "'Cormorant Garamond',Georgia,serif",
                 fontSize: "16px",
                 lineHeight: 1.8,
-                color: "rgba(245,232,238,0.75)",
+                color: "hsl(var(--muted-foreground))",
                 marginBottom: "20px",
               }}>
                 {lesson.insight}
