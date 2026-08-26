@@ -113,8 +113,8 @@ const LanguageSwitcher = (_: LanguageSwitcherProps = {}) => {
         aria-label={t("lang.select")}
         className="flex items-center gap-1.5 px-3 py-1.5 rounded-full transition-all duration-200 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary/50"
         style={{
-          background: open ? "rgba(107,45,143,0.14)" : "rgba(139,105,20,0.06)",
-          border: "1px solid rgba(139,105,20,0.2)",
+          background: open ? "rgba(247,231,184,0.98)" : "rgba(255,246,228,0.92)",
+          border: "1px solid rgba(201,162,39,0.45)",
           color: "hsl(var(--primary))",
         }}
       >

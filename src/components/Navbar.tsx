@@ -28,6 +28,8 @@ const Navbar = () => {
   const menuRef                     = useRef<HTMLDivElement>(null);
   const burgerRef                   = useRef<HTMLButtonElement>(null);
   const isQuiz                      = pathname.startsWith("/quiz");
+  /* Only the homepage has the dark hero behind an untinted navbar. */
+  const overHero                    = pathname === "/" && !scrolled;
 
   useEffect(() => {
     const fn = () => setScrolled(window.scrollY > 40);
@@ -155,9 +157,12 @@ const Navbar = () => {
               fontWeight: 700,
               letterSpacing: "0.16em",
               textTransform: "uppercase",
-              color: "#6B2D8F",
+              color: overHero ? "#F7E7B8" : "#3E1259",
               whiteSpace: "nowrap",
-              textShadow: "0 0 20px rgba(107,45,143,0.80), 0 2px 10px rgba(107,45,143,0.60)",
+              textShadow: overHero
+                ? "0 2px 12px rgba(20,6,32,0.85), 0 0 26px rgba(201,162,39,0.45)"
+                : "0 1px 8px rgba(255,255,255,0.6)",
+              transition: "color 0.4s, text-shadow 0.4s",
             }}
               className="hidden xs:inline sm:inline"
             >
@@ -332,7 +337,9 @@ const Navbar = () => {
             <span style={{
               fontFamily: "'Cinzel',serif", fontSize: "11px", fontWeight: 600,
               letterSpacing: "0.12em", textTransform: "uppercase",
-              color: "#6B2D8F", whiteSpace: "nowrap",
+              color: overHero ? "#F7E7B8" : "#3E1259", whiteSpace: "nowrap",
+              textShadow: overHero ? "0 2px 12px rgba(20,6,32,0.85)" : "none",
+              transition: "color 0.4s",
               maxWidth: "160px", overflow: "hidden", textOverflow: "ellipsis",
             }}>MahabharataDecoded</span>
           </Link>
@@ -347,8 +354,8 @@ const Navbar = () => {
               aria-label={mobileOpen ? t("nav.close_menu") : t("nav.open_menu")}
               style={{
                 width: "34px", height: "34px", borderRadius: "10px",
-                background: "rgba(107,45,143,0.1)",
-                border: "1px solid rgba(107,45,143,0.2)",
+                background: "rgba(255,246,228,0.92)",
+                border: "1px solid rgba(201,162,39,0.45)",
                 display: "flex", alignItems: "center", justifyContent: "center",
                 color: "#6B2D8F", cursor: "pointer", flexShrink: 0,
               }}
