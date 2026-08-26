@@ -21,34 +21,91 @@ const DUST = Array.from({ length: 12 }, () => ({
 }));
 
 
-/* ── Gopuram silhouette. Stepped tiers narrowing upward with a kalasham
-      finial, echoing the temple towers on the TTD site. Drawn rather than
-      photographed so it scales, recolours with the palette, and costs no
-      network request. ── */
-const Gopuram = ({ x, w, h, opacity }: { x: number; w: number; h: number; opacity: number }) => {
-  const TIERS = 6;
-  const tierH = h / TIERS;
-  const tiers = Array.from({ length: TIERS }, (_, i) => {
-    const tw = w * (1 - i * 0.115);
-    return (
-      <rect
-        key={i}
-        x={x + (w - tw) / 2}
-        y={320 - (i + 1) * tierH}
-        width={tw}
-        height={tierH * 0.82}
-        rx={1.5}
-      />
-    );
-  });
-  const cx = x + w / 2;
-  const top = 320 - h;
+/* ─────────────────────────────────────────────────────────
+   Hastinapura skyline.
+
+   Drawn rather than photographed: it scales to any viewport, recolours
+   with the palette, costs no network request, and carries no licensing
+   risk — most "Hastinapura" imagery online is TV-serial stills.
+
+   Composed as three depth layers, far to near, each at a lower opacity
+   so the city recedes: distant shikharas, the palace quarter, then the
+   rampart wall with its gatehouse.
+   ───────────────────────────────────────────────────────── */
+
+const GROUND = 320;
+
+/* Kalasham finial — the pot-and-spire that tops temple towers and domes. */
+const Finial = ({ cx, y }: { cx: number; y: number }) => (
+  <>
+    <rect x={cx - 1.1} y={y - 13} width={2.2} height={10} />
+    <circle cx={cx} cy={y - 16} r={4} />
+  </>
+);
+
+/* Tiered temple tower. */
+const Shikhara = ({ x, w, h, tiers = 6 }: { x: number; w: number; h: number; tiers?: number }) => {
+  const tierH = h / tiers;
   return (
-    <g opacity={opacity}>
-      {tiers}
-      <rect x={cx - 1.4} y={top - 17} width={2.8} height={13} />
-      <circle cx={cx} cy={top - 21} r={5.5} />
-    </g>
+    <>
+      {Array.from({ length: tiers }, (_, i) => {
+        const tw = w * (1 - i * 0.115);
+        return (
+          <rect key={i} x={x + (w - tw) / 2} y={GROUND - (i + 1) * tierH}
+                width={tw} height={tierH * 0.82} rx={1.5} />
+        );
+      })}
+      <Finial cx={x + w / 2} y={GROUND - h} />
+    </>
+  );
+};
+
+/* Palace dome on a drum. */
+const Dome = ({ cx, base, r }: { cx: number; base: number; r: number }) => (
+  <>
+    <rect x={cx - r * 1.15} y={base - r * 0.28} width={r * 2.3} height={GROUND - base + r * 0.28} />
+    <path d={`M ${cx - r} ${base} A ${r} ${r * 1.2} 0 0 1 ${cx + r} ${base} Z`} />
+    <Finial cx={cx} y={base - r * 1.2} />
+  </>
+);
+
+/* Watchtower with a banner. */
+const Watchtower = ({ x, w, h }: { x: number; w: number; h: number }) => {
+  const top = GROUND - h;
+  return (
+    <>
+      <rect x={x} y={top} width={w} height={h} />
+      <rect x={x - w * 0.22} y={top} width={w * 1.44} height={w * 0.42} rx={1} />
+      <path d={`M ${x + w / 2} ${top - 26} L ${x + w / 2 + 22} ${top - 19} L ${x + w / 2} ${top - 12} Z`} />
+      <rect x={x + w / 2 - 1} y={top - 28} width={2} height={28} />
+    </>
+  );
+};
+
+/* Rampart wall: crenellated top, arched windows below. */
+const Rampart = ({ x, w, h, gate }: { x: number; w: number; h: number; gate?: boolean }) => {
+  const top = GROUND - h;
+  const merlons = Math.floor(w / 26);
+  const cx = x + w / 2;
+  return (
+    <>
+      <rect x={x} y={top} width={w} height={h} />
+      {Array.from({ length: merlons }, (_, i) => (
+        <rect key={i} x={x + 6 + i * 26} y={top - 10} width={14} height={11} />
+      ))}
+      {Array.from({ length: Math.max(0, merlons - 1) }, (_, i) => {
+        const wx = x + 15 + i * 26;
+        if (gate && Math.abs(wx - cx) < 44) return null;
+        return (
+          <path key={i} fill="rgba(255,255,255,0.14)"
+                d={`M ${wx} ${top + h} L ${wx} ${top + 26} A 5 5 0 0 1 ${wx + 10} ${top + 26} L ${wx + 10} ${top + h} Z`} />
+        );
+      })}
+      {gate && (
+        <path fill="rgba(255,255,255,0.16)"
+              d={`M ${cx - 26} ${GROUND} L ${cx - 26} ${top + 34} A 26 30 0 0 1 ${cx + 26} ${top + 34} L ${cx + 26} ${GROUND} Z`} />
+      )}
+    </>
   );
 };
 
@@ -89,16 +146,34 @@ const HeroSection = () => {
         className="absolute inset-x-0 bottom-0 will-change-transform pointer-events-none"
         aria-hidden="true"
       >
-        <svg viewBox="0 0 1440 320" preserveAspectRatio="xMidYMax slice" className="w-full" style={{ height: "46vh", display: "block" }}>
-          <g fill="#3E1259">
-            <Gopuram x={40}   w={150} h={150} opacity={0.28} />
-            <Gopuram x={250}  w={210} h={232} opacity={0.38} />
-            <Gopuram x={560}  w={300} h={300} opacity={0.5} />
-            <Gopuram x={950}  w={205} h={225} opacity={0.38} />
-            <Gopuram x={1230} w={155} h={158} opacity={0.28} />
+        <svg viewBox="0 0 1440 320" preserveAspectRatio="xMidYMax slice" className="w-full" style={{ height: "52vh", display: "block" }}>
+          {/* far — distant temple towers */}
+          <g fill="#3E1259" opacity={0.22}>
+            <Shikhara x={70}   w={104} h={126} />
+            <Shikhara x={300}  w={86}  h={100} />
+            <Shikhara x={1090} w={92}  h={110} />
+            <Shikhara x={1290} w={110} h={132} />
           </g>
-          {/* ground line the towers stand on */}
-          <rect x="0" y="304" width="1440" height="16" fill="#3E1259" opacity="0.5" />
+
+          {/* mid — the palace quarter */}
+          <g fill="#3E1259" opacity={0.36}>
+            <Dome cx={250} base={196} r={44} />
+            <Shikhara x={470} w={150} h={196} />
+            <Dome cx={720} base={150} r={62} />
+            <Shikhara x={860} w={148} h={192} />
+            <Dome cx={1160} base={198} r={42} />
+            <Watchtower x={392} w={26} h={172} />
+            <Watchtower x={1024} w={26} h={168} />
+          </g>
+
+          {/* near — the city wall */}
+          <g fill="#3E1259" opacity={0.58}>
+            <Rampart x={-20}  w={560} h={70} />
+            <Rampart x={560}  w={320} h={86} gate />
+            <Rampart x={900}  w={560} h={70} />
+            <Watchtower x={540} w={30} h={124} />
+            <Watchtower x={872} w={30} h={124} />
+          </g>
         </svg>
       </div>
 
