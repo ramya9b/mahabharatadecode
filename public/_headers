@@ -14,7 +14,7 @@
 # max-age=14400, so a deploy can take up to 4 hours to reach returning
 # visitors: the stale worker keeps serving its old precache.
 /sw.js
-  Cache-Control: no-cache
+  Cache-Control: public, max-age=0, must-revalidate
 
 # Prerendered article pages. The /*.html rule above does not match these —
 # Pages serves them extensionless (/blog/slug), so they fell through to
