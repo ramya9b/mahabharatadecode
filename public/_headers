@@ -10,6 +10,20 @@
 /
   Cache-Control: no-cache, no-store, must-revalidate
 
+# Service worker — must always revalidate. Without this Pages serves it with
+# max-age=14400, so a deploy can take up to 4 hours to reach returning
+# visitors: the stale worker keeps serving its old precache.
+/sw.js
+  Cache-Control: no-cache
+
+# Prerendered article pages. The /*.html rule above does not match these —
+# Pages serves them extensionless (/blog/slug), so they fell through to
+# max-age=0 and every request hit the origin. Cloudflare purges the Pages
+# cache on each deploy, so a long edge TTL stays correct: readers get a
+# cached page, a new deploy invalidates it.
+/blog/*
+  Cache-Control: public, max-age=300, s-maxage=86400, stale-while-revalidate=604800
+
 # Security headers on all routes
 /*
   X-Content-Type-Options: nosniff
