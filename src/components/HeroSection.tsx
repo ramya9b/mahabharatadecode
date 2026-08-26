@@ -1,4 +1,4 @@
-import { useEffect, useRef } from "react";
+import { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import { useTranslation } from "react-i18next";
 
@@ -109,10 +109,47 @@ const Rampart = ({ x, w, h, gate }: { x: number; w: number; h: number; gate?: bo
   );
 };
 
+/* ─────────────────────────────────────────────────────────
+   Hero carousel.
+
+   Images are globbed from src/assets/hero at build time, so adding one is
+   a matter of dropping a file in that folder — no import to add, no list
+   to keep in sync. They cycle in filename order.
+
+   With the folder empty this resolves to [], the carousel renders nothing,
+   and the drawn Hastinapura skyline below shows through. That is the
+   intended fallback, not a failure state.
+   ───────────────────────────────────────────────────────── */
+const HERO_IMAGES: string[] = Object.entries(
+  import.meta.glob("@/assets/hero/*.{webp,jpg,jpeg,png}", { eager: true, query: "?url", import: "default" }) as Record<string, string>
+)
+  .sort(([a], [b]) => a.localeCompare(b))
+  .map(([, url]) => url);
+
+const SLIDE_MS = 12000;
+
 const HeroSection = () => {
   const { t }   = useTranslation();
   const heroRef = useRef<HTMLDivElement>(null);
+  const [slide, setSlide] = useState(0);
   const glowRef = useRef<HTMLDivElement>(null);
+
+  /* Advance the carousel. Skipped entirely for a single image, for no
+     images, and when the visitor has asked for reduced motion. Paused
+     while the tab is hidden so a backgrounded tab is not cycling. */
+  useEffect(() => {
+    if (HERO_IMAGES.length < 2) return;
+    if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) return;
+
+    let id: number | undefined;
+    const start = () => { id = window.setInterval(() => setSlide((i) => (i + 1) % HERO_IMAGES.length), SLIDE_MS); };
+    const stop  = () => { if (id !== undefined) { window.clearInterval(id); id = undefined; } };
+    const onVisibility = () => (document.hidden ? stop() : start());
+
+    start();
+    document.addEventListener("visibilitychange", onVisibility);
+    return () => { stop(); document.removeEventListener("visibilitychange", onVisibility); };
+  }, []);
 
   /* Parallax scroll */
   useEffect(() => {
@@ -134,14 +171,46 @@ const HeroSection = () => {
              160KB render-blocking download from the largest paint. ── */}
       <div className="absolute inset-0" style={{ background: "var(--hero-gradient)" }} />
 
+      {/* ── Photographic layer. Crossfades between whatever is in
+             src/assets/hero; absent that folder having images, nothing
+             renders here and the drawn skyline carries the hero. ── */}
+      {HERO_IMAGES.map((src, i) => (
+        <div
+          key={src}
+          className="absolute inset-0 transition-opacity duration-[1600ms] ease-in-out"
+          style={{ opacity: i === slide ? 1 : 0 }}
+          aria-hidden="true"
+        >
+          <img
+            src={src}
+            alt=""
+            loading={i === 0 ? "eager" : "lazy"}
+            fetchPriority={i === 0 ? "high" : "low"}
+            decoding={i === 0 ? "sync" : "async"}
+            className="w-full h-full object-cover"
+          />
+        </div>
+      ))}
+
+      {/* Tint over the photographs so the palette still reads as ours and
+          the headline keeps its contrast whatever the image is doing. */}
+      {HERO_IMAGES.length > 0 && (
+        <div
+          className="absolute inset-0"
+          style={{ background: "linear-gradient(180deg, rgba(62,18,89,0.62) 0%, rgba(107,45,143,0.34) 45%, rgba(224,87,75,0.30) 100%)" }}
+        />
+      )}
+
       {/* Sunrise behind the towers */}
       <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 72% 52% at 50% 80%, rgba(255,206,120,0.42) 0%, transparent 62%)" }} />
 
       {/* Soft light from above */}
       <div className="absolute inset-0" style={{ background: "radial-gradient(ellipse 85% 55% at 50% 6%, rgba(255,255,255,0.18) 0%, transparent 58%)" }} />
 
-      {/* ── Gopuram skyline, parallaxed ── */}
+      {/* ── Drawn Hastinapura, parallaxed. Hidden once photographs are
+             present so the two cities do not stack. ── */}
       <div
+        hidden={HERO_IMAGES.length > 0}
         ref={heroRef}
         className="absolute inset-x-0 bottom-0 will-change-transform pointer-events-none"
         aria-hidden="true"
