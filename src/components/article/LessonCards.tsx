@@ -1,4 +1,5 @@
 import type { KeyLesson } from "@/data/articles";
+import { useTranslation } from "react-i18next";
 import { useScrollReveal, useStaggeredReveal } from "@/hooks/useScrollReveal";
 
 interface LessonCardsProps {
@@ -91,6 +92,7 @@ const LessonCard = ({
 };
 
 const LessonCards = ({ lessons, characterName = "the Mahabharata" }: LessonCardsProps) => {
+  const { t } = useTranslation();
   const headerRef = useScrollReveal<HTMLDivElement>();
   const gridRef = useStaggeredReveal(lessons.length);
 
@@ -109,17 +111,17 @@ const LessonCards = ({ lessons, characterName = "the Mahabharata" }: LessonCards
       >
         <div className="flex items-center gap-4 mb-5">
           <div className="h-px w-10 bg-primary/40" />
-          <span className="section-label !mb-0">Key Lessons</span>
+          <span className="section-label !mb-0">{t("article.key_lessons_label")}</span>
         </div>
         <h2
           className="font-heading font-bold text-foreground leading-tight"
           style={{ fontSize: "clamp(28px, 3.5vw, 42px)" }}
         >
-          What {characterName}'s Story
-          <span className="gold-text"> Teaches Us</span>
+          {t("article.lessons_heading_lead", { name: characterName })}
+          <span className="gold-text"> {t("article.lessons_heading_accent")}</span>
         </h2>
         <p className="text-muted-foreground mt-4 leading-relaxed" style={{ fontSize: "17px" }}>
-          Six timeless principles extracted from the epic — each one a mirror held up to modern life.
+          {t("article.lessons_intro")}
         </p>
       </div>
 

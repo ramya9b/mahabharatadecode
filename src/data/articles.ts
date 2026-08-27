@@ -4591,7 +4591,12 @@ export const articles: Article[] = [
        `content`, so it carries no story blocks or life lessons. Declared
        explicitly so the shape still matches every other article. */
     storyBlocks: [],
-    lifeLessons: [],
+    lifeLessons: [
+      "The Mahabharata spends only a fifth of its length on the war. The rest is how people arrived there and what it cost — which is where the instruction actually lives.",
+      "Each Parva is named for what it carries, not for who wins it. Naming a thing honestly is the first step to understanding it.",
+      "The Shanti and Anushasana Parvas — the teaching books — come after the war, not before. Wisdom is what you assemble from the wreckage, rarely what you had in time to prevent it.",
+      "The epic ends with the Svargarohana Parva, the ascent. Even after everything, the story insists the journey was going somewhere.",
+    ],
     tags: ["Epic Structure", "18 Parvas", "Mahabharata Overview", "Sanskrit Literature"],
     relatedSlugs: [
       "who-caused-mahabharata-war",
@@ -10761,7 +10766,7 @@ export const articles: Article[] = [
       hook: "A man tore open another man's chest and drank his blood in the middle of a battlefield — and the Mahabharata treats it not as madness but as a promise finally kept. This is why Bhima did it.",
       supporting: "Dushasana dragged Draupadi by her hair. Bhima swore that day he would drink his blood. Thirteen years later, on the sixteenth day of the war, he did exactly what he said.",
     },
-    relatedSlugs: ["draupadi-humiliation-dice-game", "how-did-duryodhana-die", "how-did-karnas-chariot-wheel-sink"],
+    relatedSlugs: ["draupadi-humiliation-dice-game", "how-did-duryodhana-die", "why-did-karnas-chariot-wheel-sink"],
     storyBlocks: [
       {
         section: "introduction",
@@ -10931,7 +10936,7 @@ export const articles: Article[] = [
         links: [
           { slug: "draupadi-humiliation-dice-game", label: "Draupadi Was Stripped in Front of a Thousand Men. What She Did Next Changed Everything." },
           { slug: "how-did-duryodhana-die", label: "How Did Duryodhana Die? The Broken Thigh and the Last Duel" },
-          { slug: "how-did-karnas-chariot-wheel-sink", label: "Why Did Karna's Chariot Wheel Sink? The Two Curses That Came Due" },
+          { slug: "why-did-karnas-chariot-wheel-sink", label: "Why Did Karna's Chariot Wheel Sink? The Two Curses That Came Due" },
         ],
       },
     ],

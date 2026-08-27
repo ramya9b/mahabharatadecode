@@ -405,5 +405,19 @@
   "bells": {
     "mute": "Silence the temple bells",
     "unmute": "Ring the temple bells"
+  },
+  "article": {
+    "key_lessons_label": "Key Lessons",
+    "lessons_heading_lead": "What {{name}}'s Story",
+    "lessons_heading_accent": "Teaches Us",
+    "lessons_intro": "Six timeless principles extracted from the epic — each one a mirror held up to modern life.",
+    "modern_label": "Modern Parallels",
+    "modern_heading_lead": "This Story Is",
+    "modern_heading_accent": "Your Story",
+    "modern_intro": "The Mahabharata was not written for ancient India. It was written for every human being who has ever faced an impossible choice. Here is where {{name}}'s dilemma lives today.",
+    "related_label": "Continue Reading",
+    "related_heading": "More Epic Stories",
+    "related_view_all": "View all stories",
+    "read_story": "Read Story"
   }
 }

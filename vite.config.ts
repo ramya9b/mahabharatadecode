@@ -5,6 +5,7 @@ import { VitePWA } from "vite-plugin-pwa";
 import path from "path";
 import fs from "node:fs";
 import { articles } from "./src/data/articles";
+import { toIsoDate } from "./src/utils/articleDate";
 
 const BASE_URL  = "https://mahabharatadecoded.com";
 const SITE_NAME = "MahabharataDecoded";
@@ -69,7 +70,7 @@ function articleJsonLd(a: PrerenderArticle): string {
     headline: a.metaTitle || a.title,
     description: desc,
     image, url,
-    datePublished: a.publishDate || "2026-01-01",
+    datePublished: toIsoDate(a.publishDate) || "2026-01-01",
     author: { "@type": "Organization", name: SITE_NAME },
     publisher: { "@type": "Organization", name: SITE_NAME, logo: { "@type": "ImageObject", url: `${BASE_URL}/logo.png` } },
   }];

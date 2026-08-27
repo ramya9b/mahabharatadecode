@@ -1,4 +1,5 @@
 import { Link } from "react-router-dom";
+import { useTranslation } from "react-i18next";
 import { Clock, ArrowRight } from "lucide-react";
 import type { Article } from "@/data/articles";
 import { resolveImage } from "@/utils/images";
@@ -9,6 +10,7 @@ interface RelatedPostsProps {
 }
 
 const RelatedCard = ({ article }: { article: Article }) => {
+  const { t } = useTranslation();
   const image = resolveImage(article.imageKey);
 
   const categoryColor: Record<string, string> = {
@@ -74,7 +76,7 @@ const RelatedCard = ({ article }: { article: Article }) => {
 
         {/* Read link */}
         <span className="flex items-center gap-2 text-primary text-xs font-medium tracking-wide group-hover:gap-3 transition-all duration-300">
-          <span style={{ fontFamily: "'Cinzel', serif" }}>Read Story</span>
+          <span style={{ fontFamily: "'Cinzel', serif" }}>{t("article.read_story")}</span>
           <ArrowRight size={13} className="group-hover:translate-x-0.5 transition-transform" />
         </span>
       </div>
@@ -83,6 +85,7 @@ const RelatedCard = ({ article }: { article: Article }) => {
 };
 
 const RelatedPosts = ({ articles }: RelatedPostsProps) => {
+  const { t } = useTranslation();
   const headerRef = useScrollReveal<HTMLDivElement>();
   const gridRef = useStaggeredReveal(articles.length);
 
@@ -97,12 +100,12 @@ const RelatedPosts = ({ articles }: RelatedPostsProps) => {
           className="reveal-element flex items-center justify-between mb-12"
         >
           <div>
-            <span className="section-label block mb-2">Continue Reading</span>
+            <span className="section-label block mb-2">{t("article.related_label")}</span>
             <h2
               className="font-heading font-bold text-foreground"
               style={{ fontSize: "clamp(24px, 3vw, 36px)" }}
             >
-              More Epic Stories
+              {t("article.related_heading")}
             </h2>
           </div>
           <Link
@@ -110,7 +113,7 @@ const RelatedPosts = ({ articles }: RelatedPostsProps) => {
             className="hidden sm:flex items-center gap-2 text-primary text-sm hover:text-gold-light transition-colors duration-200 group"
             style={{ fontFamily: "'Cinzel', serif" }}
           >
-            View all stories
+            {t("article.related_view_all")}
             <ArrowRight
               size={14}
               className="group-hover:translate-x-1 transition-transform"

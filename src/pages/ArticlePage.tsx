@@ -96,6 +96,15 @@ const ArticlePage = () => {
   const related    = getRelatedArticles(article);
   const articleUrl = `https://mahabharatadecoded.com/blog/${article.slug}`;
 
+  /* The article's own character field is the accurate name — imageKey only
+     has six values, so anyone outside that set (Savitri, Vidura, Kunti)
+     used to fall back to a generic phrase. */
+  const articleCharacterName =
+    article.character ||
+    ({ karna: "Karna", krishna: "Krishna", arjuna: "Arjuna",
+       draupadi: "Draupadi", bhishma: "Bhishma" } as Record<string, string>)[article.imageKey] ||
+    "the Mahabharata";
+
   return (
     <div className="min-h-screen bg-background text-foreground overflow-x-hidden">
       {/* ── Gold reading progress bar ── */}
@@ -184,20 +193,16 @@ const ArticlePage = () => {
         {article.keyLessons && article.keyLessons.length > 0 && (
           <LessonCards
             lessons={article.keyLessons}
-            characterName={
-              article.imageKey === "karna"    ? "Karna"     :
-              article.imageKey === "krishna"  ? "Krishna"   :
-              article.imageKey === "arjuna"   ? "Arjuna"    :
-              article.imageKey === "draupadi" ? "Draupadi"  :
-              article.imageKey === "bhishma"  ? "Bhishma"   :
-              "the Mahabharata"
-            }
+            characterName={articleCharacterName}
           />
         )}
 
         {/* Modern Relevance */}
         {article.modernConnections && article.modernConnections.length > 0 && (
-          <ModernConnections connections={article.modernConnections} />
+          <ModernConnections
+            connections={article.modernConnections}
+            characterName={articleCharacterName}
+          />
         )}
 
         {/* Sacred Sloka */}

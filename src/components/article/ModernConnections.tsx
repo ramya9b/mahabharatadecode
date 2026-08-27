@@ -1,8 +1,12 @@
 import type { ModernConnection } from "@/data/articles";
+import { useTranslation } from "react-i18next";
 import { useScrollReveal, useStaggeredReveal } from "@/hooks/useScrollReveal";
 
 interface ModernConnectionsProps {
   connections: ModernConnection[];
+  /** Whose dilemma this article is about. Without it the copy named Karna
+      on every article that rendered this section. */
+  characterName?: string;
 }
 
 const ConnectionCard = ({
@@ -66,7 +70,8 @@ const ConnectionCard = ({
   );
 };
 
-const ModernConnections = ({ connections }: ModernConnectionsProps) => {
+const ModernConnections = ({ connections, characterName }: ModernConnectionsProps) => {
+  const { t } = useTranslation();
   const headerRef = useScrollReveal<HTMLDivElement>();
   const cardsRef = useStaggeredReveal(connections.length);
 
@@ -88,13 +93,13 @@ const ModernConnections = ({ connections }: ModernConnectionsProps) => {
       >
         <div className="flex items-center gap-4 mb-5">
           <div className="h-px w-10 bg-primary/40" />
-          <span className="section-label !mb-0">Modern Parallels</span>
+          <span className="section-label !mb-0">{t("article.modern_label")}</span>
         </div>
         <h2
           className="font-heading font-bold text-foreground leading-tight"
           style={{ fontSize: "clamp(28px, 3.5vw, 42px)" }}
         >
-          This Story Is{" "}
+          {t("article.modern_heading_lead")}{" "}
           <span
             style={{
               background:
@@ -104,15 +109,14 @@ const ModernConnections = ({ connections }: ModernConnectionsProps) => {
               backgroundClip: "text",
             }}
           >
-            Your Story
+            {t("article.modern_heading_accent")}
           </span>
         </h2>
         <p
           className="text-muted-foreground mt-4 leading-relaxed"
           style={{ fontSize: "17px" }}
         >
-          The Mahabharata was not written for ancient India. It was written for every human being
-          who has ever faced an impossible choice. Here is where Karna's dilemma lives today.
+          {t("article.modern_intro", { name: characterName || "this hero" })}
         </p>
       </div>
 

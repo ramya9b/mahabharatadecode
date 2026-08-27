@@ -1,5 +1,6 @@
 import { useEffect } from "react";
 
+import { toIsoDate } from "@/utils/articleDate";
 const SITE_NAME = "MahabharataDecoded";
 const BASE_URL = "https://mahabharatadecoded.com";
 const DEFAULT_DESCRIPTION =
@@ -130,7 +131,7 @@ export function buildArticleSchema(args: {
     description: args.description,
     image: args.image || DEFAULT_IMAGE,
     url: `${BASE_URL}/blog/${args.slug}`,
-    datePublished: args.publishedAt || "2026-01-01",
+    datePublished: toIsoDate(args.publishedAt) || "2026-01-01",
     author: { "@type": "Organization", name: SITE_NAME },
     publisher: {
       "@type": "Organization",
