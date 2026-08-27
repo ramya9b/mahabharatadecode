@@ -133,7 +133,7 @@ const Navbar = () => {
             aria-label="MahabharataDecoded — go to homepage"
             style={{
               display: "flex", alignItems: "center", gap: "10px",
-              textDecoration: "none", flexShrink: 0,
+              textDecoration: "none", flexShrink: 1, minWidth: 0, overflow: "hidden",
             }}
           >
             <div style={{
@@ -160,6 +160,9 @@ const Navbar = () => {
               textTransform: "uppercase",
               color: overHero ? "#F7E7B8" : "#3E1259",
               whiteSpace: "nowrap",
+              overflow: "hidden",
+              textOverflow: "ellipsis",
+              minWidth: 0,
               textShadow: overHero
                 ? "0 2px 12px rgba(20,6,32,0.85), 0 0 26px rgba(201,162,39,0.45)"
                 : "0 1px 8px rgba(255,255,255,0.6)",
@@ -177,6 +180,9 @@ const Navbar = () => {
               display: "flex",
               alignItems: "center",
               gap: "2px",
+              flexShrink: 1,
+              minWidth: 0,
+              overflow: "hidden",
               background: pillBg,
               borderRadius: "100px",
               padding: "5px 6px",
@@ -320,7 +326,7 @@ const Navbar = () => {
           <Link
             to="/"
             aria-label="MahabharataDecoded homepage"
-            style={{ display: "flex", alignItems: "center", gap: "8px", textDecoration: "none", flexShrink: 0 }}
+            style={{ display: "flex", alignItems: "center", gap: "8px", textDecoration: "none", flexShrink: 1, minWidth: 0, overflow: "hidden" }}
           >
             <div style={{
               width: "32px", height: "32px", borderRadius: "50%",
