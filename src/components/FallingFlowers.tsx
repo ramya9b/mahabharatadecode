@@ -26,9 +26,9 @@ const FLOWERS: ReadonlyArray<[number, number, number, number, number, number, st
   [ 62, 10.2, 22, 13, -30, 210, "#E0574B", true ],
   [ 69, 7.6, 17, 10, 36,  170, "#F5821F", false],
   [ 76, 0.8, 19, 15, -52, -240, "#E9A6C8", true ],
-  [ 83, 13.1, 16, 12, 28, 200,  "#C9A227", false],
+  [ 82, 13.1, 16, 12, -28, 200, "#C9A227", false],
   [ 90, 4.3, 21, 14, -40, -180, "#FFF6E4", true ],
-  [ 96, 8.7, 18, 11, 34,  230, "#E0574B", false],
+  [ 92, 8.7, 18, 11, -36, 230, "#E0574B", false],
 ];
 
 const FallingFlowers = () => {

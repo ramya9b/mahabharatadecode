@@ -113,7 +113,8 @@ const Navbar = () => {
           WebkitBackdropFilter: scrolled ? "blur(16px)" : "none",
           borderBottom: scrolled ? `1px solid rgba(107,45,143,0.1)` : "none",
           transition: "all 0.4s cubic-bezier(0.4,0,0.2,1)",
-          overflow: "hidden",
+          /* Must stay visible — the language dropdown escapes this box. */
+          overflow: "visible",
         }}
       >
         {/* ── Desktop (≥1024px) ── */}
@@ -320,7 +321,7 @@ const Navbar = () => {
         {/* ── Mobile ── */}
         <div
           className="lg:hidden flex items-center justify-between"
-          style={{ maxWidth: "100%", overflow: "hidden" }}
+          style={{ maxWidth: "100%" }}
         >
           {/* Mobile logo — M circle only, no text (text overflows on 360-390px phones) */}
           <Link

@@ -69,9 +69,9 @@ const FeaturedStories = () => {
                   <span
                     className="font-heading text-[10px] tracking-[0.2em] uppercase px-3 py-1.5 rounded-full backdrop-blur-sm"
                     style={{
-                      background: `rgba(${story.accent === "#6B2D8F" ? "107,45,143" : story.accent === "#4A90D9" ? "74,144,217" : "39,174,96"},0.2)`,
-                      border: `1px solid ${story.accent}55`,
-                      color: story.accent,
+                      background: "rgba(8,6,20,0.62)",
+                      border: `1px solid ${story.accent}99`,
+                      color: "#FFF6E4",
                     }}
                   >
                     {story.tag}
