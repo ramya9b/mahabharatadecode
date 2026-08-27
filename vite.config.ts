@@ -6,6 +6,21 @@ import path from "path";
 import fs from "node:fs";
 import { articles } from "./src/data/articles";
 import { toIsoDate } from "./src/utils/articleDate";
+import { applyTranslation, TRANSLATED_LOCALES } from "./src/data/translations/apply";
+
+/* The browser build discovers translations with import.meta.glob; here in
+   the Node config we read the same files straight off disk. */
+const TX_ROOT = path.resolve(__dirname, "src/data/translations");
+function loadTranslation(slug: string, lang: string) {
+  const file = path.join(TX_ROOT, lang, `${slug}.json`);
+  if (!fs.existsSync(file)) return undefined;
+  try { return JSON.parse(fs.readFileSync(file, "utf8")); } catch { return undefined; }
+}
+const hasTranslation = (slug: string, lang: string) => Boolean(loadTranslation(slug, lang));
+function translatedArticle(a: unknown, lang: string) {
+  if (!lang) return a;
+  return applyTranslation(a as never, loadTranslation((a as { slug: string }).slug, lang));
+}
 
 const BASE_URL  = "https://mahabharatadecoded.com";
 const SITE_NAME = "MahabharataDecoded";
@@ -58,8 +73,48 @@ function articleBody(a: PrerenderArticle): string {
   return out.join("\n");
 }
 
-function articleJsonLd(a: PrerenderArticle): string {
-  const url   = `${BASE_URL}/blog/${a.slug}`;
+/* Adds the translated article URLs to the sitemap at build time. The file in
+   public/ stays the English source of truth that the daily routine appends
+   to; this only ever adds, so the two never fight. */
+function augmentSitemap(): Plugin {
+  return {
+    name: "augment-sitemap",
+    apply: "build",
+    closeBundle() {
+      const file = path.resolve(__dirname, "dist/sitemap.xml");
+      if (!fs.existsSync(file)) return;
+      const xml = fs.readFileSync(file, "utf8");
+      const rows: string[] = [];
+      for (const a of articles as unknown as PrerenderArticle[]) {
+        for (const l of TRANSLATED_LOCALES) {
+          if (!hasTranslation(a.slug, l)) continue;
+          const loc = `${BASE_URL}/${l}/blog/${a.slug}`;
+          if (xml.includes(loc)) continue;
+          rows.push(`  <url><loc>${loc}</loc><lastmod>${toIsoDate(a.publishDate) || "2026-01-01"}</lastmod><changefreq>monthly</changefreq><priority>0.80</priority></url>`);
+        }
+      }
+      if (!rows.length) return;
+      const NL = String.fromCharCode(10);
+      fs.writeFileSync(file, xml.replace("</urlset>", rows.join(NL) + NL + "</urlset>"), "utf8");
+      console.log(`[sitemap] added ${rows.length} translated URLs`);
+    },
+  };
+}
+
+function hreflangTags(slug: string): string {
+  const langs = TRANSLATED_LOCALES.filter(l => hasTranslation(slug, l));
+  if (!langs.length) return "";
+  const tag = (hl: string, href: string) =>
+    `<link rel="alternate" hreflang="${hl}" href="${href}" />`;
+  return [
+    tag("en", `${BASE_URL}/blog/${slug}`),
+    ...langs.map(l => tag(l, `${BASE_URL}/${l}/blog/${slug}`)),
+    tag("x-default", `${BASE_URL}/blog/${slug}`),
+  ].join(String.fromCharCode(10));
+}
+
+function articleJsonLd(a: PrerenderArticle, lang = ""): string {
+  const url   = `${BASE_URL}${lang ? "/" + lang : ""}/blog/${a.slug}`;
   const desc  = a.metaDescription || a.summary || a.description || "";
   const image = a.imageKey === "hero"
     ? `${BASE_URL}/og-default.jpg`
@@ -70,6 +125,7 @@ function articleJsonLd(a: PrerenderArticle): string {
     headline: a.metaTitle || a.title,
     description: desc,
     image, url,
+    inLanguage: lang || "en",
     datePublished: toIsoDate(a.publishDate) || "2026-01-01",
     author: { "@type": "Organization", name: SITE_NAME },
     publisher: { "@type": "Organization", name: SITE_NAME, logo: { "@type": "ImageObject", url: `${BASE_URL}/logo.png` } },
@@ -107,8 +163,21 @@ function prerenderArticles(): Plugin {
       fs.mkdirSync(blogDir, { recursive: true });
 
       let count = 0;
+      /* One render per (article, language). The translated pages are the
+         entire point of pre-translating: a crawler gets Telugu HTML at a
+         Telugu URL, which the runtime translate button could never give it. */
+      const jobs: { a: PrerenderArticle; lang: string }[] = [];
       for (const a of articles as unknown as PrerenderArticle[]) {
-        const url   = `${BASE_URL}/blog/${a.slug}`;
+        jobs.push({ a, lang: "" });
+        for (const l of TRANSLATED_LOCALES) {
+          if (hasTranslation(a.slug, l)) jobs.push({ a, lang: l });
+        }
+      }
+
+      for (const job of jobs) {
+        const a = translatedArticle(job.a, job.lang) as PrerenderArticle;
+        const prefix = job.lang ? `/${job.lang}` : "";
+        const url   = `${BASE_URL}${prefix}/blog/${a.slug}`;
         const title = a.metaTitle || `${a.title} | ${SITE_NAME}`;
         const desc  = a.metaDescription || a.summary || a.description || "";
         const image = a.imageKey === "hero"
@@ -119,6 +188,7 @@ function prerenderArticles(): Plugin {
           `<div style="max-width:720px;margin:0 auto;padding:24px;font-family:Georgia,serif;line-height:1.7;color:#F5EDDA;">${articleBody(a)}</div>`;
 
         const html = template
+          .replace(/<html([^>]*)lang="[^"]*"/, `<html$1lang="${job.lang || "en"}"`)
           .replace(/<title>[\s\S]*?<\/title>/, `<title>${escHtml(title)}</title>`)
           .replace(/<meta name="description"[^>]*>/, `<meta name="description" content="${escHtml(desc)}" />`)
           .replace(/<link rel="canonical"[^>]*>/, `<link rel="canonical" href="${url}" />`)
@@ -130,13 +200,16 @@ function prerenderArticles(): Plugin {
           .replace(/<meta name="twitter:title"[^>]*>/, `<meta name="twitter:title" content="${escHtml(title)}" />`)
           .replace(/<meta name="twitter:description"[^>]*>/, `<meta name="twitter:description" content="${escHtml(desc)}" />`)
           .replace(/<meta name="twitter:image"[^>]*>/, `<meta name="twitter:image" content="${escHtml(image)}" />`)
-          .replace("</head>", `${articleJsonLd(a)}\n</head>`)
+          .replace("</head>", `${articleJsonLd(a, job.lang)}\n${hreflangTags(a.slug)}\n</head>`)
           .replace(/<div id="root">\s*<\/div>/, `<div id="root">${fallback}</div>`);
 
-        fs.writeFileSync(path.join(blogDir, `${a.slug}.html`), html, "utf8");
+        const outDir = job.lang ? path.join(distDir, job.lang, "blog") : blogDir;
+        fs.mkdirSync(outDir, { recursive: true });
+        fs.writeFileSync(path.join(outDir, `${a.slug}.html`), html, "utf8");
         count++;
       }
-      console.log(`[prerender] wrote ${count} article pages to dist/blog/`);
+      const tx = jobs.filter(j => j.lang).length;
+      console.log(`[prerender] wrote ${count} article pages (${count - tx} en, ${tx} translated)`);
     },
   };
 }
@@ -188,6 +261,7 @@ export default defineConfig({
     }),
     /* Runs last: emit prerendered dist/blog/<slug>.html after the bundle. */
     prerenderArticles(),
+    augmentSitemap(),
   ],
   esbuild: {
     pure: ["console.log", "console.warn", "console.debug"],

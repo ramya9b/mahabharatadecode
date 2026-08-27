@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { useParams, Navigate } from "react-router-dom";
+import { Link, useParams, useLocation, Navigate } from "react-router-dom";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ShareButtons from "@/components/ShareButtons";
@@ -20,15 +20,33 @@ import { BookOpen } from "lucide-react";
 import ArticleTranslator, { extractPlainText, type LangCode } from "@/components/ArticleTranslator";
 import LockGate from "@/components/LockGate";
 import { recordLastRead } from "@/hooks/useLastRead";
+import {
+  applyTranslation, getTranslation, translatedLocalesFor,
+  TRANSLATED_LOCALES, LOCALE_LABEL,
+} from "@/data/translations";
 
 const ArticlePage = () => {
   const { slug } = useParams<{ slug: string }>();
+  const { pathname } = useLocation();
+
+  /* The locale is carried by the URL (/te/blog/...), not by the language
+     switcher — these are distinct pages so that each one can be indexed. */
+  const pageLang = TRANSLATED_LOCALES.find(l => pathname.startsWith(`/${l}/`));
 
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
   }, [slug]);
 
-  const article = slug ? getArticleBySlug(slug) : undefined;
+  const sourceArticle = slug ? getArticleBySlug(slug) : undefined;
+
+  /* Overlay the committed translation. Missing fields fall back to English,
+     so a partial translation degrades to a mixed page, never a blank one. */
+  const article = React.useMemo(
+    () => (sourceArticle && pageLang
+      ? applyTranslation(sourceArticle, getTranslation(sourceArticle.slug, pageLang))
+      : sourceArticle),
+    [sourceArticle, pageLang],
+  );
 
   /* Track last-read for the homepage "Continue reading" card. Runs as an
      effect rather than during render so it stays a side effect, not a
@@ -70,7 +88,11 @@ const ArticlePage = () => {
       ? article.metaDescription || article.summary || article.description || ""
       : "",
     image: ogImage,
-    path: article ? `/blog/${article.slug}` : "",
+    /* Each language is its own canonical URL — pointing them all at the
+       English one would tell Google to drop them. */
+    path: article ? `${pageLang ? "/" + pageLang : ""}/blog/${article.slug}` : "",
+    alternateLocales: article ? translatedLocalesFor(article.slug) : [],
+    locale: pageLang || "en",
     type: "article",
     author: "MahabharataDecoded",
     publishedAt: article?.publishDate || "2026-01-01",
@@ -124,6 +146,58 @@ const ArticlePage = () => {
           margin: "0 auto",
         }}
       >
+        {/* Real links to the pre-translated pages. These are what a crawler
+
+            follows — hreflang alone does not get a page discovered. */}
+
+        {article && translatedLocalesFor(article.slug).length > 0 && (
+
+          <nav
+
+            aria-label="Read this article in another language"
+
+            style={{ display: "flex", gap: "8px", alignItems: "center", flexWrap: "wrap", marginRight: "auto" }}
+
+          >
+
+            {(pageLang ? [null, ...translatedLocalesFor(article.slug)] : translatedLocalesFor(article.slug))
+
+              .filter(l => l !== pageLang)
+
+              .map(l => (
+
+                <Link
+
+                  key={l ?? "en"}
+
+                  to={l ? `/${l}/blog/${article.slug}` : `/blog/${article.slug}`}
+
+                  hrefLang={l ?? "en"}
+
+                  style={{
+
+                    fontSize: "12px", padding: "5px 12px", borderRadius: "100px",
+
+                    textDecoration: "none", color: "#3E1259",
+
+                    background: "rgba(255,246,228,0.92)",
+
+                    border: "1px solid rgba(201,162,39,0.45)",
+
+                  }}
+
+                >
+
+                  {l ? LOCALE_LABEL[l] : "English"}
+
+                </Link>
+
+              ))}
+
+          </nav>
+
+        )}
+
         <ArticleTranslator
           slug={article.slug}
           title={article.title}

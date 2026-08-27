@@ -7,7 +7,7 @@ declare global {
   }
 }
 
-import { lazy, Suspense, useEffect, useRef } from "react";
+import { Fragment, lazy, Suspense, useEffect, useRef } from "react";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Navigate, Route, Routes, useLocation } from "react-router-dom";
 import { PAYWALL_ENABLED } from "@/lib/subscription";
@@ -17,6 +17,7 @@ import CookieConsent from "@/components/CookieConsent";
 import FloatingStoryButton from "@/components/FloatingStoryButton";
 import FirstVisitCard from "@/components/FirstVisitCard";
 import FallingFlowers from "@/components/FallingFlowers";
+import { TRANSLATED_LOCALES } from "@/data/translations";
 import PWAUpdateNotice from "@/components/PWAUpdateNotice";
 import PaymentReturnHandler from "@/components/PaymentReturnHandler";
 import { ThemeProvider } from "@/context/ThemeContext";
@@ -172,6 +173,22 @@ const App = () => (
                   <Route path="/"            element={<Index />} />
                   <Route path="/blog"        element={<Blog />} />
                   <Route path="/blog/:slug"  element={<ArticlePage />} />
+
+                  {/* Pre-translated article pages — real URLs so search engines can
+
+                      index them, unlike the on-page translate button. */}
+
+                  {TRANSLATED_LOCALES.map(lng => (
+
+                    <Fragment key={lng}>
+
+                      <Route path={`/${lng}/blog`}       element={<Blog />} />
+
+                      <Route path={`/${lng}/blog/:slug`} element={<ArticlePage />} />
+
+                    </Fragment>
+
+                  ))}
                   <Route path="/characters"  element={<Characters />} />
                   <Route path="/about"       element={<About />} />
                   <Route path="/quiz"        element={<Quiz />} />

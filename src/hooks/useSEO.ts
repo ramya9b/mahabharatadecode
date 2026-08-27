@@ -17,6 +17,12 @@ export interface SEOProps {
   publishedAt?: string;
   author?: string;
   schema?: Record<string, unknown> | Record<string, unknown>[];
+  /** Locale codes this page exists in as its own URL. Emits hreflang
+      alternates so Google treats them as one page in many languages
+      rather than as duplicates competing with each other. */
+  alternateLocales?: string[];
+  /** Locale of THIS page. Absent means English. */
+  locale?: string;
 }
 
 function setTag(
@@ -44,6 +50,27 @@ function setLink(rel: string, href: string) {
   el.setAttribute("href", href);
 }
 
+/**
+ * hreflang is a reciprocal signal: every version must list every other
+ * version, itself included, or Google ignores the whole cluster. These are
+ * rewritten wholesale on each navigation so a stale set never lingers.
+ */
+function setAlternates(slugPath: string, locales: string[]) {
+  document.querySelectorAll('link[data-hreflang="1"]').forEach(el => el.remove());
+  if (!locales.length) return;
+  const add = (lang: string, href: string) => {
+    const el = document.createElement("link");
+    el.setAttribute("rel", "alternate");
+    el.setAttribute("hreflang", lang);
+    el.setAttribute("href", href);
+    el.setAttribute("data-hreflang", "1");
+    document.head.appendChild(el);
+  };
+  add("en", `${BASE_URL}${slugPath}`);
+  for (const l of locales) add(l, `${BASE_URL}/${l}${slugPath}`);
+  add("x-default", `${BASE_URL}${slugPath}`);
+}
+
 function injectSchema(schema: Record<string, unknown> | Record<string, unknown>[]) {
   const id = "json-ld-schema";
   let el = document.getElementById(id) as HTMLScriptElement | null;
@@ -66,10 +93,13 @@ export function useSEO({
   publishedAt,
   author,
   schema,
+  alternateLocales,
+  locale,
 }: SEOProps) {
   const fullTitle = `${title} | ${SITE_NAME}`;
   const fullUrl = `${BASE_URL}${path}`;
   const ogImage = image || DEFAULT_IMAGE;
+  const altKey = (alternateLocales ?? []).join(",");
 
   useEffect(() => {
     // ── Document title ──
@@ -83,6 +113,10 @@ export function useSEO({
 
     // ── Canonical URL ──
     setLink("canonical", fullUrl);
+
+    // ── hreflang alternates ──
+    setAlternates(path, altKey ? altKey.split(",") : []);
+    document.documentElement.setAttribute("lang", locale || "en");
 
     // ── Open Graph ──
     setTag("meta", "property", "og:title", fullTitle);
@@ -113,7 +147,7 @@ export function useSEO({
     return () => {
       document.title = SITE_NAME;
     };
-  }, [fullTitle, description, ogImage, fullUrl, type, keywords, publishedAt, author, schema]);
+  }, [fullTitle, description, ogImage, fullUrl, type, keywords, publishedAt, author, schema, path, altKey, locale]);
 }
 
 /** Build Article schema for blog posts */
