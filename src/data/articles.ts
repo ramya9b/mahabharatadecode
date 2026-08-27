@@ -14496,6 +14496,298 @@ export const articles: Article[] = [
       },
     ],
   },
+
+  {
+    slug: "bhima-and-hanuman",
+    title: "Bhima and Hanuman: The Day One Brother Could Not Lift the Other's Tail",
+    subtitle:
+      "Two sons of the wind-god, born ages apart, met on a forest path during the Pandavas' exile. Bhima was the strongest man alive. He could not move an old monkey's tail an inch. What Hanuman taught him that day still sits on the banner of the Mahabharata war.",
+    description:
+      "Bhima and Hanuman are half-brothers — both born of Vayu, the wind-god. They meet in the Aranyaka Parva when Bhima, hunting a rare flower for Draupadi, finds an aged monkey lying across his path. This is the full story of that encounter: the tail he could not lift, the humbling of the strongest Pandava, the discourse on the four ages, and how Hanuman came to sit on Arjuna's war banner as the Kapidhvaja.",
+    summary:
+      "During the Pandavas' forest exile, Bhima went searching for a fragrant Saugandhika flower Draupadi wanted. On the way he found an old monkey blocking the path with its tail. Told to move it himself, Bhima could not budge the tail with all his strength. The monkey was Hanuman — his own half-brother, since both are sons of Vayu. Hanuman humbled Bhima's pride, blessed him, and promised to strengthen the Pandavas in the coming war.",
+    category: "Characters",
+    character: "Hanuman",
+    readTime: 13,
+    metaTitle: "Bhima and Hanuman: The Forest Meeting | MahabharataDecoded",
+    metaDescription:
+      "Bhima and Hanuman were half-brothers, both sons of Vayu. The full story of their meeting in the forest, the tail Bhima could not lift, and why Hanuman rode Arjuna's flag.",
+    publishDate: "August 27, 2026",
+    featured: false,
+    imageKey: "hero",
+    image: "",
+    tags: ["Bhima", "Hanuman", "Vayu", "Aranyaka Parva", "Saugandhika", "Kapidhvaja", "Arjuna flag", "Mahabharata"],
+    pullQuote:
+      "The strongest man alive knelt in a forest and put both hands under an old monkey's tail, and it did not move. That is the whole lesson in one image. There is always someone whose strength you cannot see, and pride is loudest right before it meets its limit.",
+    authorNote:
+      "This article draws on the Aranyaka Parva (also called the Vana Parva), specifically the Tirtha-yatra section in which Bhima seeks the Saugandhika flower and meets Hanuman on the Gandhamadana mountain. The brotherhood through Vayu and the tail episode are in the epic. Hanuman's presence on Arjuna's banner is anchored in the epic's own repeated epithet for Arjuna, Kapidhvaja — 'the one whose banner bears the monkey' — used in the Bhagavad Gita (1.20); the fuller scene of Hanuman promising to ride the flag belongs to later tradition and regional retellings, and I have flagged that where it comes up.",
+    reelHook: {
+      hook: "The strongest man in the Mahabharata met an old monkey lying across a forest path. He asked it to move its tail. It said, I'm too old, move it yourself. Bhima could not lift that tail with everything he had. Here is who the monkey really was.",
+      supporting: "It was Hanuman — Bhima's own half-brother, both sons of the wind-god Vayu. He had been waiting to humble the one Pandava who thought strength was the whole answer. And he did it without landing a single blow.",
+    },
+    relatedSlugs: ["who-are-the-8-chiranjivi-immortals", "how-did-ghatotkacha-die", "how-did-arjuna-get-the-pashupatastra"],
+    storyBlocks: [
+      {
+        section: "introduction",
+        label: "Introduction",
+        paragraphs: [
+          "Here is a scene most people never hear about, and it is one of the best in the whole epic. The Pandavas are in exile, deep in the forest. Bhima, the second brother, is the strongest human being alive. He has killed demons with his bare hands. And in the middle of the woods he comes across an old monkey, lying lazily across the path, its long tail stretched over the trail. Bhima tells it to move. The monkey says it is too old and tired, and suggests Bhima simply lift the tail aside and step past.",
+          "So Bhima reaches down to flick the tail out of the way. It does not move. He uses one hand, then both, then the full force that once uprooted trees and crushed armies. The tail stays exactly where it is. And slowly it dawns on the strongest man in the world that he has met something he cannot overpower.",
+          "The monkey is Hanuman. And Hanuman, it turns out, is Bhima's brother. This is the story of how the two most famous sons of the wind-god met, what one taught the other, and why a monkey ended up roaring from the top of Arjuna's chariot when the great war finally came.",
+        ],
+      },
+      {
+        section: "background",
+        label: "Why They Are Brothers",
+        paragraphs: [
+          "The link between them is Vayu, the wind-god. In the Ramayana, Hanuman is the son of Vayu — carried, in tradition, on the wind's own breath to his mother Anjana. Generations later, in the Mahabharata, Kunti uses a mantra to call the gods and conceive sons for the cursed king Pandu. When she invokes Vayu, she bears Bhima. So the same divine father stands behind both of them, ages apart.",
+          "That makes them half-brothers in the plainest sense the epics allow. Hanuman is the elder by an entire world-age — he belongs to the Treta Yuga and the story of Rama; Bhima belongs to the Dvapara Yuga and the story of the Kurus. They are family separated not by miles but by time.",
+          "It matters, because when Hanuman finally reveals himself, he does not do it as a stranger putting a hero in his place. He does it as an older brother who has been quietly watching, and who decides this headstrong younger one needs a lesson before the hardest years of his life arrive.",
+        ],
+      },
+      {
+        section: "turningPoint",
+        label: "The Flower That Started It",
+        paragraphs: [
+          "The meeting begins with a flower. During the exile, the wind carried a single Saugandhika lotus to where the Pandavas were staying near the Gandhamadana mountain. It was a celestial bloom, thousand-petaled and impossibly fragrant, and Draupadi, catching its scent, wanted more of them. She asked Bhima to find their source.",
+          "This is exactly the kind of errand Bhima loved. It let him be useful to Draupadi, and it let him do the thing he was best at: charge off alone into dangerous country and force his way through. He set out toward the lake where the flowers grew, smashing through the forest so loudly that animals scattered and trees came down, announcing himself to the whole mountain.",
+          "And that noise, that certainty, that pride in his own unstoppable strength, is what Hanuman had been waiting for. He lay down across the path in the form of a decrepit old monkey and let his little brother come thundering toward the one obstacle he could not break.",
+        ],
+      },
+    ],
+    content: [
+      { type: "heading", text: "The Errand in the Forest" },
+      {
+        type: "paragraph",
+        text: "You have to picture where the Pandavas are for this to land. They are years into a thirteen-year exile they did not deserve, forced out of their own kingdom after a rigged game of dice. They are living rough in the forest, and Draupadi, the queen who was dragged into a hall of kings and humiliated, is with them, sharing every hardship. So when a single extraordinary flower drifts down on the wind and she says she would love more of them, this is not a trivial whim. It is one small beautiful thing in a stretch of misery, and Bhima wants to give it to her.",
+      },
+      {
+        type: "paragraph",
+        text: "The flower is the Saugandhika, a celestial lotus that the Mahabharata describes as growing near a lake in the domain of Kubera, the god of wealth, high on the Gandhamadana mountain. Bhima does not ask directions or wait for the others. He goes. And the way he goes tells you everything about him at this point in the story: he crashes through the woods at full speed, uprooting trees, frightening elephants and lions out of his path, roaring so that the mountain echoes. Bhima has never in his life met a problem that more force could not solve.",
+      },
+      { type: "heading", text: "The Monkey on the Path" },
+      {
+        type: "paragraph",
+        text: "In a grove of plantain trees, Bhima finds his way blocked by a monkey. Not a fearsome one. An old one, apparently feeble, lying stretched out with its long tail lying across the whole width of the trail. Bhima, who does not slow down for anything, shouts at it to move aside and stop blocking the road.",
+      },
+      {
+        type: "paragraph",
+        text: "The monkey opens its eyes lazily and says it is old and unwell and cannot move easily, and asks Bhima to be kind and simply lift its tail out of the way and pass. There is something almost comic in what happens next, and the epic knows it. Bhima, insulted at being asked to touch a monkey's tail, decides to fling it aside with contempt. He hooks it with one hand and pulls. Nothing. He is surprised. He takes it in both hands and puts real strength into it, the strength that has never failed him. The tail does not shift by the width of a finger.",
+      },
+      {
+        type: "paragraph",
+        text: "Now Bhima is straining with everything he has, sweating, his eyes wide, and the tail lies there as immovable as a mountain root. And this is the moment the whole scene is built around. The strongest man alive, undefeated, is on his knees in the dirt heaving at an old monkey's tail, and he cannot move it. His pride does not just crack. It collapses. He steps back and, for perhaps the first time in the epic, speaks with genuine humility, asking who this being really is, because no ordinary monkey could do this.",
+      },
+      { type: "heading", text: "Who the Monkey Really Was" },
+      {
+        type: "paragraph",
+        text: "The monkey tells him. He is Hanuman, the son of Vayu, the same wind-god who fathered Bhima. He is the Hanuman of the Ramayana, the one who leapt across the ocean to Lanka, who found Sita in captivity, who carried a mountain of healing herbs through the sky, who burned a demon city with his own tail. He has lived on from that age into this one. And he tells Bhima, plainly, that they are brothers.",
+      },
+      {
+        type: "paragraph",
+        text: "The whole point of the tail, he explains, was to stop Bhima before his pride carried him somewhere dangerous. The path ahead led into forbidden divine territory, and beyond that, Bhima's confidence in raw strength was exactly the flaw that would get him and his brothers hurt in the years to come. Hanuman did not block the road to be cruel. He blocked it because a lesson delivered by an immovable tail is one Bhima would actually remember.",
+      },
+      {
+        type: "paragraph",
+        text: "It is a tender reversal. Bhima came into the forest to prove his strength on Draupadi's behalf, and instead met the one person alive who could out-lift him without effort, and that person turned out to be family. The Mahabharata is full of humbling. Rarely is it this gentle. Hanuman does not hurt Bhima or shame him in front of anyone. He teaches him alone, on a quiet path, and then embraces him.",
+      },
+      { type: "heading", text: "The Talk About the Four Ages" },
+      {
+        type: "paragraph",
+        text: "What Hanuman says next is one of the reasons this passage is so valued. Bhima, still humbled, asks his brother about the yugas, the great ages of the world. And Hanuman describes them: the Krita or Satya Yuga, when dharma stood firm on all four feet and truth was whole; the Treta, his own age, when it began to decline; the Dvapara, Bhima's age, when righteousness had worn down further; and the Kali Yuga still to come, when it would stand on a single leg and the world would grow harsh and short-lived. He tells Bhima that each age has its own conduct, its own scale of strength, and that what was possible in one age is not the measure of another.",
+      },
+      {
+        type: "paragraph",
+        text: "There is a quiet correction buried in that. Bhima measures himself by force. Hanuman, who has more force than anyone, tells him that strength is relative to the age you live in and is never the highest thing. It is a bigger lesson than the tail, and Bhima only gets to hear it because the tail knocked the arrogance out of him first.",
+      },
+      { type: "heading", text: "The Form Bhima Asked to See" },
+      {
+        type: "paragraph",
+        text: "Before they part, Bhima makes a request. He asks to see the form Hanuman took when he crossed the ocean to reach Lanka, the enormous shape from the Ramayana. In the traditional telling, Hanuman smiles and begins to expand, growing larger and larger, until Bhima can no longer take in the whole of him and has to look away, overwhelmed. Hanuman shrinks back to his ordinary size, having made his point without a word: you asked to measure me, and you could not even keep your eyes on the answer.",
+      },
+      {
+        type: "paragraph",
+        text: "Then comes the blessing. Hanuman promises to help the Pandavas in the war he knows is coming. In the widely told tradition, he vows that he will be present on the banner of Arjuna's chariot, and that when Bhima and Arjuna roar their war cries, his own roar will join them and strike terror into the enemy. He tells Bhima that with him on that flag, victory will be certain. Then he lets Bhima continue on to gather the Saugandhika flowers for Draupadi, the errand that started the whole encounter.",
+      },
+      { type: "heading", text: "Why Hanuman Sits on Arjuna's Flag" },
+      {
+        type: "paragraph",
+        text: "This is the part that ties the forest meeting to the most famous moment in the epic. Arjuna's war chariot, the one Krishna drives, flies a banner with Hanuman on it. The Mahabharata itself calls Arjuna Kapidhvaja, which means 'the one whose banner bears the monkey.' You can hear it in the Bhagavad Gita, at the very start of the battle, when Arjuna takes up his bow with Hanuman's image flying above him.",
+      },
+      {
+        type: "paragraph",
+        text: "Now, here is where a careful reader should slow down. That Arjuna is Kapidhvaja is beyond doubt; the epic says so directly. The fuller scene, where Hanuman personally promises Bhima in the forest that he will ride Arjuna's flag, is told in later tradition and in many regional retellings, and it is beautiful, but it is not spelled out in the same way in the oldest layer of the text. What the text gives you for certain is the emblem itself: the monkey on the banner, the wind-god's son flying above the wind-god's other son as he fights. Whether you read the promise as literal history within the story or as tradition explaining a detail the epic simply states, the meaning is the same. Hanuman is over the Pandavas in their darkest hour.",
+      },
+      { type: "heading", text: "Did You Know?" },
+      {
+        type: "paragraph",
+        text: "A few things about the Bhima and Hanuman meeting that tend to get lost, each grounded in the epic or clearly marked as tradition.",
+      },
+      {
+        type: "paragraph",
+        text: "1. They share a father. Both Bhima and Hanuman are sons of Vayu, the wind-god. That is not a poetic flourish added later; the parentage of each is standard in their respective epics, which makes them half-brothers across the ages.",
+      },
+      {
+        type: "paragraph",
+        text: "2. The meeting is in the Aranyaka Parva. It happens during the Pandavas' forest exile, in the section dealing with their pilgrimage and wanderings near the Gandhamadana mountain, not during the war and not as a minor aside.",
+      },
+      {
+        type: "paragraph",
+        text: "3. It started with a flower for Draupadi. The whole episode is set in motion by Draupadi's wish for more of the fragrant Saugandhika lotus, which is why Bhima was out alone in the first place.",
+      },
+      {
+        type: "paragraph",
+        text: "4. Hanuman is one of the Chiranjivi. He is counted among the traditional immortals of Hindu belief, said to live on as long as Rama's story is remembered, which is how a hero of the Ramayana can appear in person in the Mahabharata generations later.",
+      },
+      {
+        type: "paragraph",
+        text: "5. Arjuna's epithet Kapidhvaja is textual. The name, meaning 'monkey-bannered,' is used of Arjuna in the epic, including in the opening chapter of the Bhagavad Gita, and it points directly to Hanuman on his flag.",
+      },
+      {
+        type: "paragraph",
+        text: "6. The lesson was aimed, not random. Hanuman blocked the path on purpose, to check Bhima's pride in raw strength before it led him into forbidden ground and into the war years, where force alone would not save him or his brothers.",
+      },
+      {
+        type: "paragraph",
+        text: "7. The discourse on the yugas is part of the scene. The meeting is not only the tail episode. Hanuman uses it to explain the four world-ages and the decline of dharma across them, one of the epic's clearer statements on the subject.",
+      },
+      { type: "heading", text: "Common Misconceptions" },
+      {
+        type: "paragraph",
+        text: "This episode gets simplified into a cartoon a lot, so here are the corrections worth making.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception 1: Bhima and Hanuman fought. They did not. There is no battle. The entire encounter turns on a tail Bhima cannot lift and a conversation that follows. The humbling is complete without a single blow being struck, which is part of why it stands out in an epic so full of combat.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception 2: Hanuman was just a random obstacle Bhima happened upon. He was not. Hanuman chose to lie across that path deliberately, in disguise, specifically to intercept and humble his younger brother before pride carried him into danger. The meeting was arranged by the elder, not stumbled into by the younger.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception 3: They are not really related, and 'brothers' is just a friendly word. In the logic of the epics they are genuinely half-brothers, both fathered by Vayu. The kinship is the whole reason Hanuman takes a personal interest and the whole reason the scene carries the warmth it does.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception 4: The Mahabharata directly narrates Hanuman promising to sit on Arjuna's flag. What the core text states plainly is that Arjuna's banner bears the monkey emblem and that Arjuna is called Kapidhvaja. The detailed scene of Hanuman making that promise in the forest is developed in later tradition and regional versions. Both are worth knowing; only one is the epithet the oldest text uses.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception 5: The point of the story is that Hanuman is stronger than Bhima. Strength is the surface of it, not the point. Hanuman is explicit that raw power is not the highest measure and that it means different things in different ages. The lesson is aimed at Bhima's pride, not at settling who could lift more.",
+      },
+      {
+        type: "paragraph",
+        text: "Misconception 6: Hanuman only belongs to the Ramayana. He appears in person in the Mahabharata, here with Bhima and again woven into Arjuna's banner. The immortals of the tradition move between the two epics precisely because they outlive any single story.",
+      },
+      {
+        type: "lesson",
+        text: "Notice the shape of the humbling. Hanuman does not defeat Bhima, insult him, or beat him in front of an audience. He lets Bhima discover his own limit privately, with his own hands, and only then does he teach. That is a far kinder correction than the epic usually offers. The people who most need to be humbled are rarely helped by being crushed. They are helped by being allowed to meet the edge of their own strength quietly, and then being offered something larger to reach for.",
+      },
+      { type: "heading", text: "What the Meeting Is Really About" },
+      {
+        type: "paragraph",
+        text: "Strip it back and the episode is about the moment a strong person meets the limit of the one thing they trusted. Bhima's entire identity is force. He solves things by being unstoppable, and until this path in the forest it has never once let him down. Hanuman gives him the gift of a wall he cannot break, and does it as family, so that the lesson lands as care rather than defeat.",
+      },
+      {
+        type: "paragraph",
+        text: "And then the story does something lovely with it. The brother who humbled Bhima does not vanish. He goes up onto Arjuna's banner and stays over the Pandavas through the eighteen days of the war, so that the encounter in the woods is not a one-off humbling but the start of a protection. The lesson and the blessing are the same gesture. Hanuman teaches Bhima that strength is not everything, and then quietly becomes part of the strength that carries the family through. If you have ever been put in your place by someone who then turned around and had your back, you already understand this scene better than any commentary can tell you.",
+      },
+      {
+        type: "quote",
+        text: "atha vyavasthitan drishtva dhartarashtran kapidhvajah, pravritte shastra-sampate dhanur udyamya pandavah. — Bhagavad Gita 1.20",
+      },
+    ],
+    keyLessons: [
+      {
+        icon: "🐒",
+        title: "Everyone meets a tail they cannot lift",
+        description: "Bhima trusted his strength completely until an old monkey's tail would not move. Whatever you rely on most is exactly where you are most likely to meet your limit. Knowing that in advance is not weakness; it is the beginning of maturity.",
+        accent: "gold",
+      },
+      {
+        icon: "🌬️",
+        title: "The best corrections are given in private, by someone who loves you",
+        description: "Hanuman humbled Bhima with no audience and no blow, then embraced him as a brother. When you have to bring someone down a peg, do it the way an ally would, not the way an enemy would. The goal is to teach, not to win.",
+        accent: "teal",
+      },
+      {
+        icon: "🚩",
+        title: "The one who humbles you can become the one who protects you",
+        description: "The brother who pinned Bhima's pride to the ground went on to ride Arjuna's banner through the war. Being corrected by someone is not the end of the relationship. Often it is the moment they decide you are worth backing.",
+        accent: "crimson",
+      },
+    ],
+    modernConnections: [
+      {
+        context: "You are the person in the room who is used to being the strongest, the smartest, or the most capable, and you have started to believe that whatever comes up, you can simply force your way through it.",
+        insight: "Bhima's forest lesson is worth keeping close. The confidence that has never failed you is precisely the blind spot that will, and it is far better to meet that limit through a wall you cannot break than through a mistake that costs your people. Look for your immovable tail before it looks for you.",
+        example: "The strongest man in the epic ended up on his knees in the dirt, heaving at a tail that would not move. The Mahabharata does not treat this as his low point. It treats it as the day he grew up.",
+      },
+      {
+        context: "You have to correct someone who has gotten arrogant — a talented junior colleague, a younger relative, a friend riding high — and you are deciding how hard to come down on them.",
+        insight: "Hanuman is the model. He let Bhima discover his own limit rather than announcing it, chose privacy over spectacle, and followed the humbling with warmth and a real gift. Correction that is meant to help does not need to humiliate. The person should walk away lifted, not flattened.",
+        example: "Hanuman never insulted Bhima or beat him in front of anyone. He let a tail do the teaching, explained the larger picture, embraced him, and then promised to protect his whole family in the war to come.",
+      },
+    ],
+    lifeLessons: [
+      "Whatever strength you trust most is exactly where you are most likely to meet your limit.",
+      "A correction delivered in private, without an audience, is a kindness the harsh version never manages.",
+      "Pride is loudest in the moment just before it meets something it cannot move.",
+      "The person who humbles you today can be the one who protects you tomorrow; being corrected is not the end of a bond.",
+      "Raw force is never the highest measure of a person, no matter how much of it you happen to have.",
+    ],
+    faqs: [
+      {
+        question: "Are Bhima and Hanuman really brothers?",
+        answer: "Yes, in the logic of the epics they are half-brothers. Both are sons of Vayu, the wind-god. Hanuman is Vayu's son in the Ramayana, and Bhima is conceived when Kunti invokes Vayu using her mantra in the Mahabharata. The same divine father stands behind both of them, separated by an age of the world.",
+      },
+      {
+        question: "Where in the Mahabharata do Bhima and Hanuman meet?",
+        answer: "In the Aranyaka Parva, also called the Vana Parva, during the Pandavas' forest exile. The meeting takes place near the Gandhamadana mountain while Bhima is searching for the Saugandhika flower that Draupadi wanted.",
+      },
+      {
+        question: "Why could Bhima not lift Hanuman's tail?",
+        answer: "Because the old, feeble monkey was Hanuman in disguise, deliberately testing him. Bhima was the strongest human alive, but Hanuman is an immortal of a far greater order of strength. He kept the tail immovable on purpose, to break Bhima's pride in his own power before it led him into danger.",
+      },
+      {
+        question: "What was the Saugandhika flower?",
+        answer: "A celestial, thousand-petaled, intensely fragrant lotus. One of them drifted to the Pandavas on the wind, and Draupadi wished for more. The Mahabharata places the flowers near a lake in the domain of Kubera on the Gandhamadana mountain, which is where Bhima was headed when he met Hanuman.",
+      },
+      {
+        question: "Did Bhima and Hanuman fight?",
+        answer: "No. There is no battle between them at all. The entire encounter turns on the tail Bhima cannot lift and the conversation that follows. Hanuman humbles his brother completely without striking a single blow, which is a large part of why the scene is so memorable.",
+      },
+      {
+        question: "Why is Hanuman on Arjuna's flag?",
+        answer: "The Mahabharata calls Arjuna Kapidhvaja, meaning the one whose banner bears the monkey, and his war chariot flies Hanuman's emblem. In the widely told tradition, Hanuman promises Bhima during their forest meeting that he will be present on Arjuna's banner and add his roar to the Pandavas' war cries. The epithet itself is stated directly in the text, including in the Bhagavad Gita.",
+      },
+      {
+        question: "What did Hanuman teach Bhima?",
+        answer: "Two things. First, through the tail, that raw strength has limits and pride in it is dangerous. Second, in conversation, he explained the four world-ages, the yugas, and how dharma and the measure of strength change across them. The larger message is that force is never the highest thing, no matter how much of it you have.",
+      },
+      {
+        question: "Is Hanuman immortal in the Mahabharata?",
+        answer: "Yes. Hanuman is counted among the Chiranjivi, the traditional immortals of Hindu belief, said to live on as long as Rama's story endures. That is precisely how a hero of the Ramayana can appear in person in the Mahabharata, generations later, to meet Bhima.",
+      },
+      {
+        question: "Did Bhima ask to see Hanuman's giant form?",
+        answer: "In the traditional telling, yes. Bhima asked to see the enormous form Hanuman took to leap across the ocean to Lanka. Hanuman began to expand until Bhima could no longer take in the whole of him and had to look away, a quiet demonstration of the scale he had been dealing with.",
+      },
+      {
+        question: "What is the main lesson of the Bhima and Hanuman story?",
+        answer: "That the strength you trust most is where you will meet your limit, and that the best way to be humbled is by someone who cares for you. Hanuman corrects Bhima in private, without cruelty, then blesses and protects his family. The one who brings you down a peg can be the same one who has your back.",
+      },
+    ],
+    sloka: {
+      sanskrit:
+        "अथ व्यवस्थितान्दृष्ट्वा धार्तराष्ट्रान्कपिध्वजः।\nप्रवृत्ते शस्त्रसम्पाते धनुरुद्यम्य पाण्डवः॥",
+      transliteration:
+        "Atha vyavasthitan drishtva dhartarashtran kapidhvajah, pravritte shastra-sampate dhanur udyamya pandavah.",
+      translation:
+        "Then, seeing the sons of Dhritarashtra drawn up for battle, Arjuna — he whose banner bears the emblem of the monkey (kapidhvaja) — took up his bow as the clash of weapons was about to begin. — Bhagavad Gita 1.20. The single word kapidhvaja is the thread back to the forest. Arjuna fights the whole war under Hanuman's sign, the wind-god's elder son flying above his younger one. What Bhima met as an immovable tail in the woods, the family carries into battle as a banner.",
+    },
+  },
 ];
 
 /* ─────────────────── Helpers ─────────────────── */
