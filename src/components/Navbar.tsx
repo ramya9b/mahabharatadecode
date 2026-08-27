@@ -119,7 +119,7 @@ const Navbar = () => {
       >
         {/* ── Desktop (≥1024px) ── */}
         <div
-          className="hidden lg:flex"
+          className="hidden xl:flex"
           style={{
             maxWidth: "1280px",
             margin: "0 auto",
@@ -181,9 +181,7 @@ const Navbar = () => {
               display: "flex",
               alignItems: "center",
               gap: "2px",
-              flexShrink: 1,
-              minWidth: 0,
-              overflow: "hidden",
+              flexShrink: 0,
               background: pillBg,
               borderRadius: "100px",
               padding: "5px 6px",
@@ -320,7 +318,7 @@ const Navbar = () => {
 
         {/* ── Mobile ── */}
         <div
-          className="lg:hidden flex items-center justify-between"
+          className="xl:hidden flex items-center justify-between"
           style={{ maxWidth: "100%" }}
         >
           {/* Mobile logo — M circle only, no text (text overflows on 360-390px phones) */}
